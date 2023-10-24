@@ -1,0 +1,65 @@
+% \newcommand\thm[1]{\section{Théorème : #1}}
+% \newcommand\pr[1]{\section{Propriété : #1}}
+% \newcommand\df[1]{\section{\Définition : #1}}
+% \newcommand\rap[1]{\section{Rappel : #1}}
+% \newcommand\cor[1]{\section{Corolaire : #1}}
+% \newcommand\ctr[1]{\section{Contraposée : #1}}
+% \newcommand\app[1]{\section{Application : #1}}
+
+% \newcommand\ex[1]{\subsection*{Exercice : #1}}
+% \newcommand\rmq[1]{\subsection*{\color{Thistle}Remarque : \color{black}#1}}
+% \newcommand\demo[1]{\subsection*{$\rightarrow$ Démonstration #1}}
+
+\newcounter{def}
+\stepcounter{def}
+\newcounter{pr}
+\stepcounter{pr}
+% \newcommand\incrcount[1]{\csname the#1\endcsname\stepcounter{#1}}
+
+\newcommand\thm[1]{\subsection*{\color{Plum}Théorème : \color{black}#1}}
+\newcommand\pr[1]{
+    \subsection*{
+        \color{Blue}Propriété\small$_{(\thepr)}$\normalsize : \color{black}#1
+        }
+    \stepcounter{pr}
+}
+
+\newcommand\df[1]{
+    \subsection*{
+        \color{ForestGreen}Définition\small$_{(\thedef)}$\normalsize : 
+        \color{black}#1} 
+    \stepcounter{def}
+}
+\newcommand\rap[1]{\subsection*{Rappel : #1}}
+\newcommand\cor[1]{\subsection*{\color{NavyBlue}Corolaire : \color{black}#1}}
+\newcommand\ctr[1]{\subsection*{Contraposée : #1}}
+\newcommand\app[1]{\subsection*{\color{RedViolet}Application : \color{black}#1}}
+
+\newcommand\ex[1]{\subsubsection*{\color{Thistle}Exercice : \color{black}#1}}
+\newcommand\rmq[1]{\subsubsection*{\color{Thistle}Remarque : \color{black}#1}}
+\newcommand\demo[1]{\subsubsection*{\color{Red}$\rightarrow$ Démonstration: \color{black}#1}}
+
+\newcommand\tice[2]{\subsection*{\color{Orchid}TICE - \underbar{#1} : \color{black}#2}}
+
+\newcommand\m[1]{\mathbf{#1}}
+\newcommand\lm[2]{\lim_{#1\to#2}}
+
+% \newcommand\infoLecon[3]{
+%     \begin{tcolorbox}[colback=red!5!white,
+%         colframe=red!75!black,
+%        ]
+%        \textbf{Niveau :} \href{#2}{#1}
+%     \tcblower
+%     \textbf{Prérequis :} #3
+%     \end{tcolorbox}
+% }
+
+\newcommand\infoLecon[3]{
+    \begin{tcolorbox}[colback=red!5!white,
+        colframe=red!75!black,
+       ]
+       \textbf{Niveau :} #1
+    \tcblower
+    \textbf{Prérequis :} #2
+    \end{tcolorbox}
+}
