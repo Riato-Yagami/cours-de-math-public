@@ -1,12 +1,19 @@
 % COUNTERS
 \newcounter{ex}
 \stepcounter{ex}
-% \newcommand\incrcount[1]{%
-%     \expandafter\the\csname#1\endcsname
-%     \stepcounter{#1}%
-% }
 
 % SECTIONS
+
+% \newcommand{\pr}[2]{
+%     \subsection*{
+%         \color{Blue}Propriété\small$_{(\thepr)}$\normalsize : 
+%         \color{black}#1
+%         }
+%     \stepcounter{pr}
+%     \begin{mysection}[Blue]
+%     #2
+%     \end{mysection}
+% }
 
 \newenvironment{mysection}[1][gray!20]{%
     \begin{tcolorbox}[colback=white,
@@ -45,35 +52,11 @@
 \createsection{df}{ForestGreen}{Définition}
 \createsection{thm}{Plum}{Théorème}
 
-% \newcounter{thm}
-% \stepcounter{thm}
-
-% \newcommand{\thm}[2]{
-%     % \begin{mysection}[Blue]
-%     \subsection*{
-%         \color{Plum}Théorème p\small$_{(\thethm)}$\normalsize : \color{black}#1
-%         }
-%     \stepcounter{thm}
-%     % \end{mysection}
-%     \begin{mysection}[Blue]
-%     #2
-%     \end{mysection}
-% }
-
-% \newcommand{\pr}[2]{
-%     \subsection*{
-%         \color{Blue}Propriété\small$_{(\thepr)}$\normalsize : 
-%         \color{black}#1
-%         }
-%     \stepcounter{pr}
-%     \begin{mysection}[Blue]
-%     #2
-%     \end{mysection}
-% }
-
 \newcommand{\ex}[2]{
     \subsubsection*{
-        \color{Thistle}Exercice\small$_{(\theex)}$\normalsize :
+        \color{Thistle}Exercice \theex 
+        % \small$_{(\theex)}$\normalsize 
+        :
         \color{black}#1
         }
     \stepcounter{ex}
@@ -116,6 +99,48 @@
     #3
 }
 
+% \newcommand{\awsr}[1]{
+%     \color{OrangeRed}#1\color{black}
+% }
+
+\newlength{\parline}
+\newlength{\paroutindent}
+\newlength{\lineheight}
+\setlength{\lineheight}{\heightof{abcdefghijklmnoprstuvwxyz}}
+
+\newcommand{\countlines}[1]{%
+    \setlength{\paroutindent}{\expandafter\parindent}
+    \setlength{\parline}{\heightof{\noindent\begin{minipage}{\linewidth}%
+                \setlength{\parindent}{\paroutindent}#1\end{minipage}}}%
+    \pgfmathparse{round(\parline / (0.9*\lineheight))}
+    \newcount\linecount
+    \pgfmathsetcount{\linecount}{\pgfmathresult}
+}
+
+\newcommand{\looptext}[2]{%
+    \noindent
+    \newcount\printcount
+    \printcount=#2
+    \loop
+        #1
+        \advance\printcount by -1
+        \ifnum\printcount>0
+    \repeat
+}
+
+\newcommand{\awsr}[1]{%
+    \ifthenelse{\boolean{anwser}}{
+        \color{OrangeRed}#1\color{black}
+    }{
+        \countlines{#1}
+        \noindent\hspace{-9pt}
+        \looptext{
+            \noindent\dotfill
+    
+        }{\the\linecount}
+    }
+}
+
 % MATH
 
 \newcommand{\modxy}[2]{\sqrt{#1^2+#2^2}}
@@ -144,10 +169,17 @@
 
 \newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
 
-\NewDocumentCommand{\img}{m O{\linewidth}}{%
+\NewDocumentCommand{\img}{m O{\linewidth} o}{%
     \begin{figure}[H]%
         \centering%
         \includegraphics[width=#2]{#1}%
+        \IfValueTF{#3}{
+            \caption{\underline{#3}}
+            % \vspace{-0.4cm}
+            }{
+            % \vspace{-0.4cm}
+        }
+        \vspace{-0.45cm}
     \end{figure}%
 }
 
