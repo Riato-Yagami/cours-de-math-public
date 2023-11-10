@@ -187,3 +187,11 @@
   \item \csn{#1}%
   \IfValueT{#2}{(#2)}%
 }
+
+% TIKZ
+\newcommand{\drawGrid}[3]{
+    \foreach \n in {0,...,#1}
+        \draw[line width = #3] (\n,0) -- (\n,#2);
+    \foreach \n in {0,...,#2}
+        \draw[line width = #3] (0,\n) -- (#1,\n);
+}
