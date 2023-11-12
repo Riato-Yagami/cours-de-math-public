@@ -1,0 +1,109 @@
+% VARIABLES %%%
+\def\theme{Primitives, équations différentielles.}
+\def\date{11/11/2023}
+\setboolean{demonstration}{true}
+%%%%%%%%%%%%%%%
+
+\hbox{}
+\infoLecon{
+    \niv{Terminale Option Spécialité}
+    \niv{Terminale Option Complémentaire}
+}{
+    \item Dérivation
+    \item Dérivées usuelles
+}
+
+\df{Équation différentielle}{
+    En mathématiques, une \textbf{équation différentielle}
+    est une équation dont la ou les « inconnue(s) » sont des fonctions.\\
+    Elle se présente sous la forme d'une relation entre
+    ces fonctions inconnues et leurs dérivées successives.\\
+    C'est un cas particulier d'équation fonctionnelle.
+}
+
+\df{Primitives}{
+    Soit $f$ une fonction dérivable sur $\m{I}$.\\
+    On appelle \textbf{primitives} de $f$ sur $\m{I}$ toutes les fonctions $F$,\\
+    telles que $F' = f$.
+}
+
+\thm{Fondamental de l'Analyse}{
+    Si $f$ est une fonction continue sur $[a,b]$\\
+    et si, \pt $x\in[a,b]$ on pose:\\
+    \begin{equation*}
+        F(x) = \int_{a}^{x} f(t)dt
+    \end{equation*}
+    alors $F$ est dérivable sur $[a,b]$ et $F'(x)=f(x)$ \pt $x\in[a,b]$
+}
+
+\newcommand{\intxx}[1]{\int_{x_0}^{x_0+h} #1 dt}
+\def\intf{\intxx{f(t)}}
+\def\acrF{\acroissement{F}{x_0}}
+
+\demo{Terminale S - On suppose f positive et croissante}{
+    On calcule le taux d'acroissement de $F$ en $x_0$. Soit $h>0$, alors:
+    \begin{align*}
+        \acrF &= \frac{1}{h}\intf\\
+        \iet hf(x_0) \leqslant \intf &\leqslant hf(x_0 + h) \car f\geqslant0 \et \textrm{croissante.}
+        \ialors f(x_0) \leqslant \acrF &\leqslant f(x_0+h)
+        \ialors \lim_{h\rightarrow0^+} \acrF &= f(x_0) \car f \textrm{ continue en } x_0.
+    \end{align*}
+    On procède de la meme maniere si $h<0$.
+}
+
+\demo{Cas général}{
+    Soit $\varepsilon > 0$. Il existe $\delta > 0$ tel que,\\
+    si $|x-x_0|<\delta$, alors $|f(x)-f(x_0)|<\varepsilon$\\
+    Soit $|h|<\delta$, alors:
+    \begin{align*}
+        \acrF &= \frac{1}{h}\intf\\
+        \ialors \acrF - f(x_0) &= \frac{1}{h} - \intxx{f(t)-f(x_0)}
+    \end{align*}
+    $|h|<0$, alors \pt $t\in[x_0,x_0+h]$, on a $|t-x_0| < \delta$\\
+    et donc $|f(t)-f(x_0) \leqslant \varepsilon$. Alors:
+    \begin{align*}
+        |\acrF - f(x_0)| &\leqslant \frac{1}{h}\intxx{|f(t)-f(x_0)|}\\
+        &\leqslant \frac{1}{h} \intxx{\varepsilon}\\
+        &\leqslant \varepsilon\\
+        \idou \lim_{h\rightarrow0} \acrF &= f(x_0).
+    \end{align*}
+}
+
+\pr{}{
+    Toute fonction continue sur un intervalle $\m{I}$ admet des primitives sur $\m{I}$.
+}
+
+\demo{Terminale S}{
+    D'après le \refsec{thm}{Fondamental de l'Analyse}, 
+    toute fonctions continues et positive admet une primitive.\\
+    Soit $f:[a,b]->\m{R}$ continue. $f$ admet un minimum $m$ sur $[a,b]$.\\
+    Posons $g: x \mapsto f(x) - m$. 
+    Alors $g$ est continue positive sur $[a,b]$ 
+    et admet alors une primitive $G$ sur $[a,b]$.\\
+    Posons $F: x \mapsto G(x)+mx$.
+    Alors $F$ est dérivable sur $[a,b]$ et \pt $x\in[a,b]$:
+    \begin{align*}
+        F'(x) &= G'(x) + m\\
+        &= g(x) + m\\ 
+        &= f(x)
+    \end{align*}
+    Ainsi, $F$ est une primitive de $f$ sur $[a,b]$
+}
+
+\pr{}{
+    Soient un intervalle I et $f: \m{I} \rightarrow \m{R}$ une fonction continue.
+    Soient $F$ et $G$ deux primitives de $f$ sur $\m{I}$.\\
+    Alors il existe $c\in\m{R}$ tel que, \pt $x\in\m{I}, F(x) = G(x)+c$.
+}
+
+\demo{}{
+    Soient $F$ et $G$ deux primitives de $f$ sur $\m{I}$.
+    \begin{align*}
+        (F-G)' &= F'-G'\\ 
+        &= f-f\\
+        &= 0
+    \end{align*}
+    Alors $F-G$ est une fonction de dérivée nulle sur $\m{I}$.\\
+    D'où $F-G$ constante sur $\m{I}$.\\
+    Alors il existe $c\in\m{R}$ tel que, \pt $x\in\m{I}, F(x) = G(x)+c$.
+}

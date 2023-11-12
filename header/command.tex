@@ -37,16 +37,43 @@
     \stepcounter{#1}
 
     \expandafter\newcommand\csname #1\endcsname[2]{
+
+        \label{#1-\csname the#1\endcsname}
+        
+        \ifx\relax##1\relax
+            % \expandafter\newcommand\csname #1-\csname the#1\endcsname\endcsname[1]{%
+            %     \hyperlink{#1-\csname the#1\endcsname}{
+            %         \textbf{\color{#2}#3 ##1}\color{black}
+            %     }
+            % }%
+        \else
+            % IF ##1 is not empty
+            \expandafter\newcommand\csname #1-##1\endcsname[1]{%
+                \hyperlink{#1-\csname the#1\endcsname}{
+                    \textbf{\color{#2!80}#3 ##1}\color{black}
+                }
+            }%
+        \fi
+
         \subsection*{
-            \color{#2}#3\small$_{(\csname the#1\endcsname)}$\normalsize : 
+            \color{#2}\hypertarget{#1-\csname the#1\endcsname}{#3}\small$_{(\csname the#1\endcsname)}$\normalsize : 
             \color{black}##1}
-        \stepcounter{#1}
         \begin{mysection}[#2]
-        ##2
+            ##2
         \end{mysection}
+
+        \stepcounter{#1}
     }
 }
 \makeatother
+
+\newcommand{\refsec}[2]{%
+    \expandafter\csname #1-#2\endcsname{#2}%
+}
+
+% \newcommand{\refsec}[2]{%
+%     \expandafter\csname #1#2\endcsname%
+% }
 
 \createsection{pr}{Blue}{Propriété}
 \createsection{df}{ForestGreen}{Définition}
@@ -90,8 +117,11 @@
 }
 
 \newcommand{\demo}[2]{
-    \subsubsection*{\color{Red}$\rightarrow$ Démonstration: \color{black}#1} 
-    #2 $\square$
+    \ifthenelse{\boolean{demonstration}}{
+        \subsubsection*{\color{Red}$\rightarrow$ Démonstration: \color{black}#1} 
+        #2 $\square$
+    }{
+    }
 }
 
 \newcommand{\tice}[3]{
@@ -144,6 +174,7 @@
 % MATH
 
 \newcommand{\modxy}[2]{\sqrt{#1^2+#2^2}}
+\newcommand{\acroissement}[2]{\frac{#1(#2+h)-#1(#2)}{h}}
 
 % COMMANDS
 
