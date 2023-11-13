@@ -52,15 +52,15 @@
 }
 
 \demo{Cas général}{
-    Soit $\varepsilon > 0$. Il existe $\delta > 0$ tel que,\\
+    Soit $\varepsilon > 0$. Il existe $\delta > 0$ tel que,
     si $|x-x_0|<\delta$, alors $|f(x)-f(x_0)|<\varepsilon$\\
     Soit $|h|<\delta$, alors:
     \begin{align*}
         \acrF &= \frac{1}{h}\intf\\
         \ialors \acrF - f(x_0) &= \frac{1}{h} - \intxx{f(t)-f(x_0)}
     \end{align*}
-    $|h|<0$, alors \pt $t\in[x_0,x_0+h]$, on a $|t-x_0| < \delta$\\
-    et donc $|f(t)-f(x_0) \leqslant \varepsilon$. Alors:
+    $|h|<0$, alors \pt{} $t\in[x_0,x_0+h]$, on a $|t-x_0| < \delta$\\
+    et donc $|f(t)-f(x_0)| \leqslant \varepsilon$. Alors:
     \begin{align*}
         |\acrF - f(x_0)| &\leqslant \frac{1}{h}\intxx{|f(t)-f(x_0)|}\\
         &\leqslant \frac{1}{h} \intxx{\varepsilon}\\
