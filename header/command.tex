@@ -16,17 +16,40 @@
 % }
 
 \newenvironment{mysection}[1][gray!20]{%
+
+    \ifthenelse{\boolean{boxedProperties}}{
+        \begin{tcolorbox}[colback=white,
+            colframe=#1!50,
+            boxrule=5pt,
+            outer arc=0pt,
+            arc=0pt,
+            grow to left by= -5pt
+    ]
+    }{
+        \begin{tcolorbox}[colback=white,
+            colframe=#1!50,
+            boxrule=-1pt,
+            arc=0pt,
+            leftrule=3pt,
+            left = 8pt,
+            % boxsep= -3pt,
+            % show bounding box
+            grow to left by= -5pt
+            % fill downwards
+        ]
+    }
+}{%
+    \end{tcolorbox}
+}
+
+\newenvironment{mysubsection}[1][gray!20]{%
     \begin{tcolorbox}[colback=white,
         colframe=#1!50,
         boxrule=-1pt,
+        outer arc=0pt,
         arc=0pt,
-        leftrule=3pt,
-        left = 8pt,
-        % boxsep= -3pt,
-        % show bounding box
         grow to left by= -5pt
-        % fill downwards
-        ]
+    ]
 }{%
     \end{tcolorbox}
 }
@@ -55,9 +78,22 @@
             }%
         \fi
 
-        \subsection*{
-            \color{#2}\hypertarget{#1-\csname the#1\endcsname}{#3}\small$_{(\csname the#1\endcsname)}$\normalsize : 
-            \color{black}##1}
+        \def\sectionID{\ifthenelse{\boolean{showID}}
+        {\csname the#1\endcsname}{}}
+        
+        \def\sectiontitle{
+            \color{#2}\hypertarget{#1-\csname the#1\endcsname}
+            {#3}\ifthenelse{\boolean{parenthisedID}}
+            {\small$_{(\sectionID)}$}
+            { \sectionID}\normalsize : 
+            \color{black}##1
+        }
+        
+        \@ifclassloaded{beamer}{
+            \textbf{\sectiontitle}
+        }{
+            \subsection*{\sectiontitle}
+        }
         \begin{mysection}[#2]
             ##2
         \end{mysection}
@@ -75,9 +111,9 @@
 %     \expandafter\csname #1#2\endcsname%
 % }
 
-\createsection{pr}{Blue}{Propriété}
-\createsection{df}{ForestGreen}{Définition}
-\createsection{thm}{Plum}{Théorème}
+\createsection{pr}{\PropertyColor}{Propriété}
+\createsection{df}{\DefinitionColor}{Définition}
+\createsection{thm}{\TheoremColor}{Théorème}
 
 \newcommand{\ex}[2]{
     \subsubsection*{
@@ -90,36 +126,59 @@
     #2
 }
 
-\newcommand{\rap}[2]{
-    \subsection*{Rappel : #1}
-    #2
-}
+\makeatletter
+\newcommand{\createsubsection}[3]{
+    \newcounter{#1}
+    \stepcounter{#1}
 
-\newcommand{\cor}[2]{
-    \subsection*{\color{NavyBlue}Corolaire : \color{black}#1}
-    #2
-}
+    \expandafter\newcommand\csname #1\endcsname[2]{
 
-\newcommand{\ctr}[2]{
-    \subsection*{Contraposée : #1}
-    #2
-}
+        \label{#1-\csname the#1\endcsname}
+        
+        \ifx\relax##1\relax
+        \else
+            % IF ##1 is not empty
+            \expandafter\newcommand\csname #1-##1\endcsname[1]{%
+                \hyperlink{#1-\csname the#1\endcsname}{
+                    \textbf{\color{#2!80}#3 ##1}\color{black}
+                }
+            }%
+        \fi
 
-\newcommand{\app}[2]{
-    \subsection*{\color{RedViolet}Application : \color{black}#1}
-    #2
-}
+        % \def\sectionID{\ifthenelse{\boolean{showID}}
+        % {\csname the#1\endcsname}{}}
+        
+        \def\sectiontitle{
+            \color{#2}\hypertarget{#1-\csname the#1\endcsname}
+            {#3} \normalsize : 
+            \color{black}##1
+        }
+        \@ifclassloaded{beamer}{
+            \begin{mysubsection}[#2]
+            \textbf{\sectiontitle \ifx\relax##1\relax\else \\ \fi}
+                ##2
+            \end{mysubsection}
+        }{
+            \subsubsection*{\sectiontitle}
+            ##2
+        }
 
-% \newcommand\ex[1]{\subsubsection*{\color{Thistle}Exercice : \color{black}#1}}
-\newcommand{\rmq}[2]{
-    \subsubsection*{\color{Thistle}Remarque : \color{black}#1}
-    #2
+        \stepcounter{#1}
+    }
 }
+\makeatother
+
+\createsubsection{cor}{NavyBlue}{Corollaire}
+\createsubsection{ctr}{NavyBlue}{Contraposée}
+\createsubsection{app}{RedViolet}{Application}
+\createsubsection{rmdr}{Thistle}{Rappel}
+\createsubsection{rmk}{Thistle}{Remarque}
+\createsubsection{expl}{gray}{Exemple}
+\createsubsection{demoSUB}{Red}{$\rightarrow$ Démonstration}
 
 \newcommand{\demo}[2]{
     \ifthenelse{\boolean{demonstration}}{
-        \subsubsection*{\color{Red}$\rightarrow$ Démonstration: \color{black}#1} 
-        #2 $\square$
+        \demoSUB{#1}{#2 $\square$}
     }{
     }
 }

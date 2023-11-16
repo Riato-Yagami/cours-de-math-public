@@ -1,16 +1,22 @@
-% ACTIVITY VARIABLES %%%
-\def\author{Jules PESIN}
-%%%%%%%%%%%%%%%%%%%%%%%%
-
 % GLOBAL VARIABLES %%%
 \graphicspath{{images}}
 \def\cwidth{4cm}
 \def\tspace{0.5cm}
 \def\title{\theme}
 
+% BOOLEAN %%%
 \newboolean{anwser}
-\setboolean{anwser}{false}
-
 \newboolean{demonstration}
+\newboolean{boxedProperties}
+\newboolean{showID}
+\newboolean{parenthisedID}
+
+\setboolean{anwser}{false}
 \setboolean{demonstration}{true}
-%%%%%%%%%%%%%%%%%%%%%%
+\setboolean{parenthisedID}{true}
+\setboolean{showID}{true}
+\setboolean{boxedProperties}{false} % false = edge
+
+\def\DefinitionColor{ForestGreen}
+\def\PropertyColor{Blue}
+\def\TheoremColor{Plum}

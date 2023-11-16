@@ -1,0 +1,21 @@
+% FANCYHDR
+
+\setlength{\headheight}{18pt}
+\fancyhead[C]{\normalsize \title}
+\fancyhead[R]{}
+\fancyfoot[L]{\author}
+\fancyfoot[C]{\textbf{Page \thepage/\pageref{LastPage}}}
+\fancyfoot[R]{\date}
+
+\fancypagestyle{firstpage}{
+    \setlength{\headheight}{29pt}
+    \fancyhead[C]{\LARGE \title}
+    \fancyhead[R]{}
+    \fancyfoot[L]{\author}
+    \fancyfoot[C]{\textbf{Page \thepage/\pageref{LastPage}}}
+    \fancyfoot[R]{\date}
+}
+
+\thispagestyle{firstpage}
+
+% \fancyfoot[C]{\textbf{Page 1/1}}
