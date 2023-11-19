@@ -6,36 +6,43 @@
 %%
 
 % \maketitle
-\slide{Exercices}{
-    \img{/stage-M2/seance4/exo_13_figure_papier_quadrille.png}
-}
+% \slide{Exercices}{
+%     \img{/stage-M2/seance-4/exo_13_figure_papier_quadrille.png}
+% }
 
-\slide{}{
+\slide{Exercices}{
     \def\tikzScale{0.5cm}
     \def\figShift{(4, 3)}
+    \def\pointColor{black}
+    \def\fig{(0,0) -- (0,2) -- (1,2) -- (1,1) -- (3,1) -- (3,0) -- cycle}
     \begin{minipage}{0.45\textwidth}
-        \img{/stage-M2/seance4/exo_13_figure_papier_quadrille.png}
+        \img{/stage-M2/seance-4/exo_13_figure_papier_quadrille.png}
     \end{minipage}
     \begin{minipage}{0.45\textwidth}
         \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
+            \fill[green!30, shift= \figShift] \fig;
             \drawGrid{11}{8}{0.01mm};
-            \onslide<2->{
-                \draw[line width= 0.8mm, Green, shift= \figShift] (0,0) -- (0,2) -- (1,2) -- (1,1) -- (3,1) -- (3,0) -- cycle;
-                \node[shift=\figShift] at (-0.5,-0.5) {A};
-                \node[shift=\figShift] at (3.5,-0.5) {B};
-                \node[shift=\figShift] at (-0.5,2.5) {C};
-            }
+            % \onslide<2->{
+                \draw[line width= 0.24mm, Green, shift= \figShift] \fig;
+                \node[shift=\figShift, color = red] at (1.5,0.5) {1};
+                \drawPoint{A}{0}{0}{\figShift};
+                \drawPoint{B}{3}{0}{\figShift};
+                \drawPoint{C}{0}{2}{\figShift};
+                % \node[shift=\figShift] at (-0.5,-0.5) {A};
+                % \node[shift=\figShift] at (3.5,-0.5) {B};
+                % \node[shift=\figShift] at (-0.5,2.5) {C};
+            % }
         \end{tikzpicture}
     \end{minipage}
 }
 
 \slide{}{
-    \img{/stage-M2/seance4/exo_5_p183_myriade_4e_2016.png}[9cm]
+    \img{/stage-M2/seance-4/exo_5_p183_myriade_4e_2016.png}[9cm]
 }
 
-\slide{}{
-    \img{/stage-M2/seance4/exo_translation_triangle_quadrillage.png}[9cm]
-}
+% \slide{}{
+%     \img{/stage-M2/seance-4/exo_translation_triangle_quadrillage.png}[9cm]
+% }
 
 \slide{Cours}{
     \bsubsec{Sur Papier blanc}
@@ -43,17 +50,17 @@
         Construire le point A' image du point A par la translation qui transforme B en C.
     }
     \vspace*{-1cm}
-    \img{stage-M2/seance4/translation_point.png}[6cm]
+    \img{stage-M2/seance-4/translation_point.png}[6cm]
 }
 
 
 \slide{}{
-    \img{stage-M2/seance4/translation_point.png}[9cm]
+    \img{stage-M2/seance-4/translation_point.png}[9cm]
 }
 
 \slide{}{
     \begin{minipage}{0.35\textwidth}
-        \img{stage-M2/seance4/translation_point.png}
+        \img{stage-M2/seance-4/translation_point.png}
     \end{minipage}
     \begin{minipage}{0.55\textwidth}
         \underline{Etape de construction:}
@@ -84,5 +91,5 @@
         Construire l'image du triangle ABC par la translation qui envoie D sur E.
     }
 
-    \img{stage-M2/seance4/translation_triangle.png}[6cm]
+    \img{stage-M2/seance-4/translation_triangle.png}[6cm]
 }
