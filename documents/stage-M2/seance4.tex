@@ -1,0 +1,88 @@
+% VARIABLES %%%
+\def\authors{PESIN - CADOT - COURTIN}
+% \date{\today}
+\def\longTitle{Translation}
+\def\shortTitle{Translation - Construire}
+%%
+
+% \maketitle
+\slide{Exercices}{
+    \img{/stage-M2/seance4/exo_13_figure_papier_quadrille.png}
+}
+
+\slide{}{
+    \def\tikzScale{0.5cm}
+    \def\figShift{(4, 3)}
+    \begin{minipage}{0.45\textwidth}
+        \img{/stage-M2/seance4/exo_13_figure_papier_quadrille.png}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
+            \drawGrid{11}{8}{0.01mm};
+            \onslide<2->{
+                \draw[line width= 0.8mm, Green, shift= \figShift] (0,0) -- (0,2) -- (1,2) -- (1,1) -- (3,1) -- (3,0) -- cycle;
+                \node[shift=\figShift] at (-0.5,-0.5) {A};
+                \node[shift=\figShift] at (3.5,-0.5) {B};
+                \node[shift=\figShift] at (-0.5,2.5) {C};
+            }
+        \end{tikzpicture}
+    \end{minipage}
+}
+
+\slide{}{
+    \img{/stage-M2/seance4/exo_5_p183_myriade_4e_2016.png}[9cm]
+}
+
+\slide{}{
+    \img{/stage-M2/seance4/exo_translation_triangle_quadrillage.png}[9cm]
+}
+
+\slide{Cours}{
+    \bsubsec{Sur Papier blanc}
+    \expl{Translation d'un point}{
+        Construire le point A' image du point A par la translation qui transforme B en C.
+    }
+    \vspace*{-1cm}
+    \img{stage-M2/seance4/translation_point.png}[6cm]
+}
+
+
+\slide{}{
+    \img{stage-M2/seance4/translation_point.png}[9cm]
+}
+
+\slide{}{
+    \begin{minipage}{0.35\textwidth}
+        \img{stage-M2/seance4/translation_point.png}
+    \end{minipage}
+    \begin{minipage}{0.55\textwidth}
+        \underline{Etape de construction:}
+        \begin{enumerate}
+            \pause\item Tracer la droite parallèle à $(BC)$ passant par $A$.
+            \pause\item Sur cette nouvelle droite, 
+            placer $A'$ tel que $AA' = BC$ et $A$ vers $A'$ soit dans le même sens que $B$ vers $C$.
+        \end{enumerate}
+    \end{minipage}
+    
+    \pause\rmk{}{On a $(BC)//(AA')$ et $BC=AA'$ alors $ABCA'$ est un parallélogramme.}
+}
+
+\slide{}{
+    \pr{}{
+        Si $A'$ est l'image du point $A$ par la translation qui transforme $B$ en $C$,
+        alors $ABCA'$ est un parallélogramme.
+    }
+
+    \pause\rmk{}{
+        Pour construire l'image d'une figure par une translation,
+        on construit l'image de chacun de ses points par cette même translation.
+    }
+}
+
+\slide{}{
+    \expl{Translation d'une figure}{
+        Construire l'image du triangle ABC par la translation qui envoie D sur E.
+    }
+
+    \img{stage-M2/seance4/translation_triangle.png}[6cm]
+}
