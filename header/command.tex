@@ -237,27 +237,16 @@
 
 % COMMANDS
 
-\newcommand{\infoLecon}[3]{
-    \begin{tcolorbox}[colback=red!5!white,
-        colframe=red!75!black,
-       ]
-        \textbf{Niveau :}\vspace{-0.25cm}
-        \begin{multicols}{2}
-            \begin{itemize}[label=$\blacktriangleright$, font = \small \color{Red}]
-                #1
-            \end{itemize}
-        \end{multicols}
-        \tcblower
-        \textbf{Prérequis :}\vspace{-0.25cm}
-        \begin{multicols}{2}
-            \begin{itemize}[label=$\blacktriangleright$, font = \small \color{Red}]
-                #2
-            \end{itemize}
-        \end{multicols}
-    \end{tcolorbox}
-}
-
 \newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
+
+\NewDocumentCommand{\ifNotNull}{mm}{
+    \IfValueT{#1}{
+        \ifx\relax#1\relax
+        \else
+            #2
+        \fi
+    }
+}
 
 \NewDocumentCommand{\img}{m O{\linewidth} o}{%
     \begin{figure}[H]%
@@ -273,9 +262,44 @@
     \end{figure}%
 }
 
-\NewDocumentCommand{\niv}{m g}{%
-  \item \csn{#1}%
+\NewDocumentCommand{\ilink}{m g}{%
+    \item
+    \IfValueTF{#2}{\link{#1}{#2}}{\link{#1}}
+}
+
+\NewDocumentCommand{\link}{m g}{%
+  \csn{#1}%
   \IfValueT{#2}{(#2)}%
+}
+
+\newcommand{\infoLeconBox}[2]{
+    \textbf{#1 :}\vspace{-0.25cm}
+        \begin{multicols}{2}
+            \begin{itemize}[label=$\blacktriangleright$, font = \small \color{Red}]
+                #2
+            \end{itemize}
+        \end{multicols}
+        \vspace{-0.4cm}
+}
+
+\NewDocumentCommand{\infoLecon}{mooo}{
+    \begin{tcolorbox}[colback=red!5!white,
+        colframe=red!75!black]
+        \infoLeconBox{Niveau}{#1}
+        \ifNotNull{#2}{
+            \tcbline
+            \infoLeconBox{Prérequis}{#2}
+        }
+        \ifNotNull{#3}{
+            \tcbline
+            \infoLeconBox{Thèmes}{#3}
+        }
+        \ifNotNull{#4}{
+            \tcbline
+            \textbf{Motivation :} 
+            #4
+        }
+    \end{tcolorbox}
 }
 
 % TIKZ
