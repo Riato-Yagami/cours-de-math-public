@@ -6,21 +6,71 @@
 }
 
 \newcounter{sec}
-\stepcounter{sec}
+% \stepcounter{sec}
 \newcounter{subsec}
-\stepcounter{subsec}
+% \stepcounter{subsec}
 
 \newcommand{\bchap}[1]{
     \color{Red} CHAPITRE : #1\color{black}\\
 }
 
 \newcommand{\bsec}[1]{
-    \color{Red} \Roman{sec}. #1\color{black}\\
+    \def\ssec{\color{Red} \Roman{sec}. #1\color{black}\\}
     \stepcounter{sec}
-    \setcounter{subsec}{1}
+    \setcounter{subsec}{0}
 }
 
 \newcommand{\bsubsec}[1]{
-    \color{Green} \thesubsec) #1\color{black}\\
+    \def\ssubsec{\color{Green} \thesubsec) #1\color{black}\\}
     \stepcounter{subsec}
+}
+
+\newcommand{\palt}[2]{
+    \alt<#1>{#2}{\phantom{#2}}
+}
+
+\newcounter{question}
+
+\newcommand{\startQuestions}{
+    \setcounter{question}{2}
+}
+
+\newcommand{\iquestion}[2]{
+    \item $\question{#1}{#2}$
+}
+
+\newcommand{\question}[2]{
+        #1 = \onslide<\thequestion->{#2}
+        \stepcounter{question}
+}
+
+% \renewcommand{\question}[2]{
+%         #1 = #2
+% }
+
+
+\newcommand{\disableAnimation}{
+    \renewcommand{\question}[2]{
+        ##1 = ##2
+    }
+    
+    \renewcommand{\palt}[2]{
+        ##2
+    }
+}
+
+\newcommand{\shortAnimation}{
+    \renewcommand{\question}[2]{
+        ##1 = \onslide<2->{##2}
+    }
+}
+
+\newcommand{\firstSlide}{
+    \renewcommand{\question}[2]{
+        ##1 =
+    }
+
+    \renewcommand{\palt}[2]{
+        \phantom{##2}
+    }
 }

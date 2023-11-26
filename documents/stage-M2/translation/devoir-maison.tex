@@ -5,6 +5,9 @@
     PESIN - CADOT - COURTIN
 }
 
+\setboolean{anwser}{true}
+%%%
+
 \studentinfo
 
 \vspace*{-0.25cm}
@@ -17,7 +20,12 @@
 
 \ex{Construire une translation sur quadrillage}{
     \vspace*{-1cm}
-    \img{images/stage-M2/devoir-maison/exo_translation_triangle_quadrillage.png}[11cm]
+    \ifthenelse{\boolean{anwser}}{
+        \img{images/stage-M2/devoir-maison/exo_translation_triangle_quadrillage_correction.png}[11cm]
+    }{
+        \img{images/stage-M2/devoir-maison/exo_translation_triangle_quadrillage.png}[11cm]
+    }
+    
     \it{\underline{Indication:} Pour répondre à la question 2)
     vous pouvez placer deux points
     l'un image de l'autres par cette transformation.}\\
@@ -32,7 +40,12 @@
 \ex{Construire une translation sur papier blanc}{
     Construire l'image du quadrilatère $ABCD$ par la translation qui transforme A en B.
     \vspace*{0.45cm}
-    \img{stage-M2/devoir-maison/exo_translation_quadrilatere_papier_blanc.png}[4.5cm]
+    \ifthenelse{\boolean{anwser}}{
+        \img{stage-M2/devoir-maison/exo_translation_quadrilatere_papier_blanc_correction.png}[9cm]
+    }{
+        \img{stage-M2/devoir-maison/exo_translation_quadrilatere_papier_blanc.png}[4.5cm]
+    }
+    
 }
 
 

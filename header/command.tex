@@ -188,10 +188,6 @@
     #3
 }
 
-% \newcommand{\awsr}[1]{
-%     \color{OrangeRed}#1\color{black}
-% }
-
 \newlength{\parline}
 \newlength{\paroutindent}
 \newlength{\lineheight}
@@ -235,13 +231,29 @@
 \newcommand{\modxy}[2]{\sqrt{#1^2+#2^2}}
 \newcommand{\acroissement}[2]{\frac{#1(#2+h)-#1(#2)}{h}}
 
+\newcommand{\pow}[2]{
+    #1
+    \foreach \n in {2,...,#2}{
+        \times #1
+    }
+}
+\newcommand{\lPowBrace}[2]{
+    \underbrace{\pow{#1}{2} \times ... \times \pow{#1}{2}}_{#2 \textrm{ fois}}
+}
+\newcommand{\powBrace}[2]{
+    \underbrace{#1 \times ... \times #1}_{#2 \textrm{ fois}}
+}
+
 % COMMANDS
 
 \newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
 
-\NewDocumentCommand{\ifNotNull}{mm}{
+\NewDocumentCommand{\ifNotNull}{mmo}{
     \IfValueT{#1}{
         \ifx\relax#1\relax
+            \IfValueT{#3}{
+                #3
+            }
         \else
             #2
         \fi
@@ -314,8 +326,4 @@
     \node[shift={#4}, color = \pointColor] at (#2 - 0.5,#3 - 0.5) {#1};
     \draw[line width = \crossWidth, shift={#4}, color = \pointColor] (#2 - 0.25,#3) -- (#2 + 0.25,#3);
     \draw[line width = \crossWidth, shift={#4}, color = \pointColor] (#2,#3 - 0.25) -- (#2,#3 + 0.25);
-}
-
-\newcommand{\palt}[2]{
-    \alt<#1>{#2}{\phantom{#2}}
 }

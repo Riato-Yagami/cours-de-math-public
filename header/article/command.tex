@@ -1,0 +1,24 @@
+% BEAMER CONVERSION
+
+\newcommand{\bchap}[1]{\def\title{Chapitre: #1}}
+\newcommand{\bsec}[1]{\section{#1}}
+\newcommand{\bsubsec}[1]{\subsection{#1}}
+
+\newcommand{\ssec}{}
+\newcommand{\ssubsec}{}
+
+\newcommand{\slide}[2]{#2}
+
+\newcommand{\startQuestions}{}
+\newcommand{\iquestion}[2]{\item $#1 = #2$}
+
+\newcommand{\palt}[2]{#2}
+
+\newcommand{\disableAnimation}{}
+\newcommand{\shortAnimation}{}
+
+\newcommand{\firstSlide}{
+    \renewcommand{\iquestion}[2]{\item $##1 = \phantom{##2}$}
+    \renewcommand{\palt}[2]{\phantom{##2}}
+}
+

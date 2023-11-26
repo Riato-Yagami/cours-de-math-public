@@ -2,22 +2,62 @@
 \def\authors{PESIN - CADOT - COURTIN}
 % \date{\today}
 \def\longTitle{Les Puissances}
-\def\shortTitle{Puissances}
+\def\shortTitle{Puissance}
 %%
 
-% \maketitle
+% \disableAnimation
+% \shortAnimation
+\firstSlide
+
+\bsec{Puissance d'un nombre}
+\bsubsec{Puissance d'exposant positif}
 
 \slide{Cours - PRENDRE SON CAHIER A L'ENVERS}{
     \bchap{\longTitle}
     \vspace*{0.3cm}
-    \bsec{Puissance d'un nombre}
-    \bsubsec{Puissance d'exposant positif}
+    \ssec\ssubsec
 
     \df{}{
         Soient $n$ un entier supérieur ou égal à $1$ et $a$ un nombre relatif.
         \begin{align*}
             a^n = \palt{2}{
-                \underbrace{a \times a \times ... \times a \times a}_{n \textrm{ fois}}
+                \lPowBrace{a}{n}
+            }
+        \end{align*}
+    }
+}
+
+\slide{}{
+    \vspace*{-0.5cm}
+    \expl{}{
+        \startQuestions
+        \fsize{13pt}
+        \begin{enumerate}
+            \iquestion{2^5}{\pow{2}{5}
+            = \pow{4}{2} \times 2
+            = 16 \times 2 = 32}
+            \iquestion{(-3)^2}{\pow{(-3)}{2} = 9}
+            \iquestion{-3^2}{-(3\times 3) = -9}
+            \iquestion{2000^1}{2000}
+            \iquestion{0^{12}}{\powBrace{0}{12} = 0}
+            \iquestion{1^6}{\powBrace{1}{6} = 1}
+            \iquestion{(\frac{2}{3})^3}{\pow{\frac{2}{3}}{3} 
+            = \frac{4}{9} \times \frac{2}{3} 
+            = \frac{8}{27}}
+            \iquestion{0,5^2}{\pow{0,5}{2} = 0,25}
+        \end{enumerate}
+    }
+}
+
+\bsubsec{Puissance d'exposant négatif}
+\slide{}{
+    \ssubsec
+
+    \df{}{
+        Soient $n$ un entier supérieur ou égal à $1$ et a un nombre relatif non nul.
+        \begin{align*}
+            a^{-n} = \palt{2}{
+                \frac{1}{a^n}
             }
         \end{align*}
     }
@@ -25,11 +65,118 @@
 
 \slide{}{
     \expl{}{
-        \begin{multicols*}{2}
-            \begin{equation*}
-                2^5 = 2 \times 2 \times 2 \times 2 \times 2\\
-                (-3)^2 = 
-            \end{equation*}
-        \end{multicols*}
+        \startQuestions
+        \begin{enumerate}
+            \iquestion{3^{-2}}{\frac{1}{3^2} = \frac{1}{9}}
+            \iquestion{5^{-1}}{\frac{1}{5^1} = \frac{1}{5}}
+            \iquestion{\frac{1}{4^{3}}}{4^{-3}}
+            \iquestion{\frac{1}{x^{3}}}{x^{-3}}
+        \end{enumerate}
     }
 }
+
+\slide{}{
+    \createsubsection{cvt}{NavyBlue}{Convention}
+    \cvt{}{
+        \begin{itemize}
+            \item Pour tout nombre relatif $a$ : $a^0 = 1$
+            \item En particulier: $0^0 = 1$
+        \end{itemize}
+    }
+}
+
+\bsec{Propriété sur les puissances}
+\bsubsec{Produit et quotient de deux puissances d'un même nombre}
+
+\slide{}{
+    \ssec\ssubsec
+
+    \pr{}{
+        Soient $q$ et $p$ deux entiers et $a$ un nombre relatif.
+        \startQuestions
+        \begin{itemize}
+            \iquestion{a^q \times a^p}{a^{q+p}}
+            \iquestion{(a^q)^p}{a^{q \times p}}
+            \iquestion{\si a \neq 0, \frac{a^q}{a^p}}{a^{q-p}}
+        \end{itemize}
+    }
+}
+
+
+\slide{}{
+    \expl{}{
+        \startQuestions\startQuestions
+        \begin{enumerate}
+            \iquestion{11^2 \times 11^6}{11^{(2+6)} = 11^8}
+            \iquestion{8^3 \times 8^2 \times 8^4}{8^{(3+2+4)} = 8^9}
+            \iquestion{(2^3)^2}{2^{(3\times 2)}= 2^6}
+            \iquestion{(2023^{11})^2}{2023^{(11\times 2)}= 2023^22}
+            \iquestion{\frac{(-5)^6}{(-5)^3}}{(-5)^{6-3} = (-5)^{3}}
+        \end{enumerate}
+    }
+}
+
+\bsubsec{Puissances d'un produit, d'un quotient.}
+\slide{}{
+    \ssubsec
+
+    \pr{}{
+        Soient n un entier, a et b deux nombres relatifs.
+
+        \startQuestions
+        \begin{itemize}
+            \iquestion{(a\times b)^n}{a^n \times b^n}
+            \iquestion{\si b\neq 0, (\frac{a}{b})^n}{\frac{a^n}{b^n}}
+        \end{itemize}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        \begin{enumerate}
+            \iquestion{(2\times 3)^4}{2^4 \times 3^4}
+            \iquestion{(\frac{2}{3})^5}{\frac{2^5}{3^5}}
+            \iquestion{4^3 \times 7^3}{(4 \times 7)^3 = 28 ^3}
+            \iquestion{\frac{36^7}{3^7}}{(\frac{36}{3})^7 = 12^7}
+        \end{enumerate}
+    }
+}
+
+\bsec{Puissance de $10$}
+\bsubsec{Définition}
+\slide{}{
+    \ssec\ssubsec
+    \rmk{}{
+        \def\tenPow{1\underbrace{0...0}_{n \textrm{ zéros}}}
+        Avec $n$ un entier positif, les puissances de $10$ s'écrivent :
+        \startQuestions
+        \begin{itemize}
+            \iquestion{10^n}{\tenPow}
+            \iquestion{10^{-n}}{
+                \frac{1}{10^n} 
+                = \frac{1}{\tenPow} 
+                = \underbrace{0,0..0}_{n \textrm{ zéros}}1
+            }
+
+        \end{itemize}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        \begin{enumerate}
+            \iquestion{10^5}{100\,000}
+            \iquestion{10^{-4}}{0,0001}
+            \iquestion{10^0}{1}
+            \iquestion{10^1}{10}
+            \iquestion{10^{-1}}{0,1}
+            \iquestion{100}{10^{2}}
+            \iquestion{0,001}{10^{-3}}
+        \end{enumerate}
+    }
+}
+
+
+
