@@ -80,8 +80,14 @@
 
         \def\sectionID{\ifthenelse{\boolean{showID}}
         {\csname the#1\endcsname}{}}
+
+        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{
+            \begin{mysection}[#2]
+                ##2
+            \end{mysection}
+        }}
         
-        \def\sectiontitle{
+        \def\sectionTitle{
             \color{#2}\hypertarget{#1-\csname the#1\endcsname}
             {#3}\ifthenelse{\boolean{parenthisedID}}
             {\small$_{(\sectionID)}$}
@@ -90,13 +96,11 @@
         }
         
         \@ifclassloaded{beamer}{
-            \textbf{\sectiontitle}
+            \textbf{\sectionTitle}
         }{
-            \subsection*{\sectiontitle}
+            \subsection*{\sectionTitle}
         }
-        \begin{mysection}[#2]
-            ##2
-        \end{mysection}
+        \sectionContent
 
         \stepcounter{#1}
     }
@@ -147,20 +151,23 @@
 
         % \def\sectionID{\ifthenelse{\boolean{showID}}
         % {\csname the#1\endcsname}{}}
+
+        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{##2}}
         
-        \def\sectiontitle{
+        \def\sectionTitle{
             \color{#2}\hypertarget{#1-\csname the#1\endcsname}
             {#3} \normalsize : 
             \color{black}##1
         }
+
         \@ifclassloaded{beamer}{
             \begin{mysubsection}[#2]
-            \textbf{\sectiontitle \ifx\relax##1\relax\else \\ \fi}
-                ##2
+            \textbf{\sectionTitle \ifx\relax##1\relax\else \\ \fi}
+            \sectionContent
             \end{mysubsection}
         }{
-            \subsubsection*{\sectiontitle}
-            ##2
+            \subsubsection*{\sectionTitle}
+            \sectionContent
         }
 
         \stepcounter{#1}
@@ -168,17 +175,74 @@
 }
 \makeatother
 
+\makeatletter
+\newcommand{\createsubsubsection}[3]{
+    \newcounter{#1}
+    \stepcounter{#1}
+
+    \expandafter\newcommand\csname #1\endcsname[2]{
+
+        \label{#1-\csname the#1\endcsname}
+        
+        \ifx\relax##1\relax
+        \else
+            % IF ##1 is not empty
+            \expandafter\newcommand\csname #1-##1\endcsname[1]{%
+                \hyperlink{#1-\csname the#1\endcsname}{
+                    \textbf{\color{#2!80}#3 ##1}\color{black}
+                }
+            }%
+        \fi
+
+        % \def\sectionID{\ifthenelse{\boolean{showID}}
+        % {\csname the#1\endcsname}{}}
+
+        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{##2}}
+        
+        \def\sectionTitle{
+            \color{#2}\hypertarget{#1-\csname the#1\endcsname}
+            {#3} \normalsize : 
+            \color{black}##1
+        }
+
+        \ifthenelse{\boolean{outline}}{}{
+            \@ifclassloaded{beamer}{
+                \begin{mysubsection}[#2]
+                \textbf{\sectionTitle \ifx\relax##1\relax\else \\ \fi}
+                \sectionContent
+                \end{mysubsection}
+            }{
+                \subsubsection*{\sectionTitle}
+                \sectionContent
+            }
+        }
+        \stepcounter{#1}
+    }
+}
+\makeatother
+
 \createsubsection{cor}{NavyBlue}{Corollaire}
 \createsubsection{ctr}{NavyBlue}{Contraposée}
-\createsubsection{app}{RedViolet}{Application}
 \createsubsection{rmdr}{Thistle}{Rappel}
-\createsubsection{rmk}{Thistle}{Remarque}
-\createsubsection{expl}{gray}{Exemple}
-\createsubsection{demoSUB}{Red}{$\rightarrow$ Démonstration}
+\createsubsection{mthd}{OrangeRed}{Méthode}
+% \createsubsection{hintSUB}{black}{\it{Indication}}
+
+\createsubsubsection{demoSUB}{Red}{$\rightarrow$ Démonstration}
+\createsubsubsection{rmk}{Thistle}{Remarque}
+\createsubsubsection{expl}{gray}{Exemple}
+\createsubsubsection{app}{RedViolet}{Application}
+
+\newcommand{\hint}[2]{
+    \textit{Indication: #2}
+}
 
 \newcommand{\demo}[2]{
     \ifthenelse{\boolean{demonstration}}{
-        \demoSUB{#1}{#2 $\square$}
+        \demoSUB{#1}{
+            \ifNotNull{#2}{
+                #2 $\square$
+            }
+        }
     }{
     }
 }
@@ -244,6 +308,14 @@
     \underbrace{#1 \times ... \times #1}_{#2 \textrm{ fois}}
 }
 
+\newcommand{\lfbrace}[1]{
+    \left\{
+        \begin{array}{ll}
+            #1
+        \end{array}
+    \right.
+}
+
 % COMMANDS
 
 \newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
@@ -297,7 +369,7 @@
 \NewDocumentCommand{\infoLecon}{mooo}{
     \begin{tcolorbox}[colback=red!5!white,
         colframe=red!75!black]
-        \infoLeconBox{Niveau}{#1}
+        \infoLeconBox{Niveaux}{#1}
         \ifNotNull{#2}{
             \tcbline
             \infoLeconBox{Prérequis}{#2}

@@ -3,12 +3,15 @@
 % \titleformat*{\section}{\small\bfseries}
 
 \titleformat{\section}
-{\normalfont\large\bfseries\color{red}}{\thesection}{0.6em}{}
+{\normalfont\large\bfseries\color{\SectionColor}}{\thesection}{0.6em}{}
 
 \titleformat{\subsection}
-{\normalfont\normalsize\bfseries\color{Green}}{\thesubsection}{0.6em}{}
+{\normalfont\normalsize\bfseries\color{\SubSectionColor}}{\thesubsection}{0.6em}{}
 
 \titleformat{\subsubsection}
 {\normalfont\small\bfseries}{\thesection}{0.6em}{}
 
 \renewcommand{\theenumi}{\scriptsize\color{Blue}\arabic{enumi}}
+
+% \frenchbsetup{StandardItemLabels=true}
+\renewcommand{\labelitemi}{$\color{Blue}.$}
