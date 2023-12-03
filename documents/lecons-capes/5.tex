@@ -14,7 +14,7 @@
 }
 %%%%%%%%%%%%%%
 
-\setboolean{outline}{true}
+% \setboolean{outline}{true}
 % \setboolean{demonstration}{false}
 
 \hbox{}
@@ -92,7 +92,7 @@
     \begin{align*}
         \textrm{moyenne} &= \frac{\textrm{somme des valeurs}}{\textrm{effectif total}}\\
         \moy{x} &= \sN \sumN x_i\\
-        &= \sN \sump n_i x_{a_i} \textrm{ (\textbf{moyenne pondérée} avec les $x_{a_i}$ tous différent)}
+        &= \sN \sump n_{a_i} x_{a_i} \textrm{ \textbf{moyenne pondérée} avec } \sump n_{a_i} = N
     \end{align*}
 }
 
@@ -160,6 +160,13 @@
         &= \sN \sumN x_i^2 - 2\moy{x}^2 + \moy{x}^2\\
         &= \sN \sumN x_i^2 - \moy{x}^2
     \end{align*}
+}
+
+\pr{Caractère quadratique de la variance}{
+    Soient $a,b\in\m{R}^2$.
+    \begin{equation*}
+        V(ax+b) = a^2V(x)
+    \end{equation*}
 }
 
 \df{Ecart type}{
@@ -309,11 +316,73 @@
     \end{align*}
 }
 
+\newcommand{\partJ}[1]{
+    \frac{\partial J}{\partial #1}
+}
+
 \demo{Méthode experte}{
-    vsq
+    Soit $J(a,b) = \sumN (y_i - (a x_i + b))^2 = \sumN (y_i - a x_i - b)^2$.\\
+    Un minimum d'une fonction de plusieurs variables ne peut se produire qu'en un point où les dérivées partielles s'annulent.
+    On suppose alors:
+    \begin{align*}
+        &\lfbrace{
+            \partJ{a} &= 0\\
+            \partJ{b}&= 0
+        }
+        \ialors &\lfbrace{
+            \partJ{a} &= \sumN -2x_i(y_i - a x_i - b) = 0\\
+            \partJ{b} &= \sumN -2(y_i - a x_i - b) = 0
+        }
+        \ialors &\lfbrace{
+            \sumN x_i(y_i - a x_i - b) &= 0\\
+            \sumN y_i - a x_i - b &= 0
+        }
+        \ialors &\lfbrace{
+            \sumN x_i y_i - a \sumN x_i^2 - b \sumN x_i &= 0\\
+            -Nb + \sumN y_i - a \sumN x_i &= 0
+        }
+        \ialors &\lfbrace{
+            \sumN x_i y_i - a \sumN x_i^2 - b N\moy{x} &= 0\\
+            -Nb + N\moy{y} - a N\moy{x} &= 0
+        }
+        \ialors &\lfbrace{
+            \sumN x_i y_i - a \sumN x_i^2 - b N\moy{x} &= 0\\
+            - b + \moy{y} - a \moy{x} &= 0
+        }
+        \ialors &\lfbrace{
+            \sumN x_i y_i - a \sumN x_i^2 - b N\moy{x} = 0\\
+            b = \moy{y} - a \moy{x}  \textrm{ (on retrouve le résultat admis précédemment)}
+        }
+        \ialors &\lfbrace{
+            \sumN x_i y_i - a \sumN x_i^2 - N\moy{x}(\moy{y} - a \moy{x}) = 0\\
+            b = \moy{y} - a \moy{x}
+        }
+        \ialors &\lfbrace{
+            \sumN x_i y_i - N\moy{x}\moy{y} - a (\sumN x_i^2 - N \moy{x}) = 0\\
+            b = \moy{y} - a \moy{x}
+        }
+        \ialors &\lfbrace{
+            (\frac{1}{N} \sumN x_i y_i -  \moy{x}\moy{y}) - a (\frac{1}{N} \sumN x_i^2 - \moy{x}) = 0\\
+            b = \moy{y} - a \moy{x}
+        }
+        \ialors &\lfbrace{
+            Cov(x,y) - a V(x) = 0 \textrm{ (König-Huygens)}\\
+            b = \moy{y} - a \moy{x}
+        }
+        \ialors &\lfbrace{
+            a &= \frac{Cov(x,y)}{V(x)}\\
+            b &= \moy{y} - a \moy{x}
+        }
+    \end{align*}
 }
 
 \subsection{Ajustement non affine}
 
+\mthd{Changement de variable}{
+    Dans certain cas,
+    les points du nuage de semblent se répartir autour d'une courbe $y=af(x)+b$ autre qu'une droite.\\
+    Il est parfois possible de se ramener à un ajustement affine à l'aide d'un changement de variable $u=f(x)$.
+    On peut alors utiliser les méthodes précédentes pour trouver $a$ et $b$.
+}
 
 
