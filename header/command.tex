@@ -197,7 +197,7 @@
         % \def\sectionID{\ifthenelse{\boolean{showID}}
         % {\csname the#1\endcsname}{}}
 
-        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{##2}}
+        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{\color{black}##2}}
         
         \def\sectionTitle{
             \color{#2}\hypertarget{#1-\csname the#1\endcsname}
@@ -205,7 +205,7 @@
             \color{black}##1
         }
 
-        \ifthenelse{\boolean{outline}}{}{
+        \ifthenelse{\boolean{subsectionInOutline}}{}{
             \@ifclassloaded{beamer}{
                 \begin{mysubsection}[#2]
                 \textbf{\sectionTitle \ifx\relax##1\relax\else \\ \fi}
@@ -222,15 +222,18 @@
 \makeatother
 
 \createsubsection{cor}{NavyBlue}{Corollaire}
+\createsubsection{lem}{NavyBlue}{Lemme}
 \createsubsection{ctr}{NavyBlue}{Contraposée}
 \createsubsection{rmdr}{Thistle}{Rappel}
 \createsubsection{mthd}{OrangeRed}{Méthode}
 % \createsubsection{hintSUB}{black}{\it{Indication}}
 
-\createsubsubsection{demoSUB}{Red}{$\rightarrow$ Démonstration}
 \createsubsubsection{rmk}{Thistle}{Remarque}
 \createsubsubsection{expl}{gray}{Exemple}
 \createsubsubsection{app}{RedViolet}{Application}
+
+\createsubsubsection{demoSUB}{Red}{$\rightarrow$ Démonstration}
+\createsubsubsection{ticeSUB}{Orchid}{TICE}
 
 \newcommand{\hint}[2]{
     \textit{Indication: #2}
@@ -248,8 +251,7 @@
 }
 
 \newcommand{\tice}[3]{
-    \subsection*{\color{Orchid}TICE - \underbar{#1} : \color{black}#2}
-    #3
+    \ticeSUB{#1 - #2}{#3}
 }
 
 \newlength{\parline}
@@ -316,6 +318,20 @@
     \right.
 }
 
+\newcommand{\dl}[1]{
+    o(x^{#1})
+}
+
+\newcommand{\pgcd}[2]{
+    % \PGCD(#1,#2)
+    #1 \wedge #2
+}
+
+\newcommand{\ppcm}[2]{
+    % \PPCM(#1,#2)
+    #1 \vee #2
+}
+
 % COMMANDS
 
 \newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
@@ -352,8 +368,13 @@
 }
 
 \NewDocumentCommand{\link}{m g}{%
-  \csn{#1}%
-  \IfValueT{#2}{(#2)}%
+    \csn{#1}%
+    \IfValueT{#2}{(#2)}%
+}
+
+\NewDocumentCommand{\TODO}{g}{%
+    \color{Red} $\rightarrow$ \textbf{TODO}
+    \IfValueT{#1}{(#1)}%
 }
 
 \newcommand{\infoLeconBox}[2]{

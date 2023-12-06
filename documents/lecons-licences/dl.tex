@@ -1,0 +1,34 @@
+% VARIABLES %%%
+\def\theme{Statistique à une ou deux variables, représentation et analyse de données}
+\def\date{02/12/2023}
+%%%%%%%%%%%%%%%
+
+% DEFINITIONS %
+\def\eq{&\operatorname*{=}_{x \rightarrow 0}}
+\def\ppp{+ ... +}
+\newcommand{\pdl}[1]{
+    + \dl{#1}\\
+}
+%%%%%%%%%%%%%%
+
+\hbox{\vspace{-0.7cm}}
+
+\subsection{Développements limités usuels}
+\vspace{-1cm}
+\begin{align*}
+    e^x \eq 1 + x + \frac{x^2}{2} \ppp \frac{x^n}{n!} \pdl{n}
+    \ch(x) \eq 1 + \frac{x^2}{2} \ppp \frac{x^{2n}}{(2n)!} \pdl{2n}
+    \sh(x) \eq x + \frac{x^3}{6} \ppp \frac{x^{2n+1}}{(2n+1)!} \pdl{2n+1}
+    \cos(x) \eq 1 - \frac{x^2}{2} \ppp (-1)^{2n}\frac{x^{2n}}{(2n)!} \pdl{2n}
+    \sin(x) \eq x - \frac{x^3}{6} \ppp (-1)^{2n+1}\frac{x^{2n+1}}{(2n+1)!} \pdl{2n+1}
+    \tan(x) \eq x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} \pdl{7}
+    \frac{1}{1-x} \eq 1 + x + x^2 \ppp x^n \pdl{n}
+    \frac{1}{1+x} \eq 1 - x + x^2 \ppp (-1)^{n} x^n \pdl{n}
+    \ln(1+x) \eq x - \frac{x^2}{2} \ppp (-1)^{n}\frac{x^{n}}{(n)!} \pdl{n}
+    \ln(1-x) \eq x + \frac{x^2}{2} \ppp \frac{x^{n}}{(n)!} \pdl{n}
+    \arctan(x) \eq x - \frac{x^3}{3} \ppp (-1)^{n}\frac{x^{2n+1}}{2n+1} \pdl{2n+1}
+    \argth(x) \eq x + \frac{x^3}{3} \ppp \frac{x^{2n+1}}{2n+1} \pdl{2n+1}
+    (1+x)^\alpha \eq  1 + \alpha x + \frac{\alpha(\alpha-1)}{2}x^2 
+    \ppp \frac{\alpha(\alpha-1) ... (\alpha-(n-1))}{n!}x^n \pdl{n}
+    &= \sum_{k=0}^{n}\binom{\alpha}{k}x^k \pdl{n}
+\end{align*}

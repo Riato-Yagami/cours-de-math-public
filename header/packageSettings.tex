@@ -1,4 +1,4 @@
-% HYPERREF
+% hyperref
 
 \hypersetup{
     colorlinks=true,       % false: boxed links; true: colored links
@@ -12,3 +12,29 @@
 }
 
 \frenchbsetup{StandardItemLabels=true}
+
+% listings
+
+\lstdefinestyle{pythonStyle}{
+    language=Python,
+    basicstyle=\ttfamily\small,  % Adjust the font and size
+    commentstyle=\itshape\color{green!40!black},
+    keywordstyle=\bfseries\color{violet},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    captionpos=b,
+    identifierstyle=\color{Blue},
+}
+
+\lstset{style=pythonStyle}
+
+% algorithm2e
+
+\SetNlSty{}{}{.}
+\SetKwInput{KwRes}{R\'esultat}%
+\SetKwIF{Si}{SinonSi}{Sinon}{si}{alors}{sinon si}{sinon}{fin si}%
+\SetKwFor{Tq}{tant que}{faire}{fin tq}%

@@ -14,12 +14,16 @@
 }
 %%%%%%%%%%%%%%
 
+% \setboolean{subsectionInOutline}{false}
 % \setboolean{outline}{true}
 % \setboolean{demonstration}{false}
 
 \hbox{}
 \infoLecon{
-    \ilink{2e}
+    \ilink{5e}
+    \ilink{4e}
+    \ilink{3e}
+    \ilink{2nd}
     \ilink{1re}
     \ilink{Terminale Option Complémentaire}
 }
@@ -84,7 +88,7 @@
     alors $B$ est de fréquence $x\times y$ dans $P$.
 }
 
-\subsection{Distribution}
+\subsection{Indicateur de position}
 
 \df{Moyenne}{
     La \textbf{moyenne} d'une \ss{}
@@ -100,11 +104,6 @@
     Soient $a,b\in\m{R}^2$.\\
     Si la \ss{} $x$ a pour moyenne $\moy{x}$, 
     alors la \ss{} $ax+b$ a pour moyenne $a\moy{x}+b$.
-}
-
-\df{Etendue}{
-    Dans une \ss,
-    l'\textbf{étendue} est la différence entre la plus grande valeur et la plus petite valeur.
 }
 
 \df{Médiane}{
@@ -127,6 +126,17 @@
     \end{itemize}
 }
 
+\rmk{Intervalle interquartille}{
+    L'intervalle entre les deux quartiles contient la moitié centrale des valeur de la série.
+}
+
+\subsection{Indicateur de dispersion}
+
+\df{Etendue}{
+    Dans une \ss,
+    l'\textbf{étendue} est la différence entre la plus grande valeur et la plus petite valeur.
+}
+
 \df{Ecart interquartile}{
     L'\textbf{écart interquartile} $EI$, est la différence entre le troisième et premier quartile.
     \begin{equation*}
@@ -134,7 +144,9 @@
     \end{equation*}
 }
 
-\subsection{Dispersion}
+\rmk{Médiane Ecart interquartile}{
+    Plus l'écart interquartile est petit, plus les valeurs centrales de la série se concentrent autour de la médiane.
+}
 
 \df{Variance}{
     La \textbf{variance} $V$ est une mesure de la dispersion.
@@ -177,11 +189,20 @@
     \end{equation*}
 }
 
-\rmk{}{
+\rmk{Moyenne et écart-type}{
     \begin{itemize}
         \item Plus l'écart-type est grand,
         plus les valeurs sont éloignées de la moyenne.
-        \item L'écart type est homogène au caractère étudié.
+        \item L'écart-type est homogène au caractère étudié.
+    \end{itemize}
+}
+
+\subsection{Représentation}
+
+\mthd{Différentes représentation}{
+    \begin{itemize}
+        \item Histogrammes
+        \item Diagramme en boîte
     \end{itemize}
 }
 
@@ -230,7 +251,7 @@
     \end{align*}
 }
 
-\rmk{}{
+\rmk{Interprétation du coefficient de corrélation linéaire}{
     \begin{itemize}
         \item $-1 \leqslant r(x,y) \leqslant 1$
         \item Plus $|r(x,y)|$ augmente plus la corrélation linéaire entre $x$ et $y$ est forte.
