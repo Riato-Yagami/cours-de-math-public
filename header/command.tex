@@ -1,6 +1,6 @@
 % COUNTERS
-\newcounter{ex}
-\stepcounter{ex}
+% \newcounter{ex}
+% \stepcounter{ex}
 
 % SECTIONS
 
@@ -119,16 +119,16 @@
 \createsection{df}{\DefinitionColor}{Définition}
 \createsection{thm}{\TheoremColor}{Théorème}
 
-\newcommand{\ex}[2]{
-    \subsubsection*{
-        \color{Thistle}Exercice \theex 
-        % \small$_{(\theex)}$\normalsize 
-        :
-        \color{black}#1
-        }
-    \stepcounter{ex}
-    #2
-}
+% \newcommand{\ex}[2]{
+%     \subsubsection*{
+%         \color{Thistle}Exercice \theex 
+%         % \small$_{(\theex)}$\normalsize 
+%         :
+%         \color{black}#1
+%         }
+%     \stepcounter{ex}
+%     #2
+% }
 
 \makeatletter
 \newcommand{\createsubsection}[3]{
@@ -231,6 +231,7 @@
 \createsubsubsection{rmk}{Thistle}{Remarque}
 \createsubsubsection{expl}{gray}{Exemple}
 \createsubsubsection{app}{RedViolet}{Application}
+\createsubsubsection{ex}{gray}{Exercice}
 
 \createsubsubsection{demoSUB}{Red}{$\rightarrow$ Démonstration}
 \createsubsubsection{ticeSUB}{Orchid}{TICE}
@@ -348,12 +349,13 @@
     }
 }
 
-\NewDocumentCommand{\img}{m O{\linewidth} o}{%
+\NewDocumentCommand{\img}{m O{\linewidth} O{0cm} o}{%
     \begin{figure}[H]%
         \centering%
+        \hspace*{#3}
         \includegraphics[width=#2]{#1}%
-        \IfValueTF{#3}{
-            \caption{\underline{#3}}
+        \IfValueTF{#4}{
+            \caption{\underline{#4}}
             % \vspace{-0.4cm}
             }{
             % \vspace{-0.4cm}
