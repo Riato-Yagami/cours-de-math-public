@@ -14,7 +14,7 @@
 }
 %%%%%%%%%%%%%%
 
-% \setboolean{subsectionInOutline}{false}
+\setboolean{subsectionInOutline}{true}
 % \setboolean{outline}{true}
 % \setboolean{demonstration}{false}
 
@@ -199,9 +199,9 @@
 
 \subsection{Représentation}
 
-\mthd{Différentes représentation}{
+\mthd{Différentes représentations}{
     \begin{itemize}
-        \item Histogrammes
+        \item Histogramme
         \item Diagramme en boîte
     \end{itemize}
 }
@@ -335,6 +335,11 @@
         \ior V(y) + a^2 V(x) - 2aCov(x,y)& \textrm{ est minimal en } a = -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
         \ialors a = \frac{2Cov(x,y)}{2V(x)} &= \frac{Cov(x,y)}{V(x)}
     \end{align*}
+}
+
+\rmk{Point moyen et la droite des moindres carrés}{
+    Par la définition de la droite des moindres carrés (en particulier les point $b$),
+    on a que le point moyen appartient à la droite d'ajustement.
 }
 
 \newcommand{\partJ}[1]{

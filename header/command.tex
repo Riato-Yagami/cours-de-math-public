@@ -205,7 +205,7 @@
             \color{black}##1
         }
 
-        \ifthenelse{\boolean{subsectionInOutline}}{}{
+        \ifthenelse{\boolean{outline} \and \not \boolean{subsectionInOutline}}{}{
             \@ifclassloaded{beamer}{
                 \begin{mysubsection}[#2]
                 \textbf{\sectionTitle \ifx\relax##1\relax\else \\ \fi}
@@ -241,7 +241,7 @@
 }
 
 \newcommand{\demo}[2]{
-    \ifthenelse{\boolean{demonstration}}{
+    \ifthenelse{\boolean{demonstration} \and \not \boolean{outline}}{
         \demoSUB{#1}{
             \ifNotNull{#2}{
                 #2 $\square$
@@ -285,6 +285,7 @@
         \color{OrangeRed}#1\color{black}
     }{
         \countlines{#1}
+        \pgfmathsetcount{\linecount}{\linecount + 1}
         \noindent\hspace{-9pt}
         \looptext{
             \noindent\dotfill
