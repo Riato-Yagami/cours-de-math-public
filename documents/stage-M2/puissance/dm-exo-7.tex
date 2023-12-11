@@ -1,39 +1,40 @@
-\def\theme{Correction DM}
+\def\theme{Correction DM - Proportionnalité}
 \def\date{26/10/2023}
-\def\authors{\fsize{8pt}
+\def\authors{
     PESIN - CADOT - COURTIN
 }
 
+\def\km{\kilo\meter}
+\def\kmps{\kilo\meter\per\second}
 \ex{7}{
     On cherche à calculer la distance
     $d$ parcourue par la lumière en une année.\\
     On sait que la vitesse de la lumière est:
     \begin{align*}
-        v &= 300 000km/h\\
-        &= 3 \times 10^5 km/h
+        v &= \numprint{300 000} \kmps\\
+        &= 3 \times 10^5 \kmps
     \end{align*}
     On va utiliser la formule: $d=v \times t$ avec $t$ la durée d'une année.\\
     On cherche alors le temps en seconde dans une année:
     \begin{align*}
         t &= 60 \times 60 \times 24 \times 365\\
-        &= 31 536 000 s\\
-        &= 3,1 536 \times 10^7 s
+        &= \numprint{31 536 000} \second\\
+        &= \numprint{3,1536} \times 10^7 \second
     \end{align*}
     Car il y a:
     \begin{itemize}
         \item $60$ secondes dans $1$ minute.
         \item $60$ minutes dans $1$ heure.
-        \item $24$ heure dans $1$ journée.
+        \item $24$ heures dans $1$ journée.
         \item $365$ jours dans $1$ année. 
-        (on pourait également prendre $365,25$ jours dans $1$ année pour etre plus précis.)
+        % (on pourrait également prendre $365,25$ jours dans $1$ année pour être plus précis.)
     \end{itemize}
-
     On a alors:
     \begin{align*}
         d &= v \times t\\
-        &= 3 \times 10^5 \times 3,1 536 \times 10^7\\
-        &= 3 \times 3,1 536 \times 10^{5+7}\\
-        &= 9,4608 \times 10^{12} km
+        &= 3 \times 10^5 \times \numprint{3,1536} \times 10^7\\
+        &= 3 \times \numprint{3,1536} \times 10^{5+7}\\
+        &= \numprint{9,4608} \times 10^{12} \km
     \end{align*}
-    La lumière parcours donc $9,4608 \times 10^{12} km$ en une année.
+    La lumière parcourt donc $\numprint{9,4608} \times 10^{12} \km$ en une année.
 }

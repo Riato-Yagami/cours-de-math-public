@@ -317,7 +317,9 @@
     \end{align*}
 }
 
-\demo{Méthode Lycée}{
+\newcommand{\dmoy}[1]{(#1_i-\moy{#1})}
+
+\demo{Méthode Lycée ($G$ dans $(d)$ admis)}{
     On admet que le point moyen $G(\moy{x};\moy{y})$ appartient à la droite d'ajustement $(d)$ d'équation $y=ax +b$.\\
     On va chercher la valeurs de $a$ et de $b$.\\
     Soit $P_i(x_i, a x_i + b)$, points de $(d)$ pour $i\in[|1;N|]$.\\
@@ -328,18 +330,33 @@
         \sumN ||M_i G|| &= \sumN (y_i - (a x_i + b))^2\\
         \ior b &= \moy{y} - a \moy{x} \car G(\moy{x};\moy{y})\in(d)\\
         \ialors \sumN ||M_i G|| &= \sumN (y_i - (a x_i + \moy{y} - a \moy{x}))^2\\
-        &= \sumN ((y_i - \moy{y}) - a (x_i - \moy{x}))^2\\
-        &= \sumN (y_i - \moy{y})^2 + a^2 (x_i - \moy{x})^2 - 2a(y_i - \moy{y})(x_i - \moy{x})\\
-        &= \sumN (y_i - \moy{y})^2 + a^2 \sumN (x_i - \moy{x})^2 - 2a \sumN (y_i - \moy{y})(x_i - \moy{x})\\
+        &= \sumN (\dmoy{y} - a \dmoy{x})^2\\
+        &= \sumN \dmoy{y}^2 + a^2 \dmoy{x}^2 - 2a\dmoy{y}\dmoy{x}\\
+        &= \sumN \dmoy{y}^2 + a^2 \sumN \dmoy{x}^2 - 2a \sumN \dmoy{y}\dmoy{x}\\
         &= N (V(y) + a^2 V(x) - 2aCov(x,y))\\
         \ior V(y) + a^2 V(x) - 2aCov(x,y)& \textrm{ est minimal en } a = -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
         \ialors a = \frac{2Cov(x,y)}{2V(x)} &= \frac{Cov(x,y)}{V(x)}
     \end{align*}
 }
 
-\rmk{Point moyen et la droite des moindres carrés}{
-    Par la définition de la droite des moindres carrés (en particulier les point $b$),
-    on a que le point moyen appartient à la droite d'ajustement.
+\demo{Méthode Lycée}{
+    Soit:
+    \begin{align*}
+        J(a,b) =& \sumN (y_i - (a x_i + b))^2 = \sumN (y_i - a x_i - b)^2\\
+        =& \sumN (\dmoy{y} - a\dmoy{x} - (b - \moy{y} + a\moy{x}))^2\\
+        =& \sumN (\dmoy{y} - a\dmoy{x} - c)^2 \avec c = b - \moy{y} + a\moy{x}\\
+        =& \sumN (\dmoy{y}^2 + (a\dmoy{x})^2 + c^2 - 2a \dmoy{y} \dmoy{x}\\
+        &- 2c\dmoy{y} -2ac\dmoy{x})\\
+        \ior \sumN \dmoy{x} =& N\moy{x} - N\moy{x} = 0
+        \ialors J(a,b) =& 
+        \sumN \dmoy{y}^2 + a^2\dmoy{x}^2 + c^2 - 2a \dmoy{y} \dmoy{x}\\
+        =& N(V(Y) + a^2V(X) - 2aCov(X,Y) + c^2)
+        \ior &V(Y) + a^2V(X) - 2aCov(X,Y) + c^2\\ 
+        =& P(a) + c^2 \textrm{ minimal lorsque } c = 0 = b - \moy{y} + a\moy{x} \et P(a) \textrm{ minimal}
+        \ialors b =& \moy{y} - a\moy{x}
+        \iet P(a) \textrm{ minimal en } a =& -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
+        =& \frac{2Cov(x,y)}{2V(x)} = \frac{Cov(x,y)}{V(x)}
+    \end{align*}
 }
 
 \newcommand{\partJ}[1]{
@@ -400,6 +417,11 @@
             b &= \moy{y} - a \moy{x}
         }
     \end{align*}
+}
+
+\rmk{Point moyen et la droite des moindres carrés}{
+    Par la définition de la droite des moindres carrés (en particulier les point $b$),
+    on a que le point moyen appartient à la droite d'ajustement.
 }
 
 \subsection{Ajustement non affine}
