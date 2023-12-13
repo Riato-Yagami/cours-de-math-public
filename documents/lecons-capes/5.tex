@@ -319,25 +319,25 @@
 
 \newcommand{\dmoy}[1]{(#1_i-\moy{#1})}
 
-\demo{Méthode Lycée ($G$ dans $(d)$ admis)}{
-    On admet que le point moyen $G(\moy{x};\moy{y})$ appartient à la droite d'ajustement $(d)$ d'équation $y=ax +b$.\\
-    On va chercher la valeurs de $a$ et de $b$.\\
-    Soit $P_i(x_i, a x_i + b)$, points de $(d)$ pour $i\in[|1;N|]$.\\
-    On a $a$ et $b$ qui minimise $\sumN ||M_i P_i||_v$ 
-    avec $M_i(x_i, y_i)$ pour $i\in[|1;N|]$
-    et $||M_i P_i||_v$ la distance verticale au carré du point $M_i$ à $P_i$.
-    \begin{align*}
-        \sumN ||M_i G|| &= \sumN (y_i - (a x_i + b))^2\\
-        \ior b &= \moy{y} - a \moy{x} \car G(\moy{x};\moy{y})\in(d)\\
-        \ialors \sumN ||M_i G|| &= \sumN (y_i - (a x_i + \moy{y} - a \moy{x}))^2\\
-        &= \sumN (\dmoy{y} - a \dmoy{x})^2\\
-        &= \sumN \dmoy{y}^2 + a^2 \dmoy{x}^2 - 2a\dmoy{y}\dmoy{x}\\
-        &= \sumN \dmoy{y}^2 + a^2 \sumN \dmoy{x}^2 - 2a \sumN \dmoy{y}\dmoy{x}\\
-        &= N (V(y) + a^2 V(x) - 2aCov(x,y))\\
-        \ior V(y) + a^2 V(x) - 2aCov(x,y)& \textrm{ est minimal en } a = -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
-        \ialors a = \frac{2Cov(x,y)}{2V(x)} &= \frac{Cov(x,y)}{V(x)}
-    \end{align*}
-}
+% \demo{Méthode Lycée ($G$ dans $(d)$ admis)}{
+%     On admet que le point moyen $G(\moy{x};\moy{y})$ appartient à la droite d'ajustement $(d)$ d'équation $y=ax +b$.\\
+%     On va chercher la valeurs de $a$ et de $b$.\\
+%     Soit $P_i(x_i, a x_i + b)$, points de $(d)$ pour $i\in[|1;N|]$.\\
+%     On a $a$ et $b$ qui minimise $\sumN ||M_i P_i||_v$ 
+%     avec $M_i(x_i, y_i)$ pour $i\in[|1;N|]$
+%     et $||M_i P_i||_v$ la distance verticale au carré du point $M_i$ à $P_i$.
+%     \begin{align*}
+%         \sumN ||M_i G|| &= \sumN (y_i - (a x_i + b))^2\\
+%         \ior b &= \moy{y} - a \moy{x} \car G(\moy{x};\moy{y})\in(d)\\
+%         \ialors \sumN ||M_i G|| &= \sumN (y_i - (a x_i + \moy{y} - a \moy{x}))^2\\
+%         &= \sumN (\dmoy{y} - a \dmoy{x})^2\\
+%         &= \sumN \dmoy{y}^2 + a^2 \dmoy{x}^2 - 2a\dmoy{y}\dmoy{x}\\
+%         &= \sumN \dmoy{y}^2 + a^2 \sumN \dmoy{x}^2 - 2a \sumN \dmoy{y}\dmoy{x}\\
+%         &= N (V(y) + a^2 V(x) - 2aCov(x,y))\\
+%         \ior V(y) + a^2 V(x) - 2aCov(x,y)& \textrm{ est minimal en } a = -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
+%         \ialors a = \frac{2Cov(x,y)}{2V(x)} &= \frac{Cov(x,y)}{V(x)}
+%     \end{align*}
+% }
 
 \demo{Méthode Lycée}{
     Soit:
