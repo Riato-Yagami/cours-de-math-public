@@ -1,22 +1,5 @@
-% COUNTERS
-% \newcounter{ex}
-% \stepcounter{ex}
-
-% SECTIONS
-
-% \newcommand{\pr}[2]{
-%     \subsection*{
-%         \color{Blue}Propriété\small$_{(\thepr)}$\normalsize : 
-%         \color{black}#1
-%         }
-%     \stepcounter{pr}
-%     \begin{mysection}[Blue]
-%     #2
-%     \end{mysection}
-% }
-
+% ENVIRONMENT
 \newenvironment{mysection}[1][gray!20]{%
-
     \ifthenelse{\boolean{boxedProperties}}{
         \begin{tcolorbox}[colback=white,
             colframe=#1!50,
@@ -54,207 +37,22 @@
     \end{tcolorbox}
 }
 
-\makeatletter
-\newcommand{\createsection}[3]{
-    \newcounter{#1}
-    \stepcounter{#1}
+% Switch implementation
+\newboolean{default}
+\newcommand{\case}{}
+\newcommand{\default}{}
 
-    \expandafter\newcommand\csname #1\endcsname[2]{
+\newenvironment{switch}[1]{%
+    \setboolean{default}{true}
+    \renewcommand{\case}[2]{\ifthenelse{\equal{#1}{##1}}{%
+        \setboolean{default}{false}##2}{}}%
+    \renewcommand{\default}[1]{\ifthenelse{\boolean{default}}{##1}{}}
+}{}
 
-        \label{#1-\csname the#1\endcsname}
-        
-        \ifx\relax##1\relax
-            % \expandafter\newcommand\csname #1-\csname the#1\endcsname\endcsname[1]{%
-            %     \hyperlink{#1-\csname the#1\endcsname}{
-            %         \textbf{\color{#2}#3 ##1}\color{black}
-            %     }
-            % }%
-        \else
-            % IF ##1 is not empty
-            \expandafter\newcommand\csname #1-##1\endcsname[1]{%
-                \hyperlink{#1-\csname the#1\endcsname}{
-                    \textbf{\color{#2!80}#3 ##1}\color{black}
-                }
-            }%
-        \fi
+% SECTIONS
+\input{header/command/sections.tex}
 
-        \def\sectionID{\ifthenelse{\boolean{showID}}
-        {\csname the#1\endcsname}{}}
-
-        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{
-            \begin{mysection}[#2]
-                ##2
-            \end{mysection}
-        }}
-        
-        \def\sectionTitle{
-            \color{#2}\hypertarget{#1-\csname the#1\endcsname}
-            {#3}\ifthenelse{\boolean{parenthisedID}}
-            {\small$_{(\sectionID)}$}
-            { \sectionID}\normalsize : 
-            \color{black}##1
-        }
-        
-        \@ifclassloaded{beamer}{
-            \textbf{\sectionTitle}
-        }{
-            \subsection*{\sectionTitle}
-        }
-        \sectionContent
-
-        \stepcounter{#1}
-    }
-}
-\makeatother
-
-\newcommand{\refsec}[2]{%
-    \expandafter\csname #1-#2\endcsname{#2}%
-}
-
-% \newcommand{\refsec}[2]{%
-%     \expandafter\csname #1#2\endcsname%
-% }
-
-\createsection{pr}{\PropertyColor}{Propriété}
-\createsection{df}{\DefinitionColor}{Définition}
-\createsection{thm}{\TheoremColor}{Théorème}
-
-% \newcommand{\ex}[2]{
-%     \subsubsection*{
-%         \color{Thistle}Exercice \theex 
-%         % \small$_{(\theex)}$\normalsize 
-%         :
-%         \color{black}#1
-%         }
-%     \stepcounter{ex}
-%     #2
-% }
-
-\makeatletter
-\newcommand{\createsubsection}[3]{
-    \newcounter{#1}
-    \stepcounter{#1}
-
-    \expandafter\newcommand\csname #1\endcsname[2]{
-
-        \label{#1-\csname the#1\endcsname}
-        
-        \ifx\relax##1\relax
-        \else
-            % IF ##1 is not empty
-            \expandafter\newcommand\csname #1-##1\endcsname[1]{%
-                \hyperlink{#1-\csname the#1\endcsname}{
-                    \textbf{\color{#2!80}#3 ##1}\color{black}
-                }
-            }%
-        \fi
-
-        % \def\sectionID{\ifthenelse{\boolean{showID}}
-        % {\csname the#1\endcsname}{}}
-
-        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{##2}}
-        
-        \def\sectionTitle{
-            \color{#2}\hypertarget{#1-\csname the#1\endcsname}
-            {#3} \normalsize : 
-            \color{black}##1
-        }
-
-        \@ifclassloaded{beamer}{
-            \begin{mysubsection}[#2]
-            \textbf{\sectionTitle \ifx\relax##1\relax\else \\ \fi}
-            \sectionContent
-            \end{mysubsection}
-        }{
-            \subsubsection*{\sectionTitle}
-            \sectionContent
-        }
-
-        \stepcounter{#1}
-    }
-}
-\makeatother
-
-\makeatletter
-\newcommand{\createsubsubsection}[3]{
-    \newcounter{#1}
-    \stepcounter{#1}
-
-    \expandafter\newcommand\csname #1\endcsname[2]{
-
-        \label{#1-\csname the#1\endcsname}
-        
-        \ifx\relax##1\relax
-        \else
-            % IF ##1 is not empty
-            \expandafter\newcommand\csname #1-##1\endcsname[1]{%
-                \hyperlink{#1-\csname the#1\endcsname}{
-                    \textbf{\color{#2!80}#3 ##1}\color{black}
-                }
-            }%
-        \fi
-
-        % \def\sectionID{\ifthenelse{\boolean{showID}}
-        % {\csname the#1\endcsname}{}}
-
-        \def\sectionContent{\ifthenelse{\boolean{outline}}{}{\color{black}##2}}
-        
-        \def\sectionTitle{
-            \color{#2}\hypertarget{#1-\csname the#1\endcsname}
-            {#3} \normalsize : 
-            \color{black}##1
-        }
-
-        \ifthenelse{\boolean{outline} \and \not \boolean{subsectionInOutline}}{}{
-            \@ifclassloaded{beamer}{
-                \begin{mysubsection}[#2]
-                \textbf{\sectionTitle \ifx\relax##1\relax\else \\ \fi}
-                \sectionContent
-                \end{mysubsection}
-            }{
-                \subsubsection*{\sectionTitle}
-                \sectionContent
-            }
-        }
-        \stepcounter{#1}
-    }
-}
-\makeatother
-
-\createsubsection{cor}{NavyBlue}{Corollaire}
-\createsubsection{lem}{NavyBlue}{Lemme}
-\createsubsection{ctr}{NavyBlue}{Contraposée}
-\createsubsection{rmdr}{Thistle}{Rappel}
-\createsubsection{mthd}{OrangeRed}{Méthode}
-% \createsubsection{hintSUB}{black}{\it{Indication}}
-
-\createsubsubsection{rmk}{Thistle}{Remarque}
-\createsubsubsection{expl}{gray}{Exemple}
-\createsubsubsection{app}{RedViolet}{Application}
-\createsubsubsection{ex}{gray}{Exercice}
-
-\createsubsubsection{demoSUB}{Red}{$\rightarrow$ Démonstration}
-\createsubsubsection{ticeSUB}{Orchid}{TICE}
-
-\newcommand{\hint}[2]{
-    \textit{Indication: #2}
-}
-
-\newcommand{\demo}[2]{
-    \ifthenelse{\boolean{demonstration} \and \not \boolean{outline}}{
-        \demoSUB{#1}{
-            \ifNotNull{#2}{
-                #2 $\square$
-            }
-        }
-    }{
-    }
-}
-
-\newcommand{\tice}[3]{
-    \ticeSUB{#1 - #2}{#3}
-}
-
+% ANSWERS
 \newlength{\parline}
 \newlength{\paroutindent}
 \newlength{\lineheight}
@@ -282,7 +80,7 @@
 
 \newcommand{\awsr}[1]{%
     \ifthenelse{\boolean{anwser}}{
-        \color{OrangeRed}#1\color{black}
+        \result{#1}
     }{
         \countlines{#1}
         \pgfmathsetcount{\linecount}{\linecount + 1}
@@ -292,6 +90,10 @@
     
         }{\the\linecount}
     }
+}
+
+\newcommand{\result}[1]{
+    \color{OrangeRed}#1\color{black}
 }
 
 % MATH
@@ -423,3 +225,6 @@
     \draw[line width = \crossWidth, shift={#4}, color = \pointColor] (#2 - 0.25,#3) -- (#2 + 0.25,#3);
     \draw[line width = \crossWidth, shift={#4}, color = \pointColor] (#2,#3 - 0.25) -- (#2,#3 + 0.25);
 }
+
+% Tabular
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}

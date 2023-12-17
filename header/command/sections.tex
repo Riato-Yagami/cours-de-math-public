@@ -1,0 +1,142 @@
+\newcommand{\parseSecContent}[2]{ % Color | Content
+    \begin{mysection}[#1]
+        #2
+    \end{mysection}
+}
+
+\newcommand{\parseSecTitle}[3]{ % Color | Title | Type
+    \color{#1}\target
+    {#3}\ifthenelse{\boolean{showID}}{\ifthenelse{\boolean{parenthisedID}}
+    {\small$_{(\sectionID)}$}
+    { \sectionID}}{}\normalsize : 
+    \color{black}#2
+}
+
+\makeatletter
+\newcommand{\parseSec}[4]{ % Color | Title | Content | Type
+    \def\secContent{\parseSecContent{#1}{#3}}
+    \def\secTitle{\parseSecTitle{#1}{#2}{#4}}
+
+    \@ifclassloaded{beamer}{
+        \textbf{\secTitle}
+    }{
+        \subsection*{\secTitle}
+    }
+
+    \ifthenelse{\boolean{outline}}{}{\secContent}
+}
+\makeatother
+
+\newcommand{\parseSubsecContent}[2]{ % Color | Content
+    #2
+}
+
+\newcommand{\parseSubsecTitle}[3]{ % Color | Title | Type
+    \color{#1}\target
+    {#3}\normalsize : 
+    \color{black}#2
+}
+
+\makeatletter
+\newcommand{\parseSubsec}[4]{ % Color | Title | Content | Type
+    \def\secContent{\parseSubsecContent{#1}{#3}}
+    \def\secTitle{\parseSubsecTitle{#1}{#2}{#4}}
+
+    \ifthenelse{\boolean{outline} \and \not \boolean{subsectionInOutline}}{}{
+        \@ifclassloaded{beamer}{
+            \begin{mysubsection}[#1]
+                \textbf{\secTitle \ifx\relax#2\relax\else \\ \fi}
+                \hspace*{-0.35cm}\secContent
+            \end{mysubsection}
+        }{
+            \subsubsection*{\secTitle}
+            \ifthenelse{\boolean{outline}}{}{\secContent}
+        }
+    }
+}
+\makeatother
+
+\makeatletter
+\newcommand{\newsec}[4]{ % #1 Level | #2 Code | #3 Color | #4 Type
+    \newcounter{#2}
+    \stepcounter{#2}
+
+    \label{#2-\csname the#2\endcsname}
+    
+    \expandafter\NewDocumentCommand\csname #2\endcsname{mmo}{ % ##1 Title | ##2 Content
+    % \expandafter\newcommand\csname #2\endcsname[2]{ % ##1 Title | ##2 Content
+
+        \def\sectionID{\csname the#2\endcsname}
+        \def\target{\hypertarget{#2-\csname the#2\endcsname}}
+        
+        % Create Ref Hyperlink
+        \ifNotNull{##1}{
+            \expandafter\newcommand\csname #2-##1\endcsname[1]{%
+                \hyperlink{#2-\csname the#2\endcsname}{
+                    \textbf{\color{#3!80}#3 ##1}\color{black}
+                }
+            }%
+        }
+
+        \begin{switch}{#1}
+            \case{sec}{\parseSec{#3}{##1}{##2}{#4}}
+            \default{
+                \parseSubsec{#3}{##1}{##2}{#4}
+            }
+        \end{switch}
+
+        % Reference
+        \ifNotNull{##3}{ 
+            \ifthenelse{\boolean{outline} \or \not \boolean{showRef}}{}{
+                \vspace{-0.5cm}
+                \begin{flushright}
+                \small\textit{##3 $\leftarrow$}\hspace*{0.5cm}
+                \end{flushright}
+            }
+        }
+
+        \stepcounter{#2}
+    }
+}
+\makeatother
+
+\newcommand{\refsec}[2]{%
+    \expandafter\csname #1-#2\endcsname{#2}%
+}
+
+\newsec{sec}{pr}{\PropertyColor}{Propriété}
+\newsec{sec}{df}{\DefinitionColor}{Définition}
+\newsec{sec}{thm}{\TheoremColor}{Théorème}
+
+\newsec{sub}{cor}{NavyBlue}{Corollaire}
+\newsec{sub}{lem}{NavyBlue}{Lemme}
+\newsec{sub}{ctr}{NavyBlue}{Contraposée}
+\newsec{sub}{rmdr}{Thistle}{Rappel}
+\newsec{sub}{mthd}{OrangeRed}{Méthode}
+
+\newsec{subsub}{rmk}{Thistle}{Remarque}
+\newsec{subsub}{expl}{gray}{Exemple}
+\newsec{subsub}{app}{RedViolet}{Application}
+\newsec{subsub}{exo}{Gray}{Exercice}
+
+\newsec{subsub}{demoSUB}{Red}{$\rightarrow$ Démonstration}
+\newsec{subsub}{ticeSUB}{Orchid}{TICE}
+
+\NewDocumentCommand{\demo}{mmo}{
+    \ifthenelse{\boolean{demonstration} \and \not \boolean{outline}}{
+        \demoSUB{#1}{
+            \ifNotNull{#2}{
+                #2 $\square$
+            }
+        }[#3]
+    }{
+    }
+}
+
+\NewDocumentCommand{\tice}{mmmo}{
+    \ticeSUB{#1 - #2}{#3}[#4]
+}
+
+\newcommand{\hint}[2]{
+    \textit{Indication: #2}
+}

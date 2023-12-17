@@ -12,11 +12,14 @@
 \newcommand{\moy}[1]{
     \overline{#1}
 }
+\newcommand{\dmoy}[1]{(#1_i-\moy{#1})}
 %%%%%%%%%%%%%%
 
-\setboolean{subsectionInOutline}{true}
+% \setboolean{subsectionInOutline}{true}
 % \setboolean{outline}{true}
 % \setboolean{demonstration}{false}
+
+% \setboolean{showRef}{false}
 
 \hbox{}
 \infoLecon{
@@ -36,13 +39,15 @@
     des modèles et des relations au sein des phénomènes observés.
 ]
 
+% \newsec{2}{seccc}{\PropertyColor}{Propriété zerf}
+
 \section{Série statistique à une variable}
 
 \subsection{Définition}
 
 \df{Série statistique}{
     Une \textbf{\ss}
-    est une liste de \textbf{valeurs};
+    est une liste de \textbf{données} ayant une certaine \textbf{valeur};
     mesures d'un \textbf{caractère}
     d'une \textbf{population} et provient généralement d'une étude.
 }
@@ -108,10 +113,17 @@
 
 \df{Médiane}{
     Dans une \ss,
-    la \textbf{médiane} est la valeur telle que:
+    la \textbf{médiane} $Me$ est un nombre tel que:
     \begin{itemize}
         \item au moins la moitié des valeurs lui sont supérieures ou égales.
         \item au moins la moitié des valeurs lui sont inférieures ou égales.
+    \end{itemize}
+}
+
+\rmk{Valeur de la Médiane}{
+    \begin{itemize}
+        \item Si $N$ est paire, $Me$ est la valeur centrale.
+        \item Si $N$ est impaire, on prend la demi-somme des deux valeurs centrale.
     \end{itemize}
 }
 
@@ -144,7 +156,7 @@
     \end{equation*}
 }
 
-\rmk{Médiane Ecart interquartile}{
+\rmk{Médiane et Ecart interquartile}{
     Plus l'écart interquartile est petit, plus les valeurs centrales de la série se concentrent autour de la médiane.
 }
 
@@ -152,7 +164,7 @@
     La \textbf{variance} $V$ est une mesure de la dispersion.
     Elle exprime la moyenne des carrés des écarts à la moyenne.
     \begin{equation*}
-        V(x) = \sN \sumN (x_i-\moy{x})
+        V(x) = \sN \sumN \dmoy{x}^2
     \end{equation*}
 }
 
@@ -165,14 +177,14 @@
 \demo{}{
     \vspace*{-1cm}
     \begin{align*}
-        V(x) &= \sN \sumN (x_i-\moy{x})\\
+        V(x) &= \sN \sumN \dmoy{x}^2\\
         &= \sN \sumN (x_i^2 - 2x_i \moy{x} + \moy{x}^2)\\
         &= \sN \sumN x_i^2 - \frac{2\moy{x}}{N} \sumN x_i  + \sN N \moy{x}^2\\
         &= \sN \sumN x_i^2 - \frac{2\moy{x}}{N} N \moy{x} + \moy{x}^2\\
         &= \sN \sumN x_i^2 - 2\moy{x}^2 + \moy{x}^2\\
         &= \sN \sumN x_i^2 - \moy{x}^2
     \end{align*}
-}
+}[\href{https://www.wikiwand.com/fr/Théorème_de_König-Huygens}{Mood et al. (2001, p. 229)}]
 
 \pr{Caractère quadratique de la variance}{
     Soient $a,b\in\m{R}^2$.
@@ -231,7 +243,7 @@
 \df{Covariance}{
     La \textbf{covariance} mesure la co-variation entre deux \ss $x$ et $y$.
     \begin{align*}
-        Cov(x,y) = \sN \sumN (x_i-\moy{x})(y_i-\moy{y})
+        Cov(x,y) = \sN \sumN \dmoy{x}\dmoy{y}
     \end{align*}
 }
 
@@ -317,28 +329,6 @@
     \end{align*}
 }
 
-\newcommand{\dmoy}[1]{(#1_i-\moy{#1})}
-
-% \demo{Méthode Lycée ($G$ dans $(d)$ admis)}{
-%     On admet que le point moyen $G(\moy{x};\moy{y})$ appartient à la droite d'ajustement $(d)$ d'équation $y=ax +b$.\\
-%     On va chercher la valeurs de $a$ et de $b$.\\
-%     Soit $P_i(x_i, a x_i + b)$, points de $(d)$ pour $i\in[|1;N|]$.\\
-%     On a $a$ et $b$ qui minimise $\sumN ||M_i P_i||_v$ 
-%     avec $M_i(x_i, y_i)$ pour $i\in[|1;N|]$
-%     et $||M_i P_i||_v$ la distance verticale au carré du point $M_i$ à $P_i$.
-%     \begin{align*}
-%         \sumN ||M_i G|| &= \sumN (y_i - (a x_i + b))^2\\
-%         \ior b &= \moy{y} - a \moy{x} \car G(\moy{x};\moy{y})\in(d)\\
-%         \ialors \sumN ||M_i G|| &= \sumN (y_i - (a x_i + \moy{y} - a \moy{x}))^2\\
-%         &= \sumN (\dmoy{y} - a \dmoy{x})^2\\
-%         &= \sumN \dmoy{y}^2 + a^2 \dmoy{x}^2 - 2a\dmoy{y}\dmoy{x}\\
-%         &= \sumN \dmoy{y}^2 + a^2 \sumN \dmoy{x}^2 - 2a \sumN \dmoy{y}\dmoy{x}\\
-%         &= N (V(y) + a^2 V(x) - 2aCov(x,y))\\
-%         \ior V(y) + a^2 V(x) - 2aCov(x,y)& \textrm{ est minimal en } a = -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
-%         \ialors a = \frac{2Cov(x,y)}{2V(x)} &= \frac{Cov(x,y)}{V(x)}
-%     \end{align*}
-% }
-
 \demo{Méthode Lycée}{
     Soit:
     \begin{align*}
@@ -357,7 +347,7 @@
         \iet P(a) \textrm{ minimal en } a =& -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
         =& \frac{2Cov(x,y)}{2V(x)} = \frac{Cov(x,y)}{V(x)}
     \end{align*}
-}
+}[\href{https://www.bibmath.net/ressources/index.php?action=affiche&quoi=capes/demos/statistiques.html}{Bibmath}]
 
 \newcommand{\partJ}[1]{
     \frac{\partial J}{\partial #1}
@@ -417,7 +407,7 @@
             b &= \moy{y} - a \moy{x}
         }
     \end{align*}
-}
+}[\href{https://www.bibmath.net/dico/index.php?action=affiche&quoi=./r/reglin.html}{Bibmath}]
 
 \rmk{Point moyen et la droite des moindres carrés}{
     Par la définition de la droite des moindres carrés (en particulier les point $b$),

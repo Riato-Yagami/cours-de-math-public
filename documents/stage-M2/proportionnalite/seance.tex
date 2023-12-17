@@ -1,0 +1,223 @@
+% VARIABLES %%%
+\def\authors{PESIN - CADOT - COURTIN}
+% \date{\today}
+\def\longTitle{La Proportionnalité}
+\def\shortTitle{Proportionnalité}
+%%
+
+% \disableAnimation
+% \shortAnimation
+% \firstSlide
+
+\def\colWidth{1.5cm}
+
+\newcommand{\propTable}[4]{
+    \begin{tabular}{|C{\colWidth}|C{\colWidth}|}
+        \hline
+        $#1$ & $#2$ \\ \hline
+        $#3$ & $#4$ \\ \hline
+    \end{tabular}
+}
+
+\bsec{Introduction}
+
+\slide{Cours}{
+    \bchap{\longTitle}
+    \vspace*{0.3cm}
+    \ssec
+
+    \exo{Myriade: Activité 2 p 134}{}
+}
+
+\slide{}{
+    \vspace*{-0.5cm}
+    \img{stage-M2/proportionnalite/exercices/activite_2_p137_myriade_4e_2016.png}[12cm][-0.7cm]
+}
+
+\slide{}{
+    \rmdr{Coefficient de proportionnalité}{
+        Dans un tableau de proportionnalité,
+        on passe d'une ligne à l'autre en multipliant par le coefficient de proportionnalité.
+    }
+
+    \expl{}{
+        Voir tableau 1 de l'Activité d'Introduction.
+    }
+}
+
+\bsec{Proportionnalité}
+\bsubsec{Représentation graphique}
+
+\slide{}{
+    \ssec\ssubsec
+
+    \pr{Représentation graphique}{
+        Un graphique présente une situation de proportionnalité si 
+        \palt{2}{l'ensemble de ces points sont alignés avec l'origine.}
+    } 
+}
+
+\slide{}{
+    \expl{}{
+        \img{stage-M2/proportionnalite/graphique_situation_proportionnelle.png}[8cm]
+        Le graphique ci-dessus présente une situation de proportionnalité.
+    }
+}
+
+\slide{Exercice}{
+    \exo{Myriade: p138-141}{
+        \vspace{-0.25cm}
+        \begin{itemize}
+            \item 8 p138
+            \item 20 p140
+            \item 21 p141
+        \end{itemize}
+        A finir pour lundi 18 décembre.
+    }
+}
+
+\slide{}{
+    \img{stage-M2/proportionnalite/exercices/ex_20_p140_myriade_4e_2016.png}[8cm]
+}
+
+\slide{}{
+    \img{stage-M2/proportionnalite/exercices/ex_21_p141_myriade_4e_2016.png}[10cm]
+}
+
+\slide{}{
+    \img{stage-M2/proportionnalite/exercices/ex_8_p138_myriade_4e_2016.png}[10cm]
+}
+
+\bsubsec{Produits en croix}
+\slide{Cours}{
+    \ssubsec
+    Soit $a,b,c,d$ quatres nombres.
+    
+    \pr{Egalité des produits en croix}{
+        Dans le tableau de proportionnalité:
+        \begin{center}
+            \propTable{a}{c}{b}{d}
+        \end{center}
+        On a l'égalité: $a \times d = b \times c$. 
+    }
+}
+
+% \slide{}{
+%     \expl{}{ Les tableaux suivants sont-ils des tableaux de proportionnalités?
+%         \begin{center}
+%             \propTable{2}{5}{3}{7,5}
+%             \propTable{1,5}{2,5}{3}{6}\\
+%         \end{center}
+%         \begin{align*}
+%             &\palt{2}{2\times7,5 = 15 = 3 \times 5}\\
+%             &\palt{3}{1,5\times6 = 9 \ne 10,5 = 3 \times 3,5}
+%         \end{align*}
+%     }
+% }
+
+\slide{}{
+    \mthd{Calcul 4e proportionnelle}{
+        Si l'on connait 3 valeurs par exemple $b,c,d$.
+        On peut utiliser l'égalité des produits en croix pour calculer la 4e proportionnelle $a$.\\
+        En effet:
+        \begin{align*}
+            a \times d &= b \times c\\
+            \ialors \palt{2}{\frac{a \times d}{d}} &= \palt{2}{\frac{b \times c}{d}}
+            \ialors a &= \palt{3}{\frac{b \times c}{d}}
+        \end{align*}
+    }
+}
+
+\slide{}{
+    \expl{}{ 
+        Compléter les tableaux de proportionnalités suivant :
+        % \vspace{0.2cm}
+        \begin{center}
+            \propTable{11}{6}{\palt{2}{27,5}}{15}
+            \propTable{4}{5}{3,2}{\palt{2}{4}}\\
+            \vspace{0.2cm}
+            \propTable{x}{6}{\palt{2}{\frac{3.6x}{6}}}{3,6}
+            \propTable{\palt{2}{\frac{1}{12}}}{\frac{1}{6}}{3}{6}
+        \end{center}
+    }
+
+    \rmk{Egalité des quotients}{
+        On a aussi
+        \begin{align*}
+            \frac{a}{b} = \frac{c}{d}
+        \end{align*}
+    }
+}
+
+\slide{Exercices}{
+    \exo{Myriade: p138}{
+        \vspace{-0.25cm}
+        \begin{itemize}
+            \item 1 p138
+            \item 2 p138
+            \item 5 p138
+            \item 4 p138
+        \end{itemize}
+        A finir pour vendredi 22 décembre.
+    }
+}
+
+\slide{}{
+    \img{stage-M2/proportionnalite/exercices/ex_1_p138_myriade_4e_2016.png}[11cm]
+}
+
+\slide{}{
+    \img{stage-M2/proportionnalite/exercices/ex_2_p138_myriade_4e_2016.png}[11cm]
+}
+
+\slide{}{
+    \img{stage-M2/proportionnalite/exercices/ex_5_p138_myriade_4e_2016.png}[11cm]
+}
+
+\slide{}{
+    \img{stage-M2/proportionnalite/exercices/ex_4_p138_myriade_4e_2016.png}[11cm]
+}
+
+\bsec{Pourcentages}
+
+\slide{Cours}{
+    \ssec
+
+    \df{Pourcentage}{
+        Calculer $t\%$ d'un nombre revient à multiplier ce nombre par $\frac{t}{100}$.
+    }
+    \vspace{-0.5cm}
+    \expl{}{ 
+        Calculer $30\%$ de $60$.\\
+        On fait : \palt{2}{$60 \times \frac{30}{100} = 10$}
+    }
+    \vspace{-0.7cm}
+    \rmk{}{
+        Tableau de proportionnalité de la situation précédente:
+        \propTable{\palt{2}{10}}{60}{30}{100}
+    }
+}
+
+\bsec{Ratio}
+\bsubsec{Ratio}
+
+\newcommand{\red}[1]{\color{Red}#1\color{black}}
+\newcommand{\green}[1]{\color{ForestGreen}#1\color{black}}
+
+\slide{}{
+    \ssec\ssubsec
+
+    \df{Ratio}{
+        On dit que deux nombres $a$ et $b$ sont dans le \textbf{ratio $2:3$}, si:
+        \begin{equation*}
+            \frac{a}{2} = \frac{b}{3}
+        \end{equation*}
+    }
+
+    \expl{}{
+        Dans une classe, il y a \red{4 filles } et \green{6 garçons}.\\
+        Les filles et les garçons sont dans le ratio $\red{2}:\green{3}$.\\
+        En effet, \red{4 } et \green{6 } sont dans le ratio $\red{2}:\red{3}$
+        car : $\frac{\red{4}}{\red{2}} = \frac{\green{6}}{\green{3}}$.
+    }
+}

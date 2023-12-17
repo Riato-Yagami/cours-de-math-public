@@ -26,8 +26,8 @@
 }
 
 \newcommand{\palt}[2]{
-    \alt<#1>{#2}{\awsr{#2}}
-    % \alt<#1>{#2}{\phantom{#2}}
+    % \alt<#1->{#2}{\awsr{#2}}
+    \alt<#1->{\result{#2}}{\phantom{#2}}
 }
 
 \newcounter{question}
@@ -56,7 +56,7 @@
     }
     
     \renewcommand{\palt}[2]{
-        ##2
+        \result{##2}
     }
 
     \renewcommand{\pause}{}
