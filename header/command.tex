@@ -152,6 +152,10 @@
     }
 }
 
+\NewDocumentCommand{\limg}{m O{\linewidth}}{%
+    \includegraphics[width=#2]{#1}%
+}
+
 \NewDocumentCommand{\img}{m O{\linewidth} O{0cm} o}{%
     \begin{figure}[H]%
         \centering%
@@ -182,7 +186,7 @@
     \IfValueT{#1}{(#1)}%
 }
 
-\newcommand{\infoLeconBox}[2]{
+\newcommand{\leconInfoBox}[2]{
     \textbf{#1 :}\vspace{-0.25cm}
         \begin{multicols}{2}
             \begin{itemize}[label=$\blacktriangleright$, font = \small \color{Red}]
@@ -192,24 +196,101 @@
         \vspace{-0.4cm}
 }
 
-\NewDocumentCommand{\infoLecon}{mooo}{
-    \begin{tcolorbox}[colback=red!5!white,
-        colframe=red!75!black]
-        \infoLeconBox{Niveaux}{#1}
+% TCOLORBOX
+
+\newtcolorbox{infoBox}{
+    colback=red!5!white,
+    colframe=red!75!black,
+    breakable
+}
+
+\newtcolorbox{prepBox}{
+    colback=Blue!2!white,
+    colframe=Blue!75!black,
+    % width = 1.1\linewidth,
+    grow sidewards by = 1cm,
+    breakable
+}
+
+\newtcolorbox{twoColBox}{
+    sidebyside, sidebyside align=top,
+    enhanced,
+    opacityback=0,
+    colframe=red!75!black,
+    frame hidden,
+}
+
+\NewDocumentCommand{\leconInfo}{mooo}{
+    \begin{infoBox}
+        \leconInfoBox{Niveaux}{#1}
         \ifNotNull{#2}{
             \tcbline
-            \infoLeconBox{Prérequis}{#2}
+            \leconInfoBox{Prérequis}{#2}
         }
         \ifNotNull{#3}{
             \tcbline
-            \infoLeconBox{Thèmes}{#3}
+            \leconInfoBox{Thèmes}{#3}
         }
         \ifNotNull{#4}{
             \tcbline
             \textbf{Motivation :} 
             #4
         }
-    \end{tcolorbox}
+    \end{infoBox}
+}
+
+\NewDocumentCommand{\seanceInfo}{ooooooo}{
+    \begin{infoBox}
+        \vspace{-0.05cm}
+        \begin{tcbitemize}[raster rows=1,raster columns=20,raster height=1.65cm,
+            raster every box/.style={colframe=red!50!black,colback=red!10!white}]
+            \tcbitem[raster multicolumn=6] \textbf{Date :} #1
+            \tcbitem[raster multicolumn=10] \textbf{Séquence :} #2
+            \tcbitem[raster multicolumn=4] \textbf{Séance :} #3
+        \end{tcbitemize}
+        \vspace{-0.25cm}
+        \ifNotNull{#4}{\tcbline \textbf{Objectif :} #4}
+        \ifNotNull{#5}{\tcbline \leconInfoBox{Classe(s)}{#5}}
+        \ifNotNull{#6}{\tcbline \leconInfoBox{Prérequi(s)}{#6}}
+        \ifNotNull{#7}{\tcbline \textbf{Séance précédente :} #7}
+    \end{infoBox}
+}
+
+\def\pDscr{\tcbitem[raster multicolumn=6, breakable]}
+\def\pMdlt{\tcbitem[raster multicolumn=10, breakable]}
+\def\pTime{\tcbitem[raster multicolumn=4, breakable, halign=center]}
+
+\newcommand{\prepRow}[3]{
+    \tcbitem[raster multicolumn=20, breakable]
+    \tcblower
+
+    \pDscr #1
+    \pMdlt #2
+    \pTime #3
+}
+
+\newcommand{\prepTable}[1]{
+    \begin{prepBox}
+        \begin{tcbitemize}[raster rows=1,raster columns=20,raster height=1.1cm, halign=center,
+            raster every box/.style={colframe=Blue!50!black,colback=Blue!10!white, breakable}]
+            \pDscr \textbf{Descriptif}
+            \pMdlt \textbf{Modalité}
+            \pTime \textbf{Durée}
+        \end{tcbitemize}
+        \begin{tcbitemize}[breakable, 
+            % raster height=1000cm,
+            raster equal height = rows, 
+            raster columns=20, frame hidden,
+            raster every box/.style={
+                enhanced,
+                % colframe=Blue!50!black,
+                % frame hidden, 
+                opacityback=0, valign=top, 
+                size = tight
+            }]
+            #1
+        \end{tcbitemize}
+    \end{prepBox}
 }
 
 % TIKZ
@@ -228,3 +309,7 @@
 
 % Tabular
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% GEOMETRY
+
+% \newcommand{\restoregeometry}{def}
