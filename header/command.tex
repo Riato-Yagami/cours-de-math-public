@@ -136,6 +136,15 @@
     #1 \vee #2
 }
 
+\def\colWidth{1.5cm}
+\newcommand{\propTable}[4]{
+    \begin{tabular}{|C{\colWidth}|C{\colWidth}|}
+        \hline
+        $#1$ & $#2$ \\ \hline
+        $#3$ & $#4$ \\ \hline
+    \end{tabular}
+}
+
 % COMMANDS
 
 \newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
@@ -257,8 +266,8 @@
 }
 
 \def\pDscr{\tcbitem[raster multicolumn=6, breakable]}
-\def\pMdlt{\tcbitem[raster multicolumn=10, breakable]}
-\def\pTime{\tcbitem[raster multicolumn=4, breakable, halign=center]}
+\def\pMdlt{\tcbitem[raster multicolumn=11, breakable]}
+\def\pTime{\tcbitem[raster multicolumn=3, breakable, halign=center]}
 
 \newcommand{\prepRow}[3]{
     \tcbitem[raster multicolumn=20, breakable]
