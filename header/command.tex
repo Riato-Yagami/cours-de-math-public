@@ -165,6 +165,24 @@
     \includegraphics[width=#2]{#1}%
 }
 
+\newsavebox{\picbox}
+
+\newcommand{\cutpic}[3]{
+    \savebox{\picbox}{\includegraphics[width=#2]{#3}}
+    \tikz\node [draw, rounded corners=#1, line width=4pt,
+    color=white, minimum width=\wd\picbox,
+    minimum height=\ht\picbox, path picture={
+        \node at (path picture bounding box.center) {
+        \usebox{\picbox}};
+    }] {};
+}
+
+\NewDocumentCommand{\rimg}{m O{\linewidth}}{%
+    \begin{center}
+        \cutpic{0.4cm}{#2}{#1}
+    \end{center}
+}
+
 \NewDocumentCommand{\img}{m O{\linewidth} O{0cm} o}{%
     \begin{figure}[H]%
         \centering%
@@ -214,11 +232,11 @@
 }
 
 \newtcolorbox{prepBox}{
+    enhanced jigsaw,
+    breakable,
     colback=Blue!2!white,
     colframe=Blue!75!black,
-    % width = 1.1\linewidth,
     grow sidewards by = 1cm,
-    breakable
 }
 
 \newtcolorbox{twoColBox}{
@@ -248,7 +266,7 @@
     \end{infoBox}
 }
 
-\NewDocumentCommand{\seanceInfo}{ooooooo}{
+\NewDocumentCommand{\seanceInfo}{oooooooo}{
     \begin{infoBox}
         \vspace{-0.05cm}
         \begin{tcbitemize}[raster rows=1,raster columns=20,raster height=1.65cm,
@@ -262,15 +280,22 @@
         \ifNotNull{#5}{\tcbline \leconInfoBox{Classe(s)}{#5}}
         \ifNotNull{#6}{\tcbline \leconInfoBox{Prérequi(s)}{#6}}
         \ifNotNull{#7}{\tcbline \textbf{Séance précédente :} #7}
+        \ifNotNull{#7}{\tcbline \leconInfoBox{Matériel(s)}{#8}}
     \end{infoBox}
 }
 
-\def\pDscr{\tcbitem[raster multicolumn=6, breakable]}
-\def\pMdlt{\tcbitem[raster multicolumn=11, breakable]}
-\def\pTime{\tcbitem[raster multicolumn=3, breakable, halign=center]}
+\def\pDscr{\tcbitem[enhanced jigsaw, breakable,
+    raster multicolumn=6]
+}
+\def\pMdlt{\tcbitem[enhanced jigsaw, breakable,
+    raster multicolumn=11]
+}
+\def\pTime{\tcbitem[enhanced jigsaw, breakable,
+    raster multicolumn=3, halign=center]
+}
 
 \newcommand{\prepRow}[3]{
-    \tcbitem[raster multicolumn=20, breakable]
+    \tcbitem[raster multicolumn=20]
     \tcblower
 
     \pDscr #1
@@ -280,20 +305,17 @@
 
 \newcommand{\prepTable}[1]{
     \begin{prepBox}
-        \begin{tcbitemize}[raster rows=1,raster columns=20,raster height=1.1cm, halign=center,
-            raster every box/.style={colframe=Blue!50!black,colback=Blue!10!white, breakable}]
+        \begin{tcbitemize}[enhanced jigsaw, breakable, raster rows=1,raster columns=20,raster height=1.1cm, halign=center,
+            raster every box/.style={enhanced jigsaw, breakable, colframe=Blue!50!black,colback=Blue!10!white}]
             \pDscr \textbf{Descriptif}
             \pMdlt \textbf{Modalité}
             \pTime \textbf{Durée}
         \end{tcbitemize}
-        \begin{tcbitemize}[breakable, 
-            % raster height=1000cm,
+        \begin{tcbitemize}[enhanced jigsaw, breakable,
             raster equal height = rows, 
             raster columns=20, frame hidden,
             raster every box/.style={
-                enhanced,
-                % colframe=Blue!50!black,
-                % frame hidden, 
+                enhanced jigsaw, breakable,
                 opacityback=0, valign=top, 
                 size = tight
             }]
@@ -322,3 +344,15 @@
 % GEOMETRY
 
 % \newcommand{\restoregeometry}{def}
+
+\NewDocumentCommand{\dividePage}{mm O{0.5}}{
+    \pgfmathparse{1-#3}
+    % \newcount\secondPage
+    % \pgfmathsetcount{\secondPage}{\pgfmathresult}
+    \begin{minipage}{#3\linewidth}
+        #1
+    \end{minipage}
+    \begin{minipage}{\pgfmathresult\linewidth}
+        #2
+    \end{minipage}
+}

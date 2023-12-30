@@ -1,0 +1,402 @@
+% VARIABLES %%%
+\def\theme{Fonction Logarithmes}
+% \def\date{date}
+%%%%%%%%%%%%%%%
+
+% DEFINITIONS %
+\def\Logn{Logarithme népérien}
+\def\logn{logarithme népérien}
+\def\expn{exponentielle}
+
+\newcommand{\limto}[1]{
+    \lim\limits_{x\to#1}
+}
+
+\def\limP{\limto{+\infty}}
+\def\limM{\limto{-\infty}}
+\def\limO{\limto{0}}
+
+\def\hyp{Hyperbole Terminale Option Spécialité 2021}
+\def\bib{\href{https://www.bibmath.net/ressources/index.php?action=affiche&quoi=capes/demos/analyse_logarithme.html}{Bibmath}}
+%%%%%%%%%%%%%%
+
+% \setboolean{subsectionInOutline}{true}
+% \setboolean{outline}{true}
+% \setboolean{demonstration}{false}
+
+% \setboolean{showRef}{false}
+
+\hbox{}
+\leconInfo{
+    \ilink{Terminale Option Spécialité}
+    \ilink{Terminale Option Complémentaire}
+    \ilink{Terminale Technologique}
+} % Niveaux
+[\item Continuités et dérivation
+\item Fonction exponentielle
+\item Limites de fonction
+] % Prérequis
+[\ilink{Fonctions}
+\item Analyse] % Thèmes
+[Va permettre d'alléger des calculs très lourds,
+de multiplications de nombres avec beaucoup de chiffres avant et après la virgule;
+en physique et finances notamment.] % Motivation
+
+\section{Bijection réciproque de l'exponentielle}
+
+\df{Fonction Logarithme}{
+    Un \textbf{logarithme} est la fonction réciproque d'une exponentiation,
+    c'est-à-dire que le logarithme de base $b$ d'un nombre réel strictement positif,
+    est la puissance à laquelle il faut élever la base $b$ pour obtenir ce nombre.
+}[\href{https://fr.wikipedia.org/wiki/Logarithme}{Wikipédia}]
+
+\pr{Bijectivité de la fonction \expn}{Pour $x>0$,
+il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
+}[\bib]
+
+\demo{}{
+    La fonction $\exp$ est continue et strictement croissante sur $\m{R}$.
+    De plus, $\limM\exp{(x)} = 0$ et $\limP\exp{(x)} = +\infty$.
+    Ainsi, d'après le théorème des valuers intermédiaires,
+    il existe un unique $y\in\m{R}$ tel que $\exp{(y)}=x$.
+}[\href{https://www.maths-et-tiques.fr/telech/LogTS.pdf}{Yvan Monka}]
+
+\df{Fonction \Logn}{
+    La fonction \textbf{\logn}, notée $\ln$, est la bijection réciproque de la fonction \expn.
+}[\href{https://fr.wikipedia.org/wiki/Logarithme_népérien}{Wikipédia}]
+
+\cor{Conséquence de la bijection}{
+    On a alors:
+    \begin{itemize}
+        \item pour $(x,y)\in\m{R}_+^* \times \m{R}, e^x=\ln(y) \eqv y = \ln(x)$
+        \item pour $x\in\m{R}^*, e^{\ln(x)}=x$
+        \item pour $x\in\m{R}, \ln(e^x)=x$
+    \end{itemize}
+}
+
+\rmk{Quelques résultats numériques}{
+    On a alors:
+    \begin{itemize}
+        \item $\ln(1)=\ln(e^0)$
+        \item $\ln(e)=\ln(e^1)$
+        \item $\ln(\frac{1}{e})= \ln(e^{-1}) = -1$
+    \end{itemize}
+}
+
+\pr{Symétrie graphique}{
+    Dans un repère orthonormé,
+    les courbes représentatives des fonctions \expn{} et \logn,
+    sont symétrique par rapport à la droite d'équation $y=x$.
+}[\hyp]
+
+\demo{}{
+    \rmdr{Symétrie de droite $y=x$}{
+    Pour $(a,b)\in\m{R}^2$,
+    le symétrique du point $(a,b)$ par rapport à la droite d'équation $y=x$,
+    est le point de coordonnés $(b,a)$.
+    }\vspace*{0.5cm}
+    Soit $a\in\m{R}$,
+    On considère un point $(a,\ln(a))$ avec $a>0$ sur la courbe représentative du \logn.
+    Son symétrique est le point $(\ln(a),a)$.
+    Il est bien sur la courbe représentative de l'\expn,
+    en effet, on a bien: $e^{\ln(a)} = a$.\\
+    De manière semblable,
+    on obtient que le symétrique d'un point sur la courbe représentative de l'\expn,
+    se trouve sur la courbe représentative du \logn.
+}[\bib]
+
+\section{Analyse du \logn}
+
+\subsection{Variations}
+
+\pr{Croissance du \logn}{
+    La fonction \logn{} est strictement croissante sur $]0;+\infty[$.
+}
+
+\demo{}{
+    Soient $(a,b)\in\m{R}^2$ tels que:
+    \begin{align*}
+        0<a&<b\\
+        \ialors e^{ln(a)}&<e^{\ln(b)}\\
+        \ialors \ln(a)&<\ln(b) \textrm{ par croissance de l'\expn}
+    \end{align*}
+}[\hyp]
+
+\rmk{Conséquence}{
+    On a alors, pour $a\in\m{R}_+^*$:
+    \begin{itemize}
+        \item $\ln(a) > 0 \eqv a > 1$
+        \item $\ln(a) < 0 \eqv a < 1$
+    \end{itemize}
+}
+
+\subsection{Limites}
+
+\pr{Limites du \logn}{
+    \begin{itemize}
+        \item $\limP\ln(x) = +\infty$
+        \item $\limO\ln(x) = -\infty$
+    \end{itemize}
+}
+
+\demo{Avec la fonction \expn}{
+    \rmdr{Limites infinie}{
+        Pour $f$ définie sur $\m{R}$:
+        \begin{equation*}
+            \limP f(x) = +\infty \eqv
+            \forall M \in \m{R} \; \exists A \in \m{R}, \; \forall x \geq A \; f(x) \geq M
+        \end{equation*}
+    }
+    Soit $M$.
+    Posons $A=\exp(M)$.
+    Alors puisque la fonction logarithme est croissante,
+    pour tout $x \geqslant A$, on a:
+    $\ln(x) \geqslant \ln(A) = \ln(\exp(M)) = M$.
+}[\bib]
+
+\demo{Avec la relation fonctionnelle}{
+    Soit $M$,
+    et $ \forall n \in \m {N}, u_n = \ln(2^n) = n\ln(2)$,
+    on a $\lim\limits_{n\to+\infty}u_n = +\infty$.
+    Il existe alors $n_0\in\m{N}$ tel que $\ln(2^{n_0}) \geq M$.
+    Posons $A=2^{n_0}$.
+    Par croissance de la fonction \logn,
+    pour tout $x \geq A $,
+    on a:
+    $\ln(x) \geq \ln(A)\geq \ln(2^{n_0}) \geq M$
+}[\bib]
+
+\subsection{Continuité et dérivation}
+
+\pr{Continuité du \logn}{
+    La fonction \logn{} est continue sur $\m{R}_+^*$.
+}
+
+\demo{}{
+    Le \logn{} est bijection réciproque de l'\expn{} continue de $\m{R}$ dans $\m{R}_+^*$.
+    Il est alors continue de $\m{R}_+^*$ dans $\m{R}$, d'après le théorème de la bijection.
+}
+
+\pr{Dérivabilité du \logn}{
+    La fonction \logn{} est dérivable sur $\m{R}_+^*$.
+}
+
+\demo{}{
+    Le \logn{} est bijection réciproque de l'\expn{},
+    dérivable et strictement croissante de $\m{R}$ dans $\m{R}_+^*$.
+    Aussi la dérivée de l'\expn{} est strictement positive.
+    Alors le \logn{} est dérivable en $\m{R}_+^*$.
+}[\href{https://fr.wikiversity.org/wiki/Fonctions_d\%27une_variable_réelle/Dérivabilité\#_et_opérations}{Wikiversity}]
+
+\pr{Dérivée du \logn}{
+    Pour $x>0$,
+    on a:
+    $\ln'(x) = \frac{1}{x}$
+}
+
+\demo{}{
+    \rmdr{Dérivation de fonction composées}{
+        Soit $f$ dérivable sur $\m{I}$ et $g$ dérivable sur $f(\m{I})$.
+        Alors $(g \circ f)$ est dérivable sur $I$ et:
+        \begin{equation*}
+            (g \circ f)' = (g' \circ f) \times f'
+        \end{equation*}
+    }
+    Pour $x\in\m{R^*}$,
+    \begin{align*}
+        \exp(\ln(x)) &= x\\
+        \ialors (\exp(\ln(x)))' &= (x)'\\
+        \ialors \ln'(x)\exp'(\ln(x)) &= 1 \textrm{ (dérivation de fonctions composées)}\\
+        \ialors \ln'(x)\exp(\ln(x)) &= 1\\
+        \ialors \ln'(x)\exp(\ln(x)) &= 1\\
+        \ialors \ln'(x) \times x &= 1\\
+        \idou \ln'(x) &= \frac{1}{x}
+    \end{align*}
+}[\bib]
+
+% \demo{Géomtrique}{
+% }[\bib]
+
+\pr{Dérivation composées du \logn}{
+    Soient $u$ fonction dérivable et strictement positive sur un intervalle $I$.
+    Alors $\ln(u)$ est dérivable et $\ln'(u) = \frac{u'}{u}$.
+}
+
+\demo{}{
+    Soient $f : x \mapsto \ln(x)$ et $g : x \mapsto u(x)$ et $x\in\m{I}$.
+    \begin{align*}
+        (f \circ g)' &= g' \times (f' \circ g)
+        \ior f'(x) &= \frac{1}{x} \et g'(x) = u'(x)
+        \ialors (f \circ g)'(x) &= u'(x) \times \frac{1}{u(x)}
+        \idou \ln'(u) &= \frac{u'}{u}
+    \end{align*}
+}[\href{https://www.math-linux.com/mathematiques/derivee-de-fonction/article/derivee-de-ln-u}{Math-Linux.com}]
+
+\subsection{Croissance comparée}
+
+\def\lnx{\frac{\ln(x)}{x}}
+\def\lnxn{\frac{\ln(x)}{x^n}}
+
+\pr{Croissance comparée de $ln(x)$ et $x$ en l'infinie}{
+    \begin{equation*}
+        \limP \lnx = 0
+    \end{equation*}
+}
+
+\demo{}{
+    Pour $x \geq 1$,
+    on pose:
+    \begin{align*}
+        f(x) &= \ln(x)-2\sqrt{x}
+        \ialors f'(x) &= \frac{1}{x} - \frac{1}{\sqrt{x}} \car f \; C^1 \textrm{ sur } [1,+\infty[
+        \ior x &\geq \sqrt{x} > 0 \car x \geq 1
+        \ialors f'(x) &\leq 0
+        \ior f \textrm{ décroissante sur } &[1,+\infty[ \et f(1) = -2 \leq 0
+        \ialors \ln(x) &\leq 2 \sqrt{x}
+        \ialors 0 \leq \lnx &\leq \frac{2}{\sqrt{x}}
+        \idou \limP \lnx &= 0 \textrm{ par le théorème des gendarmes}
+    \end{align*}
+}[\bib]
+
+\cor{Croissance comparée de $ln(x)$ et $x^n$ en l'infinie}{
+    Pour $n\in\m{N}\backslash\{0\}$
+    \begin{equation*}
+        \limP \lnxn = 0
+    \end{equation*}
+}
+
+\demo{}{
+    Pour $x \geq 1$ et $n\in\m{N}\backslash\{0\}$,
+    on a:
+    \begin{align*}
+        \lnxn &= \frac{1}{x^{n-1}} \times \lnx
+        \ior \limP \frac{1}{x^{n-1}} &= 0 \et \limP \lnx = 0
+        \idou \limP \lnxn &= 0
+    \end{align*}
+}[\bib]
+
+\def\xln{x \ln(x)}
+\def\xnln{x^n \ln(x)}
+\pr{Croissance comparée de $ln(x)$ et $x$ en $0$}{
+    \begin{equation*}
+        \limO \xln = 0
+    \end{equation*}
+}
+
+\demo{}{
+    Pour $x>0$,
+    on a:
+    \begin{align*}
+        \xln &= \frac{1}{u} \ln\left(\frac{1}{u}\right) = -\frac{\ln(u)}{u} \avec u = \frac{1}{x}
+        \ialors \limO \xln &= \lim\limits_{u\to+\infty} -\frac{\ln(u)}{u} = 0
+    \end{align*}
+}[\bib]
+
+\cor{Croissance comparée de $ln(x)$ et $x^n$ en $0$}{
+    Pour $n\in\m{N}\backslash\{0\}$,
+    \begin{equation*}
+        \limO \xnln = 0
+    \end{equation*}
+}
+
+\demo{}{
+    Pour $x>0$ et $n\in\m{N}\backslash\{0\}$,
+    on a:
+    \begin{align*}
+        \xnln &= x^{n-1} \times \xln
+        \ior \limO x^{n-1} = 0 \et \limO \xln = 0
+        \idou \limO \xnln = 0
+    \end{align*}
+}[\bib]
+
+\section{Propriétés algébriques}
+
+\pr{Relation fonctionnelle}{
+    Pour $(a,b)\in(\m{R}_+)^2$,
+    on a:
+    \begin{equation*}
+        \ln(a \times b) = \ln(a) + \ln(b)
+    \end{equation*}
+}
+
+\demo{}{
+    Soient $(a,b)\in(\m{R}_+)^2$,
+    on a:
+    \begin{align*}
+        e^{\ln(ab)} &= ab
+        \iet e^{\ln(a)+\ln(b)} = e^{\ln(a)}e^{\ln(b)} &= ab
+        \idou \ln(ab) &= \ln(a) + \ln(b) \textrm{ par injectivité de l'\expn}
+    \end{align*}
+}
+
+\pr{Logarithme népérien d'un inverse}{
+    Pour $a\in(\m{R}_+)$
+    \begin{equation*}
+        \ln\left(\frac{1}{a}\right) = -\ln(a)
+    \end{equation*}
+}
+
+\demo{}{
+    Soit $a\in(\m{R}_+)$,
+    on a:
+    \begin{align*}
+        \ln\left(\frac{1}{a} \times a\right) &= \ln(1) = 0
+        \iet \ln\left(\frac{1}{a} \times a\right) &= \ln\left(\frac{1}{a}\right) + \ln(a)
+        \idou \ln\left(\frac{1}{a}\right) &= -\ln(a)
+    \end{align*}
+}[\hyp]
+
+
+\pr{Logarithme népérien d'un quotient}{
+    Pour $(a,b)\in(\m{R}_+)^2$,
+    \begin{equation*}
+        \ln\left(\frac{a}{b}\right) = \ln(b)-\ln(a)
+    \end{equation*}
+}
+
+\demo{}{
+    Soient $(a,b)\in(\m{R}_+)^2$,
+    on a:
+    \begin{align*}
+        \ln\left(\frac{a}{b}\right) &= \ln\left(a \times \frac{1}{b}\right)\\
+        &= \ln(a) + \ln\left(\frac{1}{b}\right)\\
+        &= \ln(a) - \ln(b)
+    \end{align*}
+}[\hyp]
+
+\pr{Logarithme népérien d'une puissance}{
+    Pour $a\in(\m{R}_+)$,
+    \begin{equation*}
+        \ln(a^n) = n \ln(a)
+    \end{equation*}
+}
+
+\demo{}{
+    Soit $a\in(\m{R}_+)$,
+    \begin{align*}
+        e^{\ln(a^n)} &= a^n
+        \iet e^{n\ln(a)} = (e^{\ln(a)})^n &= a^n
+        \idou  \ln(a^n) = n \ln(a) \textrm{ par injectivité de l'\expn}
+    \end{align*}
+}
+
+\pr{Logarithme népérien d'une racine carré}{
+    Pour $a\in(\m{R}_+)$,
+    \begin{equation*}
+        \ln(\sqrt{a}) = \frac{1}{2} \ln(a)
+    \end{equation*}
+}
+
+\demo{}{
+    Soit $a\in(\m{R}_+)$,
+    \begin{align*}
+        (\sqrt{a})^2 &= a
+        \ialors \ln((\sqrt{a})^2) &= \ln(a)
+        \iet \ln((\sqrt{a})^2) &= 2\ln(\sqrt{a})
+        \ialors \ln(a) &= 2\ln(\sqrt{a})
+        \idou \frac{1}{2} \ln(a) &= \ln(\sqrt{a})
+    \end{align*}
+}[\hyp]
+
+
+
