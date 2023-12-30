@@ -42,12 +42,15 @@
 de multiplications de nombres avec beaucoup de chiffres avant et après la virgule;
 en physique et finances notamment.] % Motivation
 
-\section{Bijection réciproque de l'exponentielle}
+\section{Fonctions Logarithme}
 
-\df{Fonction Logarithme}{
+\subsection{Définitions}
+
+\df{Fonctions Logarithme}{
     Un \textbf{logarithme} est la fonction réciproque d'une exponentiation,
     c'est-à-dire que le logarithme de base $b$ d'un nombre réel strictement positif,
     est la puissance à laquelle il faut élever la base $b$ pour obtenir ce nombre.
+    On le note $\log_b$.
 }[\href{https://fr.wikipedia.org/wiki/Logarithme}{Wikipédia}]
 
 \pr{Bijectivité de la fonction \expn}{Pour $x>0$,
@@ -64,6 +67,10 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 \df{Fonction \Logn}{
     La fonction \textbf{\logn}, notée $\ln$, est la bijection réciproque de la fonction \expn.
 }[\href{https://fr.wikipedia.org/wiki/Logarithme_népérien}{Wikipédia}]
+
+\rmk{Logarithme de base $e$}{
+    Le logarithme népérien est alors le logarithme de base $e$.
+}
 
 \cor{Conséquence de la bijection}{
     On a alors:
@@ -88,6 +95,42 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     les courbes représentatives des fonctions \expn{} et \logn,
     sont symétrique par rapport à la droite d'équation $y=x$.
 }[\hyp]
+
+\subsection{Changement de base}
+
+\pr{Formule de changement de base}{
+    Deux fonctions logarithmes ne diffèrent que d’une constante multiplicative:
+    pour $(a,b)\in(\m{R}_+\backslash\{0,1\})^2$ et $x\in\m{R}_+^*$,
+    on a:
+    \begin{align*}
+        \log_b(x) = \frac{\log_a(x)}{\log_a(b)}
+    \end{align*}
+}
+
+\demo{}{
+    Soient $b\in\m{R}_+\backslash\{0,1\}$ et $x\in\m{R}_+^*$,
+    On pose:
+    \begin{align*}
+        \delta = \log_b(x)
+        \ialors x^\delta = b
+        \ialors \log_a(x^\delta) = \log_a(b)
+        \ialors \delta \log_a(x) = \log_a(b)
+        \ialors \log_b(x) = \frac{\log_b(a)}{\delta}
+        \idou \log_b(x) = \frac{\log_a(x)}{\log_a(b)}
+    \end{align*}
+}
+
+\cor{Changement de base avec le \logn}{
+    Pour $b\in\m{R}_+\backslash\{0,1\}$ et $x\in\m{R}_+^*$,
+    on a:
+    \begin{align*}
+        \log_b(x) = \frac{\ln(x)}{\ln(b)}
+    \end{align*}
+}
+
+\rmk{Réduction du problème au \logn}{
+    On peut alors, sans perte de généralité, s'interesser uniquement au \logn.
+}
 
 \demo{}{
     \rmdr{Symétrie de droite $y=x$}{
@@ -398,5 +441,35 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     \end{align*}
 }[\hyp]
 
+\section{Méthode d'approximations}
 
+\mthd{Algorithme de Briggs}{
+    \vspace*{-0.6cm}
+    \begin{algorithm}
+        \KwData{$a\in\m{R_+^*}$ et $n\in\m{N}$}
+        \KwRes{$\ln(a)$ a $10^{-n}$ près $\rightarrow 2^i \times (a^{\frac{1}{2^i}} - 1)$}
+        $i \leftarrow 0$\;
+        \Tq{$|a-1| \geq 10^{-n}$}{
+            $i \leftarrow i+1$\;
+            $a \leftarrow \sqrt{a}$\;
+        }
+        \KwRet{$2^i \times (a-1)$}\;
+    \end{algorithm}        
+}
 
+\demo{}{
+    Soit $u_n$,
+    définie telle que:
+    \begin{align*}
+        &\lfbrace{
+            u_{n+1} &= \sqrt{u_n} \\
+            u_0 &= a\in\m{R_+^*}
+        }\\
+        \ialors &\lim\limits_{n \rightarrow +\infty} u_n = 1\\
+        \ior \ln(1+x) &= x + \dl(x)
+    \end{align*}
+}
+
+\tice{Algorithme de Briggs}{Python}{
+    \lstinputlisting[language=Python]{documents/lecons-capes/ressources/algo_briggs.py}
+}
