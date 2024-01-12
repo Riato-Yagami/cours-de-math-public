@@ -28,6 +28,9 @@
 \newcommand{\palt}[2]{
     % \alt<#1->{#2}{\awsr{#2}}
     \alt<#1->{\result{#2}}{\phantom{#2}}
+    % \alt<#1->{\result{#2}}{\pgfinvisible #2 \pgfshown}
+    % \alt<#1->{\result{#2}}{\textcolor{white}{#2}}
+
 }
 
 \newcounter{question}
@@ -75,5 +78,6 @@
 
     \renewcommand{\palt}[2]{
         \phantom{##2}
+        % \pgfinvisible ##2 \pgfshown
     }
 }

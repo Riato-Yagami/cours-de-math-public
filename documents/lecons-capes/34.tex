@@ -20,7 +20,7 @@
 \def\bib{\href{https://www.bibmath.net/ressources/index.php?action=affiche&quoi=capes/demos/analyse_logarithme.html}{Bibmath}}
 %%%%%%%%%%%%%%
 
-% \setboolean{subsectionInOutline}{true}
+\setboolean{subsectionInOutline}{true}
 % \setboolean{outline}{true}
 % \setboolean{demonstration}{false}
 
@@ -29,15 +29,18 @@
 \hbox{}
 \leconInfo{
     \ilink{Terminale Option Spécialité}
-    \ilink{Terminale Option Complémentaire}
     \ilink{Terminale Technologique}
+    \ilink{Terminale Option Complémentaire}
 } % Niveaux
-[\item Continuités et dérivation
+[\item Continuité et dérivation
 \item Fonction exponentielle
 \item Limites de fonction
+\item Calcul de puissances
+\item Théorème des valeurs intermédiaires
+\item Fonction réciproque
+\item Suites
 ] % Prérequis
-[\ilink{Fonctions}
-\item Analyse] % Thèmes
+[\ilink{Fonctions} \ilink{Puissances}] % Thèmes
 [Va permettre d'alléger des calculs très lourds,
 de multiplications de nombres avec beaucoup de chiffres avant et après la virgule;
 en physique et finances notamment.] % Motivation
@@ -148,7 +151,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     se trouve sur la courbe représentative du \logn.
 }[\bib]
 
-\section{Analyse du \logn}
+\section{Étude Analytique du \logn}
 
 \subsection{Variations}
 
@@ -449,27 +452,48 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
         \KwData{$a\in\m{R_+^*}$ et $n\in\m{N}$}
         \KwRes{$\ln(a)$ a $10^{-n}$ près $\rightarrow 2^i \times (a^{\frac{1}{2^i}} - 1)$}
         $i \leftarrow 0$\;
-        \Tq{$|a-1| \geq 10^{-n}$}{
+        $u \leftarrow a$\;
+        \Tq{$|u-1| \geq 10^{-n}$}{
             $i \leftarrow i+1$\;
-            $a \leftarrow \sqrt{a}$\;
+            $a \leftarrow \sqrt{u}$\;
         }
-        \KwRet{$2^i \times (a-1)$}\;
+        \KwRet{$2^i \times (u-1)$}\;
     \end{algorithm}        
 }
 
 \demo{}{
-    Soit $u_n$,
+    Soit $(u_n)_{n\in\m{N}}$,
     définie telle que:
     \begin{align*}
         &\lfbrace{
-            u_{n+1} &= \sqrt{u_n} \\
-            u_0 &= a\in\m{R_+^*}
+            &\forall n \in \m{N}, u_{n+1} = \sqrt{u_n} \\
+            &u_0 = a
         }\\
         \ialors &\lim\limits_{n \rightarrow +\infty} u_n = 1\\
-        \ior \ln(1+x) &= x + \dl(x)
+        \intertext{d'où la terminaison de la boucle.}
+        \iet \ln(1+x) &= x + \dl{x \rightarrow 0} (x) 
+        \ialors \ln(z) &= z - 1 + \dl{z \rightarrow 1} (z-1) \textrm{ changement de variable } z = 1 + x
+        \ialors 2^i\ln(z) &= 2^i(z - 1 + \dl{z \rightarrow 1} (z-1))
+        \ialors \ln(z^{2^i}) &= 2^i(z - 1) + \dl{z \rightarrow 1} (z-1)
+        \ialors \ln(y) &= 2^i(y^{\frac{1}{2^i}} - 1) + \dl{y \rightarrow 1^{2^i} = 1} (y^{\frac{1}{2^i}}-1) \textrm{ changement de variable } y = z^{2^i}
+        \ior \lim\limits_{i\rightarrow+\infty} y^{\frac{1}{2^i}} &= 1
+        \idou \ln(y) &\approx 2^i(y^{\frac{1}{2^i}} - 1) \textrm{ quand $i$ grand}
+        % \ialors \ln(x) &\approx x-1 \textrm{ quand $x$ est proche de 1.}
+        % \ior 2^i\ln(x) &= \ln(x^{2^i})
+        % \ialors 2^i\ln(y^{\frac{1}{2^i}}) &= \ln(y^{\frac{2^i}{2^i}}) = \ln(y) \textrm{ par changement de variable } y = x^{2^i}
+        % \ialors \ln(y) &\approx 2^i \times (y^{\frac{1}{2^i}} - 1) \textrm{ quand $i$ grand}  
+        % \ior u &= a^{\frac{1}{2^i}}
     \end{align*}
+    d'où le retour de la boucle.
 }
 
-\tice{Algorithme de Briggs}{Python}{
+\tice{Implémentation de l'algorithme de Briggs}{Python}{
     \lstinputlisting[language=Python]{documents/lecons-capes/ressources/algo_briggs.py}
 }
+
+\mthd{Algorithme de Brouncker}{
+    $\rightarrow$ \href{https://www.geogebra.org/m/dcbuqkjx}{Animation Géogebra}
+    \begin{equation*}
+        \ln(2) = \sum_{k=0}^{+\infty}\frac{1}{(2k+1)(2k+2)}
+    \end{equation*}
+}[\href{https://www.geogebra.org/m/dcbuqkjx}{Jean-Paul Berroir}]

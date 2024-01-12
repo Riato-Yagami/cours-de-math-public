@@ -11,8 +11,6 @@
     pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
 }
 
-\frenchbsetup{StandardItemLabels=true}
-
 % listings
 
 \lstdefinestyle{pythonStyle}{
@@ -41,3 +39,9 @@
 
 % tcolorbox
 \tcbuselibrary{breakable}
+
+% eurosym
+\DeclareRobustCommand{\officialeuro}{%
+    \ifmmode\expandafter\text\fi
+    {\fontencoding{U}\fontfamily{eurosym}\selectfont e}
+}

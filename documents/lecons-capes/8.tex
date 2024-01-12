@@ -55,6 +55,22 @@
     On cherche un couple $u,v$, tel que $au+nv= 1$ à l'aide de l'algorithme d'euclide.
 }
 
+\thm{Des restes chinois (2 équations)}{
+    Soient $m,n\in\m{N}$, tels que $\pgcd{m}{n}=1$.\\
+    Alors,
+    pour tout $(a,b)\in\m{Z}^2$,
+    le système:
+    \begin{equation*}
+        \lfbrace{x \equiv a [m] \\ y \equiv b [n]}
+    \end{equation*}
+    admet au moins une solution.\\
+    De plus, si $x_0$ est une solution particulière,
+    l'ensemble des solutions est:
+    \begin{equation*}
+        \{x_0+kmn|k\in\m{Z}\}
+    \end{equation*}
+}
+
 \thm{Des restes chinois}{
     Soient $(n_i)_{i\in{[|1,k|]}}\in\m{N}$ premiers entre eux avec $k\in\m{k}$.\\
     Alors pour tout $(a_i)_{i\in{[|1,k|]}}\in\m{N}$,\\

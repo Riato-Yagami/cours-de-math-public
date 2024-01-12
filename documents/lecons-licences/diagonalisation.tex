@@ -1,0 +1,64 @@
+% VARIABLES %%%
+\def\theme{Diagonalisation}
+\def\date{09/01/2023}
+%%%%%%%%%%%%%%%
+
+% DEFINITIONS %
+\def\ev{espace vectoriel }
+\def\endo{endomorphisme }
+\def\vp{vecteur propre }
+\def\vlp{valeur propre }
+\def\lb{\ensuremath{\lambda}}
+\def\plc{polynôme caractéristique }
+\def\sep{sous-espace propre }
+%%%%%%%%%%%%%%
+
+$\m{K} = \m{R} \ou \m{K} = \m{C}$ dans le reste de la leçon.
+Soient \m{E} un \ev fini sur \m{K},
+et $f$ \endo de \m{E}.
+
+\df{Endomorphisme diagonalisable}{
+    On dit que $f$ est \textbf{diagonalisable} s'il existe une base de \m{E} telle que:
+    la matrice de $f$ par rapport à cette base soit diagonale.
+}[\href{https://uel.unisciel.fr/mathematiques/reducmat1/reducmat1_ch01/co/apprendre_ch1_02.html}{Unisciel}]
+
+\df{Vecteur propre}{
+    Un vecteur $v$ de \m{E} est appelé \textbf{\vp} de $f$ s'il il verifie les deux conditions:
+    \begin{enumerate}
+        \item $v \neq 0$,
+        \item il existe $\lb\in\m{K}$ tel que $f(v) = \lb v$. 
+    \end{enumerate}
+}
+
+\df{Valeur propre}{
+    $\lb\in\m{K}$ est appelé \textbf{\vlp} de $f$ s'il existe un vecteur $v\neq0$,
+    tel que $f(v)=\lb v$.
+}
+
+\pr{Caracatérisation d'une \vlp}{
+    $\lb\in\m{K}$ est une \vlp de $f$ \ssi :
+    $\det(f-\lb \Id_{\m{E}}) = 0$.
+}
+
+\df{Polynôme caractéristique}{
+    Si \m{E} de dimension $n\geqslant1$.
+    Soit $A$ la matrice associée à $f$ par rapport à une base de \m{E}.\\
+    Le polynôme $\chi_f = \det(f-X\Id_{\m{E}})$ égale à $\det(A-X\I_n)$;
+    est appelé \textbf{\plc} de $f$.
+}
+
+\rmk{Coéfficient du \plc}{
+    C'est polynôme à coefficient dans \m{K},
+    de degré $n$,
+    dont le coefficient dominant est $(-1)^n$.
+}
+
+\pr{Valeur propre et \plc}{
+    $\lb\in\m{K}$ est une \vlp de $f$ \ssi il est racine du \plc de $f$.
+}
+
+\df{Sous-espace propre associée à une \vlp}{
+    Soit \lb une \vlp de $f$.
+    On appelle \sep associée à la \vlp \lb :
+    le noyau $\m{E}(\lb) = \Ker(f-\lb \Id_{\m{E}})$.
+}

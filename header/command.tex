@@ -79,7 +79,7 @@
 }
 
 \newcommand{\awsr}[1]{%
-    \ifthenelse{\boolean{anwser}}{
+    \ifthenelse{\boolean{answer}}{
         \result{#1}
     }{
         \countlines{#1}
@@ -336,6 +336,7 @@
 
 % Tabular
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
 % GEOMETRY
 
@@ -351,4 +352,21 @@
     \begin{minipage}{\pgfmathresult\linewidth}
         #2
     \end{minipage}
+}
+
+\newcommand{\multiColItemize}[2]{
+    \begin{multicols}{#1}
+        \begin{itemize}
+            #2
+        \end{itemize}
+    \end{multicols}
+}
+
+\makeatletter
+\newcommand\pgfinvisible{\pgfsys@begininvisible}
+\newcommand\pgfshown{\pgfsys@endinvisible}
+\makeatother
+
+\renewcommand*{\phantom}[1]{
+    \pgfinvisible #1 \pgfshown
 }

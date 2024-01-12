@@ -51,7 +51,7 @@
     \TODO
 }
 
-\pr{}{
+\pr{Algorithme d'Euclide}{
     Soit $a$ et $b$ sont deux entiers naturels avec $a\geqslant b$,
     et $r$ le reste de la division euclidienne de $a$ par $b$.\\
     Alors le pgcd de $a$ et $b$ vaut le pgcd de $b$ et $r$.
@@ -61,8 +61,20 @@
     \end{align*}
 }
 
+\demo{}{
+    Soit $\m{D}(x,y)$ l'ensemble des diviseurs communs de $x$ et $y$.\\
+    Soit $a=bq+r$,
+    et $d\in\m{D}(a,b)$.\\
+    On a $r=a-bq$, $d|a$ et $d|b$ alors $d|r$.\\
+    Alors $d\in\m{D}(b,r)$.\\
+    Réciproquement si $d\in\m{D}(b,r)$,
+    on trouve $d|a$, et donc $d\in\m{D}(a,b)$.\\
+    D'où $ \m{D}(a,b) = \m{D}(b,r)$.\\
+    On a donc $\pgcd{a}{b} = \pgcd{b}{r}$.
+}
+
 \mthd{Algorithme d'Euclide}{
-    \vspace*{-0.6cm}
+    % \vspace*{-0.6cm}
     \begin{algorithm}
         \KwData{Entiers $a$ et $b$ avec $a\geqslant b$}
         \KwRes{Le pgcd de $a$ et $b$}
@@ -80,17 +92,39 @@
     \lstinputlisting[language=Python]{appendix/lecon-capes/5/euclide.py}
 }
 
-\thm{identité de Bachet-Bézout}{
+\thm{Identité de Bachet-Bézout}{
     Soient $a,b\in\m{Z}$ et $d = \pgcd{a}{b}$.\\
     Il existe $u,v\in\m{Z}$ tels que $au+bv=d$.
 }
 
-\pr{}{
-    Soient $a,b,c\in\m{Z}$.
-    On a $c|a$ et $c|b \eqv c|(\pgcd{a}{b})$.
-}
+\demo{}{
+    Soient $a,b\in\m{Z}$ et $d = \pgcd{a}{b}$.\\
+    Si $d=0$, alors $a=b=0$ donc $(u,v)=(0,0)$ vérifie $au+bv$.\\
+    Si $d>0$, alors $(a,b)\neq(0,0)$.\\
+    Soit $\m{E}=\{au+bv|(x,y)\in(\m{Z})^2\}\cap\m{N}^*$.\\
+    On a $(a^2 + b^2)\in\m{E}$ alors $\m{E}\neq\emptyset$.\\
+    $\m{E}$ a un plus petit élément $d_0=au_0+bv_0$.\\
+    On a $d\in\m{D}(a,b)$ alors $d|d_0$.\\
+    Soit $(u,v)\in\m{Z}^2$.\\
+    Il existe $(q,r)\in\m{Z}\times\m{N}$ avec $r<d_0$, tels que:
+    \begin{align*}
+        au+bv &= qd_0+r \textrm{ division euclidienne de $au+bv$ par $d_0$}
+        \ialors au+bv &= q(au_0+bv_0)+r
+        \ialors r &= a(u-qu_0) + b(v-qv_0) = au'+bv'
+        \ialors r&\in\m{E} \cup \{0\} \et r<d_0 \alors r = 0
+        \ialors d_0&|(au+bv)
+        \ialors d_0&\in\m{D}(a,b) \alors d_0 | (pgcd{a,b}) = d
+        \ialors d_0 &= d
+    \end{align*}
+    Il existe donc $u,v\in\m{Z}$ tels que $au+bv=d$.
+}[\href{https://share.miple.co/content/9kCofIZDUtwbh}{Démos Maths MPSI}]
 
 \pr{}{
+    Soient $a,b,c\in\m{Z}$.
+    On a ($c|a$ et $c|b) \eqv c|(\pgcd{a}{b})$.
+}
+
+\pr{Homogénéité du PGCD}{
     Soit $a,b,k\in\m{Z}\backslash\{0\}$.\\
     Alors $\pgcd{(ka)}{(kb)} = |k|(\pgcd{a}{b})$.
 }
@@ -104,14 +138,41 @@
 \subsection{Nombres premiers entre eux}
 
 \thm{de Bézout}{
-    Pour $a,b\in\m{Z}$, on a $a \wedge b =1$, \ssi,
+    Pour $a,b\in\m{Z}$, on a $\pgcd{a}{b}=1$, \ssi,
     il existe $u,v\in\m{Z}$ tels que $au+bv=1$.
 }
+
+\demo{}{
+    Le sens direct découle immédiatement de l'identité de Bézout,
+    appliquée au cas où $\pgcd{a}{b}=1$.\\
+    Sens réciproque:\\
+    Supposons qu'il existe $(u,v)\in\m{Z}^2$, tel que $au+bv=1$.\\
+    Soit $d\in\m{D}(a,b)$, on a:
+    \begin{align*}
+        d&|(au+bv)\\
+        \ialors d&|1
+        \idou d&\in\{1,-1\}
+    \end{align*}
+    Donc $\pgcd{a}{b} = 1$.
+}[\href{https://share.miple.co/content/9kCofIZDUtwbh}{Démos Maths MPSI}]
 
 \lem{de Gauss}{
     Soient $a,b,c\in{Z}$ avec $\pgcd{a}{b}=1$ et $a|bc$,
     alors $a|c$.
 }
+
+\demo{}{
+    $a|bc$ alors,
+    il existe $k\in\m{Z}$ tel que $bc=ka$.\\
+    $\pgcd{a}{b}$, il existe $u,v\in\m{Z}$ tels que:
+    \begin{align*}
+        au+bv&=1  \textrm{ ( \refsec{thm}{de Bézout})}
+        \ialors auc+bvc &= c
+        \ialors auc+kav &= c
+        \ialors a(au+kv) &= c
+    \end{align*}
+    d'où $a|c$
+}[\href{https://www.bibmath.net/ressources/index.php?action=affiche&quoi=capes/demos/arithmetique.html}{Bibmath}]
 
 \cor{du lemme de Gauss}{
     Soit $a,b,n\in\m{Z}$.

@@ -59,21 +59,26 @@
 \makeatletter
 \newcommand{\newsec}[4]{ % #1 Level | #2 Code | #3 Color | #4 Type
     \newcounter{#2}
-    \stepcounter{#2}
 
-    \label{#2-\csname the#2\endcsname}
-    
     \expandafter\NewDocumentCommand\csname #2\endcsname{mmo}{ % ##1 Title | ##2 Content
-    % \expandafter\newcommand\csname #2\endcsname[2]{ % ##1 Title | ##2 Content
+        \stepcounter{#2}
 
         \def\sectionID{\csname the#2\endcsname}
-        \def\target{\hypertarget{#2-\csname the#2\endcsname}}
+
+        % Define the label for the section
+        \def\sectionLabel{#2-\sectionID}
+
+        % Create the section label
+        \label{\sectionLabel}
+        
+        % Define the target for hyperlink
+        \def\target{\hypertarget{\sectionLabel}}
         
         % Create Ref Hyperlink
         \ifNotNull{##1}{
             \expandafter\newcommand\csname #2-##1\endcsname[1]{%
-                \hyperlink{#2-\csname the#2\endcsname}{
-                    \textbf{\color{#3!80}#3 ##1}\color{black}
+                \hyperlink{#2-\sectionID}{
+                    \textbf{\color{#3!80}#4 ##1}\color{black}
                 }
             }%
         }
@@ -94,8 +99,6 @@
                 \end{flushright}
             }
         }
-
-        \stepcounter{#2}
     }
 }
 \makeatother
@@ -118,6 +121,7 @@
 \newsec{subsub}{expl}{gray}{Exemple}
 \newsec{subsub}{app}{RedViolet}{Application}
 \newsec{subsub}{exo}{Gray}{Exercice}
+\newsec{subsub}{dm}{Gray}{Devoir maison}
 
 \newsec{subsub}{demoSUB}{Red}{$\rightarrow$ Démonstration}
 \newsec{subsub}{ticeSUB}{Orchid}{TICE}
@@ -126,7 +130,7 @@
     \ifthenelse{\boolean{demonstration} \and \not \boolean{outline}}{
         \demoSUB{#1}{
             \ifNotNull{#2}{
-                #2 $\square$
+                \noindent #2 $\square$
             }
         }[#3]
     }{
