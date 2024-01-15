@@ -5,9 +5,15 @@
 \def\shortTitle{Proportionnalité}
 %%
 
-\disableAnimation
+% \disableAnimation
 % \shortAnimation
-% \firstSlide
+\firstSlide
+
+\newcommand{\exoslide}[2]{
+    \slide{}{
+        \img{stage-M2/proportionnalite/exercices/ex_#1_myriade_4e_2016.png}[#2]
+    }
+}
 
 \bsec{Introduction}
 
@@ -66,17 +72,9 @@
     }
 }
 
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_20_p140_myriade_4e_2016.png}[8cm]
-}
-
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_21_p141_myriade_4e_2016.png}[10cm]
-}
-
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_8_p138_myriade_4e_2016.png}[10cm]
-}
+\exoslide{20_p140}{8cm}
+\exoslide{21_p141}{10cm}
+\exoslide{8_p138}{10cm}
 
 \bsubsec{Produits en croix}
 \slide{Cours}{
@@ -152,21 +150,10 @@
     }
 }
 
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_1_p138_myriade_4e_2016.png}[11cm]
-}
-
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_2_p138_myriade_4e_2016.png}[11cm]
-}
-
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_5_p138_myriade_4e_2016.png}[11cm]
-}
-
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_4_p138_myriade_4e_2016.png}[11cm]
-}
+\exoslide{1_p138}{11cm}
+\exoslide{2_p138}{11cm}
+\exoslide{5_p138}{11cm}
+\exoslide{4_p138}{11cm}
 
 \bsec{Pourcentages}
 \bsubsec{Définition}
@@ -182,6 +169,9 @@
         On fait : \palt{2}{$60 \times \frac{30}{100} = 10$}
     }
     \vspace{-0.7cm}
+}
+
+\slide{}{
     \rmk{}{
         Tableau de proportionnalité de la situation précédente:
         \propTable{\palt{2}{10}}{60}{30}{100}
@@ -207,9 +197,7 @@
     A finir pour lundi 8 janvier.
 }
 
-\slide{}{
-    \img{stage-M2/proportionnalite/exercices/ex_41_p144_myriade_4e_2016.png}[11cm]
-}
+\exoslide{41_p144}{11cm}
 
 \bsubsec{Déterminer un pourcentage}
 
@@ -336,13 +324,16 @@
         Une carte à l'échelle $1:\numprint{1000}$ signifie que:\\
         $1\cm$ sur la carte représente $\numprint{1000}\cm$ dans la réalité.
     }
+}
 
+\slide{}{
     \expl{}{
         On mesure sur une carte à l'aide de l'échelle graphique que $1\cm$ représente $1\km$.\\
-        Quelle est l'échelle de la carte?\\
+        Quelle est l'échelle de la carte?
+        \img{stage-M2/proportionnalite/carte-paris.jpg}[7cm]
         \palt{2}{
-            $1\km = \numprint{1 000 000}\cm$\\
-            On alors une échelle de $1:\numprint{1 000 000}$
+            $1\km = \numprint{100 000}\cm$\\
+            On alors une échelle de $1:\numprint{100 000}$
         }
     }
 }
@@ -351,4 +342,99 @@
 
 \slide{}{
     \ssec
+    \expl{}{
+        Une voiture parcours $120\km$ en $1\hour$.
+        En supposant sa vitesse constante;
+        combien parcourt-elle de $\km$ en $1\hour30$?
+    }
+    \vspace*{-0.5cm}
+    \rmdr{Conversion}{
+        \vspace*{-0.7cm}
+        \begin{align*}
+            60\min &= \palt{2}{1,0\hour}\\
+            \alors 1\min &= \palt{4}{\frac{1}{60}\hour \approx 0,01667\hour}\\
+            \alors 30\min &= \palt{5}{\frac{30}{60}\hour = 0,5\hour}\\
+            \et 1\hour30\min &= \palt{5}{1,5\hour}
+        \end{align*}
+    }
+}
+
+\slide{}{
+    \def\colWidth{1.5cm}
+    On peut construire le tableau de proportionnalité :
+    \begin{center}
+        \begin{tabular}{|C{2.5cm}|C{\colWidth}|C{\colWidth}|}
+            \hline
+            Temps & $\palt{2}{1\hour}$ & $\palt{2}{1,5\hour}$ \\ \hline
+            Distance & $\palt{2}{120\km}$ & $\palt{3}{180\km}$ \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \df{Vitesse}{
+        On définie la \textbf{vitesse} comme le coefficient de proportionnalité pour passer du temps à la distance.
+        \begin{equation*}
+            Vitesse = \palt{4}{\frac{Distance}{Temps}}
+        \end{equation*} 
+    }
+}
+
+\slide{}{
+    \expl{}{
+        La voiture a donc une vitesse:
+        \begin{align*}
+            v = \frac{d}{t} = \palt{2}{\frac{1}{120}} = \palt{3}{120\km / \hour}
+        \end{align*}
+    }
+    \pr{}{
+        On en déduit les deux formules suivantes:
+        \begin{itemize}
+            \item $ d = v \times t$
+            \item $ t = \frac{d}{v}$
+        \end{itemize}
+    }
+}
+
+\slide{Exercices}{
+    \exo{Myriade : Echelle et Vitesse}{
+        \vspace{-0.25cm}
+        \multiColItemize{3}{
+            \item 32 p142
+            \item 27 p142
+            \item 28 p142
+        }
+    }
+}
+
+\exoslide{32_p142}{11cm}
+\exoslide{27_p142}{11cm}
+\exoslide{28_p142}{11cm}
+
+\slide{Exercices}{
+    \exo{Myriade : Proportionnalité}{
+        \vspace{-0.25cm}
+        \multiColItemize{3}{
+            \item 56 p145
+            \item 64 p146
+            \item 65 p147
+            \item 66 p147
+            \item 68 p147
+            \item 70 p147
+            \item 74 p148
+        }
+    }
+}
+
+\exoslide{65_p147}{7cm}
+\exoslide{64_p146}{8cm}
+\exoslide{66_p147}{11cm}
+\exoslide{68_p147}{11cm}
+\exoslide{70_p147}{11cm}
+
+\newpage
+\slide{}{
+    \def\imgWidth{5.5cm}
+    \begin{multicols*}{2}
+        \img{stage-M2/proportionnalite/exercices/ex_74a_p148_myriade_4e_2016.png}[\imgWidth] \columnbreak
+        \img{stage-M2/proportionnalite/exercices/ex_74b_p148_myriade_4e_2016.png}[\imgWidth]
+    \end{multicols*}
 }

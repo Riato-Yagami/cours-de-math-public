@@ -99,6 +99,23 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     sont symétrique par rapport à la droite d'équation $y=x$.
 }[\hyp]
 
+\demo{}{
+    \vspace*{-1.2cm}
+    \rmdr{Symétrie de droite $y=x$}{
+    Pour $(a,b)\in\m{R}^2$,
+    le symétrique du point $(a,b)$ par rapport à la droite d'équation $y=x$,
+    est le point de coordonnés $(b,a)$.
+    }\vspace*{0.5cm}
+    Soit $a\in\m{R}$,
+    On considère un point $(a,\ln(a))$ avec $a>0$ sur la courbe représentative du \logn.
+    Son symétrique est le point $(\ln(a),a)$.
+    Il est bien sur la courbe représentative de l'\expn,
+    en effet, on a bien: $e^{\ln(a)} = a$.\\
+    De manière semblable,
+    on obtient que le symétrique d'un point sur la courbe représentative de l'\expn,
+    se trouve sur la courbe représentative du \logn.
+}[\bib]
+
 \subsection{Changement de base}
 
 \pr{Formule de changement de base}{
@@ -135,22 +152,6 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     On peut alors, sans perte de généralité, s'interesser uniquement au \logn.
 }
 
-\demo{}{
-    \rmdr{Symétrie de droite $y=x$}{
-    Pour $(a,b)\in\m{R}^2$,
-    le symétrique du point $(a,b)$ par rapport à la droite d'équation $y=x$,
-    est le point de coordonnés $(b,a)$.
-    }\vspace*{0.5cm}
-    Soit $a\in\m{R}$,
-    On considère un point $(a,\ln(a))$ avec $a>0$ sur la courbe représentative du \logn.
-    Son symétrique est le point $(\ln(a),a)$.
-    Il est bien sur la courbe représentative de l'\expn,
-    en effet, on a bien: $e^{\ln(a)} = a$.\\
-    De manière semblable,
-    on obtient que le symétrique d'un point sur la courbe représentative de l'\expn,
-    se trouve sur la courbe représentative du \logn.
-}[\bib]
-
 \section{Étude Analytique du \logn}
 
 \subsection{Variations}
@@ -186,6 +187,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 }
 
 \demo{Avec la fonction \expn}{
+    \vspace*{-1.2cm}
     \rmdr{Limites infinie}{
         Pour $f$ définie sur $\m{R}$:
         \begin{equation*}
@@ -241,7 +243,8 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 }
 
 \demo{}{
-    \rmdr{Dérivation de fonction composées}{
+    \vspace*{-1.2cm}
+    \rmdr{Dérivation de fonctions composées}{
         Soit $f$ dérivable sur $\m{I}$ et $g$ dérivable sur $f(\m{I})$.
         Alors $(g \circ f)$ est dérivable sur $I$ et:
         \begin{equation*}
@@ -263,7 +266,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 % \demo{Géomtrique}{
 % }[\bib]
 
-\pr{Dérivation composées du \logn}{
+\pr{Dérivations composées avec le \logn}{
     Soient $u$ fonction dérivable et strictement positive sur un intervalle $I$.
     Alors $\ln(u)$ est dérivable et $\ln'(u) = \frac{u'}{u}$.
 }
@@ -411,14 +414,14 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 }[\hyp]
 
 \pr{Logarithme népérien d'une puissance}{
-    Pour $a\in(\m{R}_+)$,
+    Pour $a\in\m{R}_+$ et $n\in\m{N}$,
     \begin{equation*}
         \ln(a^n) = n \ln(a)
     \end{equation*}
 }
 
 \demo{}{
-    Soit $a\in(\m{R}_+)$,
+    Soit $a\in\m{R}_+$ et $n\in\m{N}$,
     \begin{align*}
         e^{\ln(a^n)} &= a^n
         \iet e^{n\ln(a)} = (e^{\ln(a)})^n &= a^n
@@ -427,14 +430,14 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 }
 
 \pr{Logarithme népérien d'une racine carré}{
-    Pour $a\in(\m{R}_+)$,
+    Pour $a\in\m{R}_+$,
     \begin{equation*}
         \ln(\sqrt{a}) = \frac{1}{2} \ln(a)
     \end{equation*}
 }
 
 \demo{}{
-    Soit $a\in(\m{R}_+)$,
+    Soit $a\in\m{R}_+$,
     \begin{align*}
         (\sqrt{a})^2 &= a
         \ialors \ln((\sqrt{a})^2) &= \ln(a)
@@ -444,7 +447,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     \end{align*}
 }[\hyp]
 
-\section{Méthode d'approximations}
+\section{Méthodes d'approximations}
 
 \mthd{Algorithme de Briggs}{
     \vspace*{-0.6cm}
@@ -488,7 +491,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 }
 
 \tice{Implémentation de l'algorithme de Briggs}{Python}{
-    \lstinputlisting[language=Python]{documents/lecons-capes/ressources/algo_briggs.py}
+    \lstinputlisting[language=Python]{ressources/lecons-capes/34/algo_briggs.py}
 }
 
 \mthd{Algorithme de Brouncker}{
