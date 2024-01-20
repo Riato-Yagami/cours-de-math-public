@@ -129,16 +129,14 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 
 \demo{}{
     Soient $b\in\m{R}_+\backslash\{0,1\}$ et $x\in\m{R}_+^*$,
-    On pose:
+    On a:
     \begin{align*}
-        \delta = \log_b(x)
-        \ialors x^\delta = b
-        \ialors \log_a(x^\delta) = \log_a(b)
-        \ialors \delta \log_a(x) = \log_a(b)
-        \ialors \log_b(x) = \frac{\log_b(a)}{\delta}
-        \idou \log_b(x) = \frac{\log_a(x)}{\log_a(b)}
+        x &= b^{\log_b(x)}
+        \ialors \log_a(x) &= \log_a(b^{\log_b(x)})
+        \ialors \log_a(x) &= \log_b(x) \times \log_a(b)
+        \idou \log_b(x) &= \frac{\log_a(x)}{\log_a(b)}
     \end{align*}
-}
+}[\href{https://exomath.info.ucl.ac.be/syllabus/functions-series/exp_and_log/4.Fonctions\%20logarithmes.html}{Syllabus interactif : Mathématiques}]
 
 \cor{Changement de base avec le \logn}{
     Pour $b\in\m{R}_+\backslash\{0,1\}$ et $x\in\m{R}_+^*$,
@@ -257,14 +255,14 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
         \ialors (\exp(\ln(x)))' &= (x)'\\
         \ialors \ln'(x)\exp'(\ln(x)) &= 1 \textrm{ (dérivation de fonctions composées)}\\
         \ialors \ln'(x)\exp(\ln(x)) &= 1\\
-        \ialors \ln'(x)\exp(\ln(x)) &= 1\\
         \ialors \ln'(x) \times x &= 1\\
         \idou \ln'(x) &= \frac{1}{x}
     \end{align*}
 }[\bib]
 
-% \demo{Géomtrique}{
-% }[\bib]
+\demo{Avec le taux d'accroissement}{
+}[\href{https://www.lyceedadultes.fr/sitepedagogique/documents/math/mathTermS/06_fonction_logarithme/06_Cours_fonction_logarithme_neperien.pdf}
+    {Le Lycée d'Adultes de la ville de Paris}]
 
 \pr{Dérivations composées avec le \logn}{
     Soient $u$ fonction dérivable et strictement positive sur un intervalle $I$.
@@ -297,7 +295,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     on pose:
     \begin{align*}
         f(x) &= \ln(x)-2\sqrt{x}
-        \ialors f'(x) &= \frac{1}{x} - \frac{1}{\sqrt{x}} \car f \; C^1 \textrm{ sur } [1,+\infty[
+        \ialors f'(x) &= \frac{1}{x} - \frac{1}{\sqrt{x}}\;\;  (f \textrm{ de classe } C^1 \textrm{ sur } [1,+\infty[)
         \ior x &\geq \sqrt{x} > 0 \car x \geq 1
         \ialors f'(x) &\leq 0
         \ior f \textrm{ décroissante sur } &[1,+\infty[ \et f(1) = -2 \leq 0
@@ -453,7 +451,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     \vspace*{-0.6cm}
     \begin{algorithm}
         \KwData{$a\in\m{R_+^*}$ et $n\in\m{N}$}
-        \KwRes{$\ln(a)$ a $10^{-n}$ près $\rightarrow 2^i \times (a^{\frac{1}{2^i}} - 1)$}
+        \KwRes{$\ln(a)$ a $10^{-n}$ près ($\rightarrow 2^i \times (a^{\frac{1}{2^i}} - 1)$)}
         $i \leftarrow 0$\;
         $u \leftarrow a$\;
         \Tq{$|u-1| \geq 10^{-n}$}{

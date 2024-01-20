@@ -1,0 +1,142 @@
+% VARIABLES %%%
+\def\theme{Devoir sur temps libre 3}
+\def\date{20/01/2024}
+%%%%%%%%%%%%%%%
+
+% DEFINITIONS %
+\newcommand*{\grandeurs}[1]{
+    Grandeurs mise en jeu:
+    \begin{itemize}
+        #1
+    \end{itemize}
+}
+%%%%%%%%%%%%%%
+
+\section*{Partie A – Solides, volumes et contenances – Cycle 4}
+\begin{enumerate}[label=\textbf{\color{red}\alph*.}]
+    \item \grandeurs{
+        \item \textbf{Volume} d'eau : grandeur principale à estimer.
+        \item \textbf{Hauteur} d'eau dans la bouteille.
+        \item \textbf{Hauteur} et \textbf{diamètre} de la bouteille.
+        \item \textbf{Périmètres} et \textbf{aires} pour différentes sections de la bouteille.
+    }
+
+    \item 
+    \begin{enumerate}[label=\textbf{\arabic*.}]
+        \item\;
+        \begin{enumerate}[label= Modélisation \arabic* $\rightarrow$]
+            \item Figure 4 (cylindre simple avec la hauteur d'eau représentée)
+            \item Figure 2 (cylindre surmonté d'un cône)
+            \item Figure 8 (parallélépipède rectangle de hauteur inférieure à sa largeur)
+            \item Figures 1 et 6 (cylindre et rayon égale à la largeur de la bouteille)
+            \item Figures 1 et 5 (cylindre et rayon égale à la «diagonale» de la vue de dessus)
+            \item Figures 3 et 7 (parallélépipède rectangle de base carrée)
+        \end{enumerate}
+        \item 
+        \begin{itemize}[wide, labelwidth=!, labelindent=0pt]
+            \item Les modélisations comportants la hauteur de l'eau semble les plus pertinentes.
+            Cependant dans la figure 2 on voit bien que dans notre cas le cône n'aura pas d'interet;
+            sauf peut ètre si on a la possibilité de renverser le modèle. 
+            La modélisation 1 semble donc ètre le plus pertinent.
+            Néamoins il semble aussi nécessaire de faire un choix de rayon qui n'est ici pas indiqué,
+            et les modélisations 4 et 5 semble alors ici apporter quelques chose de pertinent.
+            \item Les modélisations 3 et 6 semble être ici mois interssante car on observe bien,
+            d'une part pour la figure 8 que la réalité du resserement de la bouteille va ici avoir un impacte car la bouteille est modélisé couché.
+            Et d'autre part pour la modélisation 3 on ce rend bien compte en comparent les figures 5, 6 et 7,
+            que la figure 7 à le plus grand écart à la réalité.
+        \end{itemize}
+    \end{enumerate}
+
+    \item \begin{enumerate}[label=\textbf{\color{red}\roman*.}]
+        \item Dans le graphe 3D à coté de la modélisation de la bouteille.
+        \item J'ai choisi de convertir les donnés en décimètres afin d'obtenir naturellement une réponse en litres.
+        \item 
+        \begin{itemize}[wide, labelwidth=!, labelindent=0pt] 
+            \item Je n'ai pas réalisé un prisme de base carré au bord arrondi comme la bouteille l'est dans la réalité,
+            mais j'ai approché cette forme par un octogon obtenu en tracant 4 tangante repartie régulièrement au cercle de la modélisation 4,
+            et en prenant ensuite comme point de ma base les intersections avec le cercle de la modélisation 5.
+            \item Je n'ai également pas modélisé le changement de section de la bouteille au niveau de sa base ou par les stries qui marque la bouteille car cela semble être une tache difficile avec peu de conséquences.
+            \item J'ai aussi mis de coté le problème du renfoncement qu'il existe au fond de la bouteille encore une fois sans grandes conséquences.
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Partie B – Construction de boîtes – Cycle 4 - lycée}
+
+\begin{enumerate}[label=\textbf{\color{red}\arabic*. \color{black}situation \arabic*}, wide, labelwidth=!, labelindent=0pt]
+    \item
+    \begin{enumerate}[label=\textbf{\color{red}\alph*.}]
+        \item \grandeurs{
+            \item \textbf{Volume} de la boite.
+            \item \textbf{Longeur} et \textbf{largeur} de la feuille.
+            \item \textbf{Longeur} du coté du carré.
+            \item \textbf{Longeur}, \textbf{largeur} et \textbf{hauteur} de la boite.
+        }
+        \item La feuille de calcul proposé,
+        permet de determiner le volume de la boite de papier lorsque l'on modifie dans la colonne F la valeur du coté du carré.
+        On peut alors chercher la valeur optimal par balayage.
+        \item Dans le fichier on retrouve un curseur qui nous permet de modifier la mesure du coté du carré,
+        et qui modifie dynamiquement le patron nécessaire à la création de la boite correspondant.
+        \item \begin{enumerate}[label=\textbf{\color{red}\roman*.}]
+            \item On peut enregistrer la valeur du coté du carré ainsi que celle du volume de la boite dans le tableur de géogebra,
+            puis en bougeant le curseur balayer les valeurs à la main.
+            \item En seconde on peut introduire une fonction qui donne le volume en fonction du coté du carré,
+            puis trouver une valeur approché de l'extremum grace à l'outil points spéciaux.
+            \item voire fichier.
+        \end{enumerate}
+        \item Non car l'algorithme de dichotomie permet de trouver les racines d'une fonctions.
+        On pourrait cependant l'appliquer à la dérivée et aisin trouver le maximum.
+        \item Soient $l = 22\cm$ la logueure de la feuille et $L = 18\cm$ sa largeur,
+        et $f$ la fonction qui donne le volume de la boite en fonction du coté du carré.\\
+        On a pour $x\in[0;9]$: 
+        \begin{align*}
+            f(x) &= x \times (l - 2x) \times (L-2x)\\
+            &= 4 x^3 - 2 (l+L) x + lL\\
+            \shortintertext{et $f$ est dérivable sur [0;9] alors}
+            f'(x) &= 12 x^2 - 4(l+L) x + lL\\
+            \shortintertext{on peut trouver ces racines avec le discriminant}
+            \Delta &= (-4(l+L))^2 - 4 \times 12 + lL
+            = 6592
+            \shortintertext{on trouve alors les racines}
+            x_1 &= \frac{4(l+L) + sqrt(\Delta)}{2 \times 12}
+            = \frac{20 + \sqrt{103}}{3} > 9 \textrm{ hors de l'interval}
+            \iet x_2 &= \frac{20 - \sqrt{103}}{3} \approx 3,2837
+            \iet f(x_2) &\approx 579,36
+        \end{align*} 
+        On trouve alors un maximum pour $x_2 = \frac{20 - \sqrt{103}}{3}$.
+        Un carré de coté $x_2$ produirait donc la boite de volume maximal.
+        \item Si on prend une feuille de dimension $15\cm \times 24\cm$,
+        alors la solution est un carré de coté $3\cm$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}[label=\textbf{\color{red}\alph*.}]
+        \item \grandeurs{
+            \item \textbf{Volume} de la boite.
+            \item \textbf{Longeur} et \textbf{largeur} de la feuille de carton.
+            \item \textbf{Longeur} du coté du carré.
+            \item \textbf{Longeur}, \textbf{largeur} et \textbf{hauteur} de la boite.
+        }
+        \item Soient $l = 45\cm$ la logueure de la feuille et $L = 30\cm$ sa largeur,
+        et $f$ la fonction qui donne le volume de la boite en fonction du coté du carré.\\
+        On a pour $x\in[0;10]$:
+        \begin{align*}
+            f(x) &= x \times \frac{(l - 3x)}{2} \times (L-2x)\\
+            &= x \times \frac{45-3x}{2} \times (30 - 2x)
+            \ialors f'(x) &= 9 \times x^2- 180 x + 675
+            \ialors \Delta &= 8100
+            \ialors x_1 &=15 > 10
+            \iet x_2 &= 5
+            \iet f(x_2) &= 1500
+        \end{align*}
+        On trouve donc une boite de dimension $\frac{(l - 3x_2)}{2} \times (L-2x_2) \times x$,
+        c'est a dire:\\
+        $15\cm \times 20\cm \times 5\cm$
+        \item Le résultat étant entier les méthodes d'approximations perdent de leur interet.
+        Chercher à augmenter la précision du résultat (les décimales corrects) semblera un peu artificiel.
+        \item Un élève de cycle 4 pourra trouver le résultat par essaie erreur car il est entier.
+        Cela-dit il sera incapable de justifier le fait qu'il sagit réellement de la réponse n'ayant pas connaissance sur la dérivation,
+        qui lui permettrais de vérifier qu'il sagit bien d'un extremum.
+    \end{enumerate}
+\end{enumerate}
