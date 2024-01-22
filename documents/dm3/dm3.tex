@@ -32,8 +32,15 @@
         #1
     \end{itemize}
 }
+\newcommand{\file}[1]{%
+    {\fontfamily{qhv}\selectfont % phv is Helvetica
+    \textit{\color{Fuchsia}$\hookrightarrow$ \small Pesin\_partie#1}}%
+}
 
-\def\tikzScale{1cm}
+\def\OU{\color{red}OU \color{black}}
+\def\ET{\color{blue}ET \color{black}}
+
+\def\tikzScale{0.9cm}
 \def\gridWidth{0.1mm}
 \def\gridSize{5}
 
@@ -59,6 +66,9 @@
     \eraseNum{0}{#1}{#2}
     \drawNum{1}{#1}{#2};
 }
+
+\newcommand{\python}[1]{\lstinputlisting[language=Python]{ressources/dm3/#1}}
+
 %%%%%%%%%%%%%%
 
 \section*{Partie A – Solides, volumes et contenances – Cycle 4}
@@ -85,18 +95,18 @@
         \begin{itemize}[wide, labelwidth=!, labelindent=0pt]
             \item Les modélisations comportants la hauteur de l'eau semble les plus pertinentes.
             Cependant dans la figure 2 on voit bien que dans notre cas le cône n'aura pas d'interet;
-            sauf peut ètre si on a la possibilité de renverser le modèle. 
-            La modélisation 1 semble donc ètre le plus pertinent.
+            sauf peut être si on a la possibilité de renverser le modèle. 
+            La modélisation 1 semble donc être le plus pertinent.
             Néamoins il semble aussi nécessaire de faire un choix de rayon qui n'est ici pas indiqué,
             et les modélisations 4 et 5 semble alors ici apporter quelques chose de pertinent.
-            \item Les modélisations 3 et 6 semble être ici mois interssante car on observe bien,
+            \item Les modélisations 3 et 6 semble être ici moins interssante car on observe bien,
             d'une part pour la figure 8 que la réalité du resserement de la bouteille va ici avoir un impacte car la bouteille est modélisé couché.
             Et d'autre part pour la modélisation 3 on ce rend bien compte en comparent les figures 5, 6 et 7,
             que la figure 7 à le plus grand écart à la réalité.
         \end{itemize}
     }
 
-    \item \rEnum{
+    \item \file{A.ggb} \rEnum{
         \item Dans le graphe 3D à coté de la modélisation de la bouteille.
         \item J'ai choisi de convertir les donnés en décimètres afin d'obtenir naturellement une réponse en litres.
         \item 
@@ -118,25 +128,25 @@
     \aEnum{
         \item \grandeurs{
             \item \textbf{Volume} de la boite.
-            \item \textbf{Longeur} et \textbf{largeur} de la feuille.
-            \item \textbf{Longeur} du coté du carré.
-            \item \textbf{Longeur}, \textbf{largeur} et \textbf{hauteur} de la boite.
+            \item \textbf{Longueur} et \textbf{largeur} de la feuille.
+            \item \textbf{Longueur} du coté du carré.
+            \item \textbf{Longueur}, \textbf{largeur} et \textbf{hauteur} de la boite.
         }
-        \item La feuille de calcul proposé,
+        \item \file{B-1b.ods} La feuille de calcul proposé,
         permet de determiner le volume de la boite de papier lorsque l'on modifie dans la colonne F la valeur du coté du carré.
         On peut alors chercher la valeur optimal par balayage.
-        \item Dans le fichier on retrouve un curseur qui nous permet de modifier la mesure du coté du carré,
+        \item \file{B-1c.ggb} Dans le fichier on retrouve un curseur qui nous permet de modifier la mesure du coté du carré,
         et qui modifie dynamiquement le patron nécessaire à la création de la boite correspondant.
         \item \rEnum{
-            \item On peut enregistrer la valeur du coté du carré ainsi que celle du volume de la boite dans le tableur de géogebra,
+            \item \file{B-1d-1.ggb} On peut enregistrer la valeur du coté du carré ainsi que celle du volume de la boite dans le tableur de géogebra,
             puis en bougeant le curseur balayer les valeurs à la main.
-            \item En seconde on peut introduire une fonction qui donne le volume en fonction du coté du carré,
+            \item \file{B-1d-2.ggb} En seconde on peut introduire une fonction qui donne le volume en fonction du coté du carré,
             puis trouver une valeur approché de l'extremum grace à l'outil points spéciaux.
-            \item voire fichier.
+            \item \file{B-1d-3.py}
         }
         \item Non car l'algorithme de dichotomie permet de trouver les racines d'une fonctions.
         On pourrait cependant l'appliquer à la dérivée et aisin trouver le maximum.
-        \item Soient $l = 22\cm$ la logueure de la feuille et $L = 18\cm$ sa largeur,
+        \item Soient $l = 22\cm$ la longueur de la feuille et $L = 18\cm$ sa largeur,
         et $f$ la fonction qui donne le volume de la boite en fonction du coté du carré.\\
         On a pour $x\in[0;9]$: 
         \begin{align*}
@@ -163,11 +173,11 @@
     \aEnum{
         \item \grandeurs{
             \item \textbf{Volume} de la boite.
-            \item \textbf{Longeur} et \textbf{largeur} de la feuille de carton.
-            \item \textbf{Longeur} du coté du carré.
-            \item \textbf{Longeur}, \textbf{largeur} et \textbf{hauteur} de la boite.
+            \item \textbf{Longueur} et \textbf{largeur} de la feuille de carton.
+            \item \textbf{Longueur} du coté du carré.
+            \item \textbf{Longueur}, \textbf{largeur} et \textbf{hauteur} de la boite.
         }
-        \item Soient $l = 45\cm$ la logueure de la feuille et $L = 30\cm$ sa largeur,
+        \item Soient $l = 45\cm$ la longueur de la feuille et $L = 30\cm$ sa largeur,
         et $f$ la fonction qui donne le volume de la boite en fonction du coté du carré.\\
         On a pour $x\in[0;10]$:
         \begin{align*}
@@ -203,7 +213,8 @@
         déterminer l'une des deux grandeurs fixé plus tot fixera la seconde.
         Et nommer ainsi un élève aura naturellement envie de faire varier la largeur et non pas la hauteur,
         car on à l'habitude de nommer nos variables $x$ dans l'étude de fonctions.
-        \item \rEnum{
+        \item \file{B-3.ggb}
+        \rEnum{
             \item Avant de réaliser le fichier il faut se demander qu'elle valeur sera notre variable principale,
             et comment elle déterminera le reste de nos valeurs.
             On a:
@@ -245,8 +256,7 @@
             \item Pour ces cases je regarde chacune des cases 0 voisines (en commencant par le nord puis dans le sens indirect) et je génère un nombre aléatoire.
             \item Si le nombre généré est supérieur à 0.1 je change le 0 en 1.
             \item Je passe au jour suivant.
-        }
-    }   
+        } 
     \begin{center}
         \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
             \drawDay{0};
@@ -294,4 +304,62 @@
             \spread{4}{2};
         \end{tikzpicture}
     \end{center}
+        \item \file{C-2.ods}\\
+        Formule entrée dans la cellule C7:\\
+        = SI(((ALEA() < \$C\$3) \ET (C6 = 1))\\
+        \OU ((ALEA() < \$C\$3) \ET (D7 = 1))\\
+        \OU ((ALEA() < \$C\$3) \ET (C8 = 1))\\
+        \OU ((ALEA() < \$C\$3) \ET (B7 = 1));\\
+        1; C7)
+        \item Il faut environ 4 jours pour infecter tous le monde.
+    }
+
+    Être capable de calculer le coefficient multiplicateur pour un taux d'évolution donné
+    Construire un modèle à partir de fréquences observées, en distinguant
+    nettement modèle et réalité.
+    \item \aEnum{
+        \item \file{C-3.ods}
+        \item Connaissance : \sItem{
+            \item \textbf{Évolutions successives} : Être capable de calculer le coefficient multiplicateur pour un taux d'évolution donné
+            \item \textbf{Loi (distribution) de probabilité} : Construire un modèle à partir de fréquences observées, en distinguant
+            nettement modèle et réalité.
+        }
+        \item Pensez à bien prendre en compte les personnes immunisés dans vos calculs.
+    }
+    \item \file{C-4.py}
+    \nEnum{
+        \item \python{C-4-a.py}
+        La matrice est mise sous forme de liste.
+        Pour acceder à une valeur,
+        il faut alors convertir son indice bidimensionnels $(a,b)$ en indice unidimensionnel,
+        donné par l'opération:
+        \begin{equation*}
+            b \times x+a
+        \end{equation*}
+
+        \item \python{C-4-b-1.py}
+        $i$ est un indice unidimensionnel,
+        on peut trouver sur quelle colonne il se trouve en prenant son reste modulo $x$ le nombre de colonnes.\\
+        La colonne $0$ correspondant à la colonne de gauche, on teste si on ne s'y trouve pas.\\
+        Et si random() qui donne un nombre etre 0 et 1 est inférieure à p alors on contamine le voisins de gauche.
+        L'indice unidimensionnel du voisins de gauche est donné par $i-1$.
+
+        \item \python{C-4-b-2.py}
+        Colonne de droite: $x-1$\\
+        Indice unidimensionnel du voisins de droite: $i+1$.
+    
+        \item \python{C-4-b-3.py}
+        Ligne donné par le quotient dans la division euclidienne par $x$ de $i$.\\
+        Ligne du bas: $0$\\
+        Indice unidimensionnel du voisins du bas: $i-x$.
+    
+        \item \python{C-4-b-4.py}
+        Ligne du haut: $y-1$\\
+        Indice unidimensionnel du voisins du haut: $i+x$.
+
+        \item \python{C-4-c.py}
+        La fonction Est\_ce\_la\_fin() donne si tous le monde est contaminé,
+        si c'est le cas on peut s'arrêté.\\
+        Sinon on ajoute 1 au nombre de jours et on calcul la population du jour suivant.
+    }
 \end{enumerate}
