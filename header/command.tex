@@ -95,49 +95,7 @@
 }
 
 % MATH
-
-\newcommand{\modxy}[2]{\sqrt{#1^2+#2^2}}
-\newcommand{\acroissement}[2]{\frac{#1(#2+h)-#1(#2)}{h}}
-
-\newcommand{\pow}[2]{
-    #1
-    \foreach \n in {2,...,#2}{
-        \times #1
-    }
-}
-\newcommand{\lPowBrace}[2]{
-    \underbrace{\pow{#1}{2} \times ... \times \pow{#1}{2}}_{#2 \textrm{ fois}}
-}
-\newcommand{\powBrace}[2]{
-    \underbrace{#1 \times ... \times #1}_{#2 \textrm{ fois}}
-}
-
-\newcommand{\lfbrace}[1]{
-    \left\{
-        \begin{array}{ll}
-            #1
-        \end{array}
-    \right.
-}
-
-\newcommand{\pgcd}[2]{
-    % \PGCD(#1,#2)
-    #1 \wedge #2
-}
-
-\newcommand{\ppcm}[2]{
-    % \PPCM(#1,#2)
-    #1 \vee #2
-}
-
-\def\colWidth{1.5cm}
-\newcommand{\propTable}[4]{
-    \begin{tabular}{|C{\colWidth}|C{\colWidth}|}
-        \hline
-        $#1$ & $#2$ \\ \hline
-        $#3$ & $#4$ \\ \hline
-    \end{tabular}
-}
+\input{header/command/math.tex}
 
 % COMMANDS
 
@@ -367,4 +325,51 @@
 
 \renewcommand*{\phantom}[1]{
     \pgfinvisible #1 \pgfshown
+}
+
+\newcounter{size}
+\newcommand{\listSize}[1]{
+    \setcounter{size}{0}
+    \foreach \n in {#1}{\stepcounter{size}}
+    \thesize
+}
+
+\newcounter{elemPos}
+\newcommand{\listElement}[2]{
+    \setcounter{elemPos}{0} % Start counting from 1
+    \def\resultVal{0} % Default value
+    \renewcommand*{\do}[1]{%
+        \ifnumequal{\value{elemPos}}{#2}{%
+            \def\resultVal{##1}%
+            \listbreak% Break out of the loop
+        }{}%
+        \stepcounter{elemPos}%
+    }
+    % \docsvlist{#1}
+    \expandafter\docsvlist\expandafter{#1} % Expand the list before passing it to \docsvlist
+    \resultVal
+}
+
+\def\imgPath{}
+\def\imgExtension{}
+
+\newcommand{\imgf}[1]{\imgPath #1\imgExtension}
+
+\NewDocumentCommand{\exoslide}{m O{10cm}}{
+    \slide{}{
+        \img{\imgf{#1}}[#2]
+    }
+}
+
+\NewDocumentCommand{\exoList}{m O{} O{3}}{
+    \slide{EXERCICES}{
+        \exo{#2}{
+            \vspace{-0.25cm}
+            \multiColItemize{#3}{
+                \foreach \q in {#1}{
+                    \item \q
+                }
+            }
+        }
+    }
 }

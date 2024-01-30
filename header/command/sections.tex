@@ -121,10 +121,12 @@
 \newsec{subsub}{expl}{gray}{Exemple}
 \newsec{subsub}{app}{RedViolet}{Application}
 \newsec{subsub}{exo}{Gray}{Exercice}
+\newsec{subsub}{act}{BurntOrange}{Activité}
 \newsec{subsub}{dm}{Gray}{Devoir maison}
 
 \newsec{subsub}{demoSUB}{Red}{$\rightarrow$ Démonstration}
 \newsec{subsub}{ticeSUB}{Orchid}{TICE}
+\newsec{subsub}{qfSUB}{Red}{\Large Questions flash}
 
 \NewDocumentCommand{\demo}{mmo}{
     \ifthenelse{\boolean{demonstration} \and \not \boolean{outline}}{
@@ -143,4 +145,28 @@
 
 \newcommand{\hint}[2]{
     \textit{Indication: #2}
+}
+
+% QUESTIONS FLASHS
+
+% \NewDocumentCommand{\qfb}{m O{15}}{
+%     % Initialize an empty token list to accumulate the formatted questions and answers
+%     \def\formattedList{}
+%     % Iterate over the input list
+%     \foreach \q in {#1}{
+%         % Extract the question and answer parts
+%         \xdef\formattedList{\formattedList{${\listElement{\q}{0}} = $,${\listElement{\q}{1}}$},}
+%     }
+%     % Remove the last comma
+%     \edef\formattedList{\unexpanded\expandafter{\formattedList}}
+%     % Pass the formatted list to \qf
+%     \expandafter\qf\expandafter{\formattedList}[#2]
+% }
+
+\newcommand{\qfRes}[1]{
+    \begin{enumerate}
+        \foreach \q in {#1}{
+            \item \listElement{\q}{0}\palt{2}{\listElement{\q}{1}}
+        }
+    \end{enumerate}
 }

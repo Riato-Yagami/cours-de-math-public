@@ -1,0 +1,129 @@
+% VARIABLES %%%
+\def\authors{PESIN - CADOT - COURTIN}
+% \date{\today}
+\def\longTitle{Les Puissances}
+\def\shortTitle{Puissances}
+%%
+
+% \disableAnimation
+% \shortAnimation
+\firstSlide
+
+\def\imgPath{stage-M2/4e/puissance/}
+\def\imgExtension{_myr_4e_2016.png}
+
+\newcommand{\powq}[2]{\iquestion{\pow{#1}{#2}}{#1^{#2}}}
+\newcommand{\powiq}[3]{\iquestion{#1^{#2}}{\pow{#1}{#2} = #3}}
+
+\qf{
+    {$\pow{10}{3} = $, $1000$},
+    {$6^2 = $, $36$},
+    {$10^2 = $, $100$},
+    {$\pow{2}{4} = $, $16$},
+    {$10^2 = $, $100$}%
+}[10]
+
+\slide{COURS}{
+    \bchap{\longTitle}
+    \act{Myriade 1p76}{
+        \vspace{-1cm}
+        \img{\imgf{activite_1_p76}}[9.7cm]
+    }
+}
+
+\bsec{Puissance d'un nombre}
+
+\slide{}{
+    \ssec
+    \df{}{
+        Soient $n$ un entier supérieur ou égal à $1$ et $a$ un nombre relatif.
+        \begin{align*}
+            a^n = \palt{2}{
+                \lPowBrace{a}{n}
+            }
+        \end{align*}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        Ecrire avec la notation puissance:
+        \begin{enumerate}
+            \powq{6}{5}
+            \powq{(-5)}{3}
+            \powq{0,2}{4}
+            \iquestion{\pow{3}{2}\times \pow{2}{4}}{3^3 \times 2^4}
+        \end{enumerate}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        % \fsize{13pt}
+        Calculer:
+        \begin{enumerate}
+            \powiq{2}{5}{32}
+            \powiq{(-3)}{2}{9}
+            \iquestion{-3^2}{-3 \times -3 = -9}
+            \iquestion{2000^1}{2000}
+            \powiq{0}{12}{0}
+            \powiq{1}{6}{1}
+            \powiq{\frac{2}{3}}{3}{\frac{8}{27}}
+            \powiq{0,5}{2}{0,25}
+        \end{enumerate}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        Donner le signe du resultat:
+        \begin{enumerate}
+            \item $(-1)^{12} \palt{2}{\geqslant 0}$
+            \item $(-1)^{211} \palt{3}{\leqslant 0}$
+            \item $(-879)^{75} \palt{4}{\leqslant 0}$
+            \item $(-1984,6)^{2024} \palt{5}{\geqslant 0}$
+        \end{enumerate}
+    }
+
+    \rmk{}{
+        Soit $a$ un nombre négatif et $n$ un entier,
+        $a^n$ est\palt{2}{positif } si\palt{2}{$n$ est pair },
+        et\palt{3}{négatif } si\palt{3}{$n$ est impair}.
+    }
+}
+
+\exoList{2 p80,4 p80,6 p80}[Myriade p80]
+
+\exoslide{exo_2_p80}
+\exoslide{exo_4_p80}
+\exoslide{exo_6_p80}
+
+\qf{
+    {$\pow{9}{6} = $, $9^6$},
+    {$\pow{0,15}{4} = $, $0{,}15^4$},
+    {$2^4 = $, $16$},
+    {$10^4 = $, $1000$}%
+}[10]
+
+\bsec{Puissances de 10}
+\bsubsec{Propriétés}
+\slide{COURS}{
+    \ssec\ssubsec
+    \vspace{-0.5cm}
+    \act{Découverte}{
+        \vspace{-0.7cm}
+        \img{\imgf{activite_2_p76_1.a}}[10cm]
+        % \vspace{-0.3cm}
+        \small \color{BurntOrange} b. \color{black} Que remarque t-on?
+        \vspace{-0.3cm}
+        \img{\imgf{activite_2_p76_2.a}}[10cm]
+        \small \color{BurntOrange} b. \color{black} Que remarque t-on?
+    }
+}
+
+\slide{}{
+    \pr{}{}
+}

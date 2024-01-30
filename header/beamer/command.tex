@@ -26,11 +26,10 @@
 }
 
 \newcommand{\palt}[2]{
-    % \alt<#1->{#2}{\awsr{#2}}
     \alt<#1->{\result{#2}}{\phantom{#2}}
     % \alt<#1->{\result{#2}}{\pgfinvisible #2 \pgfshown}
     % \alt<#1->{\result{#2}}{\textcolor{white}{#2}}
-
+    % \alt<#1->{#2}{\awsr{#2}}
 }
 
 \newcounter{question}
@@ -44,8 +43,8 @@
 }
 
 \newcommand{\question}[2]{
-        #1 = \onslide<\thequestion->{#2}
-        \stepcounter{question}
+    #1 = \palt{\thequestion}{#2}
+    \stepcounter{question}
 }
 
 % \renewcommand{\question}[2]{
@@ -54,9 +53,9 @@
 
 
 \newcommand{\disableAnimation}{
-    \renewcommand{\question}[2]{
-        ##1 = ##2
-    }
+    % \renewcommand{\question}[2]{
+    %     ##1 = ##2
+    % }
     
     \renewcommand{\palt}[2]{
         \result{##2}
@@ -66,18 +65,56 @@
 }
 
 \newcommand{\shortAnimation}{
-    \renewcommand{\question}[2]{
-        ##1 = \onslide<2->{##2}
+    \renewcommand{\palt}[2]{
+        % \alt<2->{\result{#2}}{\phantom{#2}}
     }
 }
 
 \newcommand{\firstSlide}{
-    \renewcommand{\question}[2]{
-        ##1 =
-    }
+    % \renewcommand{\question}[2]{
+    %     ##1 =
+    % }
 
     \renewcommand{\palt}[2]{
         \phantom{##2}
         % \pgfinvisible ##2 \pgfshown
+    }
+}
+
+\newcounter{qf}
+\newcounter{timer}
+\NewDocumentCommand{\qf}{m O{15}}{
+    \setcounter{qf}{0}
+    \slide{EXERCICES}{\qfSUB{}{
+        \begin{itemize}
+            \item \large $#2\sec$ par question
+            \item \listSize{#1} questions
+        \end{itemize}
+    }}
+    \foreach \q in {#1}{
+        \stepcounter{qf}
+        % Timer slides
+        \setcounter{timer}{#2}
+        \whiledo{\thetimer>0}{
+            \addtocounter{timer}{-1}
+            \slide{QUESTIONS FLASH}{
+                % \hspace{0.25cm}
+                \large \color{Blue}\theqf.\color{black}
+                \hspace*{-1cm} \huge \listElement{\q}{0}\\
+                \ifthenelse{\boolean{qftimer}}{
+                    \vspace{1cm}
+                    \transduration{1}
+                    \centering
+                    \normalsize \color{CadetBlue}$\thetimer\sec$
+                }{
+                    \transduration{#2}
+                    \setcounter{timer}{0}
+                }
+            }
+        }
+    }
+
+    \slide{QUESTIONS FLASH}{
+        \qfRes{#1}
     }
 }
