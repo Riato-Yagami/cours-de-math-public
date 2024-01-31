@@ -5,9 +5,9 @@
 \def\shortTitle{Puissances}
 %%
 
-% \disableAnimation
+\disableAnimation
 % \shortAnimation
-\firstSlide
+% \firstSlide
 
 \def\imgPath{stage-M2/4e/puissance/}
 \def\imgExtension{_myr_4e_2016.png}
@@ -125,5 +125,67 @@
 }
 
 \slide{}{
-    \pr{}{}
+    \def\tenPow{1\underbrace{0...0}_{n \textrm{ zéros}}}
+    \pr{}{
+        Avec $n$ un entier positif, les puissances de $10$ s'écrivent :
+        \startQuestions
+        \begin{itemize}
+            \iquestion{10^n}{\tenPow}
+            \iquestion{10^{-n}}{
+                \frac{1}{10^n} 
+                = \frac{1}{\tenPow} 
+                = \underbrace{0,0..0}_{n \textrm{ zéros}}1
+            }
+        \end{itemize}
+    }
 }
+
+\exoList{21 p80,22 p82,23 p82}[Myriade 4e 2016 p82]
+
+\exoslide{exo_21_p82}
+\exoslide{exo_22_p82}
+\TODO{ajouter 23p82}
+% \exoslide{exo_23_p82}
+
+\qf{
+    {$10^6 =$, $\powTen{6}$},
+    {$5^3 =$, $125$},
+    {$10^{-1} =$, $\powTen{-1}$},
+    {$10^2 \times 10^3 =$, $\powTen{5}$},
+    {$10^{-3} =$, $\powTen{-3}$}%
+}[10]
+
+\exoList{24 p82,26 p82,27 p82, 30p83}[Myriade 4e 2016 p82-83][2]
+
+\exoslide{exo_24_p82}
+
+\slide{}{
+    \color{black} Soient $a$ et $b$ deux nombres.
+    \rmk{}{
+        \begin{equation*}
+            10^a\times 10^b = 10^{a+b}
+        \end{equation*}
+    }
+}
+
+\exoslide{exo_26_p82}
+
+\slide{}{
+    \rmk{}{
+        \begin{equation*}
+            \frac{10^a}{10^b} = 10^{a-b}
+        \end{equation*}
+    }
+}
+
+\exoslide{exo_27_p82}
+
+\slide{}{
+    \rmk{}{
+        \begin{equation*}
+            (10^a)^b = 10^{a\times b}
+        \end{equation*}
+    }
+}
+
+\exoslide{exo_30_p83}

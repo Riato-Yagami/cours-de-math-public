@@ -7,6 +7,38 @@
         \times #1
     }
 }
+
+% \newcommand{\powTen}[1]{
+%     \ifnum#1=1 10
+%     \else \ifnum#1=0 1
+%     \else \ifnum#1>0 1\foreach \n in {2,...,#1}{0} \fi
+% }
+
+% \newcounter{rec}
+% \newcommand{\powTen}[1]{
+%     \setcounter{rec}{#1}
+%     \ifnum\therec=0 1
+%     \else \addtocounter{rec}{-1} \powTen{\therec}0 \fi
+% }
+
+\newcommand{\powTen}[1]{
+    \ifnum#1<0
+        0,\powTenNegative{\numexpr#1*(-1)\relax}
+    \else
+        \powTenPositive{#1}
+    \fi
+}
+
+\newcommand{\powTenPositive}[1]{
+    \ifnum#1=0 1
+    \else \powTen{\numexpr#1-1\relax}0 \fi
+}
+
+\newcommand{\powTenNegative}[1]{
+    \ifnum#1=1 1
+    \else 0\powTenNegative{\numexpr#1-1\relax} \fi
+}
+
 \newcommand{\lPowBrace}[2]{
     \underbrace{\pow{#1}{2} \times ... \times \pow{#1}{2}}_{#2 \textrm{ fois}}
 }
