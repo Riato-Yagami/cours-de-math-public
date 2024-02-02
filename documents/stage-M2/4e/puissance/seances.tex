@@ -5,9 +5,9 @@
 \def\shortTitle{Puissances}
 %%
 
-\disableAnimation
+% \disableAnimation
 % \shortAnimation
-% \firstSlide
+\firstSlide
 
 \def\imgPath{stage-M2/4e/puissance/}
 \def\imgExtension{_myr_4e_2016.png}
@@ -20,7 +20,7 @@
     {$6^2 = $, $36$},
     {$10^2 = $, $100$},
     {$\pow{2}{4} = $, $16$},
-    {$10^2 = $, $100$}%
+    {$\pow{9}{2} = $, $81$}%
 }[10]
 
 \slide{COURS}{
@@ -144,8 +144,7 @@
 
 \exoslide{exo_21_p82}
 \exoslide{exo_22_p82}
-\TODO{ajouter 23p82}
-% \exoslide{exo_23_p82}
+\exoslide{exo_23_p82}
 
 \qf{
     {$10^6 =$, $\powTen{6}$},
@@ -188,4 +187,82 @@
     }
 }
 
+\slide{EXERCICES}{
+    \exo{}{
+        \multiColItemize{3}{
+            \item 30 p83
+        }
+    }
+    \exo{Devoir Maison}{
+        \multiColItemize{3}{
+            \item 29 p83 \item 15 p81 \item 16p81
+        }
+    }
+}
+
 \exoslide{exo_30_p83}
+
+\qf{
+    {$\pow{3}{5} = $, $3^5$},
+    {$(\frac{1}{2})^3 = $, $\frac{1}{8}$},
+    {$10^6 = $, $\powTen{6}$},
+    {$\powTen{5} = $, $10^5$},
+    {$10^{-4} = $, $\powTen{-4}$}%
+}
+
+\bsubsec{Prefixes}
+
+\slide{}{
+    \ssubsec
+    \def\colWidth{0.95cm}
+    \begin{tabular}{|C{2.5cm}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|}
+        \hline
+        Prefixes & giga & méga & kilo & milli & micro & nano \\
+        \hline
+        Symbole & G & M & k & m & $\mu$ & n \\
+        \hline
+        Signification & $10^9$ & $10^6$ & $10^3$ & $10^{-3}$ & $10^{-6}$ & $10^{-9}$ \\
+        \hline
+    \end{tabular}
+
+    \expl{}{
+        \begin{itemize}
+            \item Un gigaoctet, noté Go, correspond à une quantité de données numériques de $10^9$ octets,
+            soit un milliard d'octets.
+            \item Un microgramme, noté $\mu$g, correspond à $10^{-6}$ grammes,
+            soit un millionième de gramme.
+        \end{itemize}
+    }
+}
+
+\exoList{34 p83}[Myriade 4e 2016 p83][2]
+
+\exoslide{exo_34_p83}
+
+\bsec{Notations scientifiques}
+\bsubsec{Définition}
+
+\slide{COURS}{
+    \ssec
+    \act{Myriade 4p77}{
+        \vspace{-0.7cm}
+        \img{\imgf{activite_4_p77}}[9.7cm]
+    }
+}
+
+\slide{}{
+    \ssubsec
+    \df{}{
+        La notation scientifique d'un nombre est la seul écriture de la forme:
+        \begin{equation*}
+            \palt{2}{a \times 10^n}
+        \end{equation*}
+        $a$ est un nombre qui s'écrit avec un seul chiffre autre que $0$ avant la virgule.
+    }
+}
+
+\exoList{41 p84,42 p84,52 p85}[Myriade 4e 2016 p84-85][2]
+
+\exoslide{exo_41_p84}
+\exoslide{exo_42_p84}
+\exoslide{exo_52_p85}
