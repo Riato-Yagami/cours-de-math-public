@@ -70,7 +70,7 @@
             \iquestion{2000^1}{2000}
             \powiq{0}{12}{0}
             \powiq{1}{6}{1}
-            \powiq{\frac{2}{3}}{3}{\frac{8}{27}}
+            \powiq{(\frac{2}{3})}{3}{\frac{8}{27}}
             \powiq{0,5}{2}{0,25}
         \end{enumerate}
     }
@@ -88,10 +88,18 @@
         \end{enumerate}
     }
 
+    % \rmk{}{
+    %     Soit $a$ un nombre négatif et $n$ un entier,
+    %     $a^n$ est\palt{2}{positif } si\palt{2}{$n$ est pair },
+    %     et\palt{3}{négatif } si\palt{3}{$n$ est impair}.
+    % }
+}
+
+\slide{}{
     \rmk{}{
         Soit $a$ un nombre négatif et $n$ un entier,
-        $a^n$ est\palt{2}{positif } si\palt{2}{$n$ est pair },
-        et\palt{3}{négatif } si\palt{3}{$n$ est impair}.
+        $a^n$ est positif si $n$ est pair,
+        et négatif si $n$ est impair.
     }
 }
 
@@ -102,7 +110,7 @@
 \exoslide{exo_6_p80}
 
 \qf{
-    {$\pow{9}{6} = $, $9^6$},
+    {Ecrire avec la notation puissance :\\$\pow{9}{6} = $, $9^6$},
     {$\pow{0,15}{4} = $, $0{,}15^4$},
     {$2^4 = $, $16$},
     {$10^4 = $, $1000$}%
@@ -162,7 +170,7 @@
     \color{black} Soient $a$ et $b$ deux nombres.
     \rmk{}{
         \begin{equation*}
-            10^a\times 10^b = 10^{a+b}
+            10^a\times 10^b = \palt{2}{10^{a+b}}
         \end{equation*}
     }
 }
@@ -172,7 +180,7 @@
 \slide{}{
     \rmk{}{
         \begin{equation*}
-            \frac{10^a}{10^b} = 10^{a-b}
+            \frac{10^a}{10^b} = \palt{2}{10^{a-b}}
         \end{equation*}
     }
 }
@@ -182,8 +190,21 @@
 \slide{}{
     \rmk{}{
         \begin{equation*}
-            (10^a)^b = 10^{a\times b}
+            (10^a)^b = \palt{2}{10^{a \times b}}
         \end{equation*}
+    }
+}
+
+\slide{}{
+    \pr{}{
+        Ces 3 remarque sont enfaite une propriétés pour les puissances de tous nombres $x$.
+        \begin{align*}
+            x^a\times x^b = x^{a+b}
+            \iet
+            \frac{x^a}{x^b} = x^{a-b}
+            \iet 
+            (x^a)^b = x^{a\times b}
+        \end{align*}
     }
 }
 
@@ -207,7 +228,7 @@
     {$(\frac{1}{2})^3 = $, $\frac{1}{8}$},
     {$10^6 = $, $\powTen{6}$},
     {$\powTen{5} = $, $10^5$},
-    {$10^{-4} = $, $\powTen{-4}$}%
+    {$10^{-4}\times 10^{2} = $, $\powTen{-2}$}%
 }
 
 \bsubsec{Prefixes}
