@@ -5,9 +5,9 @@
 \def\shortTitle{Puissances}
 %%
 
-% \disableAnimation
+\disableAnimation
 % \shortAnimation
-\firstSlide
+% \firstSlide
 
 \def\imgPath{stage-M2/4e/puissance/}
 \def\imgExtension{_myr_4e_2016.png}
@@ -206,6 +206,10 @@
             (x^a)^b = x^{a\times b}
         \end{align*}
     }
+
+    \rmk{Convention}{
+        Pour $x$ un nombre: $x^0 = 1$ 
+    }
 }
 
 \slide{EXERCICES}{
@@ -261,7 +265,6 @@
 \exoslide{exo_34_p83}
 
 \bsec{Notations scientifiques}
-\bsubsec{Définition}
 
 \slide{COURS}{
     \ssec
@@ -270,6 +273,8 @@
         \img{\imgf{activite_4_p77}}[9.7cm]
     }
 }
+
+\bsubsec{Définition}
 
 \slide{}{
     \ssubsec
@@ -289,11 +294,18 @@
 \exoslide{exo_52_p85}
 
 \qf{
-    {Ecrire en notation scientifique:\\$\numprint{136000}$, $= 1{,}36\times10^5$},
-    {$\numprint{50224}$, $= 5{,}0224\times10^4$},
-    {$\numprint{0{,}002}$, $= 2\times10^{-3}$},
-    {$\numprint{0{,}00002334}$, $=2{,}334 \times 10^{-6}$}%
-}
+    {Comparer avec le bon signe d'inégalité ($< \ou > \ou =$):\\ $10^6 \et 10^5$ , $10^6 > 10^5$},
+    {$10^2\times10^{-3} \et 10^{-2}\times10^3$, $10^2\times10^{-3} < 10^{-2}\times10^3$},
+    {$\frac{10^5}{10^2} \et \frac{10^5}{10^{-2}}$, $\frac{10^5}{10^2} < \frac{10^5}{10^{-2}}$},
+    {$\frac{1}{(10^2)^3} \et 10^{-5}$, $\frac{1}{(10^2)^3} = {10^-5}$}%
+}[10]
+
+% \qf{
+%     {Ecrire en notation scientifique:\\$\numprint{136000}$, $= 1{,}36\times10^5$},
+%     {$\numprint{50224}$, $= 5{,}0224\times10^4$},
+%     {$\numprint{0{,}002}$, $= 2\times10^{-3}$},
+%     {$\numprint{0{,}00002334}$, $=2{,}334 \times 10^{-6}$}%
+% }
 
 \bsubsec{Ordre de grandeurs}
 

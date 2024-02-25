@@ -3,45 +3,61 @@
 \def\date{04/11/2023}
 %%%%%%%%%%%%%%%
 
+\hint{
+    \begin{itemize}
+        \item Fichier amorce : "amorce\_activite\_hauteur\_et\_triangle.ggb" à modifier.
+        \item Rendre le fichier avec le nom : "NOM1\_NOM2\_activite.ggb"
+        \item Répondre au questions sur une feuille à rendre.
+    \end{itemize}
+}\vspace*{0.5cm}
+
 \newcommand*{\tri}[4]{
     \item Placer $#4$ sur $(O#2)$, pour construire le triangle #1: $#2#3#4$ rectangle en $#3$.
 }
 
-\section{Construction sur feuille blanche}
+Le fichier amorce présente deux droites $(OA)$ et $(OB)$ perpendiculaires de longeurs $OA=2\cm$ et $OB=10\cm$.
 
+\section{$OB = 2cm$}
 \begin{enumerate}\setlength{\itemsep}{15pt}%
-    \item Construire les droites $(OA)$ et $(OB)$ perpendiculaires,
-    avec: $OA = 1\cm$ et $OB = 2\cm$.
     \item \begin{enumerate}
         \tri{1}{A}{B}{C}
+        \item Quelle est la hauteur du triangle 1?
+    \end{enumerate}
+    \item \begin{enumerate}
         \tri{2}{B}{C}{D}
         \tri{3}{C}{D}{E}
-        \item Donner les hauteurs de ces trois triangles.
+        \item Quelles sont les hauteurs de ces deux triangles?
+        
+        \hint{Pour mesurer utiliser l'outil: "Distance ou Longueur".}
     \end{enumerate}
     \item \begin{enumerate}
         \item Si l'on construisait suivant le même procédé le triangle 4,
         quelle serait sa hauteur ? 
-        \item Du triangle 5, 6 ?
+        \item Des triangles 5, 7 et 56 ?
         \item Quelle serait la hauteur du triangle $n$ ?
+    \end{enumerate}
+\end{enumerate}
+
+\section{$OB = 10cm$}
+
+\begin{enumerate}\setlength{\itemsep}{15pt}%
+    \item Déplacer le curseur $OB$ pour que $[OB]$ soit de longeur $10\cm$.
+    \item \begin{enumerate} \item Quelles sont les nouvelles hauteurs des triangles 1, 2, 3?
+            \item Quelles seraient les hauteurs des triangles 4, 9, 123?
+            \item \label{itm:first} Quelle serait la hauteur du triangle $n$ ?
     \end{enumerate}
     \item \begin{enumerate} 
         \tri{0}{B}{A}{A_1}
         \tri{-1}{A}{A_1}{B_1}
-        \item Donner les hauteurs de ces deux triangles.
+        \tri{-2}{A_1}{B_1}{C_1}
+        \item Quelle sont les hauteurs de ces trois triangles?
+        \item Est-ce que la formule donné en \ref{itm:first} reste vrai pour ces triangles?
     \end{enumerate}
-\end{enumerate}
-
-\section{Construction sur Géogebra}
-
-\begin{enumerate}
-    \item Sur Géogebra, reprendre les questions précédentes pour:
-    $OA = 1\cm$ et $OB = 10\cm$.\\
-    
-    \hint{
-        \begin{itemize}
-            \item Pour créer un segment d'une longueur donné utiliser l'outil "Cercle (centre-rayon)".
-            \item Pour mesurer utiliser l'outil "Distance ou Longueur".
-        \end{itemize}
-    }\vspace*{0.5cm}
-    \item La formule de la hauteur donné pour le triangle $n$, fonctionne-t-elle pour le triangle $0$ ? le triangle $-1$ ? $-2$, $-4$ ?
+    \item \begin{enumerate}
+        \item Déplacer le curseur $OB$ pour que $[OB]$ soit de nopuveaux de longeur $2\cm$.
+        \item Quelles sont les hauteurs des triangles 0, -1 et -2?
+        \item Quelles seraient les hauteurs des triangles -4 et -23?
+        \item Pouvez-vous émettre une conjecture sur une nouvelle notation,
+        qui donnerait la hauteur du triangle $-n$.
+    \end{enumerate}
 \end{enumerate}

@@ -1,0 +1,47 @@
+% VARIABLES %%%
+\def\theme{Activités géométriques : Hauteurs et Triangles}
+\def\date{04/11/2023}
+%%%%%%%%%%%%%%%
+
+\newcommand*{\tri}[4]{
+    \item Placer $#4$ sur $(O#2)$, pour construire le triangle #1: $#2#3#4$ rectangle en $#3$.
+}
+
+\section{Construction sur feuille blanche}
+
+\begin{enumerate}\setlength{\itemsep}{15pt}%
+    \item Construire les droites $(OA)$ et $(OB)$ perpendiculaires,
+    avec: $OA = 1\cm$ et $OB = 2\cm$.
+    \item \begin{enumerate}
+        \tri{1}{A}{B}{C}
+        \tri{2}{B}{C}{D}
+        \tri{3}{C}{D}{E}
+        \item Donner les hauteurs de ces trois triangles.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Si l'on construisait suivant le même procédé le triangle 4,
+        quelle serait sa hauteur ? 
+        \item Du triangle 5, 6 ?
+        \item Quelle serait la hauteur du triangle $n$ ?
+    \end{enumerate}
+    \item \begin{enumerate} 
+        \tri{0}{B}{A}{A_1}
+        \tri{-1}{A}{A_1}{B_1}
+        \item Donner les hauteurs de ces deux triangles.
+    \end{enumerate}
+\end{enumerate}
+
+\section{Construction sur Géogebra}
+
+\begin{enumerate}
+    \item Sur Géogebra, reprendre les questions précédentes pour:
+    $OA = 1\cm$ et $OB = 10\cm$.\\
+    
+    \hint{
+        \begin{itemize}
+            \item Pour créer un segment d'une longueur donné utiliser l'outil "Cercle (centre-rayon)".
+            \item Pour mesurer utiliser l'outil "Distance ou Longueur".
+        \end{itemize}
+    }\vspace*{0.5cm}
+    \item La formule de la hauteur donné pour le triangle $n$, fonctionne-t-elle pour le triangle $0$ ? le triangle $-1$ ? $-2$, $-4$ ?
+\end{enumerate}

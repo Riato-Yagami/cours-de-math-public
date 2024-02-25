@@ -15,6 +15,10 @@
 \def\vi{\vect{i}}
 \def\vj{\vect{j}}
 \def\hpi{\frac{\pi}{2}}
+
+\def\co{\textrm{coté opposé}}
+\def\ca{\textrm{coté adjacent}}
+\def\hy{\textrm{hypoténuse}}
 %%%%%%%%%%%%%%
 
 % \setboolean{subsectionInOutline}{true}
@@ -25,15 +29,109 @@
 
 \hbox{}
 \leconInfo{
+    \ilink{3e}
     \ilink{1re}
+    \ilink{Terminale Option Expertes}
 } % Niveaux
-[] % Prérequis
+[\item propriété Triangle \item théorème de Pythagore \item fonction] % Prérequis
 [] % Thèmes
 [] % Motivation
 
+\section{Triangle rectangle}
+
+\subsection{Définitions}
+
+\df{Coté du triangle rectangle}{
+    Soit $ABC$ triangle rectangle en $A$.
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \tkzDefPoint(0,0){A}
+            \tkzDefPoint(5,0){B}
+            \tkzDefPoint(0,3){C}
+            \draw[very thick] (A)--(B)--(C)--cycle;
+            \tkzLabelSegment[below](A,B){$\ca$}
+            \tkzLabelSegment[above right](B,C){$\hy$}
+            \tkzLabelSegment[left](C,A){$\co$}
+            \tkzMarkAngle[size=0.9cm,arc=l](C,B,A)
+            \tkzMarkRightAngle[scale=1.5](B,A,C)
+            \tkzLabelAngle[pos=1.5](C,B,A){$b$}
+            \tkzLabelPoints[below left](A)
+            \tkzLabelPoints[below right](B)
+            \tkzLabelPoints[above left](C)
+        \end{tikzpicture}
+    \end{center} 
+}
+
+
+\df{Sinus}{\vspace*{-0.25cm}
+    \begin{align*}
+        \sin(\widehat{b}) = \frac{\co}{\hy} = \frac{AC}{BC}
+    \end{align*}
+}
+
+\df{Cosinus}{\vspace*{-0.25cm}
+    \begin{align*}
+        \cos(\widehat{b}) = \frac{\ca}{\hy} = \frac{AB}{BC}
+    \end{align*}
+}
+
+\df{Tangente}{\vspace*{-0.25cm}
+    \begin{align*}
+        \tan(\widehat{b}) = \frac{\co}{\ca} = \frac{AC}{AB}
+    \end{align*}
+}
+
+\rmk{Moyen mnémotechnique}{
+    CAH SOH TOA
+}
+
+\pr{}{
+    Soit $\widehat{a}$ un angle aigue,
+    on a :
+    \begin{align*}
+        0 < &\cos{\widehat{a}} < 1\\
+        0 < &\sin{\widehat{a}} < 1
+    \end{align*}
+}
+
+\subsection{Formules}
+
+Soit $x\in\m{R}$
+
+\pr{Somme des carrés}{\vspace*{-0.25cm}
+    \begin{equation*}
+        \cos^2{x} + \sin^2{x} = 1\\
+    \end{equation*}
+}
+
+\demo{}{
+    Avec $x = \widehat{ABC}$,
+    on a:
+    \begin{align*}
+        \cos{x} &= \frac{AB}{BC} \et \sin{x} = \frac{AC}{BC}
+        \ialors \cos^2{x} + \sin^2{x} &= \left(\frac{AB}{BC}\right)^2 + \left(\frac{AC}{BC}\right)^2\\
+        &= \frac{AB^2+AC^2}{BC^2}\\
+        &= 1 \;\textrm{d'après le théorème de Pythagore.}
+    \end{align*}
+}[\href{https://docplayer.fr/210338046-Lecon-n-o-11-trigonometrie-applications-capes-session-cbmaths-cbmaths-fr-derniere-mise-a-jour-1-er-avril-2021.html}{CBMaths.fr}]
+
+\pr{Tangente}{\vspace*{-0.25cm}
+    \begin{equation*}
+        \tan{x} = \frac{\sin{x}}{\cos{x}}
+    \end{equation*}
+}
+
+\demo{}{\vspace*{-1cm}
+    \begin{align*}
+        \frac{\sin{x}}{\cos{x}} &= \frac{\frac{AB}{BC}}{\frac{AC}{BC}}\\
+        &= \frac{AB}{BC} \times \frac{BC}{AC}\\
+        &= \frac{AC}{AB} = \tan{x}
+    \end{align*}
+}
+
 \section{Produit scalaire}
 
-\subsection{Definitions}
+\subsection{Définitions}
 
 \df{Forme bilinéaire}{
     Une \textbf{forme bilinéaire} est une application qui,
