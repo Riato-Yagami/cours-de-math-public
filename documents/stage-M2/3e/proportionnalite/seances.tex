@@ -1,5 +1,5 @@
 % VARIABLES %%%
-\def\authors{PESIN - CADOT - COURTIN}
+\def\authors{CADOT - COURTIN - PESIN}
 % \date{\today}
 \def\longTitle{La Proportionnalité}
 \def\shortTitle{Proportionnalité}
@@ -9,15 +9,18 @@
 % \shortAnimation
 \firstSlide
 
-\def\imgPath{stage-M2/3e/proportionnalite/}
-\def\imgExtension{_myr_4e_2016.png}
+\def\imgPath{stage-M2/4e/proportionnalite/exercices/}
+\def\imgExtension{_myriade_4e_2016.png}
 
-% \exoslide{exo_12_p}
-% \exoslide{exo_20_p}
-% \exoslide{exo_2_p}
+\exoList{12 p139,20 p140,16 p138}[Myriade 4e 2016][3]
+
+\exoslide{ex_12_p139}
+\exoslide{ex_20_p140}[8cm]
+\exoslide{ex_2_p138}[9cm]
 
 \bsec{Rappel}
 \bsubsec{Représentation Graphique}
+
 \slide{Cours}{
     \bchap{\longTitle}
     \ssec\ssubsec
@@ -25,6 +28,13 @@
     \pr{Représentation graphique}{
         Un graphique présente une situation de proportionnalité si l'ensemble de ces points sont alignés avec l'origine.
     } 
+}
+
+\slide{}{
+    \expl{}{
+        \img{stage-M2/4e/proportionnalite/graphique_situation_proportionnelle.png}[8cm]
+        Le graphique ci-dessus présente une situation de proportionnalité.
+    }
 }
 
 \bsubsec{Produit en croix}
@@ -38,33 +48,27 @@
         \end{center}
         On a l'égalité: $a \times d = b \times c$. 
     }
-
+    \vspace*{-0.5cm}
     \rmk{Egalité des quotients}{
-        On a aussi : $ \frac{a}{b} = \frac{c}{d}$.
+        On a aussi:%
+        \vspace*{-0.5cm}
+        \begin{align*}%
+            \frac{a}{b} = \frac{c}{d}%
+        \end{align*}%
     }
 }
 
-\slide{Exercices}{
-    \exo{Myriade : Proportionnalité}{
-        \vspace{-0.25cm}
-        \multiColItemize{3}{%
-            \item 7 p143
-            \item 2 p142
-        }%
-        %
-        Pour vendredi:
-        \multiColItemize{3}{%
-            \item 13 p144
-        }%
-    }
-}
+\exoList{7 p143,2 p142,13 p144}[Myriade 3e 2016 - à terminer pour vendredi][3]
 
-% \exoslide{exo_7_p143}
-% \exoslide{exo_2_p142}
-% \exoslide{exo_13_p144}
+\def\imgPath{stage-M2/3e/proportionnalite/}
+\def\imgExtension{_myr_3e_2016.png}
+
+\exoslide{exo_7_p143}[5.4cm]
+\exoslide{exo_2_p142}[7cm]
+\exoslide{exo_13_p144}
 
 \bsec{Pourcentage}
-\bsubsec{Pourcentage d’un nombre}
+\bsubsec{Pourcentage d'un nombre}
 \slide{Cours}{
     \ssec\ssubsec
     \df{Pourcentage}{
@@ -76,30 +80,26 @@
     }
 }
 
-\bsubsec{Pourcentage d’évolution}
+\bsubsec{Pourcentage d'évolution}
 
 \slide{}{
     \pr{}{
         \begin{itemize}
-            \item Augmenter un nombre de $t\%$ revient à le multiplier par $1+\frac{1}{100}$.
-            \item Diminuer un nombre de $t\%$ revient à le multiplier par $1-\frac{1}{100}$.
+            \item Augmenter un nombre de $t\%$ revient à le multiplier par $1+\frac{t}{100}$.
+            \item Diminuer un nombre de $t\%$ revient à le multiplier par $1-\frac{t}{100}$.
         \end{itemize}
     }
-}
 
-\slide{Exercices}{
-    \exo{Myriade : Pourcentages}{
+    \expl{Myriade}{
         \vspace{-0.25cm}
         \multiColItemize{3}{%
             \item 14 p144
             \item 23 p145
         }%
-        %
-        Devoir-Maison pour Lundi 25 mars:
-        \multiColItemize{3}{%
-            \item 60 p151
-            \item 63 p15113
-            \item 16 p144
-        }%
     }
 }
+
+\exoslide{exo_14_p144}
+\exoslide{exo_23_p145}
+
+\exoList{60 p151,63 p151,16 p144}[Devoir-Maison - Lundi 25 mars][3]
