@@ -1,0 +1,81 @@
+% VARIABLES %%%
+\def\theme{Hauteur du triangle rectangles}
+\def\date{04/11/2023}
+%%%%%%%%%%%%%%%
+
+\pr{Hauteur du triangle rectangle}{
+    \dividePage{
+        \def\a{2.1}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.6]
+                \tkzDefPoint(0,\a**2){A}
+                \tkzDefPoint(-\a**3,0){B}
+                \tkzDefPoint(\a,0){C}
+                \tkzDefPoint(0,0){D}
+                \draw[very thick] (A)--(B)--(C)--cycle;
+                \tkzMarkRightAngle[scale=1.5](B,A,C)
+                \tkzMarkRightAngle[scale=1.5](B,D,A)
+                \tkzLabelPoints[above](A)
+                \tkzLabelPoints[below left](B)
+                \tkzLabelPoints[below right](C)
+                \tkzLabelPoints[below](D)
+                \draw[very thick, red] (A)--(D);
+            \end{tikzpicture}
+        \end{center} 
+    }{
+        Soit $ABC$ rectangle en $A$ et $D$ intersection de $(BC)$ et de la hauteur issue de $A$.
+        On a:
+        \begin{align*}
+            DA ^ 2 = DB \times DC
+        \end{align*}
+    }
+}
+
+\demo{}{
+    D'après le théorème de Pythagore :
+    \begin{align*}%
+        AC^2 = DA^2 + DC^2 &\et AB^2 = DA^2 + DC^2
+        \ialors AB^2 + AC^2 &= 2 DA^2 + DC^2 + DB^2\\
+        %
+        \intertext{et avec à nouveau le théorème de Pythagore :} AB^2 + AC^2 &= BC^2\\
+        &= (DB+DC)^2\\
+        &= 2 \times DB \times DC + DB^2 + DC^2\\
+        %
+        \ialors 2 \times DA^2 + DC^2 + DB^2 &= 2 \times DB \times DC + DB^2 + DC^2
+        \idou DA ^ 2 = DB \times DC
+    \end{align*}
+}
+
+\cor{}{
+    \dividePage{
+        Soit $a\in\m{R}, n\in\m{Z}$ et la figure suivante :\\ \\
+        \vspace{1cm}
+        alors $x= a^{n+1}$
+    }{
+        \def\a{1.9}
+        % \begin{center}
+            \begin{tikzpicture}[scale=0.6]
+                \tkzDefPoint(0,\a**2){A}
+                \tkzDefPoint(-\a**3,0){B}
+                \tkzDefPoint(\a,0){C}
+                \tkzDefPoint(0,0){D}
+                \draw[very thick] (A)--(B)--(C)--cycle;
+                \tkzMarkRightAngle[scale=1.5](B,A,C)
+                \tkzMarkRightAngle[scale=1.5](B,D,A)
+                \tkzLabelSegment[left](D,A){$a^{n}$}
+                \tkzLabelSegment[below](D,C){$a^{n-1}$}
+                \tkzLabelSegment[below, yshift = -5pt](D,B){$x$}
+                \draw[very thick] (A)--(D);
+            \end{tikzpicture}
+        % \end{center}
+    }
+}
+    
+\demo{}{%
+    \begin{align*}
+        \iOna (a^n)^2 &= x \times a^{n-1}\\
+        \ialors x &= \frac{(a^n)^2}{a^{n-1}}\\
+        &= \frac{a^{2n}}{a^{n-1}}\\
+        &= a^{2n - (n-1)} = a^{n+1}
+    \end{align*}
+}
