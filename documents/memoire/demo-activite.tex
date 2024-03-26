@@ -9,41 +9,140 @@
         \begin{center}
             \begin{tikzpicture}[scale=0.6]
                 \tkzDefPoint(0,\a**2){A}
-                \tkzDefPoint(-\a**3,0){B}
-                \tkzDefPoint(\a,0){C}
-                \tkzDefPoint(0,0){D}
+                \tkzDefPoint(\a,0){B}
+                \tkzDefPoint(-\a**3,0){C}
+                \tkzDefPoint(0,0){H}
                 \draw[very thick] (A)--(B)--(C)--cycle;
                 \tkzMarkRightAngle[scale=1.5](B,A,C)
-                \tkzMarkRightAngle[scale=1.5](B,D,A)
+                \tkzMarkRightAngle[scale=1.5](A,H,C)
                 \tkzLabelPoints[above](A)
-                \tkzLabelPoints[below left](B)
-                \tkzLabelPoints[below right](C)
-                \tkzLabelPoints[below](D)
-                \draw[very thick, red] (A)--(D);
+                \tkzLabelPoints[below right](B)
+                \tkzLabelPoints[below left](C)
+                \tkzLabelPoints[below](H)
+                \draw[very thick, red] (A)--(H);
             \end{tikzpicture}
         \end{center} 
     }{
-        Soit $ABC$ rectangle en $A$ et $D$ intersection de $(BC)$ et de la hauteur issue de $A$.
+        Soit $ABC$ rectangle en $A$ et $H$ intersection de $(BC)$ et de la hauteur issue de $A$.
         On a:
         \begin{align*}
-            DA ^ 2 = DB \times DC
+            HA ^ 2 = HB \times HC
         \end{align*}
     }
 }
 
-\demo{}{
+\demo{Algébrique}{
     D'après le théorème de Pythagore :
     \begin{align*}%
-        AC^2 = DA^2 + DC^2 &\et AB^2 = DA^2 + DC^2
-        \ialors AB^2 + AC^2 &= 2 DA^2 + DC^2 + DB^2\\
+        AB^2 = HA^2 + HB^2 &\et AC^2 = HA^2 + HC^2
+        \ialors AB^2 + AC^2 &= 2 \times HA^2 + HB^2 + HC^2\\
         %
         \intertext{et avec à nouveau le théorème de Pythagore :} AB^2 + AC^2 &= BC^2\\
-        &= (DB+DC)^2\\
-        &= 2 \times DB \times DC + DB^2 + DC^2\\
+        &= (HB+HC)^2\\
+        &= 2 \times HB \times HC + HB^2 + HC^2\\
         %
-        \ialors 2 \times DA^2 + DC^2 + DB^2 &= 2 \times DB \times DC + DB^2 + DC^2
-        \idou DA ^ 2 = DB \times DC
+        \ialors 2 \times HA^2 + HB^2 + HC^2 &= 2 \times HB \times HC + HB^2 + HC^2
+        \idou HA ^ 2 = HB \times HC
     \end{align*}
+}
+
+\demo{Géometrique}{
+    \def\a{2}
+    \dividePage{
+        \begin{tikzpicture}[scale=0.6]
+            \tkzDefPoint(0,\a**2){A}
+            \tkzDefPoint(\a,0){B}
+            \tkzDefPoint(-\a**3,0){C}
+            \tkzDefPoint(0,0){H}
+            %
+            \draw[fill = red, fill opacity=0.2] (A)--(H)--(C)--cycle;
+            \draw[fill = blue, fill opacity=0.2] (A)--(H)--(B)--cycle;
+            %
+            \tkzMarkRightAngle[scale=1.5](B,A,C)
+            \tkzMarkRightAngle[scale=1.5](A,H,C)
+            %
+            \draw[very thick] (A)--(B)--(C)--cycle;
+            \draw[very thick] (A)--(H);
+            %
+            \tkzLabelSegment[left](H,A){$h$}
+            \tkzLabelSegment[below](H,C){$b$}
+            \tkzLabelSegment[below](H,B){$a$}
+        \end{tikzpicture}
+    }{
+        \begin{tikzpicture}[scale=0.6]
+            \tkzDefPoint(0,\a**2){A}
+            \tkzDefPoint(\a,0){B}
+            \tkzDefPoint(-\a**3,0){C}
+            \tkzDefPoint(0,0){H}
+            %
+            \tkzDefPoint(\a**2,\a**2){H'}
+            \tkzDefPoint(\a**2,\a**2+\a){B'}
+            %
+            \draw[very thick, fill = red, fill opacity=0.2] (A)--(H)--(C)--cycle;
+            \draw[very thick, fill = blue, fill opacity=0.2] (A)--(H')--(B')--cycle;
+            %
+            \tkzMarkRightAngle[scale=1.5](A,H,C)
+            \tkzMarkRightAngle[scale=1.5](H,A,H')
+            \tkzMarkAngle[size=0.5cm,arc=l,red](B',A,C)
+            %
+            \draw[very thick,dotted] (A)--(B)--(H)--cycle;
+            %
+            \tkzLabelSegment[left](H,A){$h$}
+            \tkzLabelSegment[below](H,C){$b$}
+            %
+            \tkzLabelSegment[below](A,H'){$h$}
+            \tkzLabelSegment[right](B',H'){$a$}
+            %
+            \tkzLabelAngle[pos=1.2,red](B',A,C){$\alpha = 90^\circ+90^\circ$}
+        \end{tikzpicture}
+    }
+    %
+    %
+    \dividePage{
+        \begin{tikzpicture}[scale=0.6]
+            \tkzDefPoint(0,\a**2){A}
+            \tkzDefPoint(\a,0){B}
+            \tkzDefPoint(-\a**3,0){C}
+            \tkzDefPoint(0,0){H}
+            %
+            \tkzDefPoint(\a**2,\a**2){H'}
+            \tkzDefPoint(\a**2,\a**2+\a){B'}
+            %
+            \tkzDefPoint(-\a**3,\a**2){H''}
+            \tkzDefPoint(0,\a**2+\a){H'''}
+            \tkzDefPoint(-\a**3,\a**2+\a){D}
+            \tkzDefPoint(\a**2,0){E}
+            %
+            \draw[very thick, fill = red, fill opacity=0.2] (A)--(H)--(C)--cycle;
+            \draw[very thick, fill = blue, fill opacity=0.2] (A)--(H')--(B')--cycle;
+            \draw[fill = red, fill opacity=0.1] (A)--(H'')--(C)--cycle;
+            \draw[fill = blue, fill opacity=0.1] (A)--(H''')--(B')--cycle;
+            %
+            \tkzMarkRightAngle[scale=1.5](A,H,C)
+            \tkzMarkRightAngle[scale=1.5](H,A,H')
+            %
+            \draw[very thick] (A)--(H)--(C)--cycle;
+            \draw[very thick] (A)--(H')--(B')--cycle;
+            %
+            % \draw[thick] (A)--(C)--(H'')--cycle;
+            % \draw[thick] (A)--(B')--(H''')--cycle;
+            % \draw[thick,dashed] (H'')--(D)--(H''');
+            % \draw[thick,dashed] (H')--(E)--(H);
+            \draw[thick,Green] (E)--(C)--(D)--(B')--cycle;
+            %
+            \tkzLabelSegment[left](H,A){$h$}
+            %
+            \tkzLabelSegment[above](A,H'){$h$}
+            \tkzLabelSegment[right](A,H'''){$a$}
+            \tkzLabelSegment[below](A,H''){$b$}
+            \node[red] at (0.5*\a^2,0.5*\a^2) {$h^2$};
+            \node[red] at (-0.5*\a^3,\a^2 + 0.5*\a) {$a \times b$};
+        \end{tikzpicture}
+    }{
+        \begin{align*}
+            a \times b = \frac{\color{Green}\mathcal{A}}{2} - \color{red}\mathcal{A}\color{black} - \color{blue}\mathcal{A}\color{black} = h^2
+        \end{align*}
+    }
 }
 
 \cor{}{
@@ -58,14 +157,14 @@
                 \tkzDefPoint(0,\a**2){A}
                 \tkzDefPoint(-\a**3,0){B}
                 \tkzDefPoint(\a,0){C}
-                \tkzDefPoint(0,0){D}
+                \tkzDefPoint(0,0){H}
                 \draw[very thick] (A)--(B)--(C)--cycle;
                 \tkzMarkRightAngle[scale=1.5](B,A,C)
-                \tkzMarkRightAngle[scale=1.5](B,D,A)
-                \tkzLabelSegment[left](D,A){$a^{n}$}
-                \tkzLabelSegment[below](D,C){$a^{n-1}$}
-                \tkzLabelSegment[below, yshift = -5pt](D,B){$x$}
-                \draw[very thick] (A)--(D);
+                \tkzMarkRightAngle[scale=1.5](B,H,A)
+                \tkzLabelSegment[left](H,A){$a^{n}$}
+                \tkzLabelSegment[below](H,C){$a^{n-1}$}
+                \tkzLabelSegment[below, yshift = -5pt](H,B){$x$}
+                \draw[very thick] (A)--(H);
             \end{tikzpicture}
         % \end{center}
     }
