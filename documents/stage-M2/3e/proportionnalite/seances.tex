@@ -5,9 +5,9 @@
 \def\shortTitle{Proportionnalité}
 %%
 
-\disableAnimation
+% \disableAnimation
 % \shortAnimation
-% \firstSlide
+\firstSlide
 
 \def\imgPath{stage-M2/4e/proportionnalite/exercices/}
 \def\imgExtension{_myriade_4e_2016.png}
@@ -113,3 +113,120 @@
 \exoslide{exo_24_p145}
 
 \exoList{60 p151,63 p151,16 p144}[Devoir-Maison - Lundi 25 mars][3]
+
+\qf{
+    {$70\euro$ diminué de $10\%$, $63\euro$},
+    {$50\euro$ augmenté de $20\%$, $\pcalc{50*120/100}\euro$}%
+}[15]
+
+\bsec{Ratio}
+\bsubsec{Définition}
+
+\slide{COURS}{
+    \ssec\ssubsec
+
+    Un ratio est une façon d'exprimer comment deux grandeurs (ou plus) se comparent.
+    
+    \df{}{
+        On dit que deux nombres $a$ et $b$ sont dans le ratio $3:4$ (notation) si:
+        \begin{align*}
+            \frac{a}{3} = \frac{b}{4}
+        \end{align*}
+    }  
+}
+
+\slide{}{
+    \expl{}{
+        \begin{enumerate}
+            \item 2 personnes se sont réparties des chocolats dans le ratio $3:4$,
+            la première personne à 6 chocolats.\\
+            Combien en a la deuxième personne ?
+            \item 3 personnes se répartissent du jus d'orange dans le ratio $3:5:8$,
+            la seconde personne recupère $15\centi\liter$.\\
+            Combien y avait-il de jus d'orange au départ?
+            \item \begin{enumerate} \item 2 personnes souhaitent se répartir $90\euro$ selon leur temps de travail,
+            dans le ratio $4:5$.\\
+            Combien chacune d'elles va-t-elle avoir?
+            \item $90\euro$ dans le ratio $1:2:2$
+            \end{enumerate}
+        \end{enumerate}
+    }  
+}
+
+\bsubsec{Echelle}
+
+\slide{}{
+    \ssubsec
+    \df{Echelle}{
+        Une carte à l'échelle $1:\numprint{1000}$ signifie que:
+        $1u$ sur la carte représente $\numprint{1000}u$ dans la réalité.
+        ($u$ : unité de longueur)
+    }
+}
+
+\slide{}{
+    \expl{}{
+        On mesure sur une carte à l'aide de l'échelle graphique que $1\cm$ représente $1\km$.\\
+        Quelle est l'échelle de la carte?
+        \img{stage-M2/4e/proportionnalite/carte-paris.jpg}[6cm]
+        \palt{2}{
+            $1\km = \numprint{100 000}\cm$\\
+            On alors une échelle de $1:\numprint{100 000}$
+        }
+    }
+}
+
+\exoList{4 p142, 6 p142}[Ratios][3]
+
+\exoslide{exo_4_p142}
+\exoslide{exo_6_p142}
+
+\bsec{Grandeur composé}
+
+\bsubsec{Grandeur quotient}
+
+\slide{}{
+    \ssec\ssubsec
+
+    \df{}{
+        Une \textbf{grandeur quotient} est une grandeur obtenue en effectuant le quotient de deux grandeurs.
+    }
+
+    \expl{}{\vspace*{-0.85cm}
+        \begin{equation*}
+            Vitesse = \palt{4}{\frac{Distance}{Temps}}
+        \end{equation*}
+    }
+}
+
+\slide{}{
+    Une voiture parcours $120\km$ en $1\hour$.
+    En supposant sa vitesse constante;
+    combien parcourt-elle de $\km$ en $1\hour18$?
+
+    \rmdr{Conversion}{
+        \vspace*{-0.7cm}
+        \begin{align*}
+            60\min &= \palt{2}{1,0\hour}\\
+            \alors 1\min &= \palt{4}{\frac{1}{60}\hour \approx 0,01667\hour}\\
+            \alors 18\min &= \palt{5}{\frac{18}{60}\hour = 0,3\hour}\\
+            \et 1\hour18\min &= \palt{5}{1,3\hour}
+        \end{align*}
+    }
+}
+
+\bsubsec{Grandeur produit}
+
+\slide{}{
+    \df{}{
+        Une \textbf{grandeur produit} est une grandeur obtenue en effectuant le produit de deux grandeurs.
+    }
+
+    \expl{}{
+        \begin{itemize}
+            \item énergie (Wh) $=$ puissance $\times$ durée\\
+            Un appareil d'une puissance de $100$W utilisé pendant $3$h consomme ainsi \palt{2}{$300$Wh}.
+            \item volume ($\meter^3$) $=$ longueur $\times$ longueur $\times$ longueur
+        \end{itemize}
+    }
+}
