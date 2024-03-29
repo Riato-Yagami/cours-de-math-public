@@ -29,3 +29,17 @@
         \qfRes{#1}
     }
 }
+
+\newcounter{annex}
+
+\newcommand{\annex}[1]{
+    \newpage
+    \fancyhead[L]{\color{Red} ANNEXE \theannex}
+    \stepcounter{annex}
+    \input{#1}
+}
+
+\newcommand{\changelocaltocdepth}[1]{%
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
+    \setcounter{tocdepth}{#1}%
+}
