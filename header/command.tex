@@ -293,6 +293,7 @@
 % Tabular
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{K}{@{}m{0pt}@{}}
 
 % GEOMETRY
 
@@ -328,10 +329,10 @@
 }
 
 \newcounter{size}
-\newcommand{\listSize}[1]{
-    \setcounter{size}{0}
-    \foreach \n in {#1}{\stepcounter{size}}
-    \thesize
+\newcommand{\listSize}[1]{%
+    \setcounter{size}{0}%
+    \foreach \n in {#1}{\stepcounter{size}}%
+    % \thesize
 }
 
 \newcounter{elemPos}

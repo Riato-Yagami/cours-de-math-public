@@ -1,18 +1,19 @@
 % VARIABLES %%%
-\def\theme{Activités géométriques : Hauteurs et Triangles}
+\def\theme{Activités : Triangles rectangles et hauteurs}
 \def\date{04/11/2023}
 %%%%%%%%%%%%%%%
 \vspace*{-1cm}
 \hint{
     \begin{itemize}
-        \item Fichier amorce : "amorce\_activite\_hauteur\_et\_triangle.ggb" à modifier.
-        \item Rendre le fichier avec le nom : "NOM1\_NOM2\_activite.ggb"
-        \item Répondre au questions sur une feuille à rendre.
+        \item Amorce : \textbf{\href{https://www.geogebra.org/classic/xqyzte6y}{amorce\_TRH.ggb}} à modifier,\\
+        à rendre sous le nom : \textbf{NOM1\_NOM2\_TRH.ggb}
+        \item Répondre au questions sur le document réponse en page 2.
+        \item Toute recherche au brouillon est encouragé et est à écrire sur le document réponse (recto ou au verso).
     \end{itemize}
 }\vspace*{0.2cm}
 
-\newcommand*{\tri}[4]{
-    \item Placer $#4$ sur $(O#2)$, pour construire le triangle #1: $#2#3#4$ rectangle en $#3$.
+\newcommand*{\tri}[4]{%
+    \item Placer $#4$ sur $(O#2)$ pour construire $#2#3#4$ rectangle en $#3$, le triangle #1.%
 }
 
 Le fichier amorce présente deux droites $(OA)$ et $(OB)$ perpendiculaires avec $OA=1\cm$ et $OB=2\cm$.
@@ -22,7 +23,12 @@ Le fichier amorce présente deux droites $(OA)$ et $(OB)$ perpendiculaires avec 
     \item \begin{enumerate}
         \tri{1}{A}{B}{C}
 
-        \hint{On s'intéressera dans la suite du problème à la valeur de la hauteur issue de l'angles droit des triangles rectangles.}
+        \hint{%
+            \begin{itemize}%
+            \item Pour placer $C$ il faudra d'abord construire une perpendiculaire à $(AB)$ et prendre son intersection avec $OA$.
+            \item On s'intéressera dans la suite du problème à la \textbf{valeur} de la \textbf{hauteur issue de l'angle droit} des triangles rectangles.
+            \end{itemize}%
+        }
         \item Quelle est la hauteur du triangle 1?
     \end{enumerate}
     \item \begin{enumerate}
@@ -35,15 +41,15 @@ Le fichier amorce présente deux droites $(OA)$ et $(OB)$ perpendiculaires avec 
     \item \begin{enumerate}
         \item Si l'on construisait suivant le même procédé le triangle 4,
         quelle serait sa hauteur ? 
-        \item Des triangles 5, 7 et 56 ?
-        \item Quelle serait la hauteur du triangle $n$ ?
+        \item Des triangles 5, 6, 7 et 56 ?
+        \item Émettre une conjecture pour la hauteur du triangle $n$ ?
     \end{enumerate}
 \end{enumerate}
 
 \section{$OB = 10cm$}
 
 \begin{enumerate}\setlength{\itemsep}{15pt}%
-    \item Déplacer le curseur $OB$ pour que $[OB]$ soit de longeur $10\cm$.
+    \item Déplacer le curseur $OB$ pour que $[OB]$ soit de longueur $10\cm$.
     \item \begin{enumerate} \item Quelles sont les nouvelles hauteurs des triangles 1, 2, 3?
             \item Quelles seraient les hauteurs des triangles 4, 9, 123?
             \item \label{itm:first} Quelle serait la hauteur du triangle $n$ ?
@@ -53,13 +59,64 @@ Le fichier amorce présente deux droites $(OA)$ et $(OB)$ perpendiculaires avec 
         \tri{-1}{A}{A_1}{B_1}
         \tri{-2}{A_1}{B_1}{C_1}
         \item Quelle sont les hauteurs de ces trois triangles?
-        \item Est-ce que la formule donné en \ref{itm:first} reste vrai pour ces triangles?
+        \item \label{itm:second} Est-ce que la formule donné à la question \ref{itm:first}) reste vrai pour ces triangles?
     \end{enumerate}
     \item \begin{enumerate}
-        \item Déplacer le curseur $OB$ pour que $[OB]$ soit de nouveaux de longeur $2\cm$.
+        \item Déplacer le curseur $OB$ pour que $[OB]$ soit de nouveaux de longueur $2\cm$.
         \item Quelles sont les hauteurs des triangles 0, -1 et -2?
-        \item Quelles seraient les hauteurs des triangles -4 et -23?
+        \item Quelles seraient les hauteurs des triangles -3, -4, -5 et -23?
         \item Pouvez-vous émettre une conjecture sur une nouvelle notation,
         qui donnerait la hauteur du triangle $-n$.
     \end{enumerate}
 \end{enumerate}
+
+\section*{Document Réponse}
+\setcounter{section}{0}
+
+\section{OB = 2cm}
+
+\def\tableSpacing{0.15cm}
+\def\colWidth{1.5cm}
+\renewcommand{\arraystretch}{1.5}
+
+\newcommand{\triangleTable}[1]{
+    \listSize{#1}
+    \xdef\headerRow{triangle}
+    \xdef\heightRow{hauteur}
+    \foreach \t in {#1}{
+        \expandafter\xdef\expandafter\headerRow\expandafter{\headerRow & \t}
+        \expandafter\xdef\expandafter\heightRow\expandafter{\heightRow &}
+    }
+    \begin{tabular}{|M{2cm}|*{\thesize}{M{\colWidth}|}}
+        \hline%
+        \headerRow \\
+        \hline%
+        \heightRow \\[0.35cm]
+        \hline%
+    \end{tabular}
+}
+
+\begin{flushleft}
+    \triangleTable{1,2,3}\\
+    \vspace*{\tableSpacing}
+    \triangleTable{4,5,6,7}\\
+    \vspace*{\tableSpacing}
+    \triangleTable{56,n}
+\end{flushleft}
+
+\section{OB = 10cm}
+
+\subsection{Question 1. à 3.}
+
+\begin{flushleft}
+    \triangleTable{1,2,3,4,9,123,n}\\
+    \vspace*{\tableSpacing}
+    \triangleTable{0,-1,-2} \textbf{\ref{itm:second}})
+\end{flushleft}
+
+\subsection{Question 4. OB = 2cm}
+\begin{flushleft}
+    \triangleTable{0,-1,-2}\\
+    \vspace*{\tableSpacing}
+    \triangleTable{-3,-4,-5,-23,-n}
+\end{flushleft}
