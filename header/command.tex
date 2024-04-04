@@ -90,6 +90,15 @@
     }
 }
 
+\newcommand{\dottedLines}[1]{%
+    \noindent\hspace{-9pt}%
+
+    \looptext{%
+        \noindent\dotfill%
+
+    }{#1}
+}
+
 \newcommand{\result}[1]{
     \color{OrangeRed}#1\color{black}
 }
@@ -373,6 +382,16 @@
             }
         }
     }
+}
+
+\newcommand{\questions}[1]{
+    \begin{enumerate}
+        \foreach \q in {#1}{
+            \item \q\\
+            \vspace*{-0.45cm}
+            \dottedLines{3}
+        }
+    \end{enumerate}
 }
 
 \newcommand{\calc}[1]{\numexpr#1\relax}
