@@ -1,10 +1,12 @@
-\newcommand{\parseSecContent}[2]{ % Color | Content
-    \begin{mysection}[#1]
-        #2
-    \end{mysection}
+\newcommand{\parseSecContent}[2]{% Color | Content
+    \ifNotNull{#2}{%
+        \begin{mysection}[#1]
+            #2
+        \end{mysection}
+    }
 }
 
-\newcommand{\parseSecTitle}[3]{ % Color | Title | Type
+\newcommand{\parseSecTitle}[3]{% Color | Title | Type
     \color{#1}\target
     {#3}\ifthenelse{\boolean{showID}}{\ifthenelse{\boolean{parenthisedID}}
     {\small$_{(\sectionID)}$}
@@ -13,7 +15,7 @@
 }
 
 \makeatletter
-\newcommand{\parseSec}[4]{ % Color | Title | Content | Type
+\newcommand{\parseSec}[4]{% Color | Title | Content | Type
     \def\secContent{\parseSecContent{#1}{#3}}
     \def\secTitle{\parseSecTitle{#1}{#2}{#4}}
 
@@ -110,6 +112,7 @@
 \newsec{sec}{pr}{\PropertyColor}{Propriété}
 \newsec{sec}{df}{\DefinitionColor}{Définition}
 \newsec{sec}{thm}{\TheoremColor}{Théorème}
+\newsec{sec}{scn}{OrangeRed}{Séance}
 
 \newsec{sub}{cor}{NavyBlue}{Corollaire}
 \newsec{sub}{lem}{NavyBlue}{Lemme}
