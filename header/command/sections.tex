@@ -112,7 +112,7 @@
 \newsec{sec}{pr}{\PropertyColor}{Propriété}
 \newsec{sec}{df}{\DefinitionColor}{Définition}
 \newsec{sec}{thm}{\TheoremColor}{Théorème}
-\newsec{sec}{scn}{OrangeRed}{Séance}
+\newsec{sec}{scnSUB}{OrangeRed}{Séance}
 
 \newsec{sub}{cor}{NavyBlue}{Corollaire}
 \newsec{sub}{lem}{NavyBlue}{Lemme}
@@ -140,6 +140,20 @@
         }[#3]
     }{
     }
+}
+
+\newcommand*{\scn}[2]{%
+    \scnSUB{#1}{%
+        \ifNotNull{#2}{%
+            \begin{itemize}[wide = 0pt, label=]%
+                #2%
+            \end{itemize}%
+        }%
+    }%
+}
+
+\newcommand{\scni}[2]{
+    \item \color{OrangeRed}#1 : \color{black} #2
 }
 
 \NewDocumentCommand{\tice}{mmmo}{

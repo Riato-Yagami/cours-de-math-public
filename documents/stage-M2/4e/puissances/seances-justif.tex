@@ -15,7 +15,16 @@
 \newcommand{\powq}[2]{\iquestion{\pow{#1}{#2}}{#1^{#2}}}
 \newcommand{\powiq}[3]{\iquestion{#1^{#2}}{\pow{#1}{#2} = #3}}
 
-\scn{Notation puissance}{}
+\scn{Notation puissance}{
+    \scni{QF}{voir si ils se souvenaient de la notation carrée,
+    et travailler les automatismes de calculs de produits successifs.}
+    \scni{Activité}{introduire la notation puissance}
+    \scni{Définition}{institutionnalisation}
+    \scni{Exemple 1 et 2}{application directe définition dans les deux sens}
+    \scni{Exemple 3}{découvrire propriété sur le signe de puissance de négatifs.}
+    \scni{Remarque}{institutionnalisation}
+    \scni{Exercices}{entrainements définition et propriété}
+}
 
 \qf{
     {$\pow{10}{3}$, $= 1000$},
@@ -25,8 +34,10 @@
     {$\pow{9}{2}$, $= 81$}%
 }[10]
 
+
+
 \slide{COURS}{
-    \bchap{\longTitle}
+    \bseq{\longTitle}
     \act{Myriade 1p76}{
         \vspace{-1cm}
         \img{\imgf{activite_1_p76}}[9.7cm]
@@ -111,7 +122,13 @@
 \exoslide{exo_4_p80}
 \exoslide{exo_6_p80}
 
-\scn{Première propriété sur les puissances de 10}{}
+\scn{Première propriété sur les puissances de 10}{
+    \scni{QF}{automatismes sur la définition de puissance\\
+    q4 : amener à l'écriture des puissances de 10.}
+    \scni{Activité}{découverte sur l'écriture des puissances de 10.}
+    \scni{Propriété}{institutionnalisation}
+    \scni{Exercices}{entrainements}
+}
 
 \qf{
     {Ecrire avec la notation puissance :\\$\pow{9}{6}$, $= 9^6$},
@@ -159,14 +176,23 @@
 \exoslide{exo_23_p82}
 
 \scn{Propriétés de calcule sur les puissance de 10}{
-    Etendu aux puissances de bases quelconques, mais non exigé
+    \scni{QF}{automatismes écriture puissance de 10 et calcule puissance en base quelconques.\\ 
+    q4: amener à la propriété étudiée.}
+    \scni{Exercices + Remarque}{introduction et institutionnalisation aux propriétés de calcule sur les puissances de 10.}
+    \scni{Propriété}{les élèves connaissant déjà pour la plupart les formules de calcules en bases quelconques,
+    on a donc décidé avec notre tutrice de les ajoutés dans le cours,
+    même si le programme ne les exige pas.}
+    \scni{Convention}{expliqué avec l'écriture des puissances de 10 en classe $10^0 = $ 1 avec zéro 0.
+    On a ainsi dit qu'on pouvait étendre cette règle à toutes les bases par convention.}
+    \scni{Exercice}{entrainements règle de calcule puissances de 10}
+    \scni{DM}{exercices d'entrainements et de recherche pendant les vacances pour la séquence entière.}
 }
 
 \qf{
     {$10^6$, $= \powTen{6}$},
     {$5^3$, $= 125$},
     {$10^{-1}$, $= \powTen{-1}$},
-    {$10^2 \times 10^3$, $= \powTen{5}$},
+    {$10^2 \times 10^3$, $= \powTen{2} \times \powTen{3} = \powTen{5}$},
     {$10^{-3}$, $= \powTen{-3}$}%
 }[10]
 
@@ -220,22 +246,24 @@
     }
 }
 
-\slide{EXERCICES}{
-    \exo{}{
-        \multiColItemize{3}{
-            \item 30 p83
-        }
-    }
-    \exo{Devoir Maison}{
-        \multiColItemize{3}{
-            \item 29 p83 \item 15 p81 \item 16p81
-        }
-    }
-}
+\exoList{30 p83}[][1]
 
 \exoslide{exo_30_p83}
 
-\scn{Préfixes et Notation scientifique}{}
+\exoList{29 p83,15 p81,16p81}[Devoir Maison][3]
+
+\exoslide{exo_29_p83}
+\exoslide{exo_15_p81}
+\exoslide{exo_16_p81}
+
+\scn{Préfixes et Notation scientifique}{
+    \scni{QF}{automatismes puissances sur ce tous ce qui a été vu avant les vacances.}
+    \scni{Rappel}{préfixes que les élèves connaissent bien car vu d'en d'autres matières.}
+    \scni{Exercices}{entrainements préfixes}
+    \scni{Activité}{introduction au notation scientifique.}
+    \scni{Définition}{institutionnalisation avec une définition choisie proche de celle de l'activité.}
+    \scni{Exercice}{application directe}
+}
 
 \qf{
     {$\pow{3}{5}$, $= 3^5$},
@@ -307,13 +335,17 @@
     }
 }
 
-\exoList{41 p84,42 p84,52 p85}[Myriade 4e 2016 p84-85][2]
+\exoList{41 p84,42 p84}[Myriade 4e 2016 p84-85][2]
 
 \exoslide{exo_41_p84}
 \exoslide{exo_42_p84}
-\exoslide{exo_52_p85}
 
-\scn{Ordre de grandeur}{}
+\scn{Ordre de grandeur + exercices d'entrainements}{
+    \scni{QF}{rendre disponible les connaissances des élèves sur les inégalités,
+    qu'ils seront amenés à utiliser pour les ordres de grandeurs.}
+    \scni{Définition}{formel explicité par des exemples.}
+    \scni{Exercices}{débuts des exercices d'entrainements sur tous le chapitre avant l'évaluation.}
+}
 
 \qf{
     {Comparer avec le bon signe d'inégalité ($< \ou > \ou =$):\\ $10^6 \et 10^5$ , $10^6 > 10^5$},
@@ -373,6 +405,22 @@
 \exoslide{exo_58_p86}
 \exoslide{exo_68_p87}
 
-\scn{Exercices d'entrainements sur tous le chapitre}{}
+\scn{Exercices d'entrainements sur toute la séquence}{}
 
-% \exoList{53 p86,58 p86,68 p87}[Myriade 4e 2016 p86-87][2]
+\exoList{67 p87,73 p87,74 p87, 75p87}[][2]
+
+\exoslide{exo_67_p87}
+\exoslide{exo_73_p87}
+\exoslide{exo_74_p87}
+\exoslide{exo_75_p87}
+
+\scn{Evaluation}{
+    \scni{Evaluation}{sur deux séquences, la notre et celle de la tutrice donnée en parallèle.}
+    \scni{Exercice 1}{Vérifier que les connaissances basiques sur les propriétés sur les puissances de 10 sont acquises.}
+    \scni{Exercice 2}{Vérifier si la notation scientifique est maitrisée.}
+    \scni{Exercice 3}{Exercice de recherche déjà donné en devoir maison,
+    contrat établie avec les élèves pour s'assurer qu'ils retravail les exercices donnés auparavant.}
+    \scni{Exercice 4-5-6}{Séquence calcule littéral}
+}
+
+\img{images/stage-M2/4e/puissance/exaluation.png}[10cm]
