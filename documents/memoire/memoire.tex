@@ -1,16 +1,29 @@
 % VARIABLES %%%
-\def\theme{Interactions des Cadres Algébriques et Géometrique dans la remédiation de l'apprentissage des puissances}
-\def\date{04/11/2023}
+\def\theme{Exploration des jeux de cadre et dialectique outil-objet appliquées la remédiation dans l'apprentissage des puissances au collège}
+\def\date{2023-2024}
 %%%%%%%%%%%%%%%
 
-\vspace*{1cm}
+% \vspace*{1cm}
+
+\includepdf[pages=-]{ressources/memoire/garde.pdf}
+
+\input{documents/memoire/resume.tex}
+
 \setcounter{tocdepth}{2}
+\renewcommand{\contentsname}{Sommaire}
 \tableofcontents
 
+\addcontentsline{toc}{section}{Introduction}
 \input{documents/memoire/introduction.tex}
 
 \input{documents/memoire/developpement.tex}
 
-\input{documents/memoire/annexe.tex}
+\addcontentsline{toc}{section}{Conclusion}
+\input{documents/memoire/conclusion.tex}
 
+\addcontentsline{toc}{section}{Bibliographie}
 \input{documents/memoire/biblio.tex}
+
+\clearpage
+\addcontentsline{toc}{section}{Annexes}
+\input{documents/memoire/annexe.tex}
