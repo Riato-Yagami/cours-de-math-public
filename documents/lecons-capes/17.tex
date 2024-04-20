@@ -4,7 +4,11 @@
 %%%%%%%%%%%%%%%
 
 % DEFINITIONS %
+\def\md{\ensuremath{\meter^2}}
+\def\mt{\ensuremath{\meter^3}}
 
+\def\cbmath{\href{https://docplayer.fr/210413521-Lecon-n-o-18-perimetres-aires-volumes-capes-session-cbmaths-cbmaths-fr-derniere-mise-a-jour-2-avril-2021.html}{CBMaths.fr}}
+\def\jean{\href{https://www.mathenjeans.fr/sites/default/files/comptes-rendus/polygones_-_saint_dominique_nancy.pdf}{mathenjeans.fr}}
 %%%%%%%%%%%%%%
 
 % \setboolean{subsectionInOutline}{true}
@@ -24,3 +28,371 @@
 [\item longueur] % Prérequis
 [] % Thèmes
 [] % Motivation
+
+\section{Périmètre et aire}
+
+\subsection{Périmètre}
+
+\df{Perimètre}{
+    Le \textbf{périmètre} d'une figure est la longueur de son contour.
+}
+
+\rmk{Perimètre du polygone}{
+    Pour un polygone, c'est la somme des longueur de ses cotés
+}
+
+\rmk{Unité de longueur}{
+    Le périmètre se mesure en unité de longueur,
+    de maniere usuelle en mètre (\meter).\\
+    Deux unités de longueur consécutives sont 10 fois plus grande ou plus petite les unes par rapport aux autres.
+}
+
+\pr{Perimètre de polygone particulier}{
+    \begin{itemize}
+        \item Carré ou losange de coté $c$: $P = 4c$
+        \item Rectangle de longueur $L$ et largeur $l$: $P= 2L +2l$
+        \item Triangle équilatéral de coté $c$: $P= 3c$
+    \end{itemize}
+}
+
+\subsection{Aire}
+
+\df{Comparaison d'aire}{
+    On dit que deux figure ont la même aire si en découpant l'une d'entre elle,
+    on peut recomposer l'autre.
+}[\cbmath]
+
+\pr{Découpage de polygone}{
+    On peut toujours découper un polygone en triangles.
+}
+
+\demo{}{
+    \def\polygone{
+        \tkzDefPoint(0,0){A}
+        \tkzDefPoint(1,2){B}
+        \tkzDefPoint(1.5,2){C}
+        \tkzDefPoint(1.9,1.5){D}
+        \tkzDefPoint(2.6,3){E}
+        \tkzDefPoint(3,2){F}
+        \tkzDefPoint(3,1){G}
+        \tkzDefPoint(2,-1){H}
+        \draw[blue , thick] (D)--(H);
+    }
+    \dividePage{On le découper en polygones convexes.
+        \begin{center}
+            \begin{tikzpicture}
+                \polygone
+                \draw[very thick] (A)--(B)--(C)--(D)--(E)--(F)--(G)--(H)--cycle;
+            \end{tikzpicture}
+        \end{center}
+    }{Puis on choisit un sommet dans chaque partie convexe et on le relie aux autres.
+        \begin{center}
+            \begin{tikzpicture}
+                \polygone
+                \draw[red , thick] (A)--(C);
+                \draw[red , thick] (A)--(D);
+                \draw[red , thick] (E)--(G);
+                \draw[red , thick] (E)--(H);
+                \draw[very thick] (A)--(B)--(C)--(D)--(E)--(F)--(G)--(H)--cycle;
+            \end{tikzpicture}
+        \end{center}
+    }
+}[\jean]
+
+\pr{Découpage et recollage de triangle en rectangle}{
+    On peut toujours découper et recoller un triangle quelconque pour trouver un rectangle de même aire.
+}
+
+\demo{}{
+    \def\triangle{
+        \tkzDefPoint(0,0){A}
+        \tkzDefPoint(6,0){B}
+        \tkzDefPoint(1.5,3){C}
+        % \tkzLabelPoints[below left](A)
+        % \tkzLabelPoints[below right](B)
+        % \tkzLabelPoints[above](C)
+        % Hauteur issue de C
+        \tkzDefLine[perpendicular=through C](A,B) \tkzGetPoint{c} % Définir un point pour la direction de la ligne
+        \tkzInterLL(C,c)(A,B) \tkzGetPoint{H} % Intersection de la ligne avec AB
+        \draw[thick] (C)--(H);
+        \tkzLabelPoints[below](H)
+        % Médiatrice CH
+        \tkzDefLine[mediator](C,H) \tkzGetPoint{f}
+        \tkzDefLine[mediator](H,C) \tkzGetPoint{o}
+        \tkzInterLL(o,f)(A,C) \tkzGetPoint{O}
+        \tkzInterLL(o,f)(B,C) \tkzGetPoint{F}
+        \draw[thick] (O)--(F);
+        % \tkzLabelPoints[above left](O)
+        % \tkzLabelPoints[above right](F)
+        \tkzInterLL(O,F)(C,H) \tkzGetPoint{I}
+        \tkzLabelPoints[below right](I)
+        % Mark
+        \tkzMarkRightAngle[blue](A,H,C)
+        \tkzMarkRightAngle[blue](O,I,H)
+        \draw[very thick] (A)--(B)--(C)--cycle;
+        \tkzMarkSegment[blue,pos=.5,mark=|](C,I)
+        \tkzMarkSegment[blue,pos=.5,mark=|](H,I)
+    }
+    \dividePage{
+        \begin{center}
+            \begin{tikzpicture}[scale=1]
+                \triangle
+            \end{tikzpicture}
+        \end{center}
+    }{
+        \begin{center}
+            \begin{tikzpicture}[scale=1]
+                \triangle
+                % D et E
+                \tkzDefLine[perpendicular=through A](O,F) \tkzGetPoint{d}
+                \tkzInterLL(d,A)(O,F) \tkzGetPoint{D}
+                \tkzDefLine[perpendicular=through B](O,F) \tkzGetPoint{e}\tkzLabelPoints[below right](I)
+                \tkzInterLL(e,B)(O,F) \tkzGetPoint{E}
+                % \tkzLabelPoints[right](E)
+                % \tkzLabelPoints[left](D)
+                \draw[thick] (E)--(D);
+                % Trianlges
+                \draw[fill = red, fill opacity=0.2] (A)--(D)--(O)--cycle;
+                \draw[fill = red, fill opacity=0.2] (C)--(I)--(O)--cycle;
+                \draw[fill = blue, fill opacity=0.2] (B)--(E)--(F)--cycle;
+                \draw[fill = blue, fill opacity=0.2] (C)--(I)--(F)--cycle;
+            \end{tikzpicture}
+        \end{center}
+    }
+}[\jean]
+
+% \pr{Découpage et recollage de rectangle à un rectangle de longueur choisit}{
+%     On peut toujours découper et recoller un rectangle quelconque pour trouver un rectangle de même aire et de longueur choisit.
+% }
+
+% \pr{Découpage et recollage de rectangle en carré}{
+%     On peut toujours découper et recoller un rectangle quelconque pour trouver un carré de même aire.
+% }
+
+% \demo{}{
+%     \def\lenght{5}
+%     \def\width{3}
+%     \begin{center}
+%         \begin{tikzpicture}[scale=1]
+%             \tkzDefPoint(0,0){A}
+%             \tkzDefPoint(0,\width){B}
+%             \tkzDefPoint(\lenght,\width){C}
+%             \tkzDefPoint(\lenght,0){D}
+%             \draw[very thick] (A)--(B)--(C)--(D)--cycle;
+%             \tkzDefPoint(-\width,0){E}
+%             \draw[dashed] (B) arc (90:180:\width);
+%         \end{tikzpicture}
+%     \end{center}
+% }[\href{https://wimsauto.universite-paris-saclay.fr/wims/wims.cgi?session=8W0948C5F7.2&+lang=fr&+module=U1\%2Fgeometry\%2Fdocbolyai.fr&+cmd=reply&+job=read&+doc=1&+block=rectanglecarre2}{Université Paris-Saclay}]
+
+% \pr{Un rectangle de longueur $L$ et largeur $l$ a pour aire $Ll$}
+
+% \demo{}{
+%     Sur la 
+% }[\cbmath]
+
+\df{Unité d'aire}{
+    L'unité d'aire usuelle est le mètre carré (\md).\\
+    1 \md{} correspond à la mesure de surface d'un carré de coté 1 \meter.
+}
+
+\df{Aire}{
+    L'\textbf{aire} d'une figure est la mesure de sa surface,
+    en comparaison au \md.
+}
+
+\rmk{Unités d'aire consécutives}{
+    Deux unités d'aire consécutives sont 100 fois plus grande ou petites les unes par rapport aux autres.
+}
+
+\pr{Additivité des aires}{
+    L'aire de l'union des surface $A$ et $B$ disjointes, est égale à la somme de leurs aires.
+}
+
+\rmk{Découpages et recollements}{
+    L'additivité des aires est le fondement du découpage et recollements.
+}
+
+\subsection{Dichotomie périmètre et aire}
+
+\act{Curvica}{
+}[\href{https://www.educmat.fr/categories/jeux_reflexion/fiches_jeux/curvica/index.php}{éducmat}]
+
+\section{Le cercle et le disque}
+
+\subsection{La Circonférence}
+
+\pr{Circonférence}{
+    La \textbf{circonférence} est la longueur d'un cercle.
+}
+
+\df{Constante d'Archimède (Pi)}{
+    $\pi$ est le rapport de la circonférence d'un cercle à son diamètre.
+    \begin{equation*}
+        \pi \approx 3,141592653589793
+    \end{equation*}
+}
+
+\mthd{d'Archimède (Approximation de Pi)}{
+    On encadre $\pi$ par les périmètres de polygones réguliers inscrits et circonscrits à un cercle de diamètre $1$.
+    \href{https://www.geogebra.org/m/yqhfdqgg}{$\rightarrow$ Activité géogebra}
+}
+
+\rmk{Formule de la circonférence}{
+    On a alors la circonférence d'un cercle de rayon $r$ : $2 \pi r$.
+}
+
+\pr{Longueur d'arc}{
+    \begin{center}
+        \def\angle{30} % Define the angle size
+        \def\r{4}
+        \begin{tikzpicture}
+            \tkzDefPoint(0,0){A}
+            \tkzDefPoint(\r,0){B}
+            \tkzDefShiftPoint[A](\angle:\r){C} % Adjust the angle for gamma and the length for side 'c'
+            \draw[very thick] (B)--(A)--(C);
+            \tkzDrawArc[Blue](A,B)(C) % Draw arc from B to C centered at A
+            % %
+            \tkzMarkAngle[Red,size=0.7cm,opacity=1](B,A,C) % Mark angle BAC
+            \tkzLabelAngle[Red, pos=1](B,A,C){$\theta$} % Label angle BAC
+            % %
+            \tkzLabelSegment[below](A,B){$r$} % Label segment AB as r
+            \tkzLabelArc[Blue, right](A,B,C){$r\theta$} % Label the arc from B to C as rθ
+        \end{tikzpicture}
+    \end{center}
+}
+
+\demo{}{
+    L'arc est une section $\frac{\theta}{2\pi}$ de la circonférence.\\
+    Alors la longueur d'arc est: $2\pi r \times \frac{\theta}{2\pi} = r \theta$.
+}
+
+\subsection{Aire du disque}
+
+\act{Approximation aire du disque}{}
+
+\mthd{de Monte-Carlo (Approximation de l'aire du disque)}{
+    \begin{algorithm}[H]
+        \KwData{$r\in\m{R} \et N\in\m{N}$}
+        \KwRes{approximations de l'aire du cercle de rayon $r$.}
+        $c \leftarrow 2r$
+        On considère une figure constiué d'un carré de coté $c$ dans lequel on place en son centre un cercle de rayon $r$\;
+        $n \leftarrow 0$\;
+        \Pr{$i$ de $0$ à $N$}{
+            Prendre un point $A$ au hasard dans le carré\;
+            \Si{$A$ est dans le cercle}{$n \leftarrow n+1$\;}
+        }
+        \KwRet{$\frac{n}{N} \times c^2$}\;
+    \end{algorithm}
+}[\href{http://pedagogie.ac-limoges.fr/maths/IMG/pdf/manipulation_aire_disque_methode_de_monte-carlo.pdf}{Académie de limoge}]
+
+\tice{Méthode de Monte-Carlo}{Python}{
+    \lstinputlisting[language=Python]{ressources/lecons-capes/17/monte-carlo.py}
+}
+
+\pr{Aire du disque}{
+    L'aire d'un disque de rayon $r$ : $\pi r^2$.
+}
+
+\section{Volumes et aires latérales}
+
+\subsection{Volumes}
+
+\df{Unité de volume}{
+    L'unité de volume usuelle est le mètre cube (\mt)\\
+    1 \mt{} correspond à la mesure d'espace d'un cube de coté 1 $\meter$.
+}
+
+\df{Volume}{
+    Le \textbf{volume} d'un solide est ca mesure d'espace, en comparaison \mt.
+}
+
+\rmk{Unités de volume consécutives}{
+    Deux unités de volume consécutives sont 1000 fois plus grande ou petites les unes par rapport aux autres.
+}
+
+\subsection{Sphère}
+
+\pr{Aire d'une sphère}{
+    L'aire d'une shère de rayon $r$ est : $4\pi r^2$
+}
+
+
+\demo{}{
+    $dxdy = dA = r dr d\theta$ par la formule de longueur d'arc
+    \begin{center}
+        \def\angle{30} % Define the angle size
+        \def\r{4}
+        \def\dr{\r*0.75}
+        \begin{tikzpicture}
+            \tkzDefPoint(0,0){A}
+            \tkzDefPoint(\r,0){B}
+            \tkzDefPoint(\dr,0){R}
+            \tkzDefShiftPoint[A](\angle:\r){C} 
+            \tkzDefShiftPoint[A](\angle:\dr){c} 
+            \draw[very thick] (B)--(A)--(C);
+            \tkzDrawArc(A,B)(C) % Draw arc from B to C centered at A
+            \tkzDrawArc(A,R)(c) % Draw arc from B to C centered at A
+            % %
+            \tkzMarkAngle[size=0.7cm,opacity=1](B,A,C) % Mark angle BAC
+            \tkzLabelAngle[pos=1](B,A,C){$d\theta$} % Label angle BAC
+            % %
+            \tkzLabelSegment[above](A,C){$r$} 
+            \tkzLabelSegment[Red][below](R,B){$dr$}
+            \tkzLabelArc[right](A,B,C){$rd\theta$} % Label the arc from B to C as rθ
+            \draw[fill=Red, opacity = 0.25] (B) arc (0:30:\r) -- (c) arc (30:0:\dr) -- cycle;
+            \node[Red] at (barycentric cs:B=1,C=1,c=0.75,R=0.75) {$dA$};
+            \draw[Red] (R) -- (B);
+        \end{tikzpicture}
+    \end{center}
+    \begin{align*}
+        dxdydz = dV &= r dr d\theta dz\\
+        \ior z &= r\cos(\theta)\\
+        \idou dz &= r\sin(\varphi) d\varphi\\
+        \ialors dV &= r^2 \sin(\varphi) dr d\theta d\varphi
+    \end{align*}
+}
+
+\pr{Volume d'une sphère}{
+    Le volume d'une shère de rayon $R$ est : $\frac{4\pi R^3}{3}$
+}
+
+\demo{}{
+    On a les coordonnés sphériques :
+    \begin{align*}
+        \lfbrace{x &= R\cos(\theta)\sin(\varphi)\\
+        y &= R\sin(\theta)\sin(\varphi)\\
+        z &= R\cos(\theta)}
+    \end{align*}
+}
+
+\section{Aire sous la courbe}
+
+Soit $f$, fonction continue et positive sur $[a,b]$ et $\mathcal{C}$ sa courbe représentative.
+
+\df{Aire sous la courbe}{
+    L'\textbf{aire sous la courbe} $\mathcal{C}$ sur $[a,b]$ est l'aire du domaine délimité par;
+    l'axe des abscisses, la courbe $\mathcal{C}$ et les droites d'équation $x=a$ et $x=b$.\\
+    On note $\int_{a}^{b}f(x)dx$ et appelle \textbf{intégrale} de $f$ entre $a$ et $b$ cette aire. 
+}[\cbmath]
+
+\mthd{Approximation d'une aire par l'utilisation de suites adjacentes}{
+    \def\s{\frac{b-a}{n}}
+    Soit $u,v$ deux suites adjacentes tels que pour $n\in\m{N}$:\\
+    \begin{align*}
+        u_n = \s \sum_{k=0}^{n} f(a+k \s) \;&\et\; v_n = \s \sum_{k=1}^{n} f(a+k \s)\\
+        \ona \; \int_{a}^{b} f(x) dx &\in [u_n,v_n]
+    \end{align*}
+    \href{https://www.geogebra.org/m/bhmjfjhs}{$\rightarrow$ Activité géogebra}
+}
+
+\pr{Relation de Chalses}{
+    Soit $c\in[a,b]$, on a:
+    \begin{equation*}
+        \int_{a}^{b}f(x)dx = \int_{a}^{c}f(x)dx + \int_{c}^{b}f(x)dx
+    \end{equation*}
+}
+
+\demo{}{
+    Additivité des aires
+}
