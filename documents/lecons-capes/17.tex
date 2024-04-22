@@ -296,7 +296,15 @@
 
 \section{Volumes et aires latérales}
 
-\subsection{Volumes}
+\subsection{Définitions}
+
+\df{Aire latérales}{
+    L'\textbf{aire latérale} $\mathcal{A}$ d'un solide est la surface délimitant privée de ses bases.
+}
+
+\rmk{Aire totale}{
+    Il faut distingué l'aire latérale de l'\textbf{aire totale} qui elle prend en compte aussi les bases du solide.
+}
 
 \df{Unité de volume}{
     L'unité de volume usuelle est le mètre cube (\mt)\\
@@ -304,22 +312,98 @@
 }
 
 \df{Volume}{
-    Le \textbf{volume} d'un solide est ca mesure d'espace, en comparaison \mt.
+    Le \textbf{volume} $\mathcal{V}$ d'un solide est ca mesure d'espace, en comparaison \mt.
 }
 
 \rmk{Unités de volume consécutives}{
     Deux unités de volume consécutives sont 1000 fois plus grande ou petites les unes par rapport aux autres.
 }
 
-\subsection{Sphère}
+\subsection{Cube et pavé droit}
 
-\pr{Aire d'une sphère}{
-    L'aire d'une shère de rayon $r$ est : $4\pi r^2$
+\pr{Aire et volume du pavé droit}{
+    Pour un pavé droit de longueur $L$,
+    largeur $l$ et hauteur $h$,
+    on a:
+    \begin{align*}
+        \mathcal{A} &= h \times 2 (L+l)\\
+        \mathcal{V} &= h \times L \times l
+    \end{align*}
 }
 
+\cor{Aire et volume du cube}{
+    Pour un cube de côté $a$.
+    on a:
+    \begin{align*}
+        \mathcal{A} &= 4a^2\\
+        \mathcal{V} &= a^3
+    \end{align*}
+}
+
+\subsection{Prisme et cylindre}
+
+\pr{Aire et volume du prisme et du cylindre}{
+    Pour un prisme ou cylindre de hauteur $h$,
+    de base d'aire $\mathcal{B}$ et périmètre $\mathcal{P}$,
+    on a:
+    \begin{align*}
+        \mathcal{A} &= \mathcal{P} \times h\\
+        \mathcal{V} &= \mathcal{B} \times h
+    \end{align*}
+}
+
+\subsection{Pyramide et cone}
+
+\pr{Aire et volume de la pyramide et du cône}{
+    Pour une pyramide ou cône de hauteur $h$,
+    de base d'aire $\mathcal{B}$ et périmètre $\mathcal{P}$,
+    on a:
+    \begin{align*}
+        \mathcal{V} &= \frac{\mathcal{B} \times h}{3}
+    \end{align*}
+}
 
 \demo{}{
-    $dxdy = dA = r dr d\theta$ par la formule de longueur d'arc
+    L'intersection d'un plan parallèle au plan de la base avec le solide (pyramide ou cône) à une hauteur $t\in[0;h]$,
+    a une aire $\mathcal{B}_t = \mathcal{B} \frac{(h-t)^2}{h^2}$ (découle de Thalès).
+    On a alors:
+    \begin{align*}
+        \mathcal{V} &= \int_{0}^{h} \mathcal{B}_t dt\\ 
+        &= \int_{0}^{h} \mathcal{B} \frac{(h-t)^2}{h^2} dt = \frac{\mathcal{B}}{h^2} \int_{0}^{h} (h-t)^2 dt\\
+        &= \frac{\mathcal{B}}{h^2} \int_{h}^{0} u^2 (-du) \textrm{par changement de variable} u = h-t \et \alors du = -dt\\
+        &= \frac{\mathcal{B}}{h^2} \int_{0}^{h} u^2 du = \frac{\mathcal{B}}{h^2} \times h^3 = \frac{\mathcal{B} \times h}{3}
+    \end{align*}
+}[\href{https://www.unige.ch/semainedesmaths/files/2715/0347/5030/PO-Le_volume_de_la_pyramide.pdf}{Université de Genève}]
+
+\subsection{Sphère}
+
+\pr{Aire et volume d'une sphère}{
+    L'aire $\mathcal{A}$ et le volume $\mathcal{V}$ d'une shère de rayon $R$ sont donnée par le formules :
+    \begin{align*}
+        \mathcal{A} = 4\pi R^2\\
+        \mathcal{V} = \frac{4\pi R^3}{3}
+    \end{align*}
+    % \begin{tikzpicture}
+    %     \def\r{3}
+    %     \shade[ball color = gray!40, opacity = 0.4] (0,0) circle (\r);
+    %     \draw (0,0) circle (\r);
+    %     \draw (-\r,0) arc (180:360:3 and 0.6);
+    %     \draw[dashed] (\r,0) arc (0:180:3 and 0.6);
+    %     \fill[fill=black] (0,0) circle (1pt);
+    %     \draw[dashed] (0,0 ) -- node[above]{$r$} (\r,0);
+    % \end{tikzpicture}
+}
+
+\demo{}{
+    Considérons les coordonnées sphériques $(r, \theta, \phi)$ où $r$ est le rayon, $\theta$ est l'angle azimutal, et $\varphi$ est l'angle polaire.
+    Les relations entre les coordonnées cartésiennes et sphériques sont:
+    \begin{align*}
+        \lfbrace{x &= r\cos(\theta)\sin(\varphi)\\
+        y &= r\sin(\theta)\sin(\varphi)\\
+        z &= r\cos(\theta)}
+    \end{align*}
+    L'élément d'aire d'un cercle découpe de la sphère est donnée par :
+    $dxdy = d\mathcal{S} = r dr d\theta$ par la formule de longueur d'arc
     \begin{center}
         \def\angle{30} % Define the angle size
         \def\r{4}
@@ -341,28 +425,21 @@
             \tkzLabelSegment[Red][below](R,B){$dr$}
             \tkzLabelArc[right](A,B,C){$rd\theta$} % Label the arc from B to C as rθ
             \draw[fill=Red, opacity = 0.25] (B) arc (0:30:\r) -- (c) arc (30:0:\dr) -- cycle;
-            \node[Red] at (barycentric cs:B=1,C=1,c=0.75,R=0.75) {$dA$};
+            \node[Red] at (barycentric cs:B=1,C=1,c=0.75,R=0.75) {$d\mathcal{S}$};
             \draw[Red] (R) -- (B);
         \end{tikzpicture}
     \end{center}
+    On peut alors trouvé l'élément de volume de la sphère :
     \begin{align*}
-        dxdydz = dV &= r dr d\theta dz\\
+        dxdydz = d\mathcal{V} &= r dr d\theta dz\\
         \ior z &= r\cos(\theta)\\
         \idou dz &= r\sin(\varphi) d\varphi\\
-        \ialors dV &= r^2 \sin(\varphi) dr d\theta d\varphi
-    \end{align*}
-}
-
-\pr{Volume d'une sphère}{
-    Le volume d'une shère de rayon $R$ est : $\frac{4\pi R^3}{3}$
-}
-
-\demo{}{
-    On a les coordonnés sphériques :
-    \begin{align*}
-        \lfbrace{x &= R\cos(\theta)\sin(\varphi)\\
-        y &= R\sin(\theta)\sin(\varphi)\\
-        z &= R\cos(\theta)}
+        \ialors d\mathcal{V} &= r^2 \sin(\varphi) dr d\theta d\varphi\\
+        \ialors \mathcal{A} &= \int_{0}^{2\pi} \int_{0}^{\pi} R^2 \sin(\varphi) d\varphi d\theta\\
+        &= \int_{0}^{2\pi} 2R^2 d\theta
+        = 4\pi R^2\\
+        \iet \mathcal{V} &= \int_{0}^{R} 4\pi r^2 dr
+        = \frac{4\pi R^3}{3}
     \end{align*}
 }
 
