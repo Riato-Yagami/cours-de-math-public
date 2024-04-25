@@ -6,6 +6,7 @@
 % DEFINITIONS %
 \def\md{\ensuremath{\meter^2}}
 \def\mt{\ensuremath{\meter^3}}
+\def\Lt{\ensuremath{\liter}}
 
 \def\Per{\ensuremath{\mathcal{P}}}
 \def\A{\ensuremath{\mathcal{A}}}
@@ -38,16 +39,16 @@
 [] % Thèmes
 [] % Motivation
 
-\section{Périmètre et aire}
+\section{Mesures du plan}
 
 \subsection{Périmètre}
 
 \df{Perimètre}{
-    Le \textbf{périmètre} d'une figure est la longueur de son contour.
+    Le \textbf{périmètre} (\Per) d'une figure est la longueur de son contour.
 }
 
-\rmk{Perimètre du polygone}{
-    Pour un polygone, c'est la somme des longueur de ses cotés
+\pr{Perimètre du polygone}{
+    Le périmètre d'un polygone est la somme des longueur de ses côtés
 }
 
 \rmk{Unité de longueur}{
@@ -58,9 +59,9 @@
 
 \pr{Perimètre de polygones particuliers}{
     \begin{itemize}[wide=0pt, leftmargin=*]
-        \item Carré ou losange de coté $c$: $\Per = 4c$
+        \item Carré ou losange de côté $c$: $\Per = 4c$
         \item Rectangle de longueur $L$ et largeur $l$: $\Per = 2L +2l$
-        \item Triangle équilatéral de coté $c$: $\Per = 3c$
+        \item Triangle équilatéral de côté $c$: $\Per = 3c$
     \end{itemize}
 }
 
@@ -202,11 +203,11 @@
 
 \df{Unité d'aire}{
     L'unité d'aire usuelle est le mètre carré (\md).\\
-    1 \md{} correspond à la mesure de surface d'un carré de coté 1 \meter.
+    1 \md{} correspond à la mesure de surface d'un carré de côté 1 \meter.
 }
 
 \df{Aire}{
-    L'\textbf{aire} d'une figure est la mesure de sa surface,
+    L'\textbf{aire} (\A) d'une figure est la mesure de sa surface,
     en comparaison au \md.
 }
 
@@ -226,33 +227,35 @@
 
 \pr{Aire du carré et du rectangle}{
     \begin{itemize}[wide=0pt, leftmargin=*]
-        \item Carré de coté $c$ : $\A = c^2$.
+        \item Carré de côté $c$ : $\A = c^2$.
         \item Rectangle de longueur $L$ et largeur $l$ : $\A = lL$.
     \end{itemize}
 }
 
 \pr{Triangles ou parallèlogramme de même base et hauteur}{
-    Deux triangles ou parallèlogramme de même bases et hauteurs ont la même aires.
+    Deux triangles et parallèlogramme de même bases et hauteurs ont la même aires.
 }
 
 \demo{}{
     \begin{center}
         \def\b{5}
         \def\h{3}
-        \def\xs{0}
-        \def\ys{-2}
+        \def\xs{5}
+        \def\ys{-2.5}
         \begin{tikzpicture}
             % Premier parallélogramme
             \tkzDefPoint(0,0){A}
             \tkzDefPoint(\xs,\h){B}
             \tkzDefPoint(\b+\xs,\h){C}
             \tkzDefPoint(\b,0){D}
-            \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
             % Deuxième parallélogramm
             \tkzDefPoint(0,0){E}
             \tkzDefPoint(\ys,\h){F}
             \tkzDefPoint(\b+\ys,\h){G}
             \tkzDefPoint(\b,0){H}
+            \draw[fill = blue, opacity = 0.2] (A) -- (B) -- (F) -- cycle;
+            \draw[fill = blue, opacity = 0.2] (C) -- (D) -- (G) -- cycle;
+            \draw[thick, dashed] (A) -- (B) -- (C) -- (D) -- cycle;
             \draw[very thick] (E) -- (F) -- (G) -- (H) -- cycle;
         \end{tikzpicture}
     \end{center}
@@ -267,42 +270,188 @@
 
 \demo{}{
     \dividePage{
-        \begin{center}
-            \begin{tikzpicture}[scale=1]
-                % \usetikzlibrary {patterns,patterns.meta}
-                \def\b{5}
-                \def\h{3}
-                % Définir les points du triangle
-                \tkzDefPoint(0,0){A}
-                \tkzDefPoint(\b,0){B}
-                \tkzDefPoint(1.5,\h){C}
-                % Ajouter des étiquettes
-                \tkzLabelPoints[below left](A)
-                \tkzLabelPoints[below right](B)
-                \tkzLabelPoints[above](C)
-                %
-                \tkzDefPoint(0,\h){D}
-                \tkzDefPoint(\b,\h){E}
-                %
-                % Calculer le pied de la hauteur depuis C sur AB
-                \tkzDefPointBy[projection=onto A--B](C) \tkzGetPoint{H}
-                \tkzLabelPoints[below](H)
-                %
-                \draw[dotted, very thick, fill = red, fill opacity = 0.2] (A) -- (D) -- (E) -- (B);
-                \draw[pattern={north east lines}, pattern color = blue, opacity = 0.7] (A) -- (B) -- (C) -- cycle;
-                \draw[very thick] (A) -- (B) -- (C) -- cycle;
-                \draw[dashed, very thick] (C) -- (H);
-                % \draw[pattern={Lines[angle=45,distance={3pt/sqrt(2)}]},pattern color=blue] (0,1) rectangle +(1,1);
-                \tkzLabelSegment[right](C,H){$h$}
-                \tkzLabelSegment[below](A,B){$b$}
-                \tkzMarkRightAngle[blue](C,H,A)
-            \end{tikzpicture}
-        \end{center}
+        \ctikz{
+            % \usetikzlibrary {patterns,patterns.meta}
+            \def\b{5}
+            \def\h{3}
+            % Définir les points du triangle
+            \tkzDefPoint(0,0){A}
+            \tkzDefPoint(\b,0){B}
+            \tkzDefPoint(1.5,\h){C}
+            % Ajouter des étiquettes
+            \tkzLabelPoints[below left](A)
+            \tkzLabelPoints[below right](B)
+            \tkzLabelPoints[above](C)
+            %
+            \tkzDefPoint(0,\h){D}
+            \tkzDefPoint(\b,\h){E}
+            %
+            % Calculer le pied de la hauteur depuis C sur AB
+            \tkzDefPointBy[projection=onto A--B](C) \tkzGetPoint{H}
+            \tkzLabelPoints[below](H)
+            %
+            \draw[dotted, very thick, fill = red, fill opacity = 0.2] (A) -- (D) -- (E) -- (B);
+            \draw[pattern={north east lines}, pattern color = blue, opacity = 0.7] (A) -- (B) -- (C) -- cycle;
+            \draw[very thick] (A) -- (B) -- (C) -- cycle;
+            \draw[dashed, very thick] (C) -- (H);
+            % \draw[pattern={Lines[angle=45,distance={3pt/sqrt(2)}]},pattern color=blue] (0,1) rectangle +(1,1);
+            \tkzLabelSegment[right](C,H){$h$}
+            \tkzLabelSegment[below](A,B){$b$}
+            \tkzMarkRightAngle[blue](C,H,A)
+        }
     }{
         \begin{align*}
             \color{Red}\A\color{black} = b \times h = 2 \times \color{Blue}\A\color{black}\\
         \end{align*}
     }
+}
+
+\subsection{Dichotomie périmètre et aire}
+
+\act{Curvica}{
+}[\href{https://www.educmat.fr/categories/jeux_reflexion/fiches_jeux/curvica/index.php}{éducmat}]
+
+\section{Le cercle et le disque}
+
+\subsection{La Circonférence}
+
+\df{Circonférence}{
+    La \textbf{circonférence} (\C) est la longueur d'un cercle.
+}
+
+\df{Constante d'Archimède (Pi)}{
+    $\pi$ est le rapport de la circonférence d'un cercle à son diamètre.
+    \begin{equation*}
+        \pi \approx 3,141592653589793
+    \end{equation*}
+}
+
+\mthd{d'Archimède (Approximation de Pi)}{
+    On encadre $\pi$ par les périmètres de polygones réguliers inscrits et circonscrits à un cercle de diamètre $1$.
+    \href{https://www.geogebra.org/m/yqhfdqgg}{$\rightarrow$ Activité géogebra}
+}
+
+\rmk{Formule de la circonférence}{
+    On a alors la circonférence d'un cercle de rayon $r$ : $\mathcal{C} = 2 \pi r$.
+}
+
+\pr{Longueur d'arc}{
+    \def\angle{30} % Define the angle size
+    \def\r{4}
+    \ctikz{
+        \tkzDefPoint(0,0){A}
+        \tkzDefPoint(\r,0){B}
+        \tkzDefShiftPoint[A](\angle:\r){C} % Adjust the angle for gamma and the length for side 'c'
+        \draw[very thick] (B)--(A)--(C);
+        \tkzDrawArc[Blue](A,B)(C) % Draw arc from B to C centered at A
+        % %
+        \tkzMarkAngle[Red,size=0.7cm,opacity=1](B,A,C) % Mark angle BAC
+        \tkzLabelAngle[Red, pos=1](B,A,C){$\theta$} % Label angle BAC
+        % %
+        \tkzLabelSegment[below](A,B){$r$} % Label segment AB as r
+        \tkzLabelArc[Blue, right](A,B,C){$r\theta$} % Label the arc from B to C as rθ
+    }
+}
+
+\demo{}{
+    L'arc est une section $\frac{\theta}{2\pi}$ de la circonférence.\\
+    Alors la longueur d'arc est: $2\pi r \times \frac{\theta}{2\pi} = r \theta$.
+}
+
+\subsection{Aire du disque}
+
+\act{Approximation aire du disque}{}
+
+\mthd{de Monte-Carlo (Approximation de l'aire du disque)}{
+    \begin{algorithm}[H]
+        \KwData{$r\in\m{R} \et N\in\m{N}$}
+        \KwRes{approximations de l'aire du cercle de rayon $r$.}
+        $c \leftarrow 2r$
+        On considère une figure constiué d'un carré de côté $c$ dans lequel on place en son centre un cercle de rayon $r$\;
+        $n \leftarrow 0$\;
+        \Pr{$i$ de $0$ à $N$}{
+            Prendre un point $A$ au hasard dans le carré\;
+            \Si{$A$ est dans le cercle}{$n \leftarrow n+1$\;}
+        }
+        \KwRet{$\frac{n}{N} \times c^2$}\;
+    \end{algorithm}
+}[\href{http://pedagogie.ac-limoges.fr/maths/IMG/pdf/manipulation_aire_disque_methode_de_monte-carlo.pdf}{Académie de limoge}]
+
+\tice{Méthode de Monte-Carlo}{Python}{
+    \lstinputlisting[language=Python]{ressources/lecons-capes/17/monte-carlo.py}
+}
+
+\pr{Aire du disque}{
+    L'aire d'un disque de rayon $r$ : $\A = \pi r^2$.
+}
+
+\demo{d'Archimède}{
+    On découpe un disque en $n\in\m{N}$ secteurs circulaires équivalents.
+    En regroupant les secteurs têtes bèches,
+    accolé par leur côté rectiligne,
+    on obtient une figure d'aire égale.\\
+    Quand $n \rightarrow \infty$,
+    la figure devient un rectangle,
+    on note sa longueur $L$ et sa largeur $l$.\\
+    On a:
+    \begin{align*}
+        \A &= l \times L\\
+        \ior 2L = \C &\et L = r\\
+        \ialors \A &= \frac{\C}{2} \times r
+        = \frac{2\pi r}{2} \times r
+        = \pi r^2
+    \end{align*}
+}[\href{https://blog.maths-en-vrac.fr/2018/07/30/laire-dun-disque-facon-archimede/}{Damien Bouloc}]
+
+\demo{avec une intégrale}{%
+    \def\r{4}
+    \def\angle{1}
+    \def\x{\r * sin(\angle)}
+    \def\y{\r * cos(\angle)}
+    \dividePage{%
+        \ctikz{
+            \axis{5}
+            \tkzDefPoint(0,0){O}
+            \tkzDefPoint(\r,0){A}
+            \tkzDefPoint(\x,\y){P}
+            \tkzDefPoint(\x,0){X}
+            \tkzDefPoint(0,\y){Y}
+            \draw[fill = blue, fill opacity = 0.2] (A) arc (0:90:\r) -- (O) -- cycle ;
+            \draw[thick] (O) -- (P);
+            \draw[dashed] (P) -- (X) node[below]{$x$};
+            \draw[dashed] (P) -- (Y) node[left]{$y$};
+            \tkzLabelSegment[below right](O,P){$r$}
+        }
+    }{%
+        Par le théorème de Pythagore:
+        \begin{align*}
+            y &= \sqrt{r^2-x^2}\\
+            \shortintertext{on pose} f &: x \mapsto \sqrt{r^2-x^2}\\
+            \iona \A &= 4 \int_{0}^{r} f(x)dx
+            % \ior \sqrt{r^2-x^2} &= r \sqrt{1 - \frac{x^2}{r^2}}\\
+            % \shortintertext{et par changement de variable} u = \frac{x}{r} \alors dx = rdu\\
+            % \iona 
+        \end{align*}
+    }
+}[\href{https://www.mathweb.fr/euclide/2019/05/18/pourquoi-laire-dun-disque-est-egale-a-pi-r2/}{mathweb.fr}]
+
+\section{Propriétés sur les aires et périmètre}
+
+\subsection{Transformations}
+
+\pr{Isométrie}{
+    Le périmètre et l'aire sont invariants par isométrie.
+}
+
+\pr{Homothétie}{
+    Pour une Homothétie de rapport $k$, les périmètres sont multiplié par $|k|$,
+    et les aires par $k^2$.
+}
+
+\subsection{Théorèmes}
+
+\thm{de Pythagore}{
+    \TODO
 }
 
 \pr{de la Médiane}{
@@ -346,110 +495,50 @@
     }
 }
 
-\subsection{Dichotomie périmètre et aire}
+\section{Mesures de l'espace}
 
-\act{Curvica}{
-}[\href{https://www.educmat.fr/categories/jeux_reflexion/fiches_jeux/curvica/index.php}{éducmat}]
-
-\section{Le cercle et le disque}
-
-\subsection{La Circonférence}
-
-\pr{Circonférence}{
-    La \textbf{circonférence} est la longueur d'un cercle.
-}
-
-\df{Constante d'Archimède (Pi)}{
-    $\pi$ est le rapport de la circonférence d'un cercle à son diamètre.
-    \begin{equation*}
-        \pi \approx 3,141592653589793
-    \end{equation*}
-}
-
-\mthd{d'Archimède (Approximation de Pi)}{
-    On encadre $\pi$ par les périmètres de polygones réguliers inscrits et circonscrits à un cercle de diamètre $1$.
-    \href{https://www.geogebra.org/m/yqhfdqgg}{$\rightarrow$ Activité géogebra}
-}
-
-\rmk{Formule de la circonférence}{
-    On a alors la circonférence d'un cercle de rayon $r$ : $2 \pi r$.
-}
-
-\pr{Longueur d'arc}{
-    \begin{center}
-        \def\angle{30} % Define the angle size
-        \def\r{4}
-        \begin{tikzpicture}
-            \tkzDefPoint(0,0){A}
-            \tkzDefPoint(\r,0){B}
-            \tkzDefShiftPoint[A](\angle:\r){C} % Adjust the angle for gamma and the length for side 'c'
-            \draw[very thick] (B)--(A)--(C);
-            \tkzDrawArc[Blue](A,B)(C) % Draw arc from B to C centered at A
-            % %
-            \tkzMarkAngle[Red,size=0.7cm,opacity=1](B,A,C) % Mark angle BAC
-            \tkzLabelAngle[Red, pos=1](B,A,C){$\theta$} % Label angle BAC
-            % %
-            \tkzLabelSegment[below](A,B){$r$} % Label segment AB as r
-            \tkzLabelArc[Blue, right](A,B,C){$r\theta$} % Label the arc from B to C as rθ
-        \end{tikzpicture}
-    \end{center}
-R}
-
-\demo{}{
-    L'arc est une section $\frac{\theta}{2\pi}$ de la circonférence.\\
-    Alors la longueur d'arc est: $2\pi r \times \frac{\theta}{2\pi} = r \theta$.
-}
-
-\subsection{Aire du disque}
-
-\act{Approximation aire du disque}{}
-
-\mthd{de Monte-Carlo (Approximation de l'aire du disque)}{
-    \begin{algorithm}[H]
-        \KwData{$r\in\m{R} \et N\in\m{N}$}
-        \KwRes{approximations de l'aire du cercle de rayon $r$.}
-        $c \leftarrow 2r$
-        On considère une figure constiué d'un carré de coté $c$ dans lequel on place en son centre un cercle de rayon $r$\;
-        $n \leftarrow 0$\;
-        \Pr{$i$ de $0$ à $N$}{
-            Prendre un point $A$ au hasard dans le carré\;
-            \Si{$A$ est dans le cercle}{$n \leftarrow n+1$\;}
-        }
-        \KwRet{$\frac{n}{N} \times c^2$}\;
-    \end{algorithm}
-}[\href{http://pedagogie.ac-limoges.fr/maths/IMG/pdf/manipulation_aire_disque_methode_de_monte-carlo.pdf}{Académie de limoge}]
-
-\tice{Méthode de Monte-Carlo}{Python}{
-    \lstinputlisting[language=Python]{ressources/lecons-capes/17/monte-carlo.py}
-}
-
-\pr{Aire du disque}{
-    L'aire d'un disque de rayon $r$ : $\pi r^2$.
-}
-
-\section{Volumes et aires latérales}
-
-\subsection{Définitions}
+\subsection{Aire latérale}
 
 \df{Aire latérales}{
-    L'\textbf{aire latérale} \A d'un solide est la surface délimitant privée de ses bases.
+    L'\textbf{aire latérale} \A{} d'un solide est la surface délimitant privée de ses bases.
 }
 
 \rmk{Aire totale}{
     Il faut distingué l'aire latérale de l'\textbf{aire totale} qui elle prend en compte aussi les bases du solide.
 }
 
+\subsection{Contenance}
+
+\df{Contenance}{
+    La \textbf{contenance} d'un solide est la mesure de quantité de liquide qui peut être contenue dans ce dernier. 
+}
+
+\df{Unité de contenance}{
+    L'\textbf{unité de contenance} usuelle est le mètre litre (\Lt)\\
+    % 1 \mt{} correspond à la mesure d'espace d'un cube de côté 1 $\meter$.
+}
+
+\rmk{Unités de contenance consécutives}{
+    Deux unités de contenance consécutives sont 10 fois plus grande ou petites les unes par rapport aux autres.
+}
+
+\subsection{Volume}
+
 \df{Unité de volume}{
-    L'unité de volume usuelle est le mètre cube (\mt)\\
-    1 \mt{} correspond à la mesure d'espace d'un cube de coté 1 $\meter$.
+    L'\textbf{unité de volume} usuelle est le mètre cube (\mt)\\
+    1 \mt{} correspond à la mesure d'espace d'un cube de côté 1 $\meter$.
 }
 
 \df{Volume}{
-    Le \textbf{volume} \V d'un solide est ca mesure d'espace, en comparaison \mt.
+    Le \textbf{volume} \V{} d'un solide est ca mesure d'espace, en comparaison \mt.
 }
 
 \rmk{Unités de volume consécutives}{
     Deux unités de volume consécutives sont 1000 fois plus grande ou petites les unes par rapport aux autres.
+}
+
+\rmk{Conversion contenance et volume}{
+    On a : $1\Lt = 1\deci\md$.
 }
 
 \subsection{Cube et pavé droit}
@@ -477,7 +566,7 @@ R}
 
 \pr{Aire et volume du prisme et du cylindre}{
     Pour un prisme ou cylindre de hauteur $h$,
-    de base d'aire \B et périmètre \Per,
+    de base d'aire \B{} et périmètre \Per{},
     on a:
     \begin{align*}
         \A &= \Per \times h\\
@@ -489,7 +578,7 @@ R}
 
 \pr{Aire et volume de la pyramide et du cône}{
     Pour une pyramide ou cône de hauteur $h$,
-    de base d'aire \B et périmètre \Per,
+    de base d'aire \B{} et périmètre \Per{},
     on a:
     \begin{align*}
         \V &= \frac{\B \times h}{3}
@@ -498,7 +587,7 @@ R}
 
 \demo{}{
     L'intersection d'un plan parallèle au plan de la base avec le solide (pyramide ou cône) à une hauteur $t\in[0;h]$,
-    a une aire $\B_t = \B \frac{(h-t)^2}{h^2}$ (découle de Thalès).
+    a une aire $\B_t = \B \frac{(h-t)^2}{h^2}$ (homothétie de rapport $\frac{(h-t)}{h}$).
     On a alors:
     \begin{align*}
         \V &= \int_{0}^{h} \B_t dt\\ 
@@ -511,7 +600,7 @@ R}
 \subsection{Sphère}
 
 \pr{Aire et volume d'une sphère}{
-    L'aire \A et le volume \V d'une shère de rayon $R$ sont donnée par le formules :
+    L'aire \A{} et le volume \V{} d'une shère de rayon $R$ sont donnée par le formules :
     \begin{align*}
         \A = 4\pi R^2\\
         \V = \frac{4\pi R^3}{3}
@@ -581,8 +670,8 @@ R}
 Soit $f$, fonction continue et positive sur $[a,b]$ et \C sa courbe représentative.
 
 \df{Aire sous la courbe}{
-    L'\textbf{aire sous la courbe} \C sur $[a,b]$ est l'aire du domaine délimité par;
-    l'axe des abscisses, la courbe \C et les droites d'équation $x=a$ et $x=b$.\\
+    L'\textbf{aire sous la courbe} sur $[a,b]$ est l'aire du domaine délimité par;
+    l'axe des abscisses, la courbe \C{} et les droites d'équation $x=a$ et $x=b$.\\
     On note $\int_{a}^{b}f(x)dx$ et appelle \textbf{intégrale} de $f$ entre $a$ et $b$ cette aire. 
 }[\cbmath]
 
@@ -614,17 +703,12 @@ Soit deux vecteurs \u et \v.
 \df{Parallélogramme engendré par deux vecteurs}{
     Le \textbf{parallélogramme engendré} par \u et \v est:
     \begin{equation*}
-        {\alpha\u + \beta\v | \alpha,\beta\in[0,1]}
+        \{\alpha\u + \beta\v | \alpha,\beta\in[0,1]\}
     \end{equation*}
 }
 
 \pr{Aire de parallélogramme engendré}{
     Le parallélogramme engendré par \u et \v a pour aire : $\A = \det(\u,\v)$.
-}
-
-\newcommand{\axis}[1]{%Draw coordinate axes
-    \draw[thin, -Stealth] (-0.5,0) -- (#1,0) node[right] {$x$}; % x-axis
-    \draw[thin, -Stealth] (0,-0.5) -- (0,#1) node[above] {$y$}; % y-axis
 }
 
 \demo{}{
