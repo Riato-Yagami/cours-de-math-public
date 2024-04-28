@@ -25,6 +25,10 @@
     }
 }
 
+\newenvironment{columns}[1][T]{}{}
+\newenvironment{column}[1]{\begin{minipage}{#1}}{\end{minipage}}
+
+\newcounter{qf}
 \NewDocumentCommand{\qf}{m O{15}}{
     \qfSUB{}{
         \qfRes{#1}

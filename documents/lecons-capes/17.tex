@@ -19,9 +19,11 @@
 
 \def\cbmath{\href{https://docplayer.fr/210413521-Lecon-n-o-18-perimetres-aires-volumes-capes-session-cbmaths-cbmaths-fr-derniere-mise-a-jour-2-avril-2021.html}{CBMaths.fr}}
 \def\jean{\href{https://www.mathenjeans.fr/sites/default/files/comptes-rendus/polygones_-_saint_dominique_nancy.pdf}{mathenjeans.fr}}
+
+\newcommand{\drawArea}[1][blue]{\fill[fill = #1, opacity = 0.2]}
 %%%%%%%%%%%%%%
 
-% \setboolean{subsectionInOutline}{true}
+\setboolean{subsectionInOutline}{true}
 % \setboolean{outline}{true}
 % \setboolean{demonstration}{false}
 
@@ -35,7 +37,9 @@
     \ilink{Terminale Option Complémentaire}
     \ilink{Terminale Technologique}
 } % Niveaux
-[\item longueur] % Prérequis
+[\item mesures de longueurs
+\item transformation géométrique
+\item continuité] % Prérequis
 [] % Thèmes
 [] % Motivation
 
@@ -65,10 +69,27 @@
     \end{itemize}
 }
 
-\subsection{Aire}
+\subsection{Découpages et recollements}
+
+\df{Aire}{
+    L'\textbf{aire} (\A) d'une figure est la mesure de sa surface.
+}
+
+\pr{Isométrie}{
+    Le périmètre et l'aire sont invariants par isométrie.
+}
+
+\pr{Homothétie}{
+    Pour une homothétie de rapport $k$, les périmètres sont multiplié par $|k|$,
+    et les aires par $k^2$.
+}
+
+\pr{Additivité des aires}{
+    L'aire de l'union des surface $A$ et $B$ disjointes, est égale à la somme de leurs aires.
+}
 
 \df{Comparaison d'aire}{
-    On dit que deux figure ont la même aire si en découpant l'une d'entre elle,
+    On dit que deux figure ont des aires équivalentes si en découpant l'une d'entre elle,
     on peut recomposer l'autre.
 }[\cbmath]
 
@@ -113,15 +134,11 @@
     On peut toujours découper et recoller un triangle quelconque pour trouver un rectangle de même aire.
 }
 
-\demo{}{
+\demo{Cas sans angle optus}{
     \def\triangle{
         \tkzDefPoint(0,0){A}
         \tkzDefPoint(6,0){B}
         \tkzDefPoint(1.5,3){C}
-        % \tkzLabelPoints[below left](A)
-        % \tkzLabelPoints[below right](B)
-        % \tkzLabelPoints[above](C)
-        % Hauteur issue de C
         \tkzDefLine[perpendicular=through C](A,B) \tkzGetPoint{c} % Définir un point pour la direction de la ligne
         \tkzInterLL(C,c)(A,B) \tkzGetPoint{H} % Intersection de la ligne avec AB
         \draw[thick] (C)--(H);
@@ -162,68 +179,123 @@
                 % \tkzLabelPoints[left](D)
                 \draw[thick] (E)--(D);
                 % Trianlges
-                \draw[fill = red, fill opacity=0.2] (A)--(D)--(O)--cycle;
-                \draw[fill = red, fill opacity=0.2] (C)--(I)--(O)--cycle;
-                \draw[fill = blue, fill opacity=0.2] (B)--(E)--(F)--cycle;
-                \draw[fill = blue, fill opacity=0.2] (C)--(I)--(F)--cycle;
+                \drawArea[red] (A)--(D)--(O)--cycle;
+                \drawArea[red] (C)--(I)--(O)--cycle;
+                \drawArea (B)--(E)--(F)--cycle;
+                \drawArea (C)--(I)--(F)--cycle;
             \end{tikzpicture}
         \end{center}
     }
 }[\jean]
 
-% \pr{Découpage et recollage de rectangle à un rectangle de longueur choisit}{
-%     On peut toujours découper et recoller un rectangle quelconque pour trouver un rectangle de même aire et de longueur choisit.
-% }
+\demo{Cas avec un angle optus}{
+    \def\h{3}
+    \def\b{5}
+    \def\defPoints{%
+        \tkzDefPoint(0,0){A}
+        \tkzDefPoint(\b,0){B}
+        \tkzDefPoint(-1.5,\h){C}
+        \tkzDefLine[perpendicular=through C](A,B) \tkzGetPoint{c}
+        \tkzInterLL(C,c)(A,B) \tkzGetPoint{H}
+        \tkzDefPoint(\b,\h){E}
+    }
+    \dividePage{
+        \ctikz{
+            \defPoints
+            \tkzMarkRightAngle[blue](C,H,A)
+            \draw[pattern={north east lines}, pattern color = red, opacity = 0.7] (A) -- (B) -- (C) -- cycle;
+            \drawArea (H) -- (B) -- (C);
+            \drawArea[red] (E) -- (B) -- (C);
+            \draw[very thick] (A) -- (B) -- (C) -- cycle;
+            \draw[dashed, thick] (C) -- (H);
+            \draw[dotted, thick] (H) -- (B) -- (E) -- (C);
+        }
+    }{
+        \ctikz{
+            \defPoints
+            \tkzDefPoint(0,\h){D}
+            \draw[thick] (A) -- (B) -- (C) -- cycle;
+            \drawArea (C) -- (D) -- (A);
+            \drawArea[red] (H) -- (C) -- (A);
+            \draw[dotted, thick] (H) -- (A);
+            \draw[dotted, thick] (C) -- (D);
+            \draw[dashed, thick] (C) -- (H);
+            \draw[very thick, pattern={north east lines}, pattern color = red, opacity = 0.7] (A) -- (D) -- (E) -- (B) -- cycle;
+        }
+    } 
+}[\href{http://www.debart.fr/college/aire_triangle.html}{debart.fr}]
 
-% \pr{Découpage et recollage de rectangle en carré}{
-%     On peut toujours découper et recoller un rectangle quelconque pour trouver un carré de même aire.
-% }
+\pr{Découpage et recollage de rectangle à un carré de même aire}{
+    Pour un rectangle de longueur $l$ et largeur $L$.\\
+    Si $l \geqslant \frac{\sqrt{lL}}{2}$ alors on peut découper et recoller le rectangle pour trouver un carré de même aire.
+}
 
-% \demo{}{
-%     \def\lenght{5}
-%     \def\width{3}
-%     \begin{center}
-%         \begin{tikzpicture}[scale=1]
-%             \tkzDefPoint(0,0){A}
-%             \tkzDefPoint(0,\width){B}
-%             \tkzDefPoint(\lenght,\width){C}
-%             \tkzDefPoint(\lenght,0){D}
-%             \draw[very thick] (A)--(B)--(C)--(D)--cycle;
-%             \tkzDefPoint(-\width,0){E}
-%             \draw[dashed] (B) arc (90:180:\width);
-%         \end{tikzpicture}
-%     \end{center}
-% }[\href{https://wimsauto.universite-paris-saclay.fr/wims/wims.cgi?session=8W0948C5F7.2&+lang=fr&+module=U1\%2Fgeometry\%2Fdocbolyai.fr&+cmd=reply&+job=read&+doc=1&+block=rectanglecarre2}{Université Paris-Saclay}]
+\demo{}{
+    \def\lenght{6}
+    \def\width{2}
+    \def\defRect{%
+        \tkzDefPoint(0,0){A}
+        \tkzDefPoint(0,\width){B}
+        \tkzDefPoint(\lenght,\width){C}
+        \tkzDefPoint(\lenght,0){D}
+    }
+    \def\drawRect{\draw[very thick] (A)--(B)--(C)--(D)--cycle;}
+    \begin{center}
+        \begin{tikzpicture}
+            \defRect
+            \tkzDefPoint(-\width,0){E}
+            \tkzDefMidPoint(E,D) \tkzGetPoint{F}
+            \draw[dashed, very thick] (A)--(E);
+            \drawRect
+            \tkzDrawPoints(F)
+            \tkzDrawPoints(E)
+            % \tkzCalcLength(F,E) \tkzGetLength{rayon}
+            % \tkzDefCircle[R](F,\rayon)
+            \tkzInterLC(A,B)(F,E) \tkzGetPoints{G}{H}
+            \tkzDrawPoint(G)
+            % \draw[dashed, very thick] (B)--(G);
+            \tkzDrawCircle[very thick, dotted](F,E)
+            \tkzCalcLength(A,G) \tkzGetLength{cote}
+            \tkzDefPoint(\cote,0){H}
+            \tkzDefPoint(\cote,\cote){I}
+            \tkzInterLL(G,D)(B,C) \tkzGetPoint{X}
+            \tkzInterLL(G,D)(I,H) \tkzGetPoint{Y}
+            \draw[red, thick] (A)--(G)--(I)--(H)--cycle;
+            \tkzMarkSegment[blue,pos=.5,mark=|](A,E)
+            \tkzMarkSegment[blue,pos=.5,mark=|](A,B)
+            \draw[dashed] (G)--(D);
+            \drawArea (G)--(I)--(Y)--cycle;
+            \drawArea (D)--(C)--(X)--cycle;
+            \drawArea[red] (G)--(B)--(X)--cycle;
+            \drawArea[red] (D)--(H)--(Y)--cycle;
+            % \draw[dotted] (F) circle(\rayon);
+        \end{tikzpicture}
+    \end{center}
+}[\href{https://www.mathenjeans.fr/sites/default/files/comptes-rendus/recollons_les_morceaux_guy_moquet_chateaubriant_2013.pdf}{BOUDET Corentin, TRIMOREAU Vincent, PARIS Nicolas}]
 
-% \pr{Un rectangle de longueur $L$ et largeur $l$ a pour aire $Ll$}
+% \href{https://wimsauto.universite-paris-saclay.fr/wims/wims.cgi?session=8W0948C5F7.2&+lang=fr&+module=U1\%2Fgeometry\%2Fdocbolyai.fr&+cmd=reply&+job=read&+doc=1&+block=rectanglecarre2}{Université Paris-Saclay}
 
-% \demo{}{
-%     Sur la 
-% }[\cbmath]
+\rmk{Encadrer les aires}{
+    Pour beaucoup de figure non-polygonal il ne sera pas possible de procéder par découpages et recollements.
+    On procédera alors à des encadrements d'aires.
+}
+
+\subsection{Mesures d'aires}
 
 \df{Unité d'aire}{
     L'unité d'aire usuelle est le mètre carré (\md).\\
     1 \md{} correspond à la mesure de surface d'un carré de côté 1 \meter.
 }
 
-\df{Aire}{
-    L'\textbf{aire} (\A) d'une figure est la mesure de sa surface,
-    en comparaison au \md.
+\rmk{Mesure d'aire}{
+    On mesure l'aire en comparaison au \md.
 }
 
 \rmk{Unités d'aire consécutives}{
     Deux unités d'aire consécutives sont 100 fois plus grande ou petites les unes par rapport aux autres.
 }
 
-\pr{Additivité des aires}{
-    L'aire de l'union des surface $A$ et $B$ disjointes, est égale à la somme de leurs aires.
-}
-
-\rmk{Découpages et recollements}{
-    L'additivité des aires est le fondement du découpage et recollements.
-}
-
-\subsection{Formule d'aires}
+\subsection{Formules d'aires}
 
 \pr{Aire du carré et du rectangle}{
     \begin{itemize}[wide=0pt, leftmargin=*]
@@ -253,8 +325,8 @@
             \tkzDefPoint(\ys,\h){F}
             \tkzDefPoint(\b+\ys,\h){G}
             \tkzDefPoint(\b,0){H}
-            \draw[fill = blue, opacity = 0.2] (A) -- (B) -- (F) -- cycle;
-            \draw[fill = blue, opacity = 0.2] (C) -- (D) -- (G) -- cycle;
+            \drawArea (A) -- (B) -- (F) -- cycle;
+            \drawArea (C) -- (D) -- (G) -- cycle;
             \draw[thick, dashed] (A) -- (B) -- (C) -- (D) -- cycle;
             \draw[very thick] (E) -- (F) -- (G) -- (H) -- cycle;
         \end{tikzpicture}
@@ -306,10 +378,143 @@
     }
 }
 
+\subsection{Théorèmes}
+
+\thm{de Pythagore}{
+    Soit un triangle $ABC$ rectangle en $A$, on a:
+    \begin{equation*}
+        BC^2 = AB^2 + AC^2
+    \end{equation*}
+}
+
+\demo{}{
+    \def\a{3}
+    \def\b{2}
+    \def\s{\a+\b}
+    \def\defpoints{
+        \tkzDefPoint(0,0){A}
+        \tkzDefPoint(\s,0){B}
+        \tkzDefPoint(\s,\s){C}
+        \tkzDefPoint(0,\s){D}
+        \tkzDefPoint(\b,0){Ab}
+        \tkzDefPoint(\s,\b){Bb}
+        \tkzDefPoint(\a,\s){Cb}
+        \tkzDefPoint(0,\a){Db}
+    }
+    \def\drawSquare{\draw[very thick] (A) -- (B) -- (C) -- (D) -- cycle;}
+    \dividePage{
+        \ctikz{
+            \defpoints
+            \drawArea (A) -- (Ab) -- (Db);
+            \drawArea (B) -- (Bb) -- (Ab);
+            \drawArea (C) -- (Cb) -- (Bb);
+            \drawArea (D) -- (Db) -- (Cb);
+            \draw[dotted, thick] (Ab) -- (Bb) -- (Cb) -- (Db) -- cycle;
+            \drawSquare
+            \tkzMarkSegment[blue,pos=.5,mark=|](A,Ab)
+            \tkzMarkSegment[blue,pos=.5,mark=|](B,Bb)
+            \tkzMarkSegment[blue,pos=.5,mark=|](C,Cb)
+            \tkzMarkSegment[blue,pos=.5,mark=|](D,Db)
+            \tkzMarkSegment[blue,pos=.5,mark=o](A,Db)
+            \tkzMarkSegment[blue,pos=.5,mark=o](B,Ab)
+            \tkzMarkSegment[blue,pos=.5,mark=o](C,Bb)
+            \tkzMarkSegment[blue,pos=.5,mark=o](D,Cb)
+            \tkzLabelSegment[left](A,Db){$a$}
+            \tkzLabelSegment[left](D,Db){$b$}
+            \tkzLabelSegment[above right](Db,Ab){$c$}
+        }
+    }{%
+        \ctikz{
+            \defpoints
+            \tkzDefPoint(\b,\a){Ac}
+            \tkzDefPoint(\b,\s){Dq}
+            \tkzDefPoint(\s,\a){Cq}
+            \drawArea (A) -- (Ab) -- (Db);
+            \drawArea (Ac) -- (Ab) -- (Db);
+            \drawArea (C) -- (Dq) -- (Cq);
+            \drawArea (Ac) -- (Dq) -- (Cq);
+            \draw[dotted, thick] (Db) -- (Cq);
+            \draw[dotted, thick] (Ab) -- (Dq);
+            \draw[dotted, thick] (Ab) -- (Db);
+            \draw[dotted, thick] (Dq) -- (Cq);
+            \drawSquare
+            % \tkzMarkSegment[blue,pos=.5,mark=|](A,Ab)
+            \tkzMarkSegment[blue,pos=.5,mark=|](Db,Ac)
+            \tkzMarkSegment[blue,pos=.5,mark=|](Dq,Ac)
+            % \tkzMarkSegment[blue,pos=.5,mark=|](C,Cq)
+            % \tkzMarkSegment[blue,pos=.5,mark=o](A,Db)
+            \tkzMarkSegment[blue,pos=.5,mark=o](Ab,Ac)
+            \tkzMarkSegment[blue,pos=.5,mark=o](Ac,Cq)
+            % \tkzMarkSegment[blue,pos=.5,mark=o](Dq,C)
+        }
+    }
+}
+
+\pr{partage de la Médiane}{
+    Une médiane d'un triangle partage ce triangle en deux triangles d'aires égales. 
+}[\href{https://www.apmep.fr/IMG/pdf/S\_e9rie\_1-4_D\_e9montrer\_avec\_des\_aires\_-\_Copie.pdf}{Mathématique et mathématiciens}]
+
+\demo{}{
+    \dividePage{
+        \begin{center}
+            \begin{tikzpicture}[scale=1]
+                % Définir les points du triangle
+                \tkzDefPoint(0,0){A}
+                \tkzDefPoint(4,0){B}
+                \tkzDefPoint(1.5,2){C}
+                \tkzDefMidPoint(A,B) \tkzGetPoint{D}
+                % Ajouter des étiquettes
+                \tkzLabelPoints[below left](A)
+                \tkzLabelPoints[below right](B)
+                \tkzLabelPoints[above](C)
+                % Marquer le point médian
+                \tkzDrawPoints(D)
+                \tkzLabelPoints[below](D)
+                % Calculer le pied de la hauteur depuis C sur AB
+                \tkzDefPointBy[projection=onto A--B](C) \tkzGetPoint{H}
+                \tkzLabelPoints[below](H)
+                \drawArea (A) -- (C) -- (D) -- cycle;
+                \drawArea[red] (C) -- (D) -- (B) -- cycle;
+                \draw[very thick] (A) -- (B) -- (C) -- cycle;
+                \draw[dotted, very thick] (C) -- (D);
+                \draw[dashed, very thick] (C) -- (H);
+                \tkzMarkSegment[blue,pos=.5,mark=|](A,D)
+                \tkzMarkSegment[blue,pos=.5,mark=|](D,B)
+                \tkzMarkRightAngle[blue](C,H,A)
+            \end{tikzpicture}
+        \end{center}
+    }{
+        \begin{align*}
+            \color{Blue}\A\color{black} &= \frac{AD \times CH }{2}\\
+            &= \frac{BD \times CH }{2} = \color{Red}\A\color{black}
+        \end{align*}
+    }
+}
+
+% \pr{des proportions}{
+
+% }
+
+% \thm{du chevron}{
+%     Soit $N$ point dans intérieur au triangle $ABC$ et $A'$ intersection des droites $(AN)$ et $(BC)$.\\
+%     On a :\begin{align*}
+%         \frac{\A_{ANB}}{\A_{ANC}} = \frac{BA'}{CA'}
+%     \end{align*}
+% }
+
+% \demo{}{
+%     \TODO
+% }
+
 \subsection{Dichotomie périmètre et aire}
 
 \act{Curvica}{
+    Une figure peut avoir une aire plus petite qu'une autre figure mais tous de même avoir un périmètre plus grand et vice-versa.
 }[\href{https://www.educmat.fr/categories/jeux_reflexion/fiches_jeux/curvica/index.php}{éducmat}]
+
+\rmk{Aire finie et périmètre infini}{
+    Certaines figures ont une aire finie et un périmètre infini (ex: \href{https://mathcurve.com/fractals/koch/koch.shtml}{Flocon de Koch}).
+}[\href{https://mathcurve.com/fractals/koch/koch.shtml}{Robert FERRÉOL}]
 
 \section{Le cercle et le disque}
 
@@ -327,9 +532,31 @@
 }
 
 \mthd{d'Archimède (Approximation de Pi)}{
-    On encadre $\pi$ par les périmètres de polygones réguliers inscrits et circonscrits à un cercle de diamètre $1$.
+    On encadre $\pi$ par le demi périmètres de polygones réguliers inscrits et circonscrits à un cercle de rayon $1$.
     \href{https://www.geogebra.org/m/yqhfdqgg}{$\rightarrow$ Activité géogebra}
 }
+
+\demo{}{
+    A l'étape $n\in[3,+\infty]$ on note $a_n$ l'angle des $2n$ triangles rectangles ayant pour sommet le centre du cercle,
+    $i_n$ et $c_n$ les côtés des polygones inscrits et circonscrits
+    et $U_n$ et $V_n$ les périmètres des polygones inscrits et circonscrits.
+    On a:
+    \begin{align*}
+        a_n &= \frac{360}{2n} = \frac{180}{n}\\
+        \ior \sin(a_n) &= \frac{\textrm{opposé}}{\textrm{hypothénus}}
+        = \frac{i_n / 2}{\textrm{rayon}}
+        = \frac{i_n / 2}{\textrm{1}}
+        = \frac{i_n}{2}\\
+        \iet \tan(a_n) &= \frac{\textrm{opposé}}{\textrm{adjacent}}
+        = \frac{c_n / 2}{\textrm{rayon}}
+        = \frac{c_n / 2}{\textrm{1}}
+        = \frac{c_n}{2}
+        \ior U_n &= n \times i_n = 2 n \sin(a_n)
+        \iet V_n &= n \times c_n = 2 n \tan(a_n)
+        \ior \frac{U_n}{2} &\leqslant \pi \leqslant \frac{V_n}{2}
+        \ialors n \sin(\frac{180}{n}) &\leqslant \pi \leqslant n \tan(\frac{180}{n})
+    \end{align*}
+}[\href{https://weblaperouse.ac-noumea.nc/IMG/pdf/9-tpe-approximation-archimede.pdf}{Rodrigue LEBAILLY et Romain LEROY}]
 
 \rmk{Formule de la circonférence}{
     On a alors la circonférence d'un cercle de rayon $r$ : $\mathcal{C} = 2 \pi r$.
@@ -416,7 +643,7 @@
             \tkzDefPoint(\x,\y){P}
             \tkzDefPoint(\x,0){X}
             \tkzDefPoint(0,\y){Y}
-            \draw[fill = blue, fill opacity = 0.2] (A) arc (0:90:\r) -- (O) -- cycle ;
+            \drawArea (A) arc (0:90:\r) -- (O) -- cycle ;
             \draw[thick] (O) -- (P);
             \draw[dashed] (P) -- (X) node[below]{$x$};
             \draw[dashed] (P) -- (Y) node[left]{$y$};
@@ -434,66 +661,6 @@
         \end{align*}
     }
 }[\href{https://www.mathweb.fr/euclide/2019/05/18/pourquoi-laire-dun-disque-est-egale-a-pi-r2/}{mathweb.fr}]
-
-\section{Propriétés sur les aires et périmètre}
-
-\subsection{Transformations}
-
-\pr{Isométrie}{
-    Le périmètre et l'aire sont invariants par isométrie.
-}
-
-\pr{Homothétie}{
-    Pour une Homothétie de rapport $k$, les périmètres sont multiplié par $|k|$,
-    et les aires par $k^2$.
-}
-
-\subsection{Théorèmes}
-
-\thm{de Pythagore}{
-    \TODO
-}
-
-\pr{de la Médiane}{
-    Une médiane d'un triangle partage ce triangle en deux triangles d'aires égales. 
-}[\href{https://www.apmep.fr/IMG/pdf/S\_e9rie\_1-4_D\_e9montrer\_avec\_des\_aires\_-\_Copie.pdf}{Mathématique et mathématiciens}]
-
-\demo{}{
-    \dividePage{
-        \begin{center}
-            \begin{tikzpicture}[scale=1]
-                % Définir les points du triangle
-                \tkzDefPoint(0,0){A}
-                \tkzDefPoint(4,0){B}
-                \tkzDefPoint(1.5,2){C}
-                \tkzDefMidPoint(A,B) \tkzGetPoint{D}
-                % Ajouter des étiquettes
-                \tkzLabelPoints[below left](A)
-                \tkzLabelPoints[below right](B)
-                \tkzLabelPoints[above](C)
-                % Marquer le point médian
-                \tkzDrawPoints(D)
-                \tkzLabelPoints[below](D)
-                % Calculer le pied de la hauteur depuis C sur AB
-                \tkzDefPointBy[projection=onto A--B](C) \tkzGetPoint{H}
-                \tkzLabelPoints[below](H)
-                \tkzFillPolygon[blue, opacity=0.2](A,C,D)
-                \tkzFillPolygon[red, opacity=0.2](B,C,D)
-                \draw[very thick] (A) -- (B) -- (C) -- cycle;
-                \draw[dotted, very thick] (C) -- (D);
-                \draw[dashed, very thick] (C) -- (H);
-                \tkzMarkSegment[blue,pos=.5,mark=|](A,D)
-                \tkzMarkSegment[blue,pos=.5,mark=|](D,B)
-                \tkzMarkRightAngle[blue](C,H,A)
-            \end{tikzpicture}
-        \end{center}
-    }{
-        \begin{align*}
-            \color{Blue}\A\color{black} &= \frac{AD \times CH }{2}\\
-            &= \frac{BD \times CH }{2} = \color{Red}\A\color{black}
-        \end{align*}
-    }
-}
 
 \section{Mesures de l'espace}
 
@@ -532,6 +699,10 @@
 \df{Volume}{
     Le \textbf{volume} \V{} d'un solide est ca mesure d'espace, en comparaison \mt.
 }
+
+\rmk{3e problème de Hilbert}{
+    On ne peut pas toujours découper et recoller un polyèdre en un autre polyèdre de même aire.
+}[\href{https://fr.wikipedia.org/wiki/Probl\%C3\%A8mes\_de\_Hilbert}{Wikipedia}]
 
 \rmk{Unités de volume consécutives}{
     Deux unités de volume consécutives sont 1000 fois plus grande ou petites les unes par rapport aux autres.
@@ -574,7 +745,7 @@
     \end{align*}
 }
 
-\subsection{Pyramide et cone}
+\subsection{Pyramide et cône}
 
 \pr{Aire et volume de la pyramide et du cône}{
     Pour une pyramide ou cône de hauteur $h$,
@@ -646,7 +817,7 @@
             \tkzLabelSegment[above](A,C){$r$} 
             \tkzLabelSegment[Red][below](R,B){$dr$}
             \tkzLabelArc[right](A,B,C){$rd\theta$} % Label the arc from B to C as rθ
-            \draw[fill=Red, opacity = 0.25] (B) arc (0:30:\r) -- (c) arc (30:0:\dr) -- cycle;
+            \drawArea[red] (B) arc (0:30:\r) -- (c) arc (30:0:\dr) -- cycle;
             \node[Red] at (barycentric cs:B=1,C=1,c=0.75,R=0.75) {$d\mathcal{S}$};
             \draw[Red] (R) -- (B);
         \end{tikzpicture}
@@ -667,7 +838,9 @@
 
 \section{Aire sous la courbe}
 
-Soit $f$, fonction continue et positive sur $[a,b]$ et \C sa courbe représentative.
+\hint{
+    Soit $f$, fonction continue et positive sur $[a,b]$ et \C{} sa courbe représentative.
+}
 
 \df{Aire sous la courbe}{
     L'\textbf{aire sous la courbe} sur $[a,b]$ est l'aire du domaine délimité par;
@@ -696,9 +869,11 @@ Soit $f$, fonction continue et positive sur $[a,b]$ et \C sa courbe représentat
     Additivité des aires
 }
 
-\section{Determinants dans le plan}
+\section{Déterminants dans le plan}
 
-Soit deux vecteurs \u et \v.
+\hint{
+    Soit deux vecteurs \u et \v.
+}
 
 \df{Parallélogramme engendré par deux vecteurs}{
     Le \textbf{parallélogramme engendré} par \u et \v est:
@@ -748,7 +923,7 @@ Soit deux vecteurs \u et \v.
         \begin{tikzpicture}
             \axis{4}
             \defvectors
-            \fill[blue, opacity=0.2] (O) -- (U) -- (UV) -- (V) -- cycle;
+            \drawArea (O) -- (U) -- (UV) -- (V) -- cycle;
             \drawvectors
         \end{tikzpicture}
         % \begin{tikzpicture}
@@ -768,7 +943,7 @@ Soit deux vecteurs \u et \v.
             \coordinate (UVb) at (\xu,\yv);
             \coordinate (Ub) at (\xu,0);
             \coordinate (Vb) at (0,\yv);
-            \fill[blue, opacity=0.2] (Ob) -- (Ot) -- (Oq) -- (Ub) -- (UVb) -- (Vb) -- cycle;
+            \drawArea (Ob) -- (Ot) -- (Oq) -- (Ub) -- (UVb) -- (Vb) -- cycle;
             \drawvectors
         \end{tikzpicture}
     \end{center}

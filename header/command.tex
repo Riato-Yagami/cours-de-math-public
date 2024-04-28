@@ -144,6 +144,10 @@
     \end{center}
 }
 
+\NewDocumentCommand{\imgp}{m O{\linewidth} O{0cm} o}{%
+    \img{\imgf{#1}}[#2]
+}
+
 \NewDocumentCommand{\img}{m O{\linewidth} O{0cm} o}{%
     \begin{figure}[H]%
         \centering%

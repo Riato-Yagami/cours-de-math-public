@@ -161,7 +161,7 @@
 }
 
 \newcommand{\hint}[1]{
-    \textit{Indication: #1}
+    \ifthenelse{\boolean{outline}}{}{\textit{Indication: #1}}
 }
 
 % QUESTIONS FLASHS
