@@ -234,5 +234,85 @@
 \bsubsec{Construction}
 \slide{COURS}{
     \ssubsec
-    \imgp{construction_rotation}
+    \vspace*{-0.5cm}
+    \begin{columns}[T]
+        \begin{column}{.75\textwidth}
+            \mthd{Construction rotation}{\small%
+                Pour construire $A'$ l'image de $A$, par la rotation de centre $O$,
+                d'angle $60^{\circ}$ dans le sens anti-horaire.
+                \begin{enumerate}
+                    \item On trace la demi-droite $[OA)$.
+                    \item Avec le rapporteur on trace une demi-droite passant par $O$,
+                    tel que l'angle entre les deux demi-droites mesure $60^{\circ}$ dans le sens-antihoraire.
+                    \item On repporte la longueur $OA$ sur la nouvelle demi-droite pour placer $A'$.
+                \end{enumerate}
+            }
+        \end{column}
+        \begin{column}{.25\textwidth}
+            \vspace*{2cm}
+            % \hspace*{-1cm}
+            \ctikz{
+                \tkzDefPoint(0,0){O}
+                \tkzDefPoint(3,1){A}
+                \tkzDrawPoints(O)
+                \tkzDrawPoints(A)
+                \tkzLabelPoints[below](O)
+                \tkzLabelPoints[below](A)
+            }
+        \end{column}
+    \end{columns}
+}
+
+\slide{}{
+    \exo{}{
+        Recopier $D$ et $ABC$ puis construire son image $A'B'C'$ par la rotation d'angle $140^\circ$ dans le sens anti-horaire par rapport à $D$.
+        \begin{flushright}
+            \begin{tikzpicture}[scale=0.8]
+                \tkzDefPoint(-2,1){D}
+                \tkzDefPoint(0,0){A}
+                \tkzDefPoint(3,0){B}
+                \tkzDefPoint(3,4){C}
+                \tkzLabelPoints[left](A)
+                \tkzLabelPoints[below](B)
+                \tkzLabelPoints[above](C)
+                \tkzLabelSegment[below](A,B){$3\cm$}
+                \tkzLabelSegment[right](B,C){$4\cm$}
+                \tkzLabelSegment[above left](A,C){$5\cm$}
+                \tkzMarkRightAngle[blue](A,B,C)
+                \tkzDrawPoints(D)
+                \tkzLabelPoints[below](D)
+                \draw[very thick] (A) -- (B) -- (C) -- cycle;
+            \end{tikzpicture}
+        \end{flushright}
+    }
+}
+
+\slide{}{
+    \pr{}{
+        La rotation conserve les mesures d'angle, longueurs et aires.
+    }
+}
+
+\def\imgExtension{.png}
+
+\slide{}{
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+        \imgp{exo_reconnaitre}[5cm]
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \small
+            Compléter les phrases :
+            \begin{itemize}
+                \item $\mathcal{F}_2$ est l'image de $\mathcal{F}_1$ par la rotation d
+            \end{itemize}
+        \end{column}
+}
+
+\slide{}{
+    \imgp{exo_rotation_carreaux}[5cm]
+}
+
+\slide{}{
+    \imgp{exo_rotation_papier_blanc}[5cm]
 }
