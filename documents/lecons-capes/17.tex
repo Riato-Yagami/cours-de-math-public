@@ -24,7 +24,7 @@
 %%%%%%%%%%%%%%
 
 \setboolean{subsectionInOutline}{true}
-\setboolean{outline}{true}
+% \setboolean{outline}{true}
 % \setboolean{demonstration}{false}
 
 % \setboolean{showRef}{false}
@@ -844,7 +844,20 @@
     \begin{equation*}
         \V = \int_{a}^{b} \mathcal{S}(z) dz
     \end{equation*}
-}[\href{https://www.cpmath.fr/cours/int.pdf}{R&T Saint-Malo}]
+}[\href{https://www.cpmath.fr/cours/int.pdf}{R\&T Saint-Malo}]
+
+\pr{Volume d'un solide de révolution}{
+    Soit un solide de révolution délimité par une courbe $y=f(x)$.
+    Son volume entre $x=a$ et $x=b$ est:
+    \begin{equation*}
+        \V = \pi \int_{a}^{b} f(x)^2 dx
+    \end{equation*}
+}[\href{https://www.nagwa.com/fr/explainers/103158132069/}{Nagwa}]
+
+\demo{}{
+    La section perpendiculaire à l'axe de rotation est un disque de rayon $R = f(x)$,
+    donc d'aire $\A(x) = \pi f(x)^2$ et $\V = \V = \int_{a}^{b} \A(x) dx$.
+}
 
 \subsection{Formules pour quelques parties remarquables}
 

@@ -18,6 +18,8 @@
 \def\qfs{\stepcounter{qfs}\color{Blue}\alph{qfs}) \color{black}}
 \def\sqf{\setcounter{qfs}{0} \stepcounter{qf}\color{blue}\arabic{qf}. \color{black}}
 
+\def\deg{\ensuremath{^\circ}}
+
 % \qfSUB{}{}
 \slide{QUESTIONS FLASH}{%
     \sqf \qfs S'agit il d'une symétrie axiale?
@@ -216,7 +218,7 @@
             % \hfill%
             \begin{column}{.8\textwidth}
                 \small
-                Le triangle $A'B'C'$ est l'image du triangle $ABC$ par la rotation de centre $O$ et d'angle $60^\circ$ dans le sens anti-horaire.
+                Le triangle $A'B'C'$ est l'image du triangle $ABC$ par la rotation de centre $O$ et d'angle $60\deg$ dans le sens anti-horaire.
             \end{column}%
         \end{columns}
     }
@@ -265,7 +267,7 @@
 
 \slide{}{
     \exo{}{
-        Recopier $D$ et $ABC$ puis construire son image $A'B'C'$ par la rotation d'angle $140^\circ$ dans le sens anti-horaire par rapport à $D$.
+        Recopier $D$ et $ABC$ puis construire son image $A'B'C'$ par la rotation d'angle $140\deg$ dans le sens anti-horaire par rapport à $D$.
         \begin{flushright}
             \begin{tikzpicture}[scale=0.8]
                 \tkzDefPoint(-2,1){D}
@@ -289,7 +291,7 @@
 
 \slide{}{
     \pr{}{
-        La rotation conserve les mesures d'angle, longueurs et aires.
+        La rotation conserve les mesures d'angle, de longueurs et d'aires.
     }
 }
 
@@ -297,22 +299,33 @@
 
 \slide{}{
     \begin{columns}[T]
-        \begin{column}{.5\textwidth}
-        \imgp{exo_reconnaitre}[5cm]
+        \begin{column}{.4\textwidth}
+            \imgp{exo_reconnaitre}[6.1cm]
         \end{column}
-        \begin{column}{.5\textwidth}
+        \begin{column}{.6\textwidth}
             \small
             Compléter les phrases :
             \begin{itemize}
-                \item $\mathcal{F}_2$ est l'image de $\mathcal{F}_1$ par la rotation d
+                \item $\mathcal{F}_2$ est l'image de $\mathcal{F}_1$ par la rotation \dottedLines{1}
+                \item $\mathcal{T}_2$ est l'image de $\mathcal{T}_1$ par la rotation \dottedLines{1}
+                \item $\mathcal{Q}_2$ est l'image de $\mathcal{Q}_1$ par la rotation \dottedLines{1}
             \end{itemize}
         \end{column}
+    \end{columns}
 }
 
 \slide{}{
-    \imgp{exo_rotation_carreaux}[5cm]
+    \begin{columns}[T]
+        \begin{column}{.4\textwidth}
+            \imgp{exo_rotation_carreaux}[5.5cm]
+        \end{column}
+        \begin{column}{.6\textwidth}
+            \vspace*{2cm}
+            Recopier $DEFG$ puis tracer $D'E'F'G'$ son image par la rotation de centre $P$,
+            d'angle $90\deg$ et
+            de sens horaire.
+        \end{column}
+    \end{columns}
 }
 
-\slide{}{
-    \imgp{exo_rotation_papier_blanc}[5cm]
-}
+\exoslide{exo_rotation_papier_blanc}[8cm]
