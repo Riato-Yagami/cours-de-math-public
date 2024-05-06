@@ -7,6 +7,9 @@
 \def\md{\ensuremath{\meter^2}}
 \def\mt{\ensuremath{\meter^3}}
 \def\Lt{\ensuremath{\liter}}
+\def\ul{\ensuremath{\textrm{ul}}}
+\def\ua{\ensuremath{\textrm{ua}}}
+\def\uv{\ensuremath{\textrm{uv}}}
 
 \def\Per{\ensuremath{\mathcal{P}}}
 \def\A{\ensuremath{\mathcal{A}}}
@@ -51,8 +54,7 @@
 }
 
 \rmk{Unité de longueur}{
-    Le périmètre se mesure en unité de longueur,
-    de maniere usuelle en mètre (\meter).\\
+    Le périmètre se mesure en \textbf{unité de longueur} \ul{} (de manière usuelle en mètre \meter).\\
     Deux unités de longueur consécutives sont 10 fois plus grande ou plus petite les unes par rapport aux autres.
 }
 
@@ -146,8 +148,8 @@
 }
 
 \df{Unité d'aire}{
-    L'unité d'aire usuelle est le mètre carré (\md).\\
-    1 \md{} correspond à la mesure de surface d'un carré de côté 1 \meter.
+    L'aire se mesure en \textbf{unité d'aire} $\ua = \ul^2$ (de manière usuelle en mètre carré \md).\\
+    1 \ua{} correspond à la mesure de surface d'un carré de côté 1 \ul.
 }
 
 \rmk{Unités d'aire consécutives}{
@@ -194,7 +196,7 @@
 }[\cbmath]
 
 \rmk{Mesure d'aire}{
-    On mesure l'aire en comparaison au \md.
+    On mesure l'aire en comparaison au carré de coté \ul.
 }
 
 \subsubsection{Découpages et recollements de polygones}
@@ -384,7 +386,7 @@
 \subsubsection{Encadrer les aires}
 
 \rmk{Encadrer les aires}{
-    Pour beaucoup de figure non-polygonal il ne sera pas possible de procéder par découpages et recollements.
+    Pour beaucoup de figure non polygonales il ne sera pas possible de procéder par découpages et recollements.
     On procédera alors à des encadrements d'aires.
 }
 
@@ -398,7 +400,7 @@
     \href{https://www.geogebra.org/m/bhmjfjhs}{$\rightarrow$ Activité géogebra}
 }
 
-\subsection{Formules de l'aire de quelques figures remarquables}
+\subsection{Formules d'aire pour quelques figures remarquables}
 \subsubsection{Aires de polygones remarquables}
 
 \pr{Aires du carré et du rectangle}{
@@ -807,13 +809,13 @@
 
 \subsubsection{Définition générale}
 
-\df{Unité de volume}{
-    L'\textbf{unité de volume} usuelle est le mètre cube (\mt)\\
-    1 \mt{} correspond à la mesure d'espace d'un cube de côté 1 $\meter$.
+\df{Volume}{
+    Le \textbf{volume} \V{} d'un solide est la mesure de sa partie d'espace.
 }
 
-\df{Volume}{
-    Le \textbf{volume} \V{} d'un solide est ca mesure d'espace, en comparaison \mt.
+\df{Unité de volume}{
+    Le volume se mesure en \textbf{unité de volume} $\uv = \ul^3$ (de manière usuelle en mètre cube \mt).\\
+    1 \uv{} correspond à la mesure d'espace d'un cube de côté 1 $\ul$.
 }
 
 \rmk{Unités de volume consécutives}{
@@ -920,15 +922,23 @@
 }
 
 \demo{}{
-    Considérons les coordonnées sphériques $(r, \theta, \phi)$ où $r$ est le rayon, $\theta$ est l'angle azimutal, et $\varphi$ est l'angle polaire.
-    Les relations entre les coordonnées cartésiennes et sphériques sont:
+    Considérons les coordonnées sphériques $(r, \theta, \phi)$ où $r$ est le rayon,
+    $\theta$ est l'angle azimutal,
+    et $\varphi$ est l'angle polaire.\\
+    % Les relations entre les coordonnées cartésiennes et sphériques sont:
+    % \begin{align*}
+    %     \lfbrace{x &= r\cos(\theta)\sin(\varphi)\\
+    %     y &= r\sin(\theta)\sin(\varphi)\\
+    %     z &= r\cos(\theta)}
+    % \end{align*}
+    On considère l'élément de volume $dV = dudvdw$ avec $(u,v,w)$ un repère local au point tel que:
     \begin{align*}
-        \lfbrace{x &= r\cos(\theta)\sin(\varphi)\\
-        y &= r\sin(\theta)\sin(\varphi)\\
-        z &= r\cos(\theta)}
+        \lfbrace{du &= dr\\
+        dv &= rd\theta\\
+        dw &= r\sin(\theta)d\varphi}
     \end{align*}
-    L'élément d'aire d'un cercle découpe de la sphère est donnée par :
-    $dxdy = d\mathcal{S} = r dr d\theta$ par la formule de longueur d'arc
+    % L'élément d'aire d'un cercle découpe de la sphère est donnée par :
+    % $dxdy = d\mathcal{S} = r dr d\theta$ par la formule de longueur d'arc
     \begin{center}
         \def\angle{30} % Define the angle size
         \def\r{4}
@@ -954,16 +964,13 @@
             \draw[Red] (R) -- (B);
         \end{tikzpicture}
     \end{center}
-    On peut alors trouvé l'élément de volume de la sphère :
+    On a alors:
     \begin{align*}
-        dxdydz = d\V &= r dr d\theta dz\\
-        \ior z &= r\cos(\theta)\\
-        \idou dz &= r\sin(\varphi) d\varphi\\
-        \ialors d\V &= r^2 \sin(\varphi) dr d\theta d\varphi\\
-        \ialors \A &= \int_{0}^{2\pi} \int_{0}^{\pi} R^2 \sin(\varphi) d\varphi d\theta\\
-        &= \int_{0}^{2\pi} 2R^2 d\theta
+        d\V &= r^2 \sin(\theta) dr d\theta d\varphi\\
+        \ialors \A &= \int_{0}^{2\pi} \int_{0}^{\pi} R^2 \sin(\theta) d\theta d\varphi\\
+        &= \int_{0}^{2\pi} 2R^2 d\varphi
         = 4\pi R^2\\
         \iet \V &= \int_{0}^{R} 4\pi r^2 dr
         = \frac{4\pi R^3}{3}
     \end{align*}
-}
+}[\href{https://uel.unisciel.fr/chimie/strucmic/strucmic_ch03/co/apprendre_ch03_1_06.html}{Unisciel}]
