@@ -2,11 +2,11 @@
 \def\theme{Brevet Polynésie 6 Septembre 2022 (Exercice 3)}
 \def\date{08/11/2023}
 \def\authors{\fsize{8pt}
-    PESIN - CADOT - COURTIN
+    CADOT - COURTIN - PESIN
 }
 
-\def\tikzScale{0.5cm}
-\def\annexeTikzScale{0.5cm}
+\def\tikzScale{0.5}
+\def\annexeTikzScale{0.5}
 \def\gridWidth{0.1mm}
 \def\pathWidth{1mm}
 \def\arrowWidth{0.5mm}
@@ -25,7 +25,7 @@ On considère les deux scripts suivants:
 
 \begin{center} \begin{tabularx}{\linewidth}{X X}
     \multicolumn{1}{c}{Script 1}&\multicolumn{1}{c}{Script 2}\\
-    \begin{scratch}
+    \begin{scratch}[scale=0.8]
         \blockinit{Quand \greenflag est cliqué}
         \blockpen{effacer tout}
         \blockpen{stylo en position d'écriture}
@@ -37,7 +37,7 @@ On considère les deux scripts suivants:
             \blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
         }
     \end{scratch}&
-    \begin{scratch}
+    \begin{scratch}[scale=0.8]
         \blockinit{Quand \greenflag est cliqué}
         \blockpen{effacer tout}
         \blockpen{stylo en position d'écriture}
@@ -79,19 +79,19 @@ On considère les deux scripts suivants:
         %     \draw[line width= \arrowWidth, ->] (4.5,-1) -- (1,1);
         % \end{tikzpicture} &
 
-        \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
+        \begin{tikzpicture}[scale=\tikzScale]
             \drawGrid{9}{9}{\gridWidth};       
             \draw[line width= \pathWidth, red ] (1,1) -- (1,2) -- (2,2) -- (2,3) -- (3,3);
             \startRect;
         \end{tikzpicture}&
 
-        \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
+        \begin{tikzpicture}[scale=\tikzScale]
             \drawGrid{9}{9}{\gridWidth};
             \draw[line width= \pathWidth, red ] (1,1) -- (1,2) -- (2,2) -- (2,4) -- (4,4);
             \startRect;
         \end{tikzpicture}&
 
-        \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
+        \begin{tikzpicture}[scale=\tikzScale]
             \drawGrid{9}{9}{\gridWidth};
             \draw[line width= \pathWidth, red ] (1,1) -- (2,1) -- (2,2) -- (4,2) -- (4,4);
             \startRect;
@@ -104,7 +104,7 @@ On considère les deux scripts suivants:
 
 
     \begin{center}
-        \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
+        \begin{tikzpicture}[scale=\tikzScale]
             \drawGrid{9}{9}{\gridWidth};
             \draw[line width= \pathWidth, red ] (1,1) -- (1,2) -- (3,2) -- (3,6) -- (5,6) -- (5,7) -- (6,7) -- (6,1) -- cycle;
             \startRect;
@@ -129,36 +129,7 @@ On considère les deux scripts suivants:
     }
 
     \begin{center}
-        % \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
-        %     \drawfigure{0}{0}{1}{1};
-        %     \drawfigure{10}{0}{-1}{1};
-        %     \drawfigure{0}{0}{1}{-1};
-        %     \drawfigure{10}{0}{-1}{-1};
-
-        %     \drawfigure{12}{0}{1}{1};
-        %     \drawfigure{22}{0}{-1}{1};
-        %     \drawfigure{12}{0}{1}{-1};
-        %     \drawfigure{22}{0}{-1}{-1};
-
-        %     \drawfigure{6}{6}{1}{-1};
-        %     \drawfigure{16}{6}{-1}{-1};
-
-        %     \drawfigure{6}{-6}{1}{1};
-        %     \drawfigure{16}{-6}{-1}{1};
-        %     \drawfigure{6}{-6}{1}{-1};
-        %     \drawfigure{16}{-6}{-1}{-1};
-
-        %     \drawfigure{4}{-6}{-1}{1};
-        %     \drawfigure{4}{-6}{-1}{-1};
-            
-        %     \drawfigure{0}{-12}{1}{1};
-        %     \drawfigure{10}{-12}{-1}{1};
-
-        %     \drawfigure{12}{-12}{1}{1};
-        %     \drawfigure{22}{-12}{-1}{1};
-        % \end{tikzpicture}
-
-        \begin{tikzpicture}[x=\tikzScale, y=\tikzScale]
+        \begin{tikzpicture}[x = 0.5cm, y = 0.5cm]
             \foreach \x/\y/\z/\w in 
             {0/0/1/1, 
             10/0/-1/1, 
@@ -226,7 +197,7 @@ On considère les deux scripts suivants:
 
 \begin{multicols}{2}
     
-\begin{tikzpicture}[x=\annexeTikzScale, y=\annexeTikzScale]
+\begin{tikzpicture}[scale=\annexeTikzScale]
     \drawGrid{9}{9}{\gridWidth};
     \startRect;
 \end{tikzpicture}
@@ -239,23 +210,23 @@ La position de départ du stylo est indiquée sur la figure ci-contre.
 \textbf{Question 2}
 
 \begin{scratch}[scale=0.8]
-\blockinit{Quand \greenflag est cliqué}
-\blockpen{effacer tout}
-\blockpen{stylo en position d'écriture}
-\blockmove{s'orienter à \ovalnum{0}}
-\blockmove{avancer de \ovalnum{20}}
-\blockmove{tourner \turnright{} de \ovalnum{90} degrés}
-\blockmove{avancer de \ovalnum{\gap*[.]{BLANK}}}
-\blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
-\blockmove{avancer de \ovalnum{80}}
-\blockmove{tourner \turnright{} de \ovalnum{90} degrés}
-\blockmove{avancer de \ovalnum{40}}
-\blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
-\blockmove{avancer de \ovalnum{\gap*[.]{BLANK}}}
-\blockmove{tourner \turnright{} de \ovalnum{90} degrés}
-\blockmove{avancer de \ovalnum{20}}
-\blockmove{tourner \turnright{} de \ovalnum{90} degrés}
-\blockmove{avancer de \ovalnum{\gap*[.]{BLANK}}}
-\blockmove{tourner \turnright{} de \ovalnum{90} degrés}
-\blockmove{avancer de \ovalnum{100}}
+    \blockinit{Quand \greenflag est cliqué}
+    \blockpen{effacer tout}
+    \blockpen{stylo en position d'écriture}
+    \blockmove{s'orienter à \ovalnum{0}}
+    \blockmove{avancer de \ovalnum{20}}
+    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+    \blockmove{avancer de \ovalnum{\gap*[.]{BLANK}}}
+    \blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
+    \blockmove{avancer de \ovalnum{80}}
+    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+    \blockmove{avancer de \ovalnum{40}}
+    \blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
+    \blockmove{avancer de \ovalnum{\gap*[.]{BLANK}}}
+    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+    \blockmove{avancer de \ovalnum{20}}
+    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+    \blockmove{avancer de \ovalnum{\gap*[.]{BLANK}}}
+    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+    \blockmove{avancer de \ovalnum{100}}
 \end{scratch}
