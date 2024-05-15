@@ -1,0 +1,153 @@
+% VARIABLES %%%
+\def\authors{Jules PESIN}
+\date{mercredi 14 mai 2024}
+\def\longTitle{Exploration des jeux de cadres et de la dialectique outil-objet appliqués à la remédiation dans l'apprentissage des puissances au collège}
+\def\shortTitle{Jeux de cadres \& dialectique outil objet}%% - remédiation puissances collège}
+\def\theme{\longTitle}
+
+%%
+
+% \disableAnimation
+% \shortAnimation
+% \firstSlide
+
+\def\imgPath{memoire/}
+\def\imgExtension{.png}
+
+\maketitle
+
+\section*{Introduction}
+\slide{}{
+    \begin{itemize}
+        \onslide<1>{\item Stagaire au collège Janson de Sailly.
+        \item Classe de $\mathbf{4^e}$.}
+        \pause \item Difficultés rencontrées sur le concept des \textbf{puissances} lors de la séquence dédiée.
+        \item Recherche d'une méthode de rémédiation efficace.
+    \end{itemize}
+}
+\section*{Plan}
+\slide{}{
+    \tableofcontents
+}
+
+\section{Retour sur le mémoire}
+\subsection{Résumé théorique}
+\slide{}{
+    \begin{itemize}
+        \onslide<1>{\item Régine Douady:
+        \textit{Jeux de cadre et dialectique outil-objet}}
+        \onslide<2>{\item \textbf{Jeux de cadre}:
+        Explorer et comprendre les concepts mathématiques en \textbf{alternant} entre différents \textbf{cadres} ou \textbf{perspectives} (algébrique, géométrique, numérique...)}
+        \onslide<3>{\item \textbf{Dialectique outil-objet}:
+        Les concepts mathématiques servent à la fois d'\textbf{outils} pour \textbf{effectuer des opérations} et \textbf{résoudre des problèmes},
+        et d'\textbf{objets d'étude théoriques}.}
+    \end{itemize}
+}
+\subsection{Première expérimentation}
+\subsubsection{Méthodologie}
+\slide{}{
+    \begin{itemize}
+        \onslide<1>{\item Douady:
+        \textit{Enseignement de la dialectique outil-objet et des jeux de cadres en formation mathématique des professeurs d’école}
+        $\rightarrow$ jeu des cibles (\textbf{numérique} et \textbf{arithmétique}) et défis du rectangle (formule d'aire outil, \textbf{géométrique}, \textbf{algébrique} et \textbf{numérique})}
+        \onslide<2>{\item Capponi et Sutherland:
+        \textit{Interaction des cadres algébriques et graphiques dans la résolution de problèmes}
+        \\$\rightarrow$ expérimentation avec \textbf{Cabri-Géomètre} (\textbf{algébrique} et \textbf{géométrique})}
+        \onslide<3>{\item Brousseau :
+        \textit{Fondements et méthodes de la didactique des mathématiques}
+        $\rightarrow$ situation \textbf{a-didactique}}
+    \end{itemize}
+}
+
+\subsubsection{Activité}
+\slide{}{
+    \begin{itemize}
+        \item Activité \textbf{Géogebra}.
+        \item \textbf{Hauteurs} issue de l'angle droit (cadre \textbf{géométrique})
+        \item \textbf{Mesure} de la hauteur (cadre \textbf{numérique})
+        \item Passage à une \textbf{formule de calcule} de la hauteur du triangle $n$ : $2^n$ (cadre \textbf{algébrique}).
+    \end{itemize}
+}
+
+\slide{}{
+    \onslide<1>{\begin{itemize}
+        % \item \textbf{Puissances} utilisé comme \textbf{outil} pour calculer des hauteurs de triangle
+        % et comme \textbf{objet} pour la propriété de passage d'un triangle au suivant.
+        \item \textbf{Puissances} comme \textbf{objet} (écriture de produits de même terme)
+        et \textbf{outil} (de calcul de mesure de hauteur)
+    \end{itemize}}
+    \pause \pr{Hauteur du triangle rectangle}{
+        \small
+        \def\a{2.1}
+        \begin{columns}[T]
+            \begin{column}{.45\textwidth}
+                \begin{center}
+                    \begin{tikzpicture}[scale = 0.25]
+                        \tkzDefPoint(0,\a**2){A}
+                        \tkzDefPoint(\a,0){B}
+                        \tkzDefPoint(-\a**3,0){C}
+                        \tkzDefPoint(0,0){H}
+                        \draw[very thick] (A)--(B)--(C)--cycle;
+                        \tkzMarkRightAngle[scale=1.5](B,A,C)
+                        \tkzMarkRightAngle[scale=1.5](A,H,C)
+                        \tkzLabelPoints[above](A)
+                        \tkzLabelPoints[below right](B)
+                        \tkzLabelPoints[below left](C)
+                        \tkzLabelPoints[below](H)
+                        \draw[very thick, red] (A)--(H);
+                    \end{tikzpicture}
+                \end{center}
+            \end{column}
+            \begin{column}{.5\textwidth}
+                Soit $ABC$ rectangle en $A$ et $H$ intersection de $(BC)$ et de la hauteur issue de $A$.
+                On a:
+                \begin{align*}
+                    HA ^ 2 = HB \times HC
+                \end{align*}
+            \end{column}
+        \end{columns}
+    }
+}
+
+\section{Seconde expérimentation}
+\subsection{Analyse a priori}
+\slide{}{
+    \begin{itemize}
+        \item \textbf{Adaptation} pour les difficultés observées:
+        \begin{itemize}
+            \item Rappel: sur les \textbf{hauteurs issue d'un sommet} dans un triangle.
+            \item \textbf{Géogebra simplifié} : $[AB]$ tracé et outil droite retiré.
+            \item Méthode de \textbf{construction du premier triangle} donnée au bout de quelques minutes.
+        \end{itemize}
+    \end{itemize}
+}
+\subsection{Analyse a posteriori}
+\slide{}{
+    \begin{itemize}
+        \onslide<1>{\item Séances plus \textbf{efficace}.}
+        \onslide<2->{\item Plus de temps pour \textbf{confrontés les difficultés intéressantes}}
+        \vspace*{-0.5cm}
+        \begin{columns}
+            \begin{column}{.45\textwidth}
+                \begin{itemize}
+                    \onslide<2>{\item distinction \textbf{croissance exponentielle} et \textbf{linéaire} ($2n$ vs $2^n$).}
+                    \onslide<3>{\item questionnement sur ce qui est convenable comme \textbf{écriture} dans le \textbf{cadre numérique}.}
+                    \onslide<4>{\item passage aux \textbf{puissances négatives}}
+                \end{itemize}
+            \end{column}
+            \begin{column}{.55\textwidth}
+                \imgp{ecriture}
+            \end{column}
+        \end{columns}
+        
+    \end{itemize}
+}
+
+\section*{Conclusion}
+\slide{}{
+    \begin{itemize}
+        \item Jeux de cadre et dialectique outil-objet: \textbf{outils} efficaces d'\textbf{analyse d'activité} mathématique.
+        \item Permettent de \textbf{cibler} et d'\textbf{exploiter} efficacement les \textbf{difficultés} des élèves,
+        afin de concevoir des \textbf{activité de remédiation pertinentes}
+    \end{itemize}
+}

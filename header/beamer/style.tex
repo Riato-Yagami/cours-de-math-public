@@ -1,11 +1,46 @@
-% THEMES 
+% THEMES
+% http://mcclinews.free.fr/latex/beamergalerie/completsgalerie.html
 % default
 % \usetheme{Madrid}
 % \usetheme{CambridgeUS}
 
 % tree
-% \usetheme{Antibes}
-\usetheme{Montpellier}
+% \usetheme{Montpellier}
+% \usetheme{Juanlespins}
+
+\usetheme{Antibes}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\setbeamertemplate{headline}
+{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.125ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}
+        \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}
+    \ifx\insertsectionhead\empty\else
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.125ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{section in head/foot}
+        \usebeamerfont{section in head/foot}%
+        \hskip6pt \insertsectionhead % Removed section number
+    \end{beamercolorbox}
+    \fi
+    \ifx\insertsubsectionhead\empty\else
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.125ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+        \usebeamerfont{subsection in head/foot}%
+        \hskip12pt \thesubsection{} \insertsubsectionhead
+    \end{beamercolorbox}
+    \fi
+    \ifx\insertsubsubsectionhead\empty\else
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.125ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{section in head/foot}
+        \usebeamerfont{subsubsection in head/foot}%
+        \hskip18pt \thesubsubsection{} \insertsubsubsectionhead
+    \end{beamercolorbox}
+    \fi
+}
+
+% \setbeamertemplate{headline}{%
+%     \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex]{section in head/foot}
+%         \insertnavigation{\paperwidth}
+%     \end{beamercolorbox}%
+% }
 
 
 % lateral
@@ -29,5 +64,7 @@
     text margin right=1.5cm
 }
 
+\setbeamercovered{transparent = 25}
+
 % \setbeamertemplate{enumerate items}[square]
-\setbeamertemplate{enumerate items}[default]
+% \setbeamertemplate{enumerate items}[default]
