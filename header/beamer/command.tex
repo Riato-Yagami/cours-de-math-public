@@ -19,12 +19,14 @@
 }
 
 \newcommand{\bsec}[1]{
+    \section{#1}
     \def\ssec{\color{Red} \Roman{sec}. #1\color{black}\\}
     \stepcounter{sec}
     \setcounter{subsec}{0}
 }
 
 \newcommand{\bsubsec}[1]{
+    \subsection{#1}
     \def\ssubsec{\color{Green} \thesubsec) #1\color{black}\\}
     \stepcounter{subsec}
 }
@@ -34,6 +36,10 @@
     % \alt<#1->{\result{#2}}{\pgfinvisible #2 \pgfshown}
     % \alt<#1->{\result{#2}}{\textcolor{white}{#2}}
     % \alt<#1->{#2}{\awsr{#2}}
+}
+
+\NewDocumentCommand{\aalt}{O{2} m m}{%
+    \alt<#1>{#2}{#3}
 }
 
 \newcounter{question}

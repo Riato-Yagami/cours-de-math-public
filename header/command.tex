@@ -412,6 +412,19 @@
     \end{enumerate}
 }
 
+% Define a new boolean for checking if the section is starred
+\newboolean{section@star}
+
+\makeatletter
+% Redefine \section and \section* to set the boolean
+\let\old@section\section
+\renewcommand{\section}{%
+    \@ifstar
+        {\setboolean{section@star}{true}\old@section*}
+        {\setboolean{section@star}{false}\old@section}%
+}
+\makeatother
+
 \newcommand{\qt}[1]{«\textit{#1}»}
 
 \newcommand{\calc}[1]{\numexpr#1\relax}

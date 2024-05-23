@@ -62,7 +62,7 @@
 \newcommand{\newsec}[4]{ % #1 Level | #2 Code | #3 Color | #4 Type
     \newcounter{#2}
 
-    \expandafter\NewDocumentCommand\csname #2\endcsname{mmo}{ % ##1 Title | ##2 Content
+    \expandafter\NewDocumentCommand\csname #2\endcsname{m +m o}{ % ##1 Title | ##2 Content
         \stepcounter{#2}
 
         \def\sectionID{\csname the#2\endcsname}

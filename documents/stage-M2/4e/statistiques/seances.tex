@@ -1,8 +1,8 @@
 % VARIABLES %%%
-\def\authors{CADOT - COURTIN - PESIN}
+\def\authors{CADOT - COURTIN - \href{https://juels.dev/}{PESIN}}
 % \date{\today}
 \def\longTitle{Statistiques}
-\def\shortTitle{Statistiques}
+\def\shortTitle{\MakeUppercase{\longTitle}}
 \def\theme{\longTitle}
 %%
 
@@ -16,38 +16,63 @@
 \bsec{Rappel}
 
 \slide{COURS}{
-    % \ssec
-    \exo{Myriade 8 p161}{
-        \imgp{exo_8_p161}
+    \bseq{Statistiques}
+    \ssec%
+    \vspace*{-0.5cm}
+    \exo{Myriade 8 p161}{%
+        \vspace*{-0.5cm}
+        \imgp{exo_8_p161}[7cm]
         A quelle fréquence apparait le tarif de 15$\euro$?
     }
 }
 
-\exoslide{activite_1_p156}
-
-\bsec{Définition}
+\bsec{Définitions}
 
 \slide{}{
-    \df{Médianne}{
-        La médianne est une valeur qui partage la série ordonné par ordre croissant,
-        tel que les deux sous-séries est le même effectifs.
-    }
-
-    \expl{Série à effectifs total impair}{
-        56 ; 67 ; 10 ; 35 ; 43 ; 9 ; 8\\
-        \begin{enumerate}
-            \item Ordonner les valeur de la série statistique par ordre croissant.
-            \item Trouver la position de la médianne.
-            \item Donner la médianne.
-        \end{enumerate}
-    }
-
-    \expl{Série à effectifs total pair}{
-        56 ; 67 ; 10 ; 35 ; 43 ; 9 ; 8\\
-        \begin{enumerate}
-            \item Ordonner les valeur de la série statistique par ordre croissant.
-            \item Trouver la position de la médianne.
-            \item Donner la médianne.
-        \end{enumerate}
+    \ssec \vspace*{-0.25cm}
+    \act{1 p 156}{\vspace*{-0.75cm}%
+        \imgp{activite_1_p156}[9.5cm]
     }
 }
+
+\slide{}{
+    \df{médiane}{
+        Une médiane est une valeur qui partage une série numérique ordonnée par ordre croissant en deux sous-séries de même effectif.
+    }
+
+    \df{étendue}{
+        L'étendue d'une série numérique est la différence entre la plus grande valeur et la plus petite valeur de cette série.
+    }
+}
+
+\slide{}{
+    \expl{Pour les deux séries qui suivent}{\vspace*{-0.5cm}
+        \begin{enumerate}
+            \item Ordonner les valeurs de la série statistique par ordre croissant.
+            \item Trouver la position d'une médiane.
+            \item Donner une médiane.
+            \item Donner l'étendue.
+        \end{enumerate}
+
+        \aalt{%
+            Série à effectif total impair :
+            \begin{align*}
+                56 ; 67 ; 10 ; 35 ; 43 ; 9 ; 8
+            \end{align*}}
+        {%
+            Série à effectif total pair :
+            \begin{align*}
+                3 ; 16 ; 10 ; 500 ; 12 ; 9 ; 60 ; 9
+            \end{align*}
+        }
+    }
+}
+
+\section*{Exercices}
+
+\exoList{2 p160, 3p160, 4p160, 5p160}[][4]
+
+\exoslide{exo_2_p160}
+\exoslide{exo_3_p160}
+\exoslide{exo_4_p160}
+\exoslide{exo_5_p160}
