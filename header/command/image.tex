@@ -1,0 +1,51 @@
+\def\imgPath{}
+\def\imgExtension{}
+
+\newcommand{\imgf}[1]{\imgPath #1\imgExtension}
+
+\NewDocumentCommand{\limg}{m O{\linewidth}}{%
+    \includegraphics[width=#2]{#1}%
+}
+
+\newsavebox{\picbox}
+
+\newcommand{\cutpic}[3]{
+    \savebox{\picbox}{\includegraphics[width=#2]{#3}}
+    \tikz\node [draw, rounded corners=#1, line width=4pt,
+    color=white, minimum width=\wd\picbox,
+    minimum height=\ht\picbox, path picture={
+        \node at (path picture bounding box.center) {
+        \usebox{\picbox}};
+    }] {};
+}
+
+\NewDocumentCommand{\rimg}{m O{\linewidth}}{%
+    \begin{center}
+        \cutpic{0.4cm}{#2}{#1}
+    \end{center}
+}
+
+\NewDocumentCommand{\imgp}{m O{\linewidth} O{0cm} o}{%
+    \img{\imgf{#1}}[#2]
+}
+
+\NewDocumentCommand{\img}{m O{\linewidth} O{0cm} o}{%
+    \begin{figure}[H]%
+        \centering%
+        \hspace*{#3}
+        \includegraphics[width=#2]{#1}%
+        \IfValueTF{#4}{
+            \caption{\underline{#4}}
+            % \vspace{-0.4cm}
+            }{
+            % \vspace{-0.4cm}
+        }
+        \vspace{-0.45cm}
+    \end{figure}%
+}
+
+\newcommand{\icon}[1]{%
+    \adjustbox{valign=m, raise=-0.2ex}{%
+        \includegraphics[height=15pt]{\imgf{#1}}%
+    }%
+}
