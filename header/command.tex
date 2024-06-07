@@ -308,6 +308,14 @@
     \end{multicols}
 }
 
+\newcommand{\multiColEnumerate}[2]{
+    \begin{multicols}{#1}
+        \begin{enumerate}
+            #2
+        \end{enumerate}
+    \end{multicols}
+}
+
 \makeatletter
 \newcommand\pgfinvisible{\pgfsys@begininvisible}
 \newcommand\pgfshown{\pgfsys@endinvisible}
@@ -346,11 +354,12 @@
     }
 }
 
-\NewDocumentCommand{\exoList}{m O{} O{3}}{
+\NewDocumentCommand{\exoList}{m O{} O{3}}{%
+    \section*{Exercices}%
     \slide{EXERCICES}{
         \exo{#2}{
             \vspace{-0.25cm}
-            \multiColItemize{#3}{
+            \multiColEnumerate{#3}{
                 \foreach \q in {#1}{
                     \item \q
                 }
