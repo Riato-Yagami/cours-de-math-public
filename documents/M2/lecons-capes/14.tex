@@ -1,0 +1,83 @@
+% VARIABLES %%%
+\def\theme{Transformations du plan. Frises et pavages.}
+\def\date{24/10/2023}
+%%%%%%%%%%%%%%%
+
+\leconInfo{
+    \niv{cycle 3}{Symetrie axiale}
+    \niv{5e}
+    \niv{3e}
+}{
+    \item Prerequis
+}
+
+\df{Transformation géométrique}
+Une \textbf{transformation géométrique} est 
+une bijection d'une partie d'un ensemble géométrique dans lui-même.
+
+\df{Similitude}
+Une \textbf{similitude} est une transformation 
+qui multiplie toutes les distances par une constante fixe, appelée son \textbf{rapport}.\\
+L'image de toute figure par une similitude est une \textbf{figure semblable}\\
+Une similitude est dite \textbf{directe} quand elle conserve l’orientation des figures,
+\textbf{indirecte} quand elle inverse leur orientation.
+
+\thm{}
+Une transformation du plan est une similitude:
+\begin{itemize}
+    \item directe 
+    \ssi{} son écriture complexe est de la forme:
+    $z'=az+b$ avec $(a,b)\in\m{C^*}\times\m{C}$
+    \item indirecte
+    \ssi{} son écriture complexe est de la forme:
+    $z'=a\overline{z}+b$ avec $(a,b)\in\m{C^*}\times\m{C}$
+\end{itemize}
+
+\demo{}\href{https://www.wikiwand.com/fr/Similitude_(g%C3%A9om%C3%A9trie)#Expression_complexe}{Wikipédia}
+
+\df{Isométrie}
+Une \textbf{isométrie} est une similitude qui conserve les mesures de longueurs et d'angles.
+
+\df{Rotation plane}
+Une \textbf{rotation plane} est une isométrie
+qui fait tourner les figures autour d'un point et d'un certain angle.
+
+\pr{Expression complexe d'un rotation}
+La rotation de centre $R$ et d'angle $\Theta$ a pour expression complexe:
+\begin{equation*}
+    z'=e^{i\Theta}(z-z_r)+z_r
+\end{equation*}
+
+\df{Rotation affine}
+Dans un espace affine euclidien orienté, une \textbf{rotation affine} est définie par la donnée d'un point $\Omega$
+(le centre de la rotation, qui reste invariant par celle-ci) et d'une rotation vectorielle $r$ associée.
+Si $P$ est un point de l'espace affine, son image par la rotation affine est le point $Q$ tel que:
+$\vect{\Omega Q} = r(\vect{\Omega Q})$
+
+\df{Symétrie centrale}
+Dans le plan euclidien, les symétries centrales sont les rotations d'un demi-tour.
+$\vect{\Omega Q} = -\vect{\Omega Q}$
+
+\df{Symétrie axiale}
+Une \textbf{symétrie axiale} ou \textbf{réflexion}, isométrie indirecte,
+est une symétrie orthogonale par rapport à une droite.
+
+\df{Translation}
+Une \textbf{translation} est une isométrie directe 
+qui correspond à l'idée intuitive de "glissement" d'un objet, sans rotation, retournement ni déformation de cet objet.
+
+\pr{Expression complexe d'une translation}
+La translation de vecteur $\vect{u}$ à pour expression complexe:
+\begin{equation*}
+    z' = z + t
+\end{equation*}
+
+\df{Homothétie}
+Une \textbf{homothétie} est une similitude par agrandissement ou réduction.\\
+Elle se caractérise par son centre, point invariant, et un rapport qui est un nombre réel.
+
+\pr{Expression complexe d'une homothétie}
+L'homothétie de centre $A$ et de rapport $k$ à pour expression complexe:
+\begin{equation*}
+    z'= k(z-a) + a
+\end{equation*}
