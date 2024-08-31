@@ -1,0 +1,43 @@
+% VARIABLES %%%
+\def\authors{\href{https://juels.dev/}{Jules PESIN}}
+% \date{\today}
+\def\longTitle{Divisibilité et nombres premiers}
+\setcounter{seq}{1}
+\bseq{\longTitle}
+
+\setboolean{showRef}{false}
+
+\def\my{Myriade 5e}
+% \newcommand{\myl}[1]{\href{#1}{\my}}
+
+\def\imgPath{enseignement/4e/divisibilite-et-nombres-premiers/}
+\def\imgExtension{.png}
+%%
+
+% Yvan Monka : https://www.maths-et-tiques.fr/telech/19Divi-np.pdf
+% Crible d'Ératosthène : https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne
+% Juniper Green : https://fr.wikipedia.org/wiki/Juniper_Green_(jeu)
+
+\qf{
+    {$2$ divise : \choice{$4$} \choice{$5$} \choice{$6$}, \choicea{1} et \choicea{3}},
+    {$6$ divise : \choice{$18$} \choice{$12$} \choice{$2$}, \choicea{1} et \choicea{2}},
+    {$30$ est divisible par : \choice{$3$} \choice{$10$} \choice{$5$} \choice{$4$}, \choicea{1}{,} \choicea{2} et \choicea{3}},
+    {Quels nombres sont premiers ? : \choice{$6$} \choice{$13$} \choice{$2$} \choice{$1$}, \choicea{2} et \choicea{3}}%
+}
+
+\bsec{Nombres premiers}
+
+\slide{COURS}{
+    \sseq\ssec
+    \df{}{
+        Un entier est \key{premier} s'il a exactement deux diviseurs différents 1 et lui même.
+    }
+}
+
+\slide{}{
+    \act{Crible d'Ératosthène}{
+        \imgp{crible-d-eratosthene}[5cm]
+    }
+}
+
+\bsec{Décomposition en facteurs premiers}

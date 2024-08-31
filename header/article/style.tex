@@ -11,9 +11,15 @@
 \titleformat{\subsubsection}
 {\normalfont\small\bfseries\color{\SubSubSectionColor}}{\thesubsubsection}{0.6em}{}
 
-\renewcommand{\theenumi}{\small\color{Blue}\arabic{enumi}}
 
-\renewcommand{\labelenumii}{\scriptsize\color{RoyalBlue}\alph{enumii})}
 % \renewcommand{\theenumii}{.\arabic{enumii}}
 % \frenchbsetup{StandardItemLabels=true}
+\renewcommand{\theenumi}{\small\color{Blue}\arabic{enumi}}
+\renewcommand{\labelenumii}{\scriptsize\color{RoyalBlue}\alph{enumii})}
 \renewcommand{\labelitemi}{$\color{Blue}.$}
+
+\newcommand*{\setItemColor}[1]{
+    \renewcommand{\theenumi}{\small\color{#1}\arabic{enumi}}
+    \renewcommand{\labelenumii}{\scriptsize\color{#1}\alph{enumii})}
+    \renewcommand{\labelitemi}{$\color{#1}\blacksquare$}
+}

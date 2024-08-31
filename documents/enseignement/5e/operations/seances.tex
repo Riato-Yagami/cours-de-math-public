@@ -1,0 +1,73 @@
+% VARIABLES %%%
+\def\authors{\href{https://juels.dev/}{Jules PESIN}}
+% \date{\today}
+\def\longTitle{Opérations}
+\setcounter{seq}{1}
+\bseq{\longTitle}
+
+\setboolean{showRef}{false}
+
+\def\my{Myriade 5e}
+\newcommand{\myl}[1]{\href{#1}{\my}}
+
+\def\imgPath{enseignement/5e/operations/}
+\def\imgExtension{.png}
+%%
+
+% Yvan Monka : https://www.maths-et-tiques.fr/telech/19Calcul_num.pdf
+
+\qf{
+    {$3+10-7$,$=6$},
+    {$5{,}5-3+2$,$=4{,}5$},
+    {$4+6\times2$,$= 16$},
+    {$8\div2+8$,$= 12$},
+    {$2\times(5+3)$,$= 16$}%
+}[10]
+
+\bsec{Ordre opératoires}
+\bsubsec{Sans parenthèse}
+
+\slide{COURS}{
+    \sseq\ssec\ssubsec
+
+    \rl{}{
+        Les calculs se font dans l’ordre des priorités suivant:%
+        \begin{enumerate}
+            \item La multiplication et la division
+            \item L'addition et la soustraction
+        \end{enumerate}
+    }
+}
+
+\slide{}{
+    \rl{}{
+        En cas d’opérations de mêmes priorités, on effectue les opérations de gauche à droite.
+    }
+}
+
+\bsubsec{Avec parenthèse}
+\slide{}{
+    \ssubsec
+    \rl{}{
+        On commence par effectuer les calculs entre parenthèses.
+    }
+}
+
+\bsec{Vocabulaire opératoires}
+\slide{}{
+    \ssec
+    \vc{}{
+        On connait quatres types d'opérations:
+        \begin{itemize}
+            \item L'addition permet de calculer la \key{somme} de deux \key{termes}.
+            \item La soustraction  permet de calculer la \key{différence} entre deux \key{termes}.
+            \item La multiplication permet de calculer la \key{produit} de deux \key{facteurs}.
+            \item La division permet de calculer la \key{quotient} de deux \key{nombres}.
+        \end{itemize}
+    }
+}
+
+\slide{}{
+    \pr{}{Dans un calculs,
+    la dernière opérations détermine le nom pour désigner le calcul en entier.}
+}
