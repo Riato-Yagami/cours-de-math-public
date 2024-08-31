@@ -1,0 +1,178 @@
+% VARIABLES %%%
+\def\authors{\href{https://juels.dev/}{Jules PESIN}}
+% \date{\today}
+\def\longTitle{Relations géométriques}
+\def\shortTitle{\MakeUppercase{\longTitle}}
+\def\theme{\longTitle}
+
+\setboolean{showRef}{false}
+
+\def\my{Myriade 6e}
+\newcommand{\myl}[1]{\href{#1}{\my}}
+
+\def\imgPath{enseignement/6e/relations-geometriques/}
+\def\imgExtension{.png}
+%%
+
+% Yvan Monka : https://www.maths-et-tiques.fr/telech/19Para_Perp.pdf
+
+% \disableAnimation
+% \shortAnimation
+% \firstSlide
+
+% \qf{
+%     {$70\euro$ diminué de $10\%$, $63\euro$},
+%     {$50\euro$ augmenté de $20\%$, $\pcalc{50*120/100}\euro$}%
+% }[15]
+
+
+
+% \qfSUB{}{}
+\slide{QUESTIONS FLASH}{%
+    \sqf Comment peut-on nommer la droite ci-dessous?
+    \vspace*{-0.5cm}
+    \imgp{qf1}[5cm]
+    \qfs $(AB)$ \hfill \qfs $[AB]$ \hfill \qfs $(BA)$ \hfill \qfs $(d)$ \hfill \qfs $AB$ \hfill
+    \vspace*{0.5cm}
+    \\ \hint{plusieurs réponses sont attendus}
+}
+
+\slide{}{
+    \sqf Quels points semblent alignés?
+    \vspace*{-0.5cm}
+    \imgp{qf2}[5cm]
+    \qfs $A$ et $F$ \hfill \qfs $A$,$D$ et $F$ \hfill \qfs $A$,$C$ et $D$ \hfill \qfs $C$,$A$ et $D$ \hfill
+    \vspace*{0.5cm}
+    \\ \hint{plusieurs réponses sont attendus}
+}
+
+\slide{}{
+    \sqf Les droites $(f)$ et $(g)$ semblent être:
+    \vspace*{-0.5cm}
+    \imgp{qf3}[5cm]
+    \qfs Séquentes \hfill \qfs Parallèles \hfill \qfs Perpendiculaires \hfill
+    \vspace*{0.5cm}
+    \\ \hint{plusieurs réponses sont attendus}
+}
+
+\slide{}{
+    \sqf Quelles droites semblent parallèles:
+    \vspace*{-0.5cm}
+    \imgp{qf4}[5cm]
+    \qfs $(AB) \et (CE)$ \hfill \qfs $(AB) \et (DC)$ \hfill \qfs $(CD) \et (EB)$ \hfill
+    \vspace*{0.5cm}
+    % \\ \hint{plusieurs réponses sont attendus}
+}
+
+\bsec{Définitions}
+\bsubsec{Alignement}
+\slide{COURS}{
+    \bseq{\longTitle}
+    \ssec\ssubsec%
+
+    \df{}{
+        Des points sont \key{alignés} s'il existe une droite passant par tous ces points.
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \dividePage{
+            \imgp{alignement}[5cm]
+        }{
+            Les points $A$, $C$ et $B$ sont alignés.\\
+            Les points $A$, $D$ et $B$ ne sont pas alignés.
+        }[0.35]
+    }
+    \rmk{}{
+        Deux points peuvent toujours être relié par une droite et sont donc toujours alignés.
+    }
+}
+
+\bsubsec{Relations entre des droites}
+
+\slide{}{
+    \ssubsec%
+    %
+    \df{}{
+        Deux droites sont \key{sécantes} si elles se coupe en un unique point.
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \dividePage{
+            \imgp{secantes}[5cm]
+        }{
+            Les droites $(AE)$ et$(BD)$ sont sécantes.\\ $C$ est leur point d'intersection.
+        }[0.45]
+    }[\myl{https://biblio.manuel-numerique.com?openBook=9782047392935\%3FY29udGV4dGVSZXNvdXJjZT17InR5cGUiOiJhcnRpY2xlIiwiaWRyZWYiOiJpZF9DaGFwdGVyXzAxMl9ab29tX0dyYXBoaWNfNTUxX1NDUl94aHRtbCIsImFydGljbGVUeXBlIjoiem9vbSJ9}]
+}
+
+\slide{}{
+    \df{}{
+        Deux droites sont \key{perpendiculaires} si elles sont sécantes et leur intersection forme un angle droit.
+    }
+    \expl{}{
+        \dividePage{
+            \imgp{perpendiculaires}[4cm]
+        }{
+            Les droites $(EF)$ et$(GF)$ sont perpendiculaires.\\ On note $(EF) \perp (GF)$.
+        }[0.35]
+    }[\myl{https://biblio.manuel-numerique.com?openBook=9782047392935\%3FY29udGV4dGVSZXNvdXJjZT17InR5cGUiOiJhcnRpY2xlIiwiaWRyZWYiOiJpZF9DaGFwdGVyXzAxMl9ab29tX0dyYXBoaWNfNTUyX1NDUl94aHRtbCIsImFydGljbGVUeXBlIjoiem9vbSJ9}]
+}
+
+\slide{}{
+    \df{}{
+        Deux droites sont \key{parallèles} si elles ne sont pas sécantes.
+    }
+    \expl{}{
+        \dividePage{
+            \imgp{paralleles}[4cm]
+        }{
+            Les droites $(d)$ et$(d')$ sont parallèles.\\ On note $(d) \parallel (d')$.
+            \rmk{}{Deux droites parallèles conservent le même écartement}
+        }[0.3]
+    }[\myl{https://biblio.manuel-numerique.com?openBook=9782047392935\%3FY29udGV4dGVSZXNvdXJjZT17InR5cGUiOiJhcnRpY2xlIiwiaWRyZWYiOiJpZF9DaGFwdGVyXzAxMl9ab29tX0dyYXBoaWNfNTUzX1NDUl94aHRtbCIsImFydGljbGVUeXBlIjoiem9vbSJ9}]
+}
+
+\bsec{Construction}
+\bsubsec{Perpendiculaires}
+\slide{}{
+    \ssec\ssubsec
+    \dividePage{
+        \exo{}{Construire la droite perpendiculaires à $(d)$ passant par $A$.
+        \imgp{construction}[5cm]}
+    }{
+        \mthd{}{
+            \imgp{construction-perpendiculaire}[5cm]
+        }
+    }
+}
+
+\bsubsec{Parallèles}
+\slide{}{
+    \ssubsec
+    \dividePage{
+        \exo{}{Construire la droite parallèles à $(d)$ passant par $A$.
+        \imgp{construction}[5cm]}
+    }{
+        \mthd{}{
+            \imgp{construction-parallele}[5cm]
+        }
+    }
+}
+
+\bsec{Propriété du parallélisme}
+\slide{}{
+    \ssec
+    \pr{}{}
+}
+
+\slide{}{
+    \pr{}{}
+}
+
+\slide{}{
+    \pr{}{}
+}
