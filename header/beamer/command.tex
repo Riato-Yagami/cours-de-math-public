@@ -15,7 +15,10 @@
 % }
 
 \newcommand{\bseq}[1]{
-    \color{Red} CHAPITRE : #1\color{black}\\
+    \def\sseq{\color{Red} CHAPITRE \theseq{} : #1\color{black}\\}
+    \def\shortTitle{\MakeUppercase{#1}}
+    \def\theme{#1}
+    \setcounter{sec}{0}
 }
 
 \newcommand{\bsec}[1]{
@@ -91,18 +94,18 @@
     }
 }
 
-\newcounter{qf}
 \newcounter{timer}
 \NewDocumentCommand{\qf}{m O{15}}{
     \setcounter{qf}{0}
     \slide{EXERCICES}{\qfSUB{}{
         \begin{itemize}
             \item \large $#2\sec$ par question
-            \item \listSize{#1}\thesize questions
+            \item \listSize{#1}\thesize{} questions
         \end{itemize}
     }}
     \foreach \q in {#1}{
         \stepcounter{qf}
+        \setcounter{choice}{1}
         % Timer slides
         \setcounter{timer}{#2}
         \whiledo{\thetimer>0}{
@@ -127,4 +130,16 @@
     \slide{QUESTIONS FLASH}{
         \qfRes{#1}
     }
+}
+
+\NewDocumentCommand{\dividePage}{mm O{0.5}}{
+    \pgfmathparse{1-#3}
+    \begin{columns}[T]
+        \begin{column}{#3\textwidth}
+            #1
+        \end{column}
+        \begin{column}{\pgfmathresult\textwidth}
+            #2
+        \end{column}
+    \end{columns}
 }

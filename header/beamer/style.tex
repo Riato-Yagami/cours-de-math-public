@@ -70,10 +70,11 @@
 % \usecolortheme{beaver}
 \usecolortheme{spruce}
 \definecolor{links}{HTML}{e6ffe6}
+\definecolor{hyperlinks}{HTML}{06ff06}
 \hypersetup{
     colorlinks = true,
     linkcolor = links, % Apply the color to internal links
-    urlcolor = links   % Apply the color to URLs
+    urlcolor = hyperlinks   % Apply the color to URLs
 }
 
 % \setbeamercolor{item}{fg=ForestGreen}
@@ -89,3 +90,7 @@
 
 % \setbeamertemplate{enumerate items}[square]
 % \setbeamertemplate{enumerate items}[default]
+
+\newcommand*{\setItemColor}[1]{
+    \setbeamercolor{item}{fg=#1}
+}

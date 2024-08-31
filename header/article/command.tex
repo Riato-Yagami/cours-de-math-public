@@ -1,10 +1,11 @@
 % BEAMER CONVERSION
 
 % \newcommand{\bchap}[1]{\def\title{Chapitre: #1}}
-\newcommand{\bseq}[1]{\def\title{Séquence: #1}}
+\newcommand{\bseq}[1]{\def\title{\textbf{\color{Red} Chapitre \theseq{} : #1}}}
 \newcommand{\bsec}[1]{\section{#1}}
 \newcommand{\bsubsec}[1]{\subsection{#1}}
 
+\newcommand{\sseq}{}
 \newcommand{\ssec}{}
 \newcommand{\ssubsec}{}
 
@@ -31,7 +32,6 @@
 \newenvironment{columns}[1][T]{}{}
 \newenvironment{column}[1]{\begin{minipage}{#1}}{\end{minipage}}
 
-\newcounter{qf}
 \NewDocumentCommand{\qf}{m O{15}}{
     \qfSUB{}{
         \qfRes{#1}
@@ -61,4 +61,16 @@
 \newcommand{\changelocaltocdepth}[1]{%
     \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
     \setcounter{tocdepth}{#1}%
+}
+
+\NewDocumentCommand{\dividePage}{mm O{0.5}}{
+    \pgfmathparse{1-#3}
+    % \newcount\secondPage
+    % \pgfmathsetcount{\secondPage}{\pgfmathresult}
+    \begin{minipage}{#3\linewidth}
+        #1
+    \end{minipage}
+    \begin{minipage}{\pgfmathresult\linewidth}
+        #2
+    \end{minipage}
 }

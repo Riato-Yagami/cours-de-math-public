@@ -1,3 +1,6 @@
+\xdef\currentSection{null}
+\xdef\currentColor{black}
+
 \newcommand{\parseSecContent}[2]{% Color | Content
     \ifNotNull{#2}{%
         \begin{mysection}[#1]
@@ -18,13 +21,13 @@
 \newcommand{\parseSec}[4]{% Color | Title | Content | Type
     \def\secContent{\parseSecContent{#1}{#3}}
     \def\secTitle{\parseSecTitle{#1}{#2}{#4}}
-
+    %
     \@ifclassloaded{beamer}{
-        \textbf{\secTitle}
+        \textbf{\secTitle}\vspace*{-0.25cm}
     }{
         \subsection*{\secTitle}
     }
-
+    %
     \ifthenelse{\boolean{outline}}{}{\secContent}
 }
 \makeatother
@@ -63,6 +66,11 @@
     \newcounter{#2}
 
     \expandafter\NewDocumentCommand\csname #2\endcsname{m +m o}{ % ##1 Title | ##2 Content
+        
+        \xdef\currentSection{#2}
+        \xdef\currentColor{#3}
+        \setItemColor{\currentColor}
+
         \stepcounter{#2}
 
         \def\sectionID{\csname the#2\endcsname}
@@ -101,6 +109,7 @@
                 \end{flushright}
             }
         }
+    \setItemColor{RoyalBlue}
     }
 }
 \makeatother
@@ -119,6 +128,7 @@
 \newsec{sub}{ctr}{NavyBlue}{Contraposée}
 \newsec{sub}{rmdr}{Thistle}{Rappel}
 \newsec{sub}{mthd}{OrangeRed}{Méthode}
+\newsec{sub}{vc}{ForestGreen}{Vocabulaire}
 
 \newsec{subsub}{rmk}{Thistle}{Remarque}
 \newsec{subsub}{expl}{gray}{Exemple}
@@ -130,6 +140,7 @@
 \newsec{subsub}{demoSUB}{Red}{$\rightarrow$ Démonstration}
 \newsec{subsub}{ticeSUB}{Orchid}{TICE}
 \newsec{subsub}{qfSUB}{Red}{\Large Questions flash}
+\newsec{sub}{rl}{OrangeRed}{Règle n\deg\therl}
 
 \NewDocumentCommand{\demo}{mmo}{
     \ifthenelse{\boolean{demonstration} \and \not \boolean{outline}}{
@@ -164,6 +175,22 @@
     \ifthenelse{\boolean{outline}}{}{\textit{Indication: #1}}
 }
 
+\newcounter{qf}
+\newcounter{choice}
+\newcommand*{\choice}[1]{%
+    {\scalefont{0.75}\color{Blue}\Alph{choice}.\color{black}}%
+    #1%
+    \stepcounter{choice}%
+}
+
+\newcommand*{\choicea}[1]{\setcounter{choice}{#1}%
+    {\scalefont{0.75}\color{Blue}\Alph{choice}.\color{black}}%
+}
+
+\newcounter{qfs}
+\def\qfs{\stepcounter{qfs}\color{Blue}\alph{qfs}) \color{black}}
+\def\sqf{\setcounter{qfs}{0} \stepcounter{qf}\color{blue}\arabic{qf}. \color{black}}
+
 % QUESTIONS FLASHS
 
 % \NewDocumentCommand{\qfb}{m O{15}}{
@@ -182,8 +209,12 @@
 
 \newcommand{\qfRes}[1]{
     \begin{enumerate}
-        \foreach \q in {#1}{
+        \foreach \q in {#1}{\setcounter{choice}{1}%
             \item \listElement{\q}{0}\palt{2}{\listElement{\q}{1}}
         }
     \end{enumerate}
 }
+
+\setul{0.4ex}{0.15ex}
+\newcommand*{\key}[1]{\setulcolor{\currentColor}\ul{\textbf{#1}}}
+% \newcommand*{\key}[1]{\sethlcolor{\currentColor!25}\hl{\textbf{#1}}}
