@@ -118,23 +118,23 @@
     \expandafter\csname #1-#2\endcsname{#2}%
 }
 
-\newsec{sec}{pr}{\PropertyColor}{Propriété}
+\newsec{sec}{pr}{Red}{Propriété} % \PropertyColor
 \newsec{sec}{df}{\DefinitionColor}{Définition}
 \newsec{sec}{thm}{\TheoremColor}{Théorème}
 \newsec{sec}{scnSUB}{OrangeRed}{Séance}
 
-\newsec{sub}{cor}{NavyBlue}{Corollaire}
-\newsec{sub}{lem}{NavyBlue}{Lemme}
-\newsec{sub}{ctr}{NavyBlue}{Contraposée}
-\newsec{sub}{rmdr}{Thistle}{Rappel}
+\newsec{sub}{cor}{Red}{Corollaire} % NavyBlue
+\newsec{sub}{lem}{Red}{Lemme} % NavyBlue
+\newsec{sub}{ctr}{Red}{Contraposée} % NavyBlue
+\newsec{sub}{rmdr}{BrickRed}{Rappel} % Thistle
 \newsec{sub}{mthd}{OrangeRed}{Méthode}
 \newsec{sub}{vc}{ForestGreen}{Vocabulaire}
 
-\newsec{subsub}{rmk}{Thistle}{Remarque}
+\newsec{subsub}{rmk}{BrickRed}{Remarque} % Thistle
 \newsec{subsub}{expl}{gray}{Exemple}
-\newsec{subsub}{app}{RedViolet}{Application}
+\newsec{subsub}{app}{NavyBlue}{Application} %RedViolet
 \newsec{subsub}{exo}{Gray}{Exercice}
-\newsec{subsub}{act}{BurntOrange}{Activité}
+\newsec{subsub}{act}{NavyBlue}{Activité} % BurntOrange
 \newsec{subsub}{dm}{Gray}{Devoir maison}
 
 \newsec{subsub}{demoSUB}{Red}{$\rightarrow$ Démonstration}
@@ -154,13 +154,17 @@
 }
 
 \newcommand*{\scn}[2]{%
-    \scnSUB{#1}{%
-        \ifNotNull{#2}{%
-            \begin{itemize}[wide = 0pt, label=]%
-                #2%
-            \end{itemize}%
-        }%
-    }%
+    \begin{mysection}[OrangeRed]
+        \scnSUB{#1}{#2}%
+        \vspace*{-0.25cm}
+    \end{mysection}
+    %
+        % \ifNotNull{#2}{%
+        %     \begin{itemize}[wide = 0pt, label=]%
+        %         #2%
+        %     \end{itemize}%
+        % }%
+    %}%
 }
 
 \newcommand{\scni}[2]{

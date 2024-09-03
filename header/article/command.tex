@@ -10,7 +10,12 @@
 \newcommand{\ssubsec}{}
 
 \newcommand{\slide}[2]{%
-    \section*{#1}%
+\ifNotNull{#1}{%
+    \begin{center}
+        \color{Maroon}\textbf{- #1 -}
+    \end{center}
+}
+
     #2
 }
 
