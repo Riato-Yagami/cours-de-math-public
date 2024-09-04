@@ -3,7 +3,7 @@
 % \date{\today}
 \def\longTitle{Nombres Relatifs : Repérage et comparaison}
 \def\shortTitle{\MakeUppercase{\longTitle}}
-% \bseq{\longTitle}
+\bseq{\longTitle}
 % \def\theme{\longTitle}
 
 \setboolean{showRef}{false}
@@ -23,7 +23,11 @@
 % \firstSlide
 
 \def\pv{\; ; \;}
-\scn{Repérage}{}
+
+% \article{\vskip}
+\ifArticle{\vspace*{0.1cm}}
+
+\scn{Introduction aux nombres négatifs}{}
 
 \slide{QUESTIONS FLASH}{%
     \sqf Comparer à l'aide du signe $>$ ou $<$ ou $=$ les nombres :
@@ -42,14 +46,16 @@
 }
 
 \slide{}{%
-    \sqf Ranger les nombres suivant dans l'ordre croissant les nombres :
-    \begin{align*}
-        1,2 \pv 6 \pv 1,15 \pv 2 \pv 100 \pv 0,584
-    \end{align*}
+    \sqf Donner dans chaque cas l'abscisse du point $P$ :\\
+    \noindent \qfs \imgp{qf-reperage-droite-a}[6cm]
+    \qfs \imgp{qf-reperage-droite-b}[9cm]
+    \qfs \imgp{qf-reperage-droite-c}[6cm]
 }
 
+\bsec{Définitions}
 
 \slide{EXERCICES}{
+    \vspace*{-0.5cm}
     \act{}{
         \dividePage{
             \imgp{carte}[6cm]
@@ -62,4 +68,71 @@
         }
     }
     % [\href{https://www.facebook.com/groups/994675223903586/search/?q=activite\%20m%C3\%A9t\%C3\%A9o\%20nombres\%20relatifs\&locale=fr\_FR}{Vanessa Cazier}]
+}
+
+\slide{COURS}{
+    \sseq\ssec
+    \df{}{
+        Un nombre est dit :
+        \begin{itemize}
+            \item \key{positif} si il est supérieur ou égal à zéro
+            \item \key{négatif} si il est supérieur ou égal à zéro
+        \end{itemize}
+    }
+}
+
+\slide{}{
+    \rmk{}{
+        \begin{itemize}
+            \item $O$ est à la fois positif et négatif
+            \item On nomme nombres relatifs l'ensemble des nombres positifs et négatifs.
+        \end{itemize}
+    }
+}
+
+\slide{EXERCICES}{
+    \act{}{
+        Exprimer un résultat aux opérations suivante :
+        \multiColEnumerate{3}{
+            \item $9 - 3$ \item $0 - 5$ \item $10 - 12$
+            \item $0 - 9,3$ \item $100 - 250$ \item $\frac{1}{5} - \frac{3}{5}$
+        }
+    }
+}
+
+\slide{COURS}{
+    \hist{}{
+        La découverte des nombres négatifs est souvant attribuée à Brahmagupta,
+        Mathématicien et astronome indien du VIe siècle.\\
+        Il les introduit dans le but de résoudre des oppositions autrement impossibles.
+        Dans les cadres de calculs dettes notamment.
+    }
+    \expl{}{
+        Brahmagupta possède $2\euro$ et achète $4$ baguettes à $1,5\euro$.
+        Quelle quantité d'argent a-t-il après son achat ?
+    }
+}
+
+\scn{Repérage}{}
+
+\bsec{Repérage}
+
+\slide{EXERCICES}{
+    \act{}{
+        \begin{enumerate}
+            \item Tracer une droite numérique sur laquelle placer les points :
+            $A$ d'abscisse 1, $B$ d'abscisse $1,5$
+            \item Placer $C$ d'abscisse $0$
+            \item Placer $D$ d'abscisse $-1$
+            \item Placer $E$ d'abscisse $-3,5$
+        \end{enumerate}
+    }
+}
+
+\slide{COURS}{
+    \ssec
+}
+
+\slide{EXERCICES}{
+    \exo{Maths Monde 51 p197}{}
 }

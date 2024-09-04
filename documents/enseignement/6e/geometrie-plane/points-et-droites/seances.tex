@@ -17,20 +17,96 @@
 
 % Yvan Monka : https://www.maths-et-tiques.fr/telech/19Para_Perp.pdf
 
-% \disableAnimation
-% \shortAnimation
-% \firstSlide
+\ifArticle{\vspace*{0.1cm}}
 
-% \qf{
-%     {$70\euro$ diminué de $10\%$, $63\euro$},
-%     {$50\euro$ augmenté de $20\%$, $\pcalc{50*120/100}\euro$}%
-% }[15]
+\scn{Objet géométrique}{}
+
+\bseq{\longTitle}
+\bsec{Objet géométrique}
+\bsubsec{Le point}
+
+\slide{COURS}{
+    \ssec\ssubsec
+    \vc{}{
+        On nomme \key{point} est le plus petit élément géométrique.
+        Il est infiniment petit,
+        tant qu'il n'a pas de dimension.
+    }
+}
+
+\slide{EXERCICES}{
+    \act{}{
+        Représenter un point.
+    }
+}
+
+\slide{COURS}{
+    \rmk{}{
+        On représente le point par une croix
+    }
+
+    \df{}{
+        Deux points sont dits distincts s'ils ne sont pas confondus
+    }
+
+    \expl{}{
+        Les points $A$ et $B$ sont confondus et les points $A$ et $C$ sont distincts.
+    }
+}
+
+\bsubsec{La droite}
+\slide{COURS}{
+    \ssubsec
+
+    \vc{}{On nomme \key{droite} un tracé rectiligne infini.}
+}
+
+\slide{EXERCICES}{
+    \act{}{Représenter une droite passant par deux points $A$ et $B$}
+}
+
+\slide{COURS}{
+    \rmk{}{On ne peut pas représenter une droite entièrement}
+
+    \axio{}{
+        Il existe une unique droite passant par deux points.
+    }
+
+    \expl{}{
+        Pour deux points $D$ et $E$ disctincts.
+        On peut noter la droite qui passe par $D$ et $E$, $(DE)$ ou $(ED)$.
+    }
+}
+
+\bsubsec{Le segment et la demi-droite}
+
+\slide{COURS}{
+    \ssubsec
+
+    \df{}{Un \key{segment} est une portion de droite,
+    limité par deux \key{extrémités}
+    }
+
+    \expl{}{
+        Pour deux points $D$ et $E$ disctincts.
+        Le segment reliant $D$ et $E$ est le chemin le plus court entre ces deux points.
+        On le note $[DE]$.
+    }
+}
 
 
+\slide{COURS}{
+    \ssubsec
 
-% \qfSUB{}{}
+    \df{}{Une \key{demi-droite} est une portion de droite,
+    limité par une seule extrémité, son \key{origine}.
+    }
 
-% \vspace*{0.05cm}
+    \expl{}{
+        Pour deux points $D$ et $E$ disctincts.
+        On peut noter, la demi-droite d'origine $D$ passant par $E$, $[DE)$.
+    }
+}
 
 \scn{Alignement}{}
 
@@ -52,7 +128,6 @@
     \\ \hint{plusieurs réponses sont attendues}
 }
 
-\bseq{\longTitle}
 \bsec{Alignement}
 
 \slide{EXERCICES}{
@@ -68,7 +143,7 @@
     \sseq\ssec%
 
     \df{}{
-        Des points sont \key{alignés} s'il existe une droite passant par tous ces points.
+        Des points sont dit \key{alignés} s'il existe une droite passant par tous ces points.
     }
 }
 
@@ -110,7 +185,7 @@
 \slide{QUESTIONS FLASH}{
     \sqf Les droites $(f)$ et $(g)$ semblent être:
     \vspace*{-0.5cm}
-    \imgp{qf3}[5cm]
+    \imgp{qf3}[4cm]
     \qfs Sécantes \hfill \qfs Parallèles \hfill \qfs Perpendiculaires \hfill
     \vspace*{0.5cm}
     \\ \hint{plusieurs réponses sont attendues}
@@ -129,7 +204,7 @@
     \ssec\ssubsec%
     %
     \df{}{
-        Deux droites sont \key{sécantes} si elles se coupent en un unique point.
+        Deux droites sont dites \key{sécantes} si elles se coupent en un unique point.
     }
     \vspace*{-1cm}
     \expl{}{
@@ -143,7 +218,7 @@
 
 \slide{}{
     \df{}{
-        Deux droites sont \key{perpendiculaires} si elles sont sécantes et leur intersection forme un angle droit.
+        Deux droites sont dites \key{perpendiculaires} si elles sont sécantes et leur intersection forme un angle droit.
     }
     \vspace*{-1cm}
     \expl{}{
@@ -157,7 +232,7 @@
 
 \slide{}{
     \df{}{
-        Deux droites sont \key{parallèles} si elles ne sont pas sécantes.
+        Deux droites sont dites \key{parallèles} si elles ne sont pas sécantes.
     }
     \vspace*{-1cm}
     \expl{}{

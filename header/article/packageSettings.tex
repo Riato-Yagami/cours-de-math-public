@@ -37,6 +37,22 @@
     \fancyfoot[R]{}
 }
 
+\fancypagestyle{assignment-empty-foot}{
+    \setlength{\headheight}{29pt}
+    \fancyhead[C]{}
+    \fancyhead[L]{\large \title}
+    \fancyhead[R]{%
+        \begin{tabular}{p{0.25\pdfpagewidth}p{0.15\pdfpagewidth}}%
+            \normalsize nom:& \normalsize classe:\\%
+            \normalsize prénom:& \normalsize date:\\%
+            % \normalsize date:\hspace*{3.5cm}%
+        \end{tabular}%
+    }
+    \fancyfoot[L]{}
+    \fancyfoot[C]{}
+    \fancyfoot[R]{}
+}
+
 \fancypagestyle{small}{
     \setlength{\headheight}{20pt}
     \fancyhead[C]{}
