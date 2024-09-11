@@ -1,0 +1,13 @@
+\ifBeamer{%
+    \renewcommand*{\theenumii}{\alph{enumii}}
+
+    \firstSlide
+    \setboolean{showRef}{false}
+}
+
+\ifArticle{%
+    \renewcommand*{\theenumii}{\alph{enumii}}
+    
+    \disableAnimation
+}
+

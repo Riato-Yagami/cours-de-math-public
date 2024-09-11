@@ -23,3 +23,22 @@
     \renewcommand{\labelenumii}{\scriptsize\color{#1}\alph{enumii})}
     \renewcommand{\labelitemi}{$\color{#1}\blacksquare$}
 }
+
+\definecolor{gradeColor}{RGB}{200, 50, 50}
+
+\backgroundsetup{
+    position=current page.south west,
+    angle=0,
+    scale=1,
+    color=gradeColor,
+    hshift=0cm,  % No shift
+    vshift=0cm,
+    contents={
+        % Left margin
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[anchor=south west, fill=gradeColor, minimum width=1cm, minimum height=\paperheight] (leftmargin) at (current page.south west) {};
+            % "6e" in top-right margin
+            \node[shift={(-0.1,-0.2)}, anchor=north east, text=gradeColor, font=\fontsize{40}{36}\selectfont] at (current page.north east) {\grade};
+        \end{tikzpicture}
+    }
+}

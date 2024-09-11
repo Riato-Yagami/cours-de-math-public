@@ -41,6 +41,17 @@
     \fi
 }
 
+\setbeamerfont{frametitle}{size=\small,series=\bfseries}
+
+\setbeamertemplate{frametitle}
+{
+    \vspace{-1.5pt} % Adjust the vertical space before the title
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.0ex,wd=\paperwidth,leftskip=.3cm,rightskip=.3cm]{frametitle}
+        \usebeamerfont{frametitle}\insertframetitle
+    \end{beamercolorbox}
+}
+
+
 % \setbeamertemplate{footline}
 % {%
 %     \leavevmode%
@@ -69,8 +80,21 @@
 % color
 % \usecolortheme{beaver}
 \usecolortheme{spruce}
+% \definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+% \definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
+\setbeamercolor{palette primary}{bg=gradeColor!20,fg=gradeColor}
+\setbeamercolor{palette secondary}{bg=gradeColor!95,fg=white}
+\setbeamercolor{palette tertiary}{bg=gradeColor!70,fg=white}
+\setbeamercolor{palette quaternary}{bg=gradeColor!60,fg=white}
+
+% \setbeamercolor{structure}{fg=gradeColor} % itemize, enumerate, etc
+% \setbeamercolor{section in toc}{fg=gradeColor} % TOC sections
+
+
+% \usecolortheme[named=gradeColor]{structure}
+
 \definecolor{links}{HTML}{e6ffe6}
-\definecolor{hyperlinks}{HTML}{06ff06}
+\definecolor{hyperlinks}{HTML}{e6ffe6}
 \hypersetup{
     colorlinks = true,
     linkcolor = links, % Apply the color to internal links
@@ -88,7 +112,9 @@
 \setbeamercovered{transparent = 25}
 \setbeamertemplate{navigation symbols}{}
 
-% \setbeamertemplate{enumerate items}[square]
+% \setbeamertemplate{enumerate subitem}{(\alph{enumii})}
+
+% \setbeamertemplate{enumerate subitem}[square]
 % \setbeamertemplate{enumerate items}[default]
 
 \newcommand*{\setItemColor}[1]{

@@ -5,9 +5,7 @@
 \setcounter{seq}{1}
 \bseq{\longTitle}
 
-\setboolean{showRef}{false}
-
-\def\my{Myriade 5e}
+\setgrade{4e}
 % \newcommand{\myl}[1]{\href{#1}{\my}}
 
 \def\imgPath{enseignement/4e/divisibilite-et-nombres-premiers/}
@@ -18,27 +16,177 @@
 % Crible d'Ératosthène : https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne
 % Juniper Green : https://fr.wikipedia.org/wiki/Juniper_Green_(jeu)
 
+% \disableAnimation
+% \shortAnimation
+% \firstSlide
+
+\avspace{0.1cm}
+\scn{Divisibilité}{}
+
 \qf{
     {$2$ divise : \choice{$4$} \choice{$5$} \choice{$6$}, \choicea{1} et \choicea{3}},
-    {$6$ divise : \choice{$18$} \choice{$12$} \choice{$2$}, \choicea{1} et \choicea{2}},
     {$30$ est divisible par : \choice{$3$} \choice{$10$} \choice{$5$} \choice{$4$}, \choicea{1}{,} \choicea{2} et \choicea{3}},
+    {Donner le résultat de la division euclienne de $31$ par $4$, $31 = 4 \times 7 + 3$},
     {Quels nombres sont premiers ? : \choice{$6$} \choice{$13$} \choice{$2$} \choice{$1$}, \choicea{2} et \choicea{3}}%
+}
+
+\bsec{Divisibilité}
+\slide{COURS}{
+    \sseq\ssec
+    \df{}{
+        On dit qu'un entier $a$ est \key{divisible} par un entier $b$ s'il existe un entier $k$ tel que $a = \palt{2}{b \times k}  $.\\
+        On dit alors que $a$ est un \key{multiple} de $b$, et que $b$ \key{divise} $a$ ou est un \key{diviseur} de $a$.}[\href{https://fr.wikipedia.org/wiki/Divisibilité}{Wikipédia}]
+    \bvspace{-1cm}
+}
+
+\slide{}{
+    \expl{}{\bvspace{-0.25cm}
+        \begin{enumerate}
+            \item $14 = \palt{3}{2} \times \palt{3}{7} \palt{4}{= 1 \times 14}$ \\
+            alors 14 est divisible par $\palt{3}{2 ; 7} \palt{4}{; 1 \et 14}$
+            \item $124 = \palt{5}{1 \times 124 = 2 \times 62 = 4 \times 31}$\\
+            $\palt{5}{1;2;4;31;62;124$}\; sont les diviseurs de 124.
+            \item $57 = 8 \times \palt{6}{7+1}$
+            alors le reste de la division euclienne de $57$ par $8$ est $\palt{6}{1}$.
+            57 est donc \palt{6}{non divisible} par $8$.
+        \end{enumerate}
+    }
+}
+
+\def\imgPrefix{mi-c4/exo-}
+
+\scn{Critères de divisibilité}{}
+
+\qf{
+    {$6$ divise : \choice{$18$} \choice{$12$} \choice{$2$}, \choicea{1} et \choicea{2}},
+    {Donner la liste des diviseurs de 12 : , 1;2;6;12},
+    {Donner la liste des diviseurs de 39 : , 1;3;13;39}%
+}
+
+\exoSlide{21p17,22p17,23p17}[7cm][2][\mi]
+
+\slide{COURS}{
+    \pr{Critères de divisibilité}{
+        Un nombre entier est divisible par :
+        \begin{itemize}
+            \setlength\itemsep{-0.1em}
+            \item $2$ si son chiffre des unités est paire.
+            \item $5$ si son chiffre des unités est $0$ ou $5$.
+            \item $10$ si son chiffre des unités est $0$.
+            \item $3$ si la somme de ces chiffres est un multiple de $3$.
+            \item $9$ si la somme de ces chiffres est un multiple de $9$.
+            \item $4$ si le nombre formé par ses deux derniers chiffres est multiple de $4$.
+        \end{itemize}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        Donner les diviseurs de $1944$ inférieurs à $10$.
+        \palt{2}{
+            \begin{itemize}
+                \item $1$ divises tous les entiers.
+                \item $4$ est paire donc 1944 est divisible par $2$
+                \item $44 = 4 \times 11$ donc 1944 est divisible par $4$.
+                \item $1+9+4+4 = \pcalc{1+9+4+4}$ et $1+8 = 9$ donc $1944$ est divisible par $9$ et $3$.
+                \item $1944 = 277 \times 7 + \ncalc{1944-277*7}$ donc $1944$ n'est pas divisible par $7$.
+                \item $1944 \div 8 = \ncalc{1944/2} \div 4 = \ncalc{1944/4} \div 2 $
+                donc $1944$ est divisible par $8$, car $1944$ est divisible par $2$, $3$ fois de suite.
+            \end{itemize}
+            Les diviseurs de $1944$ inférieurs à $10$ sont donc $1;2;3;4;8;9$.
+        }
+    }
+}
+
+\scn{Problème de divisibilité}{travail de groupes}
+
+\def\imgPrefix{mi-c4/qf-}
+\qfSlide{
+    \imgp{2abcdp12}[9cm]
+    \imgp{5p12}[9cm]
+    \imgp{6p12}[9cm]
+}
+
+\slide{EXERCICES}{
+    \exo{}{
+        Établir la liste des diviseurs communs de $189$ et $126$.
+    }
+}
+
+\def\imgPrefix{mi-c4/exo-}
+\exoSlide{42p19,48p19,65p21}[7cm][2][\mi]
+
+% \avspace{0.25cm}
+% \ifArticle{\TODO{? Scéance critères de divisibilité}}
+
+\scn{Nombres premiers}{}
+
+\def\imgPrefix{mi-c4/qf-}
+\qfSlide{
+    \imgp{3p12}[9cm]
+    \imgp{7p12}[9cm]
 }
 
 \bsec{Nombres premiers}
 \bsubsec{Définition}
 
+\def\imgPrefix{}
+\slide{}{
+    \bvspace{-0.4cm}
+    \act{4 p13 - Crible d'Ératosthène}{
+        \bvspace{-1.10cm}
+        \dividePage{%
+            \imgp{crible-d-eratosthene}[5cm]%
+        }{%
+            \begin{enumerate}
+                \item Entourer 2,
+                puis barrer tous les multiples de 2 autres que 2.
+                \item Entourer le premier nombre ni entouré ni barré,
+                puis barrer tous ses multiples autres que lui-même.
+                \item Répéter la consigne de la question précédente jusqu'à avoir barré ou entouré tous les nombres.
+            \end{enumerate}
+        }[0.35]%
+        \avspace{0.25cm}
+        \bvspace{-0.25cm}
+        \begin{enumerate}
+            \setcounter{enumi}{3}
+            \item Quelle particularité possèdent les vingt-cinq nombres entourés ?
+        \end{enumerate}
+    }[\mi]
+}
+
 \slide{COURS}{
-    \sseq\ssec
+    \ssec
     \df{}{
-        Un entier est \key{premier} s'il a exactement deux diviseurs différents 1 et lui même.
+        Un entier est \key{premier} s'il a exactement deux diviseurs différents 1 et lui-même.
+    }
+    % \bvspace{-1cm}
+    \ifBeamer{\small}
+    \rmk{}{%
+    \bvspace{-0.25cm}
+        \begin{itemize}
+            \item $1$ n'est pas premier. Il n'a qu'un seul diviseur, lui-même.
+            \item $2$, le plus petit nombre premier est le seul nombre premier paire.
+            \item Il existe une infinité de nombres premiers.
+        \end{itemize}
     }
 }
 
-\slide{}{
-    \act{Crible d'Ératosthène}{
-        \imgp{crible-d-eratosthene}[5cm]
-    }
-}
+% \slide{EXERCICES}{
+%     \exo{27;28;29}
+% }
+
+\def\imgPrefix{mi-c4/exo-}
+\exoSlide{27p17,28p17,29p17}[7cm][2][\mi]
 
 \bsec{Décomposition en facteurs premiers}
+
+\slide{}{
+    \pr{}{
+        Tout nombre non premier peut se décomposer en produit de facteurs premiers.
+    }
+
+    % \rmk{HP}{
+    %     Cette décomposition est enfaite unique.
+    % }
+}

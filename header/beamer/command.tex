@@ -148,3 +148,14 @@
 
 \newcommand{\ifArticle}[1]{}
 \newcommand{\ifBeamer}[1]{#1}
+
+\newcommand\wideFrame[2][3em]{%
+\makebox[\linewidth][c]{%
+    \begin{minipage}{\dimexpr\textwidth+#1\relax}
+        \raggedright#2
+    \end{minipage}%
+    }%
+}
+
+\newcommand{\bvspace}[1]{\vspace*{#1}}
+\newcommand{\avspace}[1]{}

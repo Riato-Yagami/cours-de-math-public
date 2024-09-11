@@ -6,10 +6,7 @@
 \bseq{\longTitle}
 % \def\theme{\longTitle}
 
-\setboolean{showRef}{false}
-
-% \def\my{Myriade 6e}
-% \newcommand{\myl}[1]{\href{#1}{\my}}
+\setgrade{5e}
 
 \def\imgPath{enseignement/5e/nombres-relatifs/reperage-et-comparaison/}
 \def\imgExtension{.png}
@@ -29,29 +26,6 @@
 
 \scn{Introduction aux nombres négatifs}{}
 
-\slide{QUESTIONS FLASH}{%
-    \sqf Comparer à l'aide du signe $>$ ou $<$ ou $=$ les nombres :
-    \begin{align*}
-        &\qfs \; 10 \et 10,075\\
-        &\qfs \; 0,5 \et \frac{1}{2}\\
-        &\qfs \; \frac{6}{10} \et \frac{6}{9}
-    \end{align*}
-}
-
-\slide{}{%
-    \sqf Ranger les nombres suivant dans l'ordre croissant les nombres :
-    \begin{align*}
-        1,2 \pv 6 \pv 1,15 \pv 2 \pv 100 \pv 0,584
-    \end{align*}
-}
-
-\slide{}{%
-    \sqf Donner dans chaque cas l'abscisse du point $P$ :\\
-    \noindent \qfs \imgp{qf-reperage-droite-a}[6cm]
-    \qfs \imgp{qf-reperage-droite-b}[9cm]
-    \qfs \imgp{qf-reperage-droite-c}[6cm]
-}
-
 \bsec{Définitions}
 
 \slide{EXERCICES}{
@@ -70,6 +44,8 @@
     % [\href{https://www.facebook.com/groups/994675223903586/search/?q=activite\%20m%C3\%A9t\%C3\%A9o\%20nombres\%20relatifs\&locale=fr\_FR}{Vanessa Cazier}]
 }
 
+\scn{Institutionnalisation des nombres relatifs}{}
+
 \slide{COURS}{
     \sseq\ssec
     \df{}{
@@ -86,19 +62,89 @@
         \begin{itemize}
             \item $O$ est à la fois positif et négatif
             \item On nomme nombres relatifs l'ensemble des nombres positifs et négatifs.
+            \item On parle de nombres relatifs car on les considère relativement à zéro.
         \end{itemize}
     }
 }
 
+\def\imgPrefix{mm-c4/exo-}
+\exoSlide{28p196,29p196,30p196}[9cm][1][\mm]
+\def\imgPrefix{}
+
+\scn{Résution d'équations grâce aux nombres relatifs}{}
+
+\slide{QUESTIONS FLASH}{%
+    \sqf Comparer à l'aide du signe $>$ ou $<$ ou $=$ les nombres :
+    \begin{align*}
+        &\qfs \; 10 \hole 10,075\\
+        &\qfs \; 0,5 \hole \frac{1}{2}\\
+        &\qfs \; \frac{6}{10} \hole \frac{6}{9}
+    \end{align*}
+}
+
+\slide{}{
+    \sqf Completer les opérations à trous :
+    \begin{align*}
+        &\qfs \; 6 + \hole = 18\\
+        &\qfs \; 710,5 + \hole = 770\\
+        &\qfs \; 30 - \hole = 22,2
+    \end{align*}
+}
+
 \slide{EXERCICES}{
     \act{}{
-        Exprimer un résultat aux opérations suivante :
-        \multiColEnumerate{3}{
-            \item $9 - 3$ \item $0 - 5$ \item $10 - 12$
-            \item $0 - 9,3$ \item $100 - 250$ \item $\frac{1}{5} - \frac{3}{5}$
-        }
-    }
+        \begin{enumerate}
+            \item $ 5 + \textrm{?} = 13$ : Trouve le nombre représenté par « ? »
+            \begin{itemize}
+                \item On pourrait écrire : $5 + \icon{sun} = 13$ \\
+                La question deviendrait alors :
+                Trouve le nombre représenté par « \icon{sun} ».
+                \item On pourrait encore écrire : $5 + x = 13$ \\
+                La question deviendrait alors :
+                Trouve le nombre représenté par « $x$ ».
+            \end{itemize}
+        \end{enumerate}
+    }[\href{https://clairelommeblog.fr/2020/10/11/introduire-les-relatifs-en-5e/}{Claire Lomné}]
 }
+
+
+\slide{}{
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Ces égalités sont des équations car elles contiennent une \key{inconnue}.
+        \begin{itemize}
+            \item Tu les appelais aussi des « opérations à trou ».
+            \item Pour les resoudres tu te demande combien vaut $13-5$ ?
+        \end{itemize}
+    \end{enumerate}
+
+}
+
+\slide{}{
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Résout les équations suivantes :
+        \multiColEnumerate{3}{
+            \item $10 + x = 21$ \item $x + 6 = 13$\item $97 + y = 100$
+            \item $19 = 3 + t$ \item $13+x = 13$ \item $10 + x = 4$
+        }
+        \item De même :
+        \multiColEnumerate{2}{
+            \item $x + 15 = 10$ \item $50 + y = 40$ \item $t + 19 = 0$
+            \item $a + 7 = 1$
+        }
+    \end{enumerate}
+}
+
+% \slide{EXERCICES}{
+%     \act{}{
+%         Exprimer un résultat aux opérations suivante :
+%         \multiColEnumerate{3}{
+%             \item $9 - 3$ \item $0 - 5$ \item $10 - 12$
+%             \item $0 - 9,3$ \item $100 - 250$ \item $\frac{1}{5} - \frac{3}{5}$
+%         }
+%     }
+% }
 
 \slide{COURS}{
     \hist{}{
@@ -113,26 +159,129 @@
     }
 }
 
-\scn{Repérage}{}
+\slide{}{
+    \df{}{
+        L'\key{opposé} d'un nombre $n$ est le nombre qui, lorsqu'il est ajouté à $n$, donne $0$.
+    }[\href{https://fr.wikipedia.org/wiki/Opposé}{Wikipédia}]
+
+    \expl{}{
+        \begin{itemize}
+            \item L'opposé de $7$ est \palt{2}{$-7$}.
+            \item L'opposé de $-18,6$ est \palt{2}{$18,6$}.
+            \item L'opposé d'un nombre $b$ est \palt{2}{$-b$}.
+        \end{itemize}
+    }
+}
+
+\def\imgPrefix{mm-c4/exo-}
+\exoSlide{46p197,47p197,48p197}[9cm][1][\mm]
+\def\imgPrefix{}
+
+\scn{Repérage sur une droite graduée}{}
+
+\slide{QUESTIONS FLASH}{%
+    \setcounter{qf}{0}
+    \sqf Ranger les nombres suivant dans l'ordre croissant les nombres :
+    \begin{align*}
+        1,2 \pv 6 \pv 1,15 \pv 2 \pv 100 \pv 0,584 \pv 2
+    \end{align*}
+}
+
+\slide{}{%
+    \sqf Donner dans chaque cas l'abscisse du point $P$:\\
+    \noindent \qfs \imgp{qf-reperage-droite-a}[6cm]
+    \noindent \qfs \imgp{qf-reperage-droite-b}[9cm]
+    \noindent \qfs \imgp{qf-reperage-droite-c}[6cm]
+}
 
 \bsec{Repérage}
+\bsubsec{Repérage sur une droite}
 
 \slide{EXERCICES}{
     \act{}{
         \begin{enumerate}
             \item Tracer une droite numérique sur laquelle placer les points :
-            $A$ d'abscisse 1, $B$ d'abscisse $1,5$
-            \item Placer $C$ d'abscisse $0$
-            \item Placer $D$ d'abscisse $-1$
-            \item Placer $E$ d'abscisse $-3,5$
+            $O$ d'abscisse 0, $A$ d'abscisse $2,5$
+            \item Placer $B$ d'abscisse $-1$
+            \item Placer $C$ d'abscisse $-2,5$
+            \item Comment sont $A$ et $C$ relativement à $O$ ?
         \end{enumerate}
     }
 }
 
+\def\imgPrefix{mm-c4/expl-}
 \slide{COURS}{
-    \ssec
+    \ssec\ssubsec
+    \df{}{L'\key{abscisse} d'un point sur une droite graduée est sa position relativement à $0$.}
+    \expl{}{
+        \imgp{5p190}[10cm]
+        Le point $A$ est d'abscisse \palt{2}{$-3$} et $B$ d'abscisse \palt{2}{$3$}.
+        Ils ont alors la même \key{distance à $0$}, mais sont de signes différents. 
+    }[\mi]
+    \rmk{}{
+        Sur une droite gradué, deux points qui ont des abscisses opposées sont symétrique par rapport à l'origine.
+    }[\mi]
 }
 
-\slide{EXERCICES}{
-    \exo{Maths Monde 51 p197}{}
+\def\imgPrefix{mm-c4/exo-}
+\exoSlide{51p197,53p197,55p197}[7cm][2][\mi]
+\def\imgPrefix{}
+
+\scn{Repérage dans un plan}{}
+
+\def\imgPrefix{mm-c4/exo-}
+\slide{QUESTIONS FLASH}{
+    % \imgp{25p196}[7cm]
+    \imgp{26p196}[8cm]
+    \imgp{31p196}[8cm]
 }
+\def\imgPrefix{}
+
+\slide{EXERCICES}{
+    \small
+    \bvspace{-0.75cm}
+    \act{}{
+        Guybrush Threepwood est à la recherche du trésor de l'île des singes.
+        Il est localisé au point $G$ donné sur le plan ci-dessous.
+        
+        \bvspace{-0.1cm}
+        \wideFrame[6.8em]{
+            \dividePage{\imgp{reperage-plan-activite}[6.7cm]}{
+                \begin{enumerate}
+                    \item Combien de nombres sont nécessaires pour repérer sa position ? Donner ces deux nombres pour Guybrush.
+                    \item Que doit-on faire pour qu'il n'y ait pas plusieurs positions possibles repérées par ces nombres?
+                    \item Repérer ainsi Guybrush et son bateau accosté au point $B$.
+                    \item Demandez de l'aide au capitaine PESIN pour qu'il vous donne l'emplacement du trésor.  
+                \end{enumerate}
+            }[0.35]
+        }
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item Placer un point $T$ à l'emplacement du trésor.
+        \end{enumerate}
+    }
+}
+
+\bsubsec{Repérage dans le plan}
+
+\slide{COURS}{
+    \vc{}{%
+        Les points du plan sont repérés par deux nombres qui forme ces \key{coordonnées}:
+        \begin{itemize}
+            \item L'\key{abscisse} qui ce lit sur l'axe horizontal.
+            \item L'\key{ordonnée} qui ce lit sur l'axe vertical.
+        \end{itemize}
+    }[\mi]
+}
+
+\slide{}{
+    \expl{}{
+        \imgp{axes-plan}[5cm]
+        $A$ est d'abscisse $3$ et d'ordonnée $2$. On note ces coordonnées $A(3;2)$.
+    }[\href{https://www.maths-et-tiques.fr/telech/19Nomb_rel1.pdf}{Yvan Monka}]
+}
+
+
+\def\imgPrefix{mm-c4/exo-}
+\exoSlide{57p197,58p198}[5.5cm][2]
+\exoSlide{59p198}[6cm]

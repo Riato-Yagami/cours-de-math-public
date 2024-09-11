@@ -1,0 +1,38 @@
+% ENVIRONMENT
+\newenvironment{mysection}[1][gray!20]{%
+    \ifthenelse{\boolean{boxedProperties}}{
+        \begin{tcolorbox}[colback=white,
+            colframe=#1!50,
+            boxrule=5pt,
+            outer arc=0pt,
+            arc=0pt,
+            grow to left by= -5pt
+    ]
+    }{
+        \begin{tcolorbox}[standard jigsaw,
+            opacityback=0,
+            colframe=#1!50,
+            boxrule=0pt,
+            arc=0pt,
+            leftrule=3pt,
+            left = 8pt,
+            % borderline west={5pt}{0pt}{blue},
+            outer arc=0pt,
+            grow to left by= -5pt
+        ]
+    }
+}{%
+    \end{tcolorbox}
+}
+
+\newenvironment{mysubsection}[1][gray!20]{%
+    \begin{tcolorbox}[standard jigsaw,
+        opacityback=0,
+        boxrule=0pt,
+        outer arc=0pt,
+        arc=0pt,
+        grow to left by= -5pt
+    ]
+}{%
+    \end{tcolorbox}
+}

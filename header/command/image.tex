@@ -1,7 +1,7 @@
 \def\imgPath{}
 \def\imgExtension{}
-
-\newcommand{\imgf}[1]{\imgPath #1\imgExtension}
+\def\imgPrefix{}
+\newcommand{\imgf}[1]{\imgPath\imgPrefix #1\imgExtension}
 
 \NewDocumentCommand{\limg}{m O{\linewidth}}{%
     \includegraphics[width=#2]{#1}%
@@ -45,7 +45,8 @@
 }
 
 \newcommand{\icon}[1]{%
+    % \def\imgPath{icons/}
     \adjustbox{valign=m, raise=-0.2ex}{%
-        \includegraphics[height=15pt]{\imgf{#1}}%
+        \includegraphics[height=15pt]{icons/#1\imgExtension}%
     }%
 }

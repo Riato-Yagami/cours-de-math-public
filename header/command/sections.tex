@@ -120,7 +120,7 @@
 
 \newsec{sec}{pr}{Red}{Propriété} % \PropertyColor
 \newsec{sec}{df}{\DefinitionColor}{Définition}
-\newsec{sec}{thm}{\TheoremColor}{Théorème}
+\newsec{sec}{thm}{Maroon}{Théorème} % \TheoremColor
 \newsec{sec}{scnSUB}{OrangeRed}{Séance}
 
 \newsec{sub}{cor}{Red}{Corollaire} % NavyBlue
@@ -197,7 +197,14 @@
 \def\qfs{\stepcounter{qfs}\color{Blue}\alph{qfs}) \color{black}}
 \def\sqf{\setcounter{qfs}{0} \stepcounter{qf}\color{blue}\arabic{qf}. \color{black}}
 
-% QUESTIONS FLASHS
+\newcommand{\qfSlide}[1]{
+    \slide{QUESTIONS FLASH}{
+        \setcounter{qf}{0}
+        \setcounter{qfs}{0}
+        #1
+    }
+}
+% QUESTIONS FLASH
 
 % \NewDocumentCommand{\qfb}{m O{15}}{
 %     % Initialize an empty token list to accumulate the formatted questions and answers
