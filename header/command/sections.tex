@@ -3,9 +3,9 @@
 
 \newcommand{\parseSecContent}[2]{% Color | Content
     \ifNotNull{#2}{%
-        \begin{mysection}[#1]
+        \begin{sectionBox}{#1}
             #2
-        \end{mysection}
+        \end{sectionBox}
     }
 }
 
@@ -49,10 +49,10 @@
 
     \ifthenelse{\boolean{outline} \and \not \boolean{subsectionInOutline}}{}{
         \@ifclassloaded{beamer}{
-            \begin{mysubsection}[#1]
+            \begin{subsectionBox}{#1}
                 \textbf{\secTitle \ifx\relax#2\relax\else \\ \fi}
                 \hspace*{-0.35cm}\secContent
-            \end{mysubsection}
+            \end{subsectionBox}
         }{
             \subsubsection*{\secTitle}
             \ifthenelse{\boolean{outline}}{}{\secContent}
@@ -131,6 +131,7 @@
 \newsec{sub}{vc}{ForestGreen}{Vocabulaire}
 \newsec{sub}{hist}{Black}{Histoire}
 \newsec{sub}{axio}{Mahogany}{Axiome}
+\newsec{sub}{objSUB}{gradeColor}{Objectifs}
 
 \newsec{subsub}{rmk}{BrickRed}{Remarque} % Thistle
 \newsec{subsub}{expl}{gray}{Exemple}
@@ -155,19 +156,34 @@
     }
 }
 
-\newcommand*{\scn}[2]{%
-    \begin{mysection}[OrangeRed]
+\newcommand*{\obj}[1]{
+    \begin{objBox}
+        \objSUB{}{%
+        \begin{enumerate}#1\end{enumerate}%
+        }
+    \end{objBox}
+}
+
+\NewDocumentCommand{\scn}{m O{}}{
+    \begin{sectionBox}{OrangeRed}
         \scnSUB{#1}{#2}%
         \vspace*{-0.25cm}
-    \end{mysection}
-    %
-        % \ifNotNull{#2}{%
-        %     \begin{itemize}[wide = 0pt, label=]%
-        %         #2%
-        %     \end{itemize}%
-        % }%
-    %}%
+    \end{sectionBox}
 }
+
+% \newcommand*{\scn}[2]{%
+%     \begin{mysection}[OrangeRed]
+%         \scnSUB{#1}{#2}%
+%         \vspace*{-0.25cm}
+%     \end{mysection}
+%     %
+%         % \ifNotNull{#2}{%
+%         %     \begin{itemize}[wide = 0pt, label=]%
+%         %         #2%
+%         %     \end{itemize}%
+%         % }%
+%     %}%
+% }
 
 \newcommand{\scni}[2]{
     \item \color{OrangeRed}#1 : \color{black} #2
@@ -198,7 +214,7 @@
 \def\sqf{\setcounter{qfs}{0} \stepcounter{qf}\color{blue}\arabic{qf}. \color{black}}
 
 \newcommand{\qfSlide}[1]{
-    \slide{QUESTIONS FLASH}{
+    \slide{qf}{
         \setcounter{qf}{0}
         \setcounter{qfs}{0}
         #1

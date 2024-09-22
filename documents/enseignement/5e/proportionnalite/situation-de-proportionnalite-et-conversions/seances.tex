@@ -1,0 +1,160 @@
+% VARIABLES %%%
+\def\authors{\jules}
+% \date{\today}
+\def\longTitle{Proportionnalité - Situation de proportionnalité et conversions}
+\def\shortTitle{\MakeUppercase{\longTitle}}
+
+\setcounter{seq}{2}
+\bseq{\longTitle}
+% \def\theme{\longTitle}
+
+\setgrade{5e}
+
+\def\imgPath{enseignement/5e/proportionnalite/situation-de-proportionnalite-et-conversions/}
+\def\imgExtension{.png}
+%%
+
+% Yvan Monka : https://www.maths-et-tiques.fr/telech/19Prop1.pdf
+\ifArticle{\vspace*{0.1cm}}
+
+\obj{
+    \item Reconnaître une situation de proportionnalité ou de non proportionnalité entre deux grandeurs.
+    \item Résoudre des problèmes de proportionnalité par passage à l'unité.
+    \item Effectuer des calculs de durées et d'horaires.
+    \item Effectuer des conversions d'unités de longueurs, et de durées.
+    \item Partager une quantité en deux ou trois parts selon un ratio donné.
+}
+
+\scn{Passage à l'unité}{}
+
+\qfSlide{
+    Donner le resultat sous la forme décimale de :
+    \multiColEnumerate{2}{
+        \item $14 \times 3 = \palt{2}{\ncalc{14*3}} $
+        \item $3 \div 2 = \palt{2}{1,5} $
+        \item $6 \div 4 = \palt{2}{1,5} $
+        \item $5,6 \times 2 = \palt{2}{11,2} $
+        \item $\frac{1}{4} = \palt{2}{0.25}$
+        \item $\frac{3}{4} = \palt{2}{0.75}$
+    }
+}
+
+\bsec{Proportionnalité}
+\bsubsec{Définition}
+
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \act{}{
+        \begin{itemize}
+            \item Pour une recette de dahl,
+            Christopher a besoin de 8 gousses d'ail pour 4 personnes.
+            Il déjeune avec ses amis Sarah et Jean.
+            Peut-il prévoir combien de gousses d'ail il aura besoin ?\\
+            Pourquoi ? et si oui, combien ?
+            \item Jean l'a félicité 2 fois pour sa cuisine en 20 minutes.
+            Peut-il prévoir combien de félicitations il recevra de Jean en 40 minutes?\\
+            Pourquoi ? et si oui, combien ?
+        \end{itemize}
+        
+    }
+}
+
+\slide{cr}{
+    \sseq\ssec\ssubsec
+    \df{}{
+        Deux grandeurs sont dites \key{proportionnelles} si les valeurs de l'une s'obtient en multipliant les valeurs de l'autre par un même nombre non nul,
+        appelé le \key{coefficient de proportionnalité}.
+    }
+}
+
+\slide{cr}{
+    \expl{}{
+        Les $2kg$ de lentilles $5\EUR$.
+        Combien en coutent $13kg$ de lentilles ?
+    }
+
+    \mthd{Passage à l'unité}{
+        \palt{2}{
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                Masse (en $\kilo\gram$)  & 2 & 1 & 13\\
+                \hline
+                Prix (en \EUR)    & 5 & 2,5 & 32,5\\
+                \hline
+            \end{tabular}
+        }
+        \palt{3}{Le coefficient de proportionnalité est 2,5.}
+    }
+}
+
+\slide{cr}{
+    \vc{}{
+        Un \key{tableau de proportionnalité} permet de présenter une situation de proportionnalité.
+        Sa deuxième ligne s'obtient en multipliant la première par le coefficient de proportionnalité.
+    }
+}
+
+\def\imgPrefix{mm-c4/exo-}
+\exoSlide{32p27,51p28,53p28}[7cm][2][\mm]
+
+\scn{Reconnaître une situation de proportionnalité}{}
+
+\def\imgPrefix{mm-c4/qf-}
+\exoSlide{15p26,17p26}[7cm][2][\mm][qf]
+
+\bsubsec{Reconnaître une situation de proportionnalité}
+
+\slide{cr}{
+    \bvspace{-0.25cm}
+    \ssubsec
+    \bvspace{-0.5cm}
+    \expl{}{
+        Une marque d'épices vend différentes tailles de pots de curcuma et de cumin.
+        Présenter avec leur prix dans les deux tableaux ci-dessous.\\
+
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            Masse de curcuma (en $\gram$)  & 45 & 60 & 90\\
+            \hline
+            Prix (en \EUR)    & 2.5 & 4 & 5\\
+            \hline
+        \end{tabular}\ifArticle{\quad}\ifBeamer{\\ \\}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            Masse de cumin (en $\gram$)  & 45 & 60 & 90\\
+            \hline
+            Prix (en \EUR)    & 2.7 & 4.05 & 5.4\\
+            \hline
+        \end{tabular}\\
+
+        Les prix de ces deux épices sont-ils proportionnels à leur masse ?
+    }
+}
+
+\slide{cr}{
+    \mthd{Reconnaître une situation de proportionnalité}{
+        \palt{2}{
+            On divise chaque nombre de la première grandeur par ceux de la 2e grandeurs correspondant.
+            Si on obtient le même résultat, il y a proportionnalité.
+        }
+    }
+}
+
+% \exoSlide{}[][][][]
+
+\bsec{Grandeurs}
+
+
+\def\imgPrefix{}
+\slide{qf}{
+    \begin{enumerate}
+        \item \imgp{qf-cn-3-5e-mars-2023}[6cm]
+        \item \imgp{qf-cn-8-5e-mars-2023}[6cm]
+    \end{enumerate}
+}
+
+\bsubsec{Longueurs}
+
+\bsubsec{Durées}
+
+\bsec{Ratio}

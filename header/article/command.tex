@@ -10,13 +10,23 @@
 \newcommand{\ssubsec}{}
 
 \newcommand{\slide}[2]{%
-\ifNotNull{#1}{%
-    \begin{center}
-        \color{Maroon}\textbf{- #1 -}
-    \end{center}
-}
-
-    #2
+    \ifNotNull{#1}{%
+        \setPhase{#1}
+        % \phase{} $\rightarrow$ \currentPhase{}
+        \ifthenelse{\equal{\currentPhase}{\phase}}{}{
+            \xdef\currentPhase{\phase}
+            \ifthenelse{\boolean{showAllPhases}}{
+                \begin{center}
+                    \begin{phaseBox}
+                        \textbf{\phase}
+                    \end{phaseBox}
+                \end{center}}{
+            }
+        }
+    }
+    \ifthenelse{\boolean{showAllPhases}}{#2}{%
+        \ifthenelse{\equal{\phase}{\showPhase}}{#2}{}
+    }
 }
 
 \newcommand{\startQuestions}{}

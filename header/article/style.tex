@@ -38,7 +38,8 @@
         \begin{tikzpicture}[remember picture,overlay]
             \node[anchor=south west, fill=gradeColor, minimum width=1cm, minimum height=\paperheight] (leftmargin) at (current page.south west) {};
             % "6e" in top-right margin
-            \node[shift={(-0.1,-0.2)}, anchor=north east, text=gradeColor, font=\fontsize{40}{36}\selectfont] at (current page.north east) {\grade};
+            \node[shift={(-0.32,-0.25)}, anchor=north east, text= gradeColor, font=\fontsize{40}{36}\selectfont] at (current page.north east) 
+            {\hypersetup{urlcolor=gradeColor}\link{\grade}};
         \end{tikzpicture}
     }
 }

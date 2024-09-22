@@ -4,6 +4,7 @@
 \def\tspace{0.5cm}
 \def\defaultGeometry{top=1.5cm, bottom=2cm, left=2cm, right=2cm}
 \def\imgExtension{.png}
+\def\authors{\jules}
 
 % BOOLEAN %%%
 \newboolean{answer}
@@ -16,6 +17,7 @@
 \newboolean{subsectionInOutline}
 \newboolean{showRef}
 \newboolean{qftimer}
+\newboolean{showAllPhases}
 % \newboolean{lambertStyle}
 
 \setboolean{answer}{false}
@@ -27,7 +29,7 @@
 \setboolean{subsectionInOutline}{false}
 \setboolean{showRef}{true}
 \setboolean{qftimer}{false}
-
+\setboolean{showAllPhases}{true}
 % \newboolean{beamer}
 % \@ifclassloaded{beamer}{\setboolean{beamer}{true}}{\setboolean{beamer}{false}}
 % \setboolean{lambertStyle}{false}
@@ -47,3 +49,6 @@
 
 \def\grade{}
 \definecolor{gradeColor}{RGB}{0, 0, 0}
+
+\def\showPhase{COURS}
+\xdef\currentPhase{}

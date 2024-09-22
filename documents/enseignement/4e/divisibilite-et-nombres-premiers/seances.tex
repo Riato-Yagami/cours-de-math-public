@@ -21,6 +21,13 @@
 % \firstSlide
 
 \avspace{0.1cm}
+
+\obj{
+    \item Déterminer la liste des nombres premiers inférieurs à 100.
+    \item Décomposition d'un nombre entier en produit de facteurs premiers
+    \item Modéliser et résoudre des problèmes simples mettant en jeu les notions de divisibilité et de nombre premier.
+}
+
 \scn{Divisibilité}{}
 
 \qf{
@@ -70,7 +77,7 @@
         Un nombre entier est divisible par :
         \begin{itemize}
             \setlength\itemsep{-0.1em}
-            \item $2$ si son chiffre des unités est paire.
+            \item $2$ si son chiffre des unités est pair.
             \item $5$ si son chiffre des unités est $0$ ou $5$.
             \item $10$ si son chiffre des unités est $0$.
             \item $3$ si la somme de ces chiffres est un multiple de $3$.
@@ -85,8 +92,8 @@
         Donner les diviseurs de $1944$ inférieurs à $10$.
         \palt{2}{
             \begin{itemize}
-                \item $1$ divises tous les entiers.
-                \item $4$ est paire donc 1944 est divisible par $2$
+                \item $1$ divise tous les entiers.
+                \item $4$ est pair donc 1944 est divisible par $2$
                 \item $44 = 4 \times 11$ donc 1944 est divisible par $4$.
                 \item $1+9+4+4 = \pcalc{1+9+4+4}$ et $1+8 = 9$ donc $1944$ est divisible par $9$ et $3$.
                 \item $1944 = 277 \times 7 + \ncalc{1944-277*7}$ donc $1944$ n'est pas divisible par $7$.
@@ -134,41 +141,46 @@
 \slide{}{
     \bvspace{-0.4cm}
     \act{4 p13 - Crible d'Ératosthène}{
-        \bvspace{-1.10cm}
+        \ifBeamer{\vspace{-0.5cm}\small}
         \dividePage{%
             \imgp{crible-d-eratosthene}[5cm]%
         }{%
             \begin{enumerate}
+                \item Barrer le 1.
                 \item Entourer 2,
                 puis barrer tous les multiples de 2 autres que 2.
                 \item Entourer le premier nombre ni entouré ni barré,
                 puis barrer tous ses multiples autres que lui-même.
-                \item Répéter la consigne de la question précédente jusqu'à avoir barré ou entouré tous les nombres.
+                \item Répéter la consigne jusqu'à atteindre le premier nombre premier plus grand que 10.
+                \item Quelle particularité possèdent les vingt-cinq nombres entourés ?
             \end{enumerate}
         }[0.35]%
-        \avspace{0.25cm}
-        \bvspace{-0.25cm}
-        \begin{enumerate}
-            \setcounter{enumi}{3}
-            \item Quelle particularité possèdent les vingt-cinq nombres entourés ?
-        \end{enumerate}
+        % \avspace{0.25cm}
+        % \bvspace{-0.25cm}
+        % \begin{enumerate}
+        %     \setcounter{enumi}{3}
+        %     \item Quelle particularité possèdent les vingt-cinq nombres entourés ?
+        % \end{enumerate}
     }[\mi]
 }
 
 \slide{COURS}{
     \ssec
     \df{}{
-        Un entier est \key{premier} s'il a exactement deux diviseurs différents 1 et lui-même.
+        Un nombre entier est dit \key{premier} s'il a exactement deux diviseurs différents: 1 et lui-même.
     }
     % \bvspace{-1cm}
     \ifBeamer{\small}
+    \bvspace{-1cm}
     \rmk{}{%
     \bvspace{-0.25cm}
         \begin{itemize}
             \item $1$ n'est pas premier. Il n'a qu'un seul diviseur, lui-même.
-            \item $2$, le plus petit nombre premier est le seul nombre premier paire.
-            \item Il existe une infinité de nombres premiers.
+            \item $2$, le plus petit nombre premier est le seul nombre premier pair.
         \end{itemize}
+    }
+    \pr{}{%
+        Il existe une infinité de nombres premiers.
     }
 }
 
@@ -179,14 +191,114 @@
 \def\imgPrefix{mi-c4/exo-}
 \exoSlide{27p17,28p17,29p17}[7cm][2][\mi]
 
-\bsec{Décomposition en facteurs premiers}
+\scn{Décomposition en facteurs premiers}{}
 
-\slide{}{
-    \pr{}{
-        Tout nombre non premier peut se décomposer en produit de facteurs premiers.
-    }
-
-    % \rmk{HP}{
-    %     Cette décomposition est enfaite unique.
-    % }
+\def\imgPrefix{mi-c4/qf-}
+\qfSlide{
+    \imgp{5p17}[7cm]
 }
+
+\bsubsec{Décomposition en facteurs premiers}
+
+\def\imgPrefix{}
+
+\slide{EXERCICES}{
+    \bvspace{-0.75cm}
+    \act{Representation chromatique des nombres}{\bvspace{-1cm}
+    \wideFrame[6em]{
+        \dividePage{\imgp{representation-chromatique-des-nombres}[5.75cm]}{
+            \begin{enumerate}
+                \item Écrire sous la forme d'un produit de facteurs premiers.
+                \begin{align*}
+                    4 &= \hole \qquad 10 = \hole \qquad 14 = \hole \\
+                    15 &= \hole \qquad 20 = \hole
+                \end{align*}
+                \item Expliquer comment les nombres sont représentés sur ce tableau.
+            \end{enumerate}
+        }[0.35]
+    }
+    }[\href{https://www.monclasseurdemaths.fr/tc/représentation-chromatique-des-nombres/}
+    {Mon classeur de maths}]
+}
+
+\slide{COURS}{
+    \ssubsec
+    \pr{}{
+        Tout nombre entier strictement supérieur à 1 peut se décomposer en produit de facteurs premiers.
+    }
+    \bvspace{-0.5cm}
+    \expl{}{Donner la décomposition en facteurs premiers de :\bvspace{-1cm}%
+        \begin{align*}%
+            1100 &= \palt{2}{%
+                2 \times 550\\
+                &=2 \times 2 \times 275\\
+                &=2 \times 2 \times 5 \times 275\\
+                &=2 \times 2 \times 5 \times 55\\
+                &=2 \times 2 \times 5 \times 5 \times 11
+            }
+        \end{align*}%
+    }
+}
+
+\slide{cr}{
+    \mthd{Décomposition en facteurs premiers}{
+        On prend la liste des nombres premiers dans l'ordre,
+        puis tester la division par chaque nombre premier,
+        un par un.
+    }
+}
+
+\def\imgPrefix{mi-c4/exo-}
+
+\slide{EXERCICES}{
+    \exo{}{
+        \begin{enumerate}
+            \item Trouver la décomposition en facteurs premiers de $70$ et $105$.
+            \item En déduire les diviseurs communs de $70$ et $105$.
+        \end{enumerate}
+    }
+    \bvspace{-0.5cm}
+    \exo{}{
+        Un fleuriste doit réaliser des bouquets tous identiques.
+        Il dispose pour cela de 434 roses et 620 tulipes. Quelles sont toutes les compositions de bouquets possibles ?
+    }[\href{https://eduscol.education.fr/document/14056/download}
+    {Attendues de fin d'année de 4e}]
+}
+
+\exoSlide{20p17,45p19,56p20}[7cm][2][\mi][dm]
+
+\scn{Simplification de fractions}{}
+
+\slide{qf}{
+    Donner la décomposition en facteurs premiers de :
+    \multiColEnumerate{3}{
+        \item 6 \item 28 \item 5 \item 24 \item 66 \item 52
+    }
+}
+
+\slide{cr}{
+    \app{Simplification de fractions}{}
+    \bvspace{-1cm}
+    \expl{}{
+        Simplifier la fraction :
+        \begin{align*}
+            \frac{140}{294} &= \palt{2}{
+                \frac{2 \times 2 \times 5 \times 7}{2 \times 3 \times 7 \times 7}\\
+                &= \frac{2 \times 5}{3 \times 7}\\
+                &= \frac{10}{21}
+            }
+        \end{align*}
+    }[\href{https://math-coaching.com/fiche/simplifier-fraction-decomposition-facteurs-premiers-130}{Math Coaching}]
+}
+
+\slide{cr}{
+    \mthd{Simplification de fractions}{
+        \begin{enumerate}
+            \item On décompose le numérateur et dénominateurs en facteurs premiers.
+            \item On supprime les facteurs communs.
+            \item On multiplie ensemble les facteurs restants au numérateur et dénominateurs.
+        \end{enumerate}
+    }
+}
+
+\exoSlide{58p54}[10cm][1][\mi]

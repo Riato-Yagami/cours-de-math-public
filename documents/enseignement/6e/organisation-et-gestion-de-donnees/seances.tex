@@ -1,0 +1,185 @@
+% VARIABLES %%%
+% \date{\today}
+\def\longTitle{Organisation et gestion de données}
+\def\shortTitle{\MakeUppercase{\longTitle}}
+
+\setcounter{seq}{2}
+\bseq{\longTitle}
+
+\setgrade{6e}
+\def\imgPath{enseignement/6e/organisation-et-gestion-de-donnees/}
+%%
+
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Tab_Graph.pdf}{Yvan Monka}}
+
+\avspace{0.1cm}
+
+\obj{
+    \item Prélever des données numériques à partir de supports variés.
+    \item Produire des tableaux, diagrammes et graphiques organisant des données numériques.
+    \item Exploiter et communiquer des résultats de mesures.
+    \item Situations de proportionnalité/situations qui ne sont pas de proportionnalité
+}
+
+\scn{Tableaux}{}
+
+\bsec{Tableaux}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{1-2p96}[10cm][1][\dim][qf]
+
+\def\imgPrefix{dim-6e/act-}
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \act{1p98}{\bvspace{-0.75cm}\imgp{1p98}[11.5cm]}[\dim]
+}
+
+\slide{cr}{
+    \sseq\ssec
+    \vc{}{
+        Un \key{tableau} permet de rassembler et d'organiser des données pour les lire plus facilement.
+    }
+}
+
+\slide{cr}{
+    \expl{}{
+        Au collège de la Paix,
+        les enfants ont le choix entre 3 LV2 :
+        italien, allemand ou espagnol.\\
+
+        En 6eA, il y a 25 élèves. 12 ont choisi espagnol, 6 allemand et les autres italien.
+
+        En 6eB, 13 élèves ont choisi espagnol et 5 élèves allemand.
+
+        Dans ces deux classes, 12 élèves ont choisi italien.\\
+
+        Présenter ces données dans un tableau à double entrée.
+    }[\href{https://eduscol.education.fr/document/14014/download}{Attendues 6e}]
+}
+
+\slide{cr}{\bvspace{-0.5cm}
+    \mthd{Construire un tableau}{\bvspace{-0.75cm}
+        \begin{enumerate}
+            \item On réalise un tableau à double entrée avec les données de l'énoncé et on ajoute une colonne et une ligne total. 
+            \item On le complète avec les données de l'énoncé.
+            \item On finit de compléter le tableau en effectuant les calculs.
+        \end{enumerate}
+        \begin{center}
+            \palt{2}{
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                & Espagnol & Allemand & Italien & Total\\
+                \hline
+                5eA    & 12       & 6        & 7       & 25        \\
+                \hline
+                5eB    & 13       & 5        & 5       & 23        \\
+                \hline
+                Total  & 25       & 11       & 12      & 48        \\
+                \hline
+            \end{tabular}
+            }
+        \end{center}
+    }[\ym]
+}
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{17p104,6p101,19p104}[6cm][2][\dim]
+
+\scn{Diagrammes en baton}{}
+
+\bsec{Diagrammes}
+\bsubsec{Diagrammes en baton}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{3-4p96}[8cm][1][\dim][qf]
+
+\def\imgPrefix{dim-6e/act-}
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \act{2p98}{\bvspace{-0.75cm}\imgp{2p98}[9cm]}[\dim]
+}
+
+\slide{cr}{
+    \ssec\ssubsec
+    \vc{}{
+        Un \key{diagramme en bâton} (ou à barres) permet de comparer visuellement des données.
+    }[\dim]
+
+    \pr{}{
+        Si un diagramme en bâtons a pour origine 0,
+        alors la hauteur des barres est proportionnelle aux effectifs.
+    }
+}
+
+\def\imgPrefix{}
+% \newpage
+\slide{exo}{
+    \exo{}{
+        On a demandé aux élèves des trois classes de 6e du collège Anatole France combien d'animaux de compagnie vivaient avec eux.
+        On a représenté les résultats dans le diagramme suivant.
+        \imgp{nos-amis-les-betes}[10cm]
+        Les affirmations suivantes sont-elles vraies ou fausses? Justifier.
+        \begin{enumerate}
+            \item  21 élèves ont un seul animal de compagnie.
+            \item Il y a 75 élèves en 6e au collège Anatole France.
+            \item Les élèves qui ont deux animaux de compagnie sont trois fois plus nombreux que les élèves qui ont trois animaux de compagnie.
+            \item 70 élèves ont moins de trois animaux de compagnie.
+            \item Plus de la moitié des élèves ont au moins un animal de compagnie.
+        \end{enumerate}
+    }[\rpmc[28]]
+}
+
+\scn{Diagrammes circulaires}{}
+
+\bsubsec{Diagrammes circulaires}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{5-6p96}[8cm][1][\dim][qf]
+
+\def\imgPrefix{dim-6e/act-}
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \act{4p99}{\bvspace{-0.75cm}\imgp{4p99}[11cm]}[\dim]
+}
+
+\def\imgPrefix{}
+\slide{exo}{
+    \exo{}{
+        Dans un collège,
+        112 élèves viennent en voiture,
+        autant viennent à vélo,
+        56 viennent en bus et 280 viennent à pied.
+        \begin{enumerate}
+            \item Un seul de ces diagrammes circulaires représente le mode de déplacement des élèves de ce collège.
+            Lequel?
+            \imgp{vers-de-mobilites-douces-1}[8cm]
+            \item Compléter le tableau ci-dessous, puis choisir les nombres appropriés pour graduer
+            le diagramme en bâtons qui représente ces données.
+            \imgp{vers-de-mobilites-douces-2}[8cm]
+        \end{enumerate}
+        
+    }[\rpmc[34]]
+}
+
+\scn{Graphiques cartésiens}{}
+
+\bsec{Graphiques cartésiens}
+
+\def\imgPrefix{dim-6e/act-}
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \act{3p99}{\bvspace{-0.75cm}\imgp{3p99}[9cm]}[\dim]
+}
+
+\def\imgPrefix{}
+\slide{exo}{
+    \exo{}{
+        Que pourrait représenter ce graphique à propos d'une salle de classe?
+        Le décrire avec le plus de précision possible.
+        Justifier et compléter le graphique ci-dessous.
+        \imgp{l-allure-de-la-courbe}[8cm]
+    }[\rpmc[31]]
+}
+
+\bsec{Situations de proportionnalité}
+\bsec{Situations de proportionnalité}

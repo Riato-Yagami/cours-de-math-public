@@ -115,27 +115,7 @@
 
 % TCOLORBOX
 
-\newtcolorbox{infoBox}{
-    colback=red!5!white,
-    colframe=red!75!black,
-    breakable
-}
-
-\newtcolorbox{prepBox}{
-    enhanced jigsaw,
-    breakable,
-    colback=Blue!2!white,
-    colframe=Blue!75!black,
-    grow sidewards by = 1cm,
-}
-
-\newtcolorbox{twoColBox}{
-    sidebyside, sidebyside align=top,
-    enhanced,
-    opacityback=0,
-    colframe=red!75!black,
-    frame hidden,
-}
+\input{header/command/tcolorbox.tex}
 
 \NewDocumentCommand{\leconInfo}{mooo}{
     \begin{infoBox}
@@ -305,13 +285,14 @@
 %     }
 % }
 
-\NewDocumentCommand{\exoSlide}{m O{10cm} O{1} O{}}{%
-    \slide{EXERCICES}{%
+\NewDocumentCommand{\exoSlide}{m O{10cm} O{1} O{} O{exo}}{%
+    \slide{#5}{%
         \ifthenelse{\equal{#3}{1}}{\vspace{-0.5cm}}{\vspace{-1cm}}
         \def\exercices{\foreach \q in {#1}{\imgp{\q}[#2]\vspace{-0.5cm}}}
         \exo{#1}{\wideFrame[7em]{\bvspace{0.25cm}\avspace{-0.25cm}
             \ifthenelse{\equal{#3}{1}}{\exercices}
             {\begin{multicols}{#3}\exercices\end{multicols}}}
+            \avspace{0.75cm}
         }[#4]
     }
 }
@@ -382,4 +363,15 @@
     }{
         \definecolor{gradeColor}{RGB}{0, 0, 0}
     }}}}
+}
+
+\gdef\phase{}
+\newcommand{\setPhase}[1]{%
+    \begin{switch}{#1}
+        \case{exo}{\gdef\phase{EXERCICES}}
+        \case{cr}{\gdef\phase{COURS}}
+        \case{qf}{\gdef\phase{QUESTIONS FLASH}}
+        \case{dm}{\gdef\phase{DEVOIR MAISON}}
+        \default{\gdef\phase{#1}}
+    \end{switch}
 }

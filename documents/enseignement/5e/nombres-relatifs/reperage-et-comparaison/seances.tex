@@ -1,7 +1,7 @@
 % VARIABLES %%%
 \def\authors{\jules}
 % \date{\today}
-\def\longTitle{Nombres Relatifs : Repérage et comparaison}
+\def\longTitle{Nombres Relatifs - Repérage et comparaison}
 \def\shortTitle{\MakeUppercase{\longTitle}}
 \bseq{\longTitle}
 % \def\theme{\longTitle}
@@ -10,25 +10,28 @@
 
 \def\imgPath{enseignement/5e/nombres-relatifs/reperage-et-comparaison/}
 \def\imgExtension{.png}
+
+\setboolean{showAllPhases}{true}
+% \def\showPhase{EXERCICES}
 %%
 
 % Yvan Monka : https://www.maths-et-tiques.fr/telech/19Nomb_rel1.pdf
-% Euler : https://euler-ressources.ac-versailles.fr/wims/wims.cgi?module=help%2Fteacher%2Fprogram%2F&+cmd=new&+job=math.cycle4#chapitre000
-
-% \disableAnimation
-% \shortAnimation
-% \firstSlide
-
-\def\pv{\; ; \;}
 
 % \article{\vskip}
 \ifArticle{\vspace*{0.1cm}}
 
-\scn{Introduction aux nombres négatifs}{}
+\obj{
+    \item Introduire les nombres relatifs.
+    \item Repérer sur une droite graduée les nombres décimaux relatifs.
+    \item Repérer sur une droite graduée et dans le plan muni d'un repère orthogonal.
+    \item Utiliser la notion d'opposé.
+}
+
+\scn{Introduction aux nombres négatifs}
 
 \bsec{Définitions}
 
-\slide{EXERCICES}{
+\slide{exo}{
     \vspace*{-0.5cm}
     \act{}{
         \dividePage{
@@ -46,7 +49,7 @@
 
 \scn{Institutionnalisation des nombres relatifs}{}
 
-\slide{COURS}{
+\slide{cr}{
     \sseq\ssec
     \df{}{
         Un nombre est dit :
@@ -57,7 +60,7 @@
     }
 }
 
-\slide{}{
+\slide{cr}{
     \rmk{}{
         \begin{itemize}
             \item $O$ est à la fois positif et négatif
@@ -71,9 +74,9 @@
 \exoSlide{28p196,29p196,30p196}[9cm][1][\mm]
 \def\imgPrefix{}
 
-\scn{Résution d'équations grâce aux nombres relatifs}{}
+\scn{Résolution d'équations grâce aux nombres relatifs}{}
 
-\slide{QUESTIONS FLASH}{%
+\slide{qf}{%
     \sqf Comparer à l'aide du signe $>$ ou $<$ ou $=$ les nombres :
     \begin{align*}
         &\qfs \; 10 \hole 10,075\\
@@ -82,7 +85,7 @@
     \end{align*}
 }
 
-\slide{}{
+\slide{cr}{
     \sqf Completer les opérations à trous :
     \begin{align*}
         &\qfs \; 6 + \hole = 18\\
@@ -91,7 +94,7 @@
     \end{align*}
 }
 
-\slide{EXERCICES}{
+\slide{exo}{
     \act{}{
         \begin{enumerate}
             \item $ 5 + \textrm{?} = 13$ : Trouve le nombre représenté par « ? »
@@ -108,19 +111,19 @@
 }
 
 
-\slide{}{
+\slide{exo}{
     \begin{enumerate}
         \setcounter{enumi}{1}
         \item Ces égalités sont des équations car elles contiennent une \key{inconnue}.
         \begin{itemize}
             \item Tu les appelais aussi des « opérations à trou ».
-            \item Pour les resoudres tu te demande combien vaut $13-5$ ?
+            \item Pour les résoudre, tu te demandes combien vaut $13-5$ ?
         \end{itemize}
     \end{enumerate}
 
 }
 
-\slide{}{
+\slide{exo}{
     \begin{enumerate}
         \setcounter{enumi}{2}
         \item Résout les équations suivantes :
@@ -146,29 +149,33 @@
 %     }
 % }
 
-\slide{COURS}{
+\slide{cr}{
     \hist{}{
-        La découverte des nombres négatifs est souvant attribuée à Brahmagupta,
-        Mathématicien et astronome indien du VIe siècle.\\
-        Il les introduit dans le but de résoudre des oppositions autrement impossibles.
+        L'invention des nombres négatifs est souvent attribuée à Brahmagupta,
+        mathématicien et astronome indien du VIe siècle.\\
+        Il les introduit dans le but de résoudre des opérations autrement impossibles.
         Dans les cadres de calculs dettes notamment.
     }
     \expl{}{
-        Brahmagupta possède $2\euro$ et achète $4$ baguettes à $1,5\euro$.
+        Brahmagupta possède $2\euro$ et achète $4$ baguettes à $1,5\euro$ l'unité.
         Quelle quantité d'argent a-t-il après son achat ?
     }
 }
 
-\slide{}{
+\slide{cr}{
+    % \df{}{
+    %     L'\key{opposé} d'un nombre $n$ est le nombre qui, lorsqu'il est ajouté à $n$, donne $0$.
+    % }[\href{https://fr.wikipedia.org/wiki/Opposé}{Wikipédia}]
+
     \df{}{
-        L'\key{opposé} d'un nombre $n$ est le nombre qui, lorsqu'il est ajouté à $n$, donne $0$.
-    }[\href{https://fr.wikipedia.org/wiki/Opposé}{Wikipédia}]
+        Deux nombres dont la somme est égale à 0 sont dits \key{opposé}.
+    }
 
     \expl{}{
         \begin{itemize}
             \item L'opposé de $7$ est \palt{2}{$-7$}.
             \item L'opposé de $-18,6$ est \palt{2}{$18,6$}.
-            \item L'opposé d'un nombre $b$ est \palt{2}{$-b$}.
+            \item L'opposé d'un nombre relatif $b$ est \palt{2}{$-b$}.
         \end{itemize}
     }
 }
@@ -179,7 +186,7 @@
 
 \scn{Repérage sur une droite graduée}{}
 
-\slide{QUESTIONS FLASH}{%
+\slide{qf}{%
     \setcounter{qf}{0}
     \sqf Ranger les nombres suivant dans l'ordre croissant les nombres :
     \begin{align*}
@@ -187,7 +194,7 @@
     \end{align*}
 }
 
-\slide{}{%
+\slide{qf}{%
     \sqf Donner dans chaque cas l'abscisse du point $P$:\\
     \noindent \qfs \imgp{qf-reperage-droite-a}[6cm]
     \noindent \qfs \imgp{qf-reperage-droite-b}[9cm]
@@ -197,7 +204,7 @@
 \bsec{Repérage}
 \bsubsec{Repérage sur une droite}
 
-\slide{EXERCICES}{
+\slide{exo}{
     \act{}{
         \begin{enumerate}
             \item Tracer une droite numérique sur laquelle placer les points :
@@ -210,16 +217,19 @@
 }
 
 \def\imgPrefix{mm-c4/expl-}
-\slide{COURS}{
+\slide{cr}{
     \ssec\ssubsec
-    \df{}{L'\key{abscisse} d'un point sur une droite graduée est sa position relativement à $0$.}
-    \expl{}{
-        \imgp{5p190}[10cm]
+    \df{}{L'\key{abscisse} d'un point est le nombre qui permet de repérer ce point sur la droite graduée.}
+    \bvspace{-1cm}
+    \expl{}{\bvspace{-0.5cm}\imgp{5p190}[10cm]
         Le point $A$ est d'abscisse \palt{2}{$-3$} et $B$ d'abscisse \palt{2}{$3$}.
         Ils ont alors la même \key{distance à $0$}, mais sont de signes différents. 
     }[\mi]
+}
+
+\slide{}{
     \rmk{}{
-        Sur une droite gradué, deux points qui ont des abscisses opposées sont symétrique par rapport à l'origine.
+        Sur une droite graduée, deux points qui ont des abscisses opposées sont symétrique par rapport à l'origine.
     }[\mi]
 }
 
@@ -227,28 +237,25 @@
 \exoSlide{51p197,53p197,55p197}[7cm][2][\mi]
 \def\imgPrefix{}
 
-\scn{Repérage dans un plan}{}
+\scn{Découverte repérage dans un plan}{}
+
+\bsubsec{Repérage dans le plan}
 
 \def\imgPrefix{mm-c4/exo-}
-\slide{QUESTIONS FLASH}{
-    % \imgp{25p196}[7cm]
-    \imgp{26p196}[8cm]
-    \imgp{31p196}[8cm]
-}
+\exoSlide{26p196,31p196}[8cm][1][\mi][qf]
+
 \def\imgPrefix{}
 
-\slide{EXERCICES}{
+\slide{exo}{
     \small
     \bvspace{-0.75cm}
-    \act{}{
-        Guybrush Threepwood est à la recherche du trésor de l'île des singes.
-        Il est localisé au point $G$ donné sur le plan ci-dessous.
-        
+    \act{}{Guybrush, repéré par le point $G$. est à la recherche du trésor de l'île des singes.
+
         \bvspace{-0.1cm}
         \wideFrame[6.8em]{
             \dividePage{\imgp{reperage-plan-activite}[6.7cm]}{
                 \begin{enumerate}
-                    \item Combien de nombres sont nécessaires pour repérer sa position ? Donner ces deux nombres pour Guybrush.
+                    \item Combien de nombres sont nécessaires pour repérer sa position ? Donnez ces nombres pour Guybrush.
                     \item Que doit-on faire pour qu'il n'y ait pas plusieurs positions possibles repérées par ces nombres?
                     \item Repérer ainsi Guybrush et son bateau accosté au point $B$.
                     \item Demandez de l'aide au capitaine PESIN pour qu'il vous donne l'emplacement du trésor.  
@@ -262,26 +269,60 @@
     }
 }
 
-\bsubsec{Repérage dans le plan}
+\scn{Institutionnalisation repérage dans un plan}{}
 
-\slide{COURS}{
+\def\imgPrefix{mm-c4/exo-}
+\exoSlide{64p198}[6cm][1][\mm][qf]
+\def\imgPrefix{}
+
+\slide{cr}{
     \vc{}{%
-        Les points du plan sont repérés par deux nombres qui forme ces \key{coordonnées}:
+        Les points du plan sont repérés par deux nombres qui forment ces \key{coordonnées}:
         \begin{itemize}
-            \item L'\key{abscisse} qui ce lit sur l'axe horizontal.
-            \item L'\key{ordonnée} qui ce lit sur l'axe vertical.
+            \item L'\key{abscisse} qui se lit sur l'axe horizontal.
+            \item L'\key{ordonnée} qui se lit sur l'axe vertical.
         \end{itemize}
     }[\mi]
 }
 
-\slide{}{
+\slide{cr}{
     \expl{}{
         \imgp{axes-plan}[5cm]
         $A$ est d'abscisse $3$ et d'ordonnée $2$. On note ces coordonnées $A(3;2)$.
     }[\href{https://www.maths-et-tiques.fr/telech/19Nomb_rel1.pdf}{Yvan Monka}]
 }
 
-
 \def\imgPrefix{mm-c4/exo-}
-\exoSlide{57p197,58p198}[5.5cm][2]
-\exoSlide{59p198}[6cm]
+\exoSlide{57p197,58p198}[5.5cm][2][\mi]
+\exoSlide{59p198}[6cm][1][\mi]
+
+\scn{Comparaison de nombres relatifs}{}
+
+\bsec{Comparaison de nombres relatifs}
+\slide{cr}{
+    \ssec
+    \mthd{}{
+        Lorsque l'on compare  deux nombres relatifs,
+        si les deux nombres sont :
+        \begin{itemize}
+            \item positifs, le plus grand est celui avec la plus grande distance à 0.
+            \item négatifs, le plus grand est celui avec la plus petite distance à 0.
+            \item de signes opposées, le nombre positif est toujours plus grand.
+        \end{itemize}
+    }
+}
+
+\slide{cr}{
+    \expl{Comparer :}{
+        \multiColEnumerate{3}{
+            \item $10$ et $ 10,09$
+            \item $-1$ et $-1,1$
+            \item $-100$ et $50$
+        }
+    }
+    \rmk{Comparaison avec droite graduée}{Le point le plus à droite correspond au nombre le plus grand.}
+}
+
+\exoSlide{66p198}[6cm][1][\mi]
+
+\exoSlide{70p198,87p200}[6cm][2][\mi][dm]

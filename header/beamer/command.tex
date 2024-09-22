@@ -1,9 +1,32 @@
-\newcommand{\slide}[2]{
+\newcommand{\slide}[2]{%
+    \setPhase{#1}%
     \begin{frame}
-    \frametitle[#1]{#1}
-        #2
+        \ifthenelse{\equal{\currentPhase}{\phase}}{}{%
+            \xdef\currentPhase{\phase}%
+            \frametitle{\phase}%
+        }%
+        % \frametitle{\phase}%
+        #2%
     \end{frame}
 }
+
+% \ifNotNull{#1}{%
+% \setPhase{#1}
+% % \phase{} $\rightarrow$ \currentPhase{}
+% \ifthenelse{\equal{\currentPhase}{\phase}}{}{
+%     \xdef\currentPhase{\phase}
+%     \ifthenelse{\boolean{showAllPhases}}{
+%         \begin{center}
+%             \begin{phaseBox}
+%                 \textbf{\phase}
+%             \end{phaseBox}
+%         \end{center}}{
+%     }
+% }
+% }
+% \ifthenelse{\boolean{showAllPhases}}{#2}{%
+% \ifthenelse{\equal{\phase}{\showPhase}}{#2}{}
+% }
 
 \newcounter{sec}
 % \stepcounter{sec}
@@ -97,36 +120,35 @@
 \newcounter{timer}
 \NewDocumentCommand{\qf}{m O{15}}{
     \setcounter{qf}{0}
-    \slide{EXERCICES}{\qfSUB{}{
-        \begin{itemize}
-            \item \large $#2\sec$ par question
-            \item \listSize{#1}\thesize{} questions
-        \end{itemize}
-    }}
-    \foreach \q in {#1}{
-        \stepcounter{qf}
-        \setcounter{choice}{1}
-        % Timer slides
-        \setcounter{timer}{#2}
-        \whiledo{\thetimer>0}{
-            \addtocounter{timer}{-1}
-            \slide{QUESTIONS FLASH}{
-                % \hspace{0.25cm}
-                \large \color{Blue}\theqf.\color{black}
-                \hspace*{-1cm} \huge \listElement{\q}{0}\\
-                \ifthenelse{\boolean{qftimer}}{
-                    \vspace{1cm}
-                    \transduration{1}
-                    \centering
-                    \normalsize \color{CadetBlue}$\thetimer\sec$
-                }{
-                    \transduration{#2}
-                    \setcounter{timer}{0}
-                }
-            }
-        }
-    }
-
+    % \slide{EXERCICES}{\qfSUB{}{
+    %     \begin{itemize}
+    %         \item \large $#2\sec$ par question
+    %         \item \listSize{#1}\thesize{} questions
+    %     \end{itemize}
+    % }}
+    % \foreach \q in {#1}{
+    %     \stepcounter{qf}
+    %     \setcounter{choice}{1}
+    %     % Timer slides
+    %     \setcounter{timer}{#2}
+    %     \whiledo{\thetimer>0}{
+    %         \addtocounter{timer}{-1}
+    %         \slide{QUESTIONS FLASH}{
+    %             % \hspace{0.25cm}
+    %             \large \color{Blue}\theqf.\color{black}
+    %             \hspace*{-1cm} \huge \listElement{\q}{0}\\
+    %             \ifthenelse{\boolean{qftimer}}{
+    %                 \vspace{1cm}
+    %                 \transduration{1}
+    %                 \centering
+    %                 \normalsize \color{CadetBlue}$\thetimer\sec$
+    %             }{
+    %                 \transduration{#2}
+    %                 \setcounter{timer}{0}
+    %             }
+    %         }
+    %     }
+    % }
     \slide{QUESTIONS FLASH}{
         \qfRes{#1}
     }
@@ -144,7 +166,8 @@
     \end{columns}
 }
 
-\renewcommand*{\scn}[2]{}
+% \renewcommand*{\scn}[2]{}
+\RenewDocumentCommand{\scn}{m O{}}{}
 
 \newcommand{\ifArticle}[1]{}
 \newcommand{\ifBeamer}[1]{#1}
@@ -159,3 +182,5 @@
 
 \newcommand{\bvspace}[1]{\vspace*{#1}}
 \newcommand{\avspace}[1]{}
+
+\renewcommand*{\obj}[1]{}

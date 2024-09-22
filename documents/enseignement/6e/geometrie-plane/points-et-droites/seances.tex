@@ -1,20 +1,23 @@
 % VARIABLES %%%
-\def\authors{\jules}
 % \date{\today}
 \def\longTitle{Géometrie plane - points et droites}
 \def\shortTitle{\MakeUppercase{\longTitle}}
 % \def\theme{\longTitle}
 
 \setgrade{6e}
-
 \def\imgPath{enseignement/6e/geometrie-plane/points-et-droites/}
-\def\imgExtension{.png}
 %%
 
-% Yvan Monka : https://www.maths-et-tiques.fr/telech/19Para_Perp.pdf
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Para_Perp.pdf}{Yvan Monka}}
 
 \avspace{0.1cm}
+
+\obj{
+    \item Connaître la définition de l'alignement de trois points ainsi que de l'appartenance à une droite et reconnaître ces situations.
+    \item Savoir tracer avec l'équerre la droite perpendiculaire à une droite donnée passant par un point donné.
+    \item Savoir tracer avec la règle et l'équerre la droite parallèle à une droite donnée passant par un point donné.
+    \item Connaître les propriétés entre perpendicularité et parallélisme et savoir s'en servir pour raisonner.
+}
 
 \scn{Représenter un point et une droite}{}
 
@@ -22,20 +25,20 @@
 \bsec{Objet géométrique}
 \bsubsec{Le point}
 
-\slide{EXERCICES}{
+\slide{exo}{
     \act{}{Représenter un point.}
 }
 
-\slide{COURS}{
+\slide{cr}{
     \sseq\ssec\ssubsec
     \vc{}{
-        On nomme \key{point} est le plus petit élément géométrique.
+        On nomme \key{point} le plus petit élément géométrique.
         Il est infiniment petit,
         tant qu'il n'a pas de dimension.
     }
 }
 
-\slide{}{
+\slide{cr}{
     \rmk{}{
         On représente le point par une croix.
     }
@@ -49,19 +52,19 @@
     }
 }
 
-\slide{EXERCICES}{
+\slide{exo}{
     \act{}{Représenter une droite passant par deux points $A$ et $B$.}
 }
 
 \bsubsec{La droite}
-\slide{COURS}{
+\slide{cr}{
     \ssubsec
 
     \vc{}{On nomme \key{droite} un tracé rectiligne infini.}
 }
 
-\slide{}{
-    \rmk{}{On ne peut pas représenter une droite entièrement}
+\slide{cr}{
+    \rmk{}{On ne peut pas représenter une droite dans son intégralité.}
 
     \axio{}{
         Il existe une unique droite passant par deux points distincts.
@@ -73,16 +76,16 @@
     }
 }
 
-\scn{Représenter un ségment et une demi-droite}{}
+\scn{Représenter un segment et une demi-droite}{}
 
-\slide{EXERCICES}{
+\slide{exo}{
     \act{}{Représenter un segment}
 }
 
 
 \bsubsec{Le segment et la demi-droite}
 
-\slide{COURS}{
+\slide{cr}{
     \ssubsec
 
     \df{}{Un \key{segment} est une portion de droite,
@@ -97,7 +100,7 @@
 }
 
 
-\slide{}{
+\slide{cr}{
     \ssubsec
 
     \df{}{Une \key{demi-droite} est une portion de droite,
@@ -112,7 +115,7 @@
 
 \scn{Activité alignement}{}
 
-\slide{QUESTIONS FLASH}{%
+\slide{qf}{%
     \sqf Comment peut-on nommer la droite ci-dessous?
     \bvspace{-0.5cm}
     \imgp{qf1}[5cm]
@@ -121,7 +124,7 @@
     \\ \hint{plusieurs réponses sont attendues}
 }
 
-\slide{}{
+\slide{qf}{
     \sqf Quels points semblent alignés?
     \bvspace{-0.5cm}
     \imgp{qf2}[5cm]
@@ -140,12 +143,12 @@
 %     }[\dim]
 % }
 \def\imgPrefix{dim-6e/act-}
-\slide{EXERCICES}{\bvspace{-0.65cm}\act{}{\bvspace{-0.45cm}\imgp{1p208}[11cm]}
+\slide{exo}{\bvspace{-0.65cm}\act{}{\bvspace{-0.45cm}\imgp{1p208}[11cm]}
 }
 \def\imgPrefix{}
 
 % \bsubsec{Alignement}
-\slide{COURS}{
+\slide{cr}{
     \ssec%
 
     \df{}{
@@ -153,7 +156,7 @@
     }
 }
 
-\slide{}{
+\slide{cr}{
     \bvspace{-0.45cm}
     \expl{}{
         \dividePage{
@@ -184,7 +187,7 @@
 \scn{Restauration de figures}{}
 
 \setcounter{qf}{0}
-\slide{QUESTIONS FLASH}{
+\slide{qf}{
     \sqf Les droites $(f)$ et $(g)$ semblent être:
     \bvspace{-0.5cm}
     \imgp{qf3}[4cm]
@@ -193,7 +196,7 @@
     \\ \hint{plusieurs réponses sont attendues}
 }
 
-\slide{}{
+\slide{qf}{
     \sqf Quelles droites semblent parallèles :
     \bvspace{-0.5cm}
     \imgp{qf4}[5cm]
@@ -202,7 +205,7 @@
     % \\ \hint{plusieurs réponses sont attendus}
 }
 
-\slide{}{
+\slide{exo}{
     \exo{Restaurer à droite la figure de gauche}{
         \imgp{restauration-1}[8cm]
         \imgp{restauration-2}[8cm]
@@ -216,15 +219,15 @@
 
 \scn{Perpendicularité}{}
 
-\slide{QUESTIONS FLASH}{
+\slide{qf}{
     \imgp{32p216}[7cm]
 }
 \def\imgPrefix{}
 
-\bsec{Droites}
+\bsec{Positions relatives de plusieurs droites}
 \bsubsec{Perpendicularité}
 
-\slide{COURS}{
+\slide{cr}{
     \ssec\ssubsec%
     %
     \df{}{
@@ -235,27 +238,27 @@
     % 
 }
 
-\slide{}{
+\slide{cr}{
     \expl{}{
         \dividePage{
             \imgp{secantes}[4cm]
         }{
-            Les droites $(AE)$ et$(BD)$ sont sécantes.\\ $C$ est leur point d'intersection.
+            Les droites $(AE)$ et$(BD)$ sont sécantes.\\ $F$ est leur point d'intersection.
         }[0.45]
     }[\my]
 }
 
-\slide{EXERCICES}{
+\slide{exo}{
     \act{}{
         \begin{enumerate}
             \item Placer trois points $A,B$ et $C$.
             \item Tracer $(AB)$.
-            \item Tracer une droite perpendiculaire à $(AB)$ passant par $C$.
+            \item Tracer la droite perpendiculaire à la droite $(AB)$ passant par $C$.
         \end{enumerate}
     }
 }
 
-\slide{COURS}{
+\slide{cr}{
     \df{}{
         Deux droites sont dites \key{perpendiculaires} si elles sont sécantes et leur intersection forme un angle droit.
     }
@@ -269,20 +272,20 @@
     }[\my]
 }
 
-\slide{}{
+\slide{cr}{
     \dividePage{
-        \mthd{Construction de droites perpendiculaire}{
+        \mthd{Construction de droites perpendiculaires}{
             \imgp{construction-perpendiculaire}[5cm]
         }
     }{
-        \expl{}{Construire la droite perpendiculaires à $(d)$ passant par $A$.
+        \expl{}{Construire la droite perpendiculaire à la droite $(d)$ passant par $A$.
         \imgp{construction}[5cm]}
     }
 }
 
-\slide{EXERCICES}{
+\slide{exo}{
     \bvspace{-0.5cm}
-    \exo{Reproduire la figure en bas a droite en respectant sa nouvelle échelle.}{
+    \exo{Reproduire la figure en bas à droite en respectant sa nouvelle échelle.}{
         \bvspace{-1cm}
         \imgp{restauration-3}[6cm]
     }[\href{https://ienetaples.etab.ac-lille.fr/la-pause-des-pauses/la-pause-procedure/4-la-restauration-de-figure-en-geometrie/}
@@ -293,7 +296,7 @@
 \exoSlide{14p213,55p218}[7cm][2][\dim]
 \def\imgPrefix{}
 
-\scn{Parallèlisme}{}
+\scn{Parallélisme}
 
 \qfSlide{
     \dividePage{\imgp{dim-6e/img-12p213}[5cm]}{
@@ -308,17 +311,17 @@
 
 \bsubsec{Parallèlisme}
 
-\slide{EXERCICES}{
+\slide{exo}{
     \act{}{
         \begin{enumerate}
             \item Placer trois points $A,B$ et $C$.
             \item Tracer $(AB)$.
-            \item Tracer une droite parallèle à $(AB)$ passant par $C$.
+            \item Tracer la droite parallèle à la droite $(AB)$ passant par $C$.
         \end{enumerate}
     }
 }
 
-\slide{COURS}{
+\slide{cr}{
     \ssubsec
     \df{}{
         Deux droites sont dites \key{parallèles} si elles ne sont pas sécantes.
@@ -335,13 +338,13 @@
     % [\myl{https://biblio.manuel-numerique.com?openBook=9782047392935\%3FY29udGV4dGVSZXNvdXJjZT17InR5cGUiOiJhcnRpY2xlIiwiaWRyZWYiOiJpZF9DaGFwdGVyXzAxMl9ab29tX0dyYXBoaWNfNTUzX1NDUl94aHRtbCIsImFydGljbGVUeXBlIjoiem9vbSJ9}]
 }
 
-\slide{}{
+\slide{cr}{
     \dividePage{
         \mthd{Construction de droites parallèles}{
             \imgp{construction-parallele}[4.5cm]
         }
     }{
-        \expl{}{Construire la droite parallèles à $(d)$ passant par $A$.
+        \expl{}{Construire la droite parallèle à la droite $(d)$ passant par $A$.
         \imgp{construction}[5cm]}
     }
 }
@@ -362,11 +365,11 @@
 % \ifArticle{\newpage}
 
 \def\imgPrefix{dim-6e/exo-}
-\exoSlide{11p213,52p218}[6cm][2][\dim]
-\exoSlide{68p221}[5.5cm][1][\dim]
+\exoSlide{68p221,11p213}[4.5cm][2][\dim]
+% \exoSlide{}[5.5cm][1][\dim]
 \def\imgPrefix{}
 
-\scn{Théorèmes}{}
+\scn{Propriétés 1}{}
 
 % \qf{{$3+10-7$,$=6$},
 %     {$A{,}B{,}C$ sont alignés dans cet ordre.
@@ -382,7 +385,7 @@
 
 \qfSlide{
     \begin{enumerate}
-        \item $A,B,C$ sont alignés dans cet ordre.
+        \item Les points $A,B,C$ sont alignés dans cet ordre.
         Compléter avec $\in$ ou $\notin$.
         \begin{align*}
             \qfs \; B \hole [AC]\qquad
@@ -390,60 +393,89 @@
             \qfs \; A \hole (BC)\qquad
             &\qfs \; C \hole [AB)\\
         \end{align*}
-        \item Ou peut-on ajouter un point $D$ pour que : $A \notin [CD]$ et $A \notin [CD) $ ?
+        \item Ou peut-on ajouter un point $D$ pour que : $A \notin [CD]$ et $A \in [CD) $ ?
     \end{enumerate}
 
 }
 
-\bsec{Propriétés}
+\bsubsec{Propriétés}
 
-\slide{EXERCICES}{
-    \act{Ilustrer la proposition 30 d'Euclide}{
+\slide{exo}{
+    \act{Illustrer la proposition 30 d'Euclide}{
         \imgp{euclide-proposition-30}[9cm]
     }[\href{http://promenadesmaths.free.fr/telecharger/euclide_elements_1804.pdf}{Elements d'Euclide - 1804}]
 }
 
-\def\Si{\color{BlueViolet} \key{Si} }
-\def\Alors{\color{ForestGreen}\key{alors} }
-\slide{COURS}{
-    \ssec
-    \thm{}{\Si deux droites sont parallèles à une même droite,
-    \Alors elles sont parallèles entre elles
-    \imgp{thm-1}[4.5cm]}[\ym]
-    
+\slide{cr}{
+    \ssubsec
+    \pr{}{
+        \Si deux droites sont parallèles à une même droite,
+        \Alors elles sont parallèles entre elles
+        \imgp{thm-1}[3.5cm]
+    }[\ym]
 }
 
-\slide{}{
+\slide{cr}{
+    \rmk{}{Cette propriété sert à montrer que 2 droites sont \palt{2}{parallèles}.}
+}
+
+\scn{Propriétés 2}{}
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{54p218}[8cm][1][\dim][qf]
+\def\imgPrefix{}
+
+\slide{exo}{
     \act{}{%
         \begin{enumerate}
             \item Tracer deux droites $(d_1)$ et $(d_2)$ parallèles.
-            \item Tracer une droite $(d_3)$ perpendiculaire à $(d_1)$
+            \item Tracer une droite $(d_3)$ perpendiculaire à la droite $(d_1)$
             \item Comment semblent être les droites $(d_2)$ et $(d_3)$ ?
         \end{enumerate}
     }
 }
 
-\slide{}{
-    \thm{}{\Si deux droites sont parallèles, \Alors toute perpendiculaire à l'une
+\slide{cr}{
+    \pr{}{\Si deux droites sont parallèles, \Alors toute perpendiculaire à l'une
     est perpendiculaire à l'autre.
-    \imgp{thm-2}[5cm]}[\ym]
+    \imgp{thm-2}[3.5cm]}[\ym]
+    \bvspace{-0.75cm}
+    \rmk{}{Cette propriété sert à montrer que 2 droites sont \palt{2}{perpendiculaires}.}
 }
 
-\slide{}{
+\slide{exo}{
     \act{}{%
         \begin{enumerate}
             \item Tracer deux droites $(d_1)$ et $(d_2)$ perpendiculaires.
-            \item Tracer une droite $(d_3)$ perpendiculaires à $(d_2)$
+            \item Tracer une droite $(d_3)$ perpendiculaire à la droite $(d_2)$
             \item Comment semblent être les droites $(d_1)$ et $(d_3)$ ?
         \end{enumerate}
     }
 }
 
-\slide{}{
-    \thm{}{\Si deux droites sont perpendiculaires à une même droite,
+\slide{cr}{
+    \pr{}{\Si deux droites sont perpendiculaires à une même droite,
     \Alors elles sont parallèles entre elles.
-    \imgp{thm-3}[5cm]}[\ym]
+    \imgp{thm-3}[3.5cm]}[\ym]
+    \bvspace{-0.75cm}
+    \rmk{}{Cette propriété sert à montrer que 2 droites sont \palt{2}{parallèles}.}
 }
 
 \def\imgPrefix{dim-6e/exo-}
+
+\scn{Démontrations en géométrie}{}
+
+\slide{cr}{
+    \expl{}{
+        \begin{enumerate}
+            \item Tracer un triangle quelconque $ABC$ et placer un point $M$ sur le côté $[BC]$.
+            \item Tracer la perpendiculaire à la droite $(AB)$ passant par le point $C$. Elle coupe $(AB)$ en $H$.
+            \item Tracer la perpendiculaire à la droite $(CH)$ passant par le point $M$. Elle coupe $(CH)$ en $K$.
+            \item  Prouver que les droites $(AB)$ et $(MK)$ sont parallèles.
+        \end{enumerate}
+    }[\ym]
+}
+
 \exoSlide{42p217,72p221}[7cm][2][\dim]
+
+\exoSlide{44p217,71p221}[6cm][2][\dim][dm]
