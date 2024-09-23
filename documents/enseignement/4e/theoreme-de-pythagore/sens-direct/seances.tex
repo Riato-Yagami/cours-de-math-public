@@ -131,14 +131,27 @@
 \slide{cr}{
     \ssec
     \df{}{
-        La \key{racine carrée} d'un nombre positif $x$ est l'unique nombre positif qui,
-        lorsqu'il est multiplié par lui-même,
-        donne $x$.
-    }[\wiki{Racine_carrée}]
+        La \key{racine carrée} d'un nombre positif $x$ est la longueur des côtés du carré qui a pour aire $x$.
+        On la note $\sqrt{x}$
+    }
+
+    \expl{}{
+        \begin{enumerate}
+            \item $\sqrt{4} = 2$
+        \end{enumerate}
+    }
 
     \df{}{
-        Un \key{carré parfait} est le carré d'un entier naturel.
+        Un \key{carré parfait} est le carré d'un entier positif.
     }[\wiki{Carré_parfait}]
+
+    \expl{}{
+        \multiColEnumerate{3}{
+            \foreach \nb in {0,1,...,12} {
+                \item  $\nb^2 = \palt{2}{\ncalc{\nb*\nb}}$
+            }
+        }
+    }
 }
 
 \scn{Calculer une longueur grace au Théorème de Pythagore}

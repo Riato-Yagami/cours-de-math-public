@@ -375,3 +375,20 @@
         \default{\gdef\phase{#1}}
     \end{switch}
 }
+
+\newcounter{savedenumi}
+\setcounter{savedenumi}{0}
+\xdef\savedenumi{0}
+% \newcommand{\saveenumi}{
+%     % \xdef\savedenumi{\calc{\theenumi-1}}
+%     \setcounter{savedenumi}{0}
+% }
+
+\newcommand{\saveenumi}[1]{
+    \setcounter{savedenumi}{#1}
+}
+
+\newcommand{\loadenumi}{
+    \setItemColor{\currentColor}
+    \setcounter{enumi}{\thesavedenumi}
+}

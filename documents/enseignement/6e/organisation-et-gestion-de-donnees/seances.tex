@@ -94,10 +94,10 @@
 
 \def\imgPrefix{}
 \slide{qf}{%
-    `\begin{enumerate}
+    \begin{enumerate}
         \item \imgp{cn-CM2-juin-2023-exo-18}[8cm]
         \item \imgp{cn-CM2-juin-2023-exo-21-22}[8cm]
-    \end{enumerate}'
+    \end{enumerate}
 }
 
 \slide{exo}{
@@ -119,9 +119,12 @@
 
 \slide{cr}{
     \ssec\ssubsec
+    % \df{}{
+    %     Deux grandeurs sont dites \key{proportionnelles} si les valeurs de l'une s'obtiennent en multipliant les valeurs de l'autre par un même nombre non nul,
+    %     appelé le \key{coefficient de proportionnalité}.
+    % }
     \df{}{
-        Deux grandeurs sont dites \key{proportionnelles} si les valeurs de l'une s'obtiennent en multipliant les valeurs de l'autre par un même nombre non nul,
-        appelé le \key{coefficient de proportionnalité}.
+        Deux \key{grandeurs proportionnelles} sont deux grandeurs qui varient dans les mêmes proportions.
     }
 }
 
@@ -147,6 +150,10 @@
     }[\wiki{Proportionnalité}]
 }
 
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{2p83}[6cm][1][\dim]
+
 \scn{Diagrammes en baton}{}
 
 \bsec{Diagrammes}
@@ -166,37 +173,45 @@
     \vc{}{
         Un \key{diagramme en bâton} (ou à barres) permet de comparer visuellement des données.
     }[\dim]
+}
 
+\def\imgPrefix{}
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \exo{Vrai ou faux?}{
+        Le nombre de tablettes vendues de la marque B est trois fois plus important que le nombre de tablettes vendues de la marque A.
+        \imgp{diagramme-en-baton-attendus-6e}[7cm]
+    }
+}
+
+\slide{cr}{
     \pr{}{
         Si un diagramme en bâtons a pour origine 0,
         alors la hauteur des barres est proportionnelle aux effectifs.
     }
 }
 
-\def\imgPrefix{}
-\slide{exo}{
-    \exo{Vrai ou faux?}{
-        Le nombre de tablettes vendues de la marque B est trois fois plus important que le nombre de tablettes vendues de la marque A.
-        \imgp{diagramme-en-baton-attendus-6e}[8cm]
-    }
-}
-
 
 % \newpage
-\slide{exo}{
+\slide{exo}{%
+    \bvspace{-0.5cm}
     \exo{}{
         On a demandé aux élèves des trois classes de 6e du collège Anatole France combien d'animaux de compagnie vivaient avec eux.
         On a représenté les résultats dans le diagramme suivant.
-        \imgp{nos-amis-les-betes}[10cm]
-        Les affirmations suivantes sont-elles vraies ou fausses? Justifier.
-        \begin{enumerate}
-            \item  21 élèves ont un seul animal de compagnie.
-            \item Il y a 75 élèves en 6e au collège Anatole France.
-            \item Les élèves qui ont deux animaux de compagnie sont trois fois plus nombreux que les élèves qui ont trois animaux de compagnie.
-            \item 70 élèves ont moins de trois animaux de compagnie.
-            \item Plus de la moitié des élèves ont au moins un animal de compagnie.
-        \end{enumerate}
+        \imgp{nos-amis-les-betes}[9cm]
     }[\rpmc[28]]
+}
+
+\slide{exo}{
+    Les affirmations suivantes sont-elles vraies ou fausses? Justifier.
+    \begin{enumerate}
+        \setItemColor{\currentColor}
+        \item  21 élèves ont un seul animal de compagnie.
+        \item Il y a 75 élèves en 6e au collège Anatole France.
+        \item Les élèves qui ont deux animaux de compagnie sont trois fois plus nombreux que les élèves qui ont trois animaux de compagnie.
+        \item 70 élèves ont moins de trois animaux de compagnie.
+        \item Plus de la moitié des élèves ont au moins un animal de compagnie.
+    \end{enumerate}
 }
 
 \scn{Diagrammes circulaires}{}
@@ -214,22 +229,41 @@
 
 \def\imgPrefix{}
 \slide{exo}{
-    \exo{}{
+    \bvspace{-0.5cm}
+    \exo{}{\ifBeamer{\small}
         Dans un collège,
         112 élèves viennent en voiture,
         autant viennent à vélo,
         56 viennent en bus et 280 viennent à pied.
+        \bvspace{-0.25cm}
         \begin{enumerate}
-            \item Un seul de ces diagrammes circulaires représente le mode de déplacement des élèves de ce collège.
-            Lequel?
-            \imgp{vers-de-mobilites-douces-1}[8cm]
-            \item Compléter le tableau ci-dessous, puis choisir les nombres appropriés pour graduer
-            le diagramme en bâtons qui représente ces données.
-            \imgp{vers-de-mobilites-douces-2}[8cm]
+            \dividePage{%
+                \item Un seul de ces diagrammes circulaires représente le mode de déplacement des élèves de ce collège.
+                Lequel?
+            }{\imgp{vers-de-mobilites-douces-1}[6.5cm]}
+            
+            \ifArticle{
+                \dividePage{\imgp{vers-de-mobilites-douces-2}[8cm]}{%
+                \item Compléter le tableau ci-contre, puis choisir les nombres appropriés pour graduer
+                le diagramme en bâtons qui représente ces données.
+                }
+            }
+            \saveenumi{1}
         \end{enumerate}
-        
     }[\rpmc[34]]
 }
+
+\ifBeamer{
+    \slide{exo}{\bvspace{-0.25cm}
+        \begin{enumerate}
+            \loadenumi
+            \item Compléter le tableau ci-contre, puis choisir les nombres appropriés pour graduer
+        le diagramme en bâtons qui représente ces données.
+        \bvspace{-0.45cm}\imgp{vers-de-mobilites-douces-2}[8cm]
+        \end{enumerate}
+    }
+}
+
 
 \scn{Graphiques cartésiens}{}
 
@@ -237,7 +271,7 @@
 
 \def\imgPrefix{dim-6e/act-}
 \slide{exo}{
-    \bvspace{-0.75cm}
+    \bvspace{-0.70cm}
     \act{3p99}{\bvspace{-0.75cm}\imgp{3p99}[9cm]}[\dim]
 }
 
@@ -247,7 +281,7 @@
         Que pourrait représenter ce graphique à propos d'une salle de classe?
         Le décrire avec le plus de précision possible.
         Justifier et compléter le graphique ci-dessous.
-        \imgp{l-allure-de-la-courbe}[8cm]
+        \imgp{l-allure-de-la-courbe}[10cm]
     }[\rpmc[31]]
 }
 
