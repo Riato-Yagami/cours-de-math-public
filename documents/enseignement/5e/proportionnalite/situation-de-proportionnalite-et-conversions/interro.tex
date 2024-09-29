@@ -1,0 +1,47 @@
+% VARIABLES %%%
+\setTitle{Interrogation - Séquence 2}
+\setgrade{5e}
+\thispagestyle{assignment}
+%%
+
+% \hint{Calculatrice autorisée}
+\calculator
+
+\def\colWidth{1.5cm}
+\exo{Les tableaux ci-dessous représentent-ils une situation de proportionnalité ?}{\vspace{-0.5cm}%
+    \multiColEnumerate{2}{
+        % \item \propTable{5}{8}{7,5}{12}
+        \item \begin{tabular}{|C{\colWidth}|C{\colWidth}|C{\colWidth}|}
+            \hline
+            $36$ & $13,95$ & $40,5$\\
+            \hline
+            $8$ & $3,1$ & $9$\\
+            \hline
+        \end{tabular}
+        \item \begin{tabular}{|C{\colWidth}|C{\colWidth}|}
+            \hline
+            $651,3$ & $128$\\
+            \hline
+            $100,2$ & $20$\\
+            \hline
+        \end{tabular}
+    }
+}
+
+\corr{}{
+    \begin{enumerate}
+        \item \begin{align*}
+            \frac{36}{8} = 4,5\qquad
+            \frac{13,95}{3,1} &= 4,5\qquad
+            \frac{40,5}{9} = 4,5\\
+            \ialors \frac{36}{8} = \frac{13,95}{3,1} &= \frac{40,5}{9}
+        \end{align*}
+        L'\key{égalité} des quotients indique qu'\key{il s'agit bien} d'une situation de proportionnalité.
+        \item \begin{align*}
+            \frac{655,36}{128} = 5,12\qquad
+            \frac{100,2}{20} &= 5,01\qquad
+            \ialors \frac{651,3}{128} \neq \frac{100,2}{20}
+        \end{align*}
+        L'\key{inégalité} des quotients indique qu'\key{il ne sagit pas} d'une situation de proportionnalité.
+    \end{enumerate}
+}

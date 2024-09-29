@@ -12,6 +12,8 @@
 
 \def\imgPath{enseignement/5e/proportionnalite/situation-de-proportionnalite-et-conversions/}
 \def\imgExtension{.png}
+
+% \firstSlide
 %%
 
 % Yvan Monka : https://www.maths-et-tiques.fr/telech/19Prop1.pdf
@@ -141,33 +143,7 @@
 }
 
 % \exoSlide{}[][][][]
-
-\bsec{Grandeurs}
-
-\slide{cr}{
-    \df{}{
-        Une \key{grandeur} est une caractéristique d'un objet qui se mesure ou se calcule.
-    }
-
-    \rmk{}{
-        On donne la valeur d'une grandeur en comparaison à une \key{unité de mesure}
-    }
-
-    \expl{}{
-        \begin{tabular}{|c|c|c|c|c|c|c|c|}
-            \hline
-            Grandeurs & Masse & Longueurs & Volume & Temps & Stockage\\
-            \hline
-            Mesure & gramme & mètre & litre et mètre cube & seconde & octet\\
-            \hline
-        \end{tabular}
-    }
-
-    \df{}{
-        Deux \key{grandeurs proportionnelles} sont deux grandeurs qui varient dans les mêmes proportions.
-    }
-}
-
+\scn{Conversions}
 
 \def\imgPrefix{}
 \slide{qf}{
@@ -177,17 +153,152 @@
     \end{enumerate}
 }
 
-\bsubsec{Longueurs}
+\scn{Distinction grandeurs et mesures}
+
+\bsec{Grandeurs}
+
+\bsubsec{Definition}
+
+% \newpage
+\slide{exo}{
+    \act{Trier ces mots en deux catégories que vous nommerez}{
+        \avspace{-0.5cm}\multiColItemize{2}{
+            \item volume
+            \item durée
+            \item centimètre
+            \item prix
+            \item euro
+            \item gramme
+            \item litre
+            \item surface
+        }
+    }
+}
+
+\slide{cr}{
+    \ssec\ssubsec
+    \df{}{
+        Une \key{grandeur} est une caractéristique d'un objet qui se mesure ou se calcule.
+    }
+}
+
+\slide{VIDEO}{
+    \bvspace{-1cm}
+    \hist{}{
+        \imgp{l-histoire-du-metre}[9cm]
+        \begin{center}
+            \hypersetup{urlcolor = gradeColor!90}
+            \href{https://youtu.be/PvlsXcOzNd0?si=P0qko7XnxAFT-KCm}
+            {L'histoire du mètre (J't'explique)}
+        \end{center}
+    }[\href{https://youtu.be/PvlsXcOzNd0?si=P0qko7XnxAFT-KCm}{J't'explique}]
+}
+
+\slide{}{
+    \vc{}{
+        On donne la valeur d'une grandeur en comparaison à une \key{unité de mesure} de référence.
+    }
+    
+    \bvspace{-1cm}
+    \expl{}{
+        \ifBeamer{\\}
+        \def\colWidth{1.8cm}
+        \wideFrame[7em]{
+            \begin{center}
+                \begin{tabular}{|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|}
+                    \hline
+                    \color{Red}Grandeur & \palt{2}{Masse} & \palt{2}{Longueurs} & \palt{2}{Volume} & \palt{2}{Temps} & \palt{2}{Stockage}\\
+                    \hline
+                    \color{Red}Unité de mesure & \palt{2}{gramme} & \palt{2}{mètre} & \palt{2}{litre et mètre cube} & \palt{2}{seconde} & \palt{2}{octet}\\
+                    \hline
+                \end{tabular}
+            \end{center}
+        }
+    }
+}
+
+\scn{Utiliser les préfixes de mesures}
+
+\def\imgPrefix{mm-c4/}
+\exoSlide{13p58,14p58}[6cm][2][\mm][qf]
+
+\bsubsec{Conversions}
+
+\slide{exo}{
+    \act{Compléte avec les unités manquantes}{\avspace{-0.5cm}
+        \multiColEnumerate{2}{
+            \item Une bouteille de $1,5 \palt{2}{ \liter}$
+            \item Une règle de $30 \palt{2}{ \centi\meter}$
+            \item Une feuille d'une épaisseur de $0,2 \palt{2}{ \milli\meter}$
+            \item Une bébé de $3 \palt{2}{ \kilo\gram}$
+            \item Un verre de $24 \palt{2}{ \centi\liter}$
+            \item Une carte mémoire de $64 \palt{2}{ \giga\octet}$
+            \item Un pont de $1,5 \palt{2}{ \kilo\meter}$
+        }
+    }
+}
+
+\def\imgPrefix{mm-c4/}
+\exoSlide{25p384,38p385}[7cm][2][\mm]
+
+\slide{cr}{\def\colWidth{1cm}
+    % \wideFrame[6em]{
+    \bvspace{-0.5cm}
+        \vc{}{
+            \ifBeamer{\\ \\}
+            \begin{tabular}{|C{3cm}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|C{\colWidth}|}
+                \hline
+                \key{Préfixe} & kilo & hecto & deca & \_ & déci & centi & milli \\
+                \hline
+                \key{Symbole} & \kilo & \hecto & \deca & \_ & \deci & \centi & \milli \\
+                \hline
+                \key{Signification} & $1000$ & $100$ & $10$ & $1$ & $0,1$ & $0,01$ & $0,001$ \\
+                \hline
+            \end{tabular}
+        }
+        \bvspace{-1cm}
+        \expl{}{
+            \multiColEnumerate{2}{
+                \item $1\deci\meter = \palt{2}{0,1} \meter$
+                \item $3,6\hecto\liter = \palt{2}{360} \liter$
+                \item $1\meter = \palt{2}{100} \centi\meter$
+                \item $1\kilo\octet = \palt{2}{100} \deca\octet$
+                \item $1\hecto\gram = \palt{2}{100 000} \milli\gram$
+                \item $12\centi\meter = \palt{2}{0.012} \deca\meter$ 
+            }
+        }
+    % }
+}
+
+\exoSlide{43p385,28p384}[9cm][1][\mm]
+
+\bsubsec{Durées}
+
+\slide{exo}{
+    \exo{}{
+        On dispose de deux robinets.
+        Le premier est capable de remplir un réservoir d'eau de 24 L en 1 minute,
+        le second peut remplir ce même réservoir en 2 minutes.
+        Ouvrant les deux robinets au même moment,
+        combien de temps faudrait-il pour remplir un jacuzzi avec 1 080 L d'eau?
+        \multiColEnumerate{4}{
+            \item 15 min
+            \item 67,5 min
+            \item 135 min
+            \item 30 min
+        }
+    }[\rpmc[162]]
+}
+
+\bsubsec{Grandeurs proportionnelles}
 
 \slide{cr}{
     \expl{}{
         \begin{enumerate}
-            \item Le périmètre d'un cercle est proportionnel à son rayon.
-            \item L'aire d'un carré n'est pas proportionnelle à la longueur des côtés.
+            \item Le périmètre d'un cercle est-il proportionnel à son rayon?
+            \item L'aire d'un carré est-elle proportionnelle à la longueur de ces côtés?
         \end{enumerate}
     }
 }
-
-\bsubsec{Durées}
 
 \bsec{Ratio}

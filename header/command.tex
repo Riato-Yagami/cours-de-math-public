@@ -62,8 +62,7 @@
     }{#1}
 }
 
-\newcommand{\result}[1]{\color{OrangeRed}#1 \color{black}%
-}
+\newcommand{\result}[1]{\color{OrangeRed}#1\color{black}}
 
 % MATH
 \input{header/command/math.tex}
@@ -240,11 +239,17 @@
 }
 
 \newcommand{\multiColEnumerate}[2]{
-    \begin{multicols}{#1}
+    \ifthenelse{\isequivalentto{#1}{1}}{
         \begin{enumerate}
             #2
         \end{enumerate}
-    \end{multicols}
+    }{
+        \begin{multicols}{#1}
+            \begin{enumerate}
+                #2
+            \end{enumerate}
+        \end{multicols}
+    }
 }
 
 \makeatletter

@@ -23,8 +23,13 @@
 \def\iona{\shortintertext{on a}}
 \def\iOna{\shortintertext{On a :}}
 
-\def\Si{\color{BlueViolet} \key{Si} }
-\def\Alors{\color{ForestGreen}\key{alors} }
+\newcommand*{\sialors}[2]{
+    {\color{BlueViolet} \key{si} #1, \color{ForestGreen}\key{alors} #2}
+}
+
+\newcommand*{\Sialors}[2]{
+    {\color{BlueViolet} \key{Si} #1, \color{ForestGreen}\key{alors} #2}
+}
 
 \def\studentinfo{
     \vspace*{-1cm}
@@ -45,3 +50,6 @@
 \def\cm{\,\centi\meter}
 \def\cmd{\,{\centi\meter}^2}
 \def\km{\,\kilo\meter}
+
+\definecolor{calculator}{HTML}{763D7A}
+\def\calculator{\icon{calculatrice} {\color{calculator}\scshape{Calculatrice autorisée}}}

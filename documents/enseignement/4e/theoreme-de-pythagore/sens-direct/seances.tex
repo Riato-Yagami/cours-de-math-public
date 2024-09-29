@@ -66,6 +66,30 @@
     \ifArticle{Annexe:\imgp{activite-decouverte-print}[6cm]}
 }
 
+\scn{Utiliser l'égalité de Pythagore}
+
+\slide{qf}{
+    \calculator  \\
+    Ces tableaux présentent-ils des situations de proportionnalité ?
+    \multiColEnumerate{2}{
+        \item\begin{tabular}{|C{1.5cm}|C{1.5cm}|}
+            \hline
+            89.08 & 147.39\\
+            \hline
+            52.4 & 86.7\\
+            \hline
+        \end{tabular}
+        
+        \item\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+            \hline
+            277.5 & 7.83 & 139.2\\
+            \hline
+            92.5 & 2.7 & 46.4\\
+            \hline
+        \end{tabular}
+    }
+}
+
 \slide{cr}{
     \sseq\ssec
     \df{}{
@@ -76,8 +100,8 @@
 \slide{cr}{
     \setboolean{showID}{false}
     \thm{de Pythagore}{
-        \Si un triangle est rectangle,
-        \Alors le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés.
+        \Sialors{un triangle est rectangle}
+        {le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés.}
         \color{black}
         \begin{center}
             \begin{tikzpicture}[scale=1]%,cap=round,>=latex]
@@ -100,6 +124,13 @@
     }
 }
 
+\slide{exo}{\bvspace{-1cm}
+    \exo{}{
+        \vspace{-0.5cm}
+        \imgp{pythagore-a-trou-1}[11cm]
+    }
+}
+
 \def\imgPrefix{mi-c4/exo-}
 \exoSlide{3p430,4p430}[7cm][2][\mi]
 
@@ -112,7 +143,8 @@
 
 \slide{exo}{
     \act{}{
-        \begin{enumerate}
+        \ifBeamer{\small \vspace{-0.5cm}}
+        \begin{enumerate}\bvspace{0.2cm}
             \item Calculer l'aire d'un carré de côté:
             \multiColEnumerate{4}{
                 \item $3\cm$ \item $12\cm$ \item $5,5\cm$ \item $x\cm$
@@ -131,16 +163,19 @@
 \slide{cr}{
     \ssec
     \df{}{
-        La \key{racine carrée} d'un nombre positif $x$ est la longueur des côtés du carré qui a pour aire $x$.
-        On la note $\sqrt{x}$
+        La \key{racine carrée} d'un nombre positif $x$ représente la longueur des côtés d'un carré dont l'aire est égale à $x$.
+        On la note $\sqrt{x}$.
     }
 
     \expl{}{
         \begin{enumerate}
-            \item $\sqrt{4} = 2$
+            \item $\sqrt{4} = \palt{2}{2}$
+            \item $\sqrt{9} = \palt{2}{3}$
         \end{enumerate}
     }
+}
 
+\slide{cr}{
     \df{}{
         Un \key{carré parfait} est le carré d'un entier positif.
     }[\wiki{Carré_parfait}]
