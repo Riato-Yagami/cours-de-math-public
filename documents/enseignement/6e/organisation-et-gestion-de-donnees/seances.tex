@@ -1,12 +1,10 @@
 % VARIABLES %%%
 % \date{\today}
-\def\longTitle{Organisation et gestion de données}
-\def\shortTitle{\MakeUppercase{\longTitle}}
 
-\setcounter{seq}{2}
-\bseq{\longTitle}
+\setSeq{2}{Organisation et gestion de données}
 
-\setgrade{6e}
+\setGrade{6e}
+% \setImgPath
 \def\imgPath{enseignement/6e/organisation-et-gestion-de-donnees/}
 %%
 
@@ -188,6 +186,28 @@
     \act{4p99}{\bvspace{-0.75cm}\imgp{4p99}[11cm]}[\dim]
 }
 
+\slide{cr}{
+    \ssubsec
+    \vc{}{
+        Un \key{diagramme circulaire} permet d'observer une répartition.
+    }[\dim]
+    \pr{}{
+        La valeur de chaque angle au centre est proportionnelle à la portion représenté.
+    }
+}
+
+\scn{Utiliser différents modes de représentation}
+\slide{qf}{
+    \multiColEnumerate{3}{
+        \item $7 \times 2 + 2$
+        \item $15 + 28 \div 7$
+        \item $12 \times (15-13)$
+        \item $2 \times 3 - 1$
+        \item $30 \div (15-13)$
+        \item $19 + 2 \times 6$
+    }
+}
+
 \def\imgPrefix{}
 \slide{exo}{
     \bvspace{-0.5cm}
@@ -224,6 +244,9 @@
         \end{enumerate}
     }
 }
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{36p107}[6cm][1][\dim][qf]
 
 \scn{Situations de proportionnalité}{}
 
@@ -303,7 +326,7 @@
     }[\rpmc[31]]
 }
 
-\bsec{Reconnaître une situation de proportionnalité}
+% \bsec{Reconnaître une situation de proportionnalité}
 
 \slide{exo}{%
     \bvspace{-0.5cm}
@@ -313,6 +336,8 @@
         \imgp{nos-amis-les-betes}[9cm]
     }[\rpmc[28]]
 }
+
+% \exoSlide{41p109,25p105}[10cm][1][\dim][dm]
 
 \slide{exo}{
     Les affirmations suivantes sont-elles vraies ou fausses? Justifier.

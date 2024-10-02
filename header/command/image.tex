@@ -50,3 +50,13 @@
         \includegraphics[height=15pt]{icons/#1\imgExtension}%
     }%
 }
+
+\newcommand{\setImgPath}{
+    \def\imgPath{enseignement/\grade/\kebabCase{\longTitle}/}
+}
+
+% \makeatletter
+% \newcommand{\setImgPath}{
+%     \protected@edef\imgPath{enseignement/\grade/\kebabCase{\longTitle}/}
+% }
+% \makeatother

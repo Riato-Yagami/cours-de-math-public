@@ -58,3 +58,23 @@
     arc=0pt, % No rounded corners
     grow to left by=-5pt
 }
+
+\newtcolorbox{evaluationBox}{
+    before=\begin{flushright},
+    after=\end{flushright},
+    colback=gradeColor!5,  % Couleur de fond
+    colframe=gradeColor!75!black,  % Couleur du cadre
+    % fontupper=\color{white},
+    width=\linewidth/6
+}
+
+\newtcolorbox{seqEvaluationBox}[2]{
+    % coltitle=black,
+    colbacktitle=gradeColor!70,
+    colback=gradeColor!5,  % Couleur de fond
+    colframe=gradeColor!75!black,  % Couleur du cadre
+    title = \ifNotNull{#1}{Séquence #1 :}#2,  % Titre de la boîte
+}
+
+\newcounter{evaluationTotal}
+\setcounter{evaluationTotal}{0}

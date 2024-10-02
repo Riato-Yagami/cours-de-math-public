@@ -1,14 +1,10 @@
 % VARIABLES %%%
 \def\authors{\jules}
 % \date{\today}
-\def\longTitle{Proportionnalité - Situation de proportionnalité et conversions}
-\def\shortTitle{\MakeUppercase{\longTitle}}
-
-\setcounter{seq}{2}
-\bseq{\longTitle}
+\setSeq{2}{Proportionnalité - Situation de proportionnalité et conversions}
 % \def\theme{\longTitle}
 
-\setgrade{5e}
+\setGrade{5e}
 
 \def\imgPath{enseignement/5e/proportionnalite/situation-de-proportionnalite-et-conversions/}
 \def\imgExtension{.png}
@@ -270,9 +266,71 @@
     % }
 }
 
-\exoSlide{43p385,28p384}[9cm][1][\mm]
+\exoSlide{43p385}[9cm][1][\mm]
+
+\scn{Convertir des durées}
+
+\exoSlide{26p384,30p384}[9cm][1][\mm][qf]
 
 \bsubsec{Durées}
+
+\slide{exo}{
+    \act{}{
+        Un pilotte de kart parcours 90 km en trois-quarts d'heure.
+        En imaginant qu'il soit capable de maintenir cette vitesse,
+        combien de kilomètres aura-t-il parcourut en 1 heure ?
+    }
+}
+
+\slide{cr}{
+    \ssubsec
+    \pr{}{
+        \multiColItemize{3}{
+            \item $1\hour = \palt{2}{60}\minute$
+            \item $1\minute = \palt{2}{60}\second$
+            \item $1\textrm{ jour} = \palt{2}{24}\hour$
+        }
+    }
+
+    \expl{}{
+        \begin{enumerate}
+            \item Combien y'a-t-il de seconds dans une journée ?
+            \item Convertir $78\min$ en heures.
+            \item Convertir $7292\sec$ en heures, minutes, secondes.
+        \end{enumerate}
+    }
+}
+
+% \slide{exo}{
+%     \exo{}{
+%         On dispose de deux robinets.
+%         Le premier est capable de remplir un réservoir d'eau de 24 L en 1 minute,
+%         le second peut remplir ce même réservoir en 2 minutes.
+%         Ouvrant les deux robinets au même moment,
+%         combien de temps faudrait-il pour remplir un jacuzzi avec 1 080 L d'eau?
+%         \multiColEnumerate{4}{
+%             \item 15 min
+%             \item 67,5 min
+%             \item 135 min
+%             \item 30 min
+%         }
+%     }[\rpmc[162]]
+% }
+
+% \bsubsec{Grandeurs proportionnelles}
+
+\scn{Problème de proportionnalité}
+
+\exoSlide{27p384}[9cm][1][\mm][qf]
+
+\slide{exo}{
+    \exo{}{
+        \begin{enumerate}
+            \item Le périmètre d'un cercle est-il proportionnel à son rayon?
+            \item L'aire d'un carré est-elle proportionnelle à la longueur de ces côtés?
+        \end{enumerate}
+    }
+}
 
 \slide{exo}{
     \exo{}{
@@ -290,15 +348,57 @@
     }[\rpmc[162]]
 }
 
-\bsubsec{Grandeurs proportionnelles}
+\scn{Utiliser les ratios}
 
-\slide{cr}{
-    \expl{}{
+\bsec{Ratio}
+
+\exoSlide{28p384}[9cm][1][\mm][qf]
+
+\slide{exo}{
+    \act{}{
         \begin{enumerate}
-            \item Le périmètre d'un cercle est-il proportionnel à son rayon?
-            \item L'aire d'un carré est-elle proportionnelle à la longueur de ces côtés?
+            \item Pour faire un dahl formidable,
+            il faut mettre du lait de coco et de l'eau dans le ratio 3 pour 2 (noté $3 : 2$).
+            Combien faut-il ajouter d'eau pour $150\milli\liter$ de lait de coco?
+            \item Afin d'améliorer encore les saveurs,
+            on peut ajouter un peu de sauces piquante.
+            La recette indique le ratio $1:9:6$. A quel nombre du ratio peut correspondre la sauce piquante?
+        \end{enumerate}
+    }
+}
+\slide{cr}{
+    \ssec
+
+    \df{}{
+        Un \key{ratio} exprime une comparaison entre plusieurs quantités.
+    }[\href{https://pedagogie.ac-montpellier.fr/sites/default/files/ressources/Les\%20ratios\%20au\%20cycle\%204.pdf\#page=6}{Académie de Montpellier}]
+}
+
+\slide{}{
+    \expl{}{
+        Assan et Clara se partagent les 140 bonbons qu'ils ont obtenus à Halloween.
+        Clara en récupère 60.
+        \begin{enumerate}
+            \item Dans quel ratio se sont-il partagé ces bonbons?
+            \item Quel fraction des bonbons récupère Assan?
+            \item Si Clara récupère 9 bonbons et que l'on reste dans le même ratio,
+            combien Assan v'a-t-il en récupèrer?
         \end{enumerate}
     }
 }
 
-\bsec{Ratio}
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \exo{}{
+        \begin{enumerate}
+            \item Comment partager 48 macarons entre Simon et Mandy dans le ratio $5:11$?
+            \item Ahmed, Simon et Mandy se partagent des macarons dans le ratio $4:3:2$.
+            Simon en a 9, combien en ont Ahmed et Mandy?
+            \item Simon et Mandy ont réalisé un certain nombre de macarons dans le ratio $5:8$.
+            Sachant que Mandy,
+            plus expérimentée,
+            a fait 66 macarons de plus que Simon,
+            combien Mandy en a préparé?
+        \end{enumerate}
+    }[\rpmc[63]]
+}

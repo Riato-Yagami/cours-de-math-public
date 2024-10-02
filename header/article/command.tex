@@ -1,8 +1,10 @@
 % BEAMER CONVERSION
 
 % \newcommand{\bchap}[1]{\def\title{Chapitre: #1}}
-\newcommand{\bseq}[1]{\setTitle{Séquence \theseq{} : #1}}
-\newcommand{\setTitle}[1]{\def\title{\textbf{\color{Red} #1}}}
+\newcommand{\bseq}[1]{
+    \def\title{\color{Red}\textbf{Séquence \theseq{} : #1}}
+}
+
 \newcommand{\bsec}[1]{\section{#1}}
 \newcommand{\bsubsec}[1]{\subsection{#1}}
 

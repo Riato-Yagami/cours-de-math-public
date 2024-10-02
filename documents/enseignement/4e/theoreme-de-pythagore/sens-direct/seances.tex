@@ -1,13 +1,11 @@
 % VARIABLES %%%
 % \date{\today}
-\def\longTitle{Théorème de Pythagore - Sens direct}
-\def\shortTitle{\MakeUppercase{\longTitle}}
+\setSeq{2}{Théorème de Pythagore - Sens direct}
 
-\setcounter{seq}{2}
-\bseq{\longTitle}
-
-\setgrade{4e}
+\setGrade{4e}
 \def\imgPath{enseignement/4e/theoreme-de-pythagore/sens-direct/}
+
+% \firstSlide
 %%
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Pyth1.pdf}{Yvan Monka}}
@@ -166,12 +164,17 @@
         La \key{racine carrée} d'un nombre positif $x$ représente la longueur des côtés d'un carré dont l'aire est égale à $x$.
         On la note $\sqrt{x}$.
     }
-
-    \expl{}{
-        \begin{enumerate}
+    \bvspace{-1cm}
+    \expl{}{\bvspace{-0.25cm}
+        \multiColEnumerate{2}{
             \item $\sqrt{4} = \palt{2}{2}$
             \item $\sqrt{9} = \palt{2}{3}$
-        \end{enumerate}
+        }
+        \calculator
+        \multiColEnumerate{2}{
+            \item $\sqrt{5,5225} = \palt{2}{2,35}$
+            \item $\sqrt{12} \approx \palt{2}{3.46410161514}$
+        }
     }
 }
 
@@ -181,7 +184,7 @@
     }[\wiki{Carré_parfait}]
 
     \expl{}{
-        \multiColEnumerate{3}{
+        \multiColItemize{5}{
             \foreach \nb in {0,1,...,12} {
                 \item  $\nb^2 = \palt{2}{\ncalc{\nb*\nb}}$
             }
@@ -191,15 +194,48 @@
 
 \scn{Calculer une longueur grace au Théorème de Pythagore}
 
+\bsec{Calcul de longueur}
+
 \def\imgPrefix{mi-c4/qf-}
 \exoSlide{1p430}[8cm][1][\mi][qf]
 
-\expl{}{
-    Soit $ABC$ un triangle rectangle en $A$, tel que $AB = 3$ et $AC = 4$.
-    Déterminer $BC$.
+\slide{cr}{
+    \expl{}{
+        Soit $ABC$ un triangle rectangle en $A$, tel que $AB = 3\cm$ et $AC = 4\cm$.
+        Déterminer $BC$.
+    }
+
+    \mthd{}{
+        \palt{2}{
+            \Ona le triangle ABC rectangle en A.\\
+            \Alors d'après le théorème de Pythagore :
+            \begin{align*}
+                BC^2 &= AB^2 + AC^2\\
+                &= 3^2 + 4^2\\
+                &= 9 + 16\\
+                &= 25\\
+                \alors BC &= \sqrt{25}\\
+                \donc &= 5\centi\meter\\
+            \end{align*}
+        }
+    }
+}
+
+\def\imgPrefix{mi-c4/}
+\exoSlide{17p431,18p431,38p433}[8cm][2][\mi]
+
+\scn{Résoudre des problèmes mettant en jeux le théorème de pythagore}
+
+\def\imgPrefix{}
+\slide{qf}{
+    \multiColEnumerate{2}{
+        \item \imgp{cn-18-4e-juin-2023}[9cm]
+        \item \imgp{cn-28-4e-juin-2022}[9cm]
+    }
 }
 
 \slide{exo}{
+    \ifBeamer{\small \vspace{-0.75cm}}
     \exo{}{%
         Un professeur d'EPS trace un circuit de course à pied avec des plots :
         \begin{itemize}
@@ -211,14 +247,23 @@
         et parcourt un certain nombre de fois le circuit 1-2-3-4-1.
         Il continue sur le même circuit jusqu'au plot d'arrivée,
         placé sur ce circuit de telle sorte le trajet total ait une longueur de 1,5 km.
-        \\Où le professeur doit-il placer le plot d'arrivée ?
-        \\Combien de fois un élève doit-il parcourir le circuit ?
+        \begin{enumerate}
+            \item Où le professeur doit-il placer le plot d'arrivée ?
+            \item Combien de fois un élève doit-il parcourir le circuit ?
+        \end{enumerate}
     }[\href{https://eduscol.education.fr/document/17305/download\#page=8}
     {Utiliser les notions de géométrie plane pour démontrer}]
 }
 
 \slide{exo}{
     \exo{}{
-
+        On assimile la Terre à une sphère de centre $O$ et de rayon $R = 6371\kilo\meter$.
+        Un observateur se tient à la surface de la Terre en un point A.
+        Le point H représente l'endroit le plus éloigné que l'observateur peut voir, c'est-à-dire son horizon.
+        \begin{enumerate}
+            \item Représentez la situation par un schéma.
+            \item À quelle distance de l'observateur se trouve environ l'horizon?
+            \item Quelle serait cette distance si l'observateur se trouve au $3^e$ étage de la tour Eiffel?
+        \end{enumerate}
     }[\href{https://blogdemaths.wordpress.com/2015/06/27/jusquou-peut-on-voir-a-lhorizon/}{Jusqu'où peut on voir à l'horizon?}]
 }
