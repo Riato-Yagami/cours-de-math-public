@@ -72,6 +72,21 @@
     {Mission Indigo mathématiques cycle 4 éd. 2017}
 }
 
-\newcommand*{\wiki}[1]{\href{https://fr.wikipedia.org/wiki/#1}{Wikipédia}}
+\newcommand*{\wiki}[1]{\href{https://fr.wikipedia.org/wiki/#1}{Wikipédia (\reverseSnakeCase{#1})}}
 
 \NewDocumentCommand{\rpmc}{O{}}{\href{https://eduscol.education.fr/document/13132/download?attachment\#page=#1}{La résolution de problèmes mathématiques au collège}}
+\def\ca{%
+    \href{https://pedagogie.ac-strasbourg.fr/mathematiques/competitions/course-aux-nombres/}%
+    {Course aux nombres}%
+}
+
+% Logiciels
+\newcommand{\defIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
+    \expandafter\def\csname #1\endcsname{%
+        \def\iconPath{}%
+        \icon{#3} \textbf{\href{#4}{\color{#2}#1}}
+    }%
+}
+
+\defIconLink{Geogebra}{Blue}{geogebra/logo}{https://www.geogebra.org/classic}
+\defIconLink{Scratch}{Orange}{scratch/logo}{https://scratch.mit.edu/projects/editor/}

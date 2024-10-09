@@ -44,12 +44,15 @@
     \end{figure}%
 }
 
-\newcommand{\icon}[1]{%
-    % \def\imgPath{icons/}
+\def\iconPath{}
+
+\NewDocumentCommand{\icon}{m O{15pt}}{
     \adjustbox{valign=m, raise=-0.2ex}{%
-        \includegraphics[height=15pt]{icons/#1\imgExtension}%
+        \includegraphics[height=#2]{icons/\iconPath #1\imgExtension}%
     }%
 }
+
+\NewDocumentCommand{\tool}{m o}{\ifNotNull{#2}{\icon{#2} }\textsf{#1}}
 
 \newcommand{\setImgPath}{
     \def\imgPath{enseignement/\grade/\kebabCase{\longTitle}/}

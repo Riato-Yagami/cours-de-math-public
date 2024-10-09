@@ -1,9 +1,228 @@
 % VARIABLES %%%
-\setTitle{Géométrie plane - distances}
-\setSeq{3}
+% \setTitle{Géométrie plane - distances}
+\setSeq{3}{Géométrie plane - distances}
 \setGrade{6e}
 
-\def\imgPath{enseignement/6e/geometrie-plane/distances}
+\def\imgPath{enseignement/6e/geometrie-plane/distances/}
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Long.pdf}{Yvan Monka}}
+
+% \firstSlide
+% Cercle https://www.maths-et-tiques.fr/telech/19Cercle.pdf
 %%
+
+\obj{
+    \item Savoir tracer un segment de longueur donnée.
+    \item Savoir placer le milieu d'un segment de longueur donnée.
+    \item Savoir déterminer le plus court chemin entre un point et une droite.
+    \item Connaître et savoir estimer la distance entre un point et une droite.
+    \item Reconnaître, nommer, décrire, reproduire un cercle
+    \item Utiliser le vocabulaire associé : rayon, diamètre, centre, arc de cercle et corde.
+    \item Différentier le cercle et le disque.
+}
+
+\scn{Chemin le plus court}
+
+\bsec{Distance entre deux points}
+
+\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-1-2-3}[10cm]}[\ca]}
+
+\bsubsec{Segment}
+
+\def\actDistance{
+    \begin{tikzpicture}[scale = 0.7]
+        % Grand rectangle extérieur
+        \draw[gradeColor, thick] (0,0) rectangle (10,8);
+        % Obstacles
+        \draw[gradeColor, fill=gradeColor!20] (3,5) rectangle (4,7.5);
+        \draw[gradeColor, fill=gradeColor!20] (5,1) rectangle (7,6); 
+        \draw[gradeColor, fill=gradeColor!20] (5,1) rectangle (7,6); 
+        % Points A et B
+        \drawPoint{E}{2}{7}
+        \drawPoint{S}{8}{2}
+    \end{tikzpicture}
+    \hspace{0.5cm}
+    \begin{tikzpicture}[scale = 0.75]
+        % Grand rectangle extérieur
+        \draw[gradeColor, thick] (0,0) rectangle (10,8);
+        
+        % Obstacles
+        \draw[gradeColor, fill=gradeColor!20] (1,3) rectangle (4,4);
+        \draw[gradeColor, fill=gradeColor!20] (4,2) rectangle (4.5,7.5);
+        \draw[gradeColor, fill=gradeColor!20] (5,1.5) rectangle (6,7);
+        \draw[gradeColor, fill=gradeColor!20] (6,3.5) rectangle (8.8,4.8);
+    
+        % Points S et E
+        \drawPoint{S}{3}{5}
+        \drawPoint{E}{7.5}{3}
+    \end{tikzpicture}
+}
+
+\slide{exo}{
+    \act{}{
+        L'agent Solid Snake se trouve au point $S$ et doit rejoindre les escaliers de sortie situés au point $E$ le plus rapidement possible.
+        Aide-le en traçant sur les deux plans de la base militaire le chemin le plus court entre les points $S$ et $E$,
+        tout en évitant les obstacles.
+        
+        % \vspace{0.25cm}
+        \begin{center}
+            \ifArticle{\actDistance}
+        \end{center}
+    }
+}
+
+\ifBeamer{
+    \slide{exo}{
+        \wideFrame[7em]{\actDistance}
+    }
+}
+
+\slide{cr}{
+    \ssec
+
+    \pr{}{
+        Le \key{chemin le plus court} entre deux points est la \key{ligne droite}.
+    }
+
+    \bvspace{-0.5cm}
+
+    \nt{}{
+        On note $AB$ la \key{distance} entre les points $A$ et $B$.
+    }
+
+    \bvspace{-0.5cm}
+
+    \pr{}{
+        Un segment $[AB]$ à pour longueur $AB$.
+    }
+}
+
+\bookSlide{6p191,7p191}[9cm]
+
+\scn{Trouver le milieu entre deux points}
+
+\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-4-5-6}[10cm]}[\ca]}
+
+\bsubsec{Milieu d'un segment}
+
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \ifBeamer{\small}
+    \act{}{
+        Gandalf le Gris doit retrouver trois anneaux de pouvoir avant que Sauron ne mette la main dessus.
+        Les anneaux sont cachés entre trois lieux importants :
+        La Comté au point $C$,
+        Le Gondor au point $G$,
+        et Le Mordor au point $M$.\\
+        Marquer sur la carte, en suivant les indications ci-dessous,
+        les positions des anneaux Les points $A_1$, $A_2$ et $A_3$.
+        \begin{enumerate}
+            \item Le premier anneau est caché exactement à mi-chemin entre La Comté et Le Gondor.
+            \item Le deuxième anneau se trouve à égale distance entre La Comté et le Mordor.
+            \item Le troisième anneau est caché au milieu du segment qui relie les positions des deux premiers anneaux.
+        \end{enumerate}
+        \imgp{activite-middle-earth}[14cm]
+    }[\href{https://paulinebaynes.com/?what=artifacts&cat=79}{Pauline Baynes (illustratrice)}]
+}
+
+\ifBeamer{
+    \slide{exo}{
+        \imgp{activite-middle-earth}[11cm]
+    }
+}
+
+% \newpage
+
+\def\exoGrid{
+    \def\crossWidth{0.04cm}
+    \def\gridColor{gradeColor!50}
+    % \begin{center}
+        \begin{tikzpicture}[scale = 0.5]
+            \tkzInit[xmax=15, ymax=11]
+            \tkzGrid[color=\gridColor,subxstep=0.5,subystep=0.5]
+            \drawPoint{A}{6}{7}
+            \drawPoint{B}{10}{5}
+        \end{tikzpicture}
+        \ifArticle{\hspace{0.5cm}}
+        \begin{tikzpicture}[scale = 0.5]
+            \tkzInit[xmax=15, ymax=11]
+            \tkzGrid[color=\gridColor,subxstep=0.5,subystep=0.5]
+            \drawPoint{A}{5}{4}
+            \drawPoint{B}{11}{8}
+        \end{tikzpicture}
+        % \vspace{0.5cm}
+        % \begin{tikzpicture}[scale = 0.5]
+        %     \tkzInit[xmax=15, ymax=11]
+        %     \draw [draw=\gridColor] (0,0) rectangle (15,11);
+        %     % \tkzGrid[color=gradeColor,subxstep=0.5,subystep=0.5]
+        %     \drawPoint{A}{3}{9}
+        %     \drawPoint{B}{13}{3}
+        % \end{tikzpicture}
+    % \end{center}
+}
+
+\bookSlide{8p191,9p191}
+
+\scn{Utiliser le milieu d'un segment}
+
+\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-4-5-6}[10cm]}[\ca]}
+
+\slide{exo}{
+    \exo{}{
+        Chacune des figures suivantes est constituée de deux points $A$ et $B$.
+        Chacune d'elles doit être complétée par un point $J$ qui respecte les conditions suivantes :
+        \begin{enumerate}
+            \item $I$, $C$ et $D$ sont trois points tels que $I$ est le milieu des segments $[AC]$ et $[BD]$;
+            \item $E$ est le point tel que $A$ est le milieu du segment $[DE]$;
+            \item $J$ est le milieu du segment $[CE]$.
+        \end{enumerate}
+        \ifArticle{\begin{center}\exoGrid\end{center}}
+        \begin{itemize}
+            \item Placer deux points $A$ et $B$ sur une feuille blanche et de même trouver l'emplacement de $J$.
+        \end{itemize}
+    }[\rpmc[149]]
+}
+
+\ifBeamer{
+    \slide{exo}{
+        \wideFrame[7em]{
+            \exoGrid
+        }
+    }
+}
+
+\bsec{Distance d'un point à une droite}
+
+\bsec{Le cercle}
+
+\bsubsec{Definitions}
+
+\slide{cr}{
+    \df{}{
+        On appelle \key{cercle}, l'ensemble des points situé à \key{égale distance} d'un point nommé \key{centre}.
+    }
+}
+
+\slide{cr}{
+    \ifBeamer{}
+    \df{}{
+        Dans un cercle, on appelle:
+        \begin{itemize}
+            \item \palt{2}{\key{rayon}}, un segment joignant le centre à un point du cercle.
+            \item \palt{2}{\key{corde}}, un segment dont les extrémités se trouvent sur le cercle.
+            \item \palt{2}{\key{diamètre}}, une corde passant par le centre.
+            \item \palt{2}{\key{arc}}, une portion de cercle délimitée par deux points.
+        \end{itemize}
+        \ifArticle{\imgp{cercle-definitions}[6cm]}
+    }[\wiki{cercle}]
+}
+
+\slide{cr}{
+    \ifBeamer{\imgp{cercle-definitions-vide}[6cm]}
+}
+
+\slide{cr}{
+    \df{}{
+        On appelle \key{disque}, l'ensemble des points situé à une \key{distance inférieure ou égale} d'un point nommé \key{centre}.
+    }
+}

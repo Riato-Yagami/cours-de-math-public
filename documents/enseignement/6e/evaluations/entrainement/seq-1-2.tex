@@ -1,0 +1,77 @@
+%%%
+\setGrade{6e}
+\setTitle{Evaluation 1 - Entrainement}
+%%%
+
+\AIA
+
+\exo{Tableau à double entrée}{Lors d'un tournoi de jeux vidéo, 100 participants choisissent entre quatre types de jeux : stratégie, action, simulation ou sport. Ils sont répartis en trois groupes : débutants, intermédiaires et experts.
+
+    \begin{itemize} 
+        \item Dans la catégorie débutants, il y a 30 participants. 10 ont choisi des jeux de stratégie, 5 des jeux d'action, 8 des jeux de simulation, et le reste des jeux de sport.
+        \item Dans la catégorie intermédiaires, 12 participants ont choisi des jeux de stratégie, 6 des jeux d'action et 9 des jeux de simulation.
+        \item Dans la catégorie experts, 5 ont choisi des jeux d'action, 6 des jeux de simulation, et 10 des jeux de sport.
+        \item En tout, 20 participants ont choisi des jeux de sport.
+    \end{itemize}
+    
+    Compléter le tableau ci-dessous, en faisant figurer vos calculs en dessous.\\
+    
+    \vspace{-0.5cm}
+    
+    \renewcommand{\arraystretch}{1.75}
+    \def\cW{2.5cm}
+    \begin{center}
+        \begin{tabular}{|c|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+            \hline
+            & \textbf{Stratégie} & \textbf{Action} & \textbf{Simulation} & \textbf{Sport} & \textbf{Total} \\ \hline
+            \textbf{Débutants}   &                     &                   &                      &                    &\\ \hline
+            \textbf{Intermédiaires}   &                     &                   &                      &                    &\\ \hline
+            \textbf{Experts}   &                     &                   &                      &                    &\\ \hline
+            \textbf{Total} & & & & &\\ \hline
+        \end{tabular}
+    \end{center}
+    
+}
+
+\newpage
+
+\exo{Graphique cartésien}{
+    Le tableau ci-dessous présente la distance parcourue par un coureur (en km) au cours d'une course, en fonction du temps (en minutes).
+    
+    \vspace{0.25cm}
+    \begin{tabular}{|C{2.5cm}|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Temps (en minutes) & 5 & 10 & 15 & 20 & 25 & 30 & 35 & 40 & 45 & 50 & 55 \\
+        \hline
+        Distance (en km)  & 1 & 2.2 & 3.5 & 4.8 & 6 & 7.3 & 8.5 & 9.5 & 10.2 & 11 & 11.5 \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.25cm}
+
+    Compléter de la manière la plus précise possible le graphique cartésien ci-dessous avec les données du tableau.
+
+    % \vspace{0.5cm}
+
+    \begin{center}
+        \begin{tikzpicture}[yscale = 1, xscale = 0.25]
+            \tkzInit[xmin=0,xmax=60,ymin=0,ymax=12]
+            \tkzGrid[sub,color=gradeColor!75!white,subxstep=5,subystep=0.2]        
+            \tkzLabelX[step=10]
+            \tkzLabelY[step=2]
+            \tkzDrawY[label={Distance (en km)}, above , step=2]
+            \tkzDrawX[label= {Temps (en minutes)}, below = 15pt]
+        \end{tikzpicture}
+    \end{center}
+}
+
+\newpage 
+
+\exo{Raisonner en géometrie}{
+    \begin{enumerate}
+        \item Tracer les droites $(d_1)$ et $(d_2)$ parallèles.
+        \item Tracer la droite $(d_3)$ perpendiculaire à la droite $(d_1)$.
+        \item Que peut-on dire des droites $(d_2)$ et $(d_3)$ ? Justifier la réponse avec rigueur.
+    \end{enumerate}
+}[\href{https://college-willy-ronis.fr/maths/wp-content/uploads/2018/12/exercice-corriges-chapitre7.pdf}
+{Collège Willy Ronis}]

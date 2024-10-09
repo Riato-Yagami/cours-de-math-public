@@ -15,8 +15,8 @@
 \obj{
     \item Prélever des données numériques à partir de supports variés.
     \item Produire des tableaux, diagrammes et graphiques organisant des données numériques.
-    \item Exploiter et communiquer des résultats de mesures.
-    \item Situations de proportionnalité/situations qui ne sont pas de proportionnalité
+    % \item Exploiter et communiquer des résultats de mesures.
+    \item Reconnaitre une situations de proportionnalité/situations qui ne sont pas de proportionnalité
 }
 
 \scn{Tableaux}{}
@@ -63,7 +63,7 @@
 \slide{cr}{\bvspace{-0.5cm}
     \mthd{Construire un tableau}{\bvspace{-0.75cm}
         \begin{enumerate}
-            \item On réalise un tableau à double entrée avec les données de l'énoncé et on ajoute une colonne et une ligne total. 
+            \item On réalise un tableau à double entrée avec les données de l'énoncé et on ajoute une colonne et une ligne «total». 
             \item On le complète avec les données de l'énoncé.
             \item On finit de compléter le tableau en effectuant les calculs.
         \end{enumerate}
@@ -192,7 +192,7 @@
         Un \key{diagramme circulaire} permet d'observer une répartition.
     }[\dim]
     \pr{}{
-        La valeur de chaque angle au centre est proportionnelle à la portion représenté.
+        La valeur de chaque angle au centre est proportionnelle à la portion représentée.
     }
 }
 
@@ -212,16 +212,16 @@
 \slide{exo}{
     \bvspace{-0.5cm}
     \exo{}{\ifBeamer{\small}
-        Dans un collège,
-        112 élèves viennent en voiture,
-        autant viennent à vélo,
-        56 viennent en bus et 280 viennent à pied.
         \bvspace{-0.25cm}
         \begin{enumerate}
             \dividePage{%
+                Dans un collège,
+                112 élèves viennent en voiture,
+                autant viennent à vélo,
+                56 viennent en bus et 280 viennent à pied.
                 \item Un seul de ces diagrammes circulaires représente le mode de déplacement des élèves de ce collège.
                 Lequel?
-            }{\imgp{vers-de-mobilites-douces-1}[6.1cm]}
+            }{\bvspace{-1cm}\imgp{vers-de-mobilites-douces-1}[6.5cm]}[0.5]
             
             \ifArticle{
                 \dividePage{\imgp{vers-de-mobilites-douces-2}[8cm]}{%
@@ -246,32 +246,28 @@
 }
 
 \def\imgPrefix{dim-6e/exo-}
-\exoSlide{36p107}[6cm][1][\dim][qf]
 
 \scn{Situations de proportionnalité}{}
 
-\bsec{Situations de proportionnalité}
+\exoSlide{36p107}[5.25cm][1][\dim][qf]
 
-\def\imgPrefix{}
-\slide{qf}{%
-    \begin{enumerate}
-        \item \imgp{cn-CM2-juin-2023-exo-18}[8cm]
-        \item \imgp{cn-CM2-juin-2023-exo-21-22}[8cm]
-    \end{enumerate}
-}
+\bsec{Situations de proportionnalité}
 
 \slide{exo}{
     \bvspace{-0.5cm}
     \act{}{
         \begin{itemize}
-            \item Pour une recette de dahl,
+            \item Pour préparer une recette de dahl,
             Christopher a besoin de 4 gousses d'ail pour 6 personnes.
-            Il déjeune avec ses amis Sarah et Jean.
-            Peut-il prévoir combien de gousses d'ail il aura besoin ?\\
-            Pourquoi ? et si oui, combien ?
+            Comme il déjeune avec ses amis Sarah et Jean.
+
+            Peut-il prévoir le nombre de gousses d'ail nécessaires ?
+            Pourquoi ? Si oui, combien ?
+
             \item Jean l'a félicité 2 fois pour sa cuisine en 20 minutes.
-            Peut-il prévoir combien de félicitations il recevra de Jean en 40 minutes?\\
-            Pourquoi ? et si oui, combien ?
+
+            Peut-il prévoir combien de félicitations il recevra de Jean en 40 minutes?
+            Pourquoi ? Si oui, combien ?
         \end{itemize}
         
     }
@@ -288,25 +284,38 @@
     }
 }
 
+\scn{Grandeurs proportionnelles}
+
+\def\imgPrefix{}
+\slide{qf}{%
+    \begin{enumerate}
+        \item \imgp{cn-CM2-juin-2023-exo-18}[8cm]
+        \item \imgp{cn-CM2-juin-2023-exo-21-22}[8cm]
+    \end{enumerate}
+}
 
 \slide{cr}{
     \expl{}{
-        Les $2kg$ de lentilles $5\EUR$.
+        Les $2kg$ de lentilles coutent $5\EUR$.
         Combien en coutent $10kg$ de lentilles ? $12kg$ de lentilles?
     }
 }
 
-\slide{cr}{
-    \rmk{}{
-        On peut présenter une situation de proportionnalité dans un \key{tableau de proportionnalite}.
-    }
-}
+% \slide{cr}{
+%     \rmk{}{
+%         On peut présenter une situation de proportionnalité dans un \key{tableau de proportionnalite}.
+%     }
+% }
 
 
 \def\imgPrefix{dim-6e/exo-}
 \exoSlide{2p83}[6cm][1][\dim]
 
-\scn{Graphiques cartésiens}{}
+\scn{Decouvrir les graphiques cartésiens}{}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{54-55-56p112}[10cm][1][\dim][qf]
+\def\imgPrefix{}
 
 \bsec{Graphiques cartésiens}
 
@@ -317,6 +326,78 @@
 }
 
 \def\imgPrefix{}
+
+\slide{exo}{
+    \bvspace{-0.25cm}
+    \begin{center}
+        \begin{tikzpicture}[yscale = 0.75, xscale = 0.75]
+            \tkzInit[xmin=0,xmax=10,ymin=0,ymax=10]
+            \tkzGrid[sub,color=gradeColor!50!white,subxstep=5,subystep=0.1]        
+            % \tkzLabelX[step=10]
+            % \tkzLabelY[step=2]
+            \tkzDrawY[label={}]
+            \tkzDrawX[label= {}]
+        \end{tikzpicture}
+    \end{center}
+    % \imgp{graph-bg-alcoolemie}[7cm]
+}
+
+\slide{cr}{
+    \ssec
+    \vc{}{
+        Un \key{graphique cartésien} permet de présenter l'évolution d'une grandeur en fonction d'une autre.
+    }
+}
+
+\scn{Dessiner un graphique cartésien}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{57p112}[10cm][1][\dim][qf]
+\def\imgPrefix{}
+
+\def\graph{
+    \begin{center}
+        \begin{tikzpicture}[yscale = 0.35, xscale = 0.75]
+            \tkzInit[xmin=0,xmax=12,ymin=0,ymax=20]
+            \tkzGrid[sub,color=gradeColor!50!white,subxstep=5,subystep=0.2]        
+            % \tkzLabelX[step=10]
+            % \tkzLabelY[step=2]
+            \tkzDrawY[label={}]
+            \tkzDrawX[label= {}]
+        \end{tikzpicture}
+    \end{center}
+}
+
+\slide{cr}{
+    \bvspace{-0.6cm}
+    \ifBeamer{\small}
+    \expl{}{%
+    Le tableau ci-dessous représente les températures moyennes à Issy-les-Moulineaux pour chaque mois de 2023.
+        
+        \vspace{0.1cm}
+        \wideFrame[9.2em]{
+            \def\cW{0.55cm}
+            \begin{tabular}{|c|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+                \hline
+                Mois & J & F & M & A & M & J & J & A & S & O & N & D \\
+                \hline
+                Température (\degres C) & 4,0 & 4,3 & 7,0 & 10,4 & 14,2 & 17,4 & 19,1 & 19,1 & 15,9 & 12,4 & 7,6 & 4,3 \\
+                \hline
+            \end{tabular}
+        }
+
+        \vspace{0.25cm}
+
+        Représenter les données du tableau dans un graphique cartésien.
+    }[\href{https://www.annuaire-mairie.fr/ensoleillement-issy-les-moulineaux.html}{https://www.annuaire-mairie.fr/}]
+    \bvspace{-0.8cm}
+
+    \ifArticle{\graph}
+    % \imgp{graph-bg-meteo}[7cm]
+}
+
+\ifBeamer{\slide{cr}{\graph}}
+
 \slide{exo}{
     \exo{}{
         Que pourrait représenter ce graphique à propos d'une salle de classe?
@@ -326,13 +407,24 @@
     }[\rpmc[31]]
 }
 
+\slide{cr}{
+    \rmk{}{
+        Les points sont :
+        \begin{enumerate}
+            \item représentés par des «+».
+            \item reliés par des segments.
+        \end{enumerate}
+    }
+}
+
 % \bsec{Reconnaître une situation de proportionnalité}
 
 \slide{exo}{%
-    \bvspace{-0.5cm}
+    \bvspace{-0.6cm}
     \exo{}{
         On a demandé aux élèves des trois classes de 6e du collège Anatole France combien d'animaux de compagnie vivaient avec eux.
         On a représenté les résultats dans le diagramme suivant.
+        \bvspace{-0.25cm}
         \imgp{nos-amis-les-betes}[9cm]
     }[\rpmc[28]]
 }

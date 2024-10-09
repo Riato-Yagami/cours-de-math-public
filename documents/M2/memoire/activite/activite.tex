@@ -78,7 +78,7 @@ Le fichier amorce présente deux droites $(OA)$ et $(OB)$ perpendiculaires avec 
 \section{OB = 2cm}
 
 \def\tableSpacing{0.15cm}
-\def\colWidth{1.5cm}
+\def\cW{1.5cm}
 \renewcommand{\arraystretch}{1.5}
 
 \newcommand{\triangleTable}[1]{
@@ -89,7 +89,7 @@ Le fichier amorce présente deux droites $(OA)$ et $(OB)$ perpendiculaires avec 
         \expandafter\xdef\expandafter\headerRow\expandafter{\headerRow & \t}
         \expandafter\xdef\expandafter\heightRow\expandafter{\heightRow &}
     }
-    \begin{tabular}{|M{2cm}|*{\thesize}{M{\colWidth}|}}
+    \begin{tabular}{|M{2cm}|*{\thesize}{M{\cW}|}}
         \hline%
         \headerRow \\
         \hline%

@@ -1,24 +1,103 @@
-\setTitle{Evalutation 1}
+%%%
 \setGrade{4e}
-
-\thispagestyle{assignment}
-
-\emptyBackground
+\evaluation{1}
+%%%
 
 \seqEvaluation{1}{Divisibilité et nombres premiers}{
-    Décomposition d’un nombre entier en produit de facteurs premiers
+    Utiliser les critères de divisibilité
     /3,
-    Comparer des nombres relatifs
-    /2,
-    Modéliser et résoudre des problèmes simples mettant en jeu les notions de divisibilité et de nombre premier
-    /3
+    Trouver les diviseurs d'un nombre
+    /3,
+    Résoudre un problèmes mettant en jeu des notions de divisibilité
+    /2
 }
 
 \seqEvaluation{2}{Théorème de Pythagore - Sens direct}{
-    Utiliser le sens direct du Théorème de Pythagore
+    Utiliser l'égalité de Pythagore
+    /2,
+    Utiliser le théorème de Pythagore pour calculer une longueur
     /4,
     Utiliser la racine carrée d'un nombre positif
-    /3
+    /1,
+    Raisonner sur les aires
+    /0%
 }
 
 \evalutionEnd
+
+\calculator
+
+% \def\cW{1cm}
+% \exo{20p17}{
+%     Mettre une croix dans le tableau suivant si le nombre en colonne est divisible par le nombre en ligne.
+%     Justification non nécessaires.
+
+%     \begin{tabular}{|C{4cm}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+%         \hline
+%         est divisible par & 2 & 3 & 4 & 5 & 9 & 10 \\\hline
+%         \hline
+%         360 & & & & & & \\\hline
+%     \end{tabular}
+
+% }[\mi]
+
+\vspace{0.25cm}
+
+\exo{Critères de divisibilité}{
+    En justifiant à l'aide des critères de divisibilité,
+    répondre aux questions suivantes :
+    $\numprint{28 944}$ est divisible par $2$ ? par $3$? par $4$ ? par $5$ ? par $9$ ?
+}
+
+\answerFill
+
+\exo{45p19}{
+    \imgp{enseignement/4e/divisibilite-et-nombres-premiers/mi-c4/exo-45p19.png}[10cm]
+    \vspace{0.5cm}
+}[\mi]
+
+\answerSec{11}
+
+\exo{\tiersTemps Diviseurs communs}{
+    Docteur Ivo Robotnik doit composer des escouades de robots animaux pour son armée.
+    Il dispose pour cela de $246$ robots lapins et $164$ robots crabes.
+
+    En précisant bien les différentes étapes de raisonnement ;
+    donner toutes les compositions d'escouades possibles ?
+}
+
+\answerFill
+
+\exo{Pythagore à trou}{
+    Compléter les deux aires manquantes.
+    Répondre sur l'énoncé et bien faire figurer vos calculs.
+
+    \dividePage{
+        \imgp{enseignement/4e/theoreme-de-pythagore/sens-direct/pythagore-a-trou-spe}[8cm]
+    }{
+        \answerSec{10}[Calculs]
+    }
+    
+}
+
+\exo{Théorème de Pythagore}{
+    Soit $BFG$ un triangle rectangle en $G$.
+    Avec $BG$ = $5\;\centi\meter$ et $BF$ = $12\;\centi\meter$.
+    Donner la longueur $FG$ arrondi au millimètre prés en précisant bien les étapes de votre raisonnement.
+}
+
+\answerSec{0}[Schéma]
+
+\vspace{5cm}
+
+\answerFill
+
+\exo{\bonus Raisonner avec les aires}{
+    \imgp{enseignement/4e/theoreme-de-pythagore/sens-direct/pythagore-rectangle}[11cm]
+    \begin{enumerate}
+        \item Conjecturer une relation entre les aires des rectangles 1, 2 et 3.
+        \item Démontrer cette conjecture.
+    \end{enumerate}
+}
+
+\answerFill

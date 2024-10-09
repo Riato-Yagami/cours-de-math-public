@@ -13,7 +13,7 @@
     \color{#1}\target
     {#3}\ifthenelse{\boolean{showID}}{\ifthenelse{\boolean{parenthisedID}}
     {\small$_{(\sectionID)}$}
-    { \sectionID}}{}\normalsize : 
+    { \sectionID} }{}\normalsize : 
     \color{black}#2
 }
 
@@ -38,7 +38,9 @@
 
 \newcommand{\parseSubsecTitle}[3]{ % Color | Title | Type
     \color{#1}\target
-    {#3}\normalsize : 
+    {#3}\ifthenelse{\boolean{showSubID}}{\ifthenelse{\boolean{parenthisedID}}
+    {\small$_{(\sectionID)}$}
+    { \sectionID} }{}\normalsize \ifNotNull{#3}{:}[\vspace{-1cm}]
     \color{black}#2
 }
 
@@ -129,6 +131,7 @@
 \newsec{sub}{rmdr}{BrickRed}{Rappel} % Thistle
 \newsec{sub}{mthd}{OrangeRed}{Méthode}
 \newsec{sub}{vc}{ForestGreen}{Vocabulaire}
+\newsec{sub}{nt}{SeaGreen}{Notation}
 \newsec{sub}{hist}{Black}{Histoire}
 \newsec{sub}{axio}{Mahogany}{Axiome}
 \newsec{sub}{objSUB}{gradeColor}{Objectifs}
@@ -140,6 +143,8 @@
 \newsec{subsub}{corr}{OrangeRed}{Correction}
 \newsec{subsub}{act}{NavyBlue}{Activité} % BurntOrange
 \newsec{subsub}{dm}{Gray}{Devoir maison}
+
+\newsec{subsub}{nullsubsec}{Gray}{}
 
 \newsec{subsub}{demoSUB}{Red}{$\rightarrow$ Démonstration}
 \newsec{subsub}{ticeSUB}{Orchid}{TICE}
@@ -195,7 +200,9 @@
 }
 
 \newcommand{\hint}[1]{
-    \ifthenelse{\boolean{outline}}{}{\textit{Indication: #1}}
+    \ifthenelse{\boolean{outline}}{}{%
+        {\color{Black!70}\textit{Indication: #1}}%
+    }
 }
 
 \newcounter{qf}

@@ -53,13 +53,27 @@
     }
 }
 
+% \newcommand{\dottedLines}[1]{%
+%     \noindent\hspace{-9pt}%
+%     \ifthenelse{\equal{#1}{0}}{}{%
+%         \looptext{%
+%         \noindent\dotfill%
+
+%         }{#1}
+%     }
+% }
+
+\newcounter{loopcntr}
 \newcommand{\dottedLines}[1]{%
     \noindent\hspace{-9pt}%
+    \ifthenelse{\equal{#1}{0}}{}{%
+        \setcounter{loopcntr}{0}%
+        \looptext{%
+        {\ifthenelse{\isodd{\value{loopcntr}}}{\color{gradeColor!55}}{}%
+        \noindent\dotfill}%
 
-    \looptext{%
-        \noindent\dotfill%
-
-    }{#1}
+        \stepcounter{loopcntr}}{#1}%
+    }
 }
 
 \newcommand{\result}[1]{\color{OrangeRed}#1\color{black}}
@@ -74,17 +88,17 @@
 
 \newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
 
-\NewDocumentCommand{\ifNotNull}{mmo}{
-    \IfValueT{#1}{
-        \ifx\relax#1\relax
-            \IfValueT{#3}{
-                #3
-            }
-        \else
-            #2
-        \fi
-    }
-}
+\NewDocumentCommand{\ifNotNull}{mmo}{%
+    \IfValueT{#1}{%
+        \ifx\relax#1\relax%
+            \IfValueT{#3}{%
+                #3%
+            }%
+        \else%
+            #2%
+        \fi%
+    }%
+}%
 
 \NewDocumentCommand{\ilink}{m g}{%
     \item
@@ -215,14 +229,21 @@
         \draw[line width = #3] (0,\n) -- (#1,\n);
 }
 
-\newcommand{\drawPoint}[4]{
+\NewDocumentCommand{\drawPoint}{mmm O{(0,0)}}{
     \node[shift={#4}, color = \pointColor] at (#2 - 0.5,#3 - 0.5) {#1};
     \draw[line width = \crossWidth, shift={#4}, color = \pointColor] (#2 - 0.25,#3) -- (#2 + 0.25,#3);
     \draw[line width = \crossWidth, shift={#4}, color = \pointColor] (#2,#3 - 0.25) -- (#2,#3 + 0.25);
 }
 
+\NewDocumentCommand{\drawTick}{m O{}}{
+    \draw[line width = 0.75mm, gradeColor] (#1, 0.08) -- (#1, -0.08);
+    \draw[line width = 0.75mm, gradeColor] (#1 - 0.08, 0) -- (#1 + 0.08, 0);
+    \node[gradeColor] at (#1, -0.3) {#2};
+}
+
 % Tabular
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{D}{>{\centering\arraybackslash}p{\cW}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \newcolumntype{K}{@{}m{0pt}@{}}
 
@@ -290,6 +311,45 @@
 %     }
 % }
 
+\NewDocumentCommand{\transformList}{m}{
+    % Split the input by commas and iterate over the elements
+    \foreach \i in {#1} {%
+        manuel/\i,%
+    }
+}
+
+% \NewDocumentCommand{\removeFirstChar}{m}{
+%     % Get the input string
+%     \def\inputString{#1}
+%     % Create a new command to hold the output string
+%     \def\outputString{}
+    
+%     % Get the length of the input string
+%     \newcount\stringLength
+%     \stringLength=\numexpr\expandafter\detokenize\expandafter{\inputString}\relax
+%     \advance\stringLength by -1 % Decrease length by 1 to ignore the first character
+
+%     % Check if the input string is not empty
+%     \ifnum\stringLength>0
+%         % Remove the first character by skipping it
+%         \edef\outputString{\expandafter\@gobble\inputString} % Skip the first character
+%         % Output the remaining string
+%         \outputString
+%     \else
+%         % If the string is empty, output nothing
+%         % Alternatively, you can output a message or a default value
+%         \textbf{Empty string}
+%     \fi
+% }
+
+\NewDocumentCommand{\bookSlide}{m O{10cm} O{1} O{\gradeBook} O{exo}}{%
+    % \exoSlide{\foreach \q in {#1}{manuel/\q,}}
+    {%
+        \def\imgPrefix{manuel/}%
+        \exoSlide{#1}[#2][#3][#4][#5]%
+    }%
+}
+
 \NewDocumentCommand{\exoSlide}{m O{10cm} O{1} O{} O{exo}}{%
     \slide{#5}{%
         \ifthenelse{\equal{#3}{1}}{\vspace{-0.5cm}}{\vspace{-1cm}}
@@ -326,6 +386,16 @@
     \end{enumerate}
 }
 
+\NewDocumentCommand{\answerFill}{O{Réponse}}{%
+    \answerSec{\remaininglines}[#1]%
+    \newpage%
+}
+
+\NewDocumentCommand{\answerSec}{m O{Réponse}}{\vspace{0.25cm}%
+    #2 :%
+    \quad \dottedLines{#1}%
+}
+
 % Define a new boolean for checking if the section is starred
 \newboolean{section@star}
 
@@ -345,6 +415,7 @@
 \newcommand{\ncalc}[1]{\number\calc{#1}}
 \newcommand{\pcalc}[1]{\numprint{\ncalc{#1}}}
 
+\def\gradeBook{}
 \newcommand{\setGrade}[1]{
     \def\grade{#1}
     % \begin{switch}{#1}
@@ -355,12 +426,15 @@
     %     }
     % \end{switch}
     \ifthenelse{\equal{#1}{6e}}{
+        \def\gradeBook{\dim}
         \definecolor{gradeColor}{HTML}{C6233D} % FA8072 in hex
     }{
     \ifthenelse{\equal{#1}{5e}}{
+        \def\gradeBook{\mm}
         \definecolor{gradeColor}{HTML}{088255}
     }{
     \ifthenelse{\equal{#1}{4e}}{
+        \def\gradeBook{\mi}
         \definecolor{gradeColor}{HTML}{1466A8}
     }{
     \ifthenelse{\equal{#1}{3e}}{
@@ -410,6 +484,8 @@
     \def\title{\textbf{\color{Red} #1}}
 }
 
+% Cases
+
 \newcommand{\kebabCase}[1]{%
     \def\temp{#1}%
     \StrSubstitute{\temp}{é}{e}[\temp]%
@@ -424,11 +500,21 @@
     \MakeLowercase{\temp}%
 }
 
+\newcommand{\reverseSnakeCase}[1]{%
+    \def\temp{#1}%
+    \StrSubstitute{\temp}{_}{ }[\temp]%
+    \temp
+}
+
 % Helper command to add rows to the table
-\def\evaluationRow#1/#2!{#1 &  / #2\addtocounter{evaluationTotal}{#2}\\ \hline}
+\def\evaluationRow#1/#2!{\ifthenelse{\equal{#2}{0}}{\bonus }{}#1 &
+    \ifthenelse{\equal{#2}{0}}{}{\qquad/ #2}
+    \addtocounter{evaluationTotal}{#2}\\ \hline
+}
 
 % Command to generate the sequence evaluation table
 \newcommand{\seqEvaluation}[3]{ % 1: Sequence number, 2: Title, 3: Competences
+    \renewcommand{\arraystretch}{1.2}
     \renewcommand*\do[1]{\evaluationRow##1!}
     \begin{seqEvaluationBox}{#1}{#2}
         \begin{center}
@@ -457,4 +543,27 @@
         /2
     }
     \evalutionTotal
+    \vspace{-2cm}
+}
+
+\newcommand{\tp}[1]{
+    \setTitle{TP : #1}
+    \thispagestyle{assignment}
+    \setboolean{showSubID}{true}
+    \emptyBackground
+}
+
+\newcommand{\evaluation}[1]{
+    \setTitle{Evaluation #1}
+    \thispagestyle{assignment}
+    \setboolean{showSubID}{true}
+    \emptyBackground
+}
+
+\newcommand{\repeated}[2]{% \repeat already defined
+    \foreach \n in {1,...,#1}{#2}
+}
+
+\newcommand{\remaininglines}{
+    \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
 }
