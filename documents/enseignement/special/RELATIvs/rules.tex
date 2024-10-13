@@ -1,0 +1,255 @@
+% VARIABLES %%%
+\setTitle{Règles RELATIvs}
+\def\imgPath{enseignement/special/RELATIvs/}
+\def\iconPath{RELATIvs/}
+\definecolor{gradeColor}{HTML}{F7941D}
+\thispagestyle{empty-head}
+\pagestyle{empty-head}
+\def\SubSectionColor{gradeColor}
+%%%
+
+% ICONS %%%
+\def\iconSize{25pt}
+\def\operationSize{15pt}
+
+\def\plus{\ifmmode\,\fi\icon{operation-add}[\operationSize]\,}
+\def\minus{\ifmmode\,\fi\icon{operation-substract}[\operationSize]\,}
+\def\time{\ifmmode\,\fi\icon{operation-multiply}[\operationSize]\,}
+\def\obelus{\ifmmode\,\fi\icon{operation-divide}[\operationSize]\,}
+
+\def\hand{\icon{hand} }
+
+\def\one{\icon{plus-1} }
+\def\two{\icon{plus-2} }
+\def\three{\icon{plus-3} }
+\def\four{\icon{plus-4} }
+\def\five{\icon{plus-5} }
+\def\six{\icon{plus-6} }
+\def\seven{\icon{plus-7} }
+\def\eight{\icon{plus-8} }
+\def\nine{\icon{plus-9} }
+
+\def\mone{\icon{minus-1} }
+\def\mtwo{\icon{minus-2} }
+\def\mthree{\icon{minus-3} }
+\def\mfour{\icon{minus-4} }
+\def\mfive{\icon{minus-5} }
+\def\msix{\icon{minus-6} }
+\def\mseven{\icon{minus-7} }
+\def\meight{\icon{minus-8} }
+\def\mnine{\icon{minus-9} }
+
+\def\daz{distance à zéro }
+
+% \def\plus{+ }
+% \def\minus{- }
+% \def\time{× }
+% \def\obelus{÷ }
+
+% \def\hand{"Main" }
+
+% \def\one{1 }
+% \def\two{2 }
+% \def\three{3 }
+% \def\four{4 }
+% \def\five{5 }
+% \def\six{6 }
+% \def\seven{7 }
+% \def\eight{8 }
+% \def\nine{9 }
+
+% \def\mone{-1 }
+% \def\mtwo{-2 }
+% \def\mthree{-3 }
+% \def\mfour{-4 }
+% \def\mfive{-5 }
+% \def\msix{-6 }
+% \def\mseven{-7 }
+% \def\meight{-8 }
+% \def\mnine{-9 }
+
+%%%
+
+\imgp{logo}%[8cm]
+
+\slide{Matériel}{
+    \begin{itemize}
+        \item \textbf{Cartes Nombres :} 2 jeux de 18 cartes nombres :
+        9 négatives ( \mnine à \mone) et 9 positives ( \one à \nine)
+        \item \textbf{Cartes Opérations :} 3 jeux de 4 cartes opérations :
+        addition \plus ,
+        soustraction \minus ,
+        multiplication \time, division \obelus
+        \item \textbf{carte "Main"} \hand
+    \end{itemize}
+}
+
+\slide{Règles du jeu duel (2 joueurs)}{
+    \subsection*{Préparation}
+    \begin{itemize}
+        \item Les cartes opérations sont placées au centre du jeu.
+        \item Toutes les cartes nombres sont distribuées équitablement entre les joueurs, face cachée.
+        \item La \hand est donnée au joueur dont l'anniversaire est le plus récent.
+    \end{itemize}
+
+    \subsection*{Tour de jeu}
+    \begin{enumerate}
+        \item \textbf{Piocher une opération :} Le joueur ayant la \hand pioche une carte opération.
+        \item \textbf{Dévoilement des cartes :} Les joueurs comptent jusqu'à trois. Au "trois", chaque joueur pose la première carte de sa pile, face visible, en la découvrant face à l'adversaire.
+        \item \textbf{Calcul du résultat :} Le premier joueur à donner correctement le résultat de l'opération (sous forme décimale ou fractionnaire) remporte le tour. L'opération commence par le nombre de la carte du joueur qui a la \hand. Si un joueur fournit un mauvais résultat, l'autre joueur remporte le tour.
+        \item \textbf{Gagner le tour :} Le joueur gagnant prend la \hand et remporte la carte opération mise en jeu, qu'il place à côté de sa pile.
+        \item \textbf{Continuer le jeu :} La partie continue ainsi jusqu'à épuisement des cartes opérations.
+    \end{enumerate}
+
+    \subsection*{Fin de la partie et score}
+    À la fin de la partie, le joueur ayant accumulé le plus de cartes opérations remporte la partie. En cas d'égalité, c'est le joueur qui a la \hand qui l'emporte.
+}
+
+\slide{Propriétés du jeu}{\vspace{-0.6cm}\setboolean{showID}{false}
+    \df{Distance à zéro}{
+        On appelle \key{distance à zéro} d'un nombre, la valeur de ce nombre sans son signe.
+        % \vspace{-0.5cm}\expl{}{
+        %     La \daz de \five et \mfive est 5.
+        % }
+    }\setboolean{showID}{true}
+    \vspace{-0.55cm}
+    \pr{Addition}{
+        \begin{itemize}
+            \item Si les deux nombres ont le même signe,
+            on garde ce signe et on additionne les \daz.
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\one\plus\six = 7$
+                    \item[] \hspace*{-1.5cm} $\color{\currentColor}\blacktriangleright$ $\mtwo\plus\mfive =
+                    -\left(\two\plus\five\right) = -7$
+                }
+            } \setItemColor{Red}
+            \item Si les nombres ont des signes différents, le signe du résultat sera celui du nombre avec la plus grande \daz. On soustrait ensuite la plus petite \daz de la plus grande.
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\six\plus\mfour = \six\minus\four = 2$
+                    \item[] \hspace*{-1.5cm} $\color{\currentColor}\blacktriangleright$ $\mseven\plus\three =
+                    -\left(\seven\minus\three\right) = -4$
+                }
+            }
+        \end{itemize}
+    }
+    \vspace{-0.55cm}
+    \pr{Soustraction}{
+        La soustraction est équivalente à l'addition de l'opposé du second nombre.
+        \begin{itemize}\item[]
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\four\minus\nine = \four\plus\mnine = -5$
+                    \item $\mtwo\minus\mfive = \mtwo\plus\five = 3$
+                }
+            }
+        \end{itemize}
+    }
+    \vspace{-0.55cm}
+    \pr{Multiplication}{On multiplie les \daz et :
+        \begin{itemize}
+            \item Si les deux nombres ont le même signe, le résultat est positif.
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\six\time\eight = 48$
+                    \item $\mthree\time\mfive = 15$
+                }
+            }\setItemColor{Red}
+            \item Si les nombres ont des signes différents, le résultat est négatif.
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\mfour\time\six = -24$
+                    \item $\seven\time\mone = -7$
+                }
+            }
+        \end{itemize}
+    }
+    \vspace{-0.55cm}
+    \pr{Division}{On divise la première \daz par le seconde et :
+        \begin{itemize}
+            \item Si les deux nombres ont le même signe, le résultat est positif.
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\eight\obelus\four = 2$
+                    \item $\msix\obelus\mthree = 2$
+                }
+            }\setItemColor{Red}
+            \item Si les nombres ont des signes différents, le résultat est négatif.
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\meight\obelus\two = -4$
+                    \item $\nine\obelus\mthree = -3$
+                }
+            }\setItemColor{Red}
+            \item La réponse peut être donnée sous forme décimale ou fractionnaire.
+            \vspace{-0.5cm}\expl{}{\vspace{-0.5cm}
+                \multiColItemize{2}{
+                    \item $\seven\obelus\two = 3,5$ ou $\frac{7}{2}$
+                    \item $\mnine\obelus\four = -2,25$ ou $- \frac{9}{4}$
+                }
+            }
+        \end{itemize}
+    }\setItemColor{gradeColor}
+}
+
+\slide{Variantes}{
+    \subsection*{Manches multiples}
+    \begin{itemize}
+        \item Le score (nombre de cartes opérations remportées) de chaque joueur est cumulé à la fin de chaque manche.
+        \item Entre chaque manche, le joueur avec la \hand la conserve.
+        \item Dès qu'un joueur atteint 24 points ou plus, il remporte la partie.
+        \item Si plusieurs joueurs ont 24 points ou plus à la fin de la manche, celui ayant le score le plus élevé l'emporte. En cas d'égalité, c'est le joueur qui a la \hand qui remporte la partie.
+    \end{itemize}
+
+    \subsection*{Parties à plus de deux joueurs}
+    \begin{itemize} 
+        \item\textbf{Mise en place :}
+        \begin{itemize}
+            \item En fonction du nombre de joueurs, il se peut que le paquet ne puisse pas être divisé équitablement. Dans ce cas, défaussez les cartes supplémentaires.
+        \end{itemize}
+
+        \item\textbf{Tour de jeu :}
+        \begin{itemize}
+            \item Chaque joueur tire une carte de son paquet.
+            \item Le résultat de chaque opération doit être donné en une seule fois, en commençant par le joueur à gauche de celui qui a la \hand, puis en fournissant les résultats dans le sens des aiguilles d'une montre. L'opération commence toujours par le nombre de la \hand.
+            \item Si toutes les cartes nombres sont jouées, mélangez-les à nouveau et redistribuez-les aux joueurs.
+        \end{itemize}
+
+        \item\textbf{Gestion des erreurs :}
+        \begin{itemize}
+            \item Si un joueur se trompe, seuls les joueurs qui n'ont pas encore donné de réponse peuvent tenter de répondre correctement.
+            \item Si un seul joueur ne s'est pas trompé, il remporte le tour.
+        \end{itemize}
+        Exemple : Si la carte opération tirée est un \plus, et que le joueur avec la \hand tire un $\msix$, le joueur à sa gauche tire un \two et celui à sa droite un $\mthree$, les résultats doivent être donnés dans cet ordre : d'abord $\msix \plus \two$, puis $\msix \plus \mthree$.
+
+        \item\textbf{Partie en plusieurs manches :}
+        \begin{itemize}
+            \item Le score à atteindre varie en fonction du nombre de joueurs pour équilibrer la durée de la partie :
+            \begin{itemize}
+                \item Pour 3 joueurs, le score à atteindre est de 16 points.
+                \item Pour 4 joueurs, il est de 12 points.
+                \item Pour 5 joueurs, il est de 10 points.
+                \item Pour 6 joueurs, il est de 8 points.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+    \subsection*{Niveau \hypersetup{urlcolor=gradeColor}\link{5e}}
+    \begin{itemize}
+        \item \textbf{Modifications des cartes opérations :} En 5e, le programme de mathématiques ne couvre pas encore les multiplications et divisions avec des nombres négatifs.
+        Par conséquent, les cartes opérations de multiplication \time sont jouées comme des cartes addition \plus, et les cartes de division \obelus sont jouées comme des cartes de soustraction \minus.
+        \item Il est possible d'utiliser un deuxième jeu pour remplacer les cartes de multiplication \time par des cartes d'addition \plus et les cartes de division \obelus par des cartes de soustraction \minus.
+    \end{itemize}
+
+    \subsection*{Niveau \hypersetup{urlcolor=gradeColor}\link{6e}}
+    \begin{itemize}
+        \item \textbf{Modifications des cartes nombres :} Les nombres négatifs ne sont introduits qu'en classe de 5e. Ainsi, les cartes négatives sont jouées comme des cartes positives.
+        \item Il est possible d'utiliser un deuxième jeu pour remplacer les cartes négatives par des cartes positives.
+        \item \textbf{Modification des règles d'ordre des opérations :}
+        \item Lorsqu'un calcul donne un résultat inférieur à zéro en commençant par la \hand
+        (par exemple, $\three \minus \five$),
+        le résultat à fournir sera celui du calcul effectué en commençant par le joueur qui n'a pas la \hand 
+        (dans cet exemple, $\five \minus \three$).
+    \end{itemize}
+}

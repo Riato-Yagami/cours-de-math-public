@@ -70,7 +70,7 @@
     \expandafter\NewDocumentCommand\csname #2\endcsname{m +m o}{ % ##1 Title | ##2 Content
         
         \xdef\currentSection{#2}
-        \xdef\currentColor{#3}
+        \def\currentColor{#3}
         \setItemColor{\currentColor}
 
         \stepcounter{#2}
@@ -111,7 +111,6 @@
                 \end{flushright}
             }
         }
-    \setItemColor{gradeColor}
     }
 }
 \makeatother
@@ -136,8 +135,9 @@
 \newsec{sub}{axio}{Mahogany}{Axiome}
 \newsec{sub}{objSUB}{gradeColor}{Objectifs}
 
+\def\explColor{gray}
 \newsec{subsub}{rmk}{BrickRed}{Remarque} % Thistle
-\newsec{subsub}{expl}{gray}{Exemple}
+\newsec{subsub}{expl}{\explColor}{Exemple}
 \newsec{subsub}{app}{NavyBlue}{Application} %RedViolet
 \newsec{subsub}{exo}{Gray}{Exercice}
 \newsec{subsub}{corr}{OrangeRed}{Correction}

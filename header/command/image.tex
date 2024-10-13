@@ -46,7 +46,8 @@
 
 \def\iconPath{}
 
-\NewDocumentCommand{\icon}{m O{15pt}}{
+\def\iconSize{15pt}
+\NewDocumentCommand{\icon}{m O{\iconSize}}{%
     \adjustbox{valign=m, raise=-0.2ex}{%
         \includegraphics[height=#2]{icons/\iconPath #1\imgExtension}%
     }%

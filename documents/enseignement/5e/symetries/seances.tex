@@ -1,0 +1,218 @@
+% VARIABLES %%%
+\setSeq{3}{Symétries}
+\setGrade{5e}
+
+\def\imgPath{enseignement/5e/symetries/}
+
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Sym.pdf}{Yvan Monka}}
+%%
+
+\obj{
+    \item Transformer une figure par une symétrie centrale.
+    \item Identifier des symétries dans des frises, des pavages, des rosaces.
+    \item Comprendre l'effet des symétries (axiale et centrale) :
+    conservation du parallélisme, des longueurs et des angles.
+    \item Mobiliser les connaissances des figures,
+    des configurations et des symétries pour déterminer des grandeurs géométriques.
+    \item Mener des raisonnements en utilisant des propriétés des figures,
+    des configurations et des symétries.
+}
+
+\def\grid{\draw[gray!40] (0,0) grid (14,8);}
+\def\arrow{\draw [ultra thick] (1,4)--(4,4)--(4,3)--(6,5)--(4,7)--(4,6)--(1,6)--cycle;}
+
+\NewDocumentCommand{\mushroom}{O{(0,0)}}{
+    \draw[thick, shift={#1}]
+    (0,2) -- (2,4) -- (4,4) -- (6,2) -- (6,0) -- (0,0) -- cycle;
+    
+    % Spot
+    % \draw[ultra thick, shift={#1}] 
+    %     (1.5,3.5) -- (2,2) -- (4,2) -- (4.5,3.5);  % Center spot
+        
+    % Mushroom Stem
+    \draw[thick, shift={#1}] 
+        (1,0) -- (2,-2) -- (4,-2) -- (5,0) -- cycle; % Stem (rectangle)
+
+    % Eyes
+    \draw[thick, shift={#1}] 
+        (2.5,-1) -- (2.5,0);
+
+    \draw[thick, shift={#1}] 
+        (3.5,-1) -- (3.5,0);
+}
+
+\def\figInit{
+    \grid
+    \arrow
+    \drawPoint{$O$}{7}{4}
+}
+
+\newcommand{\tikzc}[1]{
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            #1
+        \end{tikzpicture}
+    \end{center}
+}
+
+\scn{Rappels sur la symétrie axiale}
+
+\slide{qf}{
+    \exo{}{
+        Combien existe-t-il d'axes de symétrie pour chacun de ces panneaux?
+        
+        \imgp{panneaux-de-signalisation}[8cm]
+    }[\href{https://clairelommeblog.fr/wp-content/uploads/2020/03/panneaux_routiers.pdf}
+    {Claire Lommé}]
+}
+
+\bsec{Les symétries}
+\bsubsec{Symétries Axiale}
+
+% \newpage
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \act{}{
+        Construire l'image de la figure par la symétrie d'axe $(d)$.
+        \bvspace{-0.75cm}
+        \tikzc{
+            \draw[gray!40] (0,-3) grid (14,8);
+            \arrow
+            \draw[thick, gradeColor] (0,-3)--(11,8);
+            \node[gradeColor, above left] at (2,-1) {$(d)$};
+        }
+    }
+}
+
+\slide{cr}{
+    \sseq\ssec\ssubsec
+    \df{}{
+        Deux figures sont dites \key{symétriques par rapport à une droite} si elles se \key{superposent par pliage} le long de cette droite.
+    }[\wiki{Symétrie_axiale}]
+}
+
+\slide{cr}{\bvspace{-0.6cm}
+    \expl{}{\bvspace{-0.5cm}
+        \imgp{expl-symetrie-axiale}[7.5cm]
+    }
+}
+
+\slide{cr}{
+    \pr{}{
+        \Sialors{le point $M'$ est l'image du point $M$ par la symétrie d'axe $(d)$}{
+            \begin{enumerate}
+                \item la droite $(MM')$ est \bawsr{perpendiculaire} à l'axe $(d)$
+                \item le milieu du segment $[MM']$ est sur $d$.
+            \end{enumerate}
+        }
+        \rmk{}{%
+            $(d)$ est alors la \bawsr{\key{médiatrice} } de $[MM']$.
+        }
+    }
+}
+
+\slide{exo}{
+    \bvspace{-0.6cm}
+    \exo{}{
+        Construire l'image de la figure par la symétrie d'axe $(d)$.
+        \bvspace{-0.75cm}
+        \tikzc{
+            \draw[gray!40] (0,-4) rectangle (17,9);
+            \mushroom[(10,-1)]
+            \draw[thick, gradeColor] (7,-3)--(10,8);
+            \node[gradeColor, above left] at (7,-3) {$(d)$};
+        }
+    }
+}
+
+\bsubsec{Symétries Centrale}
+
+\def\one{%
+    On va construire l'image de la figure par la symétrie de centre $O$.
+
+    \tikzc{\figInit}
+}
+
+\def\two{%
+    On regarde le «\textit{chemin}» du point $A$ au point $O$.
+    
+    \tikzc{
+        \figInit
+        \drawPoint{$A$}{4}{3}
+        \draw[dashed, thick, Red] (4,3)--(7,4); 
+    }
+}
+
+\def\three{%
+    On exécute le même «\textit{chemin}», cette fois en partant du point $O$. On trouve alors le point $A'$,
+    image du point $A$ par la symétrie de centre $O$.
+
+    \tikzc{
+        \figInit
+        \drawPoint{$A$}{4}{3}
+        \draw[dashed, thick, Red] (7,4)--(10,5);
+        \drawPoint{$A'$}{10}{5}
+    }
+}
+
+\def\four{%
+    Fait de même avec les autres points de la figure, puis les reliers, de façon à obtenir l'image de la flèche par la symétrie de centre $O$.
+
+    \tikzc{
+        \figInit
+        \drawPoint{$A$}{4}{3}
+        \drawPoint{$B$}{4}{4}
+        \drawPoint{$C$}{1}{4}
+        \drawPoint{$D$}{1}{6}
+        \drawPoint{$E$}{4}{6}
+        \drawPoint{$F$}{4}{7}
+        \drawPoint{$G$}{6}{5}
+        \drawPoint{$A'$}{10}{5}
+    }
+}
+
+\scn{Découvrir la symétrie centrale}
+
+\ifArticle{%
+    \slide{exo}{
+        \act{}{\vspace{-0.5cm}
+            \multiColEnumerate{2}{
+                \item[] \one
+                \item \two
+                \item \three
+                \item \four
+            }
+        }[\href{https://drive.google.com/drive/folders/1Itzq0ZPj1sHwSIv9SgbUlIIuHdG28A5I}{Jérôme Potel}]
+    }
+}
+
+
+\ifBeamer{%
+    \slide{exo}{\act{}{\one}}
+    \slide{exo}{\two}
+    \slide{exo}{\three}
+    \slide{exo}{\four}
+}
+
+\slide{cr}{
+    \ssubsec
+    
+    \df{}{
+        Deux figures sont dites \key{symétriques par rapport à un point}
+        si l'on peut obtenir l'une en effectuant un \key{demi-tour} de l'autre \key{autour de ce point}.
+    }[\wiki{Symétrie_centrale}]
+}
+
+\slide{cr}{\bvspace{-0.6cm}
+    \expl{}{\bvspace{-0.5cm}
+        \imgp{expl-symetrie-centrale}[9cm]
+    }
+}
+
+\slide{cr}{
+    \pr{}{
+        \Sialors{le point $M'$ est le symétrique du point $M$ par la symétrie de centre $O$}{
+            le point $O$ est \bawsr{le milieu du segment} $[MM']$.
+        }
+    }
+}

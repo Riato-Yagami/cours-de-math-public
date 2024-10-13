@@ -53,6 +53,14 @@
     }
 }
 
+\newcommand{\bawsr}[1]{%
+    \ifthenelse{\boolean{answer}}{
+        \result{#1}
+    }{
+        \dotfill
+    }
+}
+
 % \newcommand{\dottedLines}[1]{%
 %     \noindent\hspace{-9pt}%
 %     \ifthenelse{\equal{#1}{0}}{}{%
@@ -209,10 +217,10 @@
 
 % TIKZ
 
-\newcommand{\ctikz}[1]{
+\NewDocumentCommand{\ctikz}{O{0.5} m}{
     \begin{center}
-        \begin{tikzpicture}
-            #1
+        \begin{tikzpicture}[scale = #1]
+            #2
         \end{tikzpicture}
     \end{center}
 }
@@ -248,8 +256,6 @@
 \newcolumntype{K}{@{}m{0pt}@{}}
 
 % GEOMETRY
-
-% \newcommand{\restoregeometry}{def}
 
 \newcommand{\multiColItemize}[2]{
     \begin{multicols}{#1}

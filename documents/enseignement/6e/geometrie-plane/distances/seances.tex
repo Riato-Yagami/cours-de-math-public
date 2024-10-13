@@ -78,7 +78,7 @@
 }
 
 \slide{cr}{
-    \ssec
+    \sseq\ssec
 
     \pr{}{
         Le \key{chemin le plus court} entre deux points est la \key{ligne droite}.
@@ -94,6 +94,15 @@
 
     \pr{}{
         Un segment $[AB]$ à pour longueur $AB$.
+    }
+}
+
+\slide{cr}{
+    \nt{}{%
+        On code les segments de même longueur par un même symbole dessiné sur chacun de ces segments.
+    }
+    \expl{}{%
+        \imgp{expl-codage}[8cm]
     }
 }
 
@@ -131,7 +140,17 @@
     }
 }
 
-% \newpage
+\slide{cr}{
+    \df{}{
+        Un point est dit \key{milieu d'un segment} si il est situé à égale distance de ses extrémités.
+    }[\wiki{Milieu_d'un_segment}]
+}
+
+\bookSlide{8p191,9p191}
+
+\scn{Utiliser le milieu d'un segment}
+
+\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-7-8-9}[10cm]}[\ca]}
 
 \def\exoGrid{
     \def\crossWidth{0.04cm}
@@ -161,12 +180,6 @@
     % \end{center}
 }
 
-\bookSlide{8p191,9p191}
-
-\scn{Utiliser le milieu d'un segment}
-
-\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-4-5-6}[10cm]}[\ca]}
-
 \slide{exo}{
     \exo{}{
         Chacune des figures suivantes est constituée de deux points $A$ et $B$.
@@ -191,11 +204,63 @@
     }
 }
 
+\scn{Distance d'un point à une droite}
+
+\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-10-11-12}[10cm]}[\ca]}
+
 \bsec{Distance d'un point à une droite}
+
+\slide{exo}{
+    \act{}{Achille (représenté par le point A sur la carte)
+    est fatigué et s'est trop éloigné de la côte de la plage du Peulx.
+    \begin{enumerate}
+        \item Tracez le plus court chemin qu'il doit suivre pour rejoindre la côte.
+        \item Quelle est la distance qu'il devra nager ?
+    \end{enumerate}
+        \ctikz[0.75]{
+            \draw[very thick, YellowOrange] (3,0) -- (6,9);
+            \filldraw[YellowOrange, opacity=0.1] (0,0) -- (3,0) -- (6,9) -- (0,9) -- cycle;
+            \draw[gray!40] (0,0) rectangle (17,9);
+            \node[YellowOrange] at (2.5,4.5) {Plage};
+            \drawPoint{$A$}{13}{4}
+            \node[above left] at (17,0) {Echelle : $1\centi\meter$ = $10\meter$};
+        }   
+    }[\href{https://www.maths-et-tiques.fr/telech/DISTANCES_GR.pdf}{Yvan Monka}]
+}
+
+\slide{cr}{
+    \ssec
+    \df{}{
+        La \key{distance d'un point à une droite} est la plus courte distance séparant ce point et un point de la droite.
+    }[\wiki{Distance_d'un_point_à_une_droite}]
+
+    \pr{}{
+        Le plus petit segment ayant comme extrémité un point $A$ et un point d'une droite $(d)$
+        est celui qui est perpendiculaire à la droite $(d)$.
+        \imgp{expl-distance-droite}[8cm]
+    }
+}
+
+\scn{Le cercle}
+
+\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-13-14-15}[10cm]}[\ca]}
 
 \bsec{Le cercle}
 
 \bsubsec{Definitions}
+
+\slide{exo}{
+    \act{}{\def\dist{$6 \centi\meter$ }
+        \begin{enumerate}
+            \item Placer un point $O$ à plus de \dist des bords de votre page.
+            \item Placer un point $C_1$ à \dist du point $O$.
+            \item Placer un autre point $C_2$ à \dist du point $O$.
+            \item Répétez ce processus jusqu'à placer le point $C_{10}$
+            \item Combien de points distincts peut-on placer à \dist du point $O$?
+            \item Sur quelle figure seront-ils tous situés?
+        \end{enumerate}
+    }
+}
 
 \slide{cr}{
     \df{}{
