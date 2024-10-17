@@ -1,0 +1,135 @@
+\setGrade{6e}
+\setTitle{Devoir de vacances - Cercle chromatique}
+\emptyBackground
+
+\def\imgPath{enseignement/6e/geometrie-plane/distances/ddv/}
+
+\def\Co{\ensuremath{\mathscr{C}_1} }
+\def\Cd{\ensuremath{\mathscr{C}_2} }
+
+\def\ankinluu{\href{https://x.com/Ankinluu\_}{@Ankinluu\_}}
+\def\authors{\jules{} et \ankinluu}
+
+\begin{itemize}
+    \item \hint{
+    \begin{itemize}
+        \item La construction doit être faite sur une feuille blanche de format A4.
+        \item Tracez des traits et placez des points de façon légère, afin de pouvoir les effacer facilement si besoin.
+        \item Certains choix de longueurs vous seront laissés au cours de la construction. Faites comme bon vous semble, il n'y a pas de mauvais choix.
+        \item Vous pouvez ajouter des tracés supplémentaires pour vous aider à la construction de la figure. C'est même encouragé.
+    \end{itemize}
+    }
+\end{itemize}
+
+\section{Construction du cercle chromatique}
+
+\dividePage{
+    \begin{itemize}
+        \item Nous allons construire une figure ressemblant au schéma de droite.
+        \item Pour cela, suivez les étapes suivantes :
+    \end{itemize}
+}{\vspace{-2.75cm}
+\imgp{cercle-chromatique-schema}[5cm]
+}[0.5]
+
+
+\begin{enumerate}
+    \item \textbf{Construction du cercle extérieur :} 
+    \begin{enumerate}
+        \item Placez un point $O$ au centre de votre feuille.
+        \item Tracez un cercle \Co de centre $O$ avec un rayon compris entre $6$ et $10\;\centi\meter$.
+    \end{enumerate}
+
+    \item \textbf{Construction dans le cercle :}
+    \begin{enumerate}    
+        \item Placez un point $A$ sur le cercle \Co.
+        \item Tracez une perpendiculaire à la droite $(OA)$ passant par le point $O$.
+        \item Placez un point $G$ à l'une des intersections entre la perpendiculaire et le cercle \Co.
+        \item Placez le point $M$ au milieu du segment $[AG]$.
+        \item Tracez la demi-droite $[OM)$.
+        \item Placez le point $H$ à l'intersection de la demi-droite $[OM)$ et du cercle \Co.
+    \end{enumerate}
+
+    \item \textbf{Construction des points du cercle extérieur :}
+    \begin{enumerate}
+        \item Tracez le segment $[AH]$, qui est une corde du cercle \Co.
+        \item Placez un point $B$, distinct du point $H$, sur le cercle \Co de sorte que le segment $[AB]$ ait la même longueur que le segment $[AH]$.
+        \item Placez les points $C$, $D$, $E$ et $F$ sur le cercle \Co de façon à ce que les cordes $[AB], [BC], [CD], [DE], [EF]$ et $[FG]$ aient toutes la même longueur.
+    \end{enumerate}
+
+    \item \textbf{Construction du cercle intérieur :}
+    \begin{enumerate}
+        \item Tracez un cercle \Cd de centre $O$ avec un diamètre compris entre $2$ et $6\;\centi\meter$.
+        \item Placez le point $A'$ à l'intersection du segment $[OA]$ et du cercle \Cd.
+        \item Placez les points $B', C', D', E', F'$ et $G'$ à l'intersection des segments :
+        $[OB]$, $[OC]$, $[OD]$, $[OE]$, $[OF]$, et $[OG]$ respectivement et du cercle \Cd.
+        \item Tracez les segments $[AA'], [BB'], [CC'], [DD'], [EE'], [FF']$ et $[GG']$.
+    \end{enumerate}
+    \item Effacer les traits de construction et les points pour garder que ce qui constitue le cercle chromatique comme sur le schéma.
+\end{enumerate}
+
+\section{Compléter le cercle chromatique}
+
+\dividePage{
+    \begin{itemize}
+        \item Pour cette partie,
+        vous allez personnaliser votre cercle chromatique en vous inspirant du
+        \href{https://knowyourmeme.com/memes/color-wheel-character-challenge}{Color Wheel Character Challenge}.
+        Défi artistique lancé sur Twitter en 2023 avec le cercle chromatique du dessinateur \ankinluu ci-dessous.
+        \begin{center}
+            \imgp{cercle-chromatique-Ankinluu}[7cm]
+        \end{center}
+    \end{itemize}
+}{\vspace{-2.5cm}
+    \begin{center}
+        \imgp{cercle-chromatique-couleurs}[6.1cm]
+    \end{center}
+    \vspace{-0.75cm}
+    \begin{itemize}
+        \item Ce challenge invite les artistes à remplir chaque section d'un cercle chromatique
+        en dessinant des personnages qui respectent les couleurs associées à chaque portion du cercle :
+        % \begin{tcolorbox}[
+        %     enhanced,
+        %     colback=Black!45,                % Background color
+        %     borderline={2.5mm}{-0.25mm}{black}, % Outer black border with thickness 0.5mm
+        %     borderline={1mm}{0.5mm}{white},  % Inner white border with thickness 1mm
+        %     arc=5mm,                      % Corner roundness
+        %     width=0.95\linewidth,          % Adjust box width
+        %     % sharp corners=all,            % Apply rounded corners to all sides
+        % ]
+        \newcommand{\col}[2]{\contour{black}{\textbf{\textcolor{#1}{#2}}}}
+        \contourlength{0.4mm}
+        \multiColItemize{2}{
+            \item \col{orange}{Orange}
+            \item \col{yellow}{Jaune}
+            \item \col{green}{Vert}
+            \item \col{cyan}{Cyan}
+            \item \col{blue}{Bleu}
+            \item \col{violet}{Violet}
+            \item \col{magenta}{Rose}
+            \item \col{red}{Rouge}
+        }
+        % \end{tcolorbox}
+    \end{itemize}
+}[0.5]
+
+\begin{itemize}
+    \item \hint{
+        \begin{itemize}
+            \item Utilisez des crayons de couleur pour compléter votre travail.
+            \item Laissez libre cours à votre imagination tout en respectant les teintes définies.
+            Amusez-vous et exprimez votre créativité !
+            \item Tout comme dans l'exemple de \ankinluu n'hésitez pas si vous le souhaitez à dépacer des cadres pour donner du relief à vos dessins. 
+            \item Ne vous inquiétez pas pour la qualité du dessin ou du coloriage :
+            vous ne serez évidemment pas notés sur cet aspect.
+        \end{itemize}    
+    }
+    \item Voici vos options :
+    \begin{itemize}
+        \item \textbf{Option 1 : Dessin} : Vous pouvez dessiner des personnages ou animaux ou fleurs ou tout autre sujet de votre choix, en suivant les couleurs du cercle chromatique.
+        \item \textbf{Option 2 : Coloriage} : Si vous ne souhaitez pas dessiner, vous pouvez simplement colorier les différentes arches du disque en respectant les couleurs.
+    \end{itemize}
+\end{itemize}
+
+
+

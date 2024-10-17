@@ -1,0 +1,149 @@
+\setGrade{6e}
+\setTitle{Evaluation 1 - Correction}
+
+\seqEvaluation{1}{Géométrie plane - points et droites}{
+    Suivre un programme de construction
+    /3,
+    Construire une perpendiculaire passant par un point donné
+    /4,
+}
+
+\seqEvaluation{2}{Organisation et gestion de données}{
+    Prélever des données à partir de supports variés
+    /2,
+    Produire un graphique cartésien
+    /4,
+    Compléter un tableau à double entrée
+    /4,
+    Reconnaître une situation de proportionnalité /0%
+}
+
+\seqEvaluation{}{Compétences générales}{
+    Écrire ses calculs
+    /1,
+    Rédiger des phrases réponses
+    /2
+}
+
+\evalutionTotal
+\vspace{-1.5cm}
+\noCalculator
+% images/enseignement/6e/geometrie-plane/points-et-droites/dim-6e/exo-44p217.png
+
+\exo{\tiersTemps Tableau à double entrée}{
+    Lors des Jeux Olympiques, des athlètes amateurs doivent choisir entre trois sports :
+    l'athlétisme, la natation ou l'escalade.
+    Ils sont répartis en deux groupes : les juniors et les seniors.
+    \begin{itemize}
+        \item Dans la catégorie juniors, il y a 20 athlètes.
+        8 ont choisi l'athlétisme, 7 la natation et les autres l'escalade.
+        \item Dans la catégorie seniors, 15 athlètes ont choisi la natation et 6 l'athlétisme.
+        \item Dans ces deux catégories, 12 athlètes ont choisi l'escalade.
+    \end{itemize}
+    
+    Compléter le tableau ci-dessous, en faisant figurer vos calculs en dessous.\\
+    \vspace{-0.5cm}
+    \renewcommand{\arraystretch}{1}
+    \def\cW{3cm}
+    \begin{center}
+        \begin{tabular}{|C{2cm}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+            \hline
+            & \textbf{Athlétisme} & \textbf{Natation} & \textbf{Escalade} & \textbf{Total} \\ \hline
+            \textbf{Juniors} & {\color{Blue}$8$} & {\color{Blue}$7$} & {\color{Green}$5$} & {\color{Blue}$20$}\\ \hline
+            \textbf{Seniors} & {\color{Blue}$6$} & {\color{Blue}$15$} & {\color{Green}$7$} & {\color{Green}$28$}\\ \hline
+            \textbf{Total}   & {\color{Green}$14$} & {\color{Green}$22$} & {\color{Blue}$12$} & {\color{Green}$48$} \\ \hline
+        \end{tabular}
+    \end{center}
+}
+
+\answerFill[Calculs effectués][
+\multiColItemize{3}{
+    \item $20 - 8 - 7 = {\color{Green}5}$
+    \item $12 - 5 = {\color{Green}7}$
+    \item $6 + 8 = {\color{Green}14}$
+    \item $7 + 15 = {\color{Green}22}$
+    \item $6 + 15 + 7 = {\color{Green}28}$
+    \item $20 + 28 = {\color{Green}48}$
+}]
+
+\exo{44p217}{
+    \vspace{-0.5cm}
+    \imgp{enseignement/6e/geometrie-plane/points-et-droites/dim-6e/exo-44p217.png}[9cm]
+
+    Dessiner la figure sur la grille ci-dessous en conservant l'emplacement du point $A$.
+
+    \imgp{enseignement/6e/geometrie-plane/points-et-droites/dm-44p217}[8cm]
+}[\dim]
+
+\vspace{-0.5cm}
+
+\answerFill[\textbf{\color{Orange}d.}][La droite $(AC)$ semble passer par le point $P$.]
+
+\newpage
+
+\def\crossWidth{0.4mm}
+\exo{Graphique cartésien}{
+    Le tableau ci-dessous présente le nombre de consoles PlayStation 3 vendues (en millions) par Sony chaque année, de 2006 à 2016.
+
+    \vspace{0.25cm}
+    \begin{tabular}{|C{2.5cm}|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Année & 2006 & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 \\
+        \hline
+        PS3 (en millions)  & 1,3 & 7,9 & 10,2 & 13 & 14 & 14,7 & 11,5 & 8,3 & 4,1  & 1,3 & 1,2 \\
+        \hline
+    \end{tabular}
+
+    \vspace{0.25cm}
+    Compléter de la manière la plus precise possible le graphique cartésien ci-dessous avec les donnés du tableau.
+    
+    % \vspace{0.5cm}
+    
+    \begin{center}
+        \begin{tikzpicture}[yscale = 1, xscale = 1.2]
+            \tkzInit[xmin=2005,xmax=2017,ymin=0,ymax=15]
+            % \tkzGrid[sub]
+            \tkzGrid[sub,color=gradeColor!50!white,subxstep=1,subystep=0.2]        
+            \tkzLabelX[step=5]
+            \tkzLabelY[step=2]
+            \tkzDrawY[label={PS3 (en millions)}, above , step=2]
+            \tkzDrawX[label={Années}]
+            % Tracer les points
+            \foreach \x/\y in {2006/1.3, 2007/7.9, 2008/10.2, 2009/13.0, 2010/14.0, 2011/14.7, 2012/11.5, 2013/8.3, 2014/4.1, 2015/1.3, 2016/1.2} {
+                % \tkzPlotPoint(\x,\y)
+                \drawPoint{}{\calc{\x-2005}}{\y};
+            }
+            % Relier les points
+            \draw[Green](1,1.3)--(2,7.9)--(3,10.2)--(4,13.0)--(5,14.0)--(6,14.7)--(7,11.5)--(8,8.3)--(9,4.1)--(10,1.3)--(11,1.2);
+        \end{tikzpicture}
+    \end{center}
+
+}[\wiki{PlayStation_3}]
+
+\newpage
+
+\exo{\bonus}{
+    Les deux diagrammes ci-dessous fournissent des informations sur les trois premières sagas du manga One Piece :
+    East Blue, Alabasta et Skypiea.
+
+    Le diagramme en bâton donne le nombre de chapitres dans chacune de ces sagas.
+    Et et le diagramme circulaire indique comment sont répartis les tomes du manga parmi ces trois sagas.
+    
+    \imgp{enseignement/6e/organisation-et-gestion-de-donnees/diagramme-one-piece.png}[15cm]
+
+    \begin{enumerate}
+        \item Combien y a-t de chapitres dans la $1^{\textrm{re}}$ saga?
+        \item Quelle saga à le moins de tomes?
+        \item Le nombre de tomes est-il proportionnel au nombre de chapitres dans ces trois premières saga ?
+    \end{enumerate}
+}[\href{https://onepiece.fandom.com/fr/wiki/Mer_de_la_Survie_:_Saga_Super_Rookies}{One Piece Encyclopédie}]
+
+\answerFill[Réponse][
+    \begin{enumerate}
+        \item D'après le diagramme en baton la $1^{\textrm{re}}$ saga : East Blue comprend 100 chapitres
+        \item D'après le diagramme circulaire, la $3^{\textrm{e}}$ saga : Skypiea a le moins de tomes.
+        \item D'après le diagramme circulaire, il y a autant de tomes dans la $1^{\textrm{re}}$ et la $2^{\textrm{e}}$ saga.
+        Or il y a plus de chapitres dans la $2^{\textrm{re}}$ saga que dans la $1^{\textrm{re}}$.
+        Le nombre de tomes dans une saga n'est donc pas proportionnel à son nombre de chapitres.
+    \end{enumerate}
+]

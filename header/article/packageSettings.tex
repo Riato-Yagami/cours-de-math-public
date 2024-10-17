@@ -13,12 +13,13 @@
     \fancyhead[C]{\LARGE \title}
 }
 
+\def\assignmentNameWidth{7.5cm}
 \fancypagestyle{assignment}{
     \setlength{\headheight}{29pt}
     \fancyhead[C]{}
     \fancyhead[L]{\large \title}
     \fancyhead[R]{%
-        \begin{tabular}{p{7.5cm}p{2.5cm}}%
+        \begin{tabular}{p{\assignmentNameWidth}p{2.5cm}}%
             \normalsize nom:& \normalsize classe: \link{\grade}\_\\%
             \normalsize prénom:& \normalsize date:\\%
             % \normalsize date:\hspace*{3.5cm}%
@@ -50,7 +51,7 @@
     \fancyhead[C]{}
     \fancyhead[L]{\large \title}
     \fancyhead[R]{%
-        \begin{tabular}{p{0.25\pdfpagewidth}p{0.15\pdfpagewidth}}%
+        \begin{tabular}{p{\assignmentNameWidth}p{0.15\pdfpagewidth}}%
             \normalsize nom:& \normalsize classe:\\%
             \normalsize prénom:& \normalsize date:\\%
             % \normalsize date:\hspace*{3.5cm}%

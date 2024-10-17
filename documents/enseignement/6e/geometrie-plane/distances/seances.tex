@@ -8,6 +8,8 @@
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Long.pdf}{Yvan Monka}}
 
 % \firstSlide
+\setboolean{answer}{false}
+% \setboolean{debugMode}{true}
 % Cercle https://www.maths-et-tiques.fr/telech/19Cercle.pdf
 %%
 
@@ -101,8 +103,9 @@
     \nt{}{%
         On code les segments de même longueur par un même symbole dessiné sur chacun de ces segments.
     }
+    \bvspace{-1cm}
     \expl{}{%
-        \imgp{expl-codage}[8cm]
+        \imgp{expl-codage}[7cm]
     }
 }
 
@@ -144,9 +147,13 @@
     \df{}{
         Un point est dit \key{milieu d'un segment} si il est situé à égale distance de ses extrémités.
     }[\wiki{Milieu_d'un_segment}]
+
+    \expl{}{
+        Le point $M$ est les milieu du segment $[AB]$.
+    }
 }
 
-\bookSlide{8p191,9p191}
+\bookSlide{8p191,9p191,36p196}[7cm][2]
 
 \scn{Utiliser le milieu d'un segment}
 
@@ -216,16 +223,19 @@
     \begin{enumerate}
         \item Tracez le plus court chemin qu'il doit suivre pour rejoindre la côte.
         \item Quelle est la distance qu'il devra nager ?
-    \end{enumerate}
-        \ctikz[0.75]{
-            \draw[very thick, YellowOrange] (3,0) -- (6,9);
-            \filldraw[YellowOrange, opacity=0.1] (0,0) -- (3,0) -- (6,9) -- (0,9) -- cycle;
-            \draw[gray!40] (0,0) rectangle (17,9);
-            \node[YellowOrange] at (2.5,4.5) {Plage};
-            \drawPoint{$A$}{13}{4}
-            \node[above left] at (17,0) {Echelle : $1\centi\meter$ = $10\meter$};
-        }   
+    \end{enumerate} 
     }[\href{https://www.maths-et-tiques.fr/telech/DISTANCES_GR.pdf}{Yvan Monka}]
+}
+
+\slide{exo}{
+    \ctikz[0.75]{
+        \draw[very thick, YellowOrange] (3,0) -- (6,9);
+        \filldraw[YellowOrange, opacity=0.1] (0,0) -- (3,0) -- (6,9) -- (0,9) -- cycle;
+        \draw[gray!40] (0,0) rectangle (17,9);
+        \node[YellowOrange] at (2.5,4.5) {Plage};
+        \drawPoint{$A$}{13}{4}
+        \node[above left] at (17,0) {Echelle : $1\centi\meter$ = $10\meter$};
+    }  
 }
 
 \slide{cr}{
@@ -233,12 +243,51 @@
     \df{}{
         La \key{distance d'un point à une droite} est la plus courte distance séparant ce point et un point de la droite.
     }[\wiki{Distance_d'un_point_à_une_droite}]
+}
 
+\slide{cr}{
     \pr{}{
         Le plus petit segment ayant comme extrémité un point $A$ et un point d'une droite $(d)$
         est celui qui est perpendiculaire à la droite $(d)$.
-        \imgp{expl-distance-droite}[8cm]
+        \imgp{expl-distance-droite}[7cm]
     }
+}
+
+\def\exogrid{
+    \ctikz[0.75]{
+            \tkzInit[xmax=17, ymax=10]
+            \tkzGrid[color=gradeColor!50,subxstep=0.5,subystep=0.5]
+            \drawPoint{A}{9}{7}
+            \drawPoint{B}{7}{6}
+            \drawPoint{C}{13}{2}
+            \drawPoint{D}{5.5}{3}
+            \drawPoint{E}{11}{5}
+            \drawPoint{F}{7}{3}
+            \draw[thick] (6.5,0.5) -- (16,10) node[below=0.5cm] {$(d'')$};
+            \draw[thick] (11,1.5) -- (11,8.5) node[left=0.25cm] {$(d)$};
+            \draw[thick] (1.5,3) -- (15.5,3) node[below=0.25cm] {$(d')$};
+            \draw[very thick, gradeColor] (2,8) -- (4,8) node[midway, above=0.25cm] {$1\;\centi\meter$};
+            \draw[very thick, gradeColor] (2,8.2) -- (2,7.8);
+            \draw[very thick, gradeColor] (4,8.2) -- (4,7.8);
+        }
+}
+
+\slide{exo}{
+    \ifBeamer{\small}
+    \exo{}{En s'apuyant sur la figure ci-dessous, compléter les phrases suivantes :
+        \begin{enumerate}
+            \item Le point $A$ est situé à \bawsr{$2$ }$\centi\meter$ de la droite $(d)$.
+            \item La distance du point $B$ à la droite \bawsr{$(d)$} vaut $2 \centi\meter$.
+            \item Le point $B$ est à la distance $BF$ de la droite \bawsr{$(d')$}.
+            \item La distance du point $A$ à la droite $(d'')$ est \bawsr{$AE$}.
+            \item Le point $D$ est situé à \bawsr{$0$} $\centi\meter$ de la droite $(d')$.
+            \item Parmi les points $A$,$B$, $C$ et $D$, le point le plus proche de $(d'')$ est \bawsr{$A$}. 
+        \end{enumerate}
+    }[\href{https://www.educmat.fr/categories/exercices_maths/6eme/6e\%2004-03\%20Exercices.pdf}{éducmat}]
+}
+
+\slide{exo}{
+    \exogrid
 }
 
 \scn{Le cercle}
@@ -250,6 +299,7 @@
 \bsubsec{Definitions}
 
 \slide{exo}{
+    \ifBeamer{\small}
     \act{}{\def\dist{$6 \centi\meter$ }
         \begin{enumerate}
             \item Placer un point $O$ à plus de \dist des bords de votre page.
@@ -273,10 +323,10 @@
     \df{}{
         Dans un cercle, on appelle:
         \begin{itemize}
-            \item \palt{2}{\key{rayon}}, un segment joignant le centre à un point du cercle.
-            \item \palt{2}{\key{corde}}, un segment dont les extrémités se trouvent sur le cercle.
-            \item \palt{2}{\key{diamètre}}, une corde passant par le centre.
-            \item \palt{2}{\key{arc}}, une portion de cercle délimitée par deux points.
+            \item \bawsr{\key{rayon}}, un segment joignant le centre à un point du cercle.
+            \item \bawsr{\key{corde}}, un segment dont les extrémités se trouvent sur le cercle.
+            \item \bawsr{\key{diamètre}}, une corde passant par le centre.
+            \item \bawsr{\key{arc}}, une portion de cercle délimitée par deux points.
         \end{itemize}
         \ifArticle{\imgp{cercle-definitions}[6cm]}
     }[\wiki{cercle}]
@@ -291,3 +341,5 @@
         On appelle \key{disque}, l'ensemble des points situé à une \key{distance inférieure ou égale} d'un point nommé \key{centre}.
     }
 }
+
+\bookSlide{42p197,67p201}[9cm]

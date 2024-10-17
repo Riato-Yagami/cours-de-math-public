@@ -29,11 +29,17 @@
     \img{\imgf{#1}}[#2]
 }
 
+
 \NewDocumentCommand{\img}{m O{\linewidth} O{0cm} o}{%
     \begin{figure}[H]%
         \centering%
         \hspace*{#3}
-        \includegraphics[width=#2]{#1}%
+        \ifbool{debugMode}{
+            \ctikz{%
+                \draw[thick] (0,0) rectangle (#2, #2); % A rectangle with proportional dimensions
+                \node at (#2/2, #2/2) {#1};
+            }
+        }{\includegraphics[width=#2]{#1}}%
         \IfValueTF{#4}{
             \caption{\underline{#4}}
             % \vspace{-0.4cm}

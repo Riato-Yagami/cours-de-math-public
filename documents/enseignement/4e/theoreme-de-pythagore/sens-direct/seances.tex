@@ -4,7 +4,7 @@
 
 \setGrade{4e}
 \def\imgPath{enseignement/4e/theoreme-de-pythagore/sens-direct/}
-
+\setboolean{answer}{true}
 % \firstSlide
 %%
 
@@ -24,7 +24,7 @@
 \slide{qf}{
     \dividePage{
         \begin{enumerate}
-            \item Peut-on construire un triangle $ABC$ avec:
+            \item Peut-on construire un triangle $ABC$ avec :
             \begin{enumerate}
                 \item $AB = 5cm \pv BC = 11cm \pv AC = 4cm$
                 \item $AB = 8cm \pv BC = 9cm \pv AC = 6cm$
@@ -147,7 +147,7 @@
             \multiColEnumerate{4}{
                 \item $3\cm$ \item $12\cm$ \item $5,5\cm$ \item $x\cm$
             }
-            \item Trouvé le côté d'un carré d'aire:
+            \item Trouver le côté d'un carré d'aire:
             \multiColEnumerate{4}{
                 \item $4\cmd$ \item $25\cmd$ \item $1\cmd$ \item $169\cmd$
             }
@@ -214,12 +214,12 @@
 
 \slide{cr}{
     \expl{}{
-        Soit $ABC$ un triangle rectangle en $A$, tel que $AB = 3\cm$ et $AC = 4\cm$.
+        Soit $ABC$, un triangle rectangle en $A$, tel que $AB = 3\;\cm$ et $AC = 4\;\cm$.
         Déterminer $BC$.
     }
 
     \mthd{}{
-        \palt{2}{
+        \bawsr{
             \Ona le triangle ABC rectangle en A.\\
             \Alors d'après le théorème de Pythagore :
             \begin{align*}
@@ -228,7 +228,7 @@
                 &= 9 + 16\\
                 &= 25\\
                 \alors BC &= \sqrt{25}\\
-                \donc &= 5\centi\meter\\
+                \donc BC &= 5\;\centi\meter\\
             \end{align*}
         }
     }
@@ -237,14 +237,31 @@
 \def\imgPrefix{mi-c4/}
 \exoSlide{17p431,18p431,38p433}[8cm][2][\mi]
 
-\scn{Résoudre des problèmes mettant en jeux le théorème de pythagore}
+\ifArticle{
+    \mthd{18p431}{
+        \Ona le triangle $LMN$ rectangle en $M$.\\
+        \Alors d'après le théorème de Pythagore :
+        \begin{align*}
+            LN^2 &= LM^2 + MN^2\\
+            14^2 &= LM^2 + 9^2\\
+            \alors LM^2 &= 14^2 - 9^2 \textrm{ (addition à trou)}\\
+            &= 196 - 81 = 115\\
+            \alors LM &= \sqrt{115}\\
+            \donc LM &\equiv 10,7\;\centi\meter\\
+        \end{align*}
+    }
+}
+
+\scn{Résoudre des problèmes mettant en jeu le théorème de pythagore}
 
 \def\imgPrefix{}
 \slide{qf}{
-    \multiColEnumerate{2}{
-        \item \imgp{cn-18-4e-juin-2023}[9cm]
-        \item \imgp{cn-28-4e-juin-2022}[9cm]
-    }
+    \begin{center}
+        \multiColEnumerate{1}{
+            \item \imgp{cn-18-4e-juin-2023}[9cm]
+            \item \imgp{cn-28-4e-juin-2022}[9cm]
+        } 
+    \end{center}
 }
 
 \slide{exo}{
