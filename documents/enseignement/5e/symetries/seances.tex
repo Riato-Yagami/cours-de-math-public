@@ -2,9 +2,13 @@
 \setSeq{3}{Symétries}
 \setGrade{5e}
 
+% \setboolean{answer}{false}
+% \setboolean{newPageOnSlide}{true}
+
 \def\imgPath{enseignement/5e/symetries/}
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Sym.pdf}{Yvan Monka}}
+\def\jerome{\href{https://drive.google.com/drive/folders/1Itzq0ZPj1sHwSIv9SgbUlIIuHdG28A5I}{Jérôme Potel}}
 %%
 
 \obj{
@@ -47,35 +51,25 @@
     \drawPoint{$O$}{7}{4}
 }
 
-\newcommand{\tikzc}[1]{
-    \begin{center}
-        \begin{tikzpicture}[scale=0.5]
-            #1
-        \end{tikzpicture}
-    \end{center}
-}
+\scn{Rappels sur la symétrie axiales}
 
-\scn{Rappels sur la symétrie axiale}
-
-\slide{qf}{
+\slide{qf}{\bvspace{-1cm}
     \exo{}{
-        Combien existe-t-il d'axes de symétrie pour chacun de ces panneaux?
-        
-        \imgp{panneaux-de-signalisation}[8cm]
-    }[\href{https://clairelommeblog.fr/wp-content/uploads/2020/03/panneaux_routiers.pdf}
-    {Claire Lommé}]
+        Est-ce que deux dinosaures identiques peuvent être superposés l'un à l'autre grâce à une symétrie axiale ?
+        Si ce n'est pas possible, pourquoi ?
+        \imgp{qf/dinos-axiales}[9cm]
+    }[\yuyu]
 }
 
 \bsec{Les symétries}
-\bsubsec{Symétries Axiale}
+\bsubsec{Symétrie Axiale}
 
-% \newpage
 \slide{exo}{
     \bvspace{-0.5cm}
     \act{}{
         Construire l'image de la figure par la symétrie d'axe $(d)$.
         \bvspace{-0.75cm}
-        \tikzc{
+        \ctikz{
             \draw[gray!40] (0,-3) grid (14,8);
             \arrow
             \draw[thick, gradeColor] (0,-3)--(11,8);
@@ -116,7 +110,7 @@
     \exo{}{
         Construire l'image de la figure par la symétrie d'axe $(d)$.
         \bvspace{-0.75cm}
-        \tikzc{
+        \ctikz{
             \draw[gray!40] (0,-4) rectangle (17,9);
             \mushroom[(10,-1)]
             \draw[thick, gradeColor] (7,-3)--(10,8);
@@ -125,18 +119,29 @@
     }
 }
 
-\bsubsec{Symétries Centrale}
+\scn{Découvrir la symétrie centrale}
+
+\slide{qf}{
+    \exo{}{
+        Combien existe-t-il d'axes de symétrie pour chacun de ces panneaux?
+        
+        \imgp{panneaux-de-signalisation}[8cm]
+    }[\href{https://clairelommeblog.fr/wp-content/uploads/2020/03/panneaux_routiers.pdf}
+    {Claire Lommé}]
+}
+
+\bsubsec{Symétrie Centrale}
 
 \def\one{%
     On va construire l'image de la figure par la symétrie de centre $O$.
 
-    \tikzc{\figInit}
+    \ctikz{\figInit}
 }
 
 \def\two{%
     On regarde le «\textit{chemin}» du point $A$ au point $O$.
     
-    \tikzc{
+    \ctikz{
         \figInit
         \drawPoint{$A$}{4}{3}
         \draw[dashed, thick, Red] (4,3)--(7,4); 
@@ -147,7 +152,7 @@
     On exécute le même «\textit{chemin}», cette fois en partant du point $O$. On trouve alors le point $A'$,
     image du point $A$ par la symétrie de centre $O$.
 
-    \tikzc{
+    \ctikz{
         \figInit
         \drawPoint{$A$}{4}{3}
         \draw[dashed, thick, Red] (7,4)--(10,5);
@@ -158,7 +163,7 @@
 \def\four{%
     Fait de même avec les autres points de la figure, puis les reliers, de façon à obtenir l'image de la flèche par la symétrie de centre $O$.
 
-    \tikzc{
+    \ctikz{
         \figInit
         \drawPoint{$A$}{4}{3}
         \drawPoint{$B$}{4}{4}
@@ -171,8 +176,6 @@
     }
 }
 
-\scn{Découvrir la symétrie centrale}
-
 \ifArticle{%
     \slide{exo}{
         \act{}{\vspace{-0.5cm}
@@ -182,7 +185,7 @@
                 \item \three
                 \item \four
             }
-        }[\href{https://drive.google.com/drive/folders/1Itzq0ZPj1sHwSIv9SgbUlIIuHdG28A5I}{Jérôme Potel}]
+        }[\jerome]
     }
 }
 
@@ -212,7 +215,325 @@
 \slide{cr}{
     \pr{}{
         \Sialors{le point $M'$ est le symétrique du point $M$ par la symétrie de centre $O$}{
-            le point $O$ est \bawsr{le milieu du segment} $[MM']$.
+            le point $O$ est \bawsr{le milieu du segment } $[MM']$.
         }
     }
 }
+
+\scn{Manipuler la symétrie centrale}
+
+\slide{qf}{\bvspace{-1cm}
+    \exo{}{
+        Est-ce que deux dinosaures identiques peuvent être superposés l'un à l'autre grâce à une symétrie centrale ?
+        Si ce n'est pas possible, pourquoi ?
+        \bvspace{-0.5cm}
+        \imgp{qf/dinos-centrales}[9cm]
+    }[\yuyu]
+}
+
+\def\konoha{%
+    % \draw [thick] (9,3)-- (8,2)-- (7,3)-- (8,4)-- (10,3)-- (9,1)-- (7,1)-- (5,1)-- (6,3)-- (7,5)-- (9,5)-- (10,4)-- (11,5);
+    % \draw [thick] (7,1)-- (6,3);
+    \draw [thick] (3,5)-- (4,6)-- (5,5)-- (4,4)-- (2,5)-- (3,7)-- (5,7)-- (7,7)-- (6,5)-- (5,3)-- (3,3)-- (2,4)-- (1,3);
+    \draw [thick] (5,7)-- (6,5);
+    \drawPoint{$O$}{6}{4}[gradeColor]
+}
+
+\slide{exo}{\bvspace{-0.75cm}
+    \exo{}{
+        Construis l'image de la figure par la symétrie de centre $O$.
+        \ctikz[0.6]{
+            \draw[gray!40] (0,-1) grid (13,8);
+            \konoha
+        }
+    }
+}
+
+% Define a command to place numbered nodes at specific coordinates
+\def\hexNode#1#2{
+    \draw [color=gradeColor!75, fill opacity=1] #1 node[anchor=center, scale=1] {$#2$};
+}
+
+% Define a command for drawing quadrilateral shapes based on four coordinates
+\def\quadShape#1#2#3#4{
+    \draw[color=black] #1--#2--#3--#4--cycle;
+}
+
+% Coordinates for nodes and quadrilateral shapes
+\newcommand{\hexagones}{
+    % Place nodes with loop (coordinates, label)
+    \foreach \coord/\label in {
+        (2.75,-1.3)/1, (5,0)/2, (2.75,1.3)/3, (9.5,2.6)/4,
+        (7.25,1.3)/5, (7.25,3.9)/6, (7.25,-3.9)/7, (9.5,-2.6)/8,
+        (7.25,-1.3)/9, (11.75,-1.3)/10, (14,0)/11, (11.75,1.3)/12,
+        (18.5,2.6)/13, (16.25,1.3)/14, (16.25,3.9)/15, (16.25,-3.9)/16,
+        (18.5,-2.6)/17, (16.25,-1.3)/18, (7.25,-9.09)/19, (9.5,-7.79)/20,
+        (7.25,-6.5)/21, (14,-5.2)/22, (11.75,-6.5)/23, (11.75,-3.9)/24,
+        (11.75,-11.69)/25, (14,-10.39)/26, (11.75,-9.09)/27, (16.25,-9.09)/28,
+        (18.5,-7.79)/29, (16.25,-6.5)/30, (23,-5.2)/31, (20.75,-6.5)/32,
+        (20.75,-3.9)/33, (20.75,-11.69)/34, (23,-10.39)/35, (20.75,-9.09)/36
+    }{%
+        \hexNode{\coord}{\label}
+    }
+    % Draw quadrilateral shapes
+    \quadShape{(0,0)}{(3,0)}{(4.5,-2.6)}{(1.5,-2.6)} \quadShape{(4.5,2.6)}{(6,0)}{(4.5,-2.6)}{(3,0)}
+    \quadShape{(0,0)}{(1.5,2.6)}{(4.5,2.6)}{(3,0)} \quadShape{(9,5.2)}{(10.5,2.6)}{(9,0)}{(7.5,2.6)}
+    \quadShape{(4.5,2.6)}{(7.5,2.6)}{(9,0)}{(6,0)} \quadShape{(4.5,2.6)}{(6,5.2)}{(9,5.2)}{(7.5,2.6)}
+    \quadShape{(4.5,-2.6)}{(7.5,-2.6)}{(9,-5.2)}{(6,-5.2)} \quadShape{(9,0)}{(10.5,-2.6)}{(9,-5.2)}{(7.5,-2.6)}
+    \quadShape{(4.5,-2.6)}{(6,0)}{(9,0)}{(7.5,-2.6)} \quadShape{(9,0)}{(12,0)}{(13.5,-2.6)}{(10.5,-2.6)}
+    \quadShape{(13.5,2.6)}{(15,0)}{(13.5,-2.6)}{(12,0)} \quadShape{(9,0)}{(10.5,2.6)}{(13.5,2.6)}{(12,0)}
+    \quadShape{(18,5.2)}{(19.5,2.6)}{(18,0)}{(16.5,2.6)} \quadShape{(13.5,2.6)}{(16.5,2.6)}{(18,0)}{(15,0)}
+    \quadShape{(13.5,2.6)}{(15,5.2)}{(18,5.2)}{(16.5,2.6)} \quadShape{(13.5,-2.6)}{(16.5,-2.6)}{(18,-5.2)}{(15,-5.2)}
+    \quadShape{(18,0)}{(19.5,-2.6)}{(18,-5.2)}{(16.5,-2.6)} \quadShape{(13.5,-2.6)}{(15,0)}{(18,0)}{(16.5,-2.6)}
+    \quadShape{(4.5,-7.79)}{(7.5,-7.79)}{(9,-10.39)}{(6,-10.39)} \quadShape{(9,-5.2)}{(10.5,-7.79)}{(9,-10.39)}{(7.5,-7.79)}
+    \quadShape{(4.5,-7.79)}{(6,-5.2)}{(9,-5.2)}{(7.5,-7.79)} \quadShape{(13.5,-2.6)}{(15,-5.2)}{(13.5,-7.79)}{(12,-5.2)}
+    \quadShape{(9,-5.2)}{(12,-5.2)}{(13.5,-7.79)}{(10.5,-7.79)} \quadShape{(9,-5.2)}{(10.5,-2.6)}{(13.5,-2.6)}{(12,-5.2)}
+    \quadShape{(9,-10.39)}{(12,-10.39)}{(13.5,-12.99)}{(10.5,-12.99)} \quadShape{(13.5,-7.79)}{(15,-10.39)}{(13.5,-12.99)}{(12,-10.39)}
+    \quadShape{(9,-10.39)}{(10.5,-7.79)}{(13.5,-7.79)}{(12,-10.39)} \quadShape{(13.5,-7.79)}{(16.5,-7.79)}{(18,-10.39)}{(15,-10.39)}
+    \quadShape{(18,-5.2)}{(19.5,-7.79)}{(18,-10.39)}{(16.5,-7.79)} \quadShape{(13.5,-7.79)}{(15,-5.2)}{(18,-5.2)}{(16.5,-7.79)}
+    \quadShape{(22.5,-2.6)}{(24,-5.2)}{(22.5,-7.79)}{(21,-5.2)} \quadShape{(18,-5.2)}{(21,-5.2)}{(22.5,-7.79)}{(19.5,-7.79)}
+    \quadShape{(18,-5.2)}{(19.5,-2.6)}{(22.5,-2.6)}{(21,-5.2)} \quadShape{(18,-10.39)}{(21,-10.39)}{(22.5,-12.99)}{(19.5,-12.99)}
+    \quadShape{(22.5,-7.79)}{(24,-10.39)}{(22.5,-12.99)}{(21,-10.39)} \quadShape{(18,-10.39)}{(19.5,-7.79)}{(22.5,-7.79)}{(21,-10.39)}    
+}
+
+\slide{exo}{\bvspace{-0.75cm}
+    \exo{Pavage}{\def\crossWidth{0.5mm}\def\crossSize{0.5}
+        Le pavage ci-dessous est réalisé à l'aide de 36 pièces identiques.
+        \bvspace{-0.5cm}
+        \ctikz[0.35]{
+            \hexagones
+            \drawPoint{A}{13.5}{-2.6}
+            \drawPoint{B}{12}{-5.2}
+            \drawPoint{C}{13.5}{-7.79}
+            \drawPoint{D}{18}{-5.2}
+            \drawPoint{E}{9}{-2.6}
+        }
+    }[\jerome{} et \href{https://www.iparcours.fr/ouvrages/ouvrages.php?ouvrage=Cahier52022}{iParcours}]
+}
+
+\slide{exo}{\bsmall
+    Par la symetrie de centre $A$, quelle est l'image de la figure :
+    \begin{enumerate}\setItemColor{Gray}
+        \item Observe le pavage, puis complete le tableau
+        \begin{center}
+            \def\cW{1cm}\renewcommand{\arraystretch}{1.75}%
+            \begin{tabular}{|C{5cm}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+                \hline La pièce &
+                16 & \bawsr{8}  & 36 & 8\\
+                \hline est l'image de la pièce&
+                \bawsr{10} & 17 & 18 & \bawsr{34}\\
+                \hline par rapport au point &
+                A & A & \bawsr{D} & C\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \item La pièce 6 et 24 sont symétrique par rapport au point $F$.
+        Place le point $F$ sur la figure. \saveenumi{2}
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi\setItemColor{Gray}
+        \item Ahmed dit :
+        \guillemetleft J'ai transformé la pièce 11 par symétrie de centre $A$ puis par symétrie d'axe $(AB)$.\guillemetright
+        Quelle pièce à t-il trouvé.
+        \item Comme Ahmed rédige un programme de construction qui permet de transformer: 
+        \begin{enumerate}
+            \item la pièce 32 en la pièce 20.
+            \item la pièce 10 en la pièce 28.
+        \end{enumerate}
+    \end{enumerate}
+}
+
+\scn{Construire une image par symétrie centrale sur papier blanc}
+
+\def\caPrefix{5e-mars-2023-}
+\caSlide{23-24-25}
+
+\slide{cr}{
+    \mthd{Construire l'image d'un point par une symétrie centrale}{
+        Pour construire l'image du point $A$ par une symétrie de centre $O$ :
+        \begin{enumerate}
+            \item Tracez la demi-droite $[AO)$.
+            \item Reportez la mesure $AO$ de l'autre côté du point $O$ sur la droite $(AO)$.
+            \item Vous obtenez l'image du point $A$, que l'on peut nommer $A'$.
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \expl{}{Construisez l'image du point $A$ par la symétrie de centre $O$.
+    \ctikz{
+        \draw[gray!40] (-5,-2) rectangle (10,9);
+        \drawPoint{$A$}{-3}{0}
+        \drawPoint{$O$}{2}{3}[gradeColor]
+    }
+    }
+}
+
+\slide{cr}{
+    \mthd{Construire l'image d'une figure par une symétrie centrale}{
+        Pour construire l'image d'une figure par une symétrie de centre $O$ :
+        \begin{enumerate}
+            \item Construisez l'image de chacun des points de cette figure par la symétrie de centre $O$.
+            \item Reliez chacun de ces points comme sur la figure d'origine.
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{\bvspace{-0.5cm}
+    \expl{}{Construisez l'image de la figure par la symétrie de centre $O$.
+    \ctikz[0.4]{
+        \draw[gray!40] (-10,-8) rectangle (11,9);
+        \draw [line width=1pt] (0,5)-- (10,6)-- (5,1) -- cycle;
+        \drawPoint{$O$}{1}{1}[gradeColor]
+    }
+}
+}
+
+\scn{Découvrir les propriétés de la symétrie centrale}
+
+\def\caPrefix{5e-mars-2022-}
+\caSlide{14-15}
+
+\bsec{Propriétés des symétries}
+
+\slide{exo}{\bvspace{-0.75cm}\bsmall
+    \act{}{
+        \begin{enumerate}
+            \item \begin{enumerate}
+                \item Sur feuille blanche, construire un rectangle $ABCD$.
+                \item Placer un point $P$ sur la droite $(BD)$.
+                \item Placer un point $E$ n'importe où sur votre feuille.
+                \item Construire les points $A'$, $B'$, $C'$, $D'$ et $P'$, images des points $A$, $B$, $C$ et $D$ par la symétrie de centre $E$.
+            \end{enumerate}
+            \item \begin{enumerate}
+                \item Comment semblent les distances $BD$ et $B'D'$ ?
+                \item Comment semblent les aires des triangles $BCD$ et $B'C'D'$ ?
+                \item Comment semblent les angles $\widehat{ADB}$ et $\widehat{A'D'B'}$ ?
+                \item Sur quelle droite semble être située le point $P$.
+                \item Comment semblent les droites $CD$ et $C'D'$ ?
+            \end{enumerate}\saveenumi{2}
+        \end{enumerate}
+    }
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi\setItemColor{RoyalBlue}
+        \item \begin{enumerate}
+            \item A partir des questions précédentes;
+            formulez des conjectures sur les propriétés de la symétrie centrale.
+            \item En déduire la nature du quadrilatère $A'B'C'D'$.
+        \end{enumerate}
+    \end{enumerate}
+}
+
+\slide{cr}{
+    \ssec
+    \pr{}{
+        Les symétries conservent les mesures:
+        \multiColItemize{2}{
+            \item de distances.
+            \item d'angles.
+        }
+    }
+
+    \cor{}{
+        Les symétries conservent:
+        \multiColItemize{2}{
+            \item les aires.
+            \item les alignements.
+        }
+    }
+}
+
+\slide{cr}{
+    \pr{}{
+        \Sialors{$(d_1)$ est l'image de $(d_2)$ par une symétrie centrale}
+        {$(d_1)$ est parallèle à $(d_2)$.}
+    }
+
+    \expl{}{On considère un triangle $OAB$.
+    \begin{enumerate}
+        \item Le point $A'$ est le symétrique de $A$ par rapport à $O$.
+        \item Le point $B'$ est le symétrique de $B$ par rapport à $O$.
+    \end{enumerate}
+        Prouver que les droites $(AB)$ et $(A'B')$ sont parallèles. 
+    }[\ym]
+}
+
+\scn{Utiliser les propriétés de la symétrie centrale}
+
+\def\caPrefix{5e-juin-2022-}
+\caSlide{14-15-16}
+
+\slide{exo}{\bvspace{-0.75cm}\bsmall
+    \exo{Sans le centre}{
+        $[A'B']$ est le symétrique du segment $[AB]$ par rapport à un point $O$.
+        En utilisant uniquement une règle non graduée et un rapporteur, construis la figure symétrique par rapport à $O$ de la ligne brisée $ABCD$.
+        Comment as-tu raisonné ?\bvspace{-0.25cm}
+        \ctikz[0.35]{
+            \draw[gray!40] (-7,-10) rectangle (12,9);
+            \draw [thick] (-6.06,1.06)-- (-2.3,2.88);
+            \draw [thick] (-2.3,2.88)-- (-2.42,-1.68)-- (1.34,-3.52);
+            \draw [thick] (7.34,-1.38)-- (3.58,-3.2);
+            \drawPoint{A}{-6.06}{1.06}
+            \drawPoint{B}{-2.3}{2.88}
+            \drawPoint{C}{-2.42}{-1.68}
+            \drawPoint{D}{1.34}{-3.52}
+            % \drawPoint{O}{0.64}{-0.16}
+            \drawPoint{A'}{7.34}{-1.38}
+            \drawPoint{B'}{3.58}{-3.2}
+        }
+    }[\dmeepc]
+}
+
+\slide{exo}{\bvspace{-0.7cm}\bsmall
+    \exo{Figure incomplète}{
+        $ABC$ est un triangle, mais le point $C$ est en dehors de la feuille.
+        Construis le symétrique du triangle $ABC$ par rapport au point $O$.
+        Comment as-tu raisonné ?\bvspace{-0.25cm}
+        \ctikz[0.45]{
+            \draw[gray!40] (-5,-10) rectangle (10,3);
+            \draw [thick] (6.18,-5.08)-- (5,-1.14);
+            \draw [thick] (5,-1.14)-- (9.86,-2.845909090909091);
+            \draw [thick] (6.18,-5.08)-- (9.86,-4.4466468842729965);
+            \drawPoint{B}{5}{-1.14}
+            \drawPoint{A}{6.18}{-5.08}
+            \drawPoint{O}{4.36}{-4.14}
+        }
+}[\dmeepc]
+}
+
+\scn{Découvrir la notion de centre de symétrie dans une figure}
+
+\def\caPrefix{5e-entrainement.4-}
+\caSlide{29-30}
+
+\bsec{Centre de symétrie}
+
+\NewDocumentCommand{\mimg}{m O{1}}{%
+    \listSize{#1}%
+    \ifBeamer{\def\imgswidht{0.9\linewidth*#2/\thesize}}
+    \ifArticle{\def\imgswidht{\linewidth*#2/\thesize}}
+    \foreach \sport in {#1}{%
+        \includegraphics[width=\imgswidht]{\imgf{\sport}}
+    }
+}
+
+\slide{cr}{
+    \vc{}{
+        Un point est un \key{centre de symétrie} d'une figure,
+        lorsqu'en effectuant un \key{demi-tour}
+        \key{autour du point},
+        la figure se \key{superposent avec elle-même}.
+    }[\ym]
+
+    \expl{Pictogrammes JO 2024}{
+        \def\imgPrefix{jo/}
+        \mimg{athletisme,aviron,basketball,VTT,escalade,natation}[1]
+        Lesquels de ces pictogrammes possèdent un centre de symétrie?
+    }
+}
+
+% \slide{exo}{}

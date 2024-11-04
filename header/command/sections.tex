@@ -89,7 +89,7 @@
         
         % Create Ref Hyperlink
         \ifNotNull{##1}{
-            \expandafter\newcommand\csname #2-##1\endcsname[1]{%
+            \expandafter\newcommand\csname #2-\detokenize{##1}\endcsname[1]{%
                 \hyperlink{#2-\sectionID}{
                     \textbf{\color{#3!80}#4 ##1}\color{black}
                 }
@@ -197,7 +197,14 @@
 }
 
 \NewDocumentCommand{\tice}{mmmo}{
-    \ticeSUB{#1 - #2}{#3}[#4]
+    \ticeSUB{#2}{%
+    \vspace{-1.1cm}
+    \begin{flushright}%
+        \large%
+        \def\iconSize{20pt}%
+        #1%
+    \end{flushright}
+    #3}[#4]
 }
 
 \newcommand{\hint}[1]{

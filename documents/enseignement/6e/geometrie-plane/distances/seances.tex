@@ -27,7 +27,8 @@
 
 \bsec{Distance entre deux points}
 
-\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-1-2-3}[10cm]}[\ca]}
+\def\caPrefix{cm2-mars-2023-}
+\caSlide{1-2-3}
 
 \bsubsec{Segment}
 
@@ -113,13 +114,12 @@
 
 \scn{Trouver le milieu entre deux points}
 
-\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-4-5-6}[10cm]}[\ca]}
+\caSlide{4-5-6}
 
 \bsubsec{Milieu d'un segment}
 
 \slide{exo}{
     \bvspace{-0.5cm}
-    \ifBeamer{\small}
     \act{}{
         Gandalf le Gris doit retrouver trois anneaux de pouvoir avant que Sauron ne mette la main dessus.
         Les anneaux sont cachés entre trois lieux importants :
@@ -157,7 +157,7 @@
 
 \scn{Utiliser le milieu d'un segment}
 
-\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-7-8-9}[10cm]}[\ca]}
+\caSlide{7-8-9}
 
 \def\exoGrid{
     \def\crossWidth{0.04cm}
@@ -213,7 +213,7 @@
 
 \scn{Distance d'un point à une droite}
 
-\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-10-11-12}[10cm]}[\ca]}
+\caSlide{10-11-12}
 
 \bsec{Distance d'un point à une droite}
 
@@ -290,9 +290,9 @@
     \exogrid
 }
 
-\scn{Le cercle}
+\scn{Découvrire la définition d'un cercle}
 
-\slide{qf}{\nullsubsec{}{\imgp{qf/ca-cm2-mars-2023-13-14-15}[10cm]}[\ca]}
+\caSlide{13-14-15}
 
 \bsec{Le cercle}
 
@@ -313,10 +313,15 @@
 }
 
 \slide{cr}{
+    \ssec\ssubsec
     \df{}{
         On appelle \key{cercle}, l'ensemble des points situé à \key{égale distance} d'un point nommé \key{centre}.
     }
 }
+
+\scn{Utiliser le vocabulaire d'un cercle}
+
+\bookSlide{42p197}[12cm][1][\dim][qf]
 
 \slide{cr}{
     \ifBeamer{}
@@ -336,10 +341,62 @@
     \ifBeamer{\imgp{cercle-definitions-vide}[6cm]}
 }
 
-\slide{cr}{
-    \df{}{
-        On appelle \key{disque}, l'ensemble des points situé à une \key{distance inférieure ou égale} d'un point nommé \key{centre}.
+\bookSlide{67p201}[12cm]
+
+\scn{Découvrire la définition d'un disque}
+
+\caSlide{16-17-18}
+
+\bsubsec{Le disque}
+
+\slide{exo}{\bsmall\bvspace{-0.75cm}
+    \act{}{\def\dist{$4 \centi\meter$ }
+        \begin{enumerate}
+            \item Placez un point $O$ à plus de \dist{} des bords de votre feuille.
+            \item Tracez un cercle de centre $O$ et de rayon \dist.
+            \item Choisissez trois points $D_1$, $D_2$, et $D_3$ situés à l'intérieur du cercle.
+            \item Sans utiliser de règle, estimez la distance maximale entre chacun de ces points et le point $O$.
+            \item Imaginez un moyen de représenter tous les points situés à l'intérieur du cercle.
+            \item Quelle est la figure géométrique contenant tous ces points ?
+        \end{enumerate}
     }
 }
 
-\bookSlide{42p197,67p201}[9cm]
+\slide{cr}{
+    \ssubsec
+    \df{}{
+        On appelle \key{disque}, l'ensemble des points situé à une \key{distance inférieure ou égale} d'un point nommé \key{centre}.
+    }
+
+    \rmk{}{%
+        Un disque est ainsi une surface délimitée par un cercle.
+    }
+}
+
+\scn{Décrire un cercle}
+
+\caSlide{19-20}
+
+\slide{exo}{
+    \exo{Reproduction de figure et rédaction de consigne}{\bvspace{-0.75cm}
+        \begin{enumerate}
+            \item Compléter et rédiger une consigne
+            \begin{itemize}
+                \item Complétez la reproduction de la figure modèle en bas de la feuille.
+                \item Rédigez un message permettant à un camarade de reproduire la figure sans l'avoir vue.
+                \item Attention : l'amorce de départ pourra être d'une autre échelle et orientation.
+                \saveenumi{1}%1
+            \end{itemize}
+        \end{enumerate}
+    }[\prbltq{decrire-un-cercle}]
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi\setItemColor{Gray}
+        \item Échange et construction
+        \begin{itemize}
+            \item Utilisez le message reçu pour construire la figure sans voir le modèle.
+            \item Notez les difficultés rencontrées et les remarques dans l'espace prévu.
+        \end{itemize}
+    \end{enumerate}
+}

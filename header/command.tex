@@ -14,6 +14,9 @@
 % SECTIONS
 \input{header/command/sections.tex}
 
+% COURSE AUX NOMBRES
+\input{header/command/can.tex}
+
 % ANSWERS
 \newlength{\parline}
 \newlength{\paroutindent}
@@ -55,11 +58,11 @@
 }
 
 \newcommand{\bawsr}[1]{%
-    \ifthenelse{\boolean{answer}}{
-        \result{#1}
-    }{
-        \dotfill
-    }
+    \ifthenelse{\boolean{answer}}{%
+        \result{#1}%
+    }{%
+        \dotfill%
+    }%
 }
 
 % \newcommand{\dottedLines}[1]{%
@@ -86,7 +89,7 @@
 }
 
 \def\resultColor{OrangeRed}
-\newcommand{\result}[1]{\color{\resultColor}#1\color{black}}
+\newcommand{\result}[1]{\textcolor{\resultColor}{#1}}
 
 % MATH
 \input{header/command/math.tex}
@@ -248,10 +251,11 @@
         \draw[line width = #3] (0,\n) -- (#1,\n);
 }
 
+\def\crossSize{0.25}
 \NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{
     \node[shift={#5}, color = #4] at (#2 - 0.5,#3 - 0.5) {#1};
-    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2 - 0.25,#3) -- (#2 + 0.25,#3);
-    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2,#3 - 0.25) -- (#2,#3 + 0.25);
+    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2 - \crossSize,#3) -- (#2 + \crossSize,#3);
+    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2,#3 -\crossSize) -- (#2,#3 + \crossSize);
 }
 
 \NewDocumentCommand{\drawTick}{m O{} O{gradeColor}}{
@@ -269,11 +273,17 @@
 % GEOMETRY
 
 \newcommand{\multiColItemize}[2]{
-    \begin{multicols}{#1}
+    \ifthenelse{\isequivalentto{#1}{1}}{
         \begin{itemize}
             #2
         \end{itemize}
-    \end{multicols}
+    }{
+        \begin{multicols}{#1}
+            \begin{itemize}
+                #2
+            \end{itemize}
+        \end{multicols}
+    }
 }
 
 \newcommand{\multiColEnumerate}[2]{
@@ -367,10 +377,15 @@
     }%
 }
 
+\def\caPrefix{}
+\newcommand{\caSlide}[1]{%
+    \slide{qf}{\nullsubsec{}{\imgp{ca/\caPrefix#1}[10cm]}[\ca]}
+}
+
 \NewDocumentCommand{\exoSlide}{m O{10cm} O{1} O{} O{exo}}{%
     \slide{#5}{%
         \ifthenelse{\equal{#3}{1}}{\vspace{-0.5cm}}{\vspace{-1cm}}
-        \def\exercices{\foreach \q in {#1}{\imgp{\q}[#2]\vspace{-0.5cm}}}
+        \def\exercices{\foreach \q in {#1}{\imgp{\q}[#2]\vspace{-0.3cm}}}
         \exo{#1}{\wideFrame[7em]{\bvspace{0.25cm}\avspace{-0.25cm}
             \ifthenelse{\equal{#3}{1}}{\exercices}
             {\begin{multicols}{#3}\exercices\end{multicols}}}
@@ -488,7 +503,7 @@
 }
 
 \newcommand{\loadenumi}{
-    \setItemColor{\currentColor}
+    % \setItemColor{\currentColor}
     \setcounter{enumi}{\thesavedenumi}
 }
 
@@ -523,6 +538,12 @@
 \newcommand{\reverseSnakeCase}[1]{%
     \def\temp{#1}%
     \StrSubstitute{\temp}{_}{ }[\temp]%
+    \temp
+}
+
+\newcommand{\reverseKebabCase}[1]{%
+    \def\temp{#1}%
+    \StrSubstitute{\temp}{-}{ }[\temp]%
     \temp
 }
 
@@ -586,4 +607,9 @@
 
 \newcommand{\remaininglines}{
     \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
+}
+
+\newcommand{\print}{%
+    \setboolean{answer}{false}
+    \setboolean{newPageOnSlide}{true}
 }

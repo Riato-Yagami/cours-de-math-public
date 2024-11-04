@@ -2,16 +2,27 @@
 % \date{\today}
 \setSeq{3}{Nombres Relatifs}
 \setGrade{4e}
-\def\imgPath{enseignement/4e/nombres-relatifs}
+\def\imgPath{enseignement/4e/nombres-relatifs/}
+
+% \print
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Nomb_rela.pdf}{Yvan Monka}}
+\def\caPrefix{4e-entrainement.2-}
 %%
 
 \obj{
-    \item Produits et des quotients de nombres relatifs
+    \item Appliquer la règle des signes pour les produits et quotients de nombres relatifs.
+    \item Déterminer le signe d'un produit de plusieurs facteurs relatifs.
+    \item Déterminer le carré et le cube d'un nombre relatif.
+    \item Trouver les antécédents du carré d'un nombre donné.
 }
 
-\scn{Découvrir les produits de nombres relatifs}
+\scn{Tournois \icon{RELATIvs/logo}}
+
+\bsec{Produits et quotients de nombres relatifs}
+\bsubsec{Règle des signes}
+
+\scn{Démontration des propriétés sur les produits de nombres relatifs}
 
 \slide{qf}{
     \begin{enumerate}
@@ -32,7 +43,7 @@
     \end{enumerate}
 }
 
-\slide{exo}{
+\slide{exo}{\bsmall\bvspace{-0.7cm}
     \act{}{
         Dans cette activité on cherche à trouvé,
         pour deux nombres positifs $x$ et $y$,
@@ -45,34 +56,202 @@
                 \item D'après le ${\color{\currentColor}a)}$, à combien est égale la forme développer de l'expression précédente ?
                 \item Combien donne $3 \times 5$ ?
                 \item Combien donne alors $3 \times (-5)$?
-            \end{enumerate}
-            \item On s'interesse maintenant au résultat de $x \times (-y)$.\\
-            Reproduit le raisonnement de ${\color{\currentColor}a)}$ à ${\color{\currentColor}e)}$ en substituant $3$ par $x$ et $5$ par $y$.
-            \item Que donne le produit d'un nombre positif par un nombre négatif?
-            \item On s'interesse maintenant au résultat de $-3 \times (-5)$.\\
-            Reproduit le raisonnement de ${\color{\currentColor}a)}$ à ${\color{\currentColor}e)}$ en substituant $3$ par $-3$.
-            \item On s'interesse maintenant au résultat de $-x \times (-y)$.\\
-            Reproduit le raisonnement de ${\color{\currentColor}a)}$ à ${\color{\currentColor}e)}$ en substituant $3$ par $-x$ et $5$ par $y$.
-            \item Que donne le produit d'un nombre négatif par un nombre négatif?
+            \end{enumerate}\saveenumi{2}
+        \end{enumerate}
+    }
+}
+
+\slide{exo}{\bsmall
+    \begin{enumerate}\setItemColor{RoyalBlue}\loadenumi
+        \item On s'interesse maintenant au résultat de $x \times (-y)$.\\
+        Reproduit le raisonnement de ${\color{\currentColor}a)}$ à ${\color{\currentColor}e)}$ en substituant $3$ par $x$ et $5$ par $y$.
+        \item Que donne le produit d'un nombre positif par un nombre négatif?
+        \item On s'interesse maintenant au résultat de $-3 \times (-5)$.\\
+        Reproduit le raisonnement de ${\color{\currentColor}a)}$ à ${\color{\currentColor}e)}$ en substituant $3$ par $-3$.
+        \item On s'interesse maintenant au résultat de $-x \times (-y)$.\\
+        Reproduit le raisonnement de ${\color{\currentColor}a)}$ à ${\color{\currentColor}e)}$ en substituant $3$ par $-x$ et $5$ par $y$.
+        \item Que donne le produit d'un nombre négatif par un nombre négatif?
+    \end{enumerate}
+    
+}
+
+\slide{cr}{
+    \sseq\ssec\ssubsec
+    \pr{}{
+        Le \key{produit} ou \key{quotient} de deux nombres :
+        \begin{itemize}
+            \item de \key{même signes} est \bawsr{\key{positif}}.
+            \item de \key{signe opposés} est \bawsr{\key{négatifs}}.
+        \end{itemize}
+    }
+}
+
+\slide{cr}{
+    \expl{}{
+        \multiColEnumerate{2}{
+            \item $-3 \times (-8) = \bawsr{24}$
+            \item $-8 \div (-6) = \bawsr{\frac{-8}{-6} = \frac{8}{6} = \frac{4}{3} \approx \numprint{1.3333}}$
+            \item $-3 \times 5 = \bawsr{-15}$
+            \item $5 \times (-4) = \bawsr{-20}$
+            \item $-4 \div 2 = \bawsr{\frac{-4}{2} = -\frac{4}{2} = -\frac{2}{1} = -2}$
+            \item $4 \div (-5) = \bawsr{-\frac{4}{5} = -0.8}$
+        }
+    }
+
+    \bvspace{-0.5cm}
+
+    \rmk{}{
+        On a pour $a$ est $b$ deux nombres.
+        \begin{enumerate}
+            \item $a \times (-b) = (-a) \times b = - (a \times b)$
+            \item $\frac{-a}{b} = \frac{a}{-b} = -\frac{a}{b}$
+        \end{enumerate}
+    }
+}
+
+\bookSlide{29p87,27p87,35p88,38p88}[6.25cm][2]
+
+\scn{Déterminer le signe d'un produits de relatifs à plusieurs facteurs}
+
+% \def\caPrefix{4e-entrainement.2-}
+% \caSlide{22-23-24}
+
+% \slide{qf}{
+%     \renewcommand{\arraystretch}{1.75}
+%     \begin{center}
+%         \begin{tabular}{| M{0.1\linewidth} | M{0.5\linewidth} | M{0.4\linewidth} |}
+%             \hline
+%             22 & Le périmètre d'un rectangle de longueur $14,6$ et de largeur $5,5$ est : &
+%             \\\hline
+%             23 & $7-9-(-4) =$ &
+%             \\\hline
+%             24 & $-13+10\times0,5 =$ &
+%             \\\hline
+%         \end{tabular}
+%     \end{center}
+% }
+
+\slide{qf}{
+    \nullsubsec{}{
+        Soit $y$ un nombre négatif différent de 0.\\
+        Indiquer le signe de chacune de ces expressions:
+        \multiColEnumerate{2}{
+            \item $A = -4 - y$
+            \item $B = y \times y$
+            \item $C = y + y + y$
+            \item $D = y ^ 3$
+            \item $E = -3 \times y$
+            \item $F = -3 + y$
+        }
+    }[\rpmc[184]]
+}
+
+\bsubsec{Corollaires}
+
+
+\slide{exo}{\bshrink
+    \act{}{\noCalculator
+        \begin{enumerate}
+            \item Calculer le \key{résultat} des produits suivants :
+            \multiColEnumerate{2}{
+                \item $3 \times (-6) \times (-2)$
+                \item $-1 \times (-3) \times (-1)$
+                \item $-2 \times 1 \times (-1) \times (-6)$
+                \item $-1 \times (-1) \times (-1) \times (-1) \times (-1)$
+            }
+            \item Déterminer le \key{signe} des produits suivants :
+            \multiColEnumerate{1}{
+                \item $-15198 \times 1231 \times (-1,6)$
+                \item $-1,465884 \times (-3) \times (-1) \times (-3) \times (-\frac{1}{654})$
+                \item $51,65465 \times (-1) \times (-\pi) \times (-6)$
+            }\saveenumi{2}
+        \end{enumerate}
+    }
+}
+
+\slide{exo}{
+    \begin{enumerate}\setItemColor{RoyalBlue}\loadenumi
+        \item Déterminer le signe d'un produit de :
+        \multiColEnumerate{1}{
+            \item $10$ facteurs égaux à $-1$.
+            \item $11$ facteurs égaux à $-1$.
+            \item $1541$ facteurs égaux à $-1$.
+            \item $8$ facteurs négatifs.
+            \item $5$ facteurs négatifs et $31$ facteurs positifs.
+            \item $5$ facteurs négatifs et $32$ facteurs positifs.
+        }
+        \item Émettre une conjecture sur le signe d'un produit de nombres relatifs.
+    \end{enumerate}
+}
+
+\slide{cr}{
+    \ssubsec
+    \pr{}{
+        Le résultat d'un \key{produit de relatifs} est :
+        \begin{enumerate}
+            \item \key{positif} s'il y a un nombre \key{pair} de facteurs négatifs dans le produit.
+            \item \key{négatif} s'il y a un nombre \key{impair} de facteurs négatifs dans le produit.
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \expl{}{
+        Déterminer le signe des produits suivants :
+        \multiColEnumerate{1}{
+            \item $-1 \times (-1,2) \times 2 \times (-3,36954) \times 2$
+            \item $2 \times \frac{1}{2}  \times (-\pi) \times 1221 \times (-2)$
+            \item $(-1,58)^2$
+            \item $(-1654)^3$
+            \item Un produit de $2024$ fracteurs égales à $-1$.
+        }
+    }
+}
+
+\slide{cr}{
+    \rmk{}{
+    \begin{enumerate}
+        \item Le \key{carré} d'un nombre est toujours \key{positif}.
+        \item Le \key{cube} d'un nombre \key{conserve le signe} de ce nombre.
+    \end{enumerate}
+}
+}
+
+\bookSlide{20p87,47p90}[6.25cm][2]
+
+\scn{Résoudre une équation du second degré sans terme linéaire}
+
+\caSlide{28-29-30}
+
+\bsec{Antécédents du carré}
+
+\slide{exo}{\bsmall
+    \act{}{%
+        \begin{enumerate}
+            \item Trouver deux nombres distincts dont le carré est égal à $4$.
+            \item Trouver deux nombres distincts dont le carré est égal à $1$.
+            \item Trouver deux nombres distincts dont le carré est égal à $2$.
+            \item Trouver deux nombres distincts dont le carré est égal à $x$.
         \end{enumerate}
     }
 }
 
 \slide{cr}{
     \pr{}{
-        Le \key{produit} de deux nombres :
-        \begin{itemize}
-            \item de \key{même signes} est \palt{2}{\key{positif}}.
-            \item de \key{signe opposés} est \palt{2}{\key{négatifs}}.
-        \end{itemize}
-    }
-
-    \expl{}{
-        \multiColEnumerate{2}{
-            \item $2 \times 7 = \palt{2}{14}$
-            \item $2 \times (-7) = \palt{2}{-14}$
-            \item $-2 \times 7 = \palt{2}{-14}$
-            \item $-2 \times (-7) = \palt{2}{14}$
-        }
+        Pour $x$ un nombre positif.
+        Les nombres dont le carré est égal à $x$ sont $\sqrt{x}$ ou $-\sqrt{x}$.
     }
 }
+
+\slide{cr}{
+    \expl{}{
+        \begin{enumerate}
+            \item \sialors{$a^2 = 16$}{$a = \bawsr{4}$ ou $a = \bawsr{-4}$}
+            \item \sialors{$b^2 = 1$}{$b = \bawsr{1}$ ou $b = \bawsr{-1}$}
+            \item \sialors{$c^2 = 21$}{$c = \bawsr{\sqrt{21}}$ ou $c = \bawsr{-\sqrt{21}}$}
+            \item Soit $x$ un nombre positif, \sialors{$d^2 = x$}{$d = \bawsr{\sqrt{x}}$ ou $d = \bawsr{-\sqrt{x}}$}
+        \end{enumerate}
+    }
+}
+
+\bookSlide{50p91}[5cm][1]

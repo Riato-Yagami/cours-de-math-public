@@ -13,6 +13,7 @@
 \newcommand{\ssubsec}{}
 
 \newcommand{\slide}[2]{%
+    \ifbool{newPageOnSlide}{\newpage}{}
     \ifNotNull{#1}{%
         \setPhase{#1}
         % \phase{} $\rightarrow$ \currentPhase{}
@@ -101,4 +102,7 @@
 
 \newcommand\wideFrame[2][3em]{#2}
 \newcommand{\bvspace}[1]{}
+\newcommand{\bsmall}{}
 \newcommand{\avspace}[1]{\vspace*{#1}}
+
+\newcommand{\bshrink}{}
