@@ -2,12 +2,12 @@
 \setSeq{4}{Nombres}
 \setGrade{6e}
 
-\def\imgPath{enseignement/6e/nombres-entiers/}
+\def\imgPath{enseignement/6e/nombres/}
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Long.pdf}{Yvan Monka}}
 
 % \firstSlide
-\setboolean{answer}{false}
+% \setboolean{answer}{false}
 % \setboolean{debugMode}{true}
 % Cercle https://www.maths-et-tiques.fr/telech/19Cercle.pdf
 %%
@@ -23,11 +23,20 @@
     \item Savoir ce qu'est un ordre de grandeur et savoir l'utiliser pour prévoir un résultat.
 }
 
+\def\iconPath{prehistoric-numbers/}
+\def\iconSize{25pt}
 \slide{exo}{
-    % \begin{enumerate}
-    %     \item $\Babylone{105}= 105$
-    %     \item $\Babylone{6789}= 6789$
-    % \end{enumerate}
-    \Solide[ListeSommets={Q,R,S,T,U,V,W,X}]
-    \Maya{435}
+    \act{Numération préhistorique}{
+        Certains hommes préhistorique utilisaient leurs main pour communiquer sur des nombres.
+        \imgp{historic/chiffres}
+        % \imgp{historic/hands}
+        \begin{enumerate}
+            \item \multiColEnumerate{3}{
+                \item $\icon{6} = \bawsr{6}$
+                \item $\icon{8} = \bawsr{8}$
+                \item $\icon{2} = \bawsr{2}$
+            }
+        \end{enumerate}
+        \item Quel est le nombre le plus grand pouvant etre dégné
+    }
 }
