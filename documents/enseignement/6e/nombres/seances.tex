@@ -2,7 +2,7 @@
 \setSeq{4}{Nombres}
 \setGrade{6e}
 
-\def\imgPath{enseignement/6e/nombres-entiers/}
+\def\imgPath{enseignement/6e/nombres/}
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Long.pdf}{Yvan Monka}}
 
@@ -23,12 +23,52 @@
     \item Savoir ce qu'est un ordre de grandeur et savoir l'utiliser pour prévoir un résultat.
 }
 
-\slide{exo}{
-    % \begin{enumerate}
-    %     \item $\Babylone{105}= 105$
-    %     \item $\Babylone{6789}= 6789$
-    % \end{enumerate}
-    % \Solide[ListeSommets={Q,R,S,T,U,V,W,X}]
-    % \Maya{435}
-    \act{Compter}
+% \def\iconPath{prehistoric-numbers/}
+% \def\iconSize{25pt}
+\slide{exo}{\bvspace{-0.75cm}
+    \act{Numération préhistorique}{
+        Certains hommes préhistorique utilisaient leurs main pour communiquer sur des nombres.
+        \imgp{historic/chiffres}[8cm]
+    }
 }
+
+\slide{exo}{
+    \begin{enumerate}\setItemColor{RoyalBlue}
+        \item \multiColEnumerate{3}{
+            \item $\Prehistoric{6} = \bawsr{6}$
+            \item $\Prehistoric{10} = \bawsr{10}$
+            \item $\Prehistoric{2} = \bawsr{2}$
+        }
+        \item Quel est le nombre le plus grand pouvant etre communiquer de cette manière ?
+        \item Comment pourait-on communiquer des nombres plus grands ?
+        \saveenumi{3}
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi \setItemColor{RoyalBlue}
+        \item \multiColEnumerate{2}{
+            \item $\Prehistoric{12} = \bawsr{12}$
+            \item $\Prehistoric{15} = \bawsr{15}$
+            \item $\Prehistoric{29} = \bawsr{29}$
+            \item $\Prehistoric{72} = \bawsr{72}$
+            \item $\Prehistoric{56} = \bawsr{56}$
+            \item $\Prehistoric{135} = \bawsr{135}$
+        }
+        \saveenumi{4}
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi \setItemColor{RoyalBlue}
+        \item Quel est le plus grand nombre pouvant etre communiqué avec cette méthode ?
+        \item \multiColEnumerate{2}{
+            \item $\Prehistoric{0} = 58$
+            \item $\Prehistoric{0} = 100$
+            \item $\Prehistoric{0} = 145$
+        }
+    \end{enumerate}
+}
+
+% \Babylone{105}
+

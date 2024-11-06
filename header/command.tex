@@ -613,3 +613,12 @@
 %     \setboolean{answer}{false}
 %     \setboolean{newPageOnSlide}{true}
 % }
+
+% \newcommand{\Prehitoric}[1]{\icon{prehistoric-numbers/u/#1}[30pt]}
+% \directlua{dofile("lua/base_decomposition.lua")}
+\directlua{dofile("lua/prehistoric.lua")}
+\newcommand{\Prehistoric}[1]{%
+    \def\iconSize{60pt}
+    \directlua{prehistoric(#1)}
+}
+
