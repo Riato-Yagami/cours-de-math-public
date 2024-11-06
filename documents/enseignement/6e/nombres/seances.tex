@@ -6,9 +6,8 @@
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Long.pdf}{Yvan Monka}}
 
-% \firstSlide
+% \setboolean{newPageOnSlide}{true}
 \setboolean{answer}{false}
-
 % \setboolean{debugMode}{true}
 % Cercle https://www.maths-et-tiques.fr/telech/19Cercle.pdf
 %%
@@ -43,7 +42,7 @@
         \item \multiColEnumerate{3}{
             \item $\Prehistoric{6} = \bawsr{6}$
             \item $\Prehistoric{10} = \bawsr{10}$
-            \item $\icon{prehistoric-numbers/u/0} = 7$
+            \item $\icon{prehistoric-numbers/u/0}[60pt] = 7$
         }
         \item Quel est le nombre le plus grand pouvant etre communiquer de cette manière ?
         \item Comment pourait-on communiquer des nombres plus grands ?
@@ -73,36 +72,44 @@
     \end{enumerate}
 }
 
-\slide{exo}{
-    \cpd{\Table{12}{12}}
+\slide{exo}{$1 \times 2$
+    \cpd{}{\Table{12}{12}}
 }
 
 \slide{cr}{
-    \sseq\ssec\ssubsec
+    \sseq\ssec\ssubsec \bvspace{-0.5cm}
     \vc{}{
         Le \key{système duodécimal}, ou de base $12$. Est une méthide de comptage ou on regroupe les unités par douzaine.
     }
+}
+
+\slide{cr}{
     \expl{}{
         \multiColEnumerate{2}{
             \item 15 = \baseDecomposition{15}{12}["hide"]
             \item 56 = \baseDecomposition{56}{12}["hide"]
             \item \bawsr{27} = \baseDecomposition{27}{12}
             \item \bawsr{112} = \baseDecomposition{112}{12} \saveenumi{4}
-        }\vspace*{-0.5cm}\multiColEnumerate{1}{\loadenumi
+        }\multiColEnumerate{1}{\loadenumi
             \item 145 = \bawsr{\baseDecomposition{145}{12}} 
         }
     }
 }
 
-\slide{exo}{
-    \def\scale{1.5}
-    \exo{En justifiant avec des calculs, donner le nombres de cubes.}{\calculator
+\def\scale{1.15}
+\slide{exo}{\small
+    \exo{Justifiez, en détaillant vos calculs, le nombre de cubes présents dans chacune des figures.}{\calculator
         \multiColEnumerate{2}{
             \item \RepresenterEntier[Base=12,Echelle=\scale]{28}
-            \item \RepresenterEntier[Base=12,Echelle=\scale]{100}
-            \item \RepresenterEntier[Base=12,Echelle=\scale]{332}
-            \item \RepresenterEntier[Base=12,Echelle=\scale]{1942}
+            \item \RepresenterEntier[Base=12,Echelle=\scale]{100} \saveenumi{2}
         }
+    }
+}
+
+\slide{exo}{
+    \multiColEnumerate{1}{ \loadenumi \setItemColor{Gray}
+        \item \RepresenterEntier[Base=12,Echelle=\scale]{332}
+        \item \RepresenterEntier[Base=12,Echelle=\scale]{1942}
     }
 }
 

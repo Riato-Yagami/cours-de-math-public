@@ -13,11 +13,11 @@
 \newcommand{\ssubsec}{}
 
 \newcommand{\slide}[2]{%
-    \ifbool{newPageOnSlide}{\newpage}{}
     \ifNotNull{#1}{%
         \setPhase{#1}
         % \phase{} $\rightarrow$ \currentPhase{}
         \ifthenelse{\equal{\currentPhase}{\phase}}{}{
+            \ifbool{newPageOnSlide}{\newpage}{}
             \xdef\currentPhase{\phase}
             \ifthenelse{\boolean{showAllPhases}}{
                 \begin{center}

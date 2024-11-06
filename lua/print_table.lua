@@ -1,5 +1,5 @@
 function print_table(number, max)
-    tex.print("\\multiColItemize{4}{")  -- Start multi-column itemize environment
+    tex.print("\\multiColItemize{3}{")  -- Start multi-column itemize environment
     for i = 1, max do
         tex.sprint("\\item $",
         number, " \\times ", i,

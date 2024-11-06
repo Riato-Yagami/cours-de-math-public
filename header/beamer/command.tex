@@ -5,9 +5,13 @@
             \xdef\currentPhase{\phase}%
             \frametitle{\phase}%
         }%
-        % \frametitle{\phase}%
         #2%
     \end{frame}
+}
+
+% Define \nextframe to continue on a new frame
+\newcommand{\nextframe}{%
+    \end{frame}\begin{frame}\frametitle{\phase}%
 }
 
 % \ifNotNull{#1}{%
