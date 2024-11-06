@@ -17,6 +17,9 @@
 % COURSE AUX NOMBRES
 \input{header/command/can.tex}
 
+% LUA
+\input{header/command/lua.tex}
+
 % ANSWERS
 \newlength{\parline}
 \newlength{\paroutindent}
@@ -608,17 +611,3 @@
 \newcommand{\remaininglines}{
     \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
 }
-
-% \newcommand{\print}{%
-%     \setboolean{answer}{false}
-%     \setboolean{newPageOnSlide}{true}
-% }
-
-% \newcommand{\Prehitoric}[1]{\icon{prehistoric-numbers/u/#1}[30pt]}
-% \directlua{dofile("lua/base_decomposition.lua")}
-\directlua{dofile("lua/prehistoric.lua")}
-\newcommand{\Prehistoric}[1]{%
-    \def\iconSize{60pt}
-    \directlua{prehistoric(#1)}
-}
-
