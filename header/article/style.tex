@@ -21,7 +21,7 @@
 \newcommand*{\setItemColor}[1]{
     \renewcommand{\theenumi}{\small\color{#1}\arabic{enumi}}
     \renewcommand{\labelenumii}{\scriptsize\color{#1}\alph{enumii})}
-    \renewcommand{\labelitemi}{$\color{#1}\blacksquare$}
+    \renewcommand{\labelitemi}{$\color{#1}\tiny\scalebox{0.65}{\blacksquare}$}
     \renewcommand{\labelitemii}{$\color{#1}\blacktriangleright$}
     \renewcommand{\labelitemiii}{$\color{#1}\bullet$}
 }
@@ -40,7 +40,7 @@
             \fill[gradeColor] (0,0) rectangle (1cm, \paperheight);
             % Texte en haut à droite
             \node[shift={(-0.32,-0.25)},anchor=north east, color=gradeColor, font=\fontsize{40}{36}\selectfont] 
-                at (current page.north east) {6e};
+                at (current page.north east) {\hypersetup{urlcolor=gradeColor}\link{\grade}};
         \end{tikzpicture}%
     }
 }

@@ -1,5 +1,4 @@
 % VARIABLES %%%
-% \setTitle{Géométrie plane - distances}
 \setSeq{3}{Géométrie plane - distances}
 \setGrade{6e}
 
@@ -20,7 +19,7 @@
     \item Connaître et savoir estimer la distance entre un point et une droite.
     \item Reconnaître, nommer, décrire, reproduire un cercle
     \item Utiliser le vocabulaire associé : rayon, diamètre, centre, arc de cercle et corde.
-    \item Différentier le cercle et le disque.
+    \item Différencier le cercle et le disque.
 }
 
 \scn{Chemin le plus court}
@@ -110,6 +109,8 @@
     }
 }
 
+\newpage
+
 \bookSlide{6p191,7p191}[9cm]
 
 \scn{Trouver le milieu entre deux points}
@@ -176,15 +177,6 @@
             \drawPoint{A}{5}{4}
             \drawPoint{B}{11}{8}
         \end{tikzpicture}
-        % \vspace{0.5cm}
-        % \begin{tikzpicture}[scale = 0.5]
-        %     \tkzInit[xmax=15, ymax=11]
-        %     \draw [draw=\gridColor] (0,0) rectangle (15,11);
-        %     % \tkzGrid[color=gradeColor,subxstep=0.5,subystep=0.5]
-        %     \drawPoint{A}{3}{9}
-        %     \drawPoint{B}{13}{3}
-        % \end{tikzpicture}
-    % \end{center}
 }
 
 \slide{exo}{
@@ -229,12 +221,12 @@
 
 \slide{exo}{
     \ctikz[0.75]{
-        \draw[very thick, YellowOrange] (3,0) -- (6,9);
-        \filldraw[YellowOrange, opacity=0.1] (0,0) -- (3,0) -- (6,9) -- (0,9) -- cycle;
+        \draw[very thick, Orange] (3,0) -- (6,9);
+        \filldraw[Orange, opacity=0.1] (0,0) -- (3,0) -- (6,9) -- (0,9) -- cycle;
         \draw[gray!40] (0,0) rectangle (17,9);
-        \node[YellowOrange] at (2.5,4.5) {Plage};
+        \node[Orange] at (2.5,4.5) {Plage};
         \drawPoint{$A$}{13}{4}
-        \node[above left] at (17,0) {Echelle : $1\centi\meter$ = $10\meter$};
+        \node[above left] at (17,0) {Echelle : $\Lg{1}$ = $\Lg[m]{10}$};
     }  
 }
 
@@ -255,32 +247,32 @@
 
 \def\exogrid{
     \ctikz[0.75]{
-            \tkzInit[xmax=17, ymax=10]
-            \tkzGrid[color=gradeColor!50,subxstep=0.5,subystep=0.5]
-            \drawPoint{A}{9}{7}
-            \drawPoint{B}{7}{6}
-            \drawPoint{C}{13}{2}
-            \drawPoint{D}{5.5}{3}
-            \drawPoint{E}{11}{5}
-            \drawPoint{F}{7}{3}
-            \draw[thick] (6.5,0.5) -- (16,10) node[below=0.5cm] {$(d'')$};
-            \draw[thick] (11,1.5) -- (11,8.5) node[left=0.25cm] {$(d)$};
-            \draw[thick] (1.5,3) -- (15.5,3) node[below=0.25cm] {$(d')$};
-            \draw[very thick, gradeColor] (2,8) -- (4,8) node[midway, above=0.25cm] {$1\;\centi\meter$};
-            \draw[very thick, gradeColor] (2,8.2) -- (2,7.8);
-            \draw[very thick, gradeColor] (4,8.2) -- (4,7.8);
-        }
+        \tkzInit[xmax=17, ymax=10]
+        \tkzGrid[color=gradeColor!50,subxstep=0.5,subystep=0.5]
+        \drawPoint{A}{9}{7}
+        \drawPoint{B}{7}{6}
+        \drawPoint{C}{13}{2}
+        \drawPoint{D}{5.5}{3}
+        \drawPoint{E}{11}{5}
+        \drawPoint{F}{7}{3}
+        \draw[thick] (6.5,0.5) -- (16,10) node[below=0.5cm] {$(d'')$};
+        \draw[thick] (11,1.5) -- (11,8.5) node[left=0.25cm] {$(d)$};
+        \draw[thick] (1.5,3) -- (15.5,3) node[below=0.25cm] {$(d')$};
+        \draw[very thick, gradeColor] (2,8) -- (4,8) node[midway, above=0.25cm] {$1\;\Lg{}$};
+        \draw[very thick, gradeColor] (2,8.2) -- (2,7.8);
+        \draw[very thick, gradeColor] (4,8.2) -- (4,7.8);
+    }
 }
 
 \slide{exo}{
     \ifBeamer{\small}
     \exo{}{En s'apuyant sur la figure ci-dessous, compléter les phrases suivantes :
         \begin{enumerate}
-            \item Le point $A$ est situé à \bawsr{$2$ }$\centi\meter$ de la droite $(d)$.
-            \item La distance du point $B$ à la droite \bawsr{$(d)$} vaut $2 \centi\meter$.
+            \item Le point $A$ est situé à \bawsr{$2$ }$\Lg{}$ de la droite $(d)$.
+            \item La distance du point $B$ à la droite \bawsr{$(d)$} vaut $\Lg{2}$.
             \item Le point $B$ est à la distance $BF$ de la droite \bawsr{$(d')$}.
             \item La distance du point $A$ à la droite $(d'')$ est \bawsr{$AE$}.
-            \item Le point $D$ est situé à \bawsr{$0$} $\centi\meter$ de la droite $(d')$.
+            \item Le point $D$ est situé à \bawsr{$0$} $\Lg{}$ de la droite $(d')$.
             \item Parmi les points $A$,$B$, $C$ et $D$, le point le plus proche de $(d'')$ est \bawsr{$A$}. 
         \end{enumerate}
     }[\href{https://www.educmat.fr/categories/exercices_maths/6eme/6e\%2004-03\%20Exercices.pdf}{éducmat}]
@@ -290,7 +282,7 @@
     \exogrid
 }
 
-\scn{Découvrire la définition d'un cercle}
+\scn{Découvrir la définition d'un cercle}
 
 \caSlide{13-14-15}
 
@@ -300,7 +292,7 @@
 
 \slide{exo}{
     \ifBeamer{\small}
-    \act{}{\def\dist{$6 \centi\meter$ }
+    \act{}{\def\dist{$\Lg{6}$ }
         \begin{enumerate}
             \item Placer un point $O$ à plus de \dist des bords de votre page.
             \item Placer un point $C_1$ à \dist du point $O$.
@@ -343,14 +335,14 @@
 
 \bookSlide{67p201}[12cm]
 
-\scn{Découvrire la définition d'un disque}
+\scn{Découvrir la définition d'un disque}
 
 \caSlide{16-17-18}
 
 \bsubsec{Le disque}
 
 \slide{exo}{\bsmall\bvspace{-0.75cm}
-    \act{}{\def\dist{$4 \centi\meter$ }
+    \act{}{\def\dist{$\Lg{4}$ }
         \begin{enumerate}
             \item Placez un point $O$ à plus de \dist{} des bords de votre feuille.
             \item Tracez un cercle de centre $O$ et de rayon \dist.

@@ -74,16 +74,30 @@
 }
 
 % https://www.armitiere.com/livre/1833174-des-maths-ensemble-et-pour-chacun-5e-mise-en--jean-philippe-rouques-helene-stainer-canope-crdp-44
-\def\dmeepc{\href{https://publimath.univ-irem.fr/PCO10003}
+\def\dmeepcC{\href{https://publimath.univ-irem.fr/PCO10003}
     {Des maths ensemble et pour chacun}
 }
 
+\def\dmeepcS{\href{https://www.reseau-canope.fr/notice/des-maths-ensemble-et-pour-chacun-6e.html}
+    {Des maths ensemble et pour chacun 6e}
+}
 
-\newcommand*{\wiki}[1]{\href{https://fr.wikipedia.org/wiki/#1}{Wikipédia (\reverseSnakeCase{#1})}}
+\NewDocumentCommand{\wiki}{m O{}}{%
+    \def\ext{}%
+    \ifNotNull{#2}{\def\ext{\##2}}%
+    \href{https://fr.wikipedia.org/wiki/#1\ext}%
+    {Wikipédia (\reverseSnakeCase{#1}%
+    \ifNotNull{#2}{ {\scriptsize $\rightarrow$ \reverseSnakeCase{#2}}}%
+    )}
+}
 
 \newcommand*{\prbltq}[1]{\href{https://www.problematheque-csen.fr/fiche-probleme/#1}{Problémathèque (\reverseKebabCase{#1})}}
 
-\NewDocumentCommand{\rpmc}{O{}}{\href{https://eduscol.education.fr/document/13132/download?attachment\#page=#1}{La résolution de problèmes mathématiques au collège (p.\ncalc{#1+3})}}
+\NewDocumentCommand{\rpmc}{O{}}{%
+    \href{https://eduscol.education.fr/document/13132/download?attachment\#page=#1}{%
+    La résolution de problèmes mathématiques au collège (p.\directlua{tex.print((tonumber("#1") or 0) + 3)})}%
+}
+
 \def\ca{%
     \href{https://pedagogie.ac-strasbourg.fr/mathematiques/competitions/course-aux-nombres/}%
     {Course aux nombres}%

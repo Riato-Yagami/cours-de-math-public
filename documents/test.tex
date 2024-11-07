@@ -6,9 +6,39 @@
 
 \setGrade{6e}
 
-test
-\setImgPath
+% \def\exoGrid{
+%     \def\crossWidth{0.04cm}
+%     \def\gridColor{gradeColor!50}
+%     % \begin{center}
+%         \begin{tikzpicture}[scale = 0.5]
+%             \tkzInit[xmax=15, ymax=11]
+%             \tkzGrid[color=\gridColor,subxstep=0.5,subystep=0.5]
+%             \drawPoint{A}{6}{7}
+%             \drawPoint{B}{10}{5}
+%         \end{tikzpicture}
+%         \ifArticle{\hspace{0.5cm}}
+%         \begin{tikzpicture}[scale = 0.5]
+%             \tkzInit[xmax=15, ymax=11]
+%             \tkzGrid[color=\gridColor,subxstep=0.5,subystep=0.5]
+%             \drawPoint{A}{5}{4}
+%             \drawPoint{B}{11}{8}
+%         \end{tikzpicture}
+% }
 
-\imgPath
-
+\slide{exo}{
+    \exo{}{
+        Chacune des figures suivantes est constituée de deux points $A$ et $B$.
+        Chacune d'elles doit être complétée par un point $J$ qui respecte les conditions suivantes :
+        \begin{enumerate}
+            \item $I$, $C$ et $D$ sont trois points tels que $I$ est le milieu des segments $[AC]$ et $[BD]$;
+            \item $E$ est le point tel que $A$ est le milieu du segment $[DE]$;
+            \item $J$ est le milieu du segment $[CE]$.
+        \end{enumerate}
+        % \ifArticle{\begin{center}\exoGrid\end{center}}
+        \begin{itemize}
+            \item Placer deux points $A$ et $B$ sur une feuille blanche et de même trouver l'emplacement de $J$.
+        \end{itemize}
+    }[\rpmc[149]]
+}
 % \imgp{tableau-exemple}
+

@@ -7,7 +7,7 @@
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Long.pdf}{Yvan Monka}}
 
 % \setboolean{newPageOnSlide}{true}
-\setboolean{answer}{false}
+% \setboolean{answer}{false}
 % \setboolean{debugMode}{true}
 % Cercle https://www.maths-et-tiques.fr/telech/19Cercle.pdf
 %%
@@ -23,7 +23,7 @@
     \item Savoir ce qu'est un ordre de grandeur et savoir l'utiliser pour prévoir un résultat.
 }
 
-\scn{Découvrire une numération préhistorique}
+\scn{Découvrir une numération préhistorique}
 
 \bsec{Compter}
 \bsubsec{Base 12}
@@ -33,8 +33,8 @@
 \slide{exo}{\bvspace{-0.75cm}
     \act{Numération préhistorique}{
         Certains hommes préhistorique utilisaient leurs main pour communiquer sur des nombres.
-        \imgp{historic/chiffres}[8cm]
-    }
+        \imgp{historic/numbers}[8cm]
+    }[\dmeepcS]
 }
 
 \slide{exo}{
@@ -72,14 +72,12 @@
     \end{enumerate}
 }
 
-\slide{exo}{$1 \times 2$
-    \cpd{}{\Table{12}{12}}
-}
+\slide{exo}{\cpd{}{\Table{12}{12}}}
 
 \slide{cr}{
     \sseq\ssec\ssubsec \bvspace{-0.5cm}
     \vc{}{
-        Le \key{système duodécimal}, ou de base $12$. Est une méthide de comptage ou on regroupe les unités par douzaine.
+        Le \key{système duodécimal}, ou de base $12$. Est une méthode de comptage par douzaine.
     }
 }
 
@@ -113,11 +111,42 @@
     }
 }
 
-% \slide{exo}{
-%     \act{Numération Babylon}{
-
-%     }
-% }
+\slide{exo}{
+    \act{Numération Babylonienne}{
+        \begin{enumerate}
+            \item \multiColEnumerate{3}{
+                \item \Babylone{24} = 24
+                \item \Babylone{6} = 6
+                \item \Babylone{50} = 50
+            }
+            Que représentent le clou \Babylone{1} et le chevron \Babylone{10} ?
+            \item \multiColEnumerate{2}{
+                \item \Babylone{12} = \bawsr{12}
+                \item \Babylone{34} = \bawsr{34}
+                \item \bawsr{\Babylone{23}} = 23
+            }
+            \item \multiColEnumerate{2}{
+                \item \Babylone{70} = 70
+                \item \Babylone{61} = 61
+                \item \Babylone{190} = 190
+                \item \Babylone{1380} = 1380
+                \item \Babylone{3865} = 3865
+            }
+            Comment ces nombres sont-ils composés ?
+            \def\aspc{\ifbool{answer}{}{\vspace{1cm}}}
+            \item \multiColEnumerate{2}{
+                \item \Babylone{86} = \bawsr{86}
+                \item \aspc \bawsr{\Babylone{132}} = 132
+                \item \Babylone{325} = \bawsr{325}
+                \item \Babylone{7271} = \bawsr{7271}
+                \item \aspc \bawsr{\Babylone{10872}} = 10872
+            }
+            \item Les chiffres babyloniens changent de signification selon leur position : on parle donc de \key{numération de position}.
+            Notre système de numération actuel est-il aussi un système de numération de position ?
+            \item Existe-t-il des éléments que nous comptons encore aujourd'hui de manière similaire aux Babyloniens ?
+        \end{enumerate}
+    }[\wiki{Numération_mésopotamienne}[Numération_sexagésimale_de_position]]
+}
 
 % \Babylone{105}
 
