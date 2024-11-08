@@ -14,6 +14,12 @@
     \end{beamercolorbox}
 }
 
+\newcommand{\titleBox}[1]{
+    \begin{beamercolorbox}[ht=3.75ex,dp=1.0ex,wd=\paperwidth,leftskip=.3cm,rightskip=.3cm]{frametitle}
+        \usebeamerfont{frametitle} #1
+    \end{beamercolorbox}
+}
+
 \usetheme{Antibes}
 \setbeamertemplate{headline}
 {%  
@@ -39,6 +45,10 @@
         \hskip18pt \thesubsubsection{} \insertsubsubsectionhead
     }
     \fi
+    \ifbool{newPhase}{\titleBox{\currentPhase}}{}
+    % \ifx\currentPhase\empty\else
+    %     \titleBox{\currentPhase}
+    % \fi
 }
 
 \setbeamerfont{frametitle}{size=\small,series=\bfseries}
@@ -46,9 +56,7 @@
 \setbeamertemplate{frametitle}
 {
     \vspace{-1.5pt} % Adjust the vertical space before the title
-    \begin{beamercolorbox}[ht=2.5ex,dp=1.0ex,wd=\paperwidth,leftskip=.3cm,rightskip=.3cm]{frametitle}
-        \usebeamerfont{frametitle}\insertframetitle
-    \end{beamercolorbox}
+    \titleBox{\insertframetitle}
 }
 
 \setbeamertemplate{footline}

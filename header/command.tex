@@ -4,6 +4,21 @@
 \newcommand{\case}{}
 \newcommand{\default}{}
 
+
+\makeatletter
+\def\newglobalboolean#1{%
+  \expandafter\@ifdefinable\csname if#1\endcsname{%
+    \expandafter\let\csname if#1\endcsname\iffalse
+    \expandafter\def\csname #1true\endcsname{%
+      \global\expandafter\let\csname if#1\endcsname\iftrue
+    }%
+    \expandafter\def\csname #1false\endcsname{%
+      \global\expandafter\let\csname if#1\endcsname\iffalse
+    }%
+}}
+\makeatother
+
+
 \newenvironment{switch}[1]{%
     \setboolean{default}{true}
     \renewcommand{\case}[2]{\ifthenelse{\equal{#1}{##1}}{%

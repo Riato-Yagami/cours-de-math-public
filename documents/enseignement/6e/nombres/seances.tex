@@ -111,9 +111,11 @@
     }
 }
 
-\slide{exo}{
+\def\aspc{\ifbool{answer}{}{\vspace{1cm}}}
+
+\slide{exo}{\bshrink
     \act{Numération Babylonienne}{
-        \begin{enumerate}
+        \begin{enumerate}\bvspace{-1cm}
             \item \multiColEnumerate{3}{
                 \item \Babylone{24} = 24
                 \item \Babylone{6} = 6
@@ -123,29 +125,44 @@
             \item \multiColEnumerate{2}{
                 \item \Babylone{12} = \bawsr{12}
                 \item \Babylone{34} = \bawsr{34}
-                \item \bawsr{\Babylone{23}} = 23
-            }
-            \item \multiColEnumerate{2}{
-                \item \Babylone{70} = 70
-                \item \Babylone{61} = 61
-                \item \Babylone{190} = 190
-                \item \Babylone{1380} = 1380
-                \item \Babylone{3865} = 3865
-            }
-            Comment ces nombres sont-ils composés ?
-            \def\aspc{\ifbool{answer}{}{\vspace{1cm}}}
-            \item \multiColEnumerate{2}{
-                \item \Babylone{86} = \bawsr{86}
-                \item \aspc \bawsr{\Babylone{132}} = 132
-                \item \Babylone{325} = \bawsr{325}
-                \item \Babylone{7271} = \bawsr{7271}
-                \item \aspc \bawsr{\Babylone{10872}} = 10872
-            }
-            \item Les chiffres babyloniens changent de signification selon leur position : on parle donc de \key{numération de position}.
-            Notre système de numération actuel est-il aussi un système de numération de position ?
-            \item Existe-t-il des éléments que nous comptons encore aujourd'hui de manière similaire aux Babyloniens ?
+                \item \aspc \bawsr{\Babylone{23}} = 23
+            } \saveenumi{2}
         \end{enumerate}
     }[\wiki{Numération_mésopotamienne}[Numération_sexagésimale_de_position]]
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi \setItemColor{RoyalBlue}
+        \item \multiColEnumerate{2}{
+            \item \Babylone{70} = 70
+            \item \Babylone{61} = 61
+            \item \Babylone{190} = 190
+            \item \Babylone{1380} = 1380
+            \item \Babylone{3865} = 3865
+        }
+        Comment ces nombres sont-ils composés ?
+        \saveenumi{3}
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi \setItemColor{RoyalBlue}
+        \item \multiColEnumerate{2}{
+            \item \Babylone{86} = \bawsr{86}
+            \item \aspc \bawsr{\Babylone{132}} = 132
+            \item \Babylone{325} = \bawsr{325} \framebreak
+            \item \Babylone{7271} = \bawsr{7271}
+            \item \aspc \bawsr{\Babylone{10872}} = 10872
+        } \saveenumi{4}
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi \setItemColor{RoyalBlue}
+        \item Les chiffres babyloniens changent de signification selon leur position : on parle donc de \key{numération de position}.
+        Notre système de numération actuel est-il aussi un système de numération de position ?
+        \item Existe-t-il des éléments que nous comptons encore aujourd'hui de manière similaire aux Babyloniens ?
+    \end{enumerate}
 }
 
 % \Babylone{105}
