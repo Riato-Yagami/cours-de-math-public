@@ -15,7 +15,7 @@
 }
 
 \newcommand{\titleBox}[1]{
-    \begin{beamercolorbox}[ht=3.75ex,dp=1.0ex,wd=\paperwidth,leftskip=.3cm,rightskip=.3cm]{frametitle}
+    \begin{beamercolorbox}[ht=2.13ex,dp=0.6ex,wd=\paperwidth,leftskip=.3cm,rightskip=.3cm]{frametitle}
         \usebeamerfont{frametitle} #1
     \end{beamercolorbox}
 }
@@ -45,7 +45,7 @@
         \hskip18pt \thesubsubsection{} \insertsubsubsectionhead
     }
     \fi
-    \ifbool{newPhase}{\titleBox{\currentPhase}}{}
+    % \ifbool{newPhase}{\titleBox{\currentPhase}}{}
     % \ifx\currentPhase\empty\else
     %     \titleBox{\currentPhase}
     % \fi
@@ -55,14 +55,14 @@
 
 \setbeamertemplate{frametitle}
 {
-    \vspace{-1.5pt} % Adjust the vertical space before the title
+    \vspace{-4pt} % Adjust the vertical space before the title
     \titleBox{\insertframetitle}
 }
 
 \setbeamertemplate{footline}
 {
     \hfill % Pushes the text to the right
-    \raisebox{2ex}{\large\textbf{\grade}} % Adjusts position and adds your text in bold
+    \raisebox{2ex}{\large\textbf{\hypersetup{urlcolor=gradeColor} \link{\grade}}} % Adjusts position and adds your text in bold
     \hspace{0.2cm} % Adds space between the text and the right edge
 }
 
@@ -109,12 +109,12 @@
 
 % \usecolortheme[named=gradeColor]{structure}
 
-\definecolor{links}{HTML}{e6ffe6}
-\definecolor{hyperlinks}{HTML}{e6ffe6}
+\definecolor{links}{HTML}{FFFFFF}
+\definecolor{hyperlinks}{HTML}{FFFFFF}
 \hypersetup{
     colorlinks = true,
-    linkcolor = links, % Apply the color to internal links
-    urlcolor = hyperlinks   % Apply the color to URLs
+    linkcolor = gradeColor!01, % Apply the color to internal links
+    urlcolor = hyperlinks!01   % Apply the color to URLs
 }
 
 % \setbeamercolor{item}{fg=ForestGreen}

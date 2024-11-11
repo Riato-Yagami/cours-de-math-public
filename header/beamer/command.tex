@@ -1,30 +1,40 @@
-% \newcommand{\slide}[2]{%
-%     \setPhase{#1}%
-%     \begin{frame}[allowframebreaks, plain]
-%         \ifthenelse{\equal{\currentPhase}{\phase}}{}{%
-%             \xdef\currentPhase{\phase}%
-%             \frametitle{\phase}%
-%         }%
-%         #2%
-%     \end{frame}
-% }
-
-\newglobalboolean{newPhase}
-% \setboolean{newPhase}{true}
 \newcommand{\slide}[2]{%
     \setPhase{#1}%
     \begin{frame}
-        \ifthenelse{\equal{\currentPhase}{\phase}}{%
-                \setboolean{newPhase}{false}
-            }{%
+        \ifthenelse{\equal{\currentPhase}{\phase}}{}{%
             \xdef\currentPhase{\phase}%
-            \setboolean{newPhase}{true}
-            % \frametitle{\phase}%
+            \frametitle{\phase}%
         }%
         #2%
-        % \setbeamertemplate{frametitle}{\vspace{0pt}} % Clear title for subsequent frames
     \end{frame}
 }
+
+% \newglobalboolean{newPhase}
+% % \setboolean{newPhase}{true}
+% \newcommand{\slide}[2]{%
+%     \setPhase{#1}%
+%     \begin{frame}[allowframebreaks]
+%         \ifthenelse{\equal{\currentPhase}{\phase}}{%
+%                 \setboolean{newPhase}{false}
+%             }{%
+%             \xdef\currentPhase{\phase}%
+%             \setboolean{newPhase}{true}
+%             % \frametitle{\phase}% 
+%         }%
+%         % Check if content includes \newpage and prevent phase from being printed again
+%         \ifbool{newPhase}{%
+%             \titleBox{\currentPhase} % Print phase title only once
+%             \setboolean{newPhase}{false} % Reset the flag after printing
+%         }{}%
+%         #2% 
+%         % If \newpage is used in the frame, skip the phase title for the next page
+%         \ifx\relax#2\newpage\relax
+%         \else
+%             \ifbool{newPhase}{\titleBox{\currentPhase}}{}
+%         \fi
+%         % \setbeamertemplate{frametitle}{\vspace{0pt}} % Clear title for subsequent frames
+%     \end{frame}
+% }
 
 
 % \ifNotNull{#1}{%

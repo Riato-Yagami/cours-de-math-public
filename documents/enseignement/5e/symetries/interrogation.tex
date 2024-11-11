@@ -1,0 +1,26 @@
+% VARIABLES %%%
+% \setTitle{Interrogation - Séquence 3 - Correction}
+\interrogation{Séquence 3}
+\setGrade{5e}
+%%
+\vspace*{-1.5cm}
+\exo{}{Construir l'image de la figure par la symétrie de centre $O$.
+    \def\crossSize{0.15}
+    \def\crossWidth{0.35mm}
+    \ctikz[1]{
+        \draw[gray!40] (-8,-8) rectangle (8,8);
+        \draw [thick] (-3.14,4.7)-- (3.26,3.9);
+        \draw [thick] (3.26,3.9)-- (1.38,0.48);
+        \draw [thick] (1.38,0.48)-- (-3.14,4.7);
+        % \draw [thick] (-1.66,-0.48)-- (-3.54,-3.9);
+        % \draw [thick] (-3.54,-3.9)-- (2.86,-4.7);
+        % \draw [thick] (2.86,-4.7)-- (-1.66,-0.48);
+        \drawPoint{A}{-3.14}{4.70}
+        \drawPoint{B}{1.38}{0.48}
+        \drawPoint{C}{3.26}{3.90}
+        \drawPoint{O}{-0.14}{0.00}[gradeColor]
+        % \drawPoint{A'}{2.86}{-4.70}
+        % \drawPoint{B'}{-1.66}{-0.48}
+        % \drawPoint{C'}{-3.54}{-3.90}
+    }
+}

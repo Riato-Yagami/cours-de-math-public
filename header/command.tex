@@ -27,7 +27,7 @@
 }{}
 
 % SECTIONS
-\input{header/command/sections.tex}
+\input{header/command/sections/sections.tex}
 
 % COURSE AUX NOMBRES
 \input{header/command/can.tex}
@@ -269,7 +269,10 @@
         \draw[line width = #3] (0,\n) -- (#1,\n);
 }
 
+\def\pointColor{blue}
+\def\crossWidth{0.25mm}
 \def\crossSize{0.25}
+
 \NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{
     \node[shift={#5}, color = #4] at (#2 - 0.5,#3 - 0.5) {#1};
     \draw[line width = \crossWidth, shift={#5}, color = #4] (#2 - \crossSize,#3) -- (#2 + \crossSize,#3);
@@ -510,19 +513,14 @@
 
 \newcounter{savedenumi}
 \setcounter{savedenumi}{0}
-\xdef\savedenumi{0}
-% \newcommand{\saveenumi}{
-%     % \xdef\savedenumi{\calc{\theenumi-1}}
-%     \setcounter{savedenumi}{0}
-% }
 
-\newcommand{\saveenumi}[1]{
-    \setcounter{savedenumi}{#1}
+\newcommand{\saveenumi}{
+    \setcounter{savedenumi}{\arabic{enumi}}
 }
 
-\newcommand{\loadenumi}{
-    % \setItemColor{\currentColor}
+\NewDocumentCommand{\loadenumi}{O{}}{
     \setcounter{enumi}{\thesavedenumi}
+    \ifNotNull{#1}{\setItemColor{#1}}
 }
 
 \newcommand{\setSeq}[2]{%
@@ -613,9 +611,17 @@
 }
 
 \newcommand{\evaluation}[1]{
-    \setTitle{Evaluation #1}
+    \setTitle{Evaluation - #1}
     \thispagestyle{assignment}
     \setboolean{showSubID}{true}
+    \emptyBackground
+}
+
+\newcommand{\interrogation}[1]{
+    \def\assignmentNameWidth{6.5cm}
+    \setTitle{Interrogation - #1}
+    \thispagestyle{assignment}
+    \setboolean{answer}{false}
     \emptyBackground
 }
 

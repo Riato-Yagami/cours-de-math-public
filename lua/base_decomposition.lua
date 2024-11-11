@@ -33,21 +33,25 @@ local function base_decomposition(number, base)
 end
 
 -- Define base-specific units dynamically
-local function get_base_unit(base, index)
-    if index == 0 then return "unité" end
-    if base == 10 then
-        if index == 1 then return "dizaine" end
-        if index == 2 then return "centaine" end
-        if index == 2 then return "millier" end
+local function get_base_unit(base, index, units)
+    units = units or {}
+    if #units == 0 then
+        if base == 10 then units = {"unité", "dizaine", "centaine", "millier"} end
+        if base == 12 then units = {"unité", "douzaine", "grosse"} end
+        if base == 60 then units = {"unité", "soixantaine"} end
     end
-    if base == 12 then
-        if index == 1 then return "douzaine" end
-        if index == 2 then return "grosse" end
+    if index <= #units then
+        return units[index+1]
     end
-    return "$\\times\\;" .. base .. "^" .. (index).. "$"
+    return "$\\times\\;" .. base .. "^{" .. (index - 1) .. "}$"
 end
 
-function print_base_decomposition(number, base, show)
+function parse_seconds(number,show)
+    print_base_decomposition(number, 60, show, {"\\second","\\minute","\\hour"})
+end
+
+function print_base_decomposition(number, base, show, units)
+    units = units or {}
     show = show or "show"
     local awn_1 = "\\bawsr{"
     local awn_2 = "}"
@@ -59,12 +63,22 @@ function print_base_decomposition(number, base, show)
 
     local result = base_decomposition(number, base)
 
+    local last_non_zero_index = 0
+    for i = #result, 1, -1 do
+        if result[i] ~= 0 then
+            last_non_zero_index = i
+            break
+        end
+    end
+
     for i, digit in ipairs(result) do
         if digit > 0 then
-            local unit = get_base_unit(base, #result - i)
-            tex.sprint("$",awn_1,digit,awn_2,"\\;$", unit)
+            local unit = get_base_unit(base, #result - i, units)
+            tex.sprint("$",awn_1,digit,awn_2,"\\;$",
+            "\\textrm{",unit,(digit > 1 and units[1] ~= "\\second") and "s" or "","}"
+            )
         end
-        if digit > 0 and i < #result then
+        if digit ~= 0 and i < last_non_zero_index then
             tex.sprint("\\; + \\;")
         end
     end

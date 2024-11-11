@@ -18,27 +18,35 @@
     \item Utiliser et représenter les nombres décimaux jusqu'à trois décimales.
     \item Ajouter, soustraire et multiplier des nombres décimaux.
     \item Utiliser la division euclidienne.
-    \item Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement (proportionnalité).
+    \item Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement.
     \item Organiser un calcul en une seule ligne, utilisant si nécessaire des parenthèses.
     \item Savoir ce qu'est un ordre de grandeur et savoir l'utiliser pour prévoir un résultat.
 }
 
 \scn{Découvrir une numération préhistorique}
 
+\qfSlide{
+    \begin{enumerate}
+        \item $2 + 3 \time 5 = $
+        \item $6 - 2 + 3 - 1 =$
+        \item $4 \times (6 + 3) =$
+    \end{enumerate}
+}
+
 \bsec{Compter}
 \bsubsec{Base 12}
 
-% \def\iconPath{prehistoric-numbers/}
-% \def\iconSize{25pt}
 \slide{exo}{\bvspace{-0.75cm}
     \act{Numération préhistorique}{
         Certains hommes préhistorique utilisaient leurs main pour communiquer sur des nombres.
-        \imgp{historic/numbers}[8cm]
+        \imgp{historic/numbers}[6.5cm]
     }[\dmeepcS]
 }
 
+% \endinput
+
 \slide{exo}{
-    \begin{enumerate}\setItemColor{RoyalBlue}
+    \begin{enumerate}\setItemColor{act}
         \item \multiColEnumerate{3}{
             \item $\Prehistoric{6} = \bawsr{6}$
             \item $\Prehistoric{10} = \bawsr{10}$
@@ -46,12 +54,12 @@
         }
         \item Quel est le nombre le plus grand pouvant etre communiquer de cette manière ?
         \item Comment pourait-on communiquer des nombres plus grands ?
-        \saveenumi{3}
+        \saveenumi
     \end{enumerate}
 }
 
 \slide{exo}{
-    \begin{enumerate}\loadenumi \setItemColor{RoyalBlue}
+    \begin{enumerate}\loadenumi[act]
         \item \multiColEnumerate{2}{
             \item $\Prehistoric{12} = \bawsr{12}$
             \item $\Prehistoric{15} = \bawsr{15}$
@@ -60,36 +68,40 @@
             \item $\Prehistoric{0} = 100$
             \item $\Prehistoric{135} = \bawsr{135}$
         }
-        \saveenumi{4}
+        \saveenumi
     \end{enumerate}
 }
 
 \slide{exo}{
-    \begin{enumerate}\loadenumi \setItemColor{RoyalBlue}
+    \begin{enumerate}\loadenumi[act]
         \item Quel est le plus grand nombre pouvant etre communiqué avec cette méthode ?
         \item Certains hommes préhistoriques comptaient donc par 12 car ils avaient 12 phalanges?
         De la même manière, par combien comptons-nous ? Pourquoi selon vous ?
     \end{enumerate}
 }
 
-\slide{exo}{\cpd{}{\Table{12}{12}}}
+\scn{Utiliser une numération en base 12}
+
+\slide{exo}{\cdp{Table de 12}{\Table{12}{12}}}
 
 \slide{cr}{
     \sseq\ssec\ssubsec \bvspace{-0.5cm}
     \vc{}{
-        Le \key{système duodécimal}, ou de base $12$. Est une méthode de comptage par douzaine.
-    }
+        Le \key{système duodécimal},
+        ou de base $12$.
+        Est une méthode de comptage par douzaine.
+    }[\wiki{Système_duodécimal}]
 }
 
 \slide{cr}{
     \expl{}{
         \multiColEnumerate{2}{
-            \item 15 = \baseDecomposition{15}{12}["hide"]
-            \item 56 = \baseDecomposition{56}{12}["hide"]
-            \item \bawsr{27} = \baseDecomposition{27}{12}
-            \item \bawsr{112} = \baseDecomposition{112}{12} \saveenumi{4}
+            \item $15 =$ \baseDecomposition{15}{12}["hide"]
+            \item $56 =$ \baseDecomposition{56}{12}["hide"] 
+            \item $\bawsr{27} =$ \baseDecomposition{27}{12}
+            \item $\bawsr{112} =$ \baseDecomposition{112}{12} \saveenumi
         }\multiColEnumerate{1}{\loadenumi
-            \item 145 = \bawsr{\baseDecomposition{145}{12}} 
+            \item $145 =$ \bawsr{\baseDecomposition{145}{12}}
         }
     }
 }
@@ -99,17 +111,31 @@
     \exo{Justifiez, en détaillant vos calculs, le nombre de cubes présents dans chacune des figures.}{\calculator
         \multiColEnumerate{2}{
             \item \RepresenterEntier[Base=12,Echelle=\scale]{28}
-            \item \RepresenterEntier[Base=12,Echelle=\scale]{100} \saveenumi{2}
+            \item \RepresenterEntier[Base=12,Echelle=\scale]{100} \saveenumi
         }
     }
 }
 
 \slide{exo}{
-    \multiColEnumerate{1}{ \loadenumi \setItemColor{Gray}
+    \multiColEnumerate{1}{ \loadenumi[exo]
         \item \RepresenterEntier[Base=12,Echelle=\scale]{332}
         \item \RepresenterEntier[Base=12,Echelle=\scale]{1942}
     }
 }
+
+
+\scn{Découvrir la numération Babylonienne}
+
+\qfSlide{
+    \multiColEnumerate{2}{
+        \item \bawsr{6425} = \baseDecomposition{6425}{10}
+        \item \bawsr{1237} = \baseDecomposition{1237}{12}
+        \item 9233 = \baseDecomposition{9233}{10}["hide"]
+        \item 232 = \baseDecomposition{232}{12}["hide"]
+    }
+}
+
+\bsubsec{Base 60}
 
 \def\aspc{\ifbool{answer}{}{\vspace{1cm}}}
 
@@ -126,13 +152,13 @@
                 \item \Babylone{12} = \bawsr{12}
                 \item \Babylone{34} = \bawsr{34}
                 \item \aspc \bawsr{\Babylone{23}} = 23
-            } \saveenumi{2}
+            } \saveenumi
         \end{enumerate}
     }[\wiki{Numération_mésopotamienne}[Numération_sexagésimale_de_position]]
 }
 
 \slide{exo}{
-    \begin{enumerate} \loadenumi \setItemColor{RoyalBlue}
+    \begin{enumerate} \loadenumi[act]
         \item \multiColEnumerate{2}{
             \item \Babylone{70} = 70
             \item \Babylone{61} = 61
@@ -141,29 +167,93 @@
             \item \Babylone{3865} = 3865
         }
         Comment ces nombres sont-ils composés ?
-        \saveenumi{3}
+        \saveenumi
     \end{enumerate}
 }
 
 \slide{exo}{
-    \begin{enumerate} \loadenumi \setItemColor{RoyalBlue}
+    \begin{enumerate} \loadenumi[act]
         \item \multiColEnumerate{2}{
             \item \Babylone{86} = \bawsr{86}
             \item \aspc \bawsr{\Babylone{132}} = 132
-            \item \Babylone{325} = \bawsr{325} \framebreak
+            \item \Babylone{325} = \bawsr{325}
             \item \Babylone{7271} = \bawsr{7271}
             \item \aspc \bawsr{\Babylone{10872}} = 10872
-        } \saveenumi{4}
+        } \saveenumi
     \end{enumerate}
 }
 
 \slide{exo}{
-    \begin{enumerate} \loadenumi \setItemColor{RoyalBlue}
+    \begin{enumerate} \loadenumi[act]
         \item Les chiffres babyloniens changent de signification selon leur position : on parle donc de \key{numération de position}.
         Notre système de numération actuel est-il aussi un système de numération de position ?
         \item Existe-t-il des éléments que nous comptons encore aujourd'hui de manière similaire aux Babyloniens ?
     \end{enumerate}
 }
 
+\scn{Utiliser une numération en base 60}
+
+\qfSlide{
+    \exo{Donner l'heure}{
+        \multiColEnumerate{3}{
+            \item \Horloge[Secondes=false]{7:30}
+            \item \Horloge[Secondes=false]{15:24}
+            \item \Horloge[Secondes=false]{12:46}
+        }
+    }
+}
+
+\slide{cr}{
+    \ssubsec
+    \vc{}{
+        Le \key{système sexagésimal},
+        ou de base $60$.
+        Est une méthode de comptage par soixantaine.
+    }[\wiki{Système_sexagésimal}]
+}
+
+\slide{cr}{
+    \expl{}{
+        \multiColEnumerate{2}{
+            \item \bawsr{186} = \baseDecomposition{186}{60}
+            \item \bawsr{1200} = \baseDecomposition{1200}{60}
+            \item 720 = \baseDecomposition{75}{60}["hide"]
+            \item 1842 = \baseDecomposition{500}{60}["hide"] \saveenumi
+        }\multiColEnumerate{1}{\loadenumi
+            \item 8350 = \bawsr{\baseDecomposition{8350}{60}}
+        }
+    }
+}
+
+\slide{cr}{
+    \rmk{}{
+        L'usage moderne du sexagésimal est assez proche de celui de la mesure du temps.
+        \multiColItemize{2}{
+            \item $\Horaire{1} = \bawsr{60}\textrm{min}$
+            \item $\Horaire{;1} = \bawsr{60}\textrm{s}$
+        }
+    }
+
+    \expl{}{
+        \multiColItemize{1}{
+            \item $\Horaire{1} = \bawsr{3600}\sec$
+            \item $\Horaire{;;602} = \parseSeconds{602}["hide"]$
+            \item $\Horaire{;;7623} = \parseSeconds{7623}["hide"]$
+        }
+    }
+}
+
+\def\scale{2}
+
+\bsec{Numération décimales}
+\bsubsec{Nombres entiers}
+\bsubsec{Nombres décimaux}
+
+\bsec{Division euclidienne}
+% \slide{exo}{\small
+%     \exo{Justifiez, en détaillant vos calculs, le nombre de cubes présents dans chacune des figures.}{\calculator
+%         \RepresenterEntier[Base=60,Echelle=\scale]{223523}
+%     }
+% }
 % \Babylone{105}
 
