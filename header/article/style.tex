@@ -28,29 +28,29 @@
 
 \definecolor{gradeColor}{RGB}{200, 50, 50}
 
-\backgroundsetup{
-    scale=1,
-    color=gradeColor,
-    opacity=0.65,
-    position=current page.south west,
-    angle = 0,
-    contents={%
-        % Crée une bande colorée sur la gauche
-        \begin{tikzpicture}[remember picture, overlay]
-            \fill[gradeColor] (0,0) rectangle (1cm, \paperheight);
-            % Texte en haut à droite
-            \node[shift={(-0.32,-0.25)},anchor=north east, color=gradeColor, font=\fontsize{40}{36}\selectfont] 
-                at (current page.north east) {\hypersetup{urlcolor=gradeColor}\link{\grade}};
-        \end{tikzpicture}%
-    }
-}
+% \backgroundsetup{
+%     scale=1,
+%     color=gradeColor,
+%     opacity=0.65,
+%     position=current page.south west,
+%     angle = 0,
+%     contents={%
+%         % Crée une bande colorée sur la gauche
+%         % \begin{tikzpicture}[remember picture, overlay]
+%         %     \fill[gradeColor] (0,0) rectangle (1cm, \paperheight);
+%         %     % Texte en haut à droite
+%         %     \node[shift={(-0.32,-0.25)},anchor=north east, color=gradeColor, font=\fontsize{40}{36}\selectfont] 
+%         %         at (current page.north east) {\hypersetup{urlcolor=gradeColor}\link{\grade}};
+%         % \end{tikzpicture}%
+%     }
+% }
 
-\newcommand{\emptyBackground}{\backgroundsetup{
-    position=current page.south west,
-    angle=0,
-    scale=1,
-    color=gradeColor,
-    hshift=0cm,  % No shift
-    vshift=0cm,
-    contents={}
-}}
+% \newcommand{\emptyBackground}{\backgroundsetup{
+%     position=current page.south west,
+%     angle=0,
+%     scale=1,
+%     color=gradeColor,
+%     hshift=0cm,  % No shift
+%     vshift=0cm,
+%     contents={}
+% }}

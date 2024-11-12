@@ -56,13 +56,13 @@
                 \item D'après le ${\color{\currentColor}a)}$, à combien est égale la forme développer de l'expression précédente ?
                 \item Combien donne $3 \times 5$ ?
                 \item Combien donne alors $3 \times (-5)$?
-            \end{enumerate}\saveenumi{2}
+            \end{enumerate}\saveenumi
         \end{enumerate}
     }
 }
 
 \slide{exo}{\bsmall
-    \begin{enumerate}\setItemColor{RoyalBlue}\loadenumi
+    \begin{enumerate}\loadenumi[act]
         \item On s'interesse maintenant au résultat de $x \times (-y)$.\\
         Reproduit le raisonnement de ${\color{\currentColor}a)}$ à ${\color{\currentColor}e)}$ en substituant $3$ par $x$ et $5$ par $y$.
         \item Que donne le produit d'un nombre positif par un nombre négatif?
@@ -113,6 +113,17 @@
 
 \scn{Déterminer le signe d'un produits de relatifs à plusieurs facteurs}
 
+\slide{qf}{
+    \multiColEnumerate{1}{
+        % \item $\numprint{1.5} \times (-2) = \bawsr{-3}$
+        \item $1 + (-6) - (-2) = \bawsr{13}$
+        \item $(-30) + \numprint{50.9} = \bawsr{20.9}$
+        \item $1 + (-6) \times (-2) = \bawsr{13}$
+        \item $3 \div (-1) = \bawsr{-3}$
+        \item $-7 \times (1 - (-2)) = \bawsr{-21}$
+    }
+}
+
 % \def\caPrefix{4e-entrainement.2-}
 % \caSlide{22-23-24}
 
@@ -131,23 +142,7 @@
 %     \end{center}
 % }
 
-\slide{qf}{
-    \nullsubsec{}{
-        Soit $y$ un nombre négatif différent de 0.\\
-        Indiquer le signe de chacune de ces expressions:
-        \multiColEnumerate{2}{
-            \item $A = -4 - y$
-            \item $B = y \times y$
-            \item $C = y + y + y$
-            \item $D = y ^ 3$
-            \item $E = -3 \times y$
-            \item $F = -3 + y$
-        }
-    }[\rpmc[184]]
-}
-
 \bsubsec{Corollaires}
-
 
 \slide{exo}{\bshrink
     \act{}{\noCalculator
@@ -164,13 +159,13 @@
                 \item $-15198 \times 1231 \times (-1,6)$
                 \item $-1,465884 \times (-3) \times (-1) \times (-3) \times (-\frac{1}{654})$
                 \item $51,65465 \times (-1) \times (-\pi) \times (-6)$
-            }\saveenumi{2}
+            }\saveenumi
         \end{enumerate}
     }
 }
 
 \slide{exo}{
-    \begin{enumerate}\setItemColor{RoyalBlue}\loadenumi
+    \begin{enumerate}\loadenumi[act]
         \item Déterminer le signe d'un produit de :
         \multiColEnumerate{1}{
             \item $10$ facteurs égaux à $-1$.
@@ -255,3 +250,18 @@
 }
 
 \bookSlide{50p91}[5cm][1]
+
+\slide{qf}{
+    \nullsubsec{}{
+        Soit $y$ un nombre négatif différent de $0$.\\
+        Indiquer le signe de chacune de ces expressions:
+        \multiColEnumerate{2}{
+            \item $A = -4 - y$
+            \item $B = y \times y$
+            \item $C = y + y + y$
+            \item $D = y ^ 3$
+            \item $E = -3 \times y$
+            \item $F = -3 + y$
+        }
+    }[\rpmc[184]]
+}
