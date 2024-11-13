@@ -1,0 +1,49 @@
+% VARIABLES %%%
+\setSeq{5}{Proportionnalité - Tableaux et graphiques}
+\setGrade{4e}
+\def\imgPath{enseignement/4e/theoreme-de-pythagore/contraposé-et-reciproque/}
+% \setboolean{answer}{true}
+%%
+
+% \obj{
+%     \item Reconnaitre sur un graphique une situation de proportionnalité ou de non proportionnalité.
+%     \item Calcule d'une quatrième proportionnelle.
+%     \item Utiliser une formule liant deux grandeurs dans une situation de proportionnalité.
+%     \item Résoudre des problèmes en utilisant la proportionnalité dans le cadre de la géométrie.
+% }
+
+\pr{Coefficient de proportionnalité}{
+    Dans un tableau de proportionnalité,
+    on passe d'une ligne à l'autre en multipliant par le coefficient de proportionnalité.
+}
+
+\pr{}{
+    Dans un graphique \sialors{tous les points sont alignés avec l'origine}
+    {on une situation de proportionnalité}.
+}
+
+\pr{Egalité des produits en croix}{Pour $a,b,c,d$ des nombres.
+    Dans le tableau de proportionnalité:
+    \begin{center}
+        \propTable{a}{c}{b}{d}
+    \end{center}
+    On a l'égalité: $a \times d = b \times c$. 
+}
+
+\rmk{Egalité des quotients}{
+    On a aussi
+    \begin{align*}
+        \frac{a}{b} = \frac{c}{d}
+    \end{align*}
+}
+
+\mthd{Calcul 4e proportionnelle}{
+    Si l'on connait 3 valeurs par exemple $b,c,d$.
+    On peut utiliser l'égalité des produits en croix pour calculer la 4e proportionnelle $a$.\\
+    En effet:
+    \begin{align*}
+        a \times d &= b \times c\\
+        \ialors \palt{2}{\frac{a \times d}{d}} &= \palt{2}{\frac{b \times c}{d}}
+        \ialors a &= \palt{3}{\frac{b \times c}{d}}
+    \end{align*}
+}

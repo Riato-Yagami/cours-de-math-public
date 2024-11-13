@@ -43,9 +43,9 @@
     }
 }
 
-\newcommand*{\obj}[1]{
+\NewDocumentCommand{\obj}{m O{}}{
     \begin{objBox}
-        \objSUB{}{%
+        \objSUB{#2}{%
         \begin{enumerate}#1\end{enumerate}%
         }
     \end{objBox}
