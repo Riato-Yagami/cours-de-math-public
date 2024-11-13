@@ -3,6 +3,7 @@
 \setGrade{4e}
 \def\imgPath{enseignement/4e/theoreme-de-pythagore/contraposé-et-reciproque/}
 % \setboolean{answer}{true}
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Proport1.pdf}{Yvan Monka}}
 %%
 
 % \obj{
@@ -17,10 +18,10 @@
     on passe d'une ligne à l'autre en multipliant par le coefficient de proportionnalité.
 }
 
-\pr{}{
-    Dans un graphique \sialors{tous les points sont alignés avec l'origine}
-    {on une situation de proportionnalité}.
-}
+\pr{Représentation graphique}{
+    Sur un graphique, une situation de proportionnalité est représentée par des points alignés
+    avec l'origine.
+}[\ym]
 
 \pr{Egalité des produits en croix}{Pour $a,b,c,d$ des nombres.
     Dans le tableau de proportionnalité:
@@ -46,4 +47,67 @@
         \ialors \palt{2}{\frac{a \times d}{d}} &= \palt{2}{\frac{b \times c}{d}}
         \ialors a &= \palt{3}{\frac{b \times c}{d}}
     \end{align*}
+}
+
+\slide{qf}{
+    Les situations présentées dans ces tableaux sont-elles proportionnelles ?
+    \multiColEnumerate{2}{
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{12/3,16/4,40/10}
+        \end{center}
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{15/5,9/3,20/6}
+        \end{center}
+    }
+}
+
+\slide{qf}{\calculator \\ Completer les tableaux suivants :
+    \multiColEnumerate{3}{
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{6/5,\bawsr{\num{2.4}}/2}
+        \end{center}
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{\num{237.6}/\bawsr{66},\num{46.8}/13}
+        \end{center}
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{\bawsr{12}/18,-3/-4.5}
+        \end{center}
+    }
+}
+
+\slide{qf}{
+    \nullsubsec{}{
+        Sachant que huit briques de masse identique pèsent 13,6 kg, calcule la masse de six de ces
+        briques.
+    }[\afa{4e}[6]]
+}
+
+\slide{qf}{
+    \nullsubsec{}{
+        \begin{enumerate}
+            \item Sachant que la longueur $\mathcal{P}$ d'un cercle
+            est proportionnelle à son rayon $r$
+            avec un coefficient de proportionnalité $2\pi$.
+            Donnez la formule permettant de calculer $\mathcal{P}$ en fonction de $r$.
+            \item Sachant que la tension $U$ aux bornes d'une résistance
+            est proportionnelle à l'intensité $I$ du courant qui la traverse
+            avec un coefficient de proportionnalité égal à la valeur de la résistance $R$.
+            Donnez la formule permettant de calculer $U$ en fonction de $I$.
+        \end{enumerate}
+    }
 }

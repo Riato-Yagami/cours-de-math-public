@@ -56,6 +56,7 @@
 \def\yuyu{\href{https://www.instagram.com/yuyuvrajav/}{@yuyuvraj}}
 
 \defl{Utiliser les notions de géométrie planepour démontrer}{https://eduscol.education.fr/document/17305/download}
+
 % Manuels
 \def\dim{\href{https://www.editions-hatier.fr/livre/dimensions-mathematiques-6e-ed-2016-manuel-de-leleve-9782401020023}
     {Dimensions 6e (Ed. 2016)}
@@ -95,7 +96,32 @@
 
 \NewDocumentCommand{\rpmc}{O{}}{%
     \href{https://eduscol.education.fr/document/13132/download?attachment\#page=#1}{%
-    La résolution de problèmes mathématiques au collège (p.\directlua{tex.print((tonumber("#1") or 0) + 3)})}%
+    La résolution de problèmes mathématiques au collège
+    (p.\directlua{tex.print((tonumber("#1") or 0) + 3)})}%
+}
+
+% Attendus de fin d'année
+\NewDocumentCommand{\afa}{m O{}}{
+    \ifthenelse{\equal{#1}{CM2}}{
+        \def\afalink{https://eduscol.education.fr/document/14002/download}
+    }{
+    \ifthenelse{\equal{#1}{6e}}{
+        \def\afalink{https://eduscol.education.fr/document/14014/download}
+    }{
+    \ifthenelse{\equal{#1}{5e}}{
+        \def\afalink{https://eduscol.education.fr/document/14044/download}
+    }{
+    \ifthenelse{\equal{#1}{4e}}{
+        \def\afalink{https://eduscol.education.fr/document/14056/download}
+    }{
+    \ifthenelse{\equal{#1}{3e}}{
+        \def\afalink{https://eduscol.education.fr/document/14068/download}
+    }{
+        \def\afalink{https://eduscol.education.fr/document/14014/download}
+    }}}}}
+    \def\page{}
+    \ifNotNull{#2}{\def\page{(p.#2)}}
+    \href{\afalink\#page=#2}{Attendus de fin d'année de #1 \page}
 }
 
 \def\ca{%
