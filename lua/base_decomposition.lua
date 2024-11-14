@@ -1,3 +1,5 @@
+require("lua.hide")
+
 local function base_decomposition(number, base)
     if base < 2 then
         return "Error: Base must be 2 or greater."
@@ -52,14 +54,6 @@ end
 
 function print_base_decomposition(number, base, show, units)
     units = units or {}
-    show = show or "show"
-    local awn_1 = "\\bawsr{"
-    local awn_2 = "}"
-
-    if show == "show" then
-        awn_1 = ""
-        awn_2 = ""
-    end
 
     local result = base_decomposition(number, base)
 
@@ -74,7 +68,7 @@ function print_base_decomposition(number, base, show, units)
     for i, digit in ipairs(result) do
         if digit > 0 then
             local unit = get_base_unit(base, #result - i, units)
-            tex.sprint("$",awn_1,digit,awn_2,"\\;$",
+            tex.sprint("$",hide(digit,show),"\\;$",
             "\\textrm{",unit,(digit > 1 and units[1] ~= "\\second") and "s" or "","}"
             )
         end
