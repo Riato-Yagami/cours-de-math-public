@@ -97,10 +97,6 @@
     }[\wiki{Système_duodécimal}]
 }
 
-\slide{exo}{
-    \exo{}
-}
-
 \slide{cr}{
     \expl{}{
         \multiColEnumerate{2}{
@@ -257,7 +253,7 @@
 
 \scn{Utiliser une numération en base 10}
 
-\slide{qf}{
+\slide{qf}{\bsmall
     \nullsubsec{}{
         \begin{itemize}
             \item La Lune est à \Ecriture{384 000} de kilomètre de la Terre.
@@ -272,7 +268,8 @@
             DoubleEntree,
             Couleur=gradeColor!15,
             LegendesH={Lune,Jupiter,Pluton},
-            LegendesV={Distance à la Terre (km)}
+            LegendesV={Distance à la Terre (km)},
+            Largeur=135pt
             ]{\bawsr{384 000},\bawsr{91 000 000},\bawsr{4 297 000 000}}
         \end{center}
     }[\dmeepcS]
@@ -295,6 +292,34 @@
     }[\wiki{Al-Khwârizmî} \wiki{Système_de_numération_indo-arabe}]
 }
 
+\slide{cr}{
+    \mthd{}{
+        Pour écrire un nombre on utilise \key{10 symboles} appelé \key{chiffres}.
+        La \key{position} des chiffres dans l'écriture d'un nombre détermine sa valeure.
+    }
+
+    \expl{}{
+        \begin{enumerate}
+            \item $\num{110} =$ \baseDecomposition{110}{10}["hide"] 
+            \item $\num{5841} =$ \baseDecomposition{5841}{10}["hide"]
+            \item $\bawsr{{\num{1010}}} =$ \baseDecomposition{1010}{10}
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \rmk{}{
+        On regroupe les chiffres par groupe de trois pour améliorier la lisibilité.
+    }
+
+    \expl{}{
+        Pour $193212$
+        % \decimalTable{193212}
+        % \Tableau[Decimaux,NbLignes=4]{2.35,125.987,1205.0}
+        On ecrit $\bawsr{\num{193212}}$
+    }
+}
+
 \slide{exo}{
     \exo{Nombres mystères}{
         \begin{enumerate}
@@ -302,24 +327,28 @@
             \begin{itemize}
                 \item le chiffre des dizaines est la moitié du chiffre des centaines.
                 \item la somme des chiffres est $11$.
-            \end{itemize}
-            \item Donne un exemple de nombre à quatre chiffres tel que :
-            \begin{itemize}
-                \item le chiffre des dizaines est la moitié du chiffre des centaines.
-                \item la somme des chiffres est $11$.
-            \end{itemize}
-            \item Donne un exemple de nombres à trois chiffres pour lequel :
-            \begin{itemize}
-                \item il est inférieur à 2 000 ;
-                \item il a trois chiffres identiques ;
-                \item la somme de ses chiffres est 10.
-            \end{itemize}
+            \end{itemize}\saveenumi
         \end{enumerate}
     }[\dmeepcS]
 }
 
-\bsubsec{Nombres décimaux}
+\slide{exo}{
+    \begin{enumerate}\loadenumi[exo]
+        \item Donne un exemple de nombre à quatre chiffres tel que :
+        \begin{itemize}
+            \item le chiffre des dizaines est la moitié du chiffre des centaines.
+            \item la somme des chiffres est $11$.
+        \end{itemize}
+        \item Donne un exemple de nombres à trois chiffres pour lequel :
+        \begin{itemize}
+            \item il est inférieur à 2 000 ;
+            \item il a trois chiffres identiques ;
+            \item la somme de ses chiffres est 10.
+        \end{itemize}
+    \end{enumerate}
+}
 
+\bsubsec{Nombres décimaux}
 
 \bsec{Division euclidienne}
 % \slide{exo}{\small
