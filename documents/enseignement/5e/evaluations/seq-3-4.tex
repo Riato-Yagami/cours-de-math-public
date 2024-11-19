@@ -1,6 +1,8 @@
 %%%
 \setGrade{5e}
 \evaluation{2}
+
+\setboolean{answer}{false}
 %%%
 % \def\imgPath{enseignement/6e/}
 
@@ -72,22 +74,24 @@
 
 \ctikz[0.75]{
     \draw[gray!40] (-1,-10) rectangle (18,2);
-    \draw [penciline,thick] (0.48,-7.04)-- (7.4,-8.06);
-    \draw [penciline,thick] (7.4,-8.06)-- (5.18,-4.68);
-    \draw [penciline,thick] (5.18,-4.68)-- (0.48,-7.04);
-    \draw [penciline,thick] (11.06,-3.16)-- (15.683121999999992,1.1780524000000023);
-    \draw [penciline,thick] (15.683121999999992,1.1780524000000023)-- (9.047820799999997,0.5338484000000019);
-    \draw [penciline,thick] (9.047820799999997,0.5338484000000019)-- (11.06,-3.16);
-    \draw (6.825316999999991,-6.262503800000003) node[anchor=north west] {\Lg{2.6}};
-    \draw (3.2821949999999944,-8.098485200000004) node[anchor=north west] {\Lg{10.1}};
-    \draw (2.090417599999996,-5.038516200000002) node[anchor=north west] {\Lg{5}};
-    \drawPoint{P}{5.18}{-4.68}
-    \drawPoint{O}{8.16}{-4.22}
-    \drawPoint{K}{0.48}{-7.04}
-    \drawPoint{E}{7.40}{-8.06}
-    \drawPoint{A}{11.06}{-3.16}
-    \drawPoint{S}{9.05}{0.53}
-    \drawPoint{H}{15.68}{1.18}
+    \ifthenelse{\boolean{answer}}{%
+        \draw [penciline,thick] (0.48,-7.04)-- (7.4,-8.06);
+        \draw [penciline,thick] (7.4,-8.06)-- (5.18,-4.68);
+        \draw [penciline,thick] (5.18,-4.68)-- (0.48,-7.04);
+        \draw [penciline,thick] (11.06,-3.16)-- (15.683121999999992,1.1780524000000023);
+        \draw [penciline,thick] (15.683121999999992,1.1780524000000023)-- (9.047820799999997,0.5338484000000019);
+        \draw [penciline,thick] (9.047820799999997,0.5338484000000019)-- (11.06,-3.16);
+        \draw (6.825316999999991,-6.262503800000003) node[anchor=north west] {\Lg{2.6}};
+        \draw (3.2821949999999944,-8.098485200000004) node[anchor=north west] {\Lg{10.1}};
+        \draw (2.090417599999996,-5.038516200000002) node[anchor=north west] {\Lg{5}};
+        \drawPoint{P}{5.18}{-4.68}
+        \drawPoint{O}{8.16}{-4.22}
+        \drawPoint{K}{0.48}{-7.04}
+        \drawPoint{E}{7.40}{-8.06}
+        \drawPoint{A}{11.06}{-3.16}
+        \drawPoint{S}{9.05}{0.53}
+        \drawPoint{H}{15.68}{1.18};
+    }{}%
 }
 
 
