@@ -1,9 +1,11 @@
 % VARIABLES %%%
-\setSeq{3}{Nombres Relatifs - Sommes et différences}
+\setSeq{4}{Nombres Relatifs - Sommes et différences}
 \setGrade{5e}
 
 % \setboolean{answer}{false}
 % \setboolean{newPageOnSlide}{true}
+
+% \forPrint
 
 \def\imgPath{enseignement/5e/nombres-relatifs/sommes-et-differences/}
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Nomb_rel2.pdf}{Yvan Monka}}
@@ -17,7 +19,7 @@
     \item Résoudre des problèmes faisant intervenir des nombres décimaux relatifs et des fractions simples.
 }
 
-\qfSlide{
+\slide{qf}{
     \multiColEnumerate{2}{
         \item $8 + 9 - 7 = \bawsr{10}$
         \item $8 \times (2 + 10) = \bawsr{96}$
@@ -42,24 +44,43 @@
     }
 }
 
-\slide{}{
+\slide{cr}{
     \rl{}{
         En cas d'opérations de mêmes priorités, on effectue les opérations de gauche à droite.
     }
+
+    \expl{}{
+        \multiColEnumerate{1}{
+            \item $3 - 2 + 3 = \bawsr{1 + 3 = 4}$ 
+            \item $19 - 6\times 3 = \bawsr{19 - 18 =  1}$
+            \item $3 + \num{3.2} \times 2 - 4 = \bawsr{3 + \num{6.2} -4 = \num{9.4} - 4 = \num{5.4}}$
+        }
+    }
 }
 
-\slide{}{
+\slide{cr}{
     \rl{}{
         On commence par effectuer les calculs entre parenthèses.
+    }
+
+    \expl{}{
+        \multiColEnumerate{1}{
+            \item $(1 + 2) \times 21 = \bawsr{3 \times 21 = 63}$
+            \item $(11 \times 3) + (15 \div 2) = \bawsr{33 + 7.5 = 40.5}$
+            \item $((13 - (3 - 2)) + 2) = \bawsr{(13 - 1) + 2 = 12 + 2 = 14}$
+        }
     }
 }
 
 \bsubsec{Vocabulaire opératoires}
 
-\slide{}{
+% \newpage
+
+\slide{cr}{
     \ssubsec
+    \bvspace{-0.5cm}
     \vc{}{
-        On connait quatres types d'opérations:
+        On connait quatres types d'opérations :
         \begin{itemize}
             \item L'\key{addition} permet de calculer la \key{somme} de deux \key{termes}.
             \item La \key{soustraction}  permet de calculer la \key{différence} entre deux \key{termes}.
@@ -69,27 +90,29 @@
     }
 }
 
-\slide{}{
-    \pr{}{Dans un calculs,
-    la dernière opérations détermine le nom pour désigner le calcul en entier.}
-}
-
-\slide{}{
-    \expl{Donner le type d'opérations des expression suivantes}{
-        \multiColEnumerate{2}{
-            \item $1,6 + 3 + 4$ est \bawsr{une somme}.
-            \item $(\frac{2}{6} + 3) \times 9$ est \bawsr{un produit}.
-            \item $6,6 + 1 \times 8$ est \bawsr{une somme}.
-            \item $\frac{2}{6} + 3 - 9$ est \bawsr{une différence}.
-            \item $\pi \div (3 - 9)$ est \bawsr{un quotient}.
+\slide{cr}{
+    \vc{}{Dans un calcul,
+    le type de la dernière opération effectuée détermine le nom donné au calcul dans son ensemble.}
+    \bvspace{-0.5cm}
+    \expl{Nommer les calculs suivants}{
+        \multiColEnumerate{1}{
+            \item $1,6 + 4$ est \bawsr{la somme} de \bawsr{$1,6$ et $4$}.
+            \item $(\frac{2}{6} + 3) \times 9$ est \bawsr{le produit } de \bawsr{$\frac{2}{6} + 3$ et $9$}.
+            \item $6,6 + 1 \times 8$ est \bawsr{la somme de $6,6$ par $1 \times 8$}.
+            \item $\frac{2}{6} + 3 - 9$ est \bawsr{la différence entre $\frac{2}{6}$ et $9$}..
+            \item $\pi \div (3 - 9)$ est \bawsr{le quotient de $\pi$ par $(3 - 9)$}.
         }
     }
 }
 
+% \slide{cr}{
+
+% }
+
 \bsec{Sommes et différences de nombres relatifs}
 
-\slide{exo}{
-    \act{}{
+% \slide{exo}{
+%     \act{}{
 
-    }
-}
+%     }
+% }

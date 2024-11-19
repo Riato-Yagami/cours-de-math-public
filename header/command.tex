@@ -4,16 +4,15 @@
 \newcommand{\case}{}
 \newcommand{\default}{}
 
-
 \makeatletter
 \def\newglobalboolean#1{%
-  \expandafter\@ifdefinable\csname if#1\endcsname{%
-    \expandafter\let\csname if#1\endcsname\iffalse
-    \expandafter\def\csname #1true\endcsname{%
-      \global\expandafter\let\csname if#1\endcsname\iftrue
+    \expandafter\@ifdefinable\csname if#1\endcsname{%
+        \expandafter\let\csname if#1\endcsname\iffalse
+        \expandafter\def\csname #1true\endcsname{%
+        \global\expandafter\let\csname if#1\endcsname\iftrue
     }%
     \expandafter\def\csname #1false\endcsname{%
-      \global\expandafter\let\csname if#1\endcsname\iffalse
+        \global\expandafter\let\csname if#1\endcsname\iffalse
     }%
 }}
 \makeatother
@@ -106,8 +105,8 @@
     }
 }
 
-\def\resultColor{DeepPink}
-\newcommand{\result}[1]{\textcolor{\resultColor}{#1}}
+\definecolor{resultColor}{HTML}{FF3C99} % #FF3C99 - Example
+\newcommand{\result}[1]{\textcolor{resultColor}{#1}}
 
 % MATH
 \input{header/command/math.tex}
@@ -249,41 +248,7 @@
 
 % TIKZ
 
-\NewDocumentCommand{\ctikz}{O{0.5} m}{
-    \begin{center}
-        \begin{tikzpicture}[scale = #1]
-            #2
-        \end{tikzpicture}
-    \end{center}
-}
-
-\newcommand{\axis}[1]{%Draw coordinate axes
-    \draw[thin, -Stealth] (-0.5,0) -- (#1,0);% node[right] {$x$}; % x-axis
-    \draw[thin, -Stealth] (0,-0.5) -- (0,#1);% node[above] {$y$}; % y-axis
-}
-
-\newcommand{\drawGrid}[3]{
-    \foreach \n in {0,...,#1}
-        \draw[line width = #3] (\n,0) -- (\n,#2);
-    \foreach \n in {0,...,#2}
-        \draw[line width = #3] (0,\n) -- (#1,\n);
-}
-
-\def\pointColor{blue}
-\def\crossWidth{0.25mm}
-\def\crossSize{0.25}
-
-\NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{
-    \node[shift={#5}, color = #4] at (#2 - 0.5,#3 - 0.5) {#1};
-    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2 - \crossSize,#3) -- (#2 + \crossSize,#3);
-    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2,#3 -\crossSize) -- (#2,#3 + \crossSize);
-}
-
-\NewDocumentCommand{\drawTick}{m O{} O{gradeColor}}{
-    \draw[line width = 0.75mm, #3] (#1, 0.08) -- (#1, -0.08);
-    \draw[line width = 0.75mm, #3] (#1 - 0.08, 0) -- (#1 + 0.08, 0);
-    \node[#3] at (#1, -0.3) {#2};
-}
+\include{header/command/tikz.tex}
 
 % Tabular
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
@@ -445,7 +410,7 @@
 }
 
 \NewDocumentCommand{\answerSec}{m O{Réponse} O{}}{\vspace{0.25cm}%
-    #2 : \ifempty{#3}{\quad \dottedLines{#1}}{\color{\resultColor}#3}
+    #2 : \ifempty{#3}{\quad \dottedLines{#1}}{\color{resultColor}#3}
     % \ifNotNull{#3}{#2 : #3}{%
     %     #2 :%
     %     \quad \dottedLines{#1}%
@@ -607,14 +572,14 @@
     \setTitle{TP : #1}
     \thispagestyle{assignment}
     \setboolean{showSubID}{true}
-    % \emptyBackground
+    \emptyBackground
 }
 
 \newcommand{\evaluation}[1]{
     \setTitle{Evaluation - #1}
     \thispagestyle{assignment}
     \setboolean{showSubID}{true}
-    % \emptyBackground
+    \emptyBackground
 }
 
 \newcommand{\interrogation}[1]{
@@ -631,4 +596,11 @@
 
 \newcommand{\remaininglines}{
     \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
+}
+
+\newcommand{\forPrint}{
+    \setboolean{newPageOnSlide}{true}
+    \setboolean{answer}{false}
+    \setboolean{showRef}{false}
+    \emptyBackground
 }

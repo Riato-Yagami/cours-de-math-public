@@ -100,6 +100,12 @@
     (p.\directlua{tex.print((tonumber("#1") or 0) + 3)})}%
 }
 
+\NewDocumentCommand{\sesa}{m m O{}}{%
+    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=cm#1_#2&page_gauche=#3}{%
+    Sésamath #1e #2 \ifNotNull{#3}{(p.#3)}
+    }
+}
+
 % Attendus de fin d'année
 \NewDocumentCommand{\afa}{m O{}}{
     \ifthenelse{\equal{#1}{CM2}}{
@@ -137,5 +143,11 @@
     }%
 }
 
-\defIconLink{Geogebra}{Blue}{geogebra/logo}{https://www.geogebra.org/classic}
+\definecolor{calc}{HTML}{00A500} % #00A500
+\defIconLink{Calc}{calc}{calc/logo}{https://fr.libreoffice.org/discover/calc/}
+
+\definecolor{geogebra}{HTML}{9693F7} % #9693F7
+\defIconLink{Geogebra}{geogebra}{geogebra/logo}{https://www.geogebra.org/classic}
+
+\definecolor{scratch}{HTML}{FFAB19} % #FFAB19
 \defIconLink{Scratch}{Orange}{scratch/logo}{https://scratch.mit.edu/projects/editor/}

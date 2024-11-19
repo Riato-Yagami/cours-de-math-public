@@ -3,10 +3,11 @@
 \newsec{sec}{thm}{Théorème}
 \newsec{sec}{scnSUB}{Séance}
 
-\newsec{sub}{cor}{Corollaire} % NavyBlue
-\newsec{sub}{lem}{Lemme} % NavyBlue
-\newsec{sub}{ctr}{Contraposée} % NavyBlue
-\newsec{sub}{rmdr}{Rappel} % Thistle
+\newsec{sub}{cor}{Corollaire}
+\newsec{sub}{lem}{Lemme}
+\newsec{sub}{ctr}{Contraposée}
+\newsec{sub}{rcp}{Réciproque}
+\newsec{sub}{rmdr}{Rappel}
 \newsec{sub}{mthd}{Méthode}
 \newsec{sub}{vc}{Vocabulaire}
 \newsec{sub}{nt}{Notation}
@@ -15,12 +16,12 @@
 \newsec{sub}{objSUB}{Objectifs}
 
 \def\explColor{gray}
-\newsec{subsub}{rmk}{Remarque} % Thistle
+\newsec{subsub}{rmk}{Remarque}
 \newsec{subsub}{expl}{Exemple}
-\newsec{subsub}{app}{Application} %RedViolet
+\newsec{subsub}{app}{Application}
 \newsec{subsub}{exo}{Exercice}
 \newsec{subsub}{corr}{Correction}
-\newsec{subsub}{act}{Activité} % BurntOrange
+\newsec{subsub}{act}{Activité}
 \newsec{subsub}{dm}{Devoir maison}
 
 \newsec{subsub}{nullsubsec}{}
@@ -41,14 +42,6 @@
         }[#3]
     }{
     }
-}
-
-\NewDocumentCommand{\obj}{m O{}}{
-    \begin{objBox}
-        \objSUB{#2}{%
-        \begin{enumerate}#1\end{enumerate}%
-        }
-    \end{objBox}
 }
 
 \NewDocumentCommand{\scn}{m O{}}{

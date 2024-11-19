@@ -106,3 +106,11 @@
 \newcommand{\avspace}[1]{\vspace*{#1}}
 
 \newcommand{\bshrink}{}
+
+\NewDocumentCommand{\obj}{m O{}}{
+    \begin{objBox}
+        \objSUB{#2}{%
+        \begin{enumerate}#1\end{enumerate}%
+        }
+    \end{objBox}
+}

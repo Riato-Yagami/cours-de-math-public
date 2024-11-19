@@ -1,0 +1,135 @@
+% VARIABLES %%%
+\setSeq{5}{Nombres - Decimaux}
+\setGrade{6e}
+
+\def\imgPath{enseignement/6e/nombres/decimaux/}
+
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Nombres1.pdf}{Yvan Monka}}
+
+% https://www.maths-et-tiques.fr/telech/19Nombres2.pdf
+
+\obj{
+    \item Utiliser une fraction et en donner progressivement le statut de nombre.
+    \item Utiliser et représenter les nombres décimaux jusqu'à trois décimales.
+    \item Ajouter, soustraire et multiplier des nombres décimaux.
+    \item Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement.
+}
+
+\scn{Découvrir les fractions décimales}
+
+\bsubsec{Nombres décimaux}
+
+\slide{exo}{
+    \act{}{
+        \multiColEnumerate{1}{
+            \item $\pow{10}{2} = \bawsr{\num{\powTenPositive{2}}}$
+            \item $\pow{10}{3} = \bawsr{\num{\powTenPositive{3}}}$
+            \item $\pow{10}{6} = \bawsr{\num{\powTenPositive{6}}}$
+            \item $\powBrace{10}{15} = \bawsr{\num{\powTenPositive{15}}}$
+            \item $\powBrace{10}{100} = \bawsr{\powTenBrace{100}}$
+        }
+    }
+}
+
+\slide{cr}{
+    \ssubsec
+
+    \vc{}{
+        Une \key{puissance de 10} est le résultat d'un produit dont tous les facteurs sont $10$.
+    }
+
+    \expl{}{
+        \Tableau[%
+            DoubleEntree,
+            Stretch=1.5,
+            Couleur=gradeColor!15,
+            LegendesH={$100$,$2$,$\num{1001}$,$\num{100000}$,$\num{200}$,$\num{10}$},
+            LegendesV={Puissance de 10 ?},
+            Largeur=2cm
+        ]{\bawsr{Oui},\bawsr{Non},\bawsr{Non},\bawsr{Oui},\bawsr{Non},\bawsr{Oui}}
+    }
+}
+
+\slide{cr}{
+    \pr{}{
+        Pour $n$ un nombre entier, on a :
+        \begin{align*}
+            \powBrace{10}{n} = \bawsr{\powTenBrace{n}}
+        \end{align*}
+    }
+
+    \expl{}{
+        \multiColEnumerate{2}{
+            \item $\pow{10}{3} = \powTenPositive{3}$
+            \item $\pow{10}{6} = \powTenPositive{6}$
+        }
+    }
+}
+
+\slide{cr}{
+    \df{}{
+        On appelle \key{fraction décimale} une fraction dont le \key{dénominateur est une puissance de $10$}.
+    }
+
+    \expl{}{
+        \Tableau[%
+            DoubleEntree,
+            Stretch=1.5,
+            Couleur=gradeColor!15,
+            LegendesH={$\frac{1}{10}$,$\frac{1}{2}$,$\frac{5}{10}$,$\frac{1}{\num{1000}}$,$\frac{1}{\num{30000}}$,$\frac{546985}{\num{10000000}}$},
+            LegendesV={Fraction décimale ?},
+            Largeur=2cm
+        ]{\bawsr{Oui},\bawsr{Oui},\bawsr{Non},\bawsr{Oui},\bawsr{Non},\bawsr{Oui}}
+    }
+}
+
+\slide{exo}{
+    \act{}{
+        Ecrire les nombres suivants sous forme de fractions décimales.
+        \multiColEnumerate{2}{
+            \item $\num{3.2} = \bawsr{\frac{32}{10}}$
+            \item $\num{10.2} = \bawsr{\frac{102}{10}}$
+            \item $\num{0.03} = \bawsr{\frac{3}{100}}$
+            \item $\num{0.0001} = \bawsr{\frac{1}{1000}}$
+            \item $6 \div 10 \div 10 = \bawsr{\frac{6}{100}}$
+            \item $32 \div 10 \div 10 \div 10 \div 10 = \bawsr{\frac{32}{10000}}$
+        }
+    }
+}
+
+\slide{cr}{
+    \df{}{
+        On appelle \key{nombre décimal}, un nombre pouvant s'écrire sous forme de fraction décimale.
+    }
+
+    \expl{}{
+        \Tableau[%
+            DoubleEntree,
+            Stretch=1.5,
+            Couleur=gradeColor!15,
+            LegendesH={$\num{0.6}$,$\num{13.2}$,$\frac{1}{10}$,$\frac{1}{2}$,$60$,$\frac{1}{3}$,$\frac{30}{3}$,$\pi$,$0$},
+            LegendesV={Nombre décimal ?},
+            Largeur=2cm
+        ]{\bawsr{Oui},\bawsr{Oui},\bawsr{Oui},\bawsr{Oui},\bawsr{Oui},\bawsr{Non},\bawsr{Oui},\bawsr{Non},\bawsr{Oui}}
+    }
+}
+
+\slide{cr}{
+    \pr{}{Pour $n$ un nombre entier, on a :
+    \begin{align*}
+        1 \repeatBrace{\div 10}{n}[quotients]
+        = \frac{1}{\powTenBrace{n}}
+        = \underbrace{0, 0 ... 0}_{n \textrm{ zéros}} 1
+    \end{align*}
+    }
+
+    \expl{}{
+        \multiColEnumerate{1}{
+            \item $1 \div 10 \div 10 = \frac{1}{\bawsr{100}} = \bawsr{\num{0.01}}$
+            \item $\bawsr{1 \div 10 \div 10 \div 10 \div 10} = \frac{1}{10000} = \bawsr{\num{0.0001}}$
+            \item $1 \bawsr{\div 10 \div 10 \div 10} = \frac{1}{\bawsr{1000}} = \bawsr{\num{0.001}}$
+        }
+    }
+}
+
+\scn{Décomposer un nombre décimal en fractions décimales}

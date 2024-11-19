@@ -1,8 +1,8 @@
 % VARIABLES %%%
-\setSeq{4}{Nombres}
+\setSeq{4}{Nombres - Entiers}
 \setGrade{6e}
 
-\def\imgPath{enseignement/6e/nombres/}
+\def\imgPath{enseignement/6e/nombres/entiers/}
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Nombres1.pdf}{Yvan Monka}}
 
@@ -11,18 +11,13 @@
 % \setboolean{newPageOnSlide}{true}
 % \setboolean{answer}{false}
 % \setboolean{debugMode}{true}
-% Cercle https://www.maths-et-tiques.fr/telech/19Cercle.pdf
 %%
 
 \obj{
     \item Decomposer un nombre dans plusieurs bases.
     \item Conversion de durée.
     \item Utiliser et représenter les grands nombres entiers (en chiffres et en lettres).
-    \item Utiliser une fraction et en donner progressivement le statut de nombre.
-    \item Utiliser et représenter les nombres décimaux jusqu'à trois décimales.
-    \item Ajouter, soustraire et multiplier des nombres décimaux.
     \item Utiliser la division euclidienne.
-    \item Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement.
     \item Organiser un calcul en une seule ligne, utilisant si nécessaire des parenthèses.
     \item Savoir ce qu'est un ordre de grandeur et savoir l'utiliser pour prévoir un résultat.
 }
@@ -280,6 +275,7 @@
 \bsubsec{Nombres entiers}
 
 \slide{cr}{
+    \ssec\ssubsec
     \vc{}{
         Le \key{système décimal},
         ou de \key{base $10$}.
@@ -332,6 +328,20 @@
     }
 }
 
+\scn{Manipuler des nombres entiers dans le système décimal}
+
+\slide{qf}{
+    Donner le chiffres des :
+    \multiColEnumerate{2}{
+        \item milliers de $\num{56165453}$
+        \item milliards de $\num{546160006546521}$
+        \item dizaines de milliers de $\num{346805235}$
+        \item centaines de milliards de $\num{340045235}$
+        \item centaines de $\num{65465,654654}$
+        \item dizaines de millions de $\num{211010100,001}$
+    }
+}
+
 \slide{exo}{
     \exo{Nombres mystères}{
         \begin{enumerate}
@@ -360,13 +370,109 @@
     \end{enumerate}
 }
 
-\bsubsec{Nombres décimaux}
+\scn{Formaliser la notion de la division euclidienne}
 
-\bsec{Division euclidienne}
-% \slide{exo}{\small
-%     \exo{Justifiez, en détaillant vos calculs, le nombre de cubes présents dans chacune des figures.}{\calculator
-%         \RepresenterEntier[Base=60,Echelle=\scale]{223523}
-%     }
-% }
-% \Babylone{105}
+\slide{qf}{Compléter les divisions suivantes
+    \multiColEnumerate{2}{
+        \item \longDivision{155}{5}
+        \item \longDivision{700}{49}
+    }
+}
+
+\bsubsec{Division euclidienne}
+
+\slide{exo}{\bshrink
+    \act{}{%
+    Le roi de Divisia possède $27$ pièces d'or et souhaite les partager équitablement entre $4$ chevaliers.
+    Les pièces restantes seront données à son écuyer.
+    
+    \begin{enumerate}
+        \item Combien de pièces chaque chevalier recevra-t-il ?
+        \item Combien de pièces resteront pour l'écuyer ?
+        \item Supposons maintenant que le roi possède $100$ pièces et qu'il les partage entre $6$ chevaliers :
+        \begin{enumerate}
+            \item Combien de pièces chaque chevalier recevra-t-il ?
+            \item Combien de pièces resteront pour l'écuyer ?
+        \end{enumerate}\saveenumi
+    \end{enumerate}
+    }
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[act]
+        \item Toujours avec $100$ pièces, existe-t-il un nombre de chevaliers tel que :
+        \begin{enumerate}
+            \item l'écuyer ne reçoive aucune pièce ?
+            \item l'écuyer reçoive plus de pièces qu'un chevalier ?
+            \item l'écuyer reçoive exactement autant de pièces qu'un chevalier ?
+        \end{enumerate}
+    \end{enumerate}
+}
+
+\slide{cr}{\bsmall
+    \ssubsec
+
+    \df{}{
+        Pour deux entier $a$ et $b$,
+        on appelle \key{division euclidienne}
+        du \textcolor{Green}{\key{dividende} $a$} par le \textcolor{Red}{\key{diviseur} $b$}
+        l'expression :
+        \begin{align*}
+            \textcolor{Green}{a}
+            = \textcolor{Red}{b}
+            \times \textcolor{Blue}{q}
+            + \textcolor{Violet}{r}
+        \end{align*}
+        Où le \textcolor{Blue}{\key{quotients} $q$} et \textcolor{Violet}{\key{reste} $r$} sont deux entiers avec $r < b$.
+    }
+
+    \expl{}{
+        \multiColEnumerate{3}{
+            \item $100 = 6 \times \bawsr{16} + \bawsr{4}$
+            \item $246 = 3 \times \bawsr{82} + \bawsr{0}$
+            \item $360 = 23 \times \bawsr{15} + \bawsr{15}$
+        }
+    }
+}
+
+\slide{cr}{\bsmall
+    \df{}{
+        Pour $a$ et $b$ deux entiers,
+        on dit que $b$ \key{divise} $a$ si le reste de la division euclidienne de $a$ par $b$ est $0$.
+    }
+
+    \pr{}{
+        \Sialors{$b$ \key{divise} $a$}{alors $a$ est un \key{multiple} de $b$}.
+    }
+
+    \begin{center}
+        \expl{}{
+            \Tableau[%
+                DoubleEntree,
+                Stretch=1.5,
+                Couleur=gradeColor!15,
+                LegendesH={\qquad$4$\qquad,\qquad$6$\qquad,\qquad$12$\qquad,\qquad$31$\qquad},
+                LegendesV={Divise 62 ?, Multiple de 4 ?},
+                Largeur=2cm
+            ]{
+                \bawsr{Oui},\bawsr{Non},\bawsr{Oui},\bawsr{Oui},
+                \bawsr{Oui},\bawsr{Non},\bawsr{Oui},\bawsr{Non}
+            }
+        }
+    \end{center}
+}
+
+\bookSlide{21p45,23p45,25p45}[7cm][2]
+
+\bsec{Enchainement d'opérations}
+
+\slide{cr}{
+    \rl{}{
+        Les calculs se font dans l'ordre des priorités suivant:%
+        \begin{enumerate}
+            \item La multiplication et la division
+            \item L'addition et la soustraction
+        \end{enumerate}
+    }
+}
 

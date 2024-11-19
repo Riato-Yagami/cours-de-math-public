@@ -1,6 +1,10 @@
 %%%
 \setGrade{6e}
 \evaluation{2}
+
+\setboolean{answer}{false}
+
+\def\cwr{\href{https://college-willy-ronis.fr/maths/wp-content/uploads/2020/11/Chap-1-exercices-corriges-6eme.pdf}{College Willy Ronis}}
 %%%
 % \def\imgPath{enseignement/6e/}
 
@@ -18,8 +22,6 @@
 \seqEvaluation{4}{Nombres}{
     Utiliser et représenter les grands nombres entiers.
     /3,
-    Utiliser et représenter les nombres décimaux jusqu'à trois décimales.
-    /4,
     Utiliser la division euclidienne.
     / 2,
     Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement.
@@ -34,3 +36,56 @@
     Rédiger des phrases réponses
     /2
 }
+
+\newpage
+\def\length{10}
+\def\crossWidth{0.3mm}
+\def\crossSize{0.15}
+\exo{Triplet de cercles}{
+    \begin{enumerate}
+        \item Trace la demi droite $[AC)$.
+        \item Place $B$ sur la demi-droite $[AC)$ tel que $AB = \Lg{\length}$.
+        \item Marque le point $O$, milieu du segment $[AB]$.
+        \item Trace le cercle de centre $O$ et de rayon $\Lg{\directlua{tex.print(math.floor(\length / 2))}}$.
+        \item Trace les cercles de diamètres $[AO]$ et $[OB]$.
+    \end{enumerate}
+    \ctikz[1]{
+        \draw[gradeColor!40] (-7,-3) rectangle (10,12);
+        \ifthenelse{\boolean{answer}}{%
+            \draw [thick,domain=-3.84:9] plot(\x,{(--7.6992--0.52*\x)/1.76});
+            \draw [thick] (0.9550885402945024,4.6567307050870115) circle (5cm);
+            \draw [thick] (-1.4424557298527487,3.948365352543506) circle (2.5cm);
+            \draw [thick] (3.3526328104417535,5.365096057630517) circle (2.5cm);
+            \drawPoint{B}{5.75}{6.07}
+            \drawPoint{D}{0.96}{4.66}
+            \drawPoint{E}{3.35}{5.37}
+            \drawPoint{F}{-1.44}{3.95}
+        }%
+        \drawPoint{A}{-3.84}{3.24}
+        \drawPoint{C}{-2.08}{3.76}
+    }
+}[\sesa{6}{2021}[85]]
+
+\exo{}{Écrire en chiffres :
+    \multiColEnumerate{1}{
+        \item Neuf-mille-quatre-vingt-quinze. \bawsr{\num{9095}}
+        \item $8\times1000+2\times10+1\times10000+7$ \bawsr{\num{10827}}
+        \item 15 milliers et 1 234 unités. \bawsr{\num{16234}}
+        \item Quatre-millions-sept-cent-quatre-vingts. \bawsr{\num{4 000 780}}
+        \item 2 millions d'unités et 2 soixantaines. \bawsr{\num{2 000 120}}
+    }
+}[\cwr]
+
+\exo{}{
+    \begin{enumerate}
+        \item Le 17 juin 2345 sera une date très particulière car elle s'écrire : 17 06 2345, c'est à dire avec huit chiffres tous
+        différents. Quelle a été la dernière date à posséder cette propriété, c'est à dire à s'écrire sous la forme d'un nombre à
+        huit chiffres tous différents ?
+    \end{enumerate}
+}[\cwr]
+
+\answerFill[Réponses][
+    \begin{enumerate}
+        \item le 26 août 1987 qui donne : 26 07 1987
+    \end{enumerate}
+]

@@ -27,3 +27,78 @@
     Rédiger des phrases réponses
     /2
 }
+
+\exo{Reconnaître des symétries}{
+    \def\crossWidth{0.3mm}\def\crossSize{0.15}\def\nodeShift{0.25}
+    \ctikz[1.25]{
+        \draw[gray!40] (0,0) grid (6,6);
+        % Nested loops to generate points with names
+        \newcounter{i}\setcounter{i}{1}%
+        \foreach \x in {1,...,5} {%
+            \foreach \y in {1,...,5} {%
+                % Generate names programmatically
+                \pgfmathtruncatemacro{\charCode}{64+\thei} % Convert x to letter (A=1, B=2, etc.)
+                \edef\pointName{\char\charCode} % Get the letter name
+                \drawPoint{\pointName}{\x}{\y}%
+                \stepcounter{i}%
+            }
+        }
+    }
+    \begin{enumerate}
+        \item L'image du segment $[HR]$ par la symétrie de centre $N$ est : \bawsr{le segment $[JT]$}.
+        \item Le triangle $QUV$ est l'image de du triangle $SON$ par \bawsr{la symetries de centre $R$}.
+        \item Le point \bawsr{$D$} est l'image de point P par la symetrie d'axe $(AG)$.
+        \item L'image du quadrilatère $NXQL$ par la symétrie de centre $M$ est : \bawsr{le quadrilatère $LBIN$}.
+    \end{enumerate}
+}[\sesa{5}{2024}[89]]
+
+\exo{Utiliser les propriétés de la symétrie centrale}{
+    On considère quatre points $P$, $O$, $K$ et $E$ tels que :  
+    \begin{align*}
+        KE = \Lg{10.1}, \quad PO = \Lg{3.6}, \quad EP = \Lg{2.6}, \quad PK = \Lg{5}.
+    \end{align*}
+    Les points $A$,$S$ et $H$ sont respectivement les images des points $P$,$E$ et $K$ par la symétrie centrale de centre $O$.
+    Calculez le périmètre du triangle $ASH$.
+}
+
+% \begin{Geometrie}[TypeTrace="Schema"]
+%     pair A,B,C;
+%     A=u*(1,1);
+%     B-A=u*(4,1);
+%     C=rotation(A,B,-70);
+%     trace polygone(A,B,C);
+% \end{Geometrie}
+
+
+\ctikz[0.75]{
+    \draw[gray!40] (-1,-10) rectangle (18,2);
+    \draw [penciline,thick] (0.48,-7.04)-- (7.4,-8.06);
+    \draw [penciline,thick] (7.4,-8.06)-- (5.18,-4.68);
+    \draw [penciline,thick] (5.18,-4.68)-- (0.48,-7.04);
+    \draw [penciline,thick] (11.06,-3.16)-- (15.683121999999992,1.1780524000000023);
+    \draw [penciline,thick] (15.683121999999992,1.1780524000000023)-- (9.047820799999997,0.5338484000000019);
+    \draw [penciline,thick] (9.047820799999997,0.5338484000000019)-- (11.06,-3.16);
+    \draw (6.825316999999991,-6.262503800000003) node[anchor=north west] {\Lg{2.6}};
+    \draw (3.2821949999999944,-8.098485200000004) node[anchor=north west] {\Lg{10.1}};
+    \draw (2.090417599999996,-5.038516200000002) node[anchor=north west] {\Lg{5}};
+    \drawPoint{P}{5.18}{-4.68}
+    \drawPoint{O}{8.16}{-4.22}
+    \drawPoint{K}{0.48}{-7.04}
+    \drawPoint{E}{7.40}{-8.06}
+    \drawPoint{A}{11.06}{-3.16}
+    \drawPoint{S}{9.05}{0.53}
+    \drawPoint{H}{15.68}{1.18}
+}
+
+
+\answerFill[Réponse][
+    \begin{itemize}
+        \item On a : $PE + KE + KP = \Lg{2,6} + \Lg{10,1} + \Lg{5} = \Lg{17.7}$.
+        \item Alors, le périmètre du triangle $PEK$ est de \Lg{17.7}.
+        \item On sait que les points $A$, $S$ et $H$ sont respectivement les images des points $P$, $E$ et $K$ par la symétrie centrale de centre $O$.
+        \item Alors, le triangle $ASH$ est l'image du triangle $PEK$ par cette symétrie.
+        \item Or, la symétrie centrale conserve les longueurs.
+        \item Alors, le périmètre du triangle $ASH$ est égal à celui du triangle $PEK$.
+        \item Donc le périmètre du triangle $ASH$ est de \Lg{17.7}.
+    \end{itemize}
+]

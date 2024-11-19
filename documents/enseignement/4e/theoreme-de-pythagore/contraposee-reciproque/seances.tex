@@ -1,0 +1,163 @@
+% VARIABLES %%%
+\setSeq{4}{Théorème de Pythagore - Contraposée et réciproque}
+\setGrade{4e}
+\def\imgPath{enseignement/4e/theoreme-de-pythagore/contraposee-et-reciproque/}
+
+% \forPrint
+% \setboolean{answer}{true}
+%%
+
+\obj{
+    \item Comprendre les notions de réciproque et de contraposée.
+    \item Utiliser la contraposée du Théorème de Pythagore pour montrer qu'un triangle n'est pas rectangle.
+    \item Utiliser la réciproque du Théorème de Pythagore pour montrer qu'un triangle est rectangle.
+    \item Déterminer si un triangle est rectangle ou non.
+}
+
+\obj{
+    \item Reconnaitre sur un graphique une situation de proportionnalité ou de non proportionnalité.
+    \item Calcule d'une quatrième proportionnelle.
+    \item Utiliser une formule liant deux grandeurs dans une situation de proportionnalité.
+    \item Résoudre des problèmes en utilisant la proportionnalité dans le cadre de la géométrie.
+}[Flash]
+
+\scn{Découvrir des notions de logiques; réciproque et contraposée}
+
+\slide{qf}{\bvspace{-0.35cm}
+    \begin{enumerate}
+        \item Les tableaux suivants représentent-ils des situations de proportionnalité ?
+        Utilisez une calculatrice pour vérifier vos hypothèses.
+        \multiColEnumerate{1}{
+            \item \Propor[Simple]{1/2,6/12,3/5,10/20}
+            \item \Propor[Simple]{2/3,6/9,30/45}
+        }
+        \item Essayez ensuite de justifier vos réponses sans calculatrice en expliquant votre raisonnement.
+    \end{enumerate}
+}
+
+\bsec{Logique}
+\bsubsec{Réciproque}
+
+\slide{exo}{\bshrink
+    \act{}{
+        \begin{enumerate}
+            \item « \Sialors{c'est un triangle}{il a trois côtés} » est une \key{proposition}.  
+            Est-elle vraie ? Justifie ta réponse.  
+            
+            \item « \Sialors{c'est un triangle}{il a quatre côtés} » est une autre proposition.  
+            Est-elle vraie ? Justifie ta réponse.  
+            
+            \item La première proposition est composée de deux parties :  
+            \multiColItemize{1}{
+                \item l'\key{antécédent} : « c'est un triangle »,
+                \item le \key{conséquent} : « il a trois côtés ».
+            }  
+            On appelle \key{réciproque} d'une proposition la phrase qu'on obtient en inversant l'antécédent et le conséquent.  
+            Écris la réciproque de la première proposition.
+            Est-elle vraie ? \saveenumi
+        \end{enumerate}
+    }[\href{http://www.mathsaharry.com/aw/52.pdf}{Math à Harry}]
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item Les propositions suivantes sont-elles vraies ?
+        Écris leurs réciproques et détermine si elles sont vraies.
+        \multiColEnumerate{1}{
+            \item \Sialors{c'est un carré}{c'est un rectangle avec tous ses côtés égaux}
+            \item \Sialors{il pond des œufs}{c'est un oiseau}
+            \item \Sialors{c'est un rectangle}{c'est un quadrilatère dont tous les côtés sont parallèles} 
+            \item \Sialors{c'est un rectangle}{c'est un carré}
+            \item \Sialors{$AB = BC$}{$B$ est le milieu de $[AC]$}
+        } 
+    \end{enumerate}
+}
+
+\slide{cr}{\bsmall
+    \ssec
+    \ssubsec
+
+    \df{}{
+        On appelle \key{réciproque}
+        d'une proposition :
+        {« \Sialors{$A$}{$B$} »}
+        ; la proposition :
+        {« \Sialors{$B$}{$A$} »}.
+    }
+    
+    \rmk{}{
+        Une proposition peut être vraie sans que sa réciproque le soit, et inversement.
+    }
+
+    \expl{}{
+        La proposition « \Sialors{$[AB]$ et $[CD]$ ne se coupent pas}{$[AB]$ et $[CD]$ sont parallèles}»
+        est \bawsr{fausse}.\\
+        Sa réciproque: \bawsr{« \Sialors{$[AB]$ et $[CD]$ sont parallèle}{$[AB]$ et $[CD]$ ne se coupent pas}»}
+        est \bawsr{vrai}.
+    }
+}
+
+\bsubsec{Contraposée}
+
+\slide{exo}{
+    \ssubsec
+    \act{}{
+        On appelle \key{contraposée} d'une proposition
+        {« \Sialors{$A$}{$B$} »}
+        la proposition obtenue en écrivant :  
+        {« \Sialors{non $B$}{non $A$} »}.
+        \begin{enumerate}
+            \item La contraposée de la proposition : «\Sialors{c'est un triangle}{il a trois côtés}».
+            est donc «\Sialors{il n'a pas trois cotés}{ce n'est pas un triangle}» Est-elle vraie ? \saveenumi
+        \end{enumerate}  
+    }
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item Les propositions suivantes sont-elles vraies ? Écris leurs contraposées et dis si elles sont vraies :  
+        \multiColEnumerate{1}{ 
+            \item \Sialors{$x=7$}{$x$ est un nombre premier}
+            \item \Sialors{c'est un nombre positif}{il est strictement inférieur à zéro}
+            \item \Sialors{il est à Issy-les-Moulineaux}{il n'est pas en Espagne}  
+            \item \Sialors{$AB=BC$}{$B$ est le milieu de $[AC]$} 
+        }
+        \item Que remarques-tu ?
+    \end{enumerate}
+}
+
+\slide{cr}{
+    \df{}{
+        On appelle \key{contraposée}
+        d'une proposition ;
+        {« \Sialors{$A$}{$B$} »} ;
+        la proposition : 
+        {« \Sialors{non $B$}{non $A$} »}.  
+    }
+
+    \rmk{}{
+        Une proposition et sa contraposée sont toujours soit toutes les deux vraies,
+        soit toutes les deux fausses.
+    }
+
+    \expl{}{
+        La proposition « \Sialors{c'est un triangle est équilatéral}{ses trois côtés sont égaux} »  
+        est \bawsr{vraie}.  
+        Sa contraposée: \bawsr{« \Sialors{ses trois côtés ne sont pas égaux}{ce n'est pas un triangle équilatéral} »},
+        est \bawsr{également vraie}.
+    }
+}
+
+\bsec{Contraposée du Théorème de Pythagore}
+
+\slide{cr}{
+    \ssec
+    \ctr{du théorème de Pythagore}{}
+}
+
+\bsec{Réciproque du Théorème de Pythagore}
+
+\slide{cr}{
+    \ssec
+    \rcp{du théorème de Pythagore}{}
+}

@@ -1,18 +1,27 @@
 % FANCYHDR
 
+\def\background{
+    \fancyhead[L]{
+        \begin{tikzpicture}[overlay]
+            \fill[gradeColor!65] (-3cm,-\paperheight) rectangle (-1cm,2cm);
+        \end{tikzpicture}%
+    }
+    \fancyhead[R]{
+        \begin{tikzpicture}[overlay]
+            \node[anchor=north east, font=\fontsize{40}{36}\selectfont] at (1.81cm,0.1cm + 0.55\headheight)
+            {\hypersetup{urlcolor=gradeColor!65}\link{\grade}};
+        \end{tikzpicture}%
+    }
+}
+
+\def\emptyBackground{
+    \fancyhead[L]{}
+    \fancyhead[R]{}
+}
+
 \setlength{\headheight}{18pt}
 \fancyhead[C]{\normalsize \title}
-\fancyhead[L]{
-    \begin{tikzpicture}[overlay]
-        \fill[gradeColor!65] (-3cm,-\paperheight) rectangle (-1cm,2cm);
-    \end{tikzpicture}%
-}
-\fancyhead[R]{
-    \begin{tikzpicture}[overlay]
-        \node[anchor=north east, font=\fontsize{40}{36}\selectfont] at (1.81cm,0.1cm + 0.55\headheight)
-        {\hypersetup{urlcolor=gradeColor!65}\link{\grade}};
-    \end{tikzpicture}%
-}
+\background
 \fancyfoot[L]{\authors}
 \fancyfoot[C]{$\textbf{Page}\;\mathbf{\thepage / {\hypersetup{linkcolor=black}\pageref{LastPage}}}$}
 \fancyfoot[R]{\date}

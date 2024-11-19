@@ -1,0 +1,65 @@
+% VARIABLES %%%
+% \def\authors{\jules \ et \href{http://www.cellulegeometrie.eu/documents/pub/pub_14.pdf}{la Haute École en Hainaut}}
+\setGrade{5e}
+\def\assignmentNameWidth{6cm}
+\tp{Scratch - Triangles}
+\def\imgPath{enseignement/6e/geometrie-plane/frises/}
+%%
+
+\input{header/special/scratch.tex}
+
+\hint{
+    \begin{itemize}
+        \item Bien lire les indications.
+        \item Répondre aux questions sur son cahier d'exercices.
+        \item Appeler M. Pesin à la fin de chaque partie.
+        \item Enregistre tes productions avec le nom : "NOM.S-tp-frises-partie-X.ggb"
+    \end{itemize}
+}
+
+\section{Tracer un triangle équilatéral à l'aide de Scratch} 
+
+\begin{enumerate}
+    \item Dessine un triangle équilatéral à main levée.
+    \item Note les propriétés d'un triangle équilatéral.
+    \item Trace un triangle équilatéral à l'aide de ta règle et ton compas.
+    \item Mesure ses angles avec un rapporteur et vérifie si tes mesures confirment les propriétés d'un triangle équilatéral.
+    \item Assemble un script dans \Scratch{} pour que le lutin dessine un triangle équilatéral.
+    \item Assemble un script dans \Scratch{} pour que le lutin dessine un triangle équilatéral. 
+    \hint{\begin{enumerate} 
+        \item Utilise une boucle pour répéter les instructions nécessaires au tracé. 
+        \item Réfléchis attentivement à l'angle de rotation. Imagine que tu es à la place du lutin et que tu suis les instructions de ton programme : comment devrais-tu te déplacer et tourner pour revenir à ta position de départ ? 
+    \end{enumerate}} 
+    
+\end{enumerate}
+
+\section{Frises}
+
+\begin{enumerate}
+    \item Ecrit un programme permettant de dessiner cette frise :
+    \ctikz[0.85]{
+        % Données des triangles
+        \def\side{2} % Longueur du côté du triangle
+        \def\spacing{1} % Espacement entre les triangles
+        % Calcul des coordonnées
+        \foreach \i in {0, 1, 2, 3} {
+            % Position de la base gauche du triangle
+            \pgfmathsetmacro{\xBase}{\i * (\side + \spacing)}
+            \pgfmathsetmacro{\yBase}{0}
+            % Dessin du triangle équilatéral
+            \draw (\xBase, \yBase) -- 
+                ({\xBase + \side}, \yBase) -- 
+                ({\xBase + \side / 2}, {\yBase + \side * sqrt(3) / 2}) -- 
+                cycle;
+        }
+    }
+    \item Et cette frise :
+    \ctikz[0.55]{
+        \draw[] (0,0) grid (5,1);
+    }
+    \item Et ce pavage :
+    \ctikz[0.5]{
+        \draw[] (0,0) grid (5,8);
+    }
+\end{enumerate}
+

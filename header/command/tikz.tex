@@ -1,0 +1,103 @@
+\NewDocumentCommand{\ctikz}{O{0.5} m}{
+    \begin{center}
+        \begin{tikzpicture}[scale = #1]
+            #2
+        \end{tikzpicture}
+    \end{center}
+}
+
+\newcommand{\axis}[1]{%Draw coordinate axes
+    \draw[thin, -Stealth] (-0.5,0) -- (#1,0);% node[right] {$x$}; % x-axis
+    \draw[thin, -Stealth] (0,-0.5) -- (0,#1);% node[above] {$y$}; % y-axis
+}
+
+\newcommand{\drawGrid}[3]{
+    \foreach \n in {0,...,#1}
+        \draw[line width = #3] (\n,0) -- (\n,#2);
+    \foreach \n in {0,...,#2}
+        \draw[line width = #3] (0,\n) -- (#1,\n);
+}
+
+\def\pointColor{blue}
+\def\crossWidth{0.25mm}
+\def\crossSize{0.25}
+\def\nodeShift{0.4}
+\NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{
+    \node[shift={#5}, color = #4] at (#2 - \nodeShift,#3 - \nodeShift) {#1};
+    \draw[line width = \crossWidth, shift={#5}
+    , color = #4] (#2 - \crossSize,#3) -- (#2 + \crossSize,#3);
+    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2,#3 -\crossSize) -- (#2,#3 + \crossSize);
+}
+
+\NewDocumentCommand{\drawTick}{m O{} O{gradeColor}}{
+    \draw[line width = 0.75mm, #3] (#1, 0.08) -- (#1, -0.08);
+    \draw[line width = 0.75mm, #3] (#1 - 0.08, 0) -- (#1 + 0.08, 0);
+    \node[#3] at (#1, -0.3) {#2};
+}
+
+\usetikzlibrary{calc,decorations,patterns,arrows,decorations.pathmorphing}
+
+\pgfdeclaredecoration{penciline}{initial}{
+    \state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+        auto corner on length=1pt,
+    ]{
+        \ifthenelse
+            {\pgfkeysvalueof{/tikz/penciline/jag ratio}=0} {
+            \pgfpathcurveto%
+                {% 1st control point
+                    \pgfpoint
+                        {\pgfdecoratedinputsegmentremainingdistance/2}
+                        {2*rnd*\pgfdecorationsegmentamplitude}
+                }
+                {%% 2nd control point
+                    \pgfpoint
+                    %% Make sure random number is always between origin and target points
+                        {\pgfdecoratedinputsegmentremainingdistance/2}
+                        {2*rnd*\pgfdecorationsegmentamplitude}
+                }
+                {% 2nd point (1st one is implicit)
+                    \pgfpointadd
+                        {\pgfpointdecoratedinputsegmentlast}
+                        {\pgfpoint{0*rand*1pt}{0*rand*1pt}}
+                }          
+            } {
+            \pgfpathcurveto%
+                {% 1st control point
+                    \pgfpoint
+                        {\pgfdecoratedinputsegmentremainingdistance*rnd*1pt}
+                        {\pgfkeysvalueof{/tikz/penciline/jag ratio}*
+                        rand*\pgfdecorationsegmentamplitude}
+                }
+                {%% 2nd control point
+                    \pgfpoint
+                    %% Make sure random number is always between origin and target points
+                        {(.5+0.25*rand)*\pgfdecoratedinputsegmentremainingdistance}
+                        {\pgfkeysvalueof{/tikz/penciline/jag ratio}*
+                        rand*\pgfdecorationsegmentamplitude}
+                }
+                {% 2nd point (1st one is implicit)
+                    \pgfpointadd
+                        {\pgfpointdecoratedinputsegmentlast}
+                        {\pgfpoint{rand*1pt}{rand*1pt}}
+                }
+            }
+    }
+    \state{final}{}
+}
+
+\tikzset{
+    penciline/.code={\pgfqkeys{/tikz/penciline}{#1}},
+    penciline={
+        jag ratio/.initial=4,
+        decoration/.initial = penciline,
+    },
+    penciline/.style = {
+        decorate,
+        %%decoration={\pgfkeysvalueof{/tikz/penciline/decoration}},
+        penciline/.cd,
+        #1,
+        /tikz/.cd,
+    },
+    decorate,
+    decoration={\pgfkeysvalueof{/tikz/penciline/decoration}},
+}
