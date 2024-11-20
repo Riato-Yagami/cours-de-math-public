@@ -34,7 +34,10 @@
 % LUA
 \input{header/command/lua.tex}
 
-% ANSWERS
+% ANSWER
+\input{header/command/answer.tex}
+
+
 \newlength{\parline}
 \newlength{\paroutindent}
 \newlength{\lineheight}
@@ -60,26 +63,12 @@
     \repeat
 }
 
-\newcommand{\awsr}[1]{%
-    \ifthenelse{\boolean{answer}}{
-        \result{#1}
-    }{
-        \countlines{#1}
-        \pgfmathsetcount{\linecount}{\linecount + 1}
-        \noindent\hspace{-9pt}
-        \looptext{
-            \noindent\dotfill
-    
-        }{\the\linecount}
-    }
+\newcommand{\repeated}[2]{% \repeat already defined
+    \foreach \n in {1,...,#1}{#2}
 }
 
-\newcommand{\bawsr}[1]{%
-    \ifthenelse{\boolean{answer}}{%
-        \result{#1}%
-    }{%
-        \dotfill%
-    }%
+\newcommand{\remaininglines}{
+    \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
 }
 
 % \newcommand{\dottedLines}[1]{%
@@ -91,19 +80,6 @@
 %         }{#1}
 %     }
 % }
-
-\newcounter{loopcntr}
-\newcommand{\dottedLines}[1]{%
-    \noindent\hspace{-9pt}%
-    \ifthenelse{\equal{#1}{0}}{}{%
-        \setcounter{loopcntr}{0}%
-        \looptext{%
-        {\ifthenelse{\isodd{\value{loopcntr}}}{\color{gradeColor!55}}{}%
-        \noindent\dotfill}%
-
-        \stepcounter{loopcntr}}{#1}%
-    }
-}
 
 \definecolor{resultColor}{HTML}{FF3C99} % #FF3C99 - Example
 \newcommand{\result}[1]{\textcolor{resultColor}{#1}}
@@ -404,22 +380,6 @@
     \end{enumerate}
 }
 
-\NewDocumentCommand{\answerFill}{O{Réponse} O{}}{%
-    \answerSec{\remaininglines}[#1][#2]%
-    \newpage%
-}
-
-\NewDocumentCommand{\answerSec}{m O{Réponse} O{}}{\vspace{0.25cm}%
-    #2 :%
-    \ifthenelse{\boolean{answer}}
-    {\ifempty{#3}{\quad \dottedLines{#1}}{\color{resultColor}#3}}
-    {\quad \dottedLines{#1}}
-    % \ifNotNull{#3}{#2 : #3}{%
-    %     #2 :%
-    %     \quad \dottedLines{#1}%
-    % }
-}
-
 % Define a new boolean for checking if the section is starred
 \newboolean{section@star}
 
@@ -591,14 +551,6 @@
     \thispagestyle{assignment}
     \setboolean{answer}{false}
     % \emptyBackground
-}
-
-\newcommand{\repeated}[2]{% \repeat already defined
-    \foreach \n in {1,...,#1}{#2}
-}
-
-\newcommand{\remaininglines}{
-    \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
 }
 
 \newcommand{\forPrint}{

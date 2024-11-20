@@ -100,9 +100,9 @@
     (p.\directlua{tex.print((tonumber("#1") or 0) + 3)})}%
 }
 
-\NewDocumentCommand{\sesa}{m m O{}}{%
-    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=cm#1_#2&page_gauche=#3}{%
-    Sésamath #1e #2 \ifNotNull{#3}{(p.#3)}
+\NewDocumentCommand{\sesa}{m m O{} O{}}{%
+    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=cm#1_#2&page_gauche=#4}{%
+    Sésamath #1e #2 \ifNotNull{#4}{(#3 p.#4)}
     }
 }
 

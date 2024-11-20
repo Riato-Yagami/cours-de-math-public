@@ -1,0 +1,68 @@
+\NewDocumentCommand{\answerFill}{O{Réponse} O{}}{%
+    \answerSec{\remaininglines}[#1][#2]%
+    \newpage%
+}
+
+\NewDocumentCommand{\answerSec}{m O{Réponse} O{}}{\vspace{0.25cm}%
+    #2 :%
+    \ifthenelse{\boolean{answer}}
+    {\ifempty{#3}{\quad \dottedLines{#1}}{\color{resultColor}#3}}
+    {\quad \dottedLines{#1}}
+    % \ifNotNull{#3}{#2 : #3}{%
+    %     #2 :%
+    %     \quad \dottedLines{#1}%
+    % }
+}
+
+\newcommand{\bawsr}[1]{%
+    \ifthenelse{\boolean{answer}}{%
+        \result{#1}%
+    }{%
+        \jdot\\
+        % . \jdot
+        % \dottedLines{2}
+    }%
+}
+
+% \newcommand{\jdot}[1]{ \rlap{\makebox[#1]{\dotfill} }}
+
+\newcommand{\jdot}{\leavevmode\leaders\hbox to 0.5em{\hss.\hss}\hfill\kern0pt}
+
+
+% \newcommand{\answerbox[2]{\raisebox{2mm}{%
+%     \fbox{%
+%           \begin{minipage}[t]{#1}%
+%               \hfill\vspace*{#2}%
+%           \end{minipage}
+%          }
+%     }
+% }
+% }
+
+\newcommand{\awsr}[1]{%
+    \ifthenelse{\boolean{answer}}{
+        \result{#1}
+    }{
+        \countlines{#1}
+        \pgfmathsetcount{\linecount}{\linecount + 1}
+        \noindent\hspace{-9pt}
+        \looptext{
+            \noindent\dotfill
+    
+        }{\the\linecount}
+    }
+}
+
+\newcounter{loopcntr}
+\newcommand{\dottedLines}[1]{%
+    \noindent\hspace{-9pt}%
+    \ifthenelse{\equal{#1}{0}}{}{%
+        \setcounter{loopcntr}{0}%
+        \looptext{%
+        {\ifthenelse{\isodd{\value{loopcntr}}}{\color{gradeColor!55}}{}%
+        % \noindent\dotfill
+        \jdot}%
+
+        \stepcounter{loopcntr}}{#1}%
+    }
+}
