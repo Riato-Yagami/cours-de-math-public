@@ -2,6 +2,31 @@
 \setTitle{test}
 %%%%%%%%%%%%%%%
 
+\setboolean{answer}{false}
 \setSeq{2}{TEST SEQ}
 
 \setGrade{6e}
+
+\begin{tikzpicture}[yscale = 0.25, xscale = 1.5]
+    \pgfkeys{/tikz/scale = 5}
+    \draw[gray!40] (0,0) rectangle (10,10);
+    \node at (5,5) {a};
+    % \draw[line width = \crossWidth] (1,1) -- (2,1);
+    \drawPoint{A}{1}{1}
+\end{tikzpicture}
+
+\begin{tikzpicture}[xscale=1.5, yscale=0.25]
+    % Retrieve the transformation matrix entries
+    \pgfgettransformentries{\aa}{\ab}{\ba}{\bb}{\xshift}{\yshift}
+    % Calculate the scales (diagonal entries represent the scale factors)
+    \node at (1, 1) {xscale: \aa, yscale: \bb};
+\end{tikzpicture}
+
+% \begin{tikzpicture}
+%     \pgfkeys{/tikz/scale = 2}
+%     \pgfgettransformentries\aa\ab\ba\bb\xhsift\yshift
+%     \show\aa 
+%     \show\ab
+%     \show\ba
+%     \show\bb
+% \end{tikzpicture}

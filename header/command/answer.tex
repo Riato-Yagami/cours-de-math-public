@@ -14,55 +14,27 @@
     % }
 }
 
-\newcommand{\bawsr}[1]{%
-    \ifthenelse{\boolean{answer}}{%
-        \result{#1}%
-    }{%
-        \jdot\\
-        % . \jdot
-        % \dottedLines{2}
-    }%
-}
-
 % \newcommand{\jdot}[1]{ \rlap{\makebox[#1]{\dotfill} }}
 
 \newcommand{\jdot}{\leavevmode\leaders\hbox to 0.5em{\hss.\hss}\hfill\kern0pt}
 
-
-% \newcommand{\answerbox[2]{\raisebox{2mm}{%
-%     \fbox{%
-%           \begin{minipage}[t]{#1}%
-%               \hfill\vspace*{#2}%
-%           \end{minipage}
-%          }
-%     }
-% }
-% }
-
-\newcommand{\awsr}[1]{%
-    \ifthenelse{\boolean{answer}}{
-        \result{#1}
-    }{
-        \countlines{#1}
-        \pgfmathsetcount{\linecount}{\linecount + 1}
-        \noindent\hspace{-9pt}
-        \looptext{
-            \noindent\dotfill
-    
-        }{\the\linecount}
-    }
+\NewDocumentCommand{\awsr}{O{1} m}{%
+    \ifthenelse{\boolean{answer}}{%
+        \result{#2}%
+    }{%
+        \dottedLines{#1}%
+    }%
 }
 
 \newcounter{loopcntr}
 \newcommand{\dottedLines}[1]{%
-    \noindent\hspace{-9pt}%
     \ifthenelse{\equal{#1}{0}}{}{%
-        \setcounter{loopcntr}{0}%
-        \looptext{%
-        {\ifthenelse{\isodd{\value{loopcntr}}}{\color{gradeColor!55}}{}%
-        % \noindent\dotfill
-        \jdot}%
-
-        \stepcounter{loopcntr}}{#1}%
-    }
+        \setcounter{loopcntr}{1}% % Start the counter at 1
+        \repeated{#1}{%
+            \ifthenelse{\isodd{\value{loopcntr}}}{\color{gradeColor!55}}{}%
+            \jdot%
+            \ifthenelse{\value{loopcntr} < #1}{\\}{}% Add a line break unless it's the last iteration
+            \stepcounter{loopcntr}% Increment the counter
+        }%
+    }%
 }

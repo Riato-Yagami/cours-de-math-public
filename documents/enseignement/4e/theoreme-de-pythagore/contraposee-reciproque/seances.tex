@@ -3,8 +3,10 @@
 \setGrade{4e}
 \def\imgPath{enseignement/4e/theoreme-de-pythagore/contraposee-et-reciproque/}
 
-% \forPrint
+\forPrint
 % \setboolean{answer}{true}
+
+\def\ym{https://www.maths-et-tiques.fr/telech/19Pyth2.pdf}
 %%
 
 \obj{
@@ -21,7 +23,7 @@
     \item Résoudre des problèmes en utilisant la proportionnalité dans le cadre de la géométrie.
 }[Flash]
 
-\scn{Découvrir des notions de logiques; réciproque et contraposée}
+\scn{Découvrir des notions de logiques ; la réciproque}
 
 \slide{qf}{\bvspace{-0.35cm}
     \begin{enumerate}
@@ -41,16 +43,16 @@
 \slide{exo}{\bshrink
     \act{}{
         \begin{enumerate}
-            \item « \Sialors{c'est un triangle}{il a trois côtés} » est une \key{proposition}.  
+            \item « \Sialors{c'est un triangle}{c'est un polygones à trois sommets} » est une \key{proposition}.  
             Est-elle vraie ? Justifie ta réponse.  
             
-            \item « \Sialors{c'est un triangle}{il a quatre côtés} » est une autre proposition.  
+            \item « \Sialors{c'est un triangle}{c'est un polygones à quatre sommets} » est une autre proposition.  
             Est-elle vraie ? Justifie ta réponse.  
             
             \item La première proposition est composée de deux parties :  
             \multiColItemize{1}{
                 \item l'\key{antécédent} : « c'est un triangle »,
-                \item le \key{conséquent} : « il a trois côtés ».
+                \item le \key{conséquent} : « c'est un polygones à trois sommets ».
             }  
             On appelle \key{réciproque} d'une proposition la phrase qu'on obtient en inversant l'antécédent et le conséquent.  
             Écris la réciproque de la première proposition.
@@ -65,8 +67,8 @@
         Écris leurs réciproques et détermine si elles sont vraies.
         \multiColEnumerate{1}{
             \item \Sialors{c'est un carré}{c'est un rectangle avec tous ses côtés égaux}
-            \item \Sialors{il pond des œufs}{c'est un oiseau}
-            \item \Sialors{c'est un rectangle}{c'est un quadrilatère dont tous les côtés sont parallèles} 
+            \item \Sialors{il peut pondre des œufs}{c'est un oiseau}
+            \item \Sialors{c'est un rectangle}{c'est un quadrilatère dont tous les opposés sont parallèles} 
             \item \Sialors{c'est un rectangle}{c'est un carré}
             \item \Sialors{$AB = BC$}{$B$ est le milieu de $[AC]$}
         } 
@@ -91,9 +93,34 @@
 
     \expl{}{
         La proposition « \Sialors{$[AB]$ et $[CD]$ ne se coupent pas}{$[AB]$ et $[CD]$ sont parallèles}»
-        est \bawsr{fausse}.\\
-        Sa réciproque: \bawsr{« \Sialors{$[AB]$ et $[CD]$ sont parallèle}{$[AB]$ et $[CD]$ ne se coupent pas}»}
-        est \bawsr{vrai}.
+        est \awsr{fausse}.\\
+        Sa réciproque: \awsr{« \Sialors{$[AB]$ et $[CD]$ sont parallèle}{$[AB]$ et $[CD]$ ne se coupent pas}»}
+        est \awsr{vrai}.
+    }
+}
+
+\scn{Découvrir des notions de logiques ; la contraposée}
+
+\slide{qf}{\calculator \\ Completer les tableaux suivants :
+    \multiColEnumerate{3}{
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{6/5,\awsr{\np{2.4}}/2}
+        \end{center}
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{\np{237.6}/\awsr{66},\np{46.8}/13}
+        \end{center}
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{\awsr{12}/18,-3/-4.5}
+        \end{center}
     }
 }
 
@@ -142,22 +169,140 @@
 
     \expl{}{
         La proposition « \Sialors{c'est un triangle est équilatéral}{ses trois côtés sont égaux} »  
-        est \bawsr{vraie}.  
-        Sa contraposée: \bawsr{« \Sialors{ses trois côtés ne sont pas égaux}{ce n'est pas un triangle équilatéral} »},
-        est \bawsr{également vraie}.
+        est \awsr{vraie}.  
+        Sa contraposée: \awsr{« \Sialors{ses trois côtés ne sont pas égaux}{ce n'est pas un triangle équilatéral} »},
+        est \awsr{également vraie}.
     }
+}
+
+\scn{Appliquer ses connaissances sur la contraposée au Théorème de Pythagore}
+
+\slide{qf}{
+    \calculator
+    \exo{}{
+        Sachant que huit briques de masse identique pèsent \Masse{13.6},
+        calcule la masse de six de ces briques.
+    }[\afa{4e}[6]]
 }
 
 \bsec{Contraposée du Théorème de Pythagore}
 
-\slide{cr}{
-    \ssec
-    \ctr{du théorème de Pythagore}{}
+\slide{exo}{\bshrink
+    \act{}{\bvspace{-1cm}
+        \def\crossSize{0.15}
+        \ctikz[1]{
+            \draw[gray!40] (-1,-4) rectangle (11,3);
+            \draw [penciline,thick] (8.2,1.76)-- (5.28,-1.84);
+            \draw [penciline,thick] (5.28,-1.84)-- (9.5,-0.3);
+            \draw [penciline,thick] (9.5,-0.3)-- (8.2,1.76);
+            \draw [penciline,thick] (2.76,-2.24)-- (3.84,-0.56);
+            \draw [penciline,thick] (3.84,-0.56)-- (0.34,1.22);
+            \draw [penciline,thick] (0.34,1.22)-- (2.76,-2.24);
+            \drawPoint{D}{3.84}{-0.56}
+            \drawPoint{E}{0.34}{1.22}
+            \drawPoint{F}{2.76}{-2.24}
+            \drawPoint{G}{8.20}{1.76}
+            \drawPoint{H}{9.50}{-0.30}
+            \drawPoint{I}{5.28}{-1.84}
+            \draw (3.48,-1.38) node[anchor=north west] {4cm};
+            \draw (0.92,-0.74) node[anchor=north west] {5cm};
+            \draw (2.06,0.92) node[anchor=north west] {6cm};
+            \draw (5.72,0.4) node[anchor=north west] {5cm};
+            \draw (7.62,-1.22) node[anchor=north west] {12cm};
+            \draw (9,1.3) node[anchor=north west] {13cm};
+        }
+    }
 }
 
-\bsec{Réciproque du Théorème de Pythagore}
+\slide{exo}{
+    Pour les triangles $EDF$ et $GHI$, répondre aux questions suivantes :
+    \begin{enumerate}\setItemColor{act}
+        \item Ce triangle respect-ils l'égalité de Pythagore ?
+        \item En utilisant vos connaissances sur le théorème de Pythagore,
+        pouvez-vous conclure si le triangle est rectangle ou non ?
+        Justifiez votre réponse en précisant l'outil de logique utilisé.
+    \end{enumerate}
+}
 
 \slide{cr}{
     \ssec
-    \rcp{du théorème de Pythagore}{}
+    \bvspace{-0.5cm}
+    \ctr{du théorème de Pythagore}{
+        Dans un triangle $ABC$.
+        \Sialors{$AB^2 \neq AC^2 + BC^2$}{le triangle $ABC$ n'est pas rectangle en $C$}
+    }
+    \bvspace{-0.75cm}
+    \expl{}{
+        Soit $NEZ$ est un triangle tel que : $NE = \Lg{8}, EZ = \Lg{16}\et ZN = \Lg{14}$.\\
+        Démontrer que le triangle n'est pas rectangle.\\
+        \awsr[5]{
+            \begin{itemize}
+                \item $NE$ est le plus long coté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+                \item D'une part :$EZ^2 = 16^2 = 256$
+                \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
+                \item Alors : $EZ^2 \neq NE^2 + ZN^2$
+                \item D'après la contraposée du théorème de Pythagore le triangle $NEZ$ n'est pas rectangle.
+            \end{itemize}
+        }
+    }
 }
+
+\bookSlide{29p431}[12cm]
+
+\bsec{Réciproque du théorème de Pythagore}
+
+\slide{exo}{
+    \act{}{
+        On va démontrer pour un exemple que la réciproque du théorème de Pythagore est vraie.
+        Soit $ABC$ un triangle tel que : $AB = \Lg{5}; AC = \Lg{4}; BC = \Lg{5}$.
+        \begin{enumerate}
+            \item Tracer le triangle $ABC$.
+            \item Verifier si $AB^2 = AC^2 + BC^2$. Est-ce que le triangle $ABC$ peut être rectangle?
+            \item Contruire une droite perpendiculaire à la droite $(BC)$.
+            \item Placer un point $D$ sur cette perpendiculaire tel que $DC = AC$
+            et $D$ soit placé à «l'opposé» de $A$. \saveenumi
+        \end{enumerate}
+    }[\href{https://clg-monnet-briis.ac-versailles.fr/La-reciproque-du-theoreme-de-Pythagore}{Collège Jean Monnet}]
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item Quelle est la nature du triangle $BCD$?
+        \item Calculer la longueur $BD$.
+        \item Comparer les triangles $ABC$ et $BCD$.
+        \item Conclure sur la nature du triangle $ABC$.
+    \end{enumerate}
+    De manière similaire on pourait prouver que la réciproque du théorème de Pythagore est toujours vraie.
+}
+
+\slide{cr}{
+    \ssec
+
+    \bvspace{-0.5cm}
+
+    \rcp{du théorème de Pythagore}{
+        Dans un triangle ABC.
+        \Sialors{$AB^2 = AC^2 + BC^2$}
+        {le triangle $ABC$ est rectangle en $C$}
+    }
+
+    \bvspace{-0.75cm}
+
+    \expl{}{
+        Soit $CGT$ est un triangle tel que : $CG = \Lg{45}, GT = \Lg{28}\et TC = \Lg{53}$.\\
+        Démontrer que le triangle $CGT$ est pas rectangle.\\
+        \awsr[6]{
+            \begin{itemize}
+                \item $TC$ est le plus long coté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+                \item D'une part :$TC^2 = 53^2 = 256$
+                \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
+                \item Alors : $EZ^2 \neq NE^2 + ZN^2$
+                \item D'après la réciproque du théorème de Pythagore le triangle $CGT$ est rectangle en $G$.
+            \end{itemize}
+        }
+    }
+}
+
+\bookSlide{27p431,26p431,36p432}[7cm][2]
+
+\bookSlide{35p432,52p435}[6cm][2]

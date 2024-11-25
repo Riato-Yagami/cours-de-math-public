@@ -22,11 +22,11 @@
 \slide{exo}{
     \act{}{
         \multiColEnumerate{1}{
-            \item $\pow{10}{2} = \bawsr{\num{\powTenPositive{2}}}$
-            \item $\pow{10}{3} = \bawsr{\num{\powTenPositive{3}}}$
-            \item $\pow{10}{6} = \bawsr{\num{\powTenPositive{6}}}$
-            \item $\powBrace{10}{15} = \bawsr{\num{\powTenPositive{15}}}$
-            \item $\powBrace{10}{100} = \bawsr{\powTenBrace{100}}$
+            \item $\pow{10}{2} = \awsr{\np{\powTenPositive{2}}}$
+            \item $\pow{10}{3} = \awsr{\np{\powTenPositive{3}}}$
+            \item $\pow{10}{6} = \awsr{\np{\powTenPositive{6}}}$
+            \item $\powBrace{10}{15} = \awsr{\np{\powTenPositive{15}}}$
+            \item $\powBrace{10}{100} = \awsr{\powTenBrace{100}}$
         }
     }
 }
@@ -43,10 +43,10 @@
             DoubleEntree,
             Stretch=1.5,
             Couleur=gradeColor!15,
-            LegendesH={$100$,$2$,$\num{1001}$,$\num{100000}$,$\num{200}$,$\num{10}$},
+            LegendesH={$100$,$2$,$\np{1001}$,$\np{100000}$,$\np{200}$,$\np{10}$},
             LegendesV={Puissance de 10 ?},
             Largeur=2cm
-        ]{\bawsr{Oui},\bawsr{Non},\bawsr{Non},\bawsr{Oui},\bawsr{Non},\bawsr{Oui}}
+        ]{\awsr{Oui},\awsr{Non},\awsr{Non},\awsr{Oui},\awsr{Non},\awsr{Oui}}
     }
 }
 
@@ -54,7 +54,7 @@
     \pr{}{
         Pour $n$ un nombre entier, on a :
         \begin{align*}
-            \powBrace{10}{n} = \bawsr{\powTenBrace{n}}
+            \powBrace{10}{n} = \awsr{\powTenBrace{n}}
         \end{align*}
     }
 
@@ -76,10 +76,10 @@
             DoubleEntree,
             Stretch=1.5,
             Couleur=gradeColor!15,
-            LegendesH={$\frac{1}{10}$,$\frac{1}{2}$,$\frac{5}{10}$,$\frac{1}{\num{1000}}$,$\frac{1}{\num{30000}}$,$\frac{546985}{\num{10000000}}$},
+            LegendesH={$\frac{1}{10}$,$\frac{1}{2}$,$\frac{5}{10}$,$\frac{1}{\np{1000}}$,$\frac{1}{\np{30000}}$,$\frac{546985}{\np{10000000}}$},
             LegendesV={Fraction décimale ?},
             Largeur=2cm
-        ]{\bawsr{Oui},\bawsr{Oui},\bawsr{Non},\bawsr{Oui},\bawsr{Non},\bawsr{Oui}}
+        ]{\awsr{Oui},\awsr{Oui},\awsr{Non},\awsr{Oui},\awsr{Non},\awsr{Oui}}
     }
 }
 
@@ -87,12 +87,12 @@
     \act{}{
         Ecrire les nombres suivants sous forme de fractions décimales.
         \multiColEnumerate{2}{
-            \item $\num{3.2} = \bawsr{\frac{32}{10}}$
-            \item $\num{10.2} = \bawsr{\frac{102}{10}}$
-            \item $\num{0.03} = \bawsr{\frac{3}{100}}$
-            \item $\num{0.0001} = \bawsr{\frac{1}{1000}}$
-            \item $6 \div 10 \div 10 = \bawsr{\frac{6}{100}}$
-            \item $32 \div 10 \div 10 \div 10 \div 10 = \bawsr{\frac{32}{10000}}$
+            \item $\np{3.2} = \awsr{\frac{32}{10}}$
+            \item $\np{10.2} = \awsr{\frac{102}{10}}$
+            \item $\np{0.03} = \awsr{\frac{3}{100}}$
+            \item $\np{0.0001} = \awsr{\frac{1}{1000}}$
+            \item $6 \div 10 \div 10 = \awsr{\frac{6}{100}}$
+            \item $32 \div 10 \div 10 \div 10 \div 10 = \awsr{\frac{32}{10000}}$
         }
     }
 }
@@ -107,10 +107,10 @@
             DoubleEntree,
             Stretch=1.5,
             Couleur=gradeColor!15,
-            LegendesH={$\num{0.6}$,$\num{13.2}$,$\frac{1}{10}$,$\frac{1}{2}$,$60$,$\frac{1}{3}$,$\frac{30}{3}$,$\pi$,$0$},
+            LegendesH={$\np{0.6}$,$\np{13.2}$,$\frac{1}{10}$,$\frac{1}{2}$,$60$,$\frac{1}{3}$,$\frac{30}{3}$,$\pi$,$0$},
             LegendesV={Nombre décimal ?},
             Largeur=2cm
-        ]{\bawsr{Oui},\bawsr{Oui},\bawsr{Oui},\bawsr{Oui},\bawsr{Oui},\bawsr{Non},\bawsr{Oui},\bawsr{Non},\bawsr{Oui}}
+        ]{\awsr{Oui},\awsr{Oui},\awsr{Oui},\awsr{Oui},\awsr{Oui},\awsr{Non},\awsr{Oui},\awsr{Non},\awsr{Oui}}
     }
 }
 
@@ -125,9 +125,9 @@
 
     \expl{}{
         \multiColEnumerate{1}{
-            \item $1 \div 10 \div 10 = \frac{1}{\bawsr{100}} = \bawsr{\num{0.01}}$
-            \item $\bawsr{1 \div 10 \div 10 \div 10 \div 10} = \frac{1}{10000} = \bawsr{\num{0.0001}}$
-            \item $1 \bawsr{\div 10 \div 10 \div 10} = \frac{1}{\bawsr{1000}} = \bawsr{\num{0.001}}$
+            \item $1 \div 10 \div 10 = \frac{1}{\awsr{100}} = \awsr{\np{0.01}}$
+            \item $\awsr{1 \div 10 \div 10 \div 10 \div 10} = \frac{1}{10000} = \awsr{\np{0.0001}}$
+            \item $1 \awsr{\div 10 \div 10 \div 10} = \frac{1}{\awsr{1000}} = \awsr{\np{0.001}}$
         }
     }
 }

@@ -1,26 +1,48 @@
 % VARIABLES %%%
-% \setTitle{Interrogation - Séquence 3 - Correction}
-\interrogation{Séquence 3}
+\setTitle{Interrogation - Séquence 3 - Correction}
+% \interrogation{Séquence 3}
 \setGrade{5e}
 %%
 \vspace*{-1.5cm}
 \exo{}{Construir l'image de la figure par la symétrie de centre $O$.
     \def\crossSize{0.15}
     \def\crossWidth{0.35mm}
+    % \ctikz[1]{
+    %     \draw[gray!40] (-8,-8) rectangle (8,8);
+    %     \draw [thick] (-3.14,4.7)-- (3.26,3.9);
+    %     \draw [thick] (3.26,3.9)-- (1.38,0.48);
+    %     \draw [thick] (1.38,0.48)-- (-3.14,4.7);
+    %     % \draw [thick] (-1.66,-0.48)-- (-3.54,-3.9);
+    %     % \draw [thick] (-3.54,-3.9)-- (2.86,-4.7);
+    %     % \draw [thick] (2.86,-4.7)-- (-1.66,-0.48);
+    %     \drawPoint{A}{-3.14}{4.70}
+    %     \drawPoint{B}{1.38}{0.48}
+    %     \drawPoint{C}{3.26}{3.90}
+    %     \drawPoint{O}{-0.14}{0.00}[gradeColor]
+    %     % \drawPoint{A'}{2.86}{-4.70}
+    %     % \drawPoint{B'}{-1.66}{-0.48}
+    %     % \drawPoint{C'}{-3.54}{-3.90}
+    % }
     \ctikz[1]{
         \draw[gray!40] (-8,-8) rectangle (8,8);
         \draw [thick] (-3.14,4.7)-- (3.26,3.9);
-        \draw [thick] (3.26,3.9)-- (1.38,0.48);
-        \draw [thick] (1.38,0.48)-- (-3.14,4.7);
-        % \draw [thick] (-1.66,-0.48)-- (-3.54,-3.9);
-        % \draw [thick] (-3.54,-3.9)-- (2.86,-4.7);
-        % \draw [thick] (2.86,-4.7)-- (-1.66,-0.48);
+        \draw [thick] (3.26,3.9)-- (1.36,0.46);
+        \draw [thick] (1.36,0.46)-- (-3.14,4.7);
+        \draw [thick] (-1.68,-0.5)-- (-3.58,-3.94);
+        \draw [thick] (-3.58,-3.94)-- (2.82,-4.74);
+        \draw [thick] (2.82,-4.74)-- (-1.68,-0.5);
+        \draw [thick,dashed,domain=-7:1.36] plot(\x,{(-0.0464-0.48*\x)/-1.52});
+        \draw [thick,dashed,domain=-7:3.26] plot(\x,{(-0.5588-3.92*\x)/-3.42});
+        \draw [thick,dashed,domain=-3.14:4] plot(\x,{(-1.6296-9.44*\x)/5.96});
+        \draw [shift={(-0.16,-0.02)},thick,dotted]  plot[domain=3.839304161857741:4.1554256554016105,variable=\t]({1*5.202191845751157*cos(\t r)+0*5.202191845751157*sin(\t r)},{0*5.202191845751157*cos(\t r)+1*5.202191845751157*sin(\t r)});
+        \draw [shift={(-0.16,-0.02)},thick,dotted]  plot[domain=5.1375323546843195:5.429538874060279,variable=\t]({1*5.582006807591622*cos(\t r)+0*5.582006807591622*sin(\t r)},{0*5.582006807591622*cos(\t r)+1*5.582006807591622*sin(\t r)});
+        \draw [shift={(-0.16,-0.02)},thick,dotted]  plot[domain=3.0799424829505333:3.8592977942932736,variable=\t]({1*1.5939887076136985*cos(\t r)+0*1.5939887076136985*sin(\t r)},{0*1.5939887076136985*cos(\t r)+1*1.5939887076136985*sin(\t r)});
         \drawPoint{A}{-3.14}{4.70}
-        \drawPoint{B}{1.38}{0.48}
+        \drawPoint{B}{1.36}{0.46}
         \drawPoint{C}{3.26}{3.90}
-        \drawPoint{O}{-0.14}{0.00}[gradeColor]
-        % \drawPoint{A'}{2.86}{-4.70}
-        % \drawPoint{B'}{-1.66}{-0.48}
-        % \drawPoint{C'}{-3.54}{-3.90}
+        \drawPoint{O}{-0.16}{-0.02}[gradeColor]
+        \drawPoint{A'}{2.82}{-4.74}
+        \drawPoint{B'}{-1.68}{-0.50}
+        \drawPoint{C'}{-3.58}{-3.94}
     }
 }

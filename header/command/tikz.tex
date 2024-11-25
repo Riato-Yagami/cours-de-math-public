@@ -1,4 +1,4 @@
-\NewDocumentCommand{\ctikz}{O{0.5} m}{
+\NewDocumentCommand{\ctikz}{O{1} m}{
     \begin{center}
         \begin{tikzpicture}[scale = #1]
             #2
@@ -19,15 +19,29 @@
 }
 
 \def\pointColor{blue}
-\def\crossWidth{0.25mm}
-\def\crossSize{0.25}
+\def\crossWidth{0.15mm}
+\def\crossSize{0.2}
 \def\nodeShift{0.4}
-\NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{
-    \node[shift={#5}, color = #4] at (#2 - \nodeShift,#3 - \nodeShift) {#1};
+\NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{%
+    \pgfgettransformentries{\aa}{\ab}{\ba}{\bb}{\xshift}{\yshift}
+    \node[shift={#5}, color = #4] at (#2 - \nodeShift / \aa,#3 - \nodeShift / \bb) {#1};
     \draw[line width = \crossWidth, shift={#5}
-    , color = #4] (#2 - \crossSize,#3) -- (#2 + \crossSize,#3);
-    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2,#3 -\crossSize) -- (#2,#3 + \crossSize);
+    , color = #4] (#2 - \crossSize / \aa,#3) -- (#2 + \crossSize / \aa,#3);
+    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2,#3 - \crossSize / \bb) -- (#2,#3 + \crossSize / \bb);
 }
+
+% \NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{
+%     \pgftransformscale{1}
+%     \pgftransformxscale{1/\pgfkeysvalueof{/pgf/scale x}}
+%     \pgftransformyscale{1/\pgfkeysvalueof{/pgf/scale y}}
+%     \node[shift={#5}, color = #4] at (#2 - \nodeShift,#3 - \nodeShift) {#1};
+%     \draw[line width = \crossWidth, shift={#5}, color = #4] 
+%         (#2 - \crossSize,#3) -- (#2 + \crossSize,#3);
+%     \draw[line width = \crossWidth, shift={#5}, color = #4] 
+%         (#2,#3 -\crossSize) -- (#2,#3 + \crossSize);
+%     \pgftransformreset
+% }
+
 
 \NewDocumentCommand{\drawTick}{m O{} O{gradeColor}}{
     \draw[line width = 0.75mm, #3] (#1, 0.08) -- (#1, -0.08);

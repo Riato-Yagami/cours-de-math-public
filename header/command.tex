@@ -52,19 +52,19 @@
     \pgfmathsetcount{\linecount}{\pgfmathresult}
 }
 
-\newcommand{\looptext}[2]{%
-    \noindent
-    \newcount\printcount
-    \printcount=#2
-    \loop
-        #1
-        \advance\printcount by -1
-        \ifnum\printcount>0
-    \repeat
-}
+% \newcommand{\looptext}[2]{%
+%     \noindent%
+%     \newcount\printcount%
+%     \printcount=#2%
+%     \loop%
+%         #1%
+%         \advance\printcount by -1%
+%         \ifnum\printcount>0%
+%     \repeat%
+% }
 
 \newcommand{\repeated}[2]{% \repeat already defined
-    \foreach \n in {1,...,#1}{#2}
+    \foreach \n in {1,...,#1}{#2}%
 }
 
 \newcommand{\remaininglines}{
@@ -397,7 +397,7 @@
 
 % \newcommand{\calc}[1]{\numexpr#1\relax}
 \newcommand{\ncalc}[1]{\number\calc{#1}}
-\newcommand{\pcalc}[1]{\num{\ncalc{#1}}}
+\newcommand{\pcalc}[1]{\np{\ncalc{#1}}}
 
 \def\gradeBook{}
 \newcommand{\setGrade}[1]{
@@ -411,20 +411,20 @@
     % \end{switch}
     \ifthenelse{\equal{#1}{6e}}{
         \def\gradeBook{\dim}
-        \definecolor{gradeColor}{HTML}{C6233D} % FA8072 in hex
+        \definecolor{gradeColor}{HTML}{C6233D} % #C6233D
     }{
     \ifthenelse{\equal{#1}{5e}}{
         \def\gradeBook{\mm}
-        \definecolor{gradeColor}{HTML}{088255}
+        \definecolor{gradeColor}{HTML}{088255} % #088255
     }{
     \ifthenelse{\equal{#1}{4e}}{
         \def\gradeBook{\mi}
-        \definecolor{gradeColor}{HTML}{1466A8}
+        \definecolor{gradeColor}{HTML}{1466A8} % #1466A8
     }{
     \ifthenelse{\equal{#1}{3e}}{
-        \definecolor{gradeColor}{HTML}{844499}
+        \definecolor{gradeColor}{HTML}{844499} % #844499
     }{
-        \definecolor{gradeColor}{RGB}{0, 0, 0}
+        \definecolor{gradeColor}{RGB}{0, 0, 0} % #
     }}}}
 }
 
@@ -446,8 +446,8 @@
     \setcounter{savedenumi}{\arabic{enumi}}
 }
 
-\NewDocumentCommand{\loadenumi}{O{}}{
-    \setcounter{enumi}{\thesavedenumi}
+\NewDocumentCommand{\loadenumi}{O{} O{\thesavedenumi}}{
+    \setcounter{enumi}{#2}
     \ifNotNull{#1}{\setItemColor{#1}}
 }
 
@@ -520,15 +520,15 @@
     \end{evaluationBox}
 }
 
-\def\evalutionEnd{
+\NewDocumentCommand{\evalutionEnd}{O{3} O{2}}{
     \seqEvaluation{}{Compétences générales}{
         Écrire ses calculs
-        /3,
+        /#1,
         Rédiger des phrases réponses
-        /2
+        /#2
     }
     \evalutionTotal
-    \vspace{-2cm}
+    \vspace{-1.5cm}
 }
 
 \newcommand{\tp}[1]{
@@ -538,19 +538,38 @@
     \emptyBackground
 }
 
-\newcommand{\evaluation}[1]{
-    \setTitle{Evaluation - #1}
-    \thispagestyle{assignment}
+% \newcommand{\evaluation}[1]{
+%     \setTitle{Evaluation - #1}
+%     \thispagestyle{assignment}
+%     \setboolean{showSubID}{true}
+%     \emptyBackground
+% }
+
+\NewDocumentCommand{\evaluation}{m O{}}{%
     \setboolean{showSubID}{true}
-    \emptyBackground
+    \ifempty{#2}{%
+        % \def\assignmentNameWidth{6.5cm}
+        \setTitle{Evaluation - #1}
+        \thispagestyle{assignment}
+        \setboolean{answer}{false}
+        \setboolean{showRef}{false}
+        \emptyBackground
+    }[%
+        \setTitle{Evaluation - #1 - Correction}
+        \setboolean{answer}{true}
+    ]
 }
 
-\newcommand{\interrogation}[1]{
-    \def\assignmentNameWidth{6.5cm}
-    \setTitle{Interrogation - #1}
-    \thispagestyle{assignment}
-    \setboolean{answer}{false}
-    % \emptyBackground
+\NewDocumentCommand{\interrogation}{m O{}}{%
+    \ifempty{#2}{%
+        \def\assignmentNameWidth{6.5cm}
+        \setTitle{Interrogation - #1}
+        \thispagestyle{assignment}
+        \setboolean{answer}{false}
+    }[%
+        \setTitle{Interrogation - #1 - Correction}
+        \setboolean{answer}{true}
+    ]
 }
 
 \newcommand{\forPrint}{

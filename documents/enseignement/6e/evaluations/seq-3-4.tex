@@ -1,8 +1,6 @@
 %%%
 \setGrade{6e}
-\evaluation{2}
-
-\setboolean{answer}{false}
+\evaluation{2}[corr]
 
 \def\cwr{\href{https://college-willy-ronis.fr/maths/wp-content/uploads/2020/11/Chap-1-exercices-corriges-6eme.pdf}{College Willy Ronis}}
 %%%
@@ -37,7 +35,20 @@
     /2
 }
 
+\exo{}{Écrire en chiffres :
+    \multiColEnumerate{1}{
+        \item Neuf-mille-quatre-vingt-quinze : \awsr{$\np{9095}$}
+        \item $8\times\np{1000}+2\times10+1\times\np{10000}+7$ : \awsr{$\np{10827}$}
+        \item $15$ milliers et $\np{3 234}$ unités : \awsr{$\np{18234}$}
+        % \item \Ecriture{4 000 780}
+        \item Quatre-milliards-sept-cent-quatre-vingts :
+        \awsr{$\np{4 000 000 780}$}
+        \item $2$ millions et $2$ soixantaines : \awsr{$\np{2 000 120}$}
+    }
+}[\cwr]
+
 \newpage
+
 \def\length{10}
 \def\crossWidth{0.3mm}
 \def\crossSize{0.15}
@@ -66,26 +77,110 @@
     }
 }[\sesa{6}{2021}[9][85]]
 
-\exo{}{Écrire en chiffres :
-    \multiColEnumerate{1}{
-        \item Neuf-mille-quatre-vingt-quinze. \bawsr{\num{9095}}
-        \item $8\times1000+2\times10+1\times10000+7$ \bawsr{\num{10827}}
-        \item 15 milliers et 1 234 unités. \bawsr{\num{16234}}
-        \item Quatre-millions-sept-cent-quatre-vingts. \bawsr{\num{4 000 780}}
-        \item 2 millions d'unités et 2 soixantaines. \bawsr{\num{2 000 120}}
+\setscratch{print=true}
+
+\dividePage{
+    \exo{}{
+        \begin{center}
+            \begin{scratch}
+                \blockinit{quand \greenflag est cliqué}
+                \blockpen{effacer tout}
+                \blockpen{stylo en position d'écriture}
+                \blockrepeat{répéter \ovalnum{2} fois}{
+                    \blockmove{avancer de \ovalnum{40} pas}
+                    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+                    \blockmove{avancer de \ovalnum{60} pas}
+                    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+                }
+            \end{scratch}
+        \end{center}
+        Que trace ce programme \Scratch ?\\
+        Tracer un schéma codé.
     }
-}[\cwr]
+}{
+    \ctikz[1]{
+        \draw[gray!40] (2,-4) rectangle (10,1);
+        \draw [thick] (3,0)-- (9,0);
+        \draw [thick] (6,0.12) -- (6,-0.12);
+        \draw [thick] (3,0)-- (3,-3);
+        \draw [thick] (3.12,-1.45) -- (2.88,-1.45);
+        \draw [thick] (3.12,-1.55) -- (2.88,-1.55);
+        \draw [thick] (3,-3)-- (9,-3);
+        \draw [thick] (6,-2.88) -- (6,-3.12);
+        \draw [thick] (9,-3)-- (9,0);
+        \draw [thick] (8.88,-1.55) -- (9.12,-1.55);
+        \draw [thick] (8.88,-1.45) -- (9.12,-1.45);
+        \draw[thick,fill opacity=0.1] (3,-0.42426406871192845) -- (3.4242640687119286,-0.42426406871192845) -- (3.4242640687119286,0) -- (3,0) -- cycle; 
+        \draw[thick,fill opacity=0.1] (8.575735931288072,0) -- (8.57573593128807,-0.42426406871192845) -- (9,-0.42426406871192845) -- (9,0) -- cycle; 
+        \draw[thick,fill opacity=0.1] (9,-2.5757359312880714) -- (8.575735931288072,-2.5757359312880714) -- (8.575735931288072,-3) -- (9,-3) -- cycle; 
+        \draw[thick,fill opacity=0.1] (3.4242640687119286,-3) -- (3.4242640687119286,-2.5757359312880714) -- (3,-2.5757359312880714) -- (3,-3) -- cycle; 
+    }
+    \answerSec{5}[Réponse][Ce programme \Scratch trace un rectangle.]
+}
+
 
 \exo{}{
-    \begin{enumerate}
-        \item Le 17 juin 2345 sera une date très particulière car elle s'écrire : 17 06 2345, c'est à dire avec huit chiffres tous
-        différents. Quelle a été la dernière date à posséder cette propriété, c'est à dire à s'écrire sous la forme d'un nombre à
-        huit chiffres tous différents ?
-    \end{enumerate}
-}[\cwr]
+    Salma range ses 8 000 timbres dans un classeur de 52 pages.
+    Combien de timbres contient la dernière page non remplie?
+}[\iP{6}{2021}[1][16]]
 
 \answerFill[Réponses][
-    \begin{enumerate}
-        \item le 26 août 1987 qui donne : 26 07 1987
-    \end{enumerate}
+    Pour trouver la réponse on peut calculer la division euclidienne de 8000 par 52.
+    \begin{center}
+        \longDivision{8000}{52}
+    \end{center}
+    La dernière page non remplie contient alors 44 timbres.
 ]
+
+% \exo{BONUS}{
+%     \begin{enumerate}
+%         \item Le 17 juin 2345 sera une date très particulière car elle s'écrire : $17\;06\;2345$, c'est à dire avec huit chiffres tous
+%         différents. Quelle a été la dernière date à posséder cette propriété, c'est à dire à s'écrire sous la forme d'un nombre à
+%         huit chiffres tous différents ?
+%     \end{enumerate}
+% }[\cwr]
+
+% \answerFill[Réponses][
+%     \begin{enumerate}
+%         \item le 26 août 1987 qui donne : $26\;07\;1987$
+%     \end{enumerate}
+% ]
+
+\exo{}{
+    Un boulanger achète 5 sacs de \Lg{25}[kg] de farine.  
+    Chaque sac lui coûte \Prix{50}.  
+    Pour chaque kilo de farine, il peut faire 8 baguettes qu'il vend à \Prix{2} l'unité.
+    Si on considère qu'il ne dépense rien pour les autres ingrédients de sa baguette quel bénéfice réalisera-t-il?
+}
+
+\answerFill[Réponse][
+    \begin{itemize}
+        \item $5 \times 25 = 125$ \Masse{125}
+        \item $5 \times 50 = 250$ \Prix{250}
+        \item $125 \times 8 = 1250$ 1250 baguettes
+        \item $1250 \times 2 = 2500$ \Prix{2500}
+        \item $2500 - 250 = 2250$ \Prix{2250}
+    \end{itemize}
+]
+
+\exo{\bonus Numération Maya}{
+    On s'intéresse dans cet exercices à une numération pratiquée dans la civilisation mésoaméricaine maya.
+    \begin{enumerate}
+        \item \multiColItemize{3}{
+            \item \Maya{4} = 4
+            \item \Maya{8} = 8	
+            \item \Maya{17} = 17
+        }
+        Que réprésente les symboles \Maya{1} et \Maya{5} ?
+        \multiColEnumerate{3}{
+            \item \Maya{3} = \awsr{3}
+            \item \Maya{12} = \awsr{12}
+            \item \awsr{\Maya{19}} = 19
+        }
+        \item \multiColItemize{3}{
+            \item \Maya{4} = 4
+            \item \Maya{8} = 8	
+            \item \Maya{17} = 17
+        }
+    \end{enumerate}
+}

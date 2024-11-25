@@ -1,5 +1,5 @@
 function hide(str,state)
-    local awn_1 = "\\bawsr{"
+    local awn_1 = "\\awsr{"
     local awn_2 = "}"
 
     if state == "" then

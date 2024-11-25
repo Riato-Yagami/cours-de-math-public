@@ -76,11 +76,29 @@
 
 % https://www.armitiere.com/livre/1833174-des-maths-ensemble-et-pour-chacun-5e-mise-en--jean-philippe-rouques-helene-stainer-canope-crdp-44
 \def\dmeepcC{\href{https://publimath.univ-irem.fr/PCO10003}
-    {Des maths ensemble et pour chacun}
+    {Des maths ensemble et pour chacun 5e}
 }
 
 \def\dmeepcS{\href{https://www.reseau-canope.fr/notice/des-maths-ensemble-et-pour-chacun-6e.html}
     {Des maths ensemble et pour chacun 6e}
+}
+
+\NewDocumentCommand{\sesa}{m m O{} O{}}{%
+    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=cm#1_#2&page_gauche=#4}{%
+    Sésamath #1e #2 \ifNotNull{#4}{(#3 p.#4)}
+    }
+}
+
+\NewDocumentCommand{\iP}{m m O{} O{}}{%
+    \href{https://www.iparcours.fr/ouvrages/ouvrages.php?ouvrage=Cahier#1#2}{%
+    iParcours #1e #2 \ifNotNull{#4}{(#3 p.#4)}
+    }
+}
+
+\NewDocumentCommand{\ching}{m m O{}}{%
+    \href{https://chingmath.fr/#1eme/#2}{%
+    Ching@Math #1e (\reverseKebabCase{#2}\ifNotNull{#3}{ E.#3})
+    }
 }
 
 \NewDocumentCommand{\wiki}{m O{}}{%
@@ -98,12 +116,6 @@
     \href{https://eduscol.education.fr/document/13132/download?attachment\#page=#1}{%
     La résolution de problèmes mathématiques au collège
     (p.\directlua{tex.print((tonumber("#1") or 0) + 3)})}%
-}
-
-\NewDocumentCommand{\sesa}{m m O{} O{}}{%
-    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=cm#1_#2&page_gauche=#4}{%
-    Sésamath #1e #2 \ifNotNull{#4}{(#3 p.#4)}
-    }
 }
 
 % Attendus de fin d'année
