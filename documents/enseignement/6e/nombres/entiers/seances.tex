@@ -20,6 +20,7 @@
     \item Utiliser la division euclidienne.
     \item Organiser un calcul en une seule ligne, utilisant si nécessaire des parenthèses.
     \item Savoir ce qu'est un ordre de grandeur et savoir l'utiliser pour prévoir un résultat.
+    \item Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement.
 }
 
 \scn{Découvrir une numération préhistorique}
@@ -39,7 +40,7 @@
     \act{Numération préhistorique}{
         Certains hommes préhistorique utilisaient leurs main pour communiquer sur des nombres.
         \imgp{historic/numbers}[6.5cm]
-    }[\dmeepcS]
+    }[\dmeepc{6}[108]]
 }
 
 % \endinput
@@ -487,12 +488,31 @@
         Doit-elle réaliser des bouquets de 16 fleurs ou de 17 fleurs pour en utiliser le plus possible ?
     }[\iP{6}{2021}[2][16]]
 }
+
+\slide{exo}{
+    \exo{des crêpes}{
+        Dans une fabrique, on emballe les crêpes par paquets de 12.
+        En fin de journé, les employés mangent les crêpes qui restent après emballage.
+        Voici le nombre de crêpes fabriquées cette semaine:
+        \begin{center}
+            \begin{tabular}{|>{\bfseries}c|*{5}{c|}} % Colonne en gras pour la première colonne
+                \hline
+                \rowcolor{gray!15} 
+                Jour & lundi & mardi & mercredi & jeudi & vendredi \\ \hline
+                Nombre de crêpes  & 384 & 1004 & 519 & 1069 & 1102 \\ \hline
+            \end{tabular}
+        \end{center}
+        \begin{enumerate}
+            \item Le lundi, combien de douzaine de crêpes sont emballées et combien de crêpes sont mangées ?
+            \item Sur l'ensemble de la semaine, chaque employé à mangé le même nombre de crêpes.
+            Combien peut-il y avoir d'employés dans cette fabrique?
+        \end{enumerate}
+    }[\dmeepc{6}[166]]
+}
+
 \bookSlide{21p45,23p45,25p45}[7cm][2]
 
 \scn{Priorités opératoires}
-
-\bsec{Opérations}
-\bsubsec{Règles opératoires}
 
 \slide{qf}{\bvspace{-0.5cm}
     \exo{}{
@@ -506,6 +526,9 @@
         }
     }
 }
+
+\bsec{Opérations}
+\bsubsec{Règles opératoires}
 
 \slide{cr}{
     \ssec\ssubsec
@@ -542,6 +565,7 @@
         \multiColEnumerate{1}{
             \item $(1 + 2) \times 21 = \awsr{3 \times 21 = 63}$
             \item $(11 \times 3) + (15 \div 2) = \awsr{33 + 7.5 = 40.5}$
+            \item $(34 - 2 + 8 ) \div 4 = \awsr{(32 + 8) \div 4 = 40 \div 4 = 10}$
             \item $((13 - (3 - 2)) + 2) = \awsr{(13 - 1) + 2 = 12 + 2 = 14}$
         }
     }
@@ -581,6 +605,19 @@
     }
 }
 
+\scn{Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement}
+
+\slide{qf}{\bvspace{-0.5cm}
+    \exo{}{
+        \multiColEnumerate{1}{
+            \item $10 \times 3 + 4 \div 2 = \awsr{30 + 2 = 32}$
+            \item $5 \times 4 \div 2 = \awsr{20 \div 2 = 10}$
+            \item $4 \times (1 + 16 - 10) = \awsr{4 \times (17 - 10) = 4 \times 7 = 28}$
+            \item $100 \div (10 \times (2+3)) = \awsr{100 \div (10 \times 5) = 100 \div 50 = 2}$
+        }
+    }
+}
+
 \slide{exo}{\bshrink
     \exo{Les bons comptes}{
         Pour résoudre les problèmes suivants :  
@@ -594,7 +631,7 @@
                 Son grand-père lui donne \Prix{75}. Il a désormais \Prix{53} de plus que sa sœur Christine.  
                 Quelle somme d'argent possède Christine ?\saveenumi
         \end{enumerate}
-    }
+    }[\dmeepc{6}[161]]
 }
 
 \slide{exo}{
@@ -638,6 +675,6 @@
                 \end{itemize}
                 \item $(47 - 12 - 7) \div 2 + 12 = 26$
             \end{itemize}
-        \end{enumerate}        
+        \end{enumerate}
     }
 }
