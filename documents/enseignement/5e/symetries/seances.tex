@@ -162,7 +162,7 @@
 \def\four{%
     Fait de même avec les autres points de la figure, puis les reliers, de façon à obtenir l'image de la flèche par la symétrie de centre $O$.
 
-    \ctikz{
+    \ctikz[0.5]{
         \figInit
         \drawPoint{$A$}{4}{3}
         \drawPoint{$B$}{4}{4}
@@ -296,7 +296,7 @@
 }
 
 \slide{exo}{\bvspace{-0.75cm}
-    \exo{Pavage}{\def\crossWidth{0.5mm}\def\crossSize{0.5}
+    \exo{Pavage}{
         Le pavage ci-dessous est réalisé à l'aide de 36 pièces identiques.
         \bvspace{-0.5cm}
         \ctikz[0.35]{
@@ -459,6 +459,15 @@
     \end{enumerate}
         Prouver que les droites $(AB)$ et $(A'B')$ sont parallèles. 
     }[\ym]
+
+    \awsr[0]{
+        \begin{itemize}
+            \item Les points $A'$ et $B'$ sont les symétriques respectifs des points $A$ et $B$ par rapport au point $O$.
+            \item Par conséquent, la droite $(A'B')$ est le symétrique de la droite $(AB)$ par rapport à $O$.
+            \item Or, deux droites symétriques par rapport à un point sont parallèles.
+            \item Ainsi, les droites $(AB)$ et $(A'B')$ sont parallèles.
+        \end{itemize}        
+    }
 }
 
 \scn{Utiliser les propriétés de la symétrie centrale}
@@ -471,20 +480,46 @@
         $[A'B']$ est le symétrique du segment $[AB]$ par rapport à un point $O$.
         En utilisant uniquement une règle non graduée et un rapporteur, construis la figure symétrique par rapport à $O$ de la ligne brisée $ABCD$.
         Comment as-tu raisonné ?\bvspace{-0.25cm}
-        \ctikz[0.35]{
-            \draw[gray!40] (-7,-10) rectangle (12,9);
+        \ctikz[0.65]{
+            \draw[gray!40] (-7,-9) rectangle (11,7);
             \draw [thick] (-6.06,1.06)-- (-2.3,2.88);
-            \draw [thick] (-2.3,2.88)-- (-2.42,-1.68)-- (1.34,-3.52);
             \draw [thick] (7.34,-1.38)-- (3.58,-3.2);
+            \draw [thick] (-2.3,2.88)-- (-2.42,-1.68);
+            \draw [thick] (-2.42,-1.68)-- (1.34,-3.52);    
             \drawPoint{A}{-6.06}{1.06}
-            \drawPoint{B}{-2.3}{2.88}
+            \drawPoint{B}{-2.30}{2.88}
             \drawPoint{C}{-2.42}{-1.68}
             \drawPoint{D}{1.34}{-3.52}
-            % \drawPoint{O}{0.64}{-0.16}
+            \drawPoint{O}{0.64}{-0.16}
             \drawPoint{A'}{7.34}{-1.38}
-            \drawPoint{B'}{3.58}{-3.2}
+            \drawPoint{B'}{3.58}{-3.20}
+            \awsr[0]{
+                \draw [thick, color = answer] (-2.260860768328644,0.597391072850754) -- (-2.4591392316713563,0.6026089271492464);
+                \draw [thick, color = answer] (3.58,-3.2) -- (3.7,1.36);
+                \draw [thick, color = answer] (3.540860768328643,-0.9173910728507542) -- (3.7391392316713574,-0.9226089271492466);
+                \draw [thick, color = answer] (3.7,1.36) -- (-0.06,3.2);
+                \draw [thick, color = answer] (1.8135243739047,2.1727573141778724) -- (1.9007084130413938,2.350916002848505);
+                \draw [thick, color = answer] (1.7392915869586045,2.2090839971514953) -- (1.8264756260952983,2.3872426858221285);
+                \draw [thick, color = answer] (-0.5335243739047016,-2.4927573141778727) -- (-0.6207084130413955,-2.6709160028485055);
+                \draw [thick, color = answer] (-0.4592915869586044,-2.529083997151494) -- (-0.5464756260952982,-2.7072426858221266);
+                \draw [shift={(-2.3,2.88)},thick,color=answer] (-154.1710425344797:0.49586776859504095) arc (-154.1710425344797:-91.50743575877497:0.49586776859504095);
+                \draw[thick,color=answer] (-2.5352884027004894,2.515452402024578) -- (-2.6025136606149144,2.411295945460171);
+                \draw [shift={(3.58,-3.2)},thick,color=answer] (25.828957465520286:0.49586776859504095) arc (25.828957465520286:88.49256424122504:0.49586776859504095);
+                \draw[thick,color=answer] (3.8152884027004883,-2.8354524020245777) -- (3.882513660614915,-2.731295945460172);
+                \draw [shift={(3.7,1.36)},thick,color=answer] (153.92464441605125:0.49586776859504095) arc (153.92464441605125:268.49256424122507:0.49586776859504095);
+                \draw[thick,color=answer] (3.3027345735488174,1.1855415104342648) -- (3.189230165991338,1.1356962277011982);
+                \draw[thick,color=answer] (3.3614242443784947,1.088666180986734) -- (3.2646883142009218,1.01114223269723);
+                \draw [shift={(-2.42,-1.68)},thick,color=answer] (-26.07535558394877:0.49586776859504095) arc (-26.07535558394877:88.49256424122504:0.49586776859504095);
+                \draw[thick,color=answer] (-2.022734573548817,-1.505541510434264) -- (-1.9092301659913369,-1.4556962277011973);
+                \draw[thick,color=answer] (-2.081424244378494,-1.4086661809867342) -- (-1.9846883142009206,-1.3311422326972282);
+                \drawPoint{C'}{3.70}{1.36}[answer]
+                \drawPoint{D'}{-0.06}{3.20}[answer]
+            }
         }
     }[\dmeepcC]
+
+    \awsr[0]{On utilise les propriétés conservations des mesures d'angles et longueurs de la symétrie centrale,
+    pour construire le symétrique de cette figure}
 }
 
 \slide{exo}{\bvspace{-0.7cm}\bsmall
@@ -526,7 +561,7 @@
         Un point est un \key{centre de symétrie} d'une figure,
         lorsqu'en effectuant un \key{demi-tour}
         \key{autour du point},
-        la figure se \key{superposent avec elle-même}.
+        la figure se \key{superpose avec elle-même}.
     }[\ym]
 
     \expl{Pictogrammes JO 2024}{

@@ -1,6 +1,7 @@
 %%%
 \setGrade{6e}
-\evaluation{2}[corr]
+\evaluation{2}
+[corr]
 
 \def\cwr{\href{https://college-willy-ronis.fr/maths/wp-content/uploads/2020/11/Chap-1-exercices-corriges-6eme.pdf}{College Willy Ronis}}
 %%%
@@ -31,24 +32,24 @@
 
 \evalutionEnd[3][2]
 
-\exo{}{Écrire en chiffres :
+\exo{Utiliser les chiffres arabes}{Écrire les nombres suivant à l'aide de chiffres arabes:
     \multiColEnumerate{1}{
-        \item Neuf-mille-quatre-vingt-quinze : \awsr{$\np{9095}$}
+        % \item Neuf-mille-quatre-vingt-quinze : \awsr{$\np{9095}$}
         \item $8\times\np{1000}+2\times10+1\times\np{10000}+7$ : \awsr{$\np{10827}$}
-        \item $15$ milliers et $\np{3 234}$ unités : \awsr{$\np{18234}$}
         % \item \Ecriture{4 000 780}
         \item Quatre-milliards-sept-cent-quatre-vingts :
         \awsr{$\np{4 000 000 780}$}
         \item $2$ millions et $2$ soixantaines : \awsr{$\np{2 000 120}$}
+        \item $15$ milliers et $\np{3 234}$ unités : \awsr{$\np{18234}$}
     }
 }[\cwr]
 
 \exo{Calculs en lignes}{
     Résoudre les opérations suivantes :
     \begin{enumerate}
-        \item $211 \times 2 + 12 \times 4 = \awsr[2]{422 + 48 = 470}$ 
-        \item $2 \times \np{10 000} + (14 - 9) = \awsr[2]{\np{20 000} + 5 = \np{20 005}}$
-        \item $(24 + 2 \times 6) \div 2 = \awsr[2]{(24 + 12) \div 2 = 36 \div 2 = 18}$
+        \item $211 \times 2 + 12 \times 4 = \awsr[3]{422 + 48 = 470}$ 
+        \item $2 \times \np{10 000} + (14 - 9) = \awsr[3]{\np{20 000} + 5 = \np{20 005}}$
+        \item $(24 + 2 \times 6) \div 2 = \awsr[3]{(24 + 12) \div 2 = 36 \div 2 = 18}$
     \end{enumerate}
 }
 
@@ -59,11 +60,11 @@
 \def\crossSize{0.15}
 \exo{Triplet de cercles}{
     \begin{enumerate}
-        \item Trace la demi droite $[AC)$.
-        \item Place $B$ sur la demi-droite $[AC)$ tel que $AB = \Lg{\length}$.
+        \item Trace la demi-droite $[AC)$.
+        \item Place $B$ sur la demi-droite $[AC)$ tel que : $AB = \Lg{\length}$.
         \item Marque le point $O$, milieu du segment $[AB]$.
         \item Trace le cercle de centre $O$ et de rayon $\Lg{\directlua{tex.print(math.floor(\length / 2))}}$.
-        \item Trace les cercles de diamètres $[AO]$ et $[OB]$.
+        \item Trace deux cercles de diamètres $[AO]$ et $[OB]$.
     \end{enumerate}
     \ctikz[1]{
         \draw[gradeColor!40] (-7,-3) rectangle (10,12);
@@ -84,13 +85,13 @@
 
 \newpage
 
-\exo{}{
+\exo{Problème 1}{
     Salma range ses 8 000 timbres dans un classeur de 52 pages.
     Combien de timbres contient la dernière page non remplie?
 }[\iP{6}{2021}[1][16]]
 
-\answerSec{10}[Réponses][
-    Pour trouver la réponse on peut calculer la division euclidienne de 8000 par 52.
+\answerSec{12}[Réponses][
+    Pour trouver la réponse on peut poser la division euclidienne de 8000 par 52.
     \begin{center}
         \longDivision{8000}{52}
     \end{center}
@@ -111,7 +112,7 @@
 %     \end{enumerate}
 % ]
 
-\exo{}{
+\exo{\tiersTemps Problème 2}{
     Un boulanger achète 5 sacs de \Masse[kg]{25} de farine.  
     Chaque sac lui coûte \Prix{50}.  
     Pour chaque kilo de farine, il peut faire 8 baguettes qu'il vend à \Prix{2} l'unité.
@@ -120,41 +121,54 @@
 
 \answerFill[Réponse][
     \begin{itemize}
-        \item $5 \times 25 = 125$ \Masse[kg]{125}
-        \item $5 \times 50 = 250$ \Prix{250}
-        \item $125 \times 8 = 1250$ 1250 baguettes
-        \item $1250 \times 2 = 2500$ \Prix{2500}
-        \item $2500 - 250 = 2250$ \Prix{2250}
+        \item $5 \times 25 = 125$ Le boulanger achete \Masse[kg]{125} de farine.
+        \item $5 \times 50 = 250$ Le coût total des sacs est de \Prix{250}.
+        \item $125 \times 8 = 1250$ Il peut faire 1250 baguettes avec sa farine.
+        \item $1250 \times 2 = 2500$ \Prix{2500} Il vendra pour \Prix{2500} de baguettes.
+        \item $2500 - 250 = 2250$ \Prix{2250} Il fera un bénéfice total de \Prix{2250}.
     \end{itemize}
 ]
 
+\def\aspc{\ifthenelse{\boolean{answer}}{}{\vspace*{1cm}}}
+
 \exo{\bonus Numération Maya}{
-    On s'intéresse dans cet exercices à une numération pratiquée dans la civilisation mésoaméricaine maya.
+    Cet exercice explore la numération utilisée par la civilisation mésoaméricaine maya.
     \begin{enumerate}
-        \item \multiColItemize{3}{
+        \item Quelques exemples de nombres écrits à l'aide de chiffres maya :
+        \multiColItemize{3}{
             \item \Maya{4} = 4
             \item \Maya{8} = 8	
             \item \Maya{17} = 17
         }
-        Que réprésente les symboles \Maya{1} et \Maya{5} ?
-        \item Compléter les égalités suivantes :
+        Que représentent les symboles \Maya{1} et \Maya{5} ?\\
+        \awsr[4]{Le symbole \Maya{1} correspond à une unité, tandis que \Maya{5} représente cinq unités.}
+        %
+        \item Complète les égalités suivantes :
         \multiColEnumerate{3}{
             \item \Maya{3} = \awsr{3}
             \item \Maya{12} = \awsr{12}
             \item \awsr{\Maya{19}} = 19
         }
-        \item Observe les nombres ci-dessous et explique comment sont composé ces nombres.
+        %
+        \item Observe les nombres ci-dessous et explique leur composition :
         \multiColItemize{3}{
             \item \Maya{21} = 21
             \item \Maya{46} = 46	
             \item \Maya{60} = 60
         }
-        \item Quelle est la base utilisé dans cette numération ?
-        \item Compléter les égalités suivantes :
+        \awsr[5]{Un espace horizontal entre deux symboles indique un changement de classe : on passe du comptage des unités à celui des vingtaines.}
+        %
+        \item Quelle est la base utilisée dans cette numération ?\\
+        \awsr[3]{Cette numération est en base 20.}
+        %
+        \item Que signifie le symbole \Maya{0} ?\\
+        \awsr[4]{Le symbole \Maya{0} indique qu'il n'y a aucune unité dans la classe où il est placé.}
+        %
+        \item Complète les égalités suivantes :
         \multiColEnumerate{3}{
             \item \Maya{33} = \awsr{33}
-            \item \awsr{\Maya{156}} = 156
             \item \Maya{453} = \awsr{453}
-        } 
+            \item \aspc\awsr{\Maya{156}} = 156
+        }
     \end{enumerate}
 }

@@ -1,8 +1,7 @@
 %%%
 \setGrade{5e}
 \evaluation{2}
-
-\setboolean{answer}{false}
+[corr]
 %%%
 % \def\imgPath{enseignement/6e/}
 
@@ -30,7 +29,7 @@
     /2
 }
 
-\exo{Reconnaître des symétries}{
+\exo{\tiersTemps Reconnaître des symétries}{
     \def\crossWidth{0.3mm}\def\crossSize{0.15}\def\nodeShift{0.25}
     \ctikz[1.25]{
         \draw[gray!40] (0,0) grid (6,6);
@@ -74,6 +73,7 @@
 
 \ctikz[0.75]{
     \draw[gray!40] (-1,-10) rectangle (18,2);
+    \node at (3,1) {Schéma à main levée :};
     \ifthenelse{\boolean{answer}}{%
         \draw [penciline,thick] (0.48,-7.04)-- (7.4,-8.06);
         \draw [penciline,thick] (7.4,-8.06)-- (5.18,-4.68);
@@ -107,17 +107,45 @@
     \end{itemize}
 ]
 
-\exo{}{
+\exo{Calculs}{
     \multiColEnumerate{1}{
         \item $\frac{81}{9} \times 5 -1
-        = \awsr[3]{9\times 5 - 1 = 45 -1 = 44}$
+        = \awsr[2]{9\times 5 - 1 = 45 -1 = 44}$
         \item $\frac{45,5}{2\times3-1}
-        = \awsr[3]{\frac{45,5}{6-1} = \frac{45,5}{5} = 9,1}$
-        \item $\frac{27}{2\times3}-1
-        = \awsr[3]{\frac{27}{6} -1 = 4,5 - 1}$
-        \item $\frac{17-5}{3}+2
-        = \awsr[3]{\frac{12}{3}+2 = 4 + 2 = 6}$
+        = \awsr[2]{\frac{45,5}{6-1} = \frac{45,5}{5} = 9,1}$
+        % \item $\frac{27}{2\times3}-1
+        % = \awsr[3]{\frac{27}{6} -1 = 4,5 - 1}$
+        % \item $\frac{17-5}{3}+2
+        % = \awsr[3]{\frac{12}{3}+2 = 4 + 2 = 6}$
         \item $7\times\frac{15\times4}{3-2}+2\times8
-        = \awsr[3]{7 \times \frac{60}{6}+ 16 = 7 \times 10 + 16 = 70 + 16 = 86}$
+        = \awsr[2]{7 \times \frac{60}{6}+ 16 = 7 \times 10 + 16 = 70 + 16 = 86}$
+        \item $7 - (-\np{12}) = \awsr[2]{19}$
+        \item $-9 + 6 - 78 = \awsr[2]{-3 - 78 = -81}$
+        % \item $12 + (-\np{22,6}) = \awsr[2]{-10,6}$
+        \item $39 + (7 - 18 + (-1)) = \awsr[2]{39 + (-11 + (-1)) = 39 + (-12) = 27}$
     }
 }[\sesa{5}{2024}[10][41]]
+
+% \exo{}{
+%     \begin{enumerate}
+
+%     \end{enumerate}
+% }
+
+\exo{La randonnée d'Élodie}{
+    Élodie effectue une randonnée en montagne qui se déroule en plusieurs étapes :  
+    \begin{itemize}
+        \item Depuis son point de départ situé à \Lg{1800} d'altitude, elle grimpe de \Lg{560} pour atteindre un premier refuge.  
+        \item Après une pause, elle descend de \Lg[km]{1,3} pour visiter un lac de montagne.  
+        \item Ensuite, elle remonte de \Lg{230} pour reprendre le chemin principal.  
+        \item Elle rejoint un second refuge situé à \Lg[km]{1,1} plus haut.  
+        \item Enfin, le dernier jour, elle redescend de \Lg{860} jusqu'à un arrêt de bus.  
+    \end{itemize}
+
+    \begin{enumerate}
+        \item Quelle est l'altitude maximale atteinte par Élodie pendant sa randonnée ? Et l'altitude minimale ?  
+        \item Quel est le dénivelé total de sa randonnée, c'est-à-dire la différence d'altitude entre son point de départ et son point d’arrivée ?  
+    \end{enumerate}
+}
+
+\answerFill[Réponse][]

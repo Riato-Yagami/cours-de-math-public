@@ -95,7 +95,7 @@
 
 \newcommand{\longDivision}[2]{%
     \ifbool{answer}{%
-        \Division[CouleurCadre = gradeColor!10, Solution,CouleurSolution = resultColor]{#1}{#2}
+        \Division[CouleurCadre = gradeColor!10, Solution,CouleurSolution = answer]{#1}{#2}
     }{%
         \Division[CouleurCadre = gradeColor!10]{#1}{#2}
     }

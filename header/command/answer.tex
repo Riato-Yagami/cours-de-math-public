@@ -6,7 +6,7 @@
 \NewDocumentCommand{\answerSec}{m O{Réponse} O{}}{\vspace{0.25cm}%
     #2 :%
     \ifthenelse{\boolean{answer}}
-    {\ifempty{#3}{\quad \dottedLines{#1}}{\color{resultColor}#3}}
+    {\ifempty{#3}{\quad \dottedLines{#1}}{\color{answer}#3}}
     {\quad \dottedLines{#1}}
     % \ifNotNull{#3}{#2 : #3}{%
     %     #2 :%
