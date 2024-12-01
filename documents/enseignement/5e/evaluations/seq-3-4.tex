@@ -1,37 +1,45 @@
 %%%
 \setGrade{5e}
 \evaluation{2}
-[corr]
+% [corr]
 %%%
 % \def\imgPath{enseignement/6e/}
 
 \seqEvaluation{3}{Symétrie}{
     Comprendre l'effet des symétries (axiale et centrale) :
     conservation du parallélisme{,} des longueurs et des angles.
-    /2,
-    Identifier des symétries dans des frises{,} des pavages{,} des rosaces.
-    /2%
+    /3,
+    Reconnaître deux figures image l'une de l'autre par symetrie.
+    /3,
+    % Identifier des symétries dans des frises{,} des pavages{,} des rosaces.
+    % /2%
 }
 
 \seqEvaluation{4}{Nombres Relatifs - Sommes et differences}{
     Traduire un enchaînement d'opérations à l'aide d'une expression avec des parenthèses.
     /3,
     Additionner et soustraire des nombres décimaux relatifs.
-    /4,
-    Résoudre des problèmes faisant intervenir des nombres décimaux relatifs et des fractions simples.
-    / 2,
+    /3,
+    Résoudre des problèmes faisant intervenir des nombres relatifs.
+    /2,
+    Respecter l'ordre des priorités opératoires.
+    /2,
+    Raisonner avec des nombres relatifs.
+    /0,
 }
 
-\seqEvaluation{}{Compétences générales}{
-    Écrire ses calculs
-    /1,
-    Rédiger des phrases réponses
-    /2
-}
+% \seqEvaluation{}{Compétences générales}{
+%     Écrire ses calculs
+%     /1,
+%     Rédiger des phrases réponses
+%     /2
+% }
 
-\exo{\tiersTemps Reconnaître des symétries}{
+\evalutionEnd[2][2]
+
+\exo{Reconnaître des symétries}{
     \def\crossWidth{0.3mm}\def\crossSize{0.15}\def\nodeShift{0.25}
-    \ctikz[1.25]{
+    \ctikz[1.1]{
         \draw[gray!40] (0,0) grid (6,6);
         % Nested loops to generate points with names
         \newcounter{i}\setcounter{i}{1}%
@@ -46,10 +54,10 @@
         }
     }
     \begin{enumerate}
-        \item L'image du segment $[HR]$ par la symétrie de centre $N$ est : \awsr{le segment $[JT]$}.
-        \item Le triangle $QUV$ est l'image de du triangle $SON$ par \awsr{la symetries de centre $R$}.
+        \item L'image du segment $[HR]$ par la symétrie de centre $N$ est : \awsr[2]{le segment $[JT]$}.
+        \item Le triangle $QUV$ est l'image de du triangle $SON$ par \awsr[2]{la symetries de centre $R$}.
         \item Le point \awsr{$D$} est l'image de point P par la symetrie d'axe $(AG)$.
-        \item L'image du quadrilatère $NXQL$ par la symétrie de centre $M$ est : \awsr{le quadrilatère $LBIN$}.
+        \item L'image du quadrilatère $NXQL$ par la symétrie de centre $M$ est : \awsr[2]{le quadrilatère $LBIN$}.
     \end{enumerate}
 }[\sesa{5}{2024}[3][89]]
 
@@ -110,9 +118,9 @@
 \exo{Calculs}{
     \multiColEnumerate{1}{
         \item $\frac{81}{9} \times 5 -1
-        = \awsr[2]{9\times 5 - 1 = 45 -1 = 44}$
-        \item $\frac{45,5}{2\times3-1}
-        = \awsr[2]{\frac{45,5}{6-1} = \frac{45,5}{5} = 9,1}$
+        = \awsr[3]{9\times 5 - 1 = 45 -1 = 44}$
+        % \item $\frac{45,5}{2\times3-1}
+        % = \awsr[2]{\frac{45,5}{6-1} = \frac{45,5}{5} = 9,1}$
         % \item $\frac{27}{2\times3}-1
         % = \awsr[3]{\frac{27}{6} -1 = 4,5 - 1}$
         % \item $\frac{17-5}{3}+2
@@ -120,9 +128,9 @@
         \item $7\times\frac{15\times4}{3-2}+2\times8
         = \awsr[2]{7 \times \frac{60}{6}+ 16 = 7 \times 10 + 16 = 70 + 16 = 86}$
         \item $7 - (-\np{12}) = \awsr[2]{19}$
-        \item $-9 + 6 - 78 = \awsr[2]{-3 - 78 = -81}$
+        \item $-9 + \np{6.3} - 78 = \awsr[2]{- \np{3.7} - 78 = - \np{81.7}}$
         % \item $12 + (-\np{22,6}) = \awsr[2]{-10,6}$
-        \item $39 + (7 - 18 + (-1)) = \awsr[2]{39 + (-11 + (-1)) = 39 + (-12) = 27}$
+        \item $39 + (7 - 18 + (-1)) = \awsr[3]{39 + (-11 + (-1)) = 39 + (-12) = 27}$
     }
 }[\sesa{5}{2024}[10][41]]
 
@@ -132,20 +140,97 @@
 %     \end{enumerate}
 % }
 
-\exo{La randonnée d'Élodie}{
+\exo{\tiersTemps La randonnée d'Élodie}{
     Élodie effectue une randonnée en montagne qui se déroule en plusieurs étapes :  
     \begin{itemize}
-        \item Depuis son point de départ situé à \Lg{1800} d'altitude, elle grimpe de \Lg{560} pour atteindre un premier refuge.  
+        \item Depuis son point de départ situé à \Lg[m]{1800} d'altitude, elle grimpe de \Lg[m]{340} pour atteindre un premier refuge.  
         \item Après une pause, elle descend de \Lg[km]{1,3} pour visiter un lac de montagne.  
-        \item Ensuite, elle remonte de \Lg{230} pour reprendre le chemin principal.  
-        \item Elle rejoint un second refuge situé à \Lg[km]{1,1} plus haut.  
-        \item Enfin, le dernier jour, elle redescend de \Lg{860} jusqu'à un arrêt de bus.  
+        \item Ensuite, elle remonte de \Lg[m]{230} pour reprendre le chemin principal.  
+        \item Elle rejoint un second refuge situé à \Lg[km]{0,9} plus haut.  
+        \item Enfin, le dernier jour, elle redescend de \Lg[m]{860} jusqu'à un arrêt de bus.  
     \end{itemize}
-
-    \begin{enumerate}
-        \item Quelle est l'altitude maximale atteinte par Élodie pendant sa randonnée ? Et l'altitude minimale ?  
-        \item Quel est le dénivelé total de sa randonnée, c'est-à-dire la différence d'altitude entre son point de départ et son point d’arrivée ?  
-    \end{enumerate}
+    Quel est le dénivelé total de sa randonnée, c'est-à-dire la différence d'altitude entre son point de point d'arrivée et son point de départ ?
+    \\\hint{Un dénivelé peut être positif ou négatif.}
+    % \begin{enumerate}
+    %     % \item Quelle est l'altitude maximale atteinte par Élodie pendant sa randonnée ? Et l'altitude minimale ?  
+    %     \item 
+    % \end{enumerate}
 }
 
-\answerFill[Réponse][]
+\answerFill[Réponse][
+    \multiColItemize{1}{
+        \item $1800 + 340 - 1300 + 230 + 900 - 860 = 1110$
+        \item $1110 - 1800 = -690$
+        Le dénivelé total de sa randonnée est de \Lg[m]{-690}
+    }
+]
+
+\def\a{\cir[Red]{a}} \def\b{\cir[Green]{b}} \def\c{\cir[Blue]{c}} \def\d{\cir[violet]{d}} \def\e{\cir[Orange]{e}}
+\def\f{\cir[violet]{5}} \def\t{\cir[Orange]{-3}}
+\exo{\bonus Jeu de jetons}{
+    Un sac contient des jetons,
+    chacun portant une lettre sur une face
+    (\a, \b, \c, \d ou \e)
+    et un nombre relatif sur l'autre face.
+    Chaque lettre correspond à un unique nombre relatif.
+    Le jeu consiste à tirer plusieurs jetons,
+    et ajouter les nombres associés,
+    Le joueur ayant le score le plus élevé remporte la partie.
+    Les tirages des joueurs sont donnés ci-dessous avec les valeurs des jetons \d et \e déjà visibles :
+    \multiColItemize{2}{
+        \item Lili : \a \b \c
+        \item Mattéo : \a \f \b \f \c
+        \item Loane : \b \t \c \a \b
+        \item Antoine :\a \c \a \b \c \b
+        \item Nina : \a \f \c \t \b \t \a \c
+    }
+    On sait que le score de Lili est -6.
+
+    \begin{enumerate}
+        \item Pour chaque joueur, déterminez si leur score est calculable.
+        Si oui, donnez leur score.
+        Sinon, justifiez pourquoi leur score reste indéterminable.
+        \item Sachant que les valeurs des lettres sont comprises entre -9 et 9,
+        est-il possible d'identifier le vainqueur avec certitude ?
+        \item Quelle est la place la plus haute qu'Antoine pourrait atteindre ?
+    \end{enumerate}
+}[Inspiré de \mi]
+
+\answerFill[Réponse][
+    \begin{enumerate}
+        \item L'adition est commutative (c'est à dire $\a+\b=\b+\a$),
+        on peut alors ajouter les points des jetons dans n'importe quel ordre et on obtiendra toujours la meme chose.
+        On va s'en servire pour essayer de determiner les scores de chacuns des joueurs.
+        \multiColItemize{1}{
+            \item Lili : $\a + \b + \c
+            = -6$
+            \item Mattéo : $\a + \f + \b + \f + \c
+            = (\a  + \b + \c) + \f + \f
+            = -6 + 10
+            = 4$
+            \item Loane : $\b + \t + \c + \a + \b
+            = (\a  + \b + \c) + \t + \b
+            = -6 + \t + \a
+            = -9 + \a$
+            \item Antoine : $\a + \c + \a + \b + \c + \b
+            = (\a  + \b + \c) + (\a  + \b + \c)
+            = -6 + -6 = -12$
+            \item Nina : $\a + \f + \c + \t + \b + \t + \a + \c
+            = (\a  + \b + \c) + \f + \t + \t + \a + \c
+            = -6 + \f + \t + \t + \a + \c
+            = -7 + \a + \c$
+        }
+        On ne connait pas les valeurs de \a et \c et on ne peut donc pas connaitre le score de Loane et Nina.
+        \item \multiColItemize{1}{
+            \item Max(Loane) $= -9 + 9 = 0$ si $\a = 9$
+            \item Max(Nina) $= -7 + -6 + 9 = -4$ si $\b = -9$, $\a = 9$ et $\c = -6$ (on a bien $9 + -9 + -6 = -6$)
+        }
+        Mattéo est forcément le vainceur car aucun autre joeur ne peut atteindre un score de $4$.
+        \item \multiColItemize{1}{
+            \item Min(Loane) $= -9 + -9 = -18$ si $a = -9$
+            \item Max(Nina) $= -7 + -9 + -6 = -22$ si $\b = 9$ $\a = -9 et \c = -6$ (on a bien $-9 + 9 + -6 = -6$)
+        }
+        Antoine pourrait être troisième si Loane et Nina atteigne un score inferieur a $-12$ avec par exemple $\a = -9$ et $\c = -6$.
+    \end{enumerate}
+]
+

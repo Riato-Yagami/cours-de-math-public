@@ -152,6 +152,23 @@
     {Course aux nombres}%
 }
 
+% Euclide https://www.pedagogie.ac-aix-marseille.fr/jcms/c_10743971/it/les-elements-d-euclide-traduction-par-oliver-byrne
+
+\NewDocumentCommand{\eucl}{O{1804} O{}}{
+    \ifthenelse{\equal{#1}{1632}}{ % 1632
+        \def\trad{D. Henrion}
+        \def\afalink{https://www.pedagogie.ac-aix-marseille.fr/upload/docs/application/pdf/2019-11/elements_euclide_-_denis_henrion.pdf}
+    }{
+    \ifthenelse{\equal{#1}{1804}}{ % 1804 traduction F. Peyrard
+        \def\trad{F. Peyrard}
+        \def\afalink{https://eduscol.education.fr/document/14014/download}
+    }{}
+    }
+    \def\page{}
+    \ifNotNull{#2}{\def\page{p.#2}}
+    \href{\afalink\#page=#2}{Les Éléments d'Euclide (traduction de \trad \page)}
+}
+% 1632 https://www.pedagogie.ac-aix-marseille.fr/upload/docs/application/pdf/2019-11/elements_euclide_-_denis_henrion.pdf
 % Logiciels
 \newcommand{\defIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
     \expandafter\def\csname #1\endcsname{%

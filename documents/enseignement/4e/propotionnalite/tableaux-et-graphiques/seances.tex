@@ -4,8 +4,11 @@
 \def\imgPath{enseignement/4e/theoreme-de-pythagore/contraposé-et-reciproque/}
 % \setboolean{answer}{true}
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Proport1.pdf}{Yvan Monka}}
+% \forStudent
+% \setboolean{demonstration}{false}
 %%
 
+\def\cp{coefficient de proportionnalité}
 % \obj{
 %     \item Reconnaitre sur un graphique une situation de proportionnalité ou de non proportionnalité.
 %     \item Calcule d'une quatrième proportionnelle.
@@ -13,101 +16,251 @@
 %     \item Résoudre des problèmes en utilisant la proportionnalité dans le cadre de la géométrie.
 % }
 
-\pr{Coefficient de proportionnalité}{
-    Dans un tableau de proportionnalité,
-    on passe d'une ligne à l'autre en multipliant par le coefficient de proportionnalité.
+\renewcommand{\arraystretch}{1.5}
+
+\avspace{0.1cm}
+
+\bsec{Grandeurs proportionnelles}
+
+\df{Grandeurs proportionnelles}{%
+    Deux grandeurs sont dites \key{proportionnelles}
+    lorsque les valeurs de l'une sont obtenues en multipliant les valeurs de l'autre par un même nombre non nul,
+    appelé \key{coefficient de proportionnalité}.
 }
+
+\expl{}{
+    \begin{tabular}{|>{\bfseries}c|*{4}{c|}} % Colonne en gras pour la première colonne
+        \hline
+        \rowcolor{gray!15} 
+        Grandeur 1 & coté & coté & rayon & tension \\ \hline
+        Grandeur 2  & périmètre du carré & aire du carré & périmètre du cercle & intensité \\ \hline
+        coefficient?  & \awsr{$4$} & \awsr{non} & \awsr{$2\pi$} & \awsr{$R$} \\ \hline
+    \end{tabular}
+    % \begin{itemize}
+    %     \item La longueur du coté d'un carré et sont périmètre avec \cp{} : $4$ car $\mathcal{P} = 4 \times c$.
+    %     \item 
+    % \end{itemize}
+}
+
+\bsec{Tableau de proportionnalité}
+
+% \pr{Coefficient de proportionnalité}{
+%     \Sialors{on est dans un tableau de proportionnalité}
+%     {on peu passer d'une ligne à l'autre en multipliant par un \key{\cp}}
+% }
+
+Pour un tableau de proportionnalité : \propTable{a}{c}{b}{d} avec $a,b,c,d$ des nombres.
+
+\pr{}{
+    On peu passer d'une ligne à l'autre en multipliant par un \cp.
+}
+
+\expl{}{\vspace{-0.75cm}
+    \multiColEnumerate{2}{
+        \item \Propor[Stretch=1.5, Simple]{1/2.5,2/5,5/12.5}
+        \FlechesPD{1}{2}{$\times\awsr{2}$}
+        \FlechesPG{2}{1}{$\div\awsr{2}$}
+        \item \Propor[Stretch=1.5, Simple]{120/12,3/0.3}
+        \FlechesPD{1}{2}{$\times\awsr{\frac{1}{10}}$}
+        \FlechesPG{2}{1}{$\div\awsr{\frac{1}{10}}$}
+    }
+}
+
+\pr{Egalité des produits en croix}{
+    On a l'égalité: $a \times d = b \times c$.
+}
+
+\newpage
+
+\expl{}{
+    Utiliser l'égalité des produits en croix pour vérifier si on a bien proportionnalité.
+    \vspace{-0.75cm}\multiColEnumerate{2}{
+        \item \Propor[Stretch=1.5, Simple]{15/36,1.2/2}
+        \item \Propor[Stretch=1.5, Simple]{6/1.5,3/0.5}
+    }\vspace{-0.75cm}
+    \awsr[5]{
+        \begin{enumerate}
+            \item $15 \times 2 = 30$ et $36 \times \np{1.2} = 30$
+            alors on égalité des produits en croix : $15 \times 2 = 36 \times \np{1.2}$,
+            il sagit donc d'un tableau de proportionnalité.
+            \item $6 \times \np{0.5} = 3$ et $\np{1.5} \times 3 = 4.5$
+            alors on n'a pas égalité des produits en croix : $6 \times \np{0.5} \neq \np{1.5} \times 3 = 4.5$,
+            il ne sagit donc pas d'un tableau de proportionnalité.
+        \end{enumerate}
+    }
+}
+
+\cor{Egalité des quotients}{
+    On a aussi : $\frac{a}{b} = \frac{c}{d}$
+}
+
+\expl{}{
+    Utiliser l'égalité des quotients pour vérifier si on a bien proportionnalité.
+    \vspace{-0.75cm}\multiColEnumerate{2}{
+        \item \Propor[Stretch=1.5, Simple]{10/12,5/6,20/23}
+        \item \Propor[Stretch=1.5, Simple]{2/3,4/6,6/9}
+    }\vspace{-0.75cm}
+    \awsr[5]{
+        \begin{enumerate}
+            \item $\frac{10}{12} = \frac{20}{24} \neq \frac{20}{23}$
+            alors on n'a pas égalité des quotients,
+            il ne sagit donc pas d'un tableau de proportionnalité.
+            \item $\frac{2}{3} = \frac{4}{6} = \frac{6}{9}$
+            alors on égalité des quotients,
+            il sagit donc d'un tableau de proportionnalité.
+        \end{enumerate}
+    }
+}
+
+\demo{}{
+    On a : $\frac{a}{b} = \frac{ a\times d}{b \times d} = \frac{ \awsr{b \times c} }{b \times d}$ d'après l'égalité des produits en croix.\\
+    Or $\frac{ b \times c }{b \times d} = \awsr{\frac{c}{d}}$.
+    Alors $\frac{a}{b} = \awsr{\frac{c}{d}}.$
+}[\href{https://pedagogie.ac-toulouse.fr/mathematiques/system/files/2023-03/demonstration_produits_en_croix.pdf}{Académie de Toulouse}]
+
+% \ctr{}{
+%     \Sialors{$\frac{a}{b} \neq \frac{c}{d}$}{l'égalité des quotients n'est pas respécté et on a pas proportionnalité}
+% }
+
+\mthd{Calcul 4e proportionnelle}{
+    Si l'on connait 3 valeurs par exemple $b,c,d$.\\
+    On peu calculer $a$ avec l'égalité $a = \awsr{\frac{b \times c}{d}}$.
+}
+
+\demo{}{
+    En partant de l'égalité des produits en croix : $a \times d = b \times c$.\\
+    Alors $a$ est le nombre qui multiplié par \awsr{$d$} done \awsr{$b \times c$}.\\
+    D'après la définition du quotient : $a = \awsr{\frac{b \times c}{d}}$.
+}
+
+\expl{Compléter les tableaux de proportionnalité suivants}{
+    \def\cW{2.5cm}
+    \multiColEnumerate{2}{
+        \item \begin{tabular}{|C{\cW}|C{1cm}|}
+            \hline
+            \np{9.6} & 3 \\ \hline
+            \awsr{$\frac{\np{9.6}\times2}{3} = \np{6.4}$} & 2 \\ \hline
+        \end{tabular}
+        \item \begin{tabular}{|C{1cm}|*{2}{C{\cW}|}}
+            \hline
+            3 & 5 & \awsr{$\frac{\np{21.7}\times5}{7} = \np{15.5}$} \\ \hline
+            \np{4.2} & \awsr{$\frac{\np{4.2}\times6}{3} = 7$} & \np{21.7} \\ \hline
+        \end{tabular}
+    }
+}
+
+\bsec{Représentation graphique}
 
 \pr{Représentation graphique}{
     Sur un graphique, une situation de proportionnalité est représentée par des points alignés
     avec l'origine.
 }[\ym]
 
-\pr{Egalité des produits en croix}{Pour $a,b,c,d$ des nombres.
-    Dans le tableau de proportionnalité:
-    \begin{center}
-        \propTable{a}{c}{b}{d}
-    \end{center}
-    On a l'égalité: $a \times d = b \times c$. 
-}
-
-\rmk{Egalité des quotients}{
-    On a aussi
-    \begin{align*}
-        \frac{a}{b} = \frac{c}{d}
-    \end{align*}
-}
-
-\mthd{Calcul 4e proportionnelle}{
-    Si l'on connait 3 valeurs par exemple $b,c,d$.
-    On peut utiliser l'égalité des produits en croix pour calculer la 4e proportionnelle $a$.\\
-    En effet:
-    \begin{align*}
-        a \times d &= b \times c\\
-        \ialors \palt{2}{\frac{a \times d}{d}} &= \palt{2}{\frac{b \times c}{d}}
-        \ialors a &= \palt{3}{\frac{b \times c}{d}}
-    \end{align*}
-}
-
-\slide{qf}{
-    Les situations présentées dans ces tableaux sont-elles proportionnelles ?
-    \multiColEnumerate{2}{
-        \item \begin{center}
-            \Propor[Simple,
-            Math,
-            Stretch=1.25,%
-            ]{12/3,16/4,40/10}
-        \end{center}
-        \item \begin{center}
-            \Propor[Simple,
-            Math,
-            Stretch=1.25,%
-            ]{15/5,9/3,20/6}
-        \end{center}
+\expl{}{
+    Chaque graphique suivant représente-t-il une situation de proportionnalité ?
+    \def\repere{%
+        \tkzInit[xmin=0,xmax=8,ymin=0,ymax=8]
+        \tkzGrid[sub,color=gradeColor!50!white,subxstep=1,subystep=1]        
+        \tkzLabelX[step=2]
+        \tkzLabelY[step=2]
+        \tkzDrawY[step=1]
+        \tkzDrawX[step=1]
     }
-}
-
-\slide{qf}{\calculator \\ Completer les tableaux suivants :
-    \multiColEnumerate{3}{
-        \item \begin{center}
-            \Propor[Simple,
-            Math,
-            Stretch=1.25,%
-            ]{6/5,\awsr{\np{2.4}}/2}
-        \end{center}
-        \item \begin{center}
-            \Propor[Simple,
-            Math,
-            Stretch=1.25,%
-            ]{\np{237.6}/\awsr{66},\np{46.8}/13}
-        \end{center}
-        \item \begin{center}
-            \Propor[Simple,
-            Math,
-            Stretch=1.25,%
-            ]{\awsr{12}/18,-3/-4.5}
-        \end{center}
+    \def\size{0.55}\def\crossWidth{0.25mm}
+    \vspace{-0.75cm}
+    \multiColItemize{3}{
+        \item[]\ctikz[\size]{
+            \repere
+            \node at (4,9) {\cir[gradeColor]{1}};
+            \drawPoint{}{2}{2.4}[Red]
+            \drawPoint{}{4}{4.8}[Red]
+            \drawPoint{}{6.5}{7.8}[Red]
+            \ifthenelse{\boolean{answer}}{\draw[answer] (-1,-1.2) -- (7.5,9);}{}
+        }
+        \item[]\ctikz[\size]{
+            \node at (4,9) {\cir[gradeColor]{2}};
+            \repere
+            \drawPoint{}{1}{1.3}[Red]
+            \drawPoint{}{3}{3}[Red]
+            \drawPoint{}{6}{7.8}[Red]
+            \ifthenelse{\boolean{answer}}{\draw[answer] (-1,-1.3) -- (9/1.3,9);}{}
+        }
+        \item[]\ctikz[\size]{
+            \repere
+            \node at (4,9) {\cir[gradeColor]{3}};
+            \drawPoint{}{1}{2}[Red]
+            \drawPoint{}{4}{5}[Red]
+            \drawPoint{}{6}{7}[Red]
+            \drawPoint{}{7}{8}[Red]
+            \ifthenelse{\boolean{answer}}{\draw[answer] (-1,0) -- (8,9);}{}
+        }
     }
+    \awsr[6]{Seuls les points du graphique \cir[gradeColor]{1} sont alignés avec l'origine.
+    Ainsi, parmi les trois graphiques,
+    c'est le seul qui représente une situation de proportionnalité.}
 }
 
-\slide{qf}{
-    \nullsubsec{}{
-        Sachant que huit briques de masse identique pèsent 13,6 kg, calcule la masse de six de ces
-        briques.
-    }[\afa{4e}[6]]
-}
 
-\slide{qf}{
-    \nullsubsec{}{
-        \begin{enumerate}
-            \item Sachant que la longueur $\mathcal{P}$ d'un cercle
-            est proportionnelle à son rayon $r$
-            avec un coefficient de proportionnalité $2\pi$.
-            Donnez la formule permettant de calculer $\mathcal{P}$ en fonction de $r$.
-            \item Sachant que la tension $U$ aux bornes d'une résistance
-            est proportionnelle à l'intensité $I$ du courant qui la traverse
-            avec un coefficient de proportionnalité égal à la valeur de la résistance $R$.
-            Donnez la formule permettant de calculer $U$ en fonction de $I$.
-        \end{enumerate}
-    }
-}
+
+% \slide{qf}{
+%     Les situations présentées dans ces tableaux sont-elles proportionnelles ?
+%     \multiColEnumerate{2}{
+%         \item \begin{center}
+%             \Propor[Simple,
+%             Math,
+%             Stretch=1.25,%
+%             ]{12/3,16/4,40/10}
+%         \end{center}
+%         \item \begin{center}
+%             \Propor[Simple,
+%             Math,
+%             Stretch=1.25,%
+%             ]{15/5,9/3,20/6}
+%         \end{center}
+%     }
+% }
+
+% \slide{qf}{\calculator \\ Completer les tableaux suivants :
+%     \multiColEnumerate{3}{
+%         \item \begin{center}
+%             \Propor[Simple,
+%             Math,
+%             Stretch=1.25,%
+%             ]{6/5,\awsr{\np{2.4}}/2}
+%         \end{center}
+%         \item \begin{center}
+%             \Propor[Simple,
+%             Math,
+%             Stretch=1.25,%
+%             ]{\np{237.6}/\awsr{66},\np{46.8}/13}
+%         \end{center}
+%         \item \begin{center}
+%             \Propor[Simple,
+%             Math,
+%             Stretch=1.25,%
+%             ]{\awsr{12}/18,-3/-4.5}
+%         \end{center}
+%     }
+% }
+
+% \slide{qf}{
+%     \nullsubsec{}{
+%         Sachant que huit briques de masse identique pèsent 13,6 kg, calcule la masse de six de ces
+%         briques.
+%     }[\afa{4e}[6]]
+% }
+
+% \slide{qf}{
+%     \nullsubsec{}{
+%         \begin{enumerate}
+%             \item Sachant que la longueur $\mathcal{P}$ d'un cercle
+%             est proportionnelle à son rayon $r$
+%             avec un \cp $2\pi$.
+%             Donnez la formule permettant de calculer $\mathcal{P}$ en fonction de $r$.
+%             \item Sachant que la tension $U$ aux bornes d'une résistance
+%             est proportionnelle à l'intensité $I$ du courant qui la traverse
+%             avec un \cp égal à la valeur de la résistance $R$.
+%             Donnez la formule permettant de calculer $U$ en fonction de $I$.
+%         \end{enumerate}
+%     }
+% }

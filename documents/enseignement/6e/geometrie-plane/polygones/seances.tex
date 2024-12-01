@@ -2,15 +2,211 @@
 \setSeq{5}{Géométrie plane - Polygones}
 \setGrade{6e}
 \def\imgPath{enseignement/6e/geometrie-plane/polygones/}
-\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Nombres1.pdf}{Yvan Monka}}
-
-%\forPrint
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Quad.pdf}{Yvan Monka}}
+% Triangle https://www.maths-et-tiques.fr/telech/19Triang.pdf
+% \forPrint
+\def\caPrefix{6e-juin-2022-}
 %%
 
+\obj{
+    \item Savoir coder des figures simples :
+    \begin{itemize}
+        \item triangles (et particuliers : rectangle, isocèle, équilatéral)
+        \item quadrilatères (et particuliers : carré, rectangle, losange)
+    \end{itemize}
+    \item Connaître et utiliser le vocabulaire associé à ces figures et leurs propriétés.
+    \item Reconnaître, nommer et décrire des figures complexes (assemblages de figures simples).
+    \item Représenter, reproduire, tracer ou construire des figures simples.
+    \item Représenter, reproduire, tracer ou construire des figures complexes (assemblages de figures simples).
+    \item Réaliser, compléter ou rédiger un programme de construction d'une figure plane.
+}
+
+\scn{Définir un polygone}
+
+\caSlide{6-7-8}
+
+\bsec{Définitions}
+
+\slide{cr}{\bsmall
+    \sseq\ssec
+    \df{}{
+        On appelle \key{polygone} une ligne brisée fermée.
+    }[\wiki{Polygone}]
+
+    \df{}{
+        On appelle :
+        \begin{itemize}
+            \item \awsr{\key{côtés}} les segments qui compose un polygone.
+            \item \awsr{\key{sommets}} les extremités des côtés.
+            \item \awsr{\key{diagonale}} un segment reliant deux sommets non consécutifs.
+        \end{itemize}
+    }[\href{https://www.desmaths.fr/cours/index.php?n=6e&c=09}{Desmaths.fr}]
+}
+
+\slide{cr}{
+    \expl{}{
+        \input{resources/enseignement/6e/geometrie-plane/polygones/expl-polygone.tex}
+        Ce polygone à :
+        \multiColEnumerate{3}{
+            \item \awsr{5} sommets
+            \item \awsr{5} cotés
+            \item \awsr{4} diagonales
+        }
+    }
+}
+
+% \newpage
+
+\slide{cr}{\bsmall
+    \rl{}{
+        Le nom d'un polygone est donné par ses sommets.
+        On part d'un sommet et on fait le tour du polygone,
+        dans un sens ou dans l'autre.
+    }
+
+    \expl{}{
+        \input{resources/enseignement/6e/geometrie-plane/polygones/expl-nom-polygone.tex}
+        Nom du polygone : \renewcommand{\theenumi}{\cir[gradeColor]{\arabic{enumi}}}
+        \multiColEnumerate{1}{
+            \item \awsr{$ABCDEF$ ou $FEDCB$ ou $CDEFAB$, etc.}
+            \item \awsr{$GHIJ$ ou $IJGH$ ou $HIJG$, etc.}
+        }
+    }
+}
+
+\bookSlide{3p191}[10cm]
+
+\bsec{Triangles}
+\bsubsec{Définitions}
+\slide{cr}{\bsmall
+    \ssec\ssubsec
+    \df{}{
+    On appelle \key{triangle} un polygone à \key{trois cotés}.
+    }[\wiki{Triangle}]
+
+    \df{Triangles particuliers}{
+        On appelle un triangle :
+        \begin{itemize}
+            \item qui a \key{un angle droit}, un \awsr{\key{triangle rectangle}}.
+            \item qui a \key{deux côtés de même longueur}, un \awsr{\key{triangle isocèle}}.
+            \item qui a \key{trois côtés de même longueur}, un \awsr{\key{triangle équilatéral}}.
+        \end{itemize}
+    }
+}
+
+\slide{cr}{\bshrink
+    \expl{}{\bvspace{-1cm}
+        \dividePage{
+            \input{resources/enseignement/6e/geometrie-plane/polygones/expl-triangles-particuliers.tex}
+        }{
+            \input{resources/enseignement/6e/geometrie-plane/polygones/expl-triangles-particuliers-2.tex}
+        }
+        \renewcommand{\theenumi}{\cir[gradeColor]{\arabic{enumi}}}
+        \multiColEnumerate{3}{
+            \item \awsr{triangle rectangle}
+            \item \awsr{triangle isocèle}
+            \item \awsr{triangle equilatéral}
+        }
+    }
+}
+
+\scn{Triangles}
+\caSlide{9-10-11}
 
 \slide{exo}{
     \exo{}{
-        Un triangle equilatéral a le même périmètre q'un carré de \Lg{6} de côté.
-        Quelle est la longueur d'un coté de ce triangle ?
+        Construire sur papier blanc un:
+        \multiColEnumerate{1}{
+            \item triangle rectangle (qui n'est pas un triangle isocèle)
+            \item triangle isocèle (qui n'est ni un triangle rectangle, ni un triangle equilatéral)
+            \item triangle equilatéral
+            \item triangle rectangle isocèle
+        }
+    }
+}
+
+\scn{Quadrilatères}
+\caSlide{13-14-15}
+
+\bsec{Quadrilatères}
+\bsubsec{Définitions}
+
+\slide{cr}{\bsmall
+    \ssec\ssubsec
+    \df{}{
+    On appelle \key{quadrilatère} un polygone à \key{quatre cotés}.
+    }[\wiki{Quadrilatère}]
+    \df{Quadrilatères particuliers}{
+        On appelle un quadrilatère :
+        \begin{itemize}
+            \item qui a \key{4 côtés de même longueur}, un \awsr{\key{losange}}.
+            \item qui a \key{4 angles droits}, un \awsr{\key{rectangle}}.
+            \item qui est un \key{losange et un rectangle}, un \awsr{\key{carré}}.
+        \end{itemize}
+    }
+}
+
+\slide{cr}{\bshrink
+    \expl{}{\bvspace{-1cm}
+        \dividePage{
+            \input{resources/enseignement/6e/geometrie-plane/polygones/expl-quadrilateres-particuliers.tex}
+        }{
+            \input{resources/enseignement/6e/geometrie-plane/polygones/expl-quadrilateres-particuliers-2.tex}
+        }
+        \renewcommand{\theenumi}{\cir[gradeColor]{\arabic{enumi}}}
+        \multiColEnumerate{3}{
+            \item \awsr{losange}
+            \item \awsr{rectangle}
+            \item \awsr{carré}
+        }
+    }
+}
+
+\slide{exo}{
+    \exo{}{
+        Construire sur papier blanc un:
+        \multiColEnumerate{1}{
+            \item rectangle (qui n'est pas un carré)
+            \item losange (qui n'est pas un carré)
+            \item carré
+        }
+    }
+}
+
+% \slide{exo}{
+%     \expl{}{
+%         \input{resources/enseignement/6e/geometrie-plane/polygones/act-reconnaitre-polygones.tex}
+%         \renewcommand{\theenumi}{\cir[gradeColor]{\arabic{enumi}}}
+%         \multiColEnumerate{3}{
+%             \item \awsr{triangle isocèle}
+%             \item \awsr{losange}
+%             \item \awsr{carré}
+%             \item \awsr{triangle rectangle}
+%             \item \awsr{triangle isocèle}
+%             \item \awsr{rectangle}
+%         }
+%         \input{resources/enseignement/6e/geometrie-plane/polygones/act-reconnaitre-polygones-2.tex}
+%     }
+% }
+
+% \slide{exo}{
+%     \exo{}{
+%         Construire sur papier blanc un:
+%         \multiColEnumerate{2}{
+%             \item rectangle (qui n'est pas un carré)
+%             \item losange (qui n'est pas un carré)
+%             \item carré
+%             \item triangle rectangle (qui n'est pas un triangle isocèle)
+%             \item triangle isocèle (qui n'est ni un triangle rectangle, ni un triangle equilatéral)
+%             \item triangle equilatéral
+%             \item triangle rectangle isocèle
+%         }
+%     }
+% }
+
+\slide{exo}{
+    \exo{}{
+        Un triangle equilatéral a le même périmètre qu'un carré de \Lg{6} de côté.
+        Quelle est la longueur d'un côté de ce triangle ?
     }[\dmeepc{6}[161]]
 }

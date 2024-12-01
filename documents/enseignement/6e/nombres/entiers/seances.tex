@@ -8,9 +8,7 @@
 
 % https://www.maths-et-tiques.fr/telech/19Nombres2.pdf
 
-% \setboolean{newPageOnSlide}{true}
-% \setboolean{answer}{false}
-% \setboolean{debugMode}{true}
+\forPrint
 %%
 
 \obj{
@@ -483,7 +481,7 @@
 }
 
 \slide{exo}{
-    \exo{}{
+    \exo{des fleurs}{
         Une fleuriste dispose de 1815 fleurs.
         Doit-elle réaliser des bouquets de 16 fleurs ou de 17 fleurs pour en utiliser le plus possible ?
     }[\iP{6}{2021}[2][16]]
@@ -571,11 +569,19 @@
     }
 }
 
+\scn{Formaliser le vocabulaire opératoire}
+
+\slide{qf}{
+    \multiColEnumerate{1}{
+        \item $7 + 5 - 4 \times 2 = \awsr{7 + 5 - 8 = 12 - 8 = 4}$
+        \item $7 + (5 - 4) \times 2 = \awsr{7 + 1 \times 2 = 7 + 2 = 9}$
+        \item $(7 + 5 - 4) \times 2 = \awsr{(13 - 4) \times 2 = 9 \times 2 = 18}$
+    }
+}
+
 \bsubsec{Vocabulaire opératoires}
 
-% \newpage
-
-\slide{cr}{
+\slide{cr}{\bsmall
     \ssubsec
     \bvspace{-0.5cm}
     \vc{}{
@@ -583,13 +589,13 @@
         \begin{itemize}
             \item L'\key{addition} permet de calculer la \key{somme} de deux \key{termes}.
             \item La \key{soustraction}  permet de calculer la \key{différence} entre deux \key{termes}.
-            \item La \key{multiplication} permet de calculer la \key{produit} de deux \key{facteurs}.
-            \item La \key{division} permet de calculer la \key{quotient} de deux \key{nombres}.
+            \item La \key{multiplication} permet de calculer le \key{produit} de deux \key{facteurs}.
+            \item La \key{division} permet de calculer le \key{quotient} de deux \key{nombres}.
         \end{itemize}
     }
 }
 
-\slide{cr}{
+\slide{cr}{\bshrink
     \vc{}{Dans un calcul,
     le type de la dernière opération effectuée détermine le nom donné au calcul dans son ensemble.}
     \bvspace{-0.5cm}
@@ -606,6 +612,18 @@
 }
 
 \scn{Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement}
+
+\slide{qf}{
+    Quel est le périmètre d'un quadrilatère dont les côtés ont pour mesures :
+    \multiColItemize{4}{
+        \item \Lg{2} \item \Lg{3.9} \item \Lg[mm]{81} \item \Lg{10}
+    }
+    \awsr[0]{
+        \multiColItemize{1}{
+            \item $\Lg[mm]{81} = \Lg{8.1}$ \item $\Lg{2} + \Lg{3.9} + \Lg{8.1} + \Lg{10} = \Lg{24}$
+        }
+    }
+}
 
 \slide{qf}{\bvspace{-0.5cm}
     \exo{}{

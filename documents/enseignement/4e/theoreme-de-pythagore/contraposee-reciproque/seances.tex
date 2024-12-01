@@ -3,7 +3,7 @@
 \setGrade{4e}
 \def\imgPath{enseignement/4e/theoreme-de-pythagore/contraposee-et-reciproque/}
 
-\forPrint
+% \forPrint
 % \setboolean{answer}{true}
 
 \def\ym{https://www.maths-et-tiques.fr/telech/19Pyth2.pdf}
@@ -135,7 +135,7 @@
         {« \Sialors{non $B$}{non $A$} »}.
         \begin{enumerate}
             \item La contraposée de la proposition : «\Sialors{c'est un triangle}{il a trois côtés}».
-            est donc «\Sialors{il n'a pas trois cotés}{ce n'est pas un triangle}» Est-elle vraie ? \saveenumi
+            est donc «\Sialors{il n'a pas trois côtés}{ce n'est pas un triangle}» Est-elle vraie ? \saveenumi
         \end{enumerate}  
     }
 }
@@ -175,7 +175,7 @@
     }
 }
 
-\scn{Appliquer ses connaissances sur la contraposée au Théorème de Pythagore}
+\scn{Appliquer ses connaissances sur la contraposée et la réciproque au Théorème de Pythagore}
 
 \slide{qf}{
     \calculator
@@ -237,7 +237,7 @@
         Démontrer que le triangle n'est pas rectangle.\\
         \awsr[5]{
             \begin{itemize}
-                \item $NE$ est le plus long coté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+                \item $NE$ est le plus long côté, il sagirait donc de l'hypothénus si le triangle était rectangle.
                 \item D'une part :$EZ^2 = 16^2 = 256$
                 \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
                 \item Alors : $EZ^2 \neq NE^2 + ZN^2$
@@ -248,6 +248,67 @@
 }
 
 \bookSlide{29p431}[12cm]
+
+\ifArticle{\awsr[0]{
+    \begin{itemize}
+        \item On commence par convertir les longueurs en \Lg{}. (On aurait également pu les convertir toutes en \Lg[dm]{}).
+        \multiColItemize{3}{
+            \item $PU = \Lg[dm]{3.6} = \Lg{36}$ \item $PF = \Lg[dm]{5.5} = \Lg{55}$ \item $UF = \Lg{42}$
+        }
+        \item \Pythagore[Reciproque,Unite=cm]{PUF}{55}{36}{42} %PF PU UF 
+        % \item $NE$ est le plus long côté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+        % \item D'une part :$EZ^2 = 16^2 = 256$
+        % \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
+        % \item Alors : $EZ^2 \neq NE^2 + ZN^2$
+        % \item D'après la contraposée du théorème de Pythagore le triangle $NEZ$ n'est pas rectangle.
+    \end{itemize}
+}}
+
+\scn{Démontrer la réciproque du théorème de Pythagore sur un cas particulier}
+
+\def\repere{%
+    \tkzInit[xmin=0,xmax=4,ymin=0,ymax=3]
+    \tkzGrid[sub,color=gradeColor!50!white,subxstep=1,subystep=0.5]        
+    \tkzLabelX[step=1]
+    \tkzLabelY[step=1]
+    \tkzDrawY[label={Prix (en \euro)}, above , step=0.5]
+}
+\slide{qf}{\bsmall
+    \hspace{-1.25cm}\wideFrame[4em]{%
+        \def\size{0.65}\def\crossWidth{0.25mm}%
+        \multiColItemize{3}{
+            \item[]\ctikz[\size]{
+                \repere
+                \tkzDrawX[label={Poire}, below right, step=1]
+                \drawPoint{}{1}{1}[Red]
+                \drawPoint{}{2}{1.5}[Red]
+                \drawPoint{}{3}{2.5}[Red]
+                \drawPoint{}{4}{3}[Red]
+            }
+            \item[]\ctikz[\size]{
+                \repere
+                \tkzDrawX[label={Orange}, below right, step=1]
+                \drawPoint{}{1}{0.5}[Red]
+                \drawPoint{}{2}{1}[Red]
+                \drawPoint{}{3}{1.5}[Red]
+                \drawPoint{}{4}{2}[Red]
+            }
+            \item[]\ctikz[\size]{
+                \repere
+                \tkzDrawX[label={Kiwi}, below right, step=1]
+                \drawPoint{}{1}{1}[Red]
+                \drawPoint{}{2}{1.5}[Red]
+                \drawPoint{}{3}{2}[Red]
+                \drawPoint{}{4}{2.5}[Red]
+            }
+        }
+        \vspace{-0.5cm}
+        \begin{enumerate}
+            \item Le prix du lot de chacun des trois fruits est-il proportionnel à la quantité achetée ?
+            \item Que remarquez-vous sur la disposition des points dans le cas de proportionnalité ?
+        \end{enumerate}
+    }
+}
 
 \bsec{Réciproque du théorème de Pythagore}
 
@@ -275,6 +336,30 @@
     De manière similaire on pourait prouver que la réciproque du théorème de Pythagore est toujours vraie.
 }
 
+\scn{Démontrer qu'un triangle est rectangle}
+
+\slide{qf}{
+    Les grandeurs suivantes sont-elles proportionnelles entre elles ?
+    \begin{enumerate}
+        \item Le périmètre d'un carré et la longueur de son côté.
+        \item L'aire d'un carré et la longueur de son côté.
+        \item Le périmètre d'un rectangle et sa largeur (en supposant que la longueur reste fixe).
+        \item Le périmètre d'un cercle et la longueur de son rayon.
+    \end{enumerate}
+    \awsr[0]{%
+        Deux grandeurs sont proportionnelles si l'une peut être obtenue en multipliant l'autre par un coefficient constant,
+        c'est le coefficient de proportionnalité.
+        \begin{enumerate}
+            \item Le périmètre d'un carré $P$ et la longueur de son côté $c$ sont proportionnelle car $P = 4 \times c$. Le coefficient de proportionnalité est $4$.  
+            \item L'aire $A$ d'un carré n'est pas proportionnelle à la longueur $c$ de son côté, car $A = c^2$.
+            La relation entre ces grandeurs n'est pas une multiplication par un coefficient constant.
+            \item Le périmètre $P$ d'un rectangle et sa largeur $l$, avec une longueur $L$ fixe :  
+            $P = 2L + 2l$. La relation entre $P$ et $l$ n'est pas proportionnelle, car $2L$ est un terme constant qui ne dépend pas de $l$.  
+            \item Le périmètre $P$ d'un cercle est proportionnel à son rayon $r$, car $P = 2\pi \times r$. Le coefficient de proportionnalité est $2\pi$.  
+        \end{enumerate}
+    }
+}
+
 \slide{cr}{
     \ssec
 
@@ -290,10 +375,10 @@
 
     \expl{}{
         Soit $CGT$ est un triangle tel que : $CG = \Lg{45}, GT = \Lg{28}\et TC = \Lg{53}$.\\
-        Démontrer que le triangle $CGT$ est pas rectangle.\\
+        Démontrer que le triangle $CGT$ est rectangle.\\
         \awsr[6]{
             \begin{itemize}
-                \item $TC$ est le plus long coté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+                \item $TC$ est le plus long côté, il sagirait donc de l'hypothénus si le triangle était rectangle.
                 \item D'une part :$TC^2 = 53^2 = 256$
                 \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
                 \item Alors : $EZ^2 \neq NE^2 + ZN^2$
@@ -301,6 +386,19 @@
             \end{itemize}
         }
     }
+}
+
+\slide{qf}{
+    \begin{enumerate}
+        \item Sachant que la longueur $\mathcal{P}$ d'un cercle
+        est proportionnelle à son rayon $r$
+        avec un coefficient de proportionnalité $2\pi$.
+        Donnez la formule permettant de calculer $\mathcal{P}$ en fonction de $r$.
+        \item Sachant que la tension $U$ aux bornes d'une résistance
+        est proportionnelle à l'intensité $I$ du courant qui la traverse
+        avec un coefficient de proportionnalité égal à la valeur de la résistance $R$.
+        Donnez la formule permettant de calculer $U$ en fonction de $I$.
+    \end{enumerate}
 }
 
 \bookSlide{27p431,26p431,36p432}[7cm][2]

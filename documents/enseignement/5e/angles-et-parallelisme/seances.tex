@@ -1,0 +1,93 @@
+%%% VARIABLES %%%
+\setSeq{5}{Angles et parallélisme}
+\setGrade{5e}
+\def\imgPath{enseignement/5e/angles-et-parallelisme/}
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Angles5e.pdf}{Yvan Monka}}
+% \forPrint
+% \def\caPrefix{6e-juin-2022-}
+%%
+% [\href{https://myriade.editions-bordas.fr/Myriade4e/assets/cherchons-ensemble-chapitre-10-angles-et-parallelisme-triangles-semblables/preview}{Myriade 4e 2016}]
+
+\obj{
+    \item À partir des connaissances suivantes :
+    codage des figures, caractérisations angulaires du parallélisme (angles alternes internes, angles correspondants),
+    mener des raisonnements en utilisant des propriétés des figures, des configurations et des symétries.
+}
+
+\bsec{Angles alternes-internes et angles correspondants}
+
+\slide{exo}{\bshrink
+    \act{}{
+        \input{resources/enseignement/5e/angles-et-parallelisme/act-angles-alternes-internes.tex}
+    }
+}
+
+\slide{exo}{\bsmall
+    \begin{enumerate}\setItemColor{act}
+        \item Dans les figures \cir[gradeColor]{4} et \cir[gradeColor]{6}, les angles représentés sont dits {\key{alternes-internes}}.
+        Ce n'est pas le cas pour les autres figures. 
+        À partir de ces observations :
+        \begin{itemize}
+            \item Dessine à main levée deux couples d'angles alternes-internes et deux couples d'angles qui ne sont pas alternes-internes.
+            \item Propose une définition pour expliquer dans quelles conditions deux angles sont alternes-internes.
+        \end{itemize}
+        \item De même, seuls les angles de la figure \cir[gradeColor]{2} sont dits {\key{correspondants}}. 
+        \begin{itemize}
+            \item Dessine à main levée deux couples d'angles correspondants et deux couples d'angles qui ne sont pas correspondants.
+            \item Propose une définition pour expliquer dans quelles conditions deux angles sont correspondants.
+        \end{itemize}
+    \end{enumerate}
+}
+
+\slide{cr}{\bsmall
+    \sseq\ssec
+    \df{}{
+        Deux angles formés par deux droites coupées par une sécante sont dits \key{alternes-internes} si :
+        \begin{itemize}
+            \item ils sont situés de part et d'autre de la sécante (\key{alternes});
+            \item ils sont situés entre les deux droites (\key{internes});
+            \item ils ne sont pas sur le même sommet.
+        \end{itemize}
+    }[\wiki{Angles_alternes-internes}]
+
+    \expl{}{}
+}
+
+\slide{cr}{
+    \df{}{
+        Deux angles formés par deux droites coupées par une sécante sont dits \key{correspondants} si :
+        \begin{itemize}
+            \item ils sont du même côté de la sécante;
+            \item l'un est situé entre les deux droites et l'autre hors des deux droites;
+            \item ils ne sont pas sur le même sommet.
+        \end{itemize}
+    }[\wiki{Angles_alternes-internes}]
+
+    \expl{}{}
+}
+
+\bsec{Propriétés de parallélisme}
+
+\slide{exo}{\bvspace{-0.5cm}
+    \act{Eléments d'Euclide : proposition 27 et 28}{
+        \begin{enumerate}
+            \item \imgp{thm-18-pr-27}[10cm]
+            \begin{enumerate}
+                \item Réaliser un schéma de la situation qui illustre la proposition.
+                \item Colorier de la même couleur les angles « oppofez alternatiuement » qui seraient égaux.
+                \item Comment nommes-t-on ces angles aujourd'hui?
+            \end{enumerate}\saveenumi
+        \end{enumerate}
+    }[\eucl[1632][58] et \href{https://mathix.org/linux/archives/19990}{Mathix}]
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[act]
+        \item \imgp{thm-19-pr-28-alt}[10cm]
+        \begin{enumerate}
+            \item Réaliser un schéma de la situation qui illustre la proposition.
+            \item Colorier de la même couleur « l'angle extérieur et son opposé intérieur du même côté » qui seraient égaux.
+            \item Comment nommes-t-on ces angles aujourd'hui?
+        \end{enumerate}
+    \end{enumerate}
+}

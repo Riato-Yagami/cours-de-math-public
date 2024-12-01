@@ -202,7 +202,7 @@
 \newcommand\wideFrame[2][3em]{%
 \makebox[\linewidth][c]{%
     \begin{minipage}{\dimexpr\textwidth+#1\relax}
-        \raggedright#2
+        \raggedright#2%
     \end{minipage}%
     }%
 }
@@ -214,7 +214,4 @@
 
 \NewDocumentCommand{\obj}{m O{}}{}
 
-% \newcommand{\setTitle}[1]{
-%     \def\longTitle{#1}
-%     \def\shortTitle{\MakeUppercase{\longTitle}}
-% }
+\newcommand{\forPrint}{}

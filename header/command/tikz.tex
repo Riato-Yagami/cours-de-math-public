@@ -115,3 +115,16 @@
     decorate,
     decoration={\pgfkeysvalueof{/tikz/penciline/decoration}},
 }
+
+\tikzset{
+    penthick/.style={
+        penciline, % Ajuster selon vos préférences
+        thick                        % Épaisseur du trait
+    }
+}
+
+
+\NewDocumentCommand{\cir}{O{black} m}{
+    \tikz[baseline=(X.base)] 
+    \node (X) [draw, shape=circle, inner sep=-1pt, color = #1] {\small\strut #2};
+}
