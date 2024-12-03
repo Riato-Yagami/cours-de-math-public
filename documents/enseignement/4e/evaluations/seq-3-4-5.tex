@@ -24,7 +24,7 @@
     Déterminer si un triangle est rectangle.
     /1,
     Maîtriser les notions de contraposée et de réciproque. /0%
-    }
+}
 
 \seqEvaluation{5}{Proportionnalité - Tableaux et graphiques}{
     Reconnaître un tableau de proportionnalité.
@@ -36,6 +36,8 @@
 }
 
 \evalutionEnd[3][2]
+
+\noCalculator
 
 % \newpage
 
@@ -63,18 +65,18 @@
 
 \exo{Manipulation de relatifs}{
     \multiColEnumerate{1}{
-        \item $[-3-(-7+5)] \times (-\np{0.5}) = \awsr[4]{
+        \item $[-3-(-7+5)] \times (-\np{0.5}) = \awsr[3]{
             [-3-2] \times (-\np{1.5})
             = -5 \times (-\np{1.5})
             = \np{7.5}
         }$
         \item Quel est le résultat d'un produit de $\np{4815162342}$ fracteurs égales à $-1$.\\
-        \awsr[4]{
+        \awsr[3]{
             $\np{4815162342}$ est pair donc le résultat est positif
             et multiplié $1$ par lui même donne $1$ donc le résultat est $1$.
         }
         \item Donner deux nombres dont le carré vaut $18$.
-        \awsr[4]{
+        \awsr[3]{
             $\sqrt{18}^2 = 18$ et $(-\sqrt{18})^2 = 18$.
             $18$ et $-18$ sont deux nombres dont le carré vaut $18$.
         }
@@ -100,11 +102,11 @@
         \draw [penciline,thick] (-0.28,-2.28)-- (2.28,1.94);
         \draw [penciline,thick] (6.14,-2.72)-- (2.28,1.94);
         \draw [penciline,thick] (-0.28,-2.28)-- (6.14,-2.72);
-        \draw (-4.86,1.04) node[anchor=north west] {6cm};
+        \draw (-4.86,1.04) node[anchor=north west] {7cm};
         \draw (-2.8,-1.22) node[anchor=north west] {5cm};
         \draw (-1.8,2.04) node[anchor=north west] {3cm};
-        \draw (0.26,0.32) node[anchor=north west] {6dm};
-        \draw (2.26,-2.78) node[anchor=north west] {8dm};
+        \draw (0.26,0.32) node[anchor=north west] {8dm};
+        \draw (2.26,-2.78) node[anchor=north west] {6dm};
         \draw (4.46,0.14) node[anchor=north west] {10dm};
         \drawPoint{A}{-3.20}{3.86}
         \drawPoint{B}{-4.50}{-1.86}
@@ -117,7 +119,7 @@
 
 
 \answerSec{14}[Triangle ABC][
-    \Pythagore[Reciproque,Unite=cm]{ABC}{3}{5}{6}
+    \Pythagore[Reciproque,Unite=cm]{ACB}{7}{5}{3}
 ]
 
 \answerFill[Triangle EDF][
@@ -193,8 +195,8 @@
         ]{\np{2.5}/-5,-60/120,-360/710}
     }
 }
-
-\answerSec{11}[Réponse][%
+\vspace{-1cm}
+\answerSec{14}[Réponse][%
     \begin{enumerate}
         \item $-6 \times 30 = 180 = -18 \times 10$\\
         L'égalité des produits en croix étant vérifier,
@@ -212,9 +214,9 @@
         \item La proposition suivante est-elle vraie ?  
         «\Sialors{c'est un losange}{ses diagonales sont perpendiculaires.}»
         \item Écrivez la contraposée de cette proposition. Cette contraposée est-elle vraie ?
-        \item Écrivez la réciproque de cette proposition. Cette réciproque est-elle vraie ? Justifiez votre réponse.  
+        \item Écrivez la réciproque de cette proposition. Cette réciproque est-elle vraie ? Justifiez votre réponse.
+        \item Sous quelle condition sur ses diagonales un quadrilatère est-il un losange ? Formulez la réponse dans une phrase contenant « \ssi ».
     \end{enumerate}  
-    
 }
 
 \answerFill[Réponse][%
@@ -227,5 +229,6 @@
         «\Sialors{les diagonales sont perpendiculaires}{c'est un losange}».
         Cette réciproque est fausse,
         car un cerf-volant est un quadrilatère dont les diagonales sont perpendiculaires sans être nécessairement un losange.
+        \item Un quadrilatère est un losange \ssi ses diagonales sont perpendiculaires et se coupent en leur milieu.
     \end{enumerate}
 ]

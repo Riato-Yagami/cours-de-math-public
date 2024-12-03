@@ -571,4 +571,31 @@
     }
 }
 
+\slide{exo}{
+    \exo{}{
+        \begin{enumerate}
+            \item Construire un rectangle $ABCD$.
+            \item Déterminer $O$, le centre de symétrie du rectangle.
+            \item Comparer les aires des triangles $AOD$ et $BOC$ ? Justifier votre réponse.
+        \end{enumerate}
+    }
+    \awsr{
+        \ctikz[1]{
+            \draw[gray!40] (-8.5,-2.5) rectangle (2.5,5.5);
+            \drawPoint{A}{-7.86}{2.4}
+            \drawPoint{B}{0.74}{4.22}
+            \drawPoint{C}{1.53}{0.47}
+            \drawPoint{D}{-7.07}{-1.35}
+            \drawPoint{O}{-3.16}{1.43}
+            \draw [thick] (-7.86,2.40) -- (0.74,4.22) -- (-7.07,-1.35) -- (-7.86,2.40) -- (1.53,0.47) -- (-7.07,-1.35);
+            \draw [thick] (1.53,0.47) -- (0.74,4.22);
+        }
+        \begin{enumerate} \loadenumi[exo][2]
+            \item Les triangles $AOD$ et $BOC$ sont image l'un de l'autre par la symetrie de centre $O$.
+            \item Or la symetries centrale conserve les mesures d'aires.
+            Donc les aires des triangles $AOD$ et $BOC$ sont égales.
+        \end{enumerate}
+    }
+}
+
 % \slide{exo}{}

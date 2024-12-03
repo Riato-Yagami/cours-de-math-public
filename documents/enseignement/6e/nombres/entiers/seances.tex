@@ -8,7 +8,7 @@
 
 % https://www.maths-et-tiques.fr/telech/19Nombres2.pdf
 
-\forPrint
+% \forPrint
 %%
 
 \obj{
@@ -40,9 +40,8 @@
         \imgp{historic/numbers}[6.5cm]
     }[\dmeepc{6}[108]]
 }
-
 % \endinput
-
+\newpage
 \slide{exo}{
     \begin{enumerate}\setItemColor{act}
         \item \multiColEnumerate{3}{
@@ -489,6 +488,7 @@
 
 \slide{exo}{
     \exo{des crêpes}{
+        \calculator
         Dans une fabrique, on emballe les crêpes par paquets de 12.
         En fin de journé, les employés mangent les crêpes qui restent après emballage.
         Voici le nombre de crêpes fabriquées cette semaine:
@@ -507,6 +507,23 @@
         \end{enumerate}
     }[\dmeepc{6}[166]]
 }
+
+\awsr[0]{
+    \begin{enumerate}
+        \item La division euclidienne de $384$ par $12$ donne :
+        $384 = 12 \times 32 + 0$.
+        Il y a donc $32$ douzaines de crêpes emballées, et il reste $0$ crêpes à manger pour les employés.
+        \item 
+        \multiColItemize{3}{
+            \item mardi : $1004 = 12 \times 83 + 8$
+            \item mercredi : $519 = 12 \times 43 + 3$
+            \item jeudi : $1069 = 12 \times 89 + 1$
+            \item vendredi : $1102 = 12 \times 91 + 10$
+        }
+        En additionnant les restes : $0 + 8 + 3 + 1 + 10 = 22$. Les employés ont mangé en tout $22$ crêpes.
+        Le nombre d'employés est donc un diviseur de $22$, soit : $1$, $2$, $11$ ou $22$.
+    \end{enumerate}
+}\avspace{0.5cm}
 
 \bookSlide{21p45,23p45,25p45}[7cm][2]
 
