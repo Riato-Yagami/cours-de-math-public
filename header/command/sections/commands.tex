@@ -25,7 +25,7 @@
     \@ifclassloaded{beamer}{
         \textbf{\secTitle}\vspace*{-0.25cm}
     }{
-        \subsection*{\secTitle}
+        \subsection*{\secTitle}\vspace*{-0.2cm}
     }
     %
     \ifthenelse{\boolean{outline}}{}{\secContent}
@@ -57,7 +57,8 @@
             \end{subsectionBox}
         }{
             % \ifNotNull{#2}{}{\titleformat{\subsection}[runin]}
-            \subsubsection*{\secTitle}
+            \subsubsection*{\secTitle}\vspace*{-0.25cm}
+            % \textbf{\secTitle \ifx\relax#2\relax\else \\ \fi}
             \ifthenelse{\boolean{outline}}{}{\secContent}
         }
     }
