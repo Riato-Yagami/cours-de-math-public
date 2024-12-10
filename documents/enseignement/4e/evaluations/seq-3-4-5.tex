@@ -6,10 +6,8 @@
 % \def\imgPath{enseignement/6e/}
 
 \seqEvaluation{3}{Nombres Relatifs}{
-    Déterminer le produit et le quotient de nombres relatifs.
-    /2,
-    Déterminer la somme et la différence de nombres relatifs.
-    /2,
+    Calculer avec des nombres relatifs.
+    /3,
     Déterminer le signe d'un produit comportant plusieurs facteurs relatifs.
     /1,
     Trouver les antécédents du carré d'un nombre donné.
@@ -22,7 +20,7 @@
     Montrer qu'un triangle est rectangle.
     /2,
     Déterminer si un triangle est rectangle.
-    /1,
+    /2,
     Maîtriser les notions de contraposée et de réciproque. /0%
 }
 
@@ -127,8 +125,10 @@
 ]
 
 \exo{}{
-    Chez Zoro, des tee-shirts sont en vente. Les prix normaux ainsi que les prix en période de soldes sont indiqués dans le tableau ci-dessous.
+    Chez Zoro, des bandeaux sont proposés à la vente.
+    Le tableau ci-dessous présente les prix normaux ainsi que les prix appliqués pendant les soldes.
     \begin{enumerate}
+        \vspace{-0.25cm}
         \begin{table}[h!]
             \centering
             \renewcommand{\arraystretch}{1.5} % Ajuste la hauteur des lignes
@@ -136,11 +136,12 @@
             \begin{tabular}{|>{\bfseries}c|*{7}{c|}} % Colonne en gras pour la première colonne
                 \hline
                 \rowcolor{gray!15} 
-                Tee-shirts vendus & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+                Bandeaux vendus & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
                 Prix normal (en \euro) & 5 & 10 & 15 & 20 & 25 & 30 & 35 \\ \hline
                 Prix soldé (en \euro)  & 5 & 10 & 12 & 17 & 22 & 24 & 29 \\ \hline
             \end{tabular}
         \end{table}
+        \vspace{-0.25cm}
         \item Complétez le graphique cartésien ci-dessous en plaçant les points correspondant :
         \begin{itemize}
             \item en \textcolor{Blue}{bleu}, les points représentant les prix normaux ;
@@ -154,7 +155,7 @@
                 \tkzLabelX[step=1]
                 \tkzLabelY[step=5]
                 \tkzDrawY[label={Prix (en \euro)}, above , step=5]
-                \tkzDrawX[label={Tee-shirts vendus}, right, step=1]
+                \tkzDrawX[label={Bandeaux vendus}, right, step=1]
                 % Tracer les points
                 \ifthenelse{\boolean{answer}}{
                     \foreach \x/\y/\z in {1/5/5, 2/10/10, 3/15/12, 4/20/17, 5/25/22, 6/30/24, 7/35/29}{
@@ -165,16 +166,17 @@
                     \draw[Red] (0,0) -- (2,10) -- (3,12) -- (4,17) -- (5,22) -- (6,24) -- (7,29);
                 }{}
             \end{tikzpicture}
-        \end{center}
-        \item Les prix normaux et soldés sont-ils proportionnels au nombre de tee-shirts vendus ?
-        Justifiez votre réponse à l'aide d'un argument graphique pour chaque cas.
+        \end{center}\vspace{-0.5cm}
+        \item Les prix normaux sont-ils proportionnels au nombre de bandeaux vendus ?
+        Qu'en est-il des prix soldés ?
+        Justifiez votre réponse pour chaque cas en vous appuyant sur une observation graphique.
     \end{enumerate}
 }[\sesa{4}{2021}[5][61]]
-
+\vspace{-0.25cm}
 \answerFill[Réponse][
     \begin{enumerate}\loadenumi[exo][1]
         \item \begin{itemize}
-            \item Les points des prix des t-shirts non soldés sont alignés avec l'origine,
+            \item Les points des prix des bandeaux non soldés sont alignés avec l'origine,
             il y a donc bien proportionnalité en période normale.
             \item Dans le cas des prix soldés,
             les points ne sont pas alignés,

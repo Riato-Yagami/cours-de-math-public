@@ -1,0 +1,18 @@
+\ctikz[\ifBA{0.6}{1}]{
+    \draw[gray!40] (0.5,-7.5) rectangle (12.5,3.5);
+    \drawPoint{A}{11.22}{-3.7}
+    \drawPoint{O}{7.82}{-2.02}
+    \awsr{
+        \draw [thick,dashed] (7.82,-2.02) circle (3.79cm);
+        \draw [thick,dashed] (10.19,2.77)-- (5.57,-6.58);
+        \draw [thick,dashed] (11.22,-3.70)-- (1.88,0.91);
+        \draw [thick,answer] (4.42,-0.34)-- (9.50,1.38);
+        \draw [thick,answer] (9.50,1.38)-- (11.22,-3.70);
+        \draw [thick,answer] (11.22,-3.70)-- (6.14,-5.42);
+        \draw [thick,answer] (6.14,-5.42)-- (4.42,-0.34);
+        \drawPoint{D}{9.5}{1.38}
+        \drawPoint{B}{6.14}{-5.42}
+        \drawPoint{C}{4.42}{-0.34}
+    }
+    \draw [thick] (11.22,-3.70) -- (7.82,-2.02);
+}

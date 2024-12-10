@@ -411,6 +411,25 @@
 
 \bookSlide{27p431,26p431,36p432}[7cm][2]
 
+\awsr[0]{
+    \begin{itemize}
+        \item 27p431 :\begin{enumerate}
+            \item
+            \ctikz[0.5]{
+                \draw[gray!40] (-0.5,-4.2) rectangle (11.2,3.5);
+                \drawPoint{U}{7.76}{2.3}
+                \drawPoint{V}{9.27}{-2.89}
+                \drawPoint{W}{0.85}{0.29}
+                \draw[color=gradeColor] (4.32,1.89) node {\Lg{7.2}};
+                \draw[color=gradeColor, below] (4.78,-1.59) node {\Lg{9}};
+                \draw[color=gradeColor] (9.7,0.09) node {\Lg{5,4}};
+                \draw [thick] (7.76,2.30) -- (0.85,0.29) -- (9.27,-2.89) -- (7.76,2.30) -- cycle;
+            }
+            \item \Pythagore[Reciproque]{WUV}{9}{7.2}{5.4}
+        \end{enumerate}
+    \end{itemize}
+}
+
 \slide{qf}{
     \nullsubsec{}{
         \begin{enumerate}
@@ -421,3 +440,54 @@
 }
 
 \bookSlide{35p432,52p435}[6cm][2]
+
+\slide{exo}{
+    \exo{}{
+        On assimile la Terre à une sphère de centre $O$ et de rayon $R = \Lg[km]{6371}$.
+        Un observateur se tient à la surface de la Terre en un point A.
+        Le point H représente l'endroit le plus éloigné que l'observateur peut voir, c'est-à-dire son horizon.
+        \begin{enumerate}
+            \item Représentez la situation par un schéma.
+            \item À quelle distance de l'observateur se trouve environ l'horizon?
+            \item Quelle serait cette distance si l'observateur se trouve au $3^e$ étage de la tour Eiffel?
+        \end{enumerate}
+    }[\href{https://blogdemaths.wordpress.com/2015/06/27/jusquou-peut-on-voir-a-lhorizon/}{Jusqu'où peut on voir à l'horizon?}]
+}
+
+\awsr[0]{
+    \begin{enumerate}\setItemColor{exo}
+        \item On estime la taille de l'observateur $h$ à $\Lg[m]{1.60}$.
+        Puisque le rayon lumineux venant de l'horizon $H$ qui parvient aux yeux de notre observateur $Y$
+        ne touche la Terre qu'en un seul point , la droite $(HY)$ est donc une tangente à la Terre.
+        Ainsi la droite $(HY)$ est perpendiculaire à la droite $(HO)$.
+        \ctikz[1]{
+            \draw[gray!40] (-9.5,-6) rectangle (2.5,5);
+            \draw[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (-3.77,4.02) -- (-3.34,4.01) -- (-3.34,4.43) -- (-3.76,4.44) -- cycle;
+            \draw [thick] (-3.82,-0.56) circle (5cm);
+            \drawPoint{O}{-3.82}{-0.56}
+            \drawPoint{A}{-1.01}{3.58}
+            \drawPoint{Y}{-0.45}{4.4}
+            \drawPoint{H}{-3.76}{4.44}
+            \draw[color=gradeColor] (0.7,3.95) node {$h = \Lg[m]{1.60}$};
+            \draw[color=gradeColor] (-1.1,1.43) node {$R = \Lg[km]{6371}$};
+            \draw [thick] (-3.82,-0.56) -- (-3.76,4.44) -- (-0.45,4.40) -- (-1.01,3.58) -- (-3.82,-0.56) -- cycle;
+            \draw [thick] (-3.91,1.89) -- (-3.67,1.89);
+            \draw [thick] (-3.91,1.99) -- (-3.67,1.99);
+            \draw [thick] (-2.29,1.48) -- (-2.49,1.62);
+            \draw [thick] (-2.34,1.40) -- (-2.54,1.53);
+        }
+        \item 
+        \begin{itemize}
+            \item $OY = OA + AY = R + h = \Lg[km]{6371} + \Lg[m]{1.60} = \Lg[m]{6371000} + \Lg[m]{1.60} = \Lg[m]{6371001.60}$
+            \item \Pythagore[Soustraction, Unite=m]{OHY}{6371001.60}{6371000}{}
+            \item L'horizon se situe donc à environ \Lg[km]{4.5} de l'observateur.
+        \end{itemize}
+        \item 
+        \begin{itemize}
+            \item Si l'observateur se trouve au $3^e$ étage de la tour Eiffel, on peut prendre estimer à $h = \Lg{250}$
+            \item $OY = OA + AY = R + h = \Lg[m]{6371000} + \Lg[m]{250} = \Lg[m]{6371250}$
+            \item \Pythagore[Soustraction, Unite=m]{OHY}{6371250}{6371000}{}
+            \item L'horizon se situe donc à environ \Lg[km]{56.4} de d'un observateur au $3^e$ étage de la tour Eiffel.
+        \end{itemize}
+    \end{enumerate}
+}

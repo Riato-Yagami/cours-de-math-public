@@ -16,7 +16,7 @@
 }
 
 \seqEvaluation{4}{Nombres Relatifs - Sommes et differences}{
-    Traduire un enchaînement d'opérations à l'aide d'une expression avec des parenthèses.
+    Résoudre un calcul en ligne.
     /3,
     Additionner et soustraire des nombres décimaux relatifs.
     /3,
@@ -57,7 +57,7 @@
     }
     \begin{enumerate}
         \item L'image du segment $[HR]$ par la symétrie de centre $N$ est : \awsr[2]{le segment $[JT]$}.
-        \item Le triangle $QUV$ est l'image de du triangle $SON$ par \awsr[2]{la symetries de centre $R$}.
+        \item Le triangle $QUV$ est l'image du triangle $SON$ par \awsr[2]{la symetries de centre $R$}.
         \item Le point \awsr{$D$} est l'image de point P par la symetrie d'axe $(AG)$.
         \item L'image du quadrilatère $NXQL$ par la symétrie de centre $M$ est : \awsr[2]{le quadrilatère $LBIN$}.
     \end{enumerate}
@@ -145,7 +145,8 @@
 \exo{\tiersTemps La randonnée d'Élodie}{
     Élodie effectue une randonnée en montagne qui se déroule en plusieurs étapes :  
     \begin{itemize}
-        \item Depuis son point de départ situé à \Lg[m]{1800} d'altitude, elle grimpe de \Lg[m]{340} pour atteindre un premier refuge.  
+        \item Depuis son point de départ situé à \Lg[m]{1800} d'altitude (hauteur par rapport au niveau de la mer),
+        elle grimpe de \Lg[m]{340} pour atteindre un premier refuge.  
         \item Après une pause, elle descend de \Lg[km]{1,3} pour visiter un lac de montagne.  
         \item Ensuite, elle remonte de \Lg[m]{230} pour reprendre le chemin principal.  
         \item Elle rejoint un second refuge situé à \Lg[km]{0,9} plus haut.  
@@ -198,7 +199,9 @@
     \end{enumerate}
 }[Inspiré de \mi]
 
-\answerFill[Réponse][
+\awsr[0]{\vspace{-0.75cm}}
+
+\answerFill[Réponse][\small
     \begin{enumerate}
         \item L'adition est commutative (c'est à dire $\a+\b=\b+\a$),
         on peut alors ajouter les points des jetons dans n'importe quel ordre et on obtiendra toujours la meme chose.
@@ -212,8 +215,8 @@
             = 4$
             \item Loane : $\b + \t + \c + \a + \b
             = (\a  + \b + \c) + \t + \b
-            = -6 + \t + \a
-            = -9 + \a$
+            = -6 + \t + \b
+            = -9 + \b$
             \item Antoine : $\a + \c + \a + \b + \c + \b
             = (\a  + \b + \c) + (\a  + \b + \c)
             = -6 + -6 = -12$
@@ -224,15 +227,19 @@
         }
         On ne connait pas les valeurs de \a et \c et on ne peut donc pas connaitre le score de Loane et Nina.
         \item \multiColItemize{1}{
-            \item Max(Loane) $= -9 + 9 = 0$ si $\a = 9$
-            \item Max(Nina) $= -7 + -6 + 9 = -4$ si $\b = -9$, $\a = 9$ et $\c = -6$ (on a bien $9 + -9 + -6 = -6$)
+            \item Max(Loane) $= -9 + 9 = 0$ avec $\b = 9$
+            \item Max(Nina) $= -7 + -6 + 9 = -4$ avec $\b = -9$, $\a = 9$ et $\c = -6$ (on a bien $9 + (-9) + (-6) = -6$)
         }
-        Mattéo est forcément le vainceur car aucun autre joeur ne peut atteindre un score de $4$.
-        \item \multiColItemize{1}{
-            \item Min(Loane) $= -9 + -9 = -18$ si $a = -9$
-            \item Max(Nina) $= -7 + -9 + -6 = -22$ si $\b = 9$ $\a = -9 et \c = -6$ (on a bien $-9 + 9 + -6 = -6$)
-        }
-        Antoine pourrait être troisième si Loane et Nina atteigne un score inferieur a $-12$ avec par exemple $\a = -9$ et $\c = -6$.
+        Mattéo est forcément le vainceur car aucun autre joueur ne peut atteindre un score de $4$.
+        \item Avec $\a =-6, \b = -4 \et \c = 4$ (on a bien $-6 + (-4) + 4 = -6$) \vspace{-0.25cm}\multiColItemize{2}{
+            \item Score(Loane) $= -9 + (-4) = -13$
+            \item Score(Nina) $= -7 + (-6) + 4 = -9$
+        }\vspace{-0.25cm}
+        Antoine pourrait être 4e au maximum,
+        car Loane et Nina ne peuvent pas toutes deux avoir un score inférieur à $-12$.
+        En effet, dans le cas limite présenté précédemment,
+        si on diminue le score de Nina, celui de Loane augmente nécessairement,
+        ce qui la ramène d'abord à égalité avec Antoine, puis au-dessus de lui.
     \end{enumerate}
 ]
 

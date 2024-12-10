@@ -452,7 +452,8 @@
 }
 
 \newcommand{\setSeq}[2]{%
-    \setcounter{seq}{#1}
+    % \setcounter{seq}{#1}
+    \def\theseq{#1}
     \setTitle{#2}
     \bseq{#2}
 }
@@ -531,7 +532,16 @@
     \vspace{-1.5cm}
 }
 
+\newcommand{\dm}[1]{
+    \def\assignmentNameWidth{6cm}
+    \setTitle{DM : #1}
+    \thispagestyle{assignment}
+    \setboolean{showSubID}{true}
+    \emptyBackground
+}
+
 \newcommand{\tp}[1]{
+    \def\assignmentNameWidth{6cm}
     \setTitle{TP : #1}
     \thispagestyle{assignment}
     \setboolean{showSubID}{true}
@@ -570,4 +580,12 @@
         \setTitle{Interrogation - #1 - Correction}
         \setboolean{answer}{true}
     ]
+}
+
+\newcommand{\ifBA}[2]{\ifBeamer{#1}\ifArticle{#2}}
+
+\NewDocumentCommand{\shl}{mmm}{%
+    % \sethlcolor{#1}%
+    % \textcolor{#2}{\hl{\,#3\,}}
+    \colorbox{#1}{\textcolor{#2}{#3}}
 }
