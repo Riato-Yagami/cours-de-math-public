@@ -160,34 +160,11 @@
     \end{center}
 }
 
-% \NewDocumentCommand{\dotGrid}{O{(0,0)} O{(2,2)} O{0.5} O{0.5} O{0.5pt}}{%
-%     % #1: Bottom-left corner of the grid (default: (0,0))
-%     % #2: Top-right corner of the grid (default: (0,5))
-%     % #3: Step size for x (default: 0.5)
-%     % #4: Step size for y (default: 0.5)
-%     % #5: Radius of points (default: 0.5pt)
-%     % \foreach \x in {#1x,#1x+#3,...,#2x} {
-%     %     \foreach \y in {#1y,#1y+#4,...,#2y} {
-%     %         \fill (\x,\y) circle (#5); % Draw points
-%     %     }
-%     % }
-%     \draw[gray!40] #1 rectangle #2; % Draw rectangle
-% }
-
-\NewDocumentCommand{\dotGrid}{O{0} O{0} O{5} O{5} O{1} O{0.5pt}}{%
-    \pgfmathsetmacro{\xStart}{#1}
-    \pgfmathsetmacro{\xEnd}{#3}
-    \pgfmathsetmacro{\yStart}{#2}
-    \pgfmathsetmacro{\yEnd}{#4}
-    \pgfmathsetmacro{\step}{#5}
-
-    \foreach \x in {1,...,100} { % Arbitrary large range
-        \pgfmathsetmacro{\currentX}{\xStart + (\x-1)*\step} % Calculate current x
-        \ifdim \currentX pt > \xEnd pt \breakforeach \fi % Stop if past end
-        \foreach \y in {1,...,100} { % Arbitrary large range
-            \pgfmathsetmacro{\currentY}{\yStart + (\y-1)*\step} % Calculate current y
-            \ifdim \currentY pt > \yEnd pt \breakforeach \fi % Stop if past end
-            \fill (\currentX,\currentY) circle (#6); % Draw point
+\NewDocumentCommand{\dotGrid}{O{5} O{5} O{0.5pt} O{0.5} O{(0,0)}}{
+    \foreach \x in {0,#4,...,#1} {
+        \foreach \y in {0,#4,...,#2} {
+            \fill[shift={#5}] (\x,\y) circle (#3); % Draw points
         }
     }
+    \draw[gray!40, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);
 }
