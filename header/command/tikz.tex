@@ -147,3 +147,47 @@
         \draw [gray] (-0.5,#3*25.5 - 0.5) rectangle (#3*37.5 + 1,#3*29 + 0.5);
     \end{tikzpicture}
 }
+
+\newcommand{\sIso}[1]{
+    \begin{center}
+        \isometric[0.75][1pt][0.25]{#1}
+    \end{center}
+}
+
+\newcommand{\mIso}[1]{
+    \begin{center}
+        \isometric[0.75][1pt][0.5]{#1}
+    \end{center}
+}
+
+% \NewDocumentCommand{\dotGrid}{O{(0,0)} O{(2,2)} O{0.5} O{0.5} O{0.5pt}}{%
+%     % #1: Bottom-left corner of the grid (default: (0,0))
+%     % #2: Top-right corner of the grid (default: (0,5))
+%     % #3: Step size for x (default: 0.5)
+%     % #4: Step size for y (default: 0.5)
+%     % #5: Radius of points (default: 0.5pt)
+%     % \foreach \x in {#1x,#1x+#3,...,#2x} {
+%     %     \foreach \y in {#1y,#1y+#4,...,#2y} {
+%     %         \fill (\x,\y) circle (#5); % Draw points
+%     %     }
+%     % }
+%     \draw[gray!40] #1 rectangle #2; % Draw rectangle
+% }
+
+\NewDocumentCommand{\dotGrid}{O{0} O{0} O{5} O{5} O{1} O{0.5pt}}{%
+    \pgfmathsetmacro{\xStart}{#1}
+    \pgfmathsetmacro{\xEnd}{#3}
+    \pgfmathsetmacro{\yStart}{#2}
+    \pgfmathsetmacro{\yEnd}{#4}
+    \pgfmathsetmacro{\step}{#5}
+
+    \foreach \x in {1,...,100} { % Arbitrary large range
+        \pgfmathsetmacro{\currentX}{\xStart + (\x-1)*\step} % Calculate current x
+        \ifdim \currentX pt > \xEnd pt \breakforeach \fi % Stop if past end
+        \foreach \y in {1,...,100} { % Arbitrary large range
+            \pgfmathsetmacro{\currentY}{\yStart + (\y-1)*\step} % Calculate current y
+            \ifdim \currentY pt > \yEnd pt \breakforeach \fi % Stop if past end
+            \fill (\currentX,\currentY) circle (#6); % Draw point
+        }
+    }
+}

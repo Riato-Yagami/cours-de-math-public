@@ -1,0 +1,100 @@
+\setSeq{6}{Espace - Solides}
+\setGrade{5e}
+
+\obj{
+    \item Reconnaître des solides (pavé droit, cube, cylindre, prisme droit, pyramide, cône, boule) à partir
+    d'un objet réel, d'une image, d'une représentation en perspective cavalière.
+    \item Construire et mettre en relation une représentation en perspective cavalière et un patron d'un pavé droit,
+    d'un cylindre.
+    \item Calculer le volume d'un pavé droit, d'un prisme droit, d'un cylindre.
+    \item Calculer le volume d'un assemblage de ces solides.
+    \item Effectuer des conversions d'unités de longueurs, d'aires, de volumes.
+}
+
+% \mIso{
+%     \draw[gray!40] (-0.5,1.5) rectangle (37.5,46.5);
+%     % \draw [fill=gradeColor] (7,12) circle (2.50pt);
+%     % \draw [fill=gradeColor] (9,10) circle (2.50pt);
+%     % \draw [fill=gradeColor] (8.50,11) circle (2.50pt);
+%     % \draw [fill=gradeColor] (10.50,13) circle (2.50pt);
+%     % \draw [thick,dashed] (0.50,25.50) -- (17,9) -- (37,29) -- (20.50,45.50) -- (0.50,25.50) -- cycle;
+%     % \draw [thick,dashed] (0.50,12.50) -- (8.50,4.50) -- (18.50,14.50) -- (10.50,22.50) -- (0.50,12.50) -- cycle;
+%     % \draw [thick,dashed] (5,11) -- (0.50,6.50) -- (4.50,2.50) -- (9,7) -- (5,11) -- cycle;
+%     \draw [thick] (7,12) -- (8.50,13) -- (10.50,13) -- (10.50,11) -- (9,10) -- (7,10) -- (7,12) -- (9,12) -- (9,10);
+%     \draw [thick] (7,10) -- (8.50,11) -- (8.50,13);
+%     \draw [thick] (10.50,11) -- (8.50,11);
+% }
+
+\exo{}{
+    % \ctikz[1]{
+    %     \foreach \x in {4,4.5,...,17} { % Boucle pour les coordonnées x
+    %     \foreach \y in {-8,-7.5,...,7} { % Boucle pour les coordonnées y
+    %         \fill[] (\x,\y) circle (0.5pt); % Dessin des points
+    %     }
+    %     }   
+    %     \draw[gray!40] (3.5,-8.5) rectangle (17.5,7.5);
+    % }
+    \begin{tikzpicture}
+        \dotGrid
+    \end{tikzpicture}
+}
+% \exo{Associe à chaque volume son empreinte}{
+%     \ctikz[1]{
+%         \foreach \x in {3.5,4,...,17.5} { % Boucle pour les coordonnées x
+%             \foreach \y in {-8.5,-8,...,7.5} { % Boucle pour les coordonnées y
+%                 \fill[gray] (\x,\y) circle (0.05); % Dessin des points
+%             }
+%         }
+%         \draw[gray!40] (3.5,-8.5) rectangle (17.5,7.5);
+%         \fill[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (6,-4) -- (9,-4) -- (8.50,-4.50) -- (7.50,-4.50) -- (7,-5) -- (5,-5) -- cycle;
+%         \fill[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (14,-6) -- (13,-7) -- (15,-7) -- (15.50,-6.50) -- (14.50,-6.50) -- (15,-6) -- cycle;
+%         \fill[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (7,-6) -- (9,-6) -- (7.50,-7.50) -- (6.50,-7.50) -- (7,-7) -- (5,-7) -- (5.50,-6.50) -- (6.50,-6.50) -- cycle;
+%         \fill[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (10,-6) -- (12.51,-6.01) -- (12.01,-6.51) -- (11.50,-6.50) -- (11,-7) -- (9,-7) -- cycle;
+%         \fill[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (10,-4) -- (13,-4) -- (12,-5) -- (9,-5) -- cycle;
+%         \fill[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (15,-4) -- (16,-4) -- (15.50,-4.50) -- (14.50,-4.50) -- cycle;
+%         \node at (6.38, 3.99) {\cir[gradeColor]{1}};
+%         \node at (10.42, 4.73) {\cir[gradeColor]{2}};
+%         \node at (13.53, 3.7) {\cir[gradeColor]{3}};
+%         \node at (4.93, 0.19) {\cir[gradeColor]{4}};
+%         \node at (9.4, -1.35) {\cir[gradeColor]{5}};
+%         \node at (14.41, -0.36) {\cir[gradeColor]{6}};
+%         \draw [thick] (5,-2) -- (6,-2) -- (6.50,-1.50) -- (6.50,-0.50) -- (6,-1) -- (5,-1) -- (4,-1) -- (4,-2) -- (5,-2) -- cycle;
+%         \draw [thick] (6,-2) -- (6,-1);
+%         \draw [thick] (6.50,-0.50) -- (7.50,-0.50) -- (7.50,-1.50) -- (6.50,-1.50);
+%         \draw [thick] (4,-1) -- (4.50,-0.50) -- (5.50,-0.50) -- (6,0) -- (7,0) -- (8,0) -- (8,-1) -- (7.50,-1.50);
+%         \draw [thick] (4.50,-0.50) -- (4.50,0.50) -- (5.50,0.50) -- (6,1) -- (6,0);
+%         \draw [thick] (5.50,-0.50) -- (5.50,0.50);
+%         \draw [thick] (6,1) -- (5,1) -- (4.50,0.50);
+%         \draw [thick] (7.50,-0.50) -- (8,0);
+%         \draw [thick] (10,-2) -- (11,-2) -- (11.50,-1.50) -- (11.50,-0.50) -- (10.50,-0.50) -- (11,0) -- (10,0) -- (9.50,-0.50) -- (9,-1) -- (10,-1) -- (11,-1) -- (11.50,-0.50);
+%         \draw [thick] (11,-1) -- (11,-2);
+%         \draw [thick] (9,-1) -- (9,-2) -- (10,-2);
+%         \draw [thick] (11,0) -- (11,-0.50);
+%         \draw [thick,gradeColor] (6,-4) -- (9,-4) -- (8.50,-4.50) -- (7.50,-4.50) -- (7,-5) -- (5,-5) -- (6,-4) -- cycle;
+%         \draw [thick,gradeColor] (14,-6) -- (13,-7) -- (15,-7) -- (15.50,-6.50) -- (14.50,-6.50) -- (15,-6) -- (14,-6) -- cycle;
+%         \draw [thick] (14,0) -- (16,0) -- (17,1) -- (17,-1) -- (16,-2) -- (15.50,-2.50) -- (15.50,-1.50) -- (16,-1) -- (15,-1) -- (14.50,-1.50) -- (15.50,-1.50);
+%         \draw [thick] (16,0) -- (16,-1);
+%         \draw [thick] (17,1) -- (15,1) -- (14,0) -- (14,-1) -- (13,-1) -- (13,-2) -- (14,-2) -- (14.50,-2);
+%         \draw [thick] (13,-1) -- (13.50,-0.50) -- (14,-0.50);
+%         \draw [thick] (14.50,-1.50) -- (14.50,-2.50) -- (15.50,-2.50);
+%         \draw [thick,gradeColor] (7,-6) -- (9,-6) -- (7.50,-7.50) -- (6.50,-7.50) -- (7,-7) -- (5,-7) -- (5.50,-6.50) -- (6.50,-6.50) -- (7,-6) -- cycle;
+%         \draw [thick] (10,3) -- (11,3) -- (11.50,3.50) -- (11.50,6.50) -- (11,6) -- (10,6) -- (10,3) -- cycle;
+%         \draw [thick] (10,6) -- (10.50,6.50) -- (11.50,6.50);
+%         \draw [thick] (11,3) -- (11,6);
+%         \draw [thick] (12.50,3) -- (14.50,3) -- (14,5) -- (12.50,3) -- cycle;
+%         \draw [thick] (14,5) -- (15,4.33);
+%         % \drawPoint{}{15.5}{4}
+%         \draw [thick] (15,4) -- (15.5,5)
+%         \draw [thick] (15,3.50) -- (15.50,3.50) -- (16,4) -- (16,5) -- (15.50,5) -- (15,4.50) -- (15,3.50) -- (14.50,3);
+%         \draw [thick] (15.50,3.50) -- (15.50,4.50) -- (15,4.50);
+%         \draw [thick,gradeColor] (10,-6) -- (12.51,-6.01) -- (12.01,-6.51) -- (11.50,-6.50) -- (11,-7) -- (9,-7) -- (10,-6) -- cycle;
+%         \draw [thick] (5,3) -- (8,3) -- (9,4) -- (9,5.50) -- (8,4.50) -- (8,3);
+%         \draw [thick] (5,4.50) -- (5,3);
+%         \draw [thick] (9,5.50) -- (8,5.50) -- (7,6.50) -- (6,6.50) -- (5.50,6) -- (5.50,5) -- (6.50,5) -- (7.50,5) -- (8,5.50);
+%         \draw [thick] (5.50,5) -- (5,4.50) -- (8,4.50);
+%         \draw [thick] (6.50,6) -- (5.50,6);
+%         \draw [thick] (7,6.50) -- (6.50,6) -- (7.50,5);
+%         \draw [thick,gradeColor] (10,-4) -- (13,-4) -- (12,-5) -- (9,-5) -- (10,-4) -- cycle;
+%         \draw [thick,gradeColor] (15,-4) -- (16,-4) -- (15.50,-4.50) -- (14.50,-4.50) -- (15,-4) -- cycle;
+%     }
+% }
