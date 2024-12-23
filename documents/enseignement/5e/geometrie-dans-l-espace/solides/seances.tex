@@ -1,0 +1,197 @@
+\setSeq{6}{Géometrie dans l'espace - Solides}
+\setGrade{5e}
+\def\imgPath{enseignement/5e/geometrie-dans-l-espace/solides/}
+\def\ym{https://www.maths-et-tiques.fr/telech/19Solides5e.pdf}
+
+% \forPrint
+
+\obj{
+    \item Reconnaître des solides (pavé droit, cube, cylindre, prisme droit, pyramide, cône, boule) à partir
+    d'un objet réel, d'une image, d'une représentation en perspective cavalière.
+    \item Construire et mettre en relation une représentation en perspective cavalière et un patron d'un pavé droit,
+    d'un cylindre.
+}
+
+\scn{Découvrir la perspective cavalière}
+
+\bsec{Polyhèdres}
+
+\slide{qf}{
+    \dividePage{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/qf/qf-1.tex}}{
+        \begin{enumerate}
+            \item Combien d'arêtes comporte ce solide ?
+            \item de faces ?
+            \item de sommets ?
+        \end{enumerate}
+    }
+}
+
+\slide{exo}{\bsmall
+\wideFrame[6.5em]{
+    \exo{Empreintes de solides}{Associe à chaque volume son empreinte
+    \ifBA{\vspace{-0.75cm}
+        \dividePage{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/associe-empreintes/solides.tex}}
+        {\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/associe-empreintes/empreintes.tex}}
+    }{
+        \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/associe-empreintes/solides.tex}
+        \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/associe-empreintes/empreintes.tex}
+    }
+    }
+}
+}
+
+% \endinput
+
+\def\figScale{\ifBA{0.75}{0.85}}
+
+\scn{Construction perspective cavalière}
+
+\def\caPrefix{5e-mars-2023-}
+\caSlide{27-28-29}
+
+% \newpage
+\slide{exo}{\bshrink
+    % \newpage
+    \exo{Construction de polyhèdres en perspective cavalière}{Compléter les empreintes ou solides manquants
+    \multiColEnumerate{1}{
+        \item \dividePage{
+            Solides :
+            \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/solide-1.tex}
+        }{
+            Empreintes :
+            \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/empreinte-1.tex}
+        }\saveenumi
+        }
+    }
+}
+
+\slide{exo}{
+    \multiColEnumerate{1}{\loadenumi[exo]
+        \item \dividePage{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/solide-2.tex}}{
+            \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/empreinte-2.tex}
+        }\saveenumi
+    }
+}
+
+
+\slide{exo}{
+    \multiColEnumerate{1}{\loadenumi[exo]
+        \item \dividePage{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/solide-3.tex}}{
+            \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/empreinte-3.tex}
+        }\saveenumi
+    }
+}
+
+\slide{exo}{
+    \multiColEnumerate{1}{\loadenumi[exo]
+        \item \dividePage{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/solide-4.tex}}{
+            \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/empreintes-manquantes/empreinte-4.tex}
+        }
+    }
+}
+
+\slide{qf}{\bshrink
+    \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/qf/pave-droit-cvl.tex}
+    Recopiez à main levée ce patron de pavé droit, puis complétez les longueurs et ajoutez les codages manquants.
+    \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/qf/pave-droit-patron.tex}
+}
+
+\def\figScale{0.75}
+\slide{cr}{
+    \sseq\ssec
+    \df{}{
+        On appelle \key{solide} l'ensemble des points situés à l'intérieur d'une région fermée de l'espace.
+    }[\wiki{Solide_géométrique}]
+}
+
+\slide{cr}{\bsmall
+    \df{Polyhèdres}{On appelle :
+        \multiColEnumerate{1}{ 
+            \item \dividePage{
+                \key{polyhèdre} un solide constitué de \key{faces} polygonales.
+            }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/polyhedre.tex}}
+            \item \dividePage{
+                \nswr{\key{prisme droit}}[5cm], un polyhèdre constitué de deux \key{bases} polygonales superposables,
+                reliées entre elles par des faces \nswr{\key{rectangulaires}}.
+            }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/prisme-droit.tex}}\saveenumi
+            \ifArticle{
+                \item \dividePage{
+                    \nswr{\key{pavé droit}}[5cm] un \nswr{prisme droit}[5cm] dont les bases sont \nswr{\key{rectangulaires}}.
+                }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/pave-droit.tex}}
+                \item \dividePage{
+                    \nswr{\key{cube}}[5cm] un \nswr{pavé droit}[5cm] dont les toutes les faces sont des \nswr{\key{carrés}}[5cm].
+                }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/cube.tex}}
+                \item \dividePage{
+                    \nswr{\key{pyramide}}[5cm] un polyhèdre formé d'une base polygoneale relié à un \key{sommet} par des faces \nswr{\key{triangulaires}}[5cm].
+                }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/pyramide.tex}}
+            }
+        }
+    }[\wiki{Polyèdre}[Polyèdres_simples]]
+}
+
+% {\wiki{Pavé_droit}}
+% }{\wiki{Cube}}
+% }{\wiki{Pyramide}}
+% }{\wiki{Cylindre}}
+% }{\wiki{Cône}}
+% }{\wiki{Polyèdre}}
+% }{\wiki{Prisme_(solide)}}
+
+
+\ifBeamer{
+    \slide{cr}{
+        \multiColEnumerate{1}{\loadenumi[df]
+            \item \dividePage{
+                \nswr{\key{pavé droit}}\\ un \nswr{prisme droit}\\ dont les bases sont \nswr{\key{rectangulaires}}.
+            }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/pave-droit.tex}}
+            \item \dividePage{
+                \nswr{\key{cube}}\\ un \nswr{pavé droit}\\ dont les toutes les faces sont des\\ \nswr{\key{carrés}}.
+            }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/cube.tex}}
+            \item \dividePage{
+                \nswr{\key{pyramide}}\\ un polyhèdre formé d'une base polygoneale relié à un \key{sommet} par des faces \nswr{\key{triangulaires}}.
+            }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/pyramide.tex}}
+        }
+    }
+}
+
+\slide{cr}{
+    \df{Solide de révolution}{
+        \multiColEnumerate{1}{
+            \item \dividePage{
+                On appelle \nswr{\key{cylindre}}[5cm] un solide formé de deux base circulaire superposable relié par une surface courbe.
+            }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/cylindre.tex}}
+            \item \dividePage{
+                On appelle \nswr{\key{cône}}[5cm] un solide formé d'une base circulaire rélié à un point superposable au centre de la base par un sommet.
+            }{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/cone.tex}}
+        }
+    }[\wiki{Solide_de_révolution}]
+}
+
+\endinput
+
+\scn{Patron d'un cylindre}
+
+\slide{exo}{\bshrink
+    \act{Patron d'un cylindre}{
+        Voici deux représentations en perspective cavalière d'un même cylindre :
+        \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/cylindre-mesures.tex}
+        \bvspace{-0.5cm}\begin{enumerate}
+            \item Combien de figures géométriques composent ce cylindre ?
+            \item Quelle est la nature de chacune de ces figures ? \saveenumi
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \begin{enumerate}\loadenumi[act]
+        \item Dessine à main levée le patron de ce cylindre en ajoutant les mesures.
+        \item Construis le patron en respectant les proportions.
+        \item Découpe le patron pour vérifier sa cohérence.
+    \end{enumerate}
+}
+
+\slide{qf}{
+    Quels sont les aires des deux figures ci dessous ?
+    \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/qf/qf-aires.tex}
+    \hint{On prendra $\pi\approx3$}
+}

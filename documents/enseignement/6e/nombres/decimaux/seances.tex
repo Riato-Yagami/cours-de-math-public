@@ -1,10 +1,12 @@
 % VARIABLES %%%
-\setSeq{5}{Nombres - Decimaux}
+\setSeq{6}{Nombres - Décimaux}
 \setGrade{6e}
 
 \def\imgPath{enseignement/6e/nombres/decimaux/}
 
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Nombres1.pdf}{Yvan Monka}}
+
+% \forPrint
 
 % https://www.maths-et-tiques.fr/telech/19Nombres2.pdf
 
@@ -16,118 +18,132 @@
 
 \scn{Découvrir les fractions décimales}
 
-\bsubsec{Nombres décimaux}
+\def\caPrefix{6e-mars-2023-}
+\caSlide{23-24-25}
+
+\bsec{Puissances de dix}
 
 \slide{exo}{
     \act{}{
-        \multiColEnumerate{1}{
-            \item $\pow{10}{2} = \awsr{\np{\powTenPositive{2}}}$
-            \item $\pow{10}{3} = \awsr{\np{\powTenPositive{3}}}$
-            \item $\pow{10}{6} = \awsr{\np{\powTenPositive{6}}}$
-            \item $\powBrace{10}{15} = \awsr{\np{\powTenPositive{15}}}$
-            \item $\powBrace{10}{100} = \awsr{\powTenBrace{100}}$
+        \multiColEnumerate{2}{
+            \item $\pow{10}{2} = \nswr{\num{\powTenPositive{2}}}$
+            \item $\pow{10}{3} = \nswr{\num{\powTenPositive{3}}}$
+            \item $\pow{10}{6} = \nswr{\num{\powTenPositive{6}}}$
+            \item $\powBrace{10}{15} = \nswr{\num{\powTenPositive{15}}}$
+            \item $\powBrace{10}{100} = \nswr{\powTenBrace{100}}$
         }
     }
 }
 
 \slide{cr}{
-    \ssubsec
-
+    \sseq\ssec
     \vc{}{
         Une \key{puissance de 10} est le résultat d'un produit dont tous les facteurs sont $10$.
     }
 
-    \expl{}{
+    \expl{}{\ifBeamer{\\}
         \Tableau[%
             DoubleEntree,
             Stretch=1.5,
             Couleur=gradeColor!15,
-            LegendesH={$100$,$2$,$\np{1001}$,$\np{100000}$,$\np{200}$,$\np{10}$},
+            LegendesH={$100$,$2$,$\num{1001}$,$\num{100000}$,$\num{200}$,$\num{10}$},
             LegendesV={Puissance de 10 ?},
             Largeur=2cm
-        ]{\awsr{Oui},\awsr{Non},\awsr{Non},\awsr{Oui},\awsr{Non},\awsr{Oui}}
+        ]{\nswr{Oui},\nswr{Non},\nswr{Non},\nswr{Oui},\nswr{Non},\nswr{Oui}}
     }
 }
 
+\caSlide{26-27-28}
+
 \slide{cr}{
     \pr{}{
-        Pour $n$ un nombre entier, on a :
+        Pour $n$ un nombre entier, on a :\vspace*{-0.25cm}
         \begin{align*}
-            \powBrace{10}{n} = \awsr{\powTenBrace{n}}
+            \powBrace{10}{n} = \nswr{\powTenBrace{n}}
         \end{align*}
     }
 
     \expl{}{
         \multiColEnumerate{2}{
-            \item $\pow{10}{3} = \powTenPositive{3}$
-            \item $\pow{10}{6} = \powTenPositive{6}$
+            \item $\pow{10}{3} = \nswr{\powTenPositive{3}}$
+            \item $\pow{10}{6} = \nswr{\powTenPositive{6}}$
         }
     }
 }
 
+\bsec{Fraction décimale}
+
 \slide{cr}{
+    \ssec
     \df{}{
         On appelle \key{fraction décimale} une fraction dont le \key{dénominateur est une puissance de $10$}.
     }
 
-    \expl{}{
+    \expl{}{\ifBeamer{\\}
         \Tableau[%
             DoubleEntree,
             Stretch=1.5,
             Couleur=gradeColor!15,
-            LegendesH={$\frac{1}{10}$,$\frac{1}{2}$,$\frac{5}{10}$,$\frac{1}{\np{1000}}$,$\frac{1}{\np{30000}}$,$\frac{546985}{\np{10000000}}$},
+            LegendesH={$\frac{1}{10}$,$\frac{1}{2}$,$\frac{5}{10}$,$\frac{1}{\num{1000}}$,$\frac{1}{\num{30000}}$,$\frac{546985}{\num{10000000}}$},
             LegendesV={Fraction décimale ?},
             Largeur=2cm
-        ]{\awsr{Oui},\awsr{Oui},\awsr{Non},\awsr{Oui},\awsr{Non},\awsr{Oui}}
-    }
-}
-
-\slide{exo}{
-    \act{}{
-        Ecrire les nombres suivants sous forme de fractions décimales.
-        \multiColEnumerate{2}{
-            \item $\np{3.2} = \awsr{\frac{32}{10}}$
-            \item $\np{10.2} = \awsr{\frac{102}{10}}$
-            \item $\np{0.03} = \awsr{\frac{3}{100}}$
-            \item $\np{0.0001} = \awsr{\frac{1}{1000}}$
-            \item $6 \div 10 \div 10 = \awsr{\frac{6}{100}}$
-            \item $32 \div 10 \div 10 \div 10 \div 10 = \awsr{\frac{32}{10000}}$
-        }
+        ]{\nswr{Oui},\nswr{Oui},\nswr{Non},\nswr{Oui},\nswr{Non},\nswr{Oui}}
     }
 }
 
 \slide{cr}{
+    \expl{}{
+        Ecrire les nombres suivants sous forme de fractions décimales.
+        \multiColEnumerate{2}{
+            \item $\num{3.2} = \nswr{\frac{32}{10}}$
+            \item $\num{10.2} = \nswr{\frac{102}{10}}$
+            \item $\num{0.03} = \nswr{\frac{3}{100}}$
+            \item $\num{0.0001} = \nswr{\frac{1}{1000}}$
+            \item $6 \div 10 \div 10 = \nswr{\frac{6}{100}}$
+            \item $32 \div 10 \div 10 \div 10 \div 10 = \nswr{\frac{32}{10000}}$
+        }
+    }
+}
+
+\caSlide{29-30}
+
+\bsec{Nombre décimal}
+
+\slide{cr}{
+    \ssec
     \df{}{
         On appelle \key{nombre décimal}, un nombre pouvant s'écrire sous forme de fraction décimale.
     }
 
-    \expl{}{
+    \expl{}{\ifBeamer{\\}
         \Tableau[%
             DoubleEntree,
             Stretch=1.5,
             Couleur=gradeColor!15,
-            LegendesH={$\np{0.6}$,$\np{13.2}$,$\frac{1}{10}$,$\frac{1}{2}$,$60$,$\frac{1}{3}$,$\frac{30}{3}$,$\pi$,$0$},
+            LegendesH={$\num{0.6}$,$\num{13.2}$,$\frac{1}{10}$,$\frac{1}{2}$,$60$,$\frac{1}{3}$,$\frac{30}{3}$,$\pi$,$0$,$58\div100$},
             LegendesV={Nombre décimal ?},
             Largeur=2cm
-        ]{\awsr{Oui},\awsr{Oui},\awsr{Oui},\awsr{Oui},\awsr{Oui},\awsr{Non},\awsr{Oui},\awsr{Non},\awsr{Oui}}
+        ]{\nswr{Oui},\nswr{Oui},\nswr{Oui},\nswr{Oui},\nswr{Oui},\nswr{Non},\nswr{Oui},\nswr{Non},\nswr{Oui},\nswr{Oui}}
     }
 }
 
 \slide{cr}{
-    \pr{}{Pour $n$ un nombre entier, on a :
-    \begin{align*}
-        1 \repeatBrace{\div 10}{n}[quotients]
-        = \frac{1}{\powTenBrace{n}}
-        = \underbrace{0, 0 ... 0}_{n \textrm{ zéros}} 1
-    \end{align*}
-    }
-
     \expl{}{
         \multiColEnumerate{1}{
-            \item $1 \div 10 \div 10 = \frac{1}{\awsr{100}} = \awsr{\np{0.01}}$
-            \item $\awsr{1 \div 10 \div 10 \div 10 \div 10} = \frac{1}{10000} = \awsr{\np{0.0001}}$
-            \item $1 \awsr{\div 10 \div 10 \div 10} = \frac{1}{\awsr{1000}} = \awsr{\np{0.001}}$
+            \item $2 \div 10 \div 10 = \frac{\quad2\quad}{\nswr{100}} = \nswr{\num{0.02}}$
+            \item $\nswr{36 \div 10 \div 10 \div 10 \div 10} = \frac{36}{10000} = \nswr{\num{0.0036}}$
+            \item $\nswr{32 \div 10 \div 10 \div 10} = \frac{\quad32\quad}{\nswr{1000}} = \np{0.032}$
         }
+    }
+}
+
+\slide{cr}{
+    \pr{}{Pour $n$ un nombre entier, on a :\vspace{-0.25cm}
+    \begin{align*}
+        1 \repeatBrace{\div 10}{n}[quotients]
+        = \frac{\quad\quad1\quad\quad}{\nswr{\powTenBrace{n}}}
+        = \nswr{\underbrace{0, 0 ... 0}_{n \textrm{ zéros}} 1}
+    \end{align*}
     }
 }
 

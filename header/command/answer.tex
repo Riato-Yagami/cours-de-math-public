@@ -16,15 +16,24 @@
 
 % \newcommand{\jdot}[1]{ \rlap{\makebox[#1]{\dotfill} }}
 
-\newcommand{\jdot}{\leavevmode\leaders\hbox to 0.5em{\hss.\hss}\hfill\kern0pt}
+\newcommand{\getWordLength}[2]{%
+    \settowidth{\wordlength}{#1}% Measure the width of the word/text
+    \setlength#2{\wordlength}% Assign the measured width to the output length
+}
 
-\NewDocumentCommand{\awsr}{O{1} m}{%
+\NewDocumentCommand{\nswr}{O{1} m O{}}{%
     \ifthenelse{\boolean{answer}}{%
         \result{#2}%
     }{%
-        \dottedLines{#1}%
+        \ifempty{#3}{%
+            \dottedLines{#1}%
+        }[%
+            \textcolor{gradeColor!55}{\dottedLine{#3}}%
+        ]
     }%
 }
+
+\newcommand{\jdot}{\leavevmode\leaders\hbox to 0.5em{\hss.\hss}\hfill\kern0pt}
 
 \newcounter{loopcntr}
 \newcommand{\dottedLines}[1]{%
@@ -37,4 +46,17 @@
             \stepcounter{loopcntr}% Increment the counter
         }%
     }%
+}
+
+\newcommand{\dottedLine}[1]{%
+    \leavevmode
+    \begingroup
+    \setlength{\dimen0}{#1}%
+    % \color{gradeColor!55}%
+    \loop
+        \hbox to 0.5em{\hss.\hss}%
+        \advance\dimen0 by -0.5em%
+        \ifdim \dimen0 > 0pt
+    \repeat
+    \endgroup
 }

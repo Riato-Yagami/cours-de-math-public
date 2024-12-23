@@ -15,7 +15,7 @@
     \item Démontrer que la somme des angles dans un triangle est de \ang{180}
 }
 
-\scn{Définir la notion d'angles alternes-internes et d'angles corrépondants}
+\scn{Définir la notion d'angles alternes-internes et d'angles correpondants}
 
 \slide{qf}{\bshrink
     \ctikz[\ifBA{0.55}{0.9}]{
@@ -109,17 +109,18 @@
 
 \bookSlide{16p296,27p297}[7cm]
 
-\scn{Découvrire la propriétée sur les angles alternes égaux}
+\scn{Découvrir la propriété sur les angles alternes égaux}
 \slide{qf}{\bshrink
     \input{resources/enseignement/5e/angles-et-parallelisme/qf-nom-angles.tex}
-    Compléter avec les bons angles :
+    Identifier les angles correspondants :
     \multiColEnumerate{2}{
-        \item $\awsr{GCE} = \ang{150}$
-        \item $\awsr{GCE} = \ang{55}$
-        \item $\awsr{GCE} = \ang{90} $
-        \item $\awsr{GCE} = \ang{260}$
+        \item $\nswr{\widehat{GCE}} = \ang{150}$
+        \item $\nswr{\widehat{GCE}} = \ang{55}$
+        \item $\nswr{\widehat{GCE}} = \ang{90} $
+        \item $\nswr{\widehat{GCE}} = \ang{260}$
     }
 }
+
 \bsec{Propriétés de parallélisme}
 
 \slide{exo}{\bvspace{-0.5cm}
@@ -146,9 +147,109 @@
     \end{enumerate}
 }
 
-\scn{}
+\scn{Propriétés du parallélisme}
 \slide{qf}{
     En ecrivant toutes les étapes;
     resoudre ce calcul :\\
-    $39 + (7 - 18 + (-1)) = \awsr[3]{39 + (-11 + (-1)) = 39 + (-12) = 27}$
+    $39 + (7 - 18 + (-1)) = \nswr{39 + (-11 + (-1)) = 39 + (-12) = 27}$
+}
+
+\slide{cr}{
+    \ssec
+    \pr{}{
+        \begin{enumerate}
+            \item \Sialors{deux droites sont parallèles}
+            {les angles alternes-internes reposant sur ces droites sont \nswr{égaux}}
+            \item \Sialors{deux angles alternes-internes sont égaux}
+            {les droites sur lesquelles ils reposent sont \nswr{parallèles}}
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{\bshrink
+    \expl{}{
+        Les droites $(d_1)$ et $(d_2)$ sont parallèles.
+        \ctikz[0.5]{
+            \boundingBox[12.43][6.75][0.5pt][0.5][(0,-4.71)]
+            \draw [shift={(9.32,-1.39)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (0,0) -- (156.78:0.60) arc (156.78:212.51:0.60) -- cycle;
+            \draw [shift={(6.33,-0.11)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (0,0) -- (-23.22:0.60) arc (-23.22:32.51:0.60) -- cycle;
+            % \drawPoint{d_1}{9.70}{2.04}
+            % \drawPoint{d_2}{12.43}{0.59}
+            \draw (4.54,-0.21) node {$(d_1)$};
+            \draw (7.26,-2.93) node {$(d_2)$};
+            \draw[color=gradeColor] (7.46,0.05) node {$56\textrm{\degre}$};
+            \draw [thick] (1.98,-2.88) -- (9.70,2.04);
+            \draw [thick] (4.96,0.48) -- (11.30,-2.24);
+            \draw [thick] (4.11,-4.71) -- (12.43,0.59);
+        }
+    }
+
+    \rmk{Equivalence}{
+        Deux angles alternes-internes sont égaux \nswr{si et seulement si}\\
+        les droites sur lesquelles ils reposent sont
+        parallèles.
+    }
+}
+
+% \newpage
+
+\slide{cr}{\bsmall
+    \pr{}{
+        \begin{enumerate}
+            \item \Sialors{deux droites sont parallèles}
+            {les angles correspondants reposant sur ces droites sont \nswr{égaux}}
+            \item \Sialors{deux angles correspondants sont égaux}
+            {les droites sur lesquelles ils reposent sont \nswr{parallèles}}
+        \end{enumerate}
+    }
+    \bvspace{-0.65cm}
+    \expl{}{
+        Les droites $(d_1)$ et $(d_2)$ sont parallèles.
+        \ctikz[0.5]{
+            \boundingBox[10.93][8.14][0.5pt][0.5][(1,-5.1)]
+            \draw [shift={(6.25,0.92)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (0,0) -- (83.69:0.60) arc (83.69:198.01:0.60) -- cycle;
+            \draw [shift={(5.86,-2.59)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (0,0) -- (83.69:0.60) arc (83.69:198.01:0.60) -- cycle;
+            \draw (4.3,0.91) node {$(d_1)$};
+            \draw (7.78,-2.11) node {$(d_2)$};
+            \draw[color=gradeColor] (5.44,1.71) node {$114\textrm{\degre}$};
+            \draw [thick] (1.64,-0.58) -- (9.70,2.04);
+            \draw [thick] (6.48,3.04) -- (5.58,-5.10);
+            \draw [thick] (2.24,-3.77) -- (10.93,-0.94);
+        }
+    }
+}
+
+\bookSlide{29p297,30p297,35p298}[7cm][2]
+
+\scn{Somme des angles dans un triangle}
+\avspace{1cm}
+\bookSlide{33p298,38p298}[7cm][2]
+
+\nswr[0]{\textbf{33p298} :\setItemColor{myriade}
+    \begin{enumerate}
+        \item \begin{itemize}
+            \item On sait que $(AC)$ et $(ED)$ sont parallèles, 
+            et que $\widehat{ABE}$ et $\widehat{BED}$ sont deux angles alternes-internes.
+            \item Or, deux angles alternes-internes formés par deux droites parallèles sont égaux.
+            \item Donc, $\widehat{ABE} = \widehat{BED}$.
+        \end{itemize}
+        %
+        \item Par un raisonnement similaire appliqué aux angles $\widehat{CBD}$ et $\widehat{BDE}$, 
+        on obtient $\widehat{CBD} = \widehat{BDE}$.
+        %
+        \item \begin{itemize}
+            \item On a $\widehat{ABC} = \widehat{ABE} + \widehat{DBE} + \widehat{CBD}$.
+            \item En utilisant les résultats des questions précédentes, on en déduit que : \\
+            $\widehat{ABC} = \widehat{BED} + \widehat{DBE} + \widehat{BDE} = \widehat{BED} + \widehat{EDB} + \widehat{DBE}$.
+            \item Or, $\widehat{ABC}$ est un angle plat, et sa mesure est donc $\ang{180}$.
+            \item Ainsi, $\widehat{BED} + \widehat{EDB} + \widehat{DBE} = \ang{180}$.
+        \end{itemize}
+    \end{enumerate}
+}
+
+
+\slide{cr}{
+    \pr{}{
+        La somme des angles dans un triangle est de 180°.
+    }
 }

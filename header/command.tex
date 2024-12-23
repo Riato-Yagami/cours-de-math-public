@@ -442,6 +442,8 @@
 \newcounter{savedenumi}
 \setcounter{savedenumi}{0}
 
+% \xdef\savedSection{}
+
 \newcommand{\saveenumi}{
     \setcounter{savedenumi}{\arabic{enumi}}
 }
@@ -532,18 +534,33 @@
     \vspace{-1.5cm}
 }
 
-\newcommand{\dm}[1]{
-    \def\assignmentNameWidth{6cm}
-    \setTitle{DM : #1}
-    \thispagestyle{assignment}
+% \newcommand{\dm}[1]{
+%     \def\assignmentNameWidth{6cm}
+%     \setTitle{DM : #1}
+%     \thispagestyle{assignment}
+%     \setboolean{showSubID}{true}
+%     \emptyBackground
+% }
+
+\NewDocumentCommand{\dm}{m O{}}{%
     \setboolean{showSubID}{true}
-    \emptyBackground
+    \ifempty{#2}{%
+    \def\assignmentNameWidth{6cm}
+        \setTitle{DM : #1}
+        \thispagestyle{assignment}
+        \setboolean{answer}{false}
+        \setboolean{showRef}{false}
+        \emptyBackground
+    }[%
+        \setTitle{DM - #1 - Correction}
+        \setboolean{answer}{true}
+    ]
 }
 
 \newcommand{\tp}[1]{
-    \def\assignmentNameWidth{6cm}
+    % \def\assignmentNameWidth{6cm}
     \setTitle{TP : #1}
-    \thispagestyle{assignment}
+    % \thispagestyle{assignment}
     \setboolean{showSubID}{true}
     \emptyBackground
 }

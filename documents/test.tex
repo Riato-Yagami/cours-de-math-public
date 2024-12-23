@@ -1,22 +1,16 @@
 % VARIABLES %%%
 \setTitle{test}
 %%%%%%%%%%%%%%%
-
 \setboolean{answer}{false}
-\setSeq{2}{TEST SEQ}
-
 \setGrade{6e}
 
-\begin{tikzpicture}
-    \dotGrid
-\end{tikzpicture}
+\definecolor{cell}{HTML}{CCCCCC} % #CCCCCC
+
+\NewDocumentCommand{\cell}{O{cellule}}{%
+    \renewcommand\fbox{\fcolorbox{cell}{white}}
+    \fbox{\ttfamily\bfseries#1}
+}
 
 
-% \begin{tikzpicture}
-%     \pgfkeys{/tikz/scale = 2}
-%     \pgfgettransformentries\aa\ab\ba\bb\xhsift\yshift
-%     \show\aa 
-%     \show\ab
-%     \show\ba
-%     \show\bb
-% \end{tikzpicture}
+
+\cell[C1] \cell[C2]

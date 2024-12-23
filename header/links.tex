@@ -62,6 +62,7 @@
     {Dimensions 6e (Ed. 2016)}
 }
 
+\definecolor{myriade}{HTML}{0F83B3} %#0F83B3
 \def\my{\href{https://www.editions-bordas.fr/ouvrage/myriade-mathematiques-6e-manuel-de-leleve-ed-2021-9782047337752.html}
     {Myriade 6e (Ed. 2021)}
 }
@@ -172,8 +173,8 @@
 % Logiciels
 \newcommand{\defIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
     \expandafter\def\csname #1\endcsname{%
-        \def\iconPath{}%
-        \icon{#3} \textbf{\href{#4}{\color{#2}#1}}
+        {\def\iconPath{}%
+        \icon{#3} \textbf{\href{#4}{\color{#2}#1}}}
     }%
 }
 
@@ -195,10 +196,12 @@
 \defIconLink{Pronote}{pronote}{pronote}{https://0922247t.index-education.net/pronote/}
 
 \definecolor{calc}{HTML}{00A500} % #00A500
-\defIconLink{Calc}{calc}{calc/logo}{https://fr.libreoffice.org/discover/calc/}
+\defIconLink{Calc}{calc}{libreOffice/calc/logo}{https://fr.libreoffice.org/discover/calc/}
 
 \definecolor{geogebra}{HTML}{9693F7} % #9693F7
 \defIconLink{Geogebra}{geogebra}{geogebra/logo}{https://www.geogebra.org/classic}
 
 \definecolor{scratch}{HTML}{FFAB19} % #FFAB19
 \defIconLink{Scratch}{Orange}{scratch/logo}{https://scratch.mit.edu/projects/editor/}
+
+% http://trucsmaths.free.fr/etymologie.htm

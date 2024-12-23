@@ -20,18 +20,20 @@
 %     \ifnum\therec=0 1
 %     \else \addtocounter{rec}{-1} \powTen{\therec}0 \fi
 % }
-
-\newcommand{\powTen}[1]{
-    \ifnum#1<0
+% \newcounter{powTen}
+\newcommand{\powTen}[1]{%
+    \ifnum#1<0%
         0,\powTenNegative{\numexpr#1*(-1)\relax}
-    \else
+    \else%
+        % \setcounter{powTen}{\powTenPositive{#1}}%
         \powTenPositive{#1}
+        % \thepowTen
     \fi
 }
 
 \newcommand{\powTenPositive}[1]{
     \ifnum#1=0 1
-    \else \powTen{\numexpr#1-1\relax}0 \fi
+    \else \powTenPositive{\numexpr#1-1\relax}0 \fi
 }
 
 \newcommand{\powTenNegative}[1]{

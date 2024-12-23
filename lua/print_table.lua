@@ -3,7 +3,7 @@ function print_table(number, max)
     for i = 1, max do
         tex.sprint("\\item $",
         number, " \\times ", i,
-        " = \\awsr{",(number * i),"}$"
+        " = \\nswr{",(number * i),"}$"
     )  -- Ensure everything is within $...$ for math mode
     end
     tex.print("}")  -- Close the multi-column environment
