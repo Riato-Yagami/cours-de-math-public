@@ -121,7 +121,10 @@
 \NewDocumentCommand{\rpmc}{O{}}{%
     \href{https://eduscol.education.fr/document/13132/download?attachment\#page=#1}{%
     La résolution de problèmes mathématiques au collège
-    (p.\directlua{tex.print((tonumber("#1") or 0) + 3)})}%
+    (p.%
+    #1%
+    % \directlua{tex.print((tonumber("#1") or 0) + 3)}
+    )}%
 }
 
 % Attendus de fin d'année
@@ -178,6 +181,14 @@
     }%
 }
 
+\newcommand{\cmdIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
+    \expandafter\NewDocumentCommand\csname cmd#1\endcsname{O{}}
+    {%
+        {\def\iconPath{}%
+        \icon{#3} \textbf{\href{#4/##1}{\color{#2}#1}}}
+    }%
+}
+
 \definecolor{capytale}{HTML}{1E293B} % #1E293B
 \definecolor{capytale-2}{HTML}{F0F1F2} % #F0F1F2
 
@@ -200,6 +211,7 @@
 
 \definecolor{geogebra}{HTML}{9693F7} % #9693F7
 \defIconLink{Geogebra}{geogebra}{geogebra/logo}{https://www.geogebra.org/classic}
+\cmdIconLink{Geogebra}{geogebra}{geogebra/logo}{https://www.geogebra.org/m}
 
 \definecolor{scratch}{HTML}{FFAB19} % #FFAB19
 \defIconLink{Scratch}{Orange}{scratch/logo}{https://scratch.mit.edu/projects/editor/}
