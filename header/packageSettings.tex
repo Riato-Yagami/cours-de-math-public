@@ -30,22 +30,14 @@
 
 \lstset{style=pythonStyle}
 
-% algorithm2e
-
-\SetNlSty{}{}{.}
-\SetKwInput{KwRes}{R\'esultat}%
-\SetKwIF{Si}{SinonSi}{Sinon}{si}{alors}{sinon si}{sinon}{fin si}%
-\SetKwFor{Tq}{tant que}{faire}{fin tq}%
-\SetKwFor{Pr}{pour}{faire}{fin pr}%
-
 % tcolorbox
 \tcbuselibrary{breakable}
 
 % eurosym
-\DeclareRobustCommand{\officialeuro}{%
-    \ifmmode\expandafter\text\fi
-    {\fontencoding{U}\fontfamily{eurosym}\selectfont e}
-}
+% \DeclareRobustCommand{\officialeuro}{%
+%     \ifmmode\expandafter\text\fi
+%     {\fontencoding{U}\fontfamily{eurosym}\selectfont e}
+% }
 
 % \bibliographystyle{unsrt}
 
@@ -54,5 +46,3 @@
 % cancel
 
 \renewcommand*{\CancelColor}{\color{Red}}
-
-\setscratch{scale=.75}

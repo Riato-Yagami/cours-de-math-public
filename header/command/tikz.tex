@@ -1,10 +1,12 @@
-\NewDocumentCommand{\ctikz}{O{1} m}{%
-    \begin{center}
-        \begin{tikzpicture}[scale = #1]
-            #2
-        \end{tikzpicture}
-    \end{center}
-}
+\def\figScale{1}
+
+\NewDocumentCommand{\ctikz}{O{\figScale} m}{%
+    \begin{center}%
+        \begin{tikzpicture}[scale = #1]%
+            #2%
+        \end{tikzpicture}%
+    \end{center}%
+}%
 
 \newcommand{\axis}[1]{%Draw coordinate axes
     \draw[thin, -Stealth] (-0.5,0) -- (#1,0);% node[right] {$x$}; % x-axis
@@ -229,10 +231,11 @@
         }
     }{}
     \ifstrequal{#6}{iso}{% Iso Dot Grid
-        \pgfmathsetmacro{\isoMaxX}{#1/\isoSpace}% 
+        \pgfmathsetmacro{\maxX}{int(#1/\isoSpace)}%
+        \pgfmathsetmacro{\maxY}{int(#2-1)}%
         \begin{scope}[xscale=\isoSpace]
-            \foreach \y [count=\yi from 0] in {0,#4,...,#2} {
-                \foreach \x [count=\xi from 0] in {0,#4,...,\isoMaxX} {
+            \foreach \y [count=\yi from 0] in {0,#4,...,\maxY} {
+                \foreach \x [count=\xi from 0] in {0,#4,...,\maxX} {
                     % Offset every other column by half of the step size in the y-direction
                     \pgfmathsetmacro{\yoffset}{mod(\xi,2) == 0 ? #4/2 : 0}
                     \fill[shift={#5}, color = #8] (\x,\y+\yoffset) \bigDot{#3} % Draw points
@@ -247,7 +250,7 @@
                     % \fi\fi
                 }
             }
-            \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (\isoMaxX,#2);
+            \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (\maxX+.5,\maxY+1);
         \end{scope}
     }{
         % \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);

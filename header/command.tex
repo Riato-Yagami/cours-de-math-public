@@ -25,74 +25,16 @@
     \renewcommand{\default}[1]{\ifthenelse{\boolean{default}}{##1}{}}
 }{}
 
-% SECTIONS
 \input{header/command/sections/sections.tex}
-
-% COURSE AUX NOMBRES
 \input{header/command/can.tex}
-
-% LUA
 \input{header/command/lua.tex}
-
-% ANSWER
 \input{header/command/answer.tex}
-
-
-\newlength{\parline}
-\newlength{\paroutindent}
-\newlength{\lineheight}
-\setlength{\lineheight}{\heightof{abcdefghijklmnoprstuvwxyz}}
-
-\newcommand{\countlines}[1]{%
-    \setlength{\paroutindent}{\expandafter\parindent}
-    \setlength{\parline}{\heightof{\noindent\begin{minipage}{\linewidth}%
-                \setlength{\parindent}{\paroutindent}#1\end{minipage}}}%
-    \pgfmathparse{round(\parline / (0.9*\lineheight))}
-    \newcount\linecount
-    \pgfmathsetcount{\linecount}{\pgfmathresult}
-}
-
-% \newcommand{\looptext}[2]{%
-%     \noindent%
-%     \newcount\printcount%
-%     \printcount=#2%
-%     \loop%
-%         #1%
-%         \advance\printcount by -1%
-%         \ifnum\printcount>0%
-%     \repeat%
-% }
-
-\newcommand{\repeated}[2]{% \repeat already defined
-    \foreach \n in {1,...,#1}{#2}%
-}
-
-\newcommand{\remaininglines}{
-    \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
-}
-
-% \newcommand{\dottedLines}[1]{%
-%     \noindent\hspace{-9pt}%
-%     \ifthenelse{\equal{#1}{0}}{}{%
-%         \looptext{%
-%         \noindent\dotfill%
-
-%         }{#1}
-%     }
-% }
+\input{header/command/text.tex}
+\input{header/command/math.tex}
+\input{header/command/image.tex}
 
 \definecolor{answer}{HTML}{FF3C99} % #FF3C99 - Example
 \newcommand{\result}[1]{\textcolor{answer}{#1}}
-
-% MATH
-\input{header/command/math.tex}
-
-% IMAGES
-\input{header/command/image.tex}
-
-% COMMANDS
-
-\newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
 
 \NewDocumentCommand{\ifempty}{m m O{}}{%
     \ifstrempty{#1}%
@@ -131,96 +73,9 @@
     % \color{black}
 }
 
-\newcommand{\leconInfoBox}[2]{
-    \textbf{#1 :}\vspace{-0.25cm}
-        \begin{multicols}{2}
-            \begin{itemize}[label=$\blacktriangleright$, font = \small \color{Red}]
-                #2
-            \end{itemize}
-        \end{multicols}
-        \vspace{-0.4cm}
-}
-
 % TCOLORBOX
 
 \input{header/command/tcolorbox.tex}
-
-\NewDocumentCommand{\leconInfo}{mooo}{
-    \begin{infoBox}
-        \leconInfoBox{Niveaux}{#1}
-        \ifNotNull{#2}{
-            \tcbline
-            \leconInfoBox{Prérequis}{#2}
-        }
-        \ifNotNull{#3}{
-            \tcbline
-            \leconInfoBox{Thèmes}{#3}
-        }
-        \ifNotNull{#4}{
-            \tcbline
-            \textbf{Motivation :} 
-            #4
-        }
-    \end{infoBox}
-}
-
-\NewDocumentCommand{\seanceInfo}{oooooooo}{
-    \begin{infoBox}
-        \vspace{-0.05cm}
-        \begin{tcbitemize}[raster rows=1,raster columns=20,raster height=1.65cm,
-            raster every box/.style={colframe=red!50!black,colback=red!10!white}]
-            \tcbitem[raster multicolumn=6] \textbf{Date :} #1
-            \tcbitem[raster multicolumn=10] \textbf{Séquence :} #2
-            \tcbitem[raster multicolumn=4] \textbf{Séance :} #3
-        \end{tcbitemize}
-        \vspace{-0.25cm}
-        \ifNotNull{#4}{\tcbline \textbf{Objectif :} #4}
-        \ifNotNull{#5}{\tcbline \leconInfoBox{Classe(s)}{#5}}
-        \ifNotNull{#6}{\tcbline \leconInfoBox{Prérequi(s)}{#6}}
-        \ifNotNull{#7}{\tcbline \textbf{Séance précédente :} #7}
-        \ifNotNull{#7}{\tcbline \leconInfoBox{Matériel(s)}{#8}}
-    \end{infoBox}
-}
-
-\def\pDscr{\tcbitem[enhanced jigsaw, breakable,
-    raster multicolumn=6]
-}
-\def\pMdlt{\tcbitem[enhanced jigsaw, breakable,
-    raster multicolumn=11]
-}
-\def\pTime{\tcbitem[enhanced jigsaw, breakable,
-    raster multicolumn=3, halign=center]
-}
-
-\newcommand{\prepRow}[3]{
-    \tcbitem[raster multicolumn=20]
-    \tcblower
-
-    \pDscr #1
-    \pMdlt #2
-    \pTime #3
-}
-
-\newcommand{\prepTable}[1]{
-    \begin{prepBox}
-        \begin{tcbitemize}[enhanced jigsaw, breakable, raster rows=1,raster columns=20,raster height=1.1cm, halign=center,
-            raster every box/.style={enhanced jigsaw, breakable, colframe=Blue!50!black,colback=Blue!10!white}]
-            \pDscr \textbf{Descriptif}
-            \pMdlt \textbf{Modalité}
-            \pTime \textbf{Durée}
-        \end{tcbitemize}
-        \begin{tcbitemize}[enhanced jigsaw, breakable,
-            raster equal height = rows, 
-            raster columns=20, frame hidden,
-            raster every box/.style={
-                enhanced jigsaw, breakable,
-                opacityback=0, valign=top, 
-                size = tight
-            }]
-            #1
-        \end{tcbitemize}
-    \end{prepBox}
-}
 
 % TIKZ
 
@@ -234,32 +89,32 @@
 
 % GEOMETRY
 
-\newcommand{\multiColItemize}[2]{
-    \ifthenelse{\isequivalentto{#1}{1}}{
-        \begin{itemize}
-            #2
-        \end{itemize}
-    }{
-        \begin{multicols}{#1}
-            \begin{itemize}
-                #2
-            \end{itemize}
-        \end{multicols}
-    }
+\newcommand{\multiColItemize}[2]{%
+    \ifthenelse{\isequivalentto{#1}{1}}{%
+        \begin{itemize}%
+            #2%
+        \end{itemize}%
+    }{%
+        \begin{multicols}{#1}%
+            \begin{itemize}%
+                #2%
+            \end{itemize}%
+        \end{multicols}%
+    }%
 }
 
-\newcommand{\multiColEnumerate}[2]{
-    \ifthenelse{\isequivalentto{#1}{1}}{
-        \begin{enumerate}
-            #2
-        \end{enumerate}
-    }{
-        \begin{multicols}{#1}
-            \begin{enumerate}
-                #2
-            \end{enumerate}
-        \end{multicols}
-    }
+\newcommand{\multiColEnumerate}[2]{%
+    \ifthenelse{\isequivalentto{#1}{1}}{%
+        \begin{enumerate}%
+            #2%
+        \end{enumerate}%
+    }{%
+        \begin{multicols}{#1}%
+            \begin{enumerate}%
+                #2%
+            \end{enumerate}%
+        \end{multicols}%
+    }%
 }
 
 \makeatletter
@@ -294,42 +149,12 @@
     \resultVal
 }
 
-% \NewDocumentCommand{\exoslide}{m O{10cm}}{
-%     \slide{}{
-%         \img{\imgf{#1}}[#2]
-%     }
-% }
-
 \NewDocumentCommand{\transformList}{m}{
     % Split the input by commas and iterate over the elements
     \foreach \i in {#1} {%
         manuel/\i,%
     }
 }
-
-% \NewDocumentCommand{\removeFirstChar}{m}{
-%     % Get the input string
-%     \def\inputString{#1}
-%     % Create a new command to hold the output string
-%     \def\outputString{}
-    
-%     % Get the length of the input string
-%     \newcount\stringLength
-%     \stringLength=\numexpr\expandafter\detokenize\expandafter{\inputString}\relax
-%     \advance\stringLength by -1 % Decrease length by 1 to ignore the first character
-
-%     % Check if the input string is not empty
-%     \ifnum\stringLength>0
-%         % Remove the first character by skipping it
-%         \edef\outputString{\expandafter\@gobble\inputString} % Skip the first character
-%         % Output the remaining string
-%         \outputString
-%     \else
-%         % If the string is empty, output nothing
-%         % Alternatively, you can output a message or a default value
-%         \textbf{Empty string}
-%     \fi
-% }
 
 \NewDocumentCommand{\bookSlide}{m O{10cm} O{1} O{\gradeBook} O{exo}}{%
     % \exoSlide{\foreach \q in {#1}{manuel/\q,}}
@@ -341,7 +166,8 @@
 
 \def\caPrefix{}
 \newcommand{\caSlide}[1]{%
-    \slide{qf}{\nullsubsec{}{\imgp{ca/\caPrefix#1}[10cm]}[\ca]}
+    {\def\imgPath{enseignement/course-aux-nombres/\caPrefix}
+    \slide{qf}{\nullsubsec{}{\imgp{#1}[10cm]\vspace{0.3cm}}[\ca]}}
 }
 
 \NewDocumentCommand{\exoSlide}{m O{10cm} O{1} O{} O{exo}}{%
@@ -354,30 +180,6 @@
             \avspace{0.75cm}
         }[#4]
     }
-}
-
-\NewDocumentCommand{\exoList}{m O{} O{3}}{%
-    \section*{Exercices}%
-    \slide{EXERCICES}{
-        \exo{#2}{
-            \vspace{-0.25cm}
-            \multiColEnumerate{#3}{
-                \foreach \q in {#1}{
-                    \item \q
-                }
-            }
-        }
-    }
-}
-
-\newcommand{\questions}[1]{
-    \begin{enumerate}
-        \foreach \q in {#1}{
-            \item \q\\
-            \vspace*{-0.45cm}
-            \dottedLines{3}
-        }
-    \end{enumerate}
 }
 
 % Define a new boolean for checking if the section is starred
@@ -466,82 +268,6 @@
     \def\title{\textbf{\color{Red} #1}}
 }
 
-% Cases
-
-\newcommand{\kebabCase}[1]{%
-    \def\temp{#1}%
-    \StrSubstitute{\temp}{é}{e}[\temp]%
-    \StrSubstitute{\temp}{è}{e}[\temp]%
-    \StrSubstitute{\temp}{ê}{e}[\temp]%
-    \StrSubstitute{\temp}{à}{a}[\temp]%
-    \StrSubstitute{\temp}{â}{a}[\temp]%
-    \StrSubstitute{\temp}{î}{i}[\temp]%
-    \StrSubstitute{\temp}{ï}{i}[\temp]%
-    \StrSubstitute{\temp}{ç}{c}[\temp]%
-    \StrSubstitute{\temp}{ }{-}[\temp]%
-    \MakeLowercase{\temp}%
-}
-
-\newcommand{\reverseSnakeCase}[1]{%
-    \def\temp{#1}%
-    \StrSubstitute{\temp}{_}{ }[\temp]%
-    \temp
-}
-
-\newcommand{\reverseKebabCase}[1]{%
-    \def\temp{#1}%
-    \StrSubstitute{\temp}{-}{ }[\temp]%
-    \temp
-}
-
-% Helper command to add rows to the table
-\def\evaluationRow#1/#2!{\ifthenelse{\equal{#2}{0}}{\bonus }{}#1 &
-    \ifthenelse{\equal{#2}{0}}{}{\qquad/ #2}
-    \addtocounter{evaluationTotal}{#2}\\ \hline
-}
-
-% Command to generate the sequence evaluation table
-\newcommand{\seqEvaluation}[3]{ % 1: Sequence number, 2: Title, 3: Competences
-    \renewcommand{\arraystretch}{1.2}
-    \renewcommand*\do[1]{\evaluationRow##1!}
-    \begin{seqEvaluationBox}{#1}{#2}
-        \begin{center}
-            \begin{tabular}{p{0.83\linewidth}|C{0.1\linewidth}} % Table column widths
-                \hline
-                \docsvlist{#3} % Process the list of competencies and notes
-            \end{tabular}
-        \end{center}
-    \end{seqEvaluationBox}
-}
-
-\def\evalutionTotal{
-    \begin{evaluationBox}
-        \begin{flushright}
-            / \theevaluationTotal
-        \end{flushright}
-        
-    \end{evaluationBox}
-}
-
-\NewDocumentCommand{\evalutionEnd}{O{3} O{2}}{
-    \seqEvaluation{}{Compétences générales}{
-        Écrire ses calculs
-        /#1,
-        Rédiger des phrases réponses
-        /#2
-    }
-    \evalutionTotal
-    \vspace{-1.5cm}
-}
-
-% \newcommand{\dm}[1]{
-%     \def\assignmentNameWidth{6cm}
-%     \setTitle{DM : #1}
-%     \thispagestyle{assignment}
-%     \setboolean{showSubID}{true}
-%     \emptyBackground
-% }
-
 \NewDocumentCommand{\dm}{m O{}}{%
     \setboolean{showSubID}{true}
     \ifempty{#2}{%
@@ -565,14 +291,8 @@
     \emptyBackground
 }
 
-% \newcommand{\evaluation}[1]{
-%     \setTitle{Evaluation - #1}
-%     \thispagestyle{assignment}
-%     \setboolean{showSubID}{true}
-%     \emptyBackground
-% }
-
 \NewDocumentCommand{\evaluation}{m O{}}{%
+    \input{header/special/evaluation.tex}
     \setboolean{showSubID}{true}
     \ifempty{#2}{%
         % \def\assignmentNameWidth{6.5cm}

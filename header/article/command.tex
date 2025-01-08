@@ -33,8 +33,8 @@
     }
 }
 
-\newcommand{\startQuestions}{}
-\newcommand{\iquestion}[2]{\item $#1 = \result{#2}$}
+% \newcommand{\startQuestions}{}
+% \newcommand{\iquestion}[2]{\item $#1 = \result{#2}$}
 
 \newcommand{\palt}[2]{\result{#2}}
 \NewDocumentCommand{\aalt}{o m m}{%
@@ -54,11 +54,11 @@
 \newenvironment{columns}[1][T]{}{}
 \newenvironment{column}[1]{\begin{minipage}{#1}}{\end{minipage}}
 
-\NewDocumentCommand{\qf}{m O{15}}{
-    \qfSUB{}{
-        \qfRes{#1}
-    }
-}
+% \NewDocumentCommand{\qf}{m O{15}}{
+%     \qfSUB{}{
+%         \qfRes{#1}
+%     }
+% }
 
 \newcounter{annex}
 \renewcommand{\theannex}{\Alph{annex}} % Define how the annex counter will be displayed
@@ -85,16 +85,14 @@
     \setcounter{tocdepth}{#1}%
 }
 
-\NewDocumentCommand{\dividePage}{mm O{0.5}}{
-    \pgfmathparse{1-#3}
-    % \newcount\secondPage
-    % \pgfmathsetcount{\secondPage}{\pgfmathresult}
-    \begin{minipage}{#3\linewidth}
-        #1
-    \end{minipage}
-    \begin{minipage}{\pgfmathresult\linewidth}
-        #2
-    \end{minipage}
+\NewDocumentCommand{\dividePage}{mm O{0.5}}{%
+    \pgfmathparse{1-#3}%
+    \begin{minipage}{#3\linewidth}%
+        #1%
+    \end{minipage}%
+    \begin{minipage}{\pgfmathresult\linewidth}%
+        #2%
+    \end{minipage}%
 }
 
 \newcommand{\ifArticle}[1]{#1}
@@ -107,12 +105,13 @@
 
 \newcommand{\bshrink}{}
 
-\NewDocumentCommand{\obj}{m O{}}{
+\NewDocumentCommand{\obj}{m O{}}{%
     \begin{objBox}
         \objSUB{#2}{%
         \begin{enumerate}#1\end{enumerate}%
         }
-    \end{objBox}
+    \end{objBox}%
+    \pbreak%
 }
 
 \newcommand{\forPrint}{
@@ -122,8 +121,10 @@
     \emptyBackground
 }
 
-\newcommand{\forStudent}{
+\newcommand{\forStudents}{
     \setboolean{answer}{false}
     \setboolean{showRef}{false}
     \emptyBackground
 }
+
+\newcommand{\pbreak}{}

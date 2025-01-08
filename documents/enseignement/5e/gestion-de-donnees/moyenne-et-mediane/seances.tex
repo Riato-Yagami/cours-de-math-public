@@ -6,100 +6,73 @@
 %%% VARIABLES %%%
 \setSeq{7}{Gestion de donnés - Moyenne et médiane}
 \setGrade{5e}
-\def\imgPath{enseignement/6e/geometrie-plane/polygones/}
+\def\imgPath{enseignement/5e/gestion-de-donnees/moyenne-et-mediane/}
 \def\ym{\href{https://www.maths-et-tiques.fr/telech/19Proba-stat.pdf}{Yvan Monka}}
 % \forPrint
-% \def\caPrefix{6e-juin-2022-}
+\forStudents
+\def\caPrefix{5e-mars-2023-}
 %%
 
 \obj{
     \item Calculer et interpréter la moyenne d'une série de données.
     \item Interpréter la médiane d'une série de données.
     \item Recueillir et organiser des données, sous forme de tableaux, de graphiques.
-    \item Traduire la relation de dépendance entre deux grandeurs par un tableau de valeurs.
-    \item Produire une formule représentant la dépendance de deux grandeurs.
+    % \item Calcule des effectifs et des fréquences.
+    % \item Traduire la relation de dépendance entre deux grandeurs par un tableau de valeurs.
+    % \item Produire une formule représentant la dépendance de deux grandeurs.
 }
 
-\scn{Découvrir la moyenne et la médiane}
-
-% \slide{qf}{
-%     Rappelle : Pour calculer une \key{moyenne}, on utilise les étapes suivantes :
-%     \begin{enumerate}
-%         \item Additionne toutes les valeurs données.
-%         \item Divise cette somme par le nombre total de valeurs.
-%     \end{enumerate}
-%     \bvspace{-0.2cm}
-%     Questions :
-%     \begin{enumerate}
-%         \item Quelle est la moyenne des nombres suivants : \( 4, \; 6, \; 8 \) ?
-%         \item Quelle est la moyenne de \( 2, \; 3, \; 5, \; 10 \) ?
-%     \end{enumerate}
-% }
+\scn{Utiliser la moyenne}
 
 \def\iconPath{minecraft/}\def\iconSize{25pt}
 \slide{qf}{
-    \nullsubsec{}{
-        Steve \icon{player-head} utilise une pioche \icon{diamond-pickaxe} Fortune III pour miner 6 minerais de charbon \icon{coal-ore}. 
-        Chaque \icon{coal-ore} lui donne une quantité variable de \icon{coal},
-        correspondant aux valeurs suivantes : $4\,;1\,;3\,;2\,;3\,;4$.
-        Détermine combien de morceaux de \icon{coal} est obtenue en moyenne par \icon{coal-ore}.        
-    }[\href{https://fr.minecraft.wiki/w/Charbon}{Minecraft wiki}]
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/exo-coal-digger.tex}
 }
 
-\slide{exo}{
-    \act{}{
-        Steve \icon{player-head} explore une grotte et trouve des coffres \icon{chest}
-        contenant des diamants \icon{diamond}.  
-        Les \icon{chest} suivants contiennent respectivement :  
-        $ 8, \; 4, \; 6, \; 10, \; 2, \; 12, \; 5 \; \icon{diamond}. $
-    
-        \begin{enumerate}
-            \item Combien de \icon{diamond} obtient-il en moyenne par \icon{chest}? \saveenumi
-        \end{enumerate}
-    
-        \icon{player-head} décide de calculer le nombre \key{médian} de \icon{diamond} par \icon{chest}, c'est-à-dire le nombre qui partage cette série en deux groupes contenant autant de valeurs.
-    
-        \begin{enumerate} \loadenumi
-            \item Classe les nombres de \icon{diamond} par \icon{chest} dans l'ordre croissant.
-            \item Détermine la médiane et explique son interprétation dans ce contexte.
-        \end{enumerate}
-    }
-}
-
-\bsec{Définir la moyenne et la médiane}
+% \bsec{Définir la moyenne et la médiane}
 
 \slide{cr}{
-    \df{}{
-        La \key{moyenne} d'une série de données est un nombre qui permet de représenter l'ensemble des valeurs de manière synthétique. Elle se calcule en ajoutant toutes les valeurs, puis en divisant par leur nombre total.
-    }[\wiki{Moyenne}]
+    \sseq\section{Effectifs}
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/df-effectif.tex}
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/df-effectif-total.tex}
 }
 
 \slide{cr}{
-    \df{}{
-        La \key{médiane} d'une série de données ordonnées est une valeur qui partage cette série en deux groupes de même effectif :
-        \begin{itemize}
-            \item Si le nombre de données est impair, la médiane est la valeur centrale.
-            \item Si le nombre de données est pair, la médiane est la moyenne des deux valeurs centrales.
-        \end{itemize}
-    }[\wiki{Médiane}]
-}
-
-\slide{exo}{\bsmall
-    % \begin{enumerate}\setItemColor{act}
-    %     \item Trouve la moyenne et la médiane des séries suivantes :
-    %     \begin{itemize}
-    %         \item \( 7, \; 10, \; 12, \; 15, \; 8 \)
-    %         \item \( 5, \; 6, \; 8, \; 9, \; 10, \; 12 \)
-    %     \end{itemize}
-    %     \item Explique pourquoi la moyenne et la médiane ne sont pas toujours égales.
-    %     \item Propose une situation où la médiane serait plus utile que la moyenne pour représenter les données.
-    % \end{enumerate}
+    \section{Moyenne et médiane}
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/df-moyenne.tex}
 }
 
 \slide{exo}{
-    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/repartion-des-richesses.tex}
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/recolte-de-patate.tex}
+}
+
+\scn{Découvrir la notion de médiane}
+\caSlide{16-17-18}
+
+\slide{exo}{
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/act-diamant-median.tex}
+}
+
+\slide{cr}{
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/df-mediane.tex}
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/mtdh-calcul-d-une-mediane.tex}
+}
+
+\scn{Appliquer les notions de Moyenne et Médiane dans des problèmes}
+\caSlide{19-20-21}
+
+\slide{exo}{
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/exo-repartion-des-richesses.tex}
 }
 
 \slide{exo}{
-    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/pepiniere.tex}
+    \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/exo-la-pepiniere.tex}
 }
+
+\def\caPrefix{5e-mars-2022-}
+\caSlide{11-12-13}
+
+% \slide{cr}{
+%     \section{Fréquences}
+%     \input{resources/enseignement/5e/gestion-de-donnees/moyenne-et-mediane/df-frequence.tex}
+% }

@@ -1,0 +1,74 @@
+\newcommand{\repeated}[2]{% \repeat already defined
+    \foreach \n in {1,...,#1}{#2}%
+}
+
+\newcommand{\remaininglines}{
+    \the\numexpr (\textheight - \pagetotal) / \baselineskip - 1 \relax
+}
+
+\newlength{\parline}
+\newlength{\paroutindent}
+\newlength{\lineheight}
+\setlength{\lineheight}{\heightof{abcdefghijklmnoprstuvwxyz}}
+
+\newcommand{\countlines}[1]{%
+    \setlength{\paroutindent}{\expandafter\parindent}
+    \setlength{\parline}{\heightof{\noindent\begin{minipage}{\linewidth}%
+                \setlength{\parindent}{\paroutindent}#1\end{minipage}}}%
+    \pgfmathparse{round(\parline / (0.9*\lineheight))}
+    \newcount\linecount
+    \pgfmathsetcount{\linecount}{\pgfmathresult}
+}
+
+\newcommand{\fsize}[1]{\fontsize{#1}{#1}\selectfont}
+
+% Cases
+\newcommand{\kebabCase}[1]{%
+    \def\temp{#1}%
+    \StrSubstitute{\temp}{é}{e}[\temp]%
+    \StrSubstitute{\temp}{è}{e}[\temp]%
+    \StrSubstitute{\temp}{ê}{e}[\temp]%
+    \StrSubstitute{\temp}{à}{a}[\temp]%
+    \StrSubstitute{\temp}{â}{a}[\temp]%
+    \StrSubstitute{\temp}{î}{i}[\temp]%
+    \StrSubstitute{\temp}{ï}{i}[\temp]%
+    \StrSubstitute{\temp}{ç}{c}[\temp]%
+    \StrSubstitute{\temp}{ }{-}[\temp]%
+    \MakeLowercase{\temp}%
+}
+
+\newcommand{\reverseSnakeCase}[1]{%
+    \def\temp{#1}%
+    \StrSubstitute{\temp}{_}{ }[\temp]%
+    \temp
+}
+
+\newcommand{\reverseKebabCase}[1]{%
+    \def\temp{#1}%
+    \StrSubstitute{\temp}{-}{ }[\temp]%
+    \temp
+}
+
+% \NewDocumentCommand{\removeFirstChar}{m}{
+%     % Get the input string
+%     \def\inputString{#1}
+%     % Create a new command to hold the output string
+%     \def\outputString{}
+    
+%     % Get the length of the input string
+%     \newcount\stringLength
+%     \stringLength=\numexpr\expandafter\detokenize\expandafter{\inputString}\relax
+%     \advance\stringLength by -1 % Decrease length by 1 to ignore the first character
+
+%     % Check if the input string is not empty
+%     \ifnum\stringLength>0
+%         % Remove the first character by skipping it
+%         \edef\outputString{\expandafter\@gobble\inputString} % Skip the first character
+%         % Output the remaining string
+%         \outputString
+%     \else
+%         % If the string is empty, output nothing
+%         % Alternatively, you can output a message or a default value
+%         \textbf{Empty string}
+%     \fi
+% }

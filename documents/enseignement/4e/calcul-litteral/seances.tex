@@ -4,14 +4,16 @@
 \def\imgPath{enseignement/4e/calcul-litteral/}
 
 % \forPrint
+\forStudents
 % \setboolean{answer}{true}
 
-\def\ym{https://www.maths-et-tiques.fr/telech/19CalcLitt4e-1.pdf}
+\dym{https://www.maths-et-tiques.fr/telech/19CalcLitt4e-1.pdf}
 % https://www.maths-et-tiques.fr/telech/19CalcLitt4e-2.pdf
 %%
 
 \obj{
     \item Produire une expression littéral.
+    \item Identifier la structure d'une expression littérale (somme, produit).
     \item Utiliser la propriété de distributivité simple pour développer un produit,
     factoriser une somme ou réduire une expression littérale.
     \item Démontrer l'équivalence de deux programmes de calcul.
@@ -22,100 +24,63 @@
 \scn{Produire une expression littéral}
 \caSlide{5-6-7}
 
-\slide{exo}{\bshrink
-    \exo{Rangez des pommes !}{\calculator\\
-        Un marchand possède des caisses contenant chacune $99$ pommes.
-        Pour optimiser l'espace dans son entrepôt, il décide d'empiler les caisses en tours.
-        Cependant, les caisses étant fragiles,
-        à chaque nouvelle caisse ajoutée dans une tour,
-        il retire une pomme de chacune des caisses de cette tour.\\
-        Voici la composition des tours de $1$, $2$ et $3$ caisses :
-    
-        \input{resources/enseignement/4e/calcul-litteral/entrepot-pommes.tex}
-    }
-}
-
-\slide{exo}{\bsmall
-    \begin{enumerate} \loadenumi[exo][0]
-        \item Combien de pommes y aurait-il au total dans une tour de $4$ caisses ? Et dans une tour de $5$, $10$ ou $23$ caisses ?
-        \item Expliquez, en une phrase ou à l'aide d'un programme de calcul, comment déterminer le nombre de pommes pour un nombre quelconque de caisses.
-        \item Écrivez une expression littérale permettant de calculer le nombre de pommes dans une tour composée de $n$ caisses.
-        \item Utilisez cette expression pour calculer le nombre de pommes dans une tour de $35$, $46$, $58$ et $70$ caisses.
-        \item Que remarquez-vous à propos des résultats obtenus ?
-        \item Quel est le nombre maximal de pommes pouvant être rangées dans une tour ?
-    \end{enumerate}
-}
-
-\newpage
-
-\slide{exo}{\bshrink
-    \exo{Zzzzz...}{
-        Dans le motif suivant, illustré par des exemples de carrés de tailles 3, 4 et 5, nous étudions le nombre de carrés blancs et colorés présents en fonction de la taille du carré.
-        \input{resources/enseignement/4e/calcul-litteral/pattern-z.tex}
-        \bvspace{-1cm}
-    }
-}
-
-\slide{exo}{\bsmall
-    \begin{enumerate}\setItemColor{exo}
-        \item \textbf{Carrés colorés :}  
-            \begin{enumerate}
-                \item Combien y aura-t-il de carrés colorés dans un carré de taille 6 ?  
-                \item Donner une expression littérale permettant de calculer le nombre de carrés colorés dans un carré de taille $n$.  
-                \item À l'aide de votre calculatrice, déterminer le nombre de carrés coloré dans un carré de taille $30$ et dans un carré de taille $176$.  
-            \end{enumerate}
-    
-            \item \textbf{Nombre total de carrés :}  
-            \begin{enumerate}
-                \item Combien y aura-t-il de carrés au total dans un carré de taille $6$ ? Et dans un carré de taille $7$ ?
-                \item Combien y aura-t-il de carrés au total (blancs et colorés) dans un carré de taille $n$ ?  
-            \end{enumerate}\saveenumi
-    \end{enumerate}
+\slide{exo}{
+    \input{resources/enseignement/4e/calcul-litteral/exo-ranger-des-pommes.tex}
 }
 
 \slide{exo}{
-    \begin{enumerate}\loadenumi[exo]
-        \item \textbf{Carrés blancs :}  
-        \begin{enumerate}
-            \item Donner une relation d'égalité entre le nombre total de carrés, le nombre de carrés blancs et le nombre de carrés colorés.  
-            \item En déduire une expression littérale permettant de calculer le nombre de carrés blancs dans un carré de taille $n$. 
-            \item À l'aide de votre calculatrice, déterminer le nombre de carrés colorés dans un carré de taille $610$.
-        \end{enumerate}
-
-        \item \textbf{Parité des carrés :}  
-        \begin{enumerate}
-            \item Peut-on obtenir un nombre impair de carrés colorés ?  
-            \item Peut-on obtenir un nombre impair de carrés blancs ?  
-        \end{enumerate}
-    \end{enumerate}
+    \input{resources/enseignement/4e/calcul-litteral/exo-zzzzz.tex}
 }
+
+\scn{Simplifier une expression}
+
+\slide{qf}{
+    \input{resources/enseignement/4e/calcul-litteral/exo-indentifier-une-somme-ou-un-produit.tex}
+}
+
+\bookSlide{3p166,4p166}[10cm][1]
 
 \scn{Démontrer la propriété de simple distributivité}
-\caSlide{11-12-13}
 
-\slide{exo}{\bvspace{-0.5cm}
-    \act{Démonstration de la simple distributivité}{\bshrink
-        \input{resources/enseignement/4e/calcul-litteral/act-distributivite.tex}
-        \bvspace{-0.75cm}
-        \begin{enumerate}
-            \item Écrire deux expressions sous forme de produits pour calculer l'aire $\mathcal{A}_1$ du rectangle \cir[gradeColor]{1} et l'aire $\mathcal{A}_2$ du rectangle \cir[gradeColor]{2}.
-            \item Donner une formule exprimant la longueur $L$ du côté du grand rectangle en fonction des longueurs des côtés des petits rectangles.\saveenumi
-        \end{enumerate}
-    }
+\slide{qf}{
+    \input{resources/enseignement/4e/calcul-litteral/exo-simplifier-des-sommes.tex}
 }
 
 \slide{exo}{
-    \begin{enumerate}\loadenumi[act]
-        \item Écrire une expression sous forme de produit pour calculer l'aire totale $\mathcal{A}_t$ du grand rectangle.
-
-        \item Établir une égalité liant les aires $\mathcal{A}_1$,
-        $\mathcal{A}_2$ et $\mathcal{A}_t$.
-
-        \item En déduire une égalité entre une somme et un produit impliquant les nombres $a$, $b$ et $k$.
-    \end{enumerate}
+    \input{resources/enseignement/4e/calcul-litteral/act-demonstration-de-la-simple-distributivite.tex}
 }
 
-\scn{Utiliser la propriété de simple distributivité}
+\scn{Institutionnaliser la propriété de distributivité}
+\caSlide{11-12-13}
+
+\NewDocumentCommand{\mlt}{O{\,\times\,}}{\textcolor{Red}{#1}}
+\NewDocumentCommand{\add}{O{\,+\,}}{\textcolor{Blue}{#1}}
+
+\slide{cr}{
+    \sseq
+    \input{resources/enseignement/4e/calcul-litteral/pr-distributivite-simple.tex}
+    \input{resources/enseignement/4e/calcul-litteral/vc-distributivite.tex}
+    \input{resources/enseignement/4e/calcul-litteral/expl-developper-une-expression.tex}
+    \input{resources/enseignement/4e/calcul-litteral/expl-factoriser-une-expression.tex}
+}
+
+\scn{Appliquer la simple distributivité}
 \caSlide{14-15-16}
+
+\bookSlide{12p166,14p167,15p167,21p167,22p167,24p167,25p167}[7cm][2]
+
+\scn{Problèmes de distributivité}
+\caSlide{17-18-19}
+
+% \slide{qf}{
+%     \input{resources/enseignement/4e/calcul-litteral/exo-comparaison-d-expressions.tex}
+% }
+
+\bookSlide{26p167,31p168,33p168,38p169}[7cm][2]
+
+\scn{Démontrer la règle de calcul sur les sommes de fraction de même dénominateur}
+
+\caSlide{20-21-22}
+\bookSlide{40p169}[10cm][1]
 
 % \input{resources/enseignement/4e/calcul-litteral/dessine-moi-une-expression-algebrique.tex}

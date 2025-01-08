@@ -1,0 +1,16 @@
+\def\figScale{2.25}
+% \newcommand{\solide}[2]{\item \dividePage{#1}{\input{resources/enseignement/5e/geometrie-dans-l-espace/solides/tikz/#2.tex}}}%
+
+\newcommand{\solide}[2]{\item #1
+    \input{resources/enseignement/5e/geometrie-dans-l-espace/solides/tikz/#2.tex}
+}
+
+\df{Solides de révolution}{%
+    On appelle :
+    \multiColItemize{1}{
+        \item \key{solide de révolution} un solide obtenu en faisant tourner une figure plane autour d'un axe.
+        \solide{\nswr{\key{cylindre de révolution}}[5cm] un solide de révolution dont les bases sont des cercles superposables}{cylindre}        
+        \solide{\nswr{\key{cône}}[5cm] un solide de révolution dont la base est un cercle et dont les faces latérales sont des triangles.}{cone}
+        \solide{\nswr{\key{sphère}}[5cm] une surface constituée de tous les points situés à une même distance d'un point appelé \key{centre}.}{sphere}
+    }
+}[\wiki{Solide_de_révolution}]

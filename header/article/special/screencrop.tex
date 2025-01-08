@@ -1,0 +1,13 @@
+\usepackage{package/screencrop}
+\fancyhead[R]{}
+\fancyhead[L]{}
+
+\RenewDocumentCommand{\dividePage}{mm O{0.5}}{%
+    \pgfmathparse{1-#3-0.05}%
+    \begin{minipage}{#3\linewidth}%
+        #1%
+    \end{minipage}%
+    \begin{minipage}{\pgfmathresult\linewidth}%
+        #2%
+    \end{minipage}%
+}
