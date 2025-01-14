@@ -1,4 +1,5 @@
-\dm{Escargot}[corr]
+\dm{Escargot}
+[corr]
 \setGrade{4e}
 
 % https://ww2.ac-poitiers.fr/math/sites/math/IMG/pdf/dm_escrgot.pdf
@@ -19,25 +20,32 @@
     \item Pour $n$ un nombre, quelle sera la mesure de l'hypoténuse du \trgl[n] ?
 \end{enumerate}
 
-\pbreak
+\ifthenelse{\boolean{answer}}{\pbreak}{}
 
 \nswr[0]{
     \input{resources/enseignement/4e/calcul-litteral/dm-escargot.tex}
     \begin{enumerate}
+        \loadenumi[][2]%
         \item \begin{itemize}
-            \item Considérons le triangle $SAB$, rectangle en $A$.
-            \item D'après le théorème de Pythagore :
+            \item On a $SAB$, un triangle rectangle en $A$.
+            \item Alors d'après le théorème de pythagore :
             \[ SB^2 = SA^2 + AB^2 = 1^2 + 1^2 = 1 + 1 = 2. \]
             \item Alors l'hypoténuse du \trgl[1] est $SB = \sqrt{2}\,\Lg{}$.
         \end{itemize}
+        \loadenumi[][4]%
         \item \begin{itemize}
             \item On a $SBC$ un triangle rectangle en $C$.
             \item Alors d'après le théorème de pythagore :
             \[ SC^2 = SB^2 + BC^2 = (\sqrt{2})^2 + 1^2 = 2 + 1 = 3. \]
             \item Alors l'hypoténuse du \trgl[2] est $SC = \sqrt{3}\,\Lg{}$.
         \end{itemize}
-        \item L'hypoténuse du \trgl[4] est $SC = \sqrt{5}\,\Lg{}$.
+        \loadenumi[][6]%
+        \item L'hypoténuse du \trgl[4] est de longueure $\sqrt{5}\,\Lg{}$.
+        \item L'hypoténuse de \trgl[6] sera de longueure $\sqrt{6}\,\Lg{}$,
+        et celui du \trgl[35] sera de longueure $\sqrt{36}\,\Lg{}$.
         \item Le \trgl[] ayant un hypoténuse de mesure $\sqrt{15}\,\Lg{}$ est le \trgl[14].
         \item Pour $n$ un nombre, le \trgl[n] aura un hypoténuse de mesure $\sqrt{n+1}\,\Lg{}$
     \end{enumerate}
 }
+
+\ifthenelse{\boolean{answer}}{\pbreak}{\foot}

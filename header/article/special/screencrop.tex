@@ -2,6 +2,22 @@
 \fancyhead[R]{}
 \fancyhead[L]{}
 
+\renewcommand{\pbreak}{%
+    \foot%
+    \pagebreak%
+}
+
+\newcommand{\foot}{%
+    \begin{center}\small%
+        \begin{tabular}{ p{0.3\textwidth} p{0.4\textwidth} p{0.2\textwidth}}%
+            \raggedright \authors
+            & \centering \textbf{Page \thepage /{\hypersetup{linkcolor=black}\pageref{LastPage}}}
+            & \raggedleft {\large \textbf{\link{\grade}}}
+        \end{tabular}%
+    \end{center}%
+    \vspace{-1cm}%
+}
+
 \RenewDocumentCommand{\dividePage}{mm O{0.5}}{%
     \pgfmathparse{1-#3-0.05}%
     \begin{minipage}{#3\linewidth}%

@@ -1,22 +1,22 @@
 \def\figScale{0.6}
-% \newcommand{\sld}[2]{\item \dividePage{#1}
-% {\input{resources/enseignement/6e/geometrie-dans-l-espace/solides/tikz/#2.tex}}[0.5]
-% }
-
-\newcommand{\sld}[2]{\item #1
-    \input{resources/enseignement/6e/geometrie-dans-l-espace/solides/tikz/#2.tex}
+\newcommand{\sld}[2]{\item \dividePage{#1}
+{\input{resources/enseignement/6e/geometrie-dans-l-espace/solides/tikz/#2.tex}}[0.5]
 }
+
+% \newcommand{\sld}[2]{\item #1
+%     \input{resources/enseignement/6e/geometrie-dans-l-espace/solides/tikz/#2.tex}
+% }
 
 \df{Polyèdres}{%
     On appelle :%
-    \multiColItemize{2}{%
+    \multiColItemize{1}{%
         \sld{%
-            \key{polyhèdre}, un solide constitué de \key{faces} polygonales.\\
+            \key{polyèdre}, un solide constitué de \key{faces} polygonales.\\
             Les côtés de ces polygones sont appelés  \key{arêtes}.\\
             Les extrémités des arêtes sont des points appelés  \key{sommets}.
         }{polyhedre}
         \sld{%
-            \nswr{\key{prisme droit}}[5cm], un polyhèdre constitué de deux \key{bases} polygonales superposables,
+            \nswr{\key{prisme droit}}[5cm], un polyèdre constitué de deux \key{bases} polygonales superposables,
             reliées entre elles par des faces \nswr{\key{rectangulaires}}[5cm].
         }{prisme-droit}
         \sld{%
@@ -26,7 +26,7 @@
             \nswr{\key{cube}}[5cm], un \nswr{pavé droit}[5cm] dont toutes les faces sont des \nswr{\key{carrés}}[5cm].
         }{cube}
         \sld{%
-            \nswr{\key{pyramide}}[5cm], un polyhèdre formé d'une base polygonale reliée à un \key{sommet} par des faces \nswr{\key{triangulaires}}[5cm].
+            \nswr{\key{pyramide}}[5cm], un polyèdre formé d'une base polygonale reliée à un \key{sommet} par des faces \nswr{\key{triangulaires}}[5cm].
         }{pyramide}
     }
 }[\wiki{Polyèdre}[Polyèdres_simples]]

@@ -1,123 +1,66 @@
 % VARIABLES %%%
-\setSeq{3}{Nombres rationnels}
+\setSeq{6}{Nombres rationnels}
 \setGrade{4e}
 
-\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Fractions1.pdf}{Yvan Monka}}
+\dym{https://www.maths-et-tiques.fr/telech/19Fractions1.pdf}
 
 \obj{
     \item Definition d'un nombre rationnel.
-    \item Addition de fraction de dénominateur différent.
-    \item La notion d'inverse
-    \item Multiplication et la division
+    \item Calculer des sommes, difference, produit et quotient de fractions.
+    \item Utiliser la notion d'inverse.
 }
+
+\scn{Somme et différence de fraction}
 
 \slide{qf}{
-    Ecrires les nombres suivant sous forme décimale :
-    \multiColEnumerate{2}{
-        \item $\frac{5}{2} = \nswr{\np{2.5}}$
-        \item $\frac{9 \times 6}{3} = \nswr{27}$
-        \item $\frac{4 + 6}{6-11} = \nswr{-2}$
-        \item $\frac{6 \times (-6)}{-100 \div 10} = \nswr{\np{3.6}}$
-    }
+    \input{resources/enseignement/4e/nombres-rationnels/exo-fraction-quotient.tex}
 }
 
 \slide{cr}{
-    \df{}{
-        Un nombre rationnel est, en mathématiques,
-        un nombre qui peut s'exprimer comme le quotient de deux entiers relatifs.
-    }
+    \sseq
+    \section{Définition}
+    \input{resources/enseignement/4e/nombres-rationnels/df-nombres-rationnels.tex}
 }
 
 \slide{cr}{
+    \section{Fraction égale}
+}
+
+\slide{cr}{
+    \section{Somme et différence}
+    \subsection{De même dénominateur}
+    \input{resources/enseignement/4e/nombres-rationnels/mthd-somme-ou-difference-de-fractions-de-meme-denominateur.tex}
     Pour $a,b,c,d$ et $n$ des nombres.
-
-    \pr{Somme ou différence de fractions avec le \key{même dénominateur}}{
-        \begin{enumerate}
-            \item On prend la somme ou différence des numérateurs.
-            \item On conserve le même dénominateur.
-        \end{enumerate}
-    }
-
-    \expl{}{
-        \multiColEnumerate{2}{
-            \item $\frac{1}{2} + \frac{5}{2}
-            = \nswr{\frac{1+5}{2} = \frac{6}{2}}$
-            \item $\frac{14}{21} - \frac{12}{21}
-            = \nswr{\frac{14-12}{21} = \frac{2}{21}}$
-            \item $\frac{a}{d} + \frac{b}{d}
-            = \nswr{\frac{a+b}{d}}$
-            \item $\frac{a}{d} - \frac{b}{d}
-            = \nswr{\frac{a-b}{d}}$
-        }
-    }
-
-    \mthd{Somme et différence de fractions de \key{dénominateur différent}}{
-        \begin{enumerate}
-            \item On met les fractions au même dénominateur.
-            \item On fait leur somme ou différence comme précedement.
-        \end{enumerate}
-    }
-
-    \expl{}{
-        \multiColEnumerate{1}{
-            \item $\frac{1}{2} - \frac{1}{4}
-            = \nswr{\frac{2}{4} - \frac{1}{4}
-            = \frac{2-1}{4} = \frac{1}{4}
-            }$
-            \item $\frac{2}{12} + \frac{2}{3}
-            = \nswr{\frac{2}{12} + \frac{2\times4}{3\times4}
-            = \frac{2}{12} + \frac{8}{12}
-            = \frac{2+8}{12}
-            = \frac{10}{12}
-            }$
-            \item $\frac{3}{5} + \frac{6}{7}
-            = \nswr{\frac{3\times7}{5\times7} + \frac{6\times5}{7\times5}
-            = \frac{21}{35} + \frac{30}{35}
-            = \frac{21+30}{35} = \frac{51}{35}
-            }$
-            \item $\frac{12}{3} - \frac{6}{2}
-            = \nswr{\frac{12\times2}{3\times2} - \frac{6\times3}{2\times3}
-            = \frac{24}{6} - \frac{18}{6}
-            = \frac{24-18}{6} = \frac{6}{6}
-            }$
-            \item $\frac{a}{b} + \frac{c}{d}
-            = \nswr{\frac{a\times d}{b\times d} + \frac{c \times b}{d\times b}
-            = \frac{ad}{bd} + \frac{cb}{bd}
-            = \frac{ad+cb}{bd}
-            }$
-        }
-    }
+    \input{resources/enseignement/4e/nombres-rationnels/expl-somme-ou-difference-de-fractions-de-meme-denominateur.tex}
 }
 
 \slide{cr}{
-    \pr{Produits de fractions}{
-        $\frac{a}{c} \times \frac{b}{d} = \frac{a \times b}{c \times d}$
-    }
+    \subsection{De dénominateur différents}
+    \input{resources/enseignement/4e/nombres-rationnels/mthd-somme-ou-difference-de-fractions-de-denominateurs-differents.tex}
+    \input{resources/enseignement/4e/nombres-rationnels/expl-somme-ou-difference-de-fractions-de-denominateurs-differents.tex}
+}
+
+\slide{cr}{
+    \section{Produit et quotient}
+    \subsection{Produit}
+    \input{resources/enseignement/4e/nombres-rationnels/mthd-produit-de-fractions.tex}
 }
 \slide{cr}{
-    \rmk{} {
-        On appelle \key{inverse} d'un nombre $x$, le nombre qui, multiplié par $x$, donne $1$.
-    }[\wiki{Inverse}]
-    
-    \expl{} {
-        \multiColEnumerate{1}{
-            \item $0.5 \times \nswr{2} = 1$. L'inverse de $0.5$ est donc $\nswr{2}$.
-            \item $10 \times \nswr{0.1} = 1$. L'inverse de $10$ est donc $\nswr{0.1}$.
-            \item $\frac{1}{16} \times \nswr{16} = 1$. L'inverse de $\frac{1}{9}$ est donc $\nswr{9}$.
-            \item $23 \times \nswr{\frac{1}{23}} = 1$. L'inverse de $23$ est donc $\nswr{\frac{1}{23}}$.
-            \item $\frac{4}{5} \times \nswr{\frac{5}{4}} = 1$. L'inverse de $\frac{4}{5}$ est donc $\nswr{\frac{5}{4}}$.
-        }
-    }
-    
-    \rmk{}{
-        \begin{enumerate}
-            \item L'inverse d'un nombre $x$ est $\nswr{\frac{1}{x}}$.
-            \item L'inverse d'un rationnel $\frac{n}{d}$, le rationnel $\nswr{\frac{d}{n}}$.
-        \end{enumerate}
-    }
+    \subsection{Inverse}
+    \input{resources/enseignement/4e/nombres-rationnels/df-inverse.tex}
+    \input{resources/enseignement/4e/nombres-rationnels/expl-inverse.tex}
+    \input{resources/enseignement/4e/nombres-rationnels/rmk-inverse.tex}
+}
 
-    \pr{Division par un rationnels}{
-        Diviser un nombre par un rationnel est équivalent à le multiplier par l'inverse de ce rationnel.
-        $a \div \frac{n}{d} = a \times \frac{d}{n}$ 
-    }
+\slide{exo}{
+    \input{resources/enseignement/4e/nombres-rationnels/exo-qcm-fraction.tex}
+}
+
+\slide{cr}{
+    \subsection{Quotient}
+    \input{resources/enseignement/4e/nombres-rationnels/mthd-quotion-de-fractions.tex}
+}
+
+\slide{exo}{
+    \input{resources/enseignement/4e/nombres-rationnels/exo-qcm-fraction.tex}
 }
