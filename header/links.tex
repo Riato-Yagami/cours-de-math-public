@@ -111,10 +111,19 @@
     \def\ext{}%
     \ifNotNull{#2}{\def\ext{\##2}}%
     \href{https://fr.wikipedia.org/wiki/#1\ext}%
-    {Wikipédia (\reverseSnakeCase{#1}%
+    {\def\iconPath{}%
+    \icon{wikipedia} \reverseSnakeCase{#1}%
     \ifNotNull{#2}{ {\scriptsize $\rightarrow$ \reverseSnakeCase{#2}}}%
-    )}
+    }
 }
+% \NewDocumentCommand{\wiki}{m O{}}{%
+%     \def\ext{}%
+%     \ifNotNull{#2}{\def\ext{\##2}}%
+%     \href{https://fr.wikipedia.org/wiki/#1\ext}%
+%     {Wikipédia (\reverseSnakeCase{#1}%
+%     \ifNotNull{#2}{ {\scriptsize $\rightarrow$ \reverseSnakeCase{#2}}}%
+%     )}
+% }
 
 \newcommand*{\prbltq}[1]{\href{https://www.problematheque-csen.fr/fiche-probleme/#1}{Problémathèque (\reverseKebabCase{#1})}}
 
@@ -181,13 +190,21 @@
     }%
 }
 
+% \newcommand{\cmdIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
+%     \expandafter\NewDocumentCommand\csname cmd#1\endcsname{O{}}
+%     {%
+%         {\def\iconPath{}%
+%         \icon{#3} \textbf{\href{#4/##1}{\color{#2}#1}}}
+%     }%
+% }
+
 \newcommand{\cmdIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
     \expandafter\NewDocumentCommand\csname cmd#1\endcsname{O{}}
     {%
-        {\def\iconPath{}%
-        \icon{#3} \textbf{\href{#4/##1}{\color{#2}#1}}}
+        {\def\iconPath{}\def\iconSize{15pt}%
+        \href{#4/##1}{\shl{capytale-2}{#2}{\icon{#3} ##1}}
     }%
-}
+}}
 
 \definecolor{capytale}{HTML}{1E293B} % #1E293B
 \definecolor{capytale-2}{HTML}{F0F1F2} % #F0F1F2
