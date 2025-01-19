@@ -1,18 +1,12 @@
-\mthd{Mesure d'un angle}{
-    Pour mesurer un angle on le compare au \key{degré},
-    defini comme $\frac{1}{360}$ de tour complet.
-    On utilise pour celà un rapporteur.
-    % \rapporteur(A,B,1)
+\mthd{Mesurer un angle}{
+    Pour mesurer un angle, on le compare au \key{degré},
+    défini comme $\frac{1}{360}$ d'un tour complet.
+    Pour cela, on utilise un rapporteur.
+    \input{resources/enseignement/6e/angles/tikz/angle-rapporteur.tex}
+    \begin{enumerate}
+        \item Placez le centre du rapporteur sur le sommet de l'angle.
+        \item Alignez un côté de l'angle avec le zéro du rapporteur.
+        \item Lisez la mesure de l'angle (inférieure ou supérieure à $\ang{90}$) sur le rapporteur.
+    \end{enumerate}
 }
 
-\begin{Geometrie}
-    pair A,B,C;
-    A=u*(1,1);
-    B-A=u*(4,0);
-    C=cercles(A,3u) intersectionpoint cercles(B,2u);
-    trace polygone(A,B,C);
-    trace rapporteur(A,C,1);
-    label.lft(btex A etex,A);
-    label.rt(btex B etex,B);
-    label.top(btex C etex,C);
-\end{Geometrie}
