@@ -1,0 +1,18 @@
+\mthd{Mesure d'un angle}{
+    Pour mesurer un angle on le compare au \key{degré},
+    defini comme $\frac{1}{360}$ de tour complet.
+    On utilise pour celà un rapporteur.
+    % \rapporteur(A,B,1)
+}
+
+\begin{Geometrie}
+    pair A,B,C;
+    A=u*(1,1);
+    B-A=u*(4,0);
+    C=cercles(A,3u) intersectionpoint cercles(B,2u);
+    trace polygone(A,B,C);
+    trace rapporteur(A,C,1);
+    label.lft(btex A etex,A);
+    label.rt(btex B etex,B);
+    label.top(btex C etex,C);
+\end{Geometrie}
