@@ -283,12 +283,19 @@
     ]
 }
 
-\newcommand{\tp}[1]{
-    % \def\assignmentNameWidth{6cm}
-    \setTitle{TP : #1}
-    % \thispagestyle{assignment}
+\NewDocumentCommand{\tp}{m O{}}{%
     \setboolean{showSubID}{true}
-    \emptyBackground
+    \ifempty{#2}{%
+    \def\assignmentNameWidth{6cm}
+        \setTitle{TP : #1}
+        % \thispagestyle{assignment}
+        \setboolean{answer}{false}
+        \setboolean{showRef}{false}
+        \emptyBackground
+    }[%
+        \setTitle{TP - #1 - Correction}
+        \setboolean{answer}{true}
+    ]
 }
 
 \NewDocumentCommand{\evaluation}{m O{}}{%
@@ -325,4 +332,9 @@
     % \sethlcolor{#1}%
     % \textcolor{#2}{\hl{\,#3\,}}
     \colorbox{#1}{\textcolor{#2}{#3}}
+}
+
+\newcommand{\file}[1]{%
+    {\fontfamily{qhv}\selectfont % phv is Helvetica
+    \textit{\textcolor{gradeColor}{#1}}}%
 }
