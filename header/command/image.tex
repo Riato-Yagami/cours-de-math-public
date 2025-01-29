@@ -59,8 +59,13 @@
     }%
 }
 
-\NewDocumentCommand{\tool}{m o}{\ifNotNull{#2}{\icon{#2} }\textsf{#1}}
+\NewDocumentCommand{\tool}{m o}{\ifNotNull{#2}{\icon{#2} }{\footnotesize\textrm{#1}}}
 
+% \NewDocumentCommand{\tool}{m o}{%
+%     \def\tlink{https://geogebra.github.io/docs/manual/fr/tools/\snakeCase{#1}/}%
+%     \tlink%
+%     \href{\tlink}{\ifNotNull{#2}{\icon{#2} }{\footnotesize\textrm{#1}}}%
+% }
 \newcommand{\setImgPath}{
     \def\imgPath{enseignement/\grade/\kebabCase{\longTitle}/}
 }

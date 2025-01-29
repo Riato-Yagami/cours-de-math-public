@@ -98,12 +98,17 @@
     \setboolean{answer}{false}%
     \setboolean{showRef}{false}%
     \emptyBackground%
-    \renewcommand{\slide}[2]{##2\vspace{-1.5cm}\pbreak}%
+    \renewcommand{\slide}[2]{%
+        \ifstrequal{##1}{qf}{}%
+        {##2\vspace{-1.5cm}\pbreak}%
+    }%
     \renewcommand{\section}[1]{}%
     \renewcommand{\subsection}[1]{}%
     \RenewDocumentCommand{\scn}{m O{}}{}%
     \RenewDocumentCommand{\obj}{m O{}}{}%
-    \def\sseq{}
+    \def\sseq{}%
+    \RenewDocumentCommand{\bookSlide}{m O{10cm} O{1} O{\gradeBook} O{exo}}{}%
+    \renewcommand{\caSlide}[1]{}%
 }
 
 \renewcommand{\forStudents}{%

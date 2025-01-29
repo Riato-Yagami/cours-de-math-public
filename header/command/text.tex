@@ -37,6 +37,21 @@
     \MakeLowercase{\temp}%
 }
 
+\newcommand{\snakeCase}[1]{%
+    \def\temp{#1}%
+    \StrSubstitute{\temp}{é}{e}[\temp]%
+    \StrSubstitute{\temp}{è}{e}[\temp]%
+    \StrSubstitute{\temp}{ê}{e}[\temp]%
+    \StrSubstitute{\temp}{à}{a}[\temp]%
+    \StrSubstitute{\temp}{â}{a}[\temp]%
+    \StrSubstitute{\temp}{î}{i}[\temp]%
+    \StrSubstitute{\temp}{ï}{i}[\temp]%
+    \StrSubstitute{\temp}{ç}{c}[\temp]%
+    \StrSubstitute{\temp}{ }{\_}[\temp]%
+    \StrSubstitute{\temp}{-}{\_}[\temp]%
+    \MakeLowercase{\temp}%
+}
+
 \newcommand{\reverseSnakeCase}[1]{%
     \def\temp{#1}%
     \StrSubstitute{\temp}{_}{ }[\temp]%
