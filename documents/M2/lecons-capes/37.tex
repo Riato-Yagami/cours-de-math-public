@@ -43,7 +43,7 @@
 \demo{Terminale S - On suppose f positive et croissante}{
     On calcule le taux d'acroissement de $F$ en $x_0$. Soit $h>0$, alors:
     \begin{align*}
-        \acrF &= \frac{1}{h}\intf\\
+        \acrF &= \dfrac{1}{h}\intf\\
         \iet hf(x_0) \leqslant \intf &\leqslant hf(x_0 + h) \car f\geqslant0 \et \textrm{croissante.}
         \ialors f(x_0) \leqslant \acrF &\leqslant f(x_0+h)
         \ialors \lim_{h\rightarrow0^+} \acrF &= f(x_0) \car f \textrm{ continue en } x_0.
@@ -56,14 +56,14 @@
     si $|x-x_0|<\delta$, alors $|f(x)-f(x_0)|<\varepsilon$\\
     Soit $|h|<\delta$, alors:
     \begin{align*}
-        \acrF &= \frac{1}{h}\intf\\
-        \ialors \acrF - f(x_0) &= \frac{1}{h} - \intxx{f(t)-f(x_0)}
+        \acrF &= \dfrac{1}{h}\intf\\
+        \ialors \acrF - f(x_0) &= \dfrac{1}{h} - \intxx{f(t)-f(x_0)}
     \end{align*}
     $|h|<0$, alors \pt{} $t\in[x_0,x_0+h]$, on a $|t-x_0| < \delta$\\
     et donc $|f(t)-f(x_0)| \leqslant \varepsilon$. Alors:
     \begin{align*}
-        |\acrF - f(x_0)| &\leqslant \frac{1}{h}\intxx{|f(t)-f(x_0)|}\\
-        &\leqslant \frac{1}{h} \intxx{\varepsilon}\\
+        |\acrF - f(x_0)| &\leqslant \dfrac{1}{h}\intxx{|f(t)-f(x_0)|}\\
+        &\leqslant \dfrac{1}{h} \intxx{\varepsilon}\\
         &\leqslant \varepsilon\\
         \idou \lim_{h\rightarrow0} \acrF &= f(x_0).
     \end{align*}

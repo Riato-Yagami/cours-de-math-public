@@ -8,7 +8,7 @@
 \def\ssd{\ss{} à deux variables}
 \def\sump{\sum_{i=1}^{p}}
 \def\sumN{\sum_{i=1}^{N}}
-\def\sN{\frac{1}{N}}
+\def\sN{\dfrac{1}{N}}
 \newcommand{\moy}[1]{
     \overline{#1}
 }
@@ -71,8 +71,8 @@
 \df{Fréquence}{
     La \textbf{fréquence} d'une valeur est donnée par l'effectif de la valeur divisée par l'effectif total.
     \begin{align*}
-        \textrm{fréquence} &= \frac{\textrm{effectif}}{\textrm{effectif total}}\\
-        f_{x_i} &= \frac{n_i}{N}, \forall i \in [|1;n|]
+        \textrm{fréquence} &= \dfrac{\textrm{effectif}}{\textrm{effectif total}}\\
+        f_{x_i} &= \dfrac{n_i}{N}, \forall i \in [|1;n|]
     \end{align*}
 }
 
@@ -97,7 +97,7 @@
     La \textbf{moyenne} d'une \ss{}
     est donnée par la somme de ces valeurs divisée par l'effectif total.
     \begin{align*}
-        \textrm{moyenne} &= \frac{\textrm{somme des valeurs}}{\textrm{effectif total}}\\
+        \textrm{moyenne} &= \dfrac{\textrm{somme des valeurs}}{\textrm{effectif total}}\\
         \moy{x} &= \sN \sumN x_i\\
         &= \sN \sump n_{a_i} x_{a_i} \textrm{ \textbf{moyenne pondérée} avec } \sump n_{a_i} = N
     \end{align*}
@@ -177,8 +177,8 @@
     \begin{align*}
         V(x) &= \sN \sumN \dmoy{x}^2\\
         &= \sN \sumN (x_i^2 - 2x_i \moy{x} + \moy{x}^2)\\
-        &= \sN \sumN x_i^2 - \frac{2\moy{x}}{N} \sumN x_i  + \sN N \moy{x}^2\\
-        &= \sN \sumN x_i^2 - \frac{2\moy{x}}{N} N \moy{x} + \moy{x}^2\\
+        &= \sN \sumN x_i^2 - \dfrac{2\moy{x}}{N} \sumN x_i  + \sN N \moy{x}^2\\
+        &= \sN \sumN x_i^2 - \dfrac{2\moy{x}}{N} N \moy{x} + \moy{x}^2\\
         &= \sN \sumN x_i^2 - 2\moy{x}^2 + \moy{x}^2\\
         &= \sN \sumN x_i^2 - \moy{x}^2
     \end{align*}
@@ -257,7 +257,7 @@
     Le \textbf{coefficient de corrélation linéaire} $r$,
     mesure la force et la direction de la relation linéaire entre deux variables $x$ et $y$.
     \begin{align*}
-        r(x,y) = \frac{Cov(x, y)}{\sigma(x)\sigma(y)}
+        r(x,y) = \dfrac{Cov(x, y)}{\sigma(x)\sigma(y)}
     \end{align*}
 }
 
@@ -297,8 +297,8 @@
             y_N &= a x_N + b
         }\\
         \ialors &\lfbrace{
-            b &= y_1 - x_1 \frac{y_n}{x_N-x_1}\\
-            a &= \frac{y_n}{x_N-x_1}
+            b &= y_1 - x_1 \dfrac{y_n}{x_N-x_1}\\
+            a &= \dfrac{y_n}{x_N-x_1}
         }\\
     \end{align*}
 }
@@ -321,7 +321,7 @@
     \begin{align*}
         &(a,b) = \operatorname*{argmin}_{(a,b)}\sumN (y_i - (a x_i + b))^2\\
         &\lfbrace{
-            a = \frac{Cov(x,y)}{V(x)}\\
+            a = \dfrac{Cov(x,y)}{V(x)}\\
             b = \moy{y} - a \moy{x}
         }
     \end{align*}
@@ -342,13 +342,13 @@
         \ior &V(Y) + a^2V(X) - 2aCov(X,Y) + c^2\\ 
         =& P(a) + c^2 \textrm{ minimal lorsque } c = 0 = b - \moy{y} + a\moy{x} \et P(a) \textrm{ minimal}
         \ialors b =& \moy{y} - a\moy{x}
-        \iet P(a) \textrm{ minimal en } a =& -\frac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
-        =& \frac{2Cov(x,y)}{2V(x)} = \frac{Cov(x,y)}{V(x)}
+        \iet P(a) \textrm{ minimal en } a =& -\dfrac{\beta}{2\alpha} \textrm{ (polynôme du second degré)}\\
+        =& \dfrac{2Cov(x,y)}{2V(x)} = \dfrac{Cov(x,y)}{V(x)}
     \end{align*}
 }[\href{https://www.bibmath.net/resources/index.php?action=affiche&quoi=capes/demos/statistiques.html}{Bibmath}]
 
 \newcommand{\partJ}[1]{
-    \frac{\partial J}{\partial #1}
+    \dfrac{\partial J}{\partial #1}
 }
 
 \demo{Méthode experte}{
@@ -393,7 +393,7 @@
             b = \moy{y} - a \moy{x}
         }
         \ialors &\lfbrace{
-            (\frac{1}{N} \sumN x_i y_i -  \moy{x}\moy{y}) - a (\frac{1}{N} \sumN x_i^2 - \moy{x}) = 0\\
+            (\dfrac{1}{N} \sumN x_i y_i -  \moy{x}\moy{y}) - a (\dfrac{1}{N} \sumN x_i^2 - \moy{x}) = 0\\
             b = \moy{y} - a \moy{x}
         }
         \ialors &\lfbrace{
@@ -401,7 +401,7 @@
             b = \moy{y} - a \moy{x}
         }
         \ialors &\lfbrace{
-            a &= \frac{Cov(x,y)}{V(x)}\\
+            a &= \dfrac{Cov(x,y)}{V(x)}\\
             b &= \moy{y} - a \moy{x}
         }
     \end{align*}

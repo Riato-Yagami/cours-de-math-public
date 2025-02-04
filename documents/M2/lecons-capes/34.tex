@@ -89,7 +89,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     \begin{itemize}
         \item $\ln(1)=\ln(e^0)$
         \item $\ln(e)=\ln(e^1)$
-        \item $\ln(\frac{1}{e})= \ln(e^{-1}) = -1$
+        \item $\ln(\dfrac{1}{e})= \ln(e^{-1}) = -1$
     \end{itemize}
 }
 
@@ -123,7 +123,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     pour $(a,b)\in(\m{R}_+\backslash\{0,1\})^2$ et $x\in\m{R}_+^*$,
     on a:
     \begin{align*}
-        \log_b(x) = \frac{\log_a(x)}{\log_a(b)}
+        \log_b(x) = \dfrac{\log_a(x)}{\log_a(b)}
     \end{align*}
 }
 
@@ -134,7 +134,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
         x &= b^{\log_b(x)}
         \ialors \log_a(x) &= \log_a(b^{\log_b(x)})
         \ialors \log_a(x) &= \log_b(x) \times \log_a(b)
-        \idou \log_b(x) &= \frac{\log_a(x)}{\log_a(b)}
+        \idou \log_b(x) &= \dfrac{\log_a(x)}{\log_a(b)}
     \end{align*}
 }[\href{https://exomath.info.ucl.ac.be/syllabus/functions-series/exp_and_log/4.Fonctions\%20logarithmes.html}{Syllabus interactif : Mathématiques}]
 
@@ -142,7 +142,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     Pour $b\in\m{R}_+\backslash\{0,1\}$ et $x\in\m{R}_+^*$,
     on a:
     \begin{align*}
-        \log_b(x) = \frac{\ln(x)}{\ln(b)}
+        \log_b(x) = \dfrac{\ln(x)}{\ln(b)}
     \end{align*}
 }
 
@@ -237,7 +237,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 \pr{Dérivée du \logn}{
     Pour $x>0$,
     on a:
-    $\ln'(x) = \frac{1}{x}$
+    $\ln'(x) = \dfrac{1}{x}$
 }
 
 \demo{}{
@@ -256,7 +256,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
         \ialors \ln'(x)\exp'(\ln(x)) &= 1 \textrm{ (dérivation de fonctions composées)}\\
         \ialors \ln'(x)\exp(\ln(x)) &= 1\\
         \ialors \ln'(x) \times x &= 1\\
-        \idou \ln'(x) &= \frac{1}{x}
+        \idou \ln'(x) &= \dfrac{1}{x}
     \end{align*}
 }[\bib]
 
@@ -266,23 +266,23 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 
 \pr{Dérivations composées avec le \logn}{
     Soient $u$ fonction dérivable et strictement positive sur un intervalle $I$.
-    Alors $\ln(u)$ est dérivable et $\ln'(u) = \frac{u'}{u}$.
+    Alors $\ln(u)$ est dérivable et $\ln'(u) = \dfrac{u'}{u}$.
 }
 
 \demo{}{
     Soient $f : x \mapsto \ln(x)$ et $g : x \mapsto u(x)$ et $x\in\m{I}$.
     \begin{align*}
         (f \circ g)' &= g' \times (f' \circ g)
-        \ior f'(x) &= \frac{1}{x} \et g'(x) = u'(x)
-        \ialors (f \circ g)'(x) &= u'(x) \times \frac{1}{u(x)}
-        \idou \ln'(u) &= \frac{u'}{u}
+        \ior f'(x) &= \dfrac{1}{x} \et g'(x) = u'(x)
+        \ialors (f \circ g)'(x) &= u'(x) \times \dfrac{1}{u(x)}
+        \idou \ln'(u) &= \dfrac{u'}{u}
     \end{align*}
 }[\href{https://www.math-linux.com/mathematiques/derivee-de-fonction/article/derivee-de-ln-u}{Math-Linux.com}]
 
 \subsection{Croissance comparée}
 
-\def\lnx{\frac{\ln(x)}{x}}
-\def\lnxn{\frac{\ln(x)}{x^n}}
+\def\lnx{\dfrac{\ln(x)}{x}}
+\def\lnxn{\dfrac{\ln(x)}{x^n}}
 
 \pr{Croissance comparée de $ln(x)$ et $x$ en l'infinie}{
     \begin{equation*}
@@ -295,12 +295,12 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     on pose:
     \begin{align*}
         f(x) &= \ln(x)-2\sqrt{x}
-        \ialors f'(x) &= \frac{1}{x} - \frac{1}{\sqrt{x}}\;\;  (f \textrm{ de classe } C^1 \textrm{ sur } [1,+\infty[)
+        \ialors f'(x) &= \dfrac{1}{x} - \dfrac{1}{\sqrt{x}}\;\;  (f \textrm{ de classe } C^1 \textrm{ sur } [1,+\infty[)
         \ior x &\geq \sqrt{x} > 0 \car x \geq 1
         \ialors f'(x) &\leq 0
         \ior f \textrm{ décroissante sur } &[1,+\infty[ \et f(1) = -2 \leq 0
         \ialors \ln(x) &\leq 2 \sqrt{x}
-        \ialors 0 \leq \lnx &\leq \frac{2}{\sqrt{x}}
+        \ialors 0 \leq \lnx &\leq \dfrac{2}{\sqrt{x}}
         \idou \limP \lnx &= 0 \textrm{ par le théorème des gendarmes}
     \end{align*}
 }[\bib]
@@ -316,8 +316,8 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     Pour $x \geq 1$ et $n\in\m{N}\backslash\{0\}$,
     on a:
     \begin{align*}
-        \lnxn &= \frac{1}{x^{n-1}} \times \lnx
-        \ior \limP \frac{1}{x^{n-1}} &= 0 \et \limP \lnx = 0
+        \lnxn &= \dfrac{1}{x^{n-1}} \times \lnx
+        \ior \limP \dfrac{1}{x^{n-1}} &= 0 \et \limP \lnx = 0
         \idou \limP \lnxn &= 0
     \end{align*}
 }[\bib]
@@ -334,8 +334,8 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     Pour $x>0$,
     on a:
     \begin{align*}
-        \xln &= \frac{1}{u} \ln\left(\frac{1}{u}\right) = -\frac{\ln(u)}{u} \avec u = \frac{1}{x}
-        \ialors \limO \xln &= \lim\limits_{u\to+\infty} -\frac{\ln(u)}{u} = 0
+        \xln &= \dfrac{1}{u} \ln\left(\dfrac{1}{u}\right) = -\dfrac{\ln(u)}{u} \avec u = \dfrac{1}{x}
+        \ialors \limO \xln &= \lim\limits_{u\to+\infty} -\dfrac{\ln(u)}{u} = 0
     \end{align*}
 }[\bib]
 
@@ -379,7 +379,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 \pr{Logarithme népérien d'un inverse}{
     Pour $a\in(\m{R}_+)$
     \begin{equation*}
-        \ln\left(\frac{1}{a}\right) = -\ln(a)
+        \ln\left(\dfrac{1}{a}\right) = -\ln(a)
     \end{equation*}
 }
 
@@ -387,9 +387,9 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     Soit $a\in(\m{R}_+)$,
     on a:
     \begin{align*}
-        \ln\left(\frac{1}{a} \times a\right) &= \ln(1) = 0
-        \iet \ln\left(\frac{1}{a} \times a\right) &= \ln\left(\frac{1}{a}\right) + \ln(a)
-        \idou \ln\left(\frac{1}{a}\right) &= -\ln(a)
+        \ln\left(\dfrac{1}{a} \times a\right) &= \ln(1) = 0
+        \iet \ln\left(\dfrac{1}{a} \times a\right) &= \ln\left(\dfrac{1}{a}\right) + \ln(a)
+        \idou \ln\left(\dfrac{1}{a}\right) &= -\ln(a)
     \end{align*}
 }[\hyp]
 
@@ -397,7 +397,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 \pr{Logarithme népérien d'un quotient}{
     Pour $(a,b)\in(\m{R}_+)^2$,
     \begin{equation*}
-        \ln\left(\frac{a}{b}\right) = \ln(b)-\ln(a)
+        \ln\left(\dfrac{a}{b}\right) = \ln(b)-\ln(a)
     \end{equation*}
 }
 
@@ -405,8 +405,8 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     Soient $(a,b)\in(\m{R}_+)^2$,
     on a:
     \begin{align*}
-        \ln\left(\frac{a}{b}\right) &= \ln\left(a \times \frac{1}{b}\right)\\
-        &= \ln(a) + \ln\left(\frac{1}{b}\right)\\
+        \ln\left(\dfrac{a}{b}\right) &= \ln\left(a \times \dfrac{1}{b}\right)\\
+        &= \ln(a) + \ln\left(\dfrac{1}{b}\right)\\
         &= \ln(a) - \ln(b)
     \end{align*}
 }[\hyp]
@@ -430,7 +430,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 \pr{Logarithme népérien d'une racine carré}{
     Pour $a\in\m{R}_+$,
     \begin{equation*}
-        \ln(\sqrt{a}) = \frac{1}{2} \ln(a)
+        \ln(\sqrt{a}) = \dfrac{1}{2} \ln(a)
     \end{equation*}
 }
 
@@ -441,7 +441,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
         \ialors \ln((\sqrt{a})^2) &= \ln(a)
         \iet \ln((\sqrt{a})^2) &= 2\ln(\sqrt{a})
         \ialors \ln(a) &= 2\ln(\sqrt{a})
-        \idou \frac{1}{2} \ln(a) &= \ln(\sqrt{a})
+        \idou \dfrac{1}{2} \ln(a) &= \ln(\sqrt{a})
     \end{align*}
 }[\hyp]
 
@@ -451,7 +451,7 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
     \vspace*{-0.6cm}
     \begin{algorithm}
         \KwData{$a\in\m{R_+^*}$ et $n\in\m{N}$}
-        \KwRes{$\ln(a)$ a $10^{-n}$ près ($\rightarrow 2^i \times (a^{\frac{1}{2^i}} - 1)$)}
+        \KwRes{$\ln(a)$ a $10^{-n}$ près ($\rightarrow 2^i \times (a^{\dfrac{1}{2^i}} - 1)$)}
         $i \leftarrow 0$\;
         $u \leftarrow a$\;
         \Tq{$|u-1| \geq 10^{-n}$}{
@@ -476,14 +476,14 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
         \ialors \ln(z) &= z - 1 + \dl{z \rightarrow 1} (z-1) \textrm{ changement de variable } z = 1 + x
         \ialors 2^i\ln(z) &= 2^i(z - 1 + \dl{z \rightarrow 1} (z-1))
         \ialors \ln(z^{2^i}) &= 2^i(z - 1) + \dl{z \rightarrow 1} (z-1)
-        \ialors \ln(y) &= 2^i(y^{\frac{1}{2^i}} - 1) + \dl{y \rightarrow 1^{2^i} = 1} (y^{\frac{1}{2^i}}-1) \textrm{ changement de variable } y = z^{2^i}
-        \ior \lim\limits_{i\rightarrow+\infty} y^{\frac{1}{2^i}} &= 1
-        \idou \ln(y) &\approx 2^i(y^{\frac{1}{2^i}} - 1) \textrm{ quand $i$ grand}
+        \ialors \ln(y) &= 2^i(y^{\dfrac{1}{2^i}} - 1) + \dl{y \rightarrow 1^{2^i} = 1} (y^{\dfrac{1}{2^i}}-1) \textrm{ changement de variable } y = z^{2^i}
+        \ior \lim\limits_{i\rightarrow+\infty} y^{\dfrac{1}{2^i}} &= 1
+        \idou \ln(y) &\approx 2^i(y^{\dfrac{1}{2^i}} - 1) \textrm{ quand $i$ grand}
         % \ialors \ln(x) &\approx x-1 \textrm{ quand $x$ est proche de 1.}
         % \ior 2^i\ln(x) &= \ln(x^{2^i})
-        % \ialors 2^i\ln(y^{\frac{1}{2^i}}) &= \ln(y^{\frac{2^i}{2^i}}) = \ln(y) \textrm{ par changement de variable } y = x^{2^i}
-        % \ialors \ln(y) &\approx 2^i \times (y^{\frac{1}{2^i}} - 1) \textrm{ quand $i$ grand}  
-        % \ior u &= a^{\frac{1}{2^i}}
+        % \ialors 2^i\ln(y^{\dfrac{1}{2^i}}) &= \ln(y^{\dfrac{2^i}{2^i}}) = \ln(y) \textrm{ par changement de variable } y = x^{2^i}
+        % \ialors \ln(y) &\approx 2^i \times (y^{\dfrac{1}{2^i}} - 1) \textrm{ quand $i$ grand}  
+        % \ior u &= a^{\dfrac{1}{2^i}}
     \end{align*}
     d'où le retour de la boucle.
 }
@@ -495,6 +495,6 @@ il existe un unique $y\in\m{R}$ tel que $\exp{(y)} = x $.
 \mthd{Algorithme de Brouncker}{
     $\rightarrow$ \href{https://www.geogebra.org/m/dcbuqkjx}{Animation Géogebra}
     \begin{equation*}
-        \ln(2) = \sum_{k=0}^{+\infty}\frac{1}{(2k+1)(2k+2)}
+        \ln(2) = \sum_{k=0}^{+\infty}\dfrac{1}{(2k+1)(2k+2)}
     \end{equation*}
 }[\href{https://www.geogebra.org/m/dcbuqkjx}{Jean-Paul Berroir}]

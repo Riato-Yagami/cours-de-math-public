@@ -96,19 +96,19 @@
     et $U_n$ et $V_n$ les périmètres des polygones inscrits et circonscrits.
     On a:
     \begin{align*}
-        a_n &= \frac{360}{2n} = \frac{180}{n}\\
-        \ior \sin(a_n) &= \frac{\textrm{opposé}}{\textrm{hypothénus}}
-        = \frac{i_n / 2}{\textrm{rayon}}
-        = \frac{i_n / 2}{\textrm{1}}
-        = \frac{i_n}{2}\\
-        \iet \tan(a_n) &= \frac{\textrm{opposé}}{\textrm{adjacent}}
-        = \frac{c_n / 2}{\textrm{rayon}}
-        = \frac{c_n / 2}{\textrm{1}}
-        = \frac{c_n}{2}
+        a_n &= \dfrac{360}{2n} = \dfrac{180}{n}\\
+        \ior \sin(a_n) &= \dfrac{\textrm{opposé}}{\textrm{hypothénus}}
+        = \dfrac{i_n / 2}{\textrm{rayon}}
+        = \dfrac{i_n / 2}{\textrm{1}}
+        = \dfrac{i_n}{2}\\
+        \iet \tan(a_n) &= \dfrac{\textrm{opposé}}{\textrm{adjacent}}
+        = \dfrac{c_n / 2}{\textrm{rayon}}
+        = \dfrac{c_n / 2}{\textrm{1}}
+        = \dfrac{c_n}{2}
         \ior U_n &= n \times i_n = 2 n \sin(a_n)
         \iet V_n &= n \times c_n = 2 n \tan(a_n)
-        \ior \frac{U_n}{2} &\leqslant \pi \leqslant \frac{V_n}{2}
-        \ialors n \sin(\frac{180}{n}) &\leqslant \pi \leqslant n \tan(\frac{180}{n})
+        \ior \dfrac{U_n}{2} &\leqslant \pi \leqslant \dfrac{V_n}{2}
+        \ialors n \sin(\dfrac{180}{n}) &\leqslant \pi \leqslant n \tan(\dfrac{180}{n})
     \end{align*}
 }[\href{https://weblaperouse.ac-noumea.nc/IMG/pdf/9-tpe-approximation-archimede.pdf}{Rodrigue LEBAILLY et Romain LEROY}]
 
@@ -135,8 +135,8 @@
 }
 
 \demo{}{
-    L'arc est une section $\frac{\theta}{2\pi}$ de la circonférence.\\
-    Alors la longueur d'arc est: $2\pi r \times \frac{\theta}{2\pi} = r \theta$.
+    L'arc est une section $\dfrac{\theta}{2\pi}$ de la circonférence.\\
+    Alors la longueur d'arc est: $2\pi r \times \dfrac{\theta}{2\pi} = r \theta$.
 }
 
 \section{Mesures d'aires}
@@ -335,7 +335,7 @@
 
 \pr{Découpage et recollage de rectangle à un carré de même aire}{
     Pour un rectangle de longueur $L$ et largeur $l$.\\
-    Si $L \geqslant \frac{\sqrt{lL}}{2}$ alors on peut découper et recoller le rectangle pour trouver un carré de même aire.\\
+    Si $L \geqslant \dfrac{\sqrt{lL}}{2}$ alors on peut découper et recoller le rectangle pour trouver un carré de même aire.\\
     Sinon il est possible d'au préalable,
     découper ce rectangle en rectangles de longueurs plus petites.
 }
@@ -391,7 +391,7 @@
 }
 
 \mthd{Approximation d'une aire par l'utilisation de suites adjacentes}{
-    \def\s{\frac{b-a}{n}}
+    \def\s{\dfrac{b-a}{n}}
     Soit $u,v$ deux suites adjacentes tels que pour $n\in\m{N}$:\\
     \begin{align*}
         u_n = \s \sum_{k=0}^{n} f(a+k \s) \;&\et\; v_n = \s \sum_{k=1}^{n} f(a+k \s)\\
@@ -441,7 +441,7 @@
 
 \pr{Aires du triangle et du parallélogramme}{
     \begin{itemize}[wide=0pt, leftmargin=*]
-        \item Triangle de base $b$ et hauteur $h$ : $\A = \frac{b \times h}{2}$.
+        \item Triangle de base $b$ et hauteur $h$ : $\A = \dfrac{b \times h}{2}$.
         \item Parallèlogramme de base $b$ et hauteur $h$ : $\A = b \times h$.
     \end{itemize}
 }
@@ -567,7 +567,7 @@
             Prendre un point $A$ au hasard dans le carré\;
             \Si{$A$ est dans le cercle}{$n \leftarrow n+1$\;}
         }
-        \KwRet{$\frac{n}{N} \times c^2$}\;
+        \KwRet{$\dfrac{n}{N} \times c^2$}\;
     \end{algorithm}
 }[\href{http://pedagogie.ac-limoges.fr/maths/IMG/pdf/manipulation_aire_disque_methode_de_monte-carlo.pdf}{Académie de limoge}]
 
@@ -591,8 +591,8 @@
     \begin{align*}
         \A &= l \times L\\
         \ior 2L = \C &\et L = r\\
-        \ialors \A &= \frac{\C}{2} \times r
-        = \frac{2\pi r}{2} \times r
+        \ialors \A &= \dfrac{\C}{2} \times r
+        = \dfrac{2\pi r}{2} \times r
         = \pi r^2
     \end{align*}
 }[\href{https://blog.maths-en-vrac.fr/2018/07/30/laire-dun-disque-facon-archimede/}{Damien Bouloc}]
@@ -622,8 +622,8 @@
             y &= \sqrt{r^2-x^2}\\
             \shortintertext{on pose} f &: x \mapsto \sqrt{r^2-x^2}\\
             \iona \A &= 4 \int_{0}^{r} f(x)dx
-            % \ior \sqrt{r^2-x^2} &= r \sqrt{1 - \frac{x^2}{r^2}}\\
-            % \shortintertext{et par changement de variable} u = \frac{x}{r} \alors dx = rdu\\
+            % \ior \sqrt{r^2-x^2} &= r \sqrt{1 - \dfrac{x^2}{r^2}}\\
+            % \shortintertext{et par changement de variable} u = \dfrac{x}{r} \alors dx = rdu\\
             % \iona 
         \end{align*}
     }
@@ -706,7 +706,7 @@
 \lem{des bases}{
     Soit un triangle $ABC$ et soit $M$ un point du segment $[BC]$.\\
     \begin{align*}
-        \frac{\A_{ABM}}{\A_{ACM}} = \frac{BM}{CM}
+        \dfrac{\A_{ABM}}{\A_{ACM}} = \dfrac{BM}{CM}
     \end{align*}
 }
 
@@ -714,7 +714,7 @@
     Soit $h$ la hauteur issue de $ABC$ issue de $A$.
     On a:
     \begin{align*}
-        \frac{\A_{ABM}}{\A_{ACM}} = \frac{\frac{BM \times h}{2}}{\frac{CM \times h}{2}} = \frac{BM}{CM}
+        \dfrac{\A_{ABM}}{\A_{ACM}} = \dfrac{\dfrac{BM \times h}{2}}{\dfrac{CM \times h}{2}} = \dfrac{BM}{CM}
     \end{align*}
 }[\href{https://le-castillon-le-pieux.college.ac-normandie.fr/IMG/pdf/Thales_-_Demonstrations.pdf}{Collège Le Castillon}]
 
@@ -722,7 +722,7 @@
     Soit un triangle $ABC$ et soient $M$ sur $(BC)$ et $N$ sur $(AC)$ tel que:
     $(MN)$ soit parallèle à $(BC)$.
     \begin{align*}
-        \frac{AM}{AB} = \frac{AN}{AC}
+        \dfrac{AM}{AB} = \dfrac{AN}{AC}
     \end{align*}
 }
 
@@ -762,10 +762,10 @@
         On a,
         d'après le \refsec{lem}{des bases}
         \begin{align*}
-            \frac{\A_{ACM}}{\A_{ABC}} = \frac{AM}{AB}
-            \iet \frac{\A_{ABN}}{\A_{ABC}} = \frac{AN}{AC}
+            \dfrac{\A_{ACM}}{\A_{ABC}} = \dfrac{AM}{AB}
+            \iet \dfrac{\A_{ABN}}{\A_{ABC}} = \dfrac{AN}{AC}
             \ior \A_{ACM} = \A_{ABN}
-            \ialors \frac{AM}{AB} = \frac{AN}{AC}
+            \ialors \dfrac{AM}{AB} = \dfrac{AN}{AC}
         \end{align*}
     }[0.45]
 }[\href{https://le-castillon-le-pieux.college.ac-normandie.fr/IMG/pdf/Thales_-_Demonstrations.pdf}{Collège Le Castillon}]
@@ -897,19 +897,19 @@
     de base d'aire \B{} et périmètre \Per{},
     on a:
     \begin{align*}
-        \V &= \frac{\B \times h}{3}
+        \V &= \dfrac{\B \times h}{3}
     \end{align*}
 }
 
 \demo{}{
     L'intersection d'un plan parallèle au plan de la base avec le solide (pyramide ou cône) à une hauteur $t\in[0;h]$,
-    a une aire $\B_t = \B \frac{(h-t)^2}{h^2}$ (homothétie de rapport $\frac{(h-t)}{h}$).
+    a une aire $\B_t = \B \dfrac{(h-t)^2}{h^2}$ (homothétie de rapport $\dfrac{(h-t)}{h}$).
     On a alors:
     \begin{align*}
         \V &= \int_{0}^{h} \B_t dt\\ 
-        &= \int_{0}^{h} \B \frac{(h-t)^2}{h^2} dt = \frac{\B}{h^2} \int_{0}^{h} (h-t)^2 dt\\
-        &= \frac{\B}{h^2} \int_{h}^{0} u^2 (-du) \textrm{par changement de variable} u = h-t \et \alors du = -dt\\
-        &= \frac{\B}{h^2} \int_{0}^{h} u^2 du = \frac{\B}{h^2} \times h^3 = \frac{\B \times h}{3}
+        &= \int_{0}^{h} \B \dfrac{(h-t)^2}{h^2} dt = \dfrac{\B}{h^2} \int_{0}^{h} (h-t)^2 dt\\
+        &= \dfrac{\B}{h^2} \int_{h}^{0} u^2 (-du) \textrm{par changement de variable} u = h-t \et \alors du = -dt\\
+        &= \dfrac{\B}{h^2} \int_{0}^{h} u^2 du = \dfrac{\B}{h^2} \times h^3 = \dfrac{\B \times h}{3}
     \end{align*}
 }[\href{https://www.unige.ch/semainedesmaths/files/2715/0347/5030/PO-Le_volume_de_la_pyramide.pdf}{Université de Genève}]
 
@@ -917,7 +917,7 @@
     L'aire \A{} et le volume \V{} d'une shère de rayon $R$ sont donnée par le formules :
     \begin{align*}
         \A = 4\pi R^2\\
-        \V = \frac{4\pi R^3}{3}
+        \V = \dfrac{4\pi R^3}{3}
     \end{align*}
 }
 
@@ -971,6 +971,6 @@
         &= \int_{0}^{2\pi} 2R^2 d\varphi
         = 4\pi R^2\\
         \iet \V &= \int_{0}^{R} 4\pi r^2 dr
-        = \frac{4\pi R^3}{3}
+        = \dfrac{4\pi R^3}{3}
     \end{align*}
 }[\href{https://uel.unisciel.fr/chimie/strucmic/strucmic_ch03/co/apprendre_ch03_1_06.html}{Unisciel}]

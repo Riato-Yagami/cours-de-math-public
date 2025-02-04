@@ -238,5 +238,12 @@
 \def\ym{\href{https://www.maths-et-tiques.fr/}{Yvan Monka}}
 \newcommand{\dym}[1]{\def\ym{\href{#1}{Yvan Monka}}}
 
+\newcommand{\yvan}[1]{\def\ym{\href{https://www.maths-et-tiques.fr/telech/#1}{Yvan Monka (#1)}}}
+
+\NewDocumentCommand{\met}{mO{}}{%
+    \href{https://www.maths-et-tiques.fr/telech/#1.pdf\#page=#2}
+    {maths et tiques (#1 \ifNotNull{#2}{p.#2})}
+}
+
 \def\cwr{\href{https://college-willy-ronis.fr/}{College Willy Ronis}}
 \newcommand{\dcwr}[1]{\def\cwr{\href{#1}{College Willy Ronis}}}
