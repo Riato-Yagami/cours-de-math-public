@@ -89,9 +89,9 @@
     {Des maths ensemble et pour chacun #1e \ifNotNull{#2}{(p.#2)}}
 }
 
-\NewDocumentCommand{\sesa}{m m O{} O{}}{%
-    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=cm#1_#2&page_gauche=#4}{%
-    Sésamath #1e #2 \ifNotNull{#4}{(#3 p.#4)}
+\NewDocumentCommand{\sesa}{m m O{} O{} O{cm}}{%
+    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=#5#1_#2&page_gauche=#4}{%
+    \ifstrequal{#5}{cm}{Cahier}{Manuel} Sésamath #1e #2 \ifNotNull{#4}{(\ifNotNull{#3}{#3 }p.#4)}
     }
 }
 
