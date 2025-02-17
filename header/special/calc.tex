@@ -1,0 +1,12 @@
+\def\iconPath{libreOffice/calc/}
+
+\definecolor{cell}{HTML}{CCCCCC} % #CCCCCC
+
+\NewDocumentCommand{\cell}{O{cellule}}{%
+    \renewcommand\fbox{\fcolorbox{cell}{white}}%
+    \fbox{\ttfamily\bfseries#1}%
+}
+
+\NewDocumentCommand{\ccalc}{O{cellule}}{%
+    {\ttfamily\bfseries=#1}%
+}

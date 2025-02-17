@@ -1,0 +1,15 @@
+\ifBeamer{%
+    \renewcommand*{\theenumii}{\alph{enumii}}
+
+    \firstSlide
+    \setboolean{showRef}{false}
+}
+
+\ifArticle{%
+    \renewcommand*{\theenumii}{\alph{enumii}}
+    
+    \setboolean{answer}{true}
+    \disableAnimation
+}
+
+\setItemColor{gradeColor}

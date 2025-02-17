@@ -1,0 +1,484 @@
+% VARIABLES %%%
+\def\theme{Trigonométrie}
+% \def\date{date}
+%%%%%%%%%%%%%%%
+
+% DEFINITIONS %
+\newcommand{\norm}[1]{||\vect{#1}||}
+\newcommand{\vangle}[2]{(\widehat{\vect{#1},\vect{#2}})}
+\newcommand{\pscalv}[2]{\pscal{\vect{#1}}{\vect{#2}}}
+\newcommand{\nsquare}[1]{\pscal{#1}{#1}}
+
+\def\u{\vect{u}}
+\def\v{\vect{v}}
+\def\w{\vect{w}}
+\def\vi{\vect{i}}
+\def\vj{\vect{j}}
+\def\hpi{\dfrac{\pi}{2}}
+
+\def\co{\textrm{côté opposé}}
+\def\ca{\textrm{côté adjacent}}
+\def\hy{\textrm{hypoténuse}}
+%%%%%%%%%%%%%%
+
+% \setboolean{subsectionInOutline}{true}
+% \setboolean{outline}{true}
+% \setboolean{demonstration}{false}
+
+% \setboolean{showRef}{false}
+
+\hbox{}
+\leconInfo{
+    \ilink{3e}
+    \ilink{1re}
+    \ilink{Terminale Option Expertes}
+} % Niveaux
+[\item propriété Triangle \item théorème de Pythagore \item fonction] % Prérequis
+[] % Thèmes
+[] % Motivation
+
+\section{Triangle rectangle}
+
+\subsection{Définitions}
+
+\df{côté du triangle rectangle}{
+    Soit $ABC$ triangle rectangle en $A$.
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \tkzDefPoint(0,0){A}
+            \tkzDefPoint(5,0){B}
+            \tkzDefPoint(0,3){C}
+            \draw[very thick] (A)--(B)--(C)--cycle;
+            \tkzLabelSegment[below](A,B){$\ca$}
+            \tkzLabelSegment[above right](B,C){$\hy$}
+            \tkzLabelSegment[left](C,A){$\co$}
+            \tkzMarkAngle[size=0.9cm,arc=l](C,B,A)
+            \tkzMarkRightAngle[scale=1.5](B,A,C)
+            \tkzLabelAngle[pos=1.5](C,B,A){$b$}
+            \tkzLabelPoints[below left](A)
+            \tkzLabelPoints[below right](B)
+            \tkzLabelPoints[above left](C)
+        \end{tikzpicture}
+    \end{center} 
+}
+
+
+\df{Sinus}{\vspace*{-0.25cm}
+    \begin{align*}
+        \sin(\widehat{b}) = \dfrac{\co}{\hy} = \dfrac{AC}{BC}
+    \end{align*}
+}
+
+\df{Cosinus}{\vspace*{-0.25cm}
+    \begin{align*}
+        \cos(\widehat{b}) = \dfrac{\ca}{\hy} = \dfrac{AB}{BC}
+    \end{align*}
+}
+
+\df{Tangente}{\vspace*{-0.25cm}
+    \begin{align*}
+        \tan(\widehat{b}) = \dfrac{\co}{\ca} = \dfrac{AC}{AB}
+    \end{align*}
+}
+
+\rmk{Moyen mnémotechnique}{
+    CAH SOH TOA
+}
+
+\pr{}{
+    Soit $\widehat{a}$ un angle aigue,
+    on a :
+    \begin{align*}
+        0 < &\cos{\widehat{a}} < 1\\
+        0 < &\sin{\widehat{a}} < 1
+    \end{align*}
+}
+
+\subsection{Formules}
+
+Soit $x\in\m{R}$
+
+\pr{Somme des carrés}{\vspace*{-0.25cm}
+    \begin{equation*}
+        \cos^2{x} + \sin^2{x} = 1\\
+    \end{equation*}
+}
+
+\demo{}{
+    Avec $x = \widehat{ABC}$,
+    on a:
+    \begin{align*}
+        \cos{x} &= \dfrac{AB}{BC} \et \sin{x} = \dfrac{AC}{BC}
+        \ialors \cos^2{x} + \sin^2{x} &= \left(\dfrac{AB}{BC}\right)^2 + \left(\dfrac{AC}{BC}\right)^2\\
+        &= \dfrac{AB^2+AC^2}{BC^2}\\
+        &= 1 \;\textrm{d'après le théorème de Pythagore.}
+    \end{align*}
+}[\href{https://docplayer.fr/210338046-Lecon-n-o-11-trigonometrie-applications-capes-session-cbmaths-cbmaths-fr-derniere-mise-a-jour-1-er-avril-2021.html}{CBMaths.fr}]
+
+\pr{Tangente}{\vspace*{-0.25cm}
+    \begin{equation*}
+        \tan{x} = \dfrac{\sin{x}}{\cos{x}}
+    \end{equation*}
+}
+
+\demo{}{\vspace*{-1cm}
+    \begin{align*}
+        \dfrac{\sin{x}}{\cos{x}} &= \dfrac{\dfrac{AB}{BC}}{\dfrac{AC}{BC}}\\
+        &= \dfrac{AB}{BC} \times \dfrac{BC}{AC}\\
+        &= \dfrac{AC}{AB} = \tan{x}
+    \end{align*}
+}
+
+\section{Produit scalaire}
+
+\subsection{Définitions}
+
+\df{Forme bilinéaire}{
+    Une \textbf{forme bilinéaire} est une application qui,
+    à un couple de vecteurs associe un scalaire,
+    et qui a la particularité d'être linéaire en ses deux arguments.
+}[\href{https://fr.wikipedia.org/wiki/Forme_bilinéaire}{Wikipedia}]
+
+\df{Forme bilinéaire symétrique}{
+    Une forme bilinéaire est dite \textbf{symétrique},
+    si l'échange des deux vecteurs ne modifie pas le résultat.
+}
+
+\df{Forme bilinéaire définie}{
+    Une forme bilinéaire $f$ est dite \textbf{définie},
+    si elle n'a pas de vecteur $x\neq0$ tel que $f(x,x) = 0$.
+}
+
+\df{Produit scalaire}{
+    Un \textbf{produit scalaire} est une forme bilinéaire symétrique définie positive d'un espace vectoriel sur les nombres réels.
+}[\href{https://fr.wikipedia.org/wiki/Produit_scalaire}{Wikipedia}]
+
+\df{Norme}{
+    La norme donne la longueur d'un vecteur.
+}
+
+\subsection{Espace euclidien}
+
+% \df{Norme euclidienne}{
+%     La \textbf{norme euclidienne} d'un vecteur peut se calculer à l'aide de ses coordonnées dans un repère orthonormé à l'aide du théorème de Pythagore;
+%     pour un vecteur \u elle s'écrit:
+%     \begin{equation*}
+%         \norm{u} = \sqrt{x^2+y^2}
+%     \end{equation*}
+% }
+
+\df{Norme euclidienne}{
+    Soient $A$ et $B$ deux points du plan usuel, la norme du vecteur \vect{AB} est la longueur du segment $[AB]$.
+}
+
+Soient \m{E} un espace vectoriel muni de la norme usuelle,
+et $\u, \v \in\m{E}$.
+
+\df{Produit scalaire euclidien}{
+    Le produit scalaire est donné par:
+    \begin{equation*}
+        \pscalv{u}{v} = \norm{u} \times \norm{v} \times \cos\vangle{u}{v}
+    \end{equation*}
+}
+
+\pr{Symetrie du produit scalaire euclidien}{
+    \begin{equation*}
+        \pscalv{u}{v} = \pscalv{v}{u}
+    \end{equation*}
+}
+
+\pr{Bilinéarité du produit scalaire euclidien}{
+    Soient $\lambda\in\m{R}$ et $\w\in\m{E}$
+    \begin{align*}
+        \pscal{\lambda \u + \v}{\w} &= \lambda\pscalv{u}{w} + \pscalv{v}{w}\\
+        \et \pscal{\u}{\lambda\v + \w} &= \lambda\pscalv{u}{v} + \pscalv{u}{w}
+    \end{align*}
+}
+
+% \demo{}{
+%     \begin{align*}
+%         \pscal{\lambda \u + \v}{\w} &= ||\lambda \u + \v|| \times \norm{w} \times \cos(\vangle{\lambda u + \v}{v})
+%     \end{align*}
+% }
+
+\demo{}{
+    \begin{align*}
+        \pscalv{u}{v} &= \norm{u} \times \norm{v} \times \cos\vangle{u}{v}\\
+        &= \norm{v} \times \norm{u} \times \cos -\vangle{v}{u}\\
+        &= \norm{v} \times \norm{u} \times \cos\vangle{v}{u}\\
+        &= \pscalv{v}{u}
+    \end{align*}
+}
+
+\pr{Norme euclidienne}{
+    \begin{equation*}
+        \norm{u} = \sqrt{\pscalv{u}{u}}
+    \end{equation*}
+}
+
+\pr{Carré scalaire}{
+    \begin{equation*}
+        \u^2 = \pscalv{u}{u} = \norm{u}^2
+    \end{equation*}
+}
+
+\demo{}{
+    \begin{align*}
+        \pscalv{u}{u} &= \norm{u} \times \norm{u} \times \cos\vangle{u}{u}\\
+        &= \norm{u}^2 \cos(0)\\
+        &= \norm{u}^2
+    \end{align*}
+}
+
+\pr{Identité remarquables}{
+    \begin{enumerate}
+        \item $(\u+\v)^2 = \u^2 + \v^2 + 2\pscalv{u}{v}$
+        \item $(\u-\v)^2 = \u^2 + \v^2 - 2\pscalv{u}{v}$
+        \item $(\u+\v)(\u-\v) = \u^2 - \v^2$
+    \end{enumerate}
+}
+
+\demo{}{
+    \begin{align*}
+        (\u \pm \v)^2 &= \nsquare{\u\pm\v}\\
+        &= \nsquare{\u} \pm \pscalv{u}{v} \pm \pscalv{v}{u} + \nsquare{\v}\; (\textrm{bilinéarité})\\
+        &= \nsquare{\u} + \nsquare{\v} \pm 2\pscalv{v}{u}
+    \end{align*}
+    \begin{align*}
+        \pscalv{\u+\v}{\u-\v} &= \nsquare{\u\pm\v}\\
+        &= \nsquare{\u} \pm \pscalv{u}{v} \pm \pscalv{v}{u} + \nsquare{\v}\; (\textrm{bilinéarité})\\
+        &= \nsquare{\u} + \nsquare{\v} \pm 2\pscalv{v}{u}
+    \end{align*}
+}
+
+\cor{Norme au carré}{
+    \begin{itemize}
+        \item $||\u + \v||^2 = \norm{u}^2 + \norm{v}^2 + 2\pscalv{u}{v}$
+        \item $||\u - \v||^2 = \norm{u}^2 + \norm{v}^2 - 2\pscalv{u}{v}$
+    \end{itemize}
+}
+
+\cor{}{
+    Soit $ABC$ un triangle,
+    on a:
+    \begin{align*}
+        \pscalv{AB}{AC} = \dfrac{1}{2} (AB^2 + AC^2 - BC^2)
+    \end{align*}
+}
+
+\pr{Inégalité de Cauchy-Schwarz}{
+    \begin{equation*}
+        |\u.\v| \leqslant \norm{u} \times \norm{v}
+    \end{equation*}
+}
+
+\demo{}{
+    On suppose \v non nul (sinon la propriété est clair),
+    posons:
+    \begin{align*}
+        P(t) &= \norm{u+tv}^2\\
+        &= \pscal{\u+t\v}{\u+t\v}\\
+        &= \nsquare{\u} + t\pscalv{u}{v} + \nsquare{\v} + t\pscalv{u}{v}\; \textrm{(bilinéarité)}\\
+        &= \norm{u}^2 + t^2\norm{v}^2 + 2t\pscalv{u}{v} \geqslant 0\; \textrm{(polynome de 2nd degré)}\\
+        \ialors \Delta = 4&\pscalv{u}{v}^2 - 4\norm{u}^2\norm{v}^2 \leqslant 0
+        \idou &\pscalv{u}{v} \leqslant \norm{u}\times\norm{v}
+    \end{align*}
+}
+
+\subsection{Orthogonalité}
+
+\df{Orthogonalité}{
+    Dans l'espace, deux droites sont orthogonales si elles sont chacune parallèles à des droites se coupant en angle droit.
+}[\href{https://fr.wikipedia.org/wiki/Orthogonalité}{Wikipédia}]
+
+\pr{Vecteurs orthogonaux}{
+    \u et \v sont orthogonaux \ssi $\pscalv{u}{v} = 0$.
+}
+
+\demo{}{
+    On suppose \u et \v non nuls (sinon c'est évident).
+    \begin{align*}
+        &\pscalv{u}{v} = 0\\
+        &\eqv \norm{u} \times \norm{v} \times \cos\vangle{u}{v} = 0\\
+        &\eqv \cos\vangle{u}{v} = 0\\
+        &\eqv \u \perp \v
+    \end{align*}
+}
+
+\df{Projeté orthogonale}{
+    Le \textbf{projeté orthogonale} d'un point $A$ sur une droite $(d)$ est le point:
+    $H = p_{(d)}(A)$ sur $(d)$ tel que $(d)$ et $(AH)$ soient perpendiculaires.
+}[\href{https://fr.wikipedia.org/wiki/Projection_orthogonale}{Wikipédia}]
+
+\pr{}{
+    Soient les points $O,A,B$ et $H$ le projeté orthogonale de $B$ sur $(OA)$,
+    on a:
+    \begin{equation*}
+        \pscalv{OA}{OB} = \pscalv{OA}{OH}
+    \end{equation*}
+}
+
+\demo{}{
+    \begin{align*}
+        \pscalv{OA}{OB} &= \pscal{\vect{OA}}{\vect{OB} + \vect{HB}}\\
+        &= \pscalv{OA}{OH} + \pscalv{OA}{HB}
+        \ior \pscalv{OA}{HB} &= 0 \car \vect{OA} \perp \vect{HB}
+        \ialors \pscalv{OA}{OB} &= \pscalv{OA}{OH}
+    \end{align*}
+}
+
+\subsection{Produit scalaire dans un repère orthonormé}
+Le plan est muni d'un repère orthonormé $(O;\vi;\vj)$.
+Soient $\u\coord{x}{y}$ et  $\u\coord{x'}{y'}$.
+\pr{Produit scalaire dans un repère orthonormé}{
+    On a:
+    \begin{equation*}
+        \pscalv{u}{v} = xx' + yy'
+    \end{equation*}
+}
+
+\demo{}{
+    \begin{align*}
+        \pscalv{u}{v} &= \pscal{x\vi+y\vj}{x'\vi+y'\vj}\\
+        &= xx'\pscalv{i}{i} + xy'\pscalv{i}{j} + yx'\pscalv{j}{i} + yy'\pscalv{j}{j}\\
+        \ior \pscalv{j}{i} &= 0 \car \vi \perp \vj\\
+        \ialors \pscalv{u}{v} &= xx'\norm{i}^2 + yy' xx'\norm{j}^2\\
+        \ior \norm{i}^2 &= 1 = \norm{j}^2\\
+        \ialors \pscalv{u}{v} &= xx' + yy'\\
+    \end{align*}
+}
+
+\cor{Norme dans un repère orthonormé}{
+    \begin{equation*}
+        \norm{u} = \sqrt{x^2 + y^2}
+    \end{equation*}
+}
+
+\rmk{Orthogonalité}{
+    \begin{equation*}
+        \u \perp \v \eqv xx' = yy'
+    \end{equation*}
+}
+
+\demo{Bilinéarité}{
+    \TODO
+}
+
+\section{Trigonométrie}
+
+\thm{d'Al-Kashi}{
+    \dividePage{
+        Soit un triangle de côté $a,b,c$ et d'angle $\gamma$ opposé à $c$,
+        on a:
+        \begin{equation*}
+            c^2 = a^2+b^2 - 2ab cos(\gamma)
+        \end{equation*}
+    }{
+        \begin{center}
+            \begin{tikzpicture}[scale=0.6]
+                \tkzDefPoint(0,0){A}
+                \tkzDefPoint(5,0){B}
+                \tkzDefShiftPoint[A](60:4){C} % Adjust the angle for gamma and the length for side 'c'
+                \draw[very thick] (A)--(B)--(C)--cycle;
+                \tkzLabelSegment[below](A,B){$c$}
+                \tkzLabelSegment[above right](B,C){$a$}
+                \tkzLabelSegment[above left](C,A){$b$}
+                \tkzMarkAngle[size=0.9cm,arc=l](A,C,B)
+                \tkzLabelAngle[pos=1](A,C,B){$\gamma$}
+                \tkzLabelPoints[below left](A)
+                \tkzLabelPoints[below right](B)
+                \tkzLabelPoints[above](C)
+            \end{tikzpicture}
+        \end{center} 
+    }
+}
+
+\demo{}{
+    \begin{align*}
+        c^2 &= AB^2 = \norm{AB}^2\\
+        &= ||\vect{AC} + \vect{CB}||^2 \; (\textrm{relation de Chalse})\\
+        &= \norm{AC}^2+\norm{CB}^2 + 2\pscalv{AC}{CB}\\
+        &= \norm{AC}^2+\norm{CB}^2 - 2\pscalv{CA}{CB}\\
+        &= a^2 + b^2 - 2ab\cos(\gamma)
+    \end{align*}    
+}[\href{https://share.miple.co/content/AtXi78spumnFd}{Démos Maths MPSI}]
+
+\pr{Formules de décalage d'angle}{
+    \dividePage{
+        Soit $x\in\m{R}$
+        \begin{enumerate}
+            \item \begin{itemize}
+                \item $\cos(\pi + x) = -\cos(x)$
+                \item $\sin(\pi + x) = -\sin(x)$
+                \item $\cos(\pi - x) = -\cos(x)$
+                \item $\sin(\pi - x) = \sin(x)$
+            \end{itemize}
+            \item \begin{itemize}
+                \item $\cos(\hpi + x) = -\sin(x)$
+                \item $\sin(\hpi + x) = \cos(x)$
+                \item $\cos(\hpi - x) = \sin(x)$
+                \item $\sin(\hpi - x) = \cos(x)$
+            \end{itemize}
+        \end{enumerate}
+    }{
+        \begin{tikzpicture}[scale=2.5,cap=round,>=latex]
+            % Draw the unit circle
+            \draw[thick] (0,0) circle(1cm);
+            % Draw the axes
+            \draw[->] (-1.2,0) -- (1.2,0) node[right,fill=white] {};
+            \draw[->] (0,-1.2) -- (0,1.2) node[above,fill=white] {};
+            % Define points
+            \def\x{40} % Angle for demonstration
+            \coordinate (M) at (\x:1);
+            \coordinate (N) at (\x+180:1);
+            \coordinate (Mp) at (-\x:1);
+            \tkzDefPoint(0,0){O}
+            \coordinate (I) at (0:1);
+            \coordinate (J) at (90:1);
+            \coordinate (H) at (-90:1);
+            % Draw points and lines
+            \foreach \point in {M,N,Mp}
+            \fill (\point) circle(1.2pt);
+            \draw (0,0) -- (M);
+            \draw (0,0) -- (N);
+            \draw (0,0) -- (Mp);
+            % Label points
+            \node at (M) [above right] {$M(\cos x, \sin x)$};
+            \node at (N) [below left] {$N(-\cos x, -\sin x)$};
+            \node at (Mp) [below right] {$M'(\cos x, -\sin x)$};
+            \node at (O) [below left, xshift = 4pt, yshift = -3pt] {$O$};
+            \node at (I) [below right] {$I$};
+            \node at (J) [above right] {$J$};
+            \node at (H) [below right] {$H$};
+            % Draw angles
+            \draw[->,red] (0.3,0) arc (0:\x:0.3);
+            \node[red] at (\x/2:0.4) {$x$};
+            \draw[->,blue] (0.5,0) arc (0:\x+180:0.5);
+            \node[blue] at (\x/2+90:0.7) [xshift = -3pt] {$\pi+x$};
+            \draw[->,Green] (0.4,0) arc (0:-\x:0.4);
+            \node[Green] at (-\x/2:0.6) {$-x$};
+        \end{tikzpicture}
+    }[0.4]
+}
+
+\demo{}{
+    Soit $M$ un point du cercle trigonométrique d'argument $x$.
+    On a $M(\cos x, \sin x)$
+    \begin{enumerate}
+        \item Le point $N$ d'argument $\pi+x$ est le symétrique de $M$ par rapport à $O$.\\
+        Alors $N(-\cos x, -\sin x)$.\\
+        Les deux autres formules découles des égalités:
+        $\lfbrace{\cos(-x) = \cos{x} \\ \sin(-x) = -\sin{x}}$
+        \item Soit $H$ le symétrique de $J$ par rapport à $O$.
+        Soit $M'$ d'argument $-x$ (symétrique de $M$ par rapport à l'axe des abscisses).\\
+        On a $M'(\cos x, - \sin x)$.
+        \begin{align*}
+            \vangle{h}{i} &\equiv \vangle{h}{OM'} + \vangle{OM'}{i} [2\pi]\\
+            \ialors \hpi &\equiv \vangle{h}{OM'} + x [2\pi]
+            \ialors \vangle{h}{OM'} &\equiv \hpi - x [2\pi]
+        \end{align*}
+        Alors $M'(\cos(\hpi - x), \sin(\hpi - x))$ dans le repère $(O,H,I)$.\\
+        Or pour $P(a,b)$ dans $(O,I,J)$, on a $P(-b,a)$ dans $(O,H,I)$.\\
+        D'ou les égalités.
+    \end{enumerate}
+}

@@ -1,0 +1,62 @@
+\NewDocumentCommand{\answerFill}{O{Réponse} O{}}{%
+    \answerSec{\remaininglines}[#1][#2]%
+    \newpage%
+}
+
+\NewDocumentCommand{\answerSec}{m O{Réponse} O{}}{\vspace{0.25cm}%
+    #2 :%
+    \ifthenelse{\boolean{answer}}
+    {\ifempty{#3}{\quad \dottedLines{#1}}{\color{answer}#3}}
+    {\quad \dottedLines{#1}}
+    % \ifNotNull{#3}{#2 : #3}{%
+    %     #2 :%
+    %     \quad \dottedLines{#1}%
+    % }
+}
+
+% \newcommand{\jdot}[1]{ \rlap{\makebox[#1]{\dotfill} }}
+
+\newcommand{\getWordLength}[2]{%
+    \settowidth{\wordlength}{#1}% Measure the width of the word/text
+    \setlength#2{\wordlength}% Assign the measured width to the output length
+}
+
+\NewDocumentCommand{\nswr}{O{1} m O{}}{%
+    \ifthenelse{\boolean{answer}}{%
+        \result{#2}%
+    }{%
+        \ifempty{#3}{%
+            \dottedLines{#1}%
+        }[%
+            \textcolor{gradeColor!55}{\dottedLine{#3}}%
+        ]
+    }%
+}
+
+\newcommand{\jdot}{\leavevmode\leaders\hbox to 0.5em{\hss.\hss}\hfill\kern0pt}
+
+\newcounter{loopcntr}
+\newcommand{\dottedLines}[1]{%
+    \ifthenelse{\equal{#1}{0}}{}{%
+        \setcounter{loopcntr}{1}% % Start the counter at 1
+        \repeated{#1}{%
+            \ifthenelse{\isodd{\value{loopcntr}}}{\color{gradeColor!55}}{}%
+            \jdot%
+            \ifthenelse{\value{loopcntr} < #1}{\\}{}% Add a line break unless it's the last iteration
+            \stepcounter{loopcntr}% Increment the counter
+        }%
+    }%
+}
+
+\newcommand{\dottedLine}[1]{%
+    \leavevmode
+    \begingroup
+    \setlength{\dimen0}{#1}%
+    % \color{gradeColor!55}%
+    \loop
+        \hbox to 0.5em{\hss.\hss}%
+        \advance\dimen0 by -0.5em%
+        \ifdim \dimen0 > 0pt
+    \repeat
+    \endgroup
+}

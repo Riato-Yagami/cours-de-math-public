@@ -1,0 +1,259 @@
+\def\figScale{1}
+
+\NewDocumentCommand{\ctikz}{O{\figScale} m}{%
+    \begin{center}%
+        \begin{tikzpicture}[scale = #1]%
+            #2%
+        \end{tikzpicture}%
+    \end{center}%
+}%
+
+\newcommand{\axis}[1]{%Draw coordinate axes
+    \draw[thin, -Stealth] (-0.5,0) -- (#1,0);% node[right] {$x$}; % x-axis
+    \draw[thin, -Stealth] (0,-0.5) -- (0,#1);% node[above] {$y$}; % y-axis
+}
+
+\newcommand{\drawGrid}[3]{
+    \foreach \n in {0,...,#1}
+        \draw[line width = #3] (\n,0) -- (\n,#2);
+    \foreach \n in {0,...,#2}
+        \draw[line width = #3] (0,\n) -- (#1,\n);
+}
+
+\def\pointColor{blue}
+\def\crossWidth{0.15mm}
+\def\crossSize{0.2}
+\def\nodeShift{0.4}
+\NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{%
+    \pgfgettransformentries{\aa}{\ab}{\ba}{\bb}{\xshift}{\yshift}
+    \node[shift={#5}, color = #4] at (#2 - \nodeShift / \aa,#3 - \nodeShift / \bb) {#1};
+    \draw[line width = \crossWidth, shift={#5}
+    , color = #4] (#2 - \crossSize / \aa,#3) -- (#2 + \crossSize / \aa,#3);
+    \draw[line width = \crossWidth, shift={#5}, color = #4] (#2,#3 - \crossSize / \bb) -- (#2,#3 + \crossSize / \bb);
+}
+
+% \NewDocumentCommand{\drawPoint}{mmm O{\pointColor} O{(0,0)}}{
+%     \pgftransformscale{1}
+%     \pgftransformxscale{1/\pgfkeysvalueof{/pgf/scale x}}
+%     \pgftransformyscale{1/\pgfkeysvalueof{/pgf/scale y}}
+%     \node[shift={#5}, color = #4] at (#2 - \nodeShift,#3 - \nodeShift) {#1};
+%     \draw[line width = \crossWidth, shift={#5}, color = #4] 
+%         (#2 - \crossSize,#3) -- (#2 + \crossSize,#3);
+%     \draw[line width = \crossWidth, shift={#5}, color = #4] 
+%         (#2,#3 -\crossSize) -- (#2,#3 + \crossSize);
+%     \pgftransformreset
+% }
+
+
+\NewDocumentCommand{\drawTick}{m O{} O{gradeColor}}{
+    \draw[line width = 0.75mm, #3] (#1, 0.08) -- (#1, -0.08);
+    \draw[line width = 0.75mm, #3] (#1 - 0.08, 0) -- (#1 + 0.08, 0);
+    \node[#3] at (#1, -0.3) {#2};
+}
+
+\usetikzlibrary{calc,decorations,patterns,arrows,decorations.pathmorphing}
+
+\pgfdeclaredecoration{penciline}{initial}{
+    \state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+        auto corner on length=1pt,
+    ]{
+        \ifthenelse
+            {\pgfkeysvalueof{/tikz/penciline/jag ratio}=0} {
+            \pgfpathcurveto%
+                {% 1st control point
+                    \pgfpoint
+                        {\pgfdecoratedinputsegmentremainingdistance/2}
+                        {2*rnd*\pgfdecorationsegmentamplitude}
+                }
+                {%% 2nd control point
+                    \pgfpoint
+                    %% Make sure random number is always between origin and target points
+                        {\pgfdecoratedinputsegmentremainingdistance/2}
+                        {2*rnd*\pgfdecorationsegmentamplitude}
+                }
+                {% 2nd point (1st one is implicit)
+                    \pgfpointadd
+                        {\pgfpointdecoratedinputsegmentlast}
+                        {\pgfpoint{0*rand*1pt}{0*rand*1pt}}
+                }          
+            } {
+            \pgfpathcurveto%
+                {% 1st control point
+                    \pgfpoint
+                        {\pgfdecoratedinputsegmentremainingdistance*rnd*1pt}
+                        {\pgfkeysvalueof{/tikz/penciline/jag ratio}*
+                        rand*\pgfdecorationsegmentamplitude}
+                }
+                {%% 2nd control point
+                    \pgfpoint
+                    %% Make sure random number is always between origin and target points
+                        {(.5+0.25*rand)*\pgfdecoratedinputsegmentremainingdistance}
+                        {\pgfkeysvalueof{/tikz/penciline/jag ratio}*
+                        rand*\pgfdecorationsegmentamplitude}
+                }
+                {% 2nd point (1st one is implicit)
+                    \pgfpointadd
+                        {\pgfpointdecoratedinputsegmentlast}
+                        {\pgfpoint{rand*1pt}{rand*1pt}}
+                }
+            }
+    }
+    \state{final}{}
+}
+
+\tikzset{
+    penciline/.code={\pgfqkeys{/tikz/penciline}{#1}},
+    penciline={
+        jag ratio/.initial=2,
+        decoration/.initial = penciline,
+    },
+    penciline/.style = {
+        decorate,
+        %%decoration={\pgfkeysvalueof{/tikz/penciline/decoration}},
+        penciline/.cd,
+        #1,
+        /tikz/.cd,
+    },
+    decorate,
+    decoration={\pgfkeysvalueof{/tikz/penciline/decoration}},
+}
+
+\tikzset{
+    penthick/.style={
+        penciline, % Ajuster selon vos préférences
+        thick                        % Épaisseur du trait
+    }
+}
+
+
+\NewDocumentCommand{\cir}{O{black} m}{
+    \tikz[baseline=(X.base)] 
+    \node (X) [draw, shape=circle, inner sep=-1pt, color = #1] {\small\strut #2};
+}
+
+% ISOMETRIC %
+
+\NewDocumentCommand{\isometric}{O{1} O{0.5pt} O{1} m}{
+    \begin{tikzpicture}[scale = #1,
+        x={(0.86cm,0.5cm)},
+        y={(-0.86cm,0.5cm)}]
+        \begin{scope}
+            \clip (0,#3*25.5) rectangle (#3*37.5,#3*29);
+            \foreach \x in {0,...,50}
+            \foreach \y in {0,...,50}
+            {
+                \fill (\x,\y) circle (#2);
+            }
+            #4
+        \end{scope} 
+        \draw [gray] (-0.5,#3*25.5 - 0.5) rectangle (#3*37.5 + 1,#3*29 + 0.5);
+    \end{tikzpicture}
+}
+
+\newcommand{\sIso}[1]{
+    \begin{center}
+        \isometric[0.75][1pt][0.25]{#1}
+    \end{center}
+}
+
+\newcommand{\mIso}[1]{
+    \begin{center}
+        \isometric[0.75][1pt][0.5]{#1}
+    \end{center}
+}
+
+
+% \NewDocumentCommand{\dotGrid}{O{5} O{5} O{0.5pt} O{0.5} O{(0,0)}}{
+%     \foreach \x in {0,#4,...,#1} {
+%         \foreach \y in {0,#4,...,#2} {
+%             \fill[shift={#5}] (\x,\y) \bigDot{#3} % Draw points
+%         }
+%     }
+%     \draw[gray!40, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);
+% }
+
+\def\isoSpace{0.8660254037844386}
+
+\newcommand{\smallDot}[1]{circle (#1/1.75);}
+\newcommand{\bigDot}[1]{circle (#1);}
+\newcommand{\medDot}[1]{circle (#1/1.45);}
+
+\NewDocumentCommand{\boundingBox}{O{5} O{5} O{0.5pt} O{0.5} O{(0,0)} O{plain} O{gray!40} O{black}}{
+    \ifstrequal{#6}{plain}{% Only a rectangle
+    \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);
+    }{}
+    \ifstrequal{#6}{grid}{% Grid
+    \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);
+    \draw[#7, shift={#5}] (-0.5,-0.5) grid (#1+0.5,#2+0.5);
+    }{}
+    \ifstrequal{#6}{dot}{% Dot Grid
+        \foreach \x in {0,#4,...,#1} {
+            \foreach \y in {0,#4,...,#2} {
+                \fill[shift={#5}] (\x,\y) \bigDot{#3} % Draw points
+            }
+        }
+        \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);
+    }{}
+    \ifstrequal{#6}{sdot}{% Dot with sub grid
+    \foreach \x [count=\xi from 0] in {0,#4,...,#1} {
+        \foreach \y [count=\yi from 0] in {0,#4,...,#2} {
+            \ifodd\xi \ifodd\yi
+                \fill[shift={#5}] (\x,\y) \medDot{#3};
+            \else
+                \fill[shift={#5}] (\x,\y) \smallDot{#3}
+            \fi\else \ifodd\yi
+                \fill[shift={#5}] (\x,\y) \smallDot{#3}
+            \else
+                \fill[shift={#5}] (\x,\y) \bigDot{#3}
+            \fi\fi
+        }
+        \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);
+    }
+    }{}
+    \ifstrequal{#6}{cavalier}{% Dot with sub grid
+        \foreach \x [count=\xi from 0] in {0,#4,...,#1} {
+            \foreach \y [count=\yi from 0] in {0,#4,...,#2} {
+                \ifodd\xi \ifodd\yi
+                    \fill[shift={#5}] (\x,\y) \smallDot{#3}
+                    \fill[shift={#5}] (\x+#4/2,\y+#4/2) \medDot{#3}
+                \else
+                    \fill[shift={#5}] (\x,\y) \bigDot{#3}
+                    \fill[shift={#5}] (\x+#4/2,\y+#4/2) \smallDot{#3}
+                \fi\else \ifodd\yi
+                    \fill[shift={#5}] (\x,\y) \bigDot{#3}
+                    \fill[shift={#5}] (\x+#4/2,\y+#4/2) \smallDot{#3}
+                \else
+                    \fill[shift={#5}] (\x,\y) \smallDot{#3}
+                    \fill[shift={#5}] (\x+#4/2,\y+#4/2) \medDot{#3}
+                \fi\fi
+            }
+            \draw[#7, shift={#5}] (-0.25-0.125,-0.25-0.125) rectangle (#1+0.5+0.125,#2+0.5+0.125);
+        }
+    }{}
+    \ifstrequal{#6}{iso}{% Iso Dot Grid
+        \pgfmathsetmacro{\maxX}{int(#1/\isoSpace)}%
+        \pgfmathsetmacro{\maxY}{int(#2-1)}%
+        \begin{scope}[xscale=\isoSpace]
+            \foreach \y [count=\yi from 0] in {0,#4,...,\maxY} {
+                \foreach \x [count=\xi from 0] in {0,#4,...,\maxX} {
+                    % Offset every other column by half of the step size in the y-direction
+                    \pgfmathsetmacro{\yoffset}{mod(\xi,2) == 0 ? #4/2 : 0}
+                    \fill[shift={#5}, color = #8] (\x,\y+\yoffset) \bigDot{#3} % Draw points
+                    % \ifodd\xi \ifodd\yi
+                    %     \fill[shift={#5}] (\x,\y+\yoffset) \bigDot{#3}
+                    % \else
+                    %     \fill[shift={#5}] (\x,\y+\yoffset) \bigDot{#3}
+                    % \fi\else \ifodd\yi
+                    %     \fill[shift={#5}] (\x,\y+\yoffset) \bigDot{#3}
+                    % \else
+                    %     \fill[shift={#5}] (\x,\y+\yoffset) \smallDot{#3}
+                    % \fi\fi
+                }
+            }
+            \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (\maxX+.5,\maxY+1);
+        \end{scope}
+    }{
+        % \draw[#7, shift={#5}] (-0.5,-0.5) rectangle (#1+0.5,#2+0.5);
+    }  
+}
+% \boundingBox[13][14][0.5pt][0.5]

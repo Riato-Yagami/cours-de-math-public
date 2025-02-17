@@ -1,0 +1,19 @@
+\newcommand*{\ArcAngle}{108}%
+\newcommand*{\ArcRadius}{5.0}%
+\ctikz[0.75]{
+    \draw [thick] (-0.11,-0.98) circle (1.50cm);
+    \draw [rotate around={-178.73:(-8.72,-3.26)},thick] (-8.72,-3.26) ellipse (1.50cm and 0.75cm);
+    % \draw [rotate around={-178.73:(-8.72,-3.26)},thick,dashed] (-8.72,-3.26) ellipse (1.50cm and 0.75cm);
+    \draw [thick,gradeColor] ($(-5.99,-3.74)+(\ArcRadius,0)$) 
+    arc (0:\ArcAngle:\ArcRadius);
+    \drawPoint{O}{-5.99}{-3.74}
+    \drawPoint{A}{-0.99}{-3.75}
+    \drawPoint{B}{-7.53}{1.02}
+    \draw[color=gradeColor] (-9.72,-0.89) node {$\Lg{5}$};
+    \draw[color=gradeColor] (-9.44,-3.03) node {$\Lg{1.50}$};
+    \draw [thick,gradeColor] (-8.72,1.51) -- (-10.22,-3.26);
+    \draw [thick] (-8.72,1.51) -- (-7.22,-3.26);
+    \draw [thick,dashed,gradeColor] (-8.72,-3.26) -- (-10.22,-3.26);
+    \draw [thick,dashed] (-5.99,-3.74) -- (-0.11,-0.98);
+    \draw [thick] (-7.53,1.02) -- (-5.99,-3.74) -- (-0.99,-3.75);
+}

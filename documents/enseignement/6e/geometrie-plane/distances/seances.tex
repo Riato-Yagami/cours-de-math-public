@@ -1,0 +1,354 @@
+% VARIABLES %%%
+\setSeq{3}{Géométrie plane - distances}
+\setGrade{6e}
+
+\def\imgPath{enseignement/6e/geometrie-plane/distances/}
+
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Long.pdf}{Yvan Monka}}
+
+% \firstSlide
+\setboolean{answer}{false}
+% \setboolean{debugMode}{true}
+% Cercle https://www.maths-et-tiques.fr/telech/19Cercle.pdf
+%%
+
+\obj{
+    \item Savoir tracer un segment de longueur donnée.
+    \item Savoir placer le milieu d'un segment de longueur donnée.
+    \item Savoir déterminer le plus court chemin entre un point et une droite.
+    \item Connaître et savoir estimer la distance entre un point et une droite.
+    \item Reconnaître, nommer, décrire, reproduire un cercle
+    \item Utiliser le vocabulaire associé : rayon, diamètre, centre, arc de cercle et corde.
+    \item Différencier le cercle et le disque.
+}
+
+\scn{Chemin le plus court}
+
+\bsec{Distance entre deux points}
+
+\def\caPrefix{cm2-mars-2023-}
+\caSlide{1-2-3}
+
+\bsubsec{Segment}
+
+\input{resources/enseignement/6e/geometrie-plane/distances/act-Solide-Snake.tex}
+
+\ifBeamer{
+    \slide{exo}{
+        \wideFrame[7em]{\actDistance}
+    }
+}
+
+\slide{cr}{
+    \sseq\ssec
+
+    \pr{}{
+        Le \key{chemin le plus court} entre deux points est la \key{ligne droite}.
+    }
+
+    \bvspace{-0.5cm}
+
+    \nt{}{
+        On note $AB$ la \key{distance} entre les points $A$ et $B$.
+    }
+
+    \bvspace{-0.5cm}
+
+    \pr{}{
+        Un segment $[AB]$ à pour longueur $AB$.
+    }
+}
+
+\slide{cr}{
+    \nt{}{%
+        On code les segments de même longueur par un même symbole dessiné sur chacun de ces segments.
+    }
+    \bvspace{-1cm}
+    \expl{}{%
+        \imgp{expl-codage}[7cm]
+    }
+}
+
+\newpage
+
+\bookSlide{6p191,7p191}[9cm]
+
+\scn{Trouver le milieu entre deux points}
+
+\caSlide{4-5-6}
+
+\bsubsec{Milieu d'un segment}
+
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \act{}{
+        Gandalf le Gris doit retrouver trois anneaux de pouvoir avant que Sauron ne mette la main dessus.
+        Les anneaux sont cachés entre trois lieux importants :
+        La Comté au point $C$,
+        Le Gondor au point $G$,
+        et Le Mordor au point $M$.\\
+        Marquer sur la carte, en suivant les indications ci-dessous,
+        les positions des anneaux Les points $A_1$, $A_2$ et $A_3$.
+        \begin{enumerate}
+            \item Le premier anneau est caché exactement à mi-chemin entre La Comté et Le Gondor.
+            \item Le deuxième anneau se trouve à égale distance entre La Comté et le Mordor.
+            \item Le troisième anneau est caché au milieu du segment qui relie les positions des deux premiers anneaux.
+        \end{enumerate}
+        \imgp{activite-middle-earth}[14cm]
+    }[\href{https://paulinebaynes.com/?what=artifacts&cat=79}{Pauline Baynes (illustratrice)}]
+}
+
+\ifBeamer{
+    \slide{exo}{
+        \imgp{activite-middle-earth}[11cm]
+    }
+}
+
+\slide{cr}{
+    \df{}{
+        Un point est dit \key{milieu d'un segment} si il est situé à égale distance de ses extrémités.
+    }[\wiki{Milieu_d'un_segment}]
+
+    \expl{}{
+        Le point $M$ est les milieu du segment $[AB]$.
+    }
+}
+
+\bookSlide{8p191,9p191,36p196}[7cm][2]
+
+\scn{Utiliser le milieu d'un segment}
+
+\caSlide{7-8-9}
+
+\def\exoGrid{
+    \def\crossWidth{0.04cm}
+    \def\gridColor{gradeColor!50}
+    % \begin{center}
+        \begin{tikzpicture}[scale = 0.5]
+            \tkzInit[xmax=15, ymax=11]
+            \tkzGrid[color=\gridColor,subxstep=0.5,subystep=0.5]
+            \drawPoint{A}{6}{7}
+            \drawPoint{B}{10}{5}
+        \end{tikzpicture}
+        \ifArticle{\hspace{0.5cm}}
+        \begin{tikzpicture}[scale = 0.5]
+            \tkzInit[xmax=15, ymax=11]
+            \tkzGrid[color=\gridColor,subxstep=0.5,subystep=0.5]
+            \drawPoint{A}{5}{4}
+            \drawPoint{B}{11}{8}
+        \end{tikzpicture}
+}
+
+\slide{exo}{
+    \exo{}{
+        Chacune des figures suivantes est constituée de deux points $A$ et $B$.
+        Chacune d'elles doit être complétée par un point $J$ qui respecte les conditions suivantes :
+        \begin{enumerate}
+            \item $I$, $C$ et $D$ sont trois points tels que $I$ est le milieu des segments $[AC]$ et $[BD]$;
+            \item $E$ est le point tel que $A$ est le milieu du segment $[DE]$;
+            \item $J$ est le milieu du segment $[CE]$.
+        \end{enumerate}
+        \ifArticle{\begin{center}\exoGrid\end{center}}
+        \begin{itemize}
+            \item Placer deux points $A$ et $B$ sur une feuille blanche et de même trouver l'emplacement de $J$.
+        \end{itemize}
+    }[\rpmc[149]]
+}
+
+\ifBeamer{
+    \slide{exo}{
+        \wideFrame[7em]{
+            \exoGrid
+        }
+    }
+}
+
+\scn{Distance d'un point à une droite}
+
+\caSlide{10-11-12}
+
+\bsec{Distance d'un point à une droite}
+
+\slide{exo}{
+    \act{}{Achille (représenté par le point A sur la carte)
+    est fatigué et s'est trop éloigné de la côte de la plage du Peulx.
+    \begin{enumerate}
+        \item Tracez le plus court chemin qu'il doit suivre pour rejoindre la côte.
+        \item Quelle est la distance qu'il devra nager ?
+    \end{enumerate} 
+    }[\href{https://www.maths-et-tiques.fr/telech/DISTANCES_GR.pdf}{Yvan Monka}]
+}
+
+\slide{exo}{
+    \ctikz[0.75]{
+        \draw[very thick, Orange] (3,0) -- (6,9);
+        \filldraw[Orange, opacity=0.1] (0,0) -- (3,0) -- (6,9) -- (0,9) -- cycle;
+        \draw[gray!40] (0,0) rectangle (17,9);
+        \node[Orange] at (2.5,4.5) {Plage};
+        \drawPoint{$A$}{13}{4}
+        \node[above left] at (17,0) {Echelle : $\Lg{1}$ = $\Lg[m]{10}$};
+    }  
+}
+
+\slide{cr}{
+    \ssec
+    \df{}{
+        La \key{distance d'un point à une droite} est la plus courte distance séparant ce point et un point de la droite.
+    }[\wiki{Distance_d'un_point_à_une_droite}]
+}
+
+\slide{cr}{
+    \pr{}{
+        Le plus petit segment ayant comme extrémité un point $A$ et un point d'une droite $(d)$
+        est celui qui est perpendiculaire à la droite $(d)$.
+        \imgp{expl-distance-droite}[7cm]
+    }
+}
+
+\def\exogrid{
+    \ctikz[0.75]{
+        \tkzInit[xmax=17, ymax=10]
+        \tkzGrid[color=gradeColor!50,subxstep=0.5,subystep=0.5]
+        \drawPoint{A}{9}{7}
+        \drawPoint{B}{7}{6}
+        \drawPoint{C}{13}{2}
+        \drawPoint{D}{5.5}{3}
+        \drawPoint{E}{11}{5}
+        \drawPoint{F}{7}{3}
+        \draw[thick] (6.5,0.5) -- (16,10) node[below=0.5cm] {$(d'')$};
+        \draw[thick] (11,1.5) -- (11,8.5) node[left=0.25cm] {$(d)$};
+        \draw[thick] (1.5,3) -- (15.5,3) node[below=0.25cm] {$(d')$};
+        \draw[very thick, gradeColor] (2,8) -- (4,8) node[midway, above=0.25cm] {$1\;\Lg{}$};
+        \draw[very thick, gradeColor] (2,8.2) -- (2,7.8);
+        \draw[very thick, gradeColor] (4,8.2) -- (4,7.8);
+    }
+}
+
+\slide{exo}{
+    \ifBeamer{\small}
+    \exo{}{En s'apuyant sur la figure ci-dessous, compléter les phrases suivantes :
+        \begin{enumerate}
+            \item Le point $A$ est situé à \nswr{$2$ }$\Lg{}$ de la droite $(d)$.
+            \item La distance du point $B$ à la droite \nswr{$(d)$} vaut $\Lg{2}$.
+            \item Le point $B$ est à la distance $BF$ de la droite \nswr{$(d')$}.
+            \item La distance du point $A$ à la droite $(d'')$ est \nswr{$AE$}.
+            \item Le point $D$ est situé à \nswr{$0$} $\Lg{}$ de la droite $(d')$.
+            \item Parmi les points $A$,$B$, $C$ et $D$, le point le plus proche de $(d'')$ est \nswr{$A$}. 
+        \end{enumerate}
+    }[\href{https://www.educmat.fr/categories/exercices_maths/6eme/6e\%2004-03\%20Exercices.pdf}{éducmat}]
+}
+
+\slide{exo}{
+    \exogrid
+}
+
+\scn{Découvrir la définition d'un cercle}
+
+\caSlide{13-14-15}
+
+\bsec{Le cercle}
+
+\bsubsec{Definitions}
+
+\slide{exo}{
+    \ifBeamer{\small}
+    \act{}{\def\dist{$\Lg{6}$ }
+        \begin{enumerate}
+            \item Placer un point $O$ à plus de \dist des bords de votre page.
+            \item Placer un point $C_1$ à \dist du point $O$.
+            \item Placer un autre point $C_2$ à \dist du point $O$.
+            \item Répétez ce processus jusqu'à placer le point $C_{10}$
+            \item Combien de points distincts peut-on placer à \dist du point $O$?
+            \item Sur quelle figure seront-ils tous situés?
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \ssec\ssubsec
+    \df{}{
+        On appelle \key{cercle}, l'ensemble des points situé à \key{égale distance} d'un point nommé \key{centre}.
+    }
+}
+
+\scn{Utiliser le vocabulaire d'un cercle}
+
+\bookSlide{42p197}[12cm][1][\dim][qf]
+
+\slide{cr}{
+    \ifBeamer{}
+    \df{}{
+        Dans un cercle, on appelle:
+        \begin{itemize}
+            \item \nswr{\key{rayon}}, un segment joignant le centre à un point du cercle.
+            \item \nswr{\key{corde}}, un segment dont les extrémités se trouvent sur le cercle.
+            \item \nswr{\key{diamètre}}, une corde passant par le centre.
+            \item \nswr{\key{arc}}, une portion de cercle délimitée par deux points.
+        \end{itemize}
+        \ifArticle{\imgp{cercle-definitions}[6cm]}
+    }[\wiki{cercle}]
+}
+
+\slide{cr}{
+    \ifBeamer{\imgp{cercle-definitions-vide}[6cm]}
+}
+
+\bookSlide{67p201}[12cm]
+
+\scn{Découvrir la définition d'un disque}
+
+\caSlide{16-17-18}
+
+\bsubsec{Le disque}
+
+\slide{exo}{\bsmall\bvspace{-0.75cm}
+    \act{}{\def\dist{$\Lg{4}$ }
+        \begin{enumerate}
+            \item Placez un point $O$ à plus de \dist{} des bords de votre feuille.
+            \item Tracez un cercle de centre $O$ et de rayon \dist.
+            \item Choisissez trois points $D_1$, $D_2$, et $D_3$ situés à l'intérieur du cercle.
+            \item Sans utiliser de règle, estimez la distance maximale entre chacun de ces points et le point $O$.
+            \item Imaginez un moyen de représenter tous les points situés à l'intérieur du cercle.
+            \item Quelle est la figure géométrique contenant tous ces points ?
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \ssubsec
+    \df{}{
+        On appelle \key{disque}, l'ensemble des points situés à une \key{distance inférieure ou égale} d'un point nommé \key{centre}.
+    }
+
+    \rmk{}{%
+        Un disque est ainsi une surface délimitée par un cercle.
+    }
+}
+
+\scn{Décrire un cercle}
+
+\caSlide{19-20}
+
+\slide{exo}{
+    \exo{Reproduction de figure et rédaction de consigne}{\bvspace{-0.75cm}
+        \begin{enumerate}
+            \item Compléter et rédiger une consigne
+            \begin{itemize}
+                \item Complétez la reproduction de la figure modèle en bas de la feuille.
+                \item Rédigez un message permettant à un camarade de reproduire la figure sans l'avoir vue.
+                \item Attention : l'amorce de départ pourra être d'une autre échelle et orientation.
+                \saveenumi
+            \end{itemize}
+        \end{enumerate}
+    }[\prbltq{decrire-un-cercle}]
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[exo]
+        \item Échange et construction
+        \begin{itemize}
+            \item Utilisez le message reçu pour construire la figure sans voir le modèle.
+            \item Notez les difficultés rencontrées et les remarques dans l'espace prévu.
+        \end{itemize}
+    \end{enumerate}
+}

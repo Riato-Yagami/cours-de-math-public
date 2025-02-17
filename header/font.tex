@@ -1,0 +1,24 @@
+\usepackage[fontsize=14pt]{fontsize}
+
+% \usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+
+\frenchbsetup{StandardItemLabels=true}
+
+\usepackage{fontspec}
+\usepackage[math-style=ISO,bold-style=ISO]{unicode-math}
+\defaultfontfeatures{Ligatures=TeX,Numbers=OldStyle}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+\setmonofont{Libertinus Mono}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\setfonts}[1]{
+    \setmainfont{#1}
+    \setsansfont{#1}
+    \setmathfont{#1}
+    \setmonofont{#1}
+}

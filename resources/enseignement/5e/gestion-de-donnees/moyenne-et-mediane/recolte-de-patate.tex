@@ -1,0 +1,44 @@
+\exo{Récolte de patates}{{\def\iconSize{15pt}\def\iconPath{}\calculator}
+    Steve \icon{steve} récolte chaque jour les patates \icon{potato} de ses $12$ plants.
+    Il les range dans un coffre \icon{chest}, en les disposant dans différentes cases selon le jour de la récolte, afin de déterminer la productivité de son champ.
+    \imgp{potato-chest}[10cm]
+    \begin{enumerate}
+        \item Complète le tableau suivant : 
+        \begin{center}
+            \def\cW{0.85cm}
+            \begin{tabular}{|C{3cm}|*{9}{C{\cW}|}C{\cW}|}
+                \hline
+                \rule{0pt}{1.5em} Nombre de \icon{potato} & \nswr{40} & \nswr{41} & \nswr{42} & \nswr{43} & \nswr{44} & \nswr{45} & \nswr{47} & \nswr{48} & \nswr{50}\\ \hline
+                \rule{0pt}{1.5em} Nombre de récoltes & \nswr{1} & \nswr{2} & \nswr{1} & \nswr{2} & \nswr{4} & \nswr{5} & \nswr{1} & \nswr{3} & \nswr{1}\\ \hline
+            \end{tabular}
+        \end{center}
+        \item Combien de \icon{potato} récolte-t-il en moyenne par jour ?
+        \item Combien de \icon{potato} récolte-t-il en moyenne par plant de \icon{potato} par jours ?
+    \end{enumerate}
+}
+
+\nswr[0]{
+    \begin{enumerate}
+        \item La moyenne de \icon{potato} récoltées par jour est donnée par la formule :
+        \begin{align*}
+            \textrm{Moyenne}
+            &= \dfrac{\textrm{Nombre de \icon{potato}}}{\textrm{Nombre de récoltes}}
+            \\ &= \dfrac{\textrm{Somme des} (\textrm{Nombre de \icon{potato}} \times \textrm{Nombre de récoltes})}{\textrm{Somme des} (\text{Nombre de récoltes})}
+        \end{align*}
+        En utilisant les données du tableau :
+        \begin{align*}
+            &\dfrac{40 \times 1 + 41 \times 2 + 42 \times 1 + 43 \times 2 + 44 \times 4 + 45 \times 5 + 47 \times 1 + 48 \times 3 + 50 \times 1}{1 + 2 + 1 + 2 + 4 + 5 + 1 + 3 + 1}\\
+            = &\dfrac{40 + 82 + 42 + 86 + 176 + 225 + 47 + 144 + 50}{20} = \dfrac{892}{20} \approx \np{44.6}
+        \end{align*}
+        Donc, \icon{steve} récolte en moyenne environ $\np{44.6}$ \icon{potato} par jour.
+        \item La moyenne de \icon{potato} récoltées par plant est donnée par la formule :
+        \begin{align*}
+            \textrm{Moyenne par plant} = \dfrac{\textrm{Moyenne par jour}}{\textrm{Nombre de plants}}
+        \end{align*}
+        Sachant que \icon{steve} a 12 plants :
+        \begin{align*}
+            \textrm{Moyenne par plant} = \dfrac{\np{44.6}}{12} \approx \np{3.71}
+        \end{align*}
+        Donc, \icon{steve} récolte en moyenne environ $\np{3.71}$ \icon{potato} par plant.
+    \end{enumerate}
+}

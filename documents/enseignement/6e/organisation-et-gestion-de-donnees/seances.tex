@@ -1,0 +1,444 @@
+% VARIABLES %%%
+% \date{\today}
+
+\setSeq{2}{Organisation et gestion de données}
+
+\setGrade{6e}
+% \setImgPath
+\def\imgPath{enseignement/6e/organisation-et-gestion-de-donnees/}
+%%
+
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Tab_Graph.pdf}{Yvan Monka}}
+
+\avspace{0.1cm}
+
+\obj{
+    \item Prélever des données numériques à partir de supports variés.
+    \item Produire des tableaux, diagrammes et graphiques organisant des données numériques.
+    % \item Exploiter et communiquer des résultats de mesures.
+    \item Reconnaitre une situations de proportionnalité/situations qui ne sont pas de proportionnalité
+}
+
+\scn{Tableaux}{}
+
+\bsec{Tableaux}
+% \bsubsec{Tableaux de données}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{1-2p96}[10cm][1][\dim][qf]
+\def\imgPrefix{}
+
+\def\imgPrefix{dim-6e/act-}
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \act{1p98}{\bvspace{-0.75cm}\imgp{1p98}[11.5cm]}[\dim]
+}
+
+\slide{cr}{
+    \sseq\ssec
+    \vc{}{
+        Un \key{tableau} permet de rassembler et d'organiser des données pour les lire plus facilement.
+    }
+}
+
+\slide{cr}{
+    \expl{}{
+        Au collège de la Paix,
+        les enfants ont le choix entre 3 LV2 :
+        italien, allemand ou espagnol.\\
+
+        En 6eA, il y a 25 élèves. 12 ont choisi espagnol, 6 allemand et les autres italien.
+
+        En 6eB, 13 élèves ont choisi espagnol et 5 élèves allemand.
+
+        Dans ces deux classes, 12 élèves ont choisi italien.\\
+
+        Présenter ces données dans un tableau à double entrée.
+    }[\href{https://eduscol.education.fr/document/14014/download}{Attendues 6e}]
+}
+
+\newcommand{\last}[1]{\color{red}\textbf{#1}}
+
+\def\imgPrefix{}
+\slide{cr}{\bvspace{-0.5cm}
+    \mthd{Construire un tableau}{\bvspace{-0.75cm}
+        \begin{enumerate}
+            \item On réalise un tableau à double entrée avec les données de l'énoncé et on ajoute une colonne et une ligne «total». 
+            \item On le complète avec les données de l'énoncé.
+            \item On finit de compléter le tableau en effectuant les calculs.
+        \end{enumerate}
+        \begin{center}
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                & Espagnol & Allemand & Italien & Total\\
+                \hline
+                5eA    & 12       & 6        & \last{7}       & 25        \\
+                \hline
+                5eB    & 13       & 5        & \last{5}       & \last{23}   \\
+                \hline
+                Total  & \last{25}       & \last{11}       & 12    & \last{48}      \\
+                \hline
+            \end{tabular}
+        \end{center}
+        % \imgp{tableau-exemple}[8cm]
+    }[\ym]
+}
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{17p104,19p104}[6cm][2][\dim]
+
+\scn{Diagrammes en bâton}{}
+
+\bsec{Diagrammes}
+\bsubsec{Diagrammes en bâton}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{3-4p96}[8cm][1][\dim][qf]
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{6p101}[8cm][1][\dim]
+
+\slide{}{
+    \act{}{
+        \ifBeamer{\imgp{6p101}[10cm]}
+        \begin{itemize}
+            \item Représente les données de l'exercice 6 page 101 sous la forme d'un diagramme en bâtons.
+        \end{itemize}
+        \def\imgPrefix{}
+        \imgp{diagramme-baton-fond-exo-6p102}[6cm]
+    }
+}
+
+\def\imgPrefix{}
+\slide{cr}{
+    \ssec\ssubsec
+
+    \vc{}{
+        Un \key{diagramme en bâton} (ou à barres) permet de comparer visuellement des données.
+    }[\dim]
+    
+    \expl{}{
+        \begin{itemize}
+            \item Notes (sur 5) de la dernière évaluation des 6eA; sous forme de \key{liste} :
+            \begin{align*}
+                0;4;5;5;5;1;3;4;2;3;4;1;0;4;3;4;5;4;3;2;4;2;5;5;4
+            \end{align*}
+            \item On peut représenter ces données dans un \key{tableau} :
+            \begin{center}
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                    Notes & 0 & 1 & 2 & 3 & 4 & 5 & Total \\
+                    \hline
+                    Effectifs & 2 & 2 & 3 & 4 & 7 & 6 & 24 \\
+                    \hline
+                \end{tabular}
+            \end{center}
+            \item Ou avec un \key{diagramme en bâton}.
+            \imgp{diagramme-baton-exo-6p102}[8cm]
+        \end{itemize}
+    }
+}
+% \def\imgPrefix{dim-6e/act-}
+% \slide{exo}{
+%     \bvspace{-0.75cm}
+%     \act{2p98}{\bvspace{-0.75cm}\imgp{2p98}[9cm]}[\dim]
+% }
+
+% \def\imgPrefix{}
+% \slide{exo}{
+%     \imgp{tableau-activite-2p98}[11cm]
+% }
+
+% \slide{cr}{
+% }
+
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \exo{Vrai ou faux?}{
+        Le nombre de tablettes vendues de la marque B est trois fois plus important que le nombre de tablettes vendues de la marque A.
+        \imgp{diagramme-en-baton-attendus-6e}[7cm]
+    }
+}
+
+\slide{cr}{
+    \pr{}{
+        Si un diagramme en bâtons a pour origine 0,
+        alors la hauteur des barres est proportionnelle aux effectifs.
+    }
+}
+
+
+% \newpage
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{27p105}[3.8cm][1][\dim]
+
+\scn{Diagrammes circulaires}{}
+
+\bsubsec{Diagrammes circulaires}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{5-6p96}[8cm][1][\dim][qf]
+
+\def\imgPrefix{dim-6e/act-}
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \act{4p99}{\bvspace{-0.75cm}\imgp{4p99}[11cm]}[\dim]
+}
+
+\slide{cr}{
+    \ssubsec
+    \vc{}{
+        Un \key{diagramme circulaire} permet d'observer une répartition.
+    }[\dim]
+    \pr{}{
+        La valeur de chaque angle au centre est proportionnelle à la portion représentée.
+    }
+}
+
+\scn{Utiliser différents modes de représentation}
+\slide{qf}{
+    \multiColEnumerate{3}{
+        \item $7 \times 2 + 2$
+        \item $15 + 28 \div 7$
+        \item $12 \times (15-13)$
+        \item $2 \times 3 - 1$
+        \item $30 \div (15-13)$
+        \item $19 + 2 \times 6$
+    }
+}
+
+\def\imgPrefix{}
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \exo{}{\ifBeamer{\small}
+        \bvspace{-0.25cm}
+        \begin{enumerate}
+            \dividePage{%
+                Dans un collège,
+                112 élèves viennent en voiture,
+                autant viennent à vélo,
+                56 viennent en bus et 280 viennent à pied.
+                \item Un seul de ces diagrammes circulaires représente le mode de déplacement des élèves de ce collège.
+                Lequel?
+            }{\bvspace{-1cm}\imgp{vers-de-mobilites-douces-1}[6.5cm]}[0.5]
+            
+            \ifArticle{
+                \dividePage{\imgp{vers-de-mobilites-douces-2}[8cm]}{%
+                \item Compléter le tableau ci-contre, puis choisir les nombres appropriés pour graduer
+                le diagramme en bâtons qui représente ces données.
+                }
+            }
+            \saveenumi
+        \end{enumerate}
+    }[\rpmc[34]]
+}
+
+\ifBeamer{
+    \slide{exo}{\bvspace{-0.25cm}
+        \begin{enumerate}
+            \loadenumi
+            \item Compléter le tableau ci-contre, puis choisir les nombres appropriés pour graduer
+        le diagramme en bâtons qui représente ces données.
+        \bvspace{-0.45cm}\imgp{vers-de-mobilites-douces-2}[8cm]
+        \end{enumerate}
+    }
+}
+
+\def\imgPrefix{dim-6e/exo-}
+
+\scn{Situations de proportionnalité}{}
+
+\exoSlide{36p107}[5.25cm][1][\dim][qf]
+
+\bsec{Situations de proportionnalité}
+
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \act{}{
+        \begin{itemize}
+            \item Pour préparer une recette de dahl,
+            Christopher a besoin de 4 gousses d'ail pour 6 personnes.
+            Comme il déjeune avec ses amis Sarah et Jean.
+
+            Peut-il prévoir le nombre de gousses d'ail nécessaires ?
+            Pourquoi ? Si oui, combien ?
+
+            \item Jean l'a félicité 2 fois pour sa cuisine en 20 minutes.
+
+            Peut-il prévoir combien de félicitations il recevra de Jean en 40 minutes?
+            Pourquoi ? Si oui, combien ?
+        \end{itemize}
+        
+    }
+}
+
+\slide{cr}{
+    \ssec
+    % \df{}{
+    %     Deux grandeurs sont dites \key{proportionnelles} si les valeurs de l'une s'obtiennent en multipliant les valeurs de l'autre par un même nombre non nul,
+    %     appelé le \key{coefficient de proportionnalité}.
+    % }
+    \vc{}{
+        Deux \key{grandeurs proportionnelles} sont deux grandeurs qui varient dans les mêmes proportions.
+    }
+}
+
+\scn{Grandeurs proportionnelles}
+
+\def\imgPrefix{}
+\slide{qf}{%
+    \begin{enumerate}
+        \item \imgp{cn-CM2-juin-2023-exo-18}[8cm]
+        \item \imgp{cn-CM2-juin-2023-exo-21-22}[8cm]
+    \end{enumerate}
+}
+
+\slide{cr}{
+    \expl{}{
+        Les $2kg$ de lentilles coutent $5\EUR$.
+        Combien en coutent $10kg$ de lentilles ? $12kg$ de lentilles?
+    }
+}
+
+% \slide{cr}{
+%     \rmk{}{
+%         On peut présenter une situation de proportionnalité dans un \key{tableau de proportionnalite}.
+%     }
+% }
+
+
+\def\imgPrefix{dim-6e/exo-}
+\exoSlide{2p83}[6cm][1][\dim]
+
+\scn{Decouvrir les graphiques cartésiens}{}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{54-55-56p112}[10cm][1][\dim][qf]
+\def\imgPrefix{}
+
+\bsec{Graphiques cartésiens}
+
+\def\imgPrefix{dim-6e/act-}
+\slide{exo}{
+    \bvspace{-0.70cm}
+    \act{3p99}{\bvspace{-0.75cm}\imgp{3p99}[9cm]}[\dim]
+}
+
+\def\imgPrefix{}
+
+\slide{exo}{
+    \bvspace{-0.25cm}
+    \begin{center}
+        \begin{tikzpicture}[yscale = 0.75, xscale = 0.75]
+            \tkzInit[xmin=0,xmax=10,ymin=0,ymax=10]
+            \tkzGrid[sub,color=gradeColor!50!white,subxstep=5,subystep=0.1]        
+            % \tkzLabelX[step=10]
+            % \tkzLabelY[step=2]
+            \tkzDrawY[label={}]
+            \tkzDrawX[label= {}]
+        \end{tikzpicture}
+    \end{center}
+    % \imgp{graph-bg-alcoolemie}[7cm]
+}
+
+\slide{cr}{
+    \ssec
+    \vc{}{
+        Un \key{graphique cartésien} permet de présenter l'évolution d'une grandeur en fonction d'une autre.
+    }
+}
+
+\scn{Dessiner un graphique cartésien}
+
+\def\imgPrefix{dim-6e/qf-}
+\exoSlide{57p112}[10cm][1][\dim][qf]
+\def\imgPrefix{}
+
+\def\graph{
+    \begin{center}
+        \begin{tikzpicture}[yscale = 0.35, xscale = 0.75]
+            \tkzInit[xmin=0,xmax=12,ymin=0,ymax=20]
+            \tkzGrid[sub,color=gradeColor!50!white,subxstep=5,subystep=0.2]        
+            % \tkzLabelX[step=10]
+            % \tkzLabelY[step=2]
+            \tkzDrawY[label={}]
+            \tkzDrawX[label= {}]
+        \end{tikzpicture}
+    \end{center}
+}
+
+\slide{cr}{
+    \bvspace{-0.6cm}
+    \ifBeamer{\small}
+    \expl{}{%
+    Le tableau ci-dessous représente les températures moyennes à Issy-les-Moulineaux pour chaque mois de 2023.
+        
+        \vspace{0.1cm}
+        \wideFrame[9.2em]{
+            \def\cW{0.55cm}
+            \begin{tabular}{|c|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+                \hline
+                Mois & J & F & M & A & M & J & J & A & S & O & N & D \\
+                \hline
+                Température (\degres C) & 4,0 & 4,3 & 7,0 & 10,4 & 14,2 & 17,4 & 19,1 & 19,1 & 15,9 & 12,4 & 7,6 & 4,3 \\
+                \hline
+            \end{tabular}
+        }
+
+        \vspace{0.25cm}
+
+        Représenter les données du tableau dans un graphique cartésien.
+    }[\href{https://www.annuaire-mairie.fr/ensoleillement-issy-les-moulineaux.html}{https://www.annuaire-mairie.fr/}]
+    \bvspace{-0.8cm}
+
+    \ifArticle{\graph}
+    % \imgp{graph-bg-meteo}[7cm]
+}
+
+\ifBeamer{\slide{cr}{\graph}}
+
+\slide{exo}{
+    \exo{}{
+        Que pourrait représenter ce graphique à propos d'une salle de classe?
+        Le décrire avec le plus de précision possible.
+        Justifier et compléter le graphique ci-dessous.
+        \imgp{l-allure-de-la-courbe}[10cm]
+    }[\rpmc[31]]
+}
+
+\slide{cr}{
+    \rmk{}{
+        Les points sont :
+        \begin{enumerate}
+            \item représentés par des «+».
+            \item reliés par des segments.
+        \end{enumerate}
+    }
+}
+
+% \bsec{Reconnaître une situation de proportionnalité}
+
+\slide{exo}{%
+    \bvspace{-0.6cm}
+    \exo{}{
+        On a demandé aux élèves des trois classes de 6e du collège Anatole France combien d'animaux de compagnie vivaient avec eux.
+        On a représenté les résultats dans le diagramme suivant.
+        \bvspace{-0.25cm}
+        \imgp{nos-amis-les-betes}[9cm]
+    }[\rpmc[28]]
+}
+
+% \exoSlide{41p109,25p105}[10cm][1][\dim][dm]
+
+\slide{exo}{
+    Les affirmations suivantes sont-elles vraies ou fausses? Justifier.
+    \begin{enumerate}
+        \setItemColor[exo]
+        \item 21 élèves ont un seul animal de compagnie.
+        \item Il y a 75 élèves en 6e au collège Anatole France.
+        \item Les élèves qui ont deux animaux de compagnie sont trois fois plus nombreux que les élèves qui ont trois animaux de compagnie.
+        \item 70 élèves ont moins de trois animaux de compagnie.
+        \item Plus de la moitié des élèves ont au moins un animal de compagnie.
+    \end{enumerate}
+}

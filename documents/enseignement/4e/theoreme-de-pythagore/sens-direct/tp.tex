@@ -1,0 +1,71 @@
+% VARIABLES %%%
+\def\authors{\jules \ et \href{http://www.cellulegeometrie.eu/documents/pub/pub_14.pdf}{la Haute École en Hainaut}}
+\setGrade{4e}
+\def\assignmentNameWidth{6cm}
+\tp{Théorème de Pythagore}
+\def\imgPath{enseignement/4e/divisibilite-et-nombres-premiers/}
+%%
+
+\vspace*{-1cm}
+\hint{
+    \begin{itemize}
+        \item Bien lire les indications.
+        \item Répondre aux questions sur son cahier d'exercices.
+        \item Appeler M. Pesin à la fin de chaque partie.
+        \item Enregistrer les productions avec le nom : "NOM.S-tp-pythagore-partie-x.ggb"
+    \end{itemize}
+}
+\vspace*{-0.75cm}
+
+\section{Théorème de Pythagore classique}
+
+\begin{enumerate}
+    \item Sur \GeoGebra \def\iconPath{geogebra/}
+    faire un clique droit et désélectionner \tool{Afficher axes}[axes].
+    Dans \tool{Afficher Grille}[grid],
+    sélectionner : \tool{Pas de grille}.
+    \item Créer deux points $A$ et $B$. Puis créer le segment $[AB]$.\\
+    \hint{Outil à utiliser : \tool{Point}[dot] \tool{Segment}[segment]}
+    \item Créer une perpendiculaire à la droite $(AB)$ passant par $A$.
+    Puis placer $C$ sur cette perpendiculaire. Enfin, créer le segment $[CB]$.\\
+    \hint{Nouvel outil à utiliser : \tool{Perpendiculaire}[perpendicular]; il faut d'abord selectionner votre droite puis le point.}
+    \item Quelle est la nature du triangle $ABC$ ?
+    \item Sur chacun des côtés du triangle, créer des carrés.\\
+    \hint{Nouvel outil à utiliser : \tool{Polygone régulier}[regular-polygon],
+    après avoir sélectionné l'outil,
+    cliquer sur les deux premiers sommets du polygone et indiquer le nombre de sommets souhaité.
+    Attention, en fonction du premier sélectionné, le polygone se crée d'un côté du segment ou de l'autre.}
+    \item Quelle relation existe entre ces trois carrés ? Utiliser l'outil \tool{Aire}[area] pour le vérifier.
+\end{enumerate}
+
+\section{Pythagore avec des triangles équilatéraux}
+
+\begin{enumerate}
+    \item Dans un nouveau fichier \GeoGebra \def\iconPath{geogebra/} reproduire les trois premières étapes du \textbf{\color{Red}I.} pour obtenir un nouveau triangle $ABC$.
+    \item Sur chacun des côtés du triangle, créer des triangles équilatéraux.\\
+    \hint{Outil à utiliser : \tool{Polygone régulier}[regular-polygon]}
+    \item Mesurer l'aire de ces triangles. Que remarque-t-on ?\\
+    \hint{Outil à utiliser : \tool{Aire}[area]}
+    \item Émettre une conjecture commençant par :
+    «
+    \Sialors{un triangle est rectangle}{l'aire du triangle équilatéral construit sur l'hypoténuse \hole}
+    »
+\end{enumerate}
+
+\section{Pythagore avec des demi-cercles}
+
+\begin{enumerate}
+    \item Dans un nouveau fichier \GeoGebra \def\iconPath{geogebra/} reproduire les trois premières étapes du \textbf{\color{Red}I.} pour obtenir un nouveau triangle $ABC$.
+    \item Placer un point au milieu de chacun des côtés du triangle.\\
+    \hint{Outil à utiliser : \tool{Milieu ou centre}[center]}
+    \item Sur chacun des côtés du triangle, créer des demi-cercles avec l'outil.\\
+    \hint{Outil à utiliser : \tool{Secteur circulaire}[circular-sector],
+    après avoir sélectionné l'outil,
+    sélectionner d'abord le centre du demi-cercle puis les deux sommets du triangle désirés.
+    }
+    \item Mesurer l'aire des demi-disques. Que remarque-t-on ?
+    \item Émettre une conjecture.
+    \item Donner la formule de l'aire d'un disque. D'un demi-disque.
+    \item Prouver la conjecture.\\
+    \hint{Il faudra utiliser le Théorème de Pythagore et la distributivité.}
+\end{enumerate}

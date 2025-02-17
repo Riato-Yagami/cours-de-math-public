@@ -1,0 +1,378 @@
+% VARIABLES %%%
+\def\authors{CADOT - COURTIN - PESIN}
+% \date{\today}
+\def\longTitle{Les Puissances}
+\def\shortTitle{Puissances}
+%%
+
+\disableAnimation
+% \shortAnimation
+% \firstSlide
+
+\def\imgPath{stage-M2/4e/puissance/}
+\def\imgExtension{_myr_4e_2016.png}
+
+\newcommand{\powq}[2]{\iquestion{\pow{#1}{#2}}{#1^{#2}}}
+\newcommand{\powiq}[3]{\iquestion{#1^{#2}}{\pow{#1}{#2} = #3}}
+
+\scn{Notation puissance}{}
+
+\qf{
+    {$\pow{10}{3}$, $= 1000$},
+    {$6^2$, $= 36$},
+    {$10^2$, $= 100$},
+    {$\pow{2}{4}$, $= 16$},
+    {$\pow{9}{2}$, $= 81$}%
+}[10]
+
+\slide{COURS}{
+    \bchap{\longTitle}
+    \act{Myriade 1p76}{
+        \vspace{-1cm}
+        \img{\imgf{activite_1_p76}}[9.7cm]
+    }
+}
+
+\bsec{Puissance d'un nombre}
+
+\slide{}{
+    \ssec
+    \df{}{
+        Soient $n$ un entier supérieur ou égal à $1$ et $a$ un nombre relatif.
+        \begin{align*}
+            a^n = \palt{2}{
+                \lPowBrace{a}{n}
+            }
+        \end{align*}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        Ecrire avec la notation puissance:
+        \begin{enumerate}
+            \powq{6}{5}
+            \powq{(-5)}{3}
+            \powq{0,2}{4}
+            \iquestion{\pow{3}{2}\times \pow{2}{4}}{3^3 \times 2^4}
+        \end{enumerate}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        % \fsize{13pt}
+        Calculer:
+        \begin{enumerate}
+            \powiq{2}{5}{32}
+            \powiq{(-3)}{2}{9}
+            \iquestion{-3^2}{-3 \times -3 = -9}
+            \iquestion{2000^1}{2000}
+            \powiq{0}{12}{0}
+            \powiq{1}{6}{1}
+            \powiq{(\dfrac{2}{3})}{3}{\dfrac{8}{27}}
+            \powiq{0,5}{2}{0,25}
+        \end{enumerate}
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        Donner le signe du resultat:
+        \begin{enumerate}
+            \item $(-1)^{12} \palt{2}{\geqslant 0}$
+            \item $(-1)^{211} \palt{3}{\leqslant 0}$
+            \item $(-879)^{75} \palt{4}{\leqslant 0}$
+            \item $(-1984,6)^{2024} \palt{5}{\geqslant 0}$
+        \end{enumerate}
+    }
+
+    % \rmk{}{
+    %     Soit $a$ un nombre négatif et $n$ un entier,
+    %     $a^n$ est\palt{2}{positif } si\palt{2}{$n$ est pair },
+    %     et\palt{3}{négatif } si\palt{3}{$n$ est impair}.
+    % }
+}
+
+\slide{}{
+    \rmk{}{
+        Soit $a$ un nombre négatif et $n$ un entier,
+        $a^n$ est positif si $n$ est pair,
+        et négatif si $n$ est impair.
+    }
+}
+
+\exoList{2 p80,4 p80,6 p80}[Myriade p80]
+
+\exoslide{exo_2_p80}
+\exoslide{exo_4_p80}
+\exoslide{exo_6_p80}
+
+\scn{Première propriété sur les puissances de 10}{}
+
+\qf{
+    {Ecrire avec la notation puissance :\\$\pow{9}{6}$, $= 9^6$},
+    {$\pow{0,15}{4}$, $= 0{,}15^4$},
+    {Calculer :\\$2^4$, $= 16$},
+    {$10^4$, $= 1000$}%
+}[10]
+
+\bsec{Puissances de 10}
+\bsubsec{Propriétés}
+\slide{COURS}{
+    \ssec\ssubsec
+    \vspace{-0.5cm}
+    \act{Découverte}{
+        \vspace{-0.7cm}
+        \img{\imgf{activite_2_p76_1.a}}[10cm]
+        % \vspace{-0.3cm}
+        \small \color{BurntOrange} b. \color{black} Que remarque t-on?
+        \vspace{-0.3cm}
+        \img{\imgf{activite_2_p76_2.a}}[10cm]
+        \small \color{BurntOrange} b. \color{black} Que remarque t-on?
+    }
+}
+
+\slide{}{
+    \def\tenPow{1\underbrace{0...0}_{n \textrm{ zéros}}}
+    \pr{}{
+        Avec $n$ un entier positif, les puissances de $10$ s'écrivent :
+        \startQuestions
+        \begin{itemize}
+            \iquestion{10^n}{\tenPow}
+            \iquestion{10^{-n}}{
+                \dfrac{1}{10^n} 
+                = \dfrac{1}{\tenPow} 
+                = \underbrace{0,0..0}_{n \textrm{ zéros}}1
+            }
+        \end{itemize}
+    }
+}
+
+\exoList{21 p80,22 p82,23 p82}[Myriade 4e 2016 p82]
+
+\exoslide{exo_21_p82}
+\exoslide{exo_22_p82}
+\exoslide{exo_23_p82}
+
+\scn{Propriétés de calcule sur les puissance de 10}{
+    Etendu aux puissances de bases quelconques, mais non exigé
+}
+
+\qf{
+    {$10^6$, $= \powTen{6}$},
+    {$5^3$, $= 125$},
+    {$10^{-1}$, $= \powTen{-1}$},
+    {$10^2 \times 10^3$, $= \powTen{5}$},
+    {$10^{-3}$, $= \powTen{-3}$}%
+}[10]
+
+\exoList{24 p82,26 p82,27 p82, 30p83}[Myriade 4e 2016 p82-83][2]
+
+\exoslide{exo_24_p82}
+
+\slide{}{
+    \color{black} Soient $a$ et $b$ deux entiers.
+    \rmk{}{
+        \begin{equation*}
+            10^a\times 10^b = \palt{2}{10^{a+b}}
+        \end{equation*}
+    }
+}
+
+\exoslide{exo_26_p82}
+
+\slide{}{
+    \rmk{}{
+        \begin{equation*}
+            \dfrac{10^a}{10^b} = \palt{2}{10^{a-b}}
+        \end{equation*}
+    }
+}
+
+\exoslide{exo_27_p82}
+
+\slide{}{
+    \rmk{}{
+        \begin{equation*}
+            (10^a)^b = \palt{2}{10^{a \times b}}
+        \end{equation*}
+    }
+}
+
+\slide{}{
+    \pr{}{
+        Pour $x$ un nombre et $a$ et $b$ deux entiers.
+        \begin{align*}
+            x^a\times x^b = x^{a+b}
+            \iet
+            \dfrac{x^a}{x^b} = x^{a-b}
+            \iet 
+            (x^a)^b = x^{a\times b}
+        \end{align*}
+    }
+
+    \rmk{Convention}{
+        Pour $x$ un nombre: $x^0 = 1$ 
+    }
+}
+
+\slide{EXERCICES}{
+    \exo{}{
+        \multiColItemize{3}{
+            \item 30 p83
+        }
+    }
+    \exo{Devoir Maison}{
+        \multiColItemize{3}{
+            \item 29 p83 \item 15 p81 \item 16p81
+        }
+    }
+}
+
+\exoslide{exo_30_p83}
+
+\scn{Préfixes et Notation scientifique}{}
+
+\qf{
+    {$\pow{3}{5}$, $= 3^5$},
+    {$(\dfrac{1}{2})^3$, $= \dfrac{1}{8}$},
+    {$10^6$, $= \powTen{6}$},
+    {$\powTen{5}$, $= 10^5$},
+    {$10^{-4}\times 10^{2}$, $= \powTen{-2}$}%
+}
+
+\bsubsec{Prefixes}
+
+\slide{}{
+    \ssubsec
+    \def\cW{0.95cm}
+    \begin{tabular}{|C{2.5cm}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+        \hline
+        Prefixes & giga & méga & kilo & milli & micro & nano \\
+        \hline
+        Symbole & G & M & k & m & $\mu$ & n \\
+        \hline
+        Signification & $10^9$ & $10^6$ & $10^3$ & $10^{-3}$ & $10^{-6}$ & $10^{-9}$ \\
+        \hline
+    \end{tabular}
+
+    \expl{}{
+        \begin{itemize}
+            \item Un gigaoctet, noté Go, correspond à une quantité de données numériques de $10^9$ octets,
+            soit un milliard d'octets.
+            \item Un microgramme, noté $\mu$g, correspond à $10^{-6}$ grammes,
+            soit un millionième de gramme.
+        \end{itemize}
+    }
+}
+
+\exoList{34 p83}[Myriade 4e 2016 p83][2]
+
+\exoslide{exo_34_p83}
+
+\bsec{Notations scientifiques}
+
+\slide{COURS}{
+    \ssec
+    \act{Myriade 4p77}{
+        \vspace{-0.7cm}
+        \img{\imgf{activite_4_p77}}[9.7cm]
+    }
+}
+
+\bsubsec{Définition}
+
+\slide{}{
+    \ssubsec
+    \df{}{
+        La notation scientifique d'un nombre est la seule écriture de la forme:
+        \begin{equation*}
+            \palt{2}{a \times 10^n}
+        \end{equation*}
+        avec $a$ un nombre entre 1 et 10 (exclu) et $n$ un entier.
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \startQuestions
+        \begin{itemize}
+            \iquestion{\np{632000}}{6,32 \times 10^5}
+            \iquestion{0,0012}{1,2 \times 10^{-3}}
+        \end{itemize}
+    }
+}
+
+\exoList{41 p84,42 p84,52 p85}[Myriade 4e 2016 p84-85][2]
+
+\exoslide{exo_41_p84}
+\exoslide{exo_42_p84}
+\exoslide{exo_52_p85}
+
+\scn{Ordre de grandeur}{}
+
+\qf{
+    {Comparer avec le bon signe d'inégalité ($< \ou > \ou =$):\\ $10^6 \et 10^5$ , $10^6 > 10^5$},
+    {$10^2\times10^{-3} \et 10^{-2}\times10^3$, $10^2\times10^{-3} < 10^{-2}\times10^3$},
+    {$\dfrac{10^5}{10^2} \et \dfrac{10^5}{10^{-2}}$, $\dfrac{10^5}{10^2} < \dfrac{10^5}{10^{-2}}$},
+    {$\dfrac{1}{(10^2)^3} \et 10^{-5}$, $\dfrac{1}{(10^2)^3} < {10^-5}$}%
+}[10]
+
+% \qf{
+%     {Ecrire en notation scientifique:\\$\np{136000}$, $= 1{,}36\times10^5$},
+%     {$\np{50224}$, $= 5{,}0224\times10^4$},
+%     {$\np{0{,}002}$, $= 2\times10^{-3}$},
+%     {$\np{0{,}00002334}$, $=2{,}334 \times 10^{-6}$}%
+% }
+
+\bsubsec{Ordre de grandeurs}
+
+\slide{}{
+    \df{}{
+        L'\textbf{ordre de grandeur} d'un nombre est la puissance de 10 la plus proche de la grandeur étudiée.
+    }
+}
+
+\slide{}{
+    \expl{}{
+        \begin{align*}
+            A &= \np{32657000}\\
+            \alors A &= \palt{2}{\np{3,2657} \times 10^7}\\
+            \et \palt{3}{1 \times 10^7} < A &< \palt{3}{10\times 10^7}
+        \end{align*}
+        et \palt{4}{$\np{3,2657}$ est plus proche de 10 que de 1},
+        alors l'ordre de grandeur de $A$ est \palt{5}{$10^7$}.
+    }
+}
+
+\slide{}{
+    \vspace*{-0.5cm}
+    \begin{align*}
+        B &= \np{732000}\\
+        \alors B &= \palt{2}{\np{7,32} \times 10^5}\\
+        \palt{2}{\et 1 \times 10^5 < B } &\palt{2}{< 10\times 10^5}
+    \end{align*}
+    \palt{2}{et $7,32$ est plus proche de 1 que de 10,
+    alors l'ordre de grandeur de $B$ est $10\times 10^5 = 10^6$.}
+    \begin{align*}
+        C &= \np{0,000586}\\
+        \alors C &= \palt{3}{\np{5,86} \times 10^{-4}}\\
+        \palt{3}{\et 1 \times 10^{-4} < C} &\palt{3}{< 10\times 10^{-4}}
+    \end{align*}
+    \palt{3}{et $5,46$ est plus proche de 10 que de 1,
+    alors l'ordre de grandeur de $C$ est $10\times 10^{-4} = 10^{-3}$.}
+}
+
+\exoList{53 p86,58 p86,68 p87}[Myriade 4e 2016 p86-87][2]
+
+\exoslide{exo_53_p86}
+\exoslide{exo_58_p86}
+\exoslide{exo_68_p87}
+
+\scn{Exercices d'entrainements sur tous le chapitre}{}
+
+% \exoList{53 p86,58 p86,68 p87}[Myriade 4e 2016 p86-87][2]

@@ -1,0 +1,283 @@
+% VARIABLES %%%
+\setSeq{2}{Théorème de Pythagore - Sens direct}
+\setGrade{4e}
+\def\imgPath{enseignement/4e/theoreme-de-pythagore/sens-direct/}
+\setboolean{answer}{true}
+%%
+
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Pyth1.pdf}{Yvan Monka}}
+
+\avspace{0.1cm}
+
+\obj{
+    \item Utiliser la calculatrice pour déterminer une valeur approchée de la racine carrée d'un nombre positif.
+    \item Utiliser la racine carrée d'un nombre positif en lien avec des situations géométriques.
+    \item Utiliser le sens direct du Théorème de Pythagore.
+}
+
+\scn{Decouvrir l'égalité de Pythagore}
+\bsec{Egalité de Pythagore}
+
+\slide{qf}{
+    \dividePage{
+        \begin{enumerate}
+            \item Peut-on construire un triangle $ABC$ avec :
+            \begin{enumerate}
+                \item $AB = 5cm \pv BC = 11cm \pv AC = 4cm$
+                \item $AB = 8cm \pv BC = 9cm \pv AC = 6cm$
+            \end{enumerate}
+        \end{enumerate}
+    }{
+        \imgp{mi-c4/qf-5p426}[7cm]
+    }
+}
+
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \act{}{
+        \bvspace{-0.5cm}
+        \dividePage{%
+            \imgp{activite-decouverte-fig}[5cm]
+        }
+        {
+            \ifBeamer{\small}
+            \begin{enumerate}
+                \item Donner une expression mathématique permettant de calculer l'aire des carrés 1; 2 et 3.
+                \item Découper les quatre triangles et le carré fournis en annexe.
+                \item Disposer les quatre triangles dans le carré afin de former deux nouveaux carrés.
+                \item Quelles sont les aires des deux carrés formés ?
+            \end{enumerate}
+        }[0.35]
+    }[\href{https://drive.google.com/drive/folders/1ipPqxysYc8GHNOIT0u6HSi8cAnUiYfxx}{Audrey Belay}]
+}
+
+\slide{exo}{
+    \begin{enumerate}\setcounter{enumi}{4}
+        \item Disposer les quatre triangles dans le carré afin de former un seul carré.
+        \item Quelle est l'aire de ce carré ?
+        \item Quelle relation peut-on établir entre les aires des carrés 1, 2 et l'aire du carré 3 ?
+        \item Quelle relation peut-on établir entre les longueurs $a$, $b$ et $c$ ?
+    \end{enumerate}
+    \ifArticle{Annexe:\imgp{activite-decouverte-print}[6cm]}
+}
+
+\scn{Utiliser l'égalité de Pythagore}
+
+\slide{qf}{
+    \calculator  \\
+    Ces tableaux présentent-ils des situations de proportionnalité ?
+    \multiColEnumerate{2}{
+        \item\begin{tabular}{|C{1.5cm}|C{1.5cm}|}
+            \hline
+            89.08 & 147.39\\
+            \hline
+            52.4 & 86.7\\
+            \hline
+        \end{tabular}
+        
+        \item\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+            \hline
+            277.5 & 7.83 & 139.2\\
+            \hline
+            92.5 & 2.7 & 46.4\\
+            \hline
+        \end{tabular}
+    }
+}
+
+\slide{cr}{
+    \sseq\ssec
+    \df{}{
+        Dans un triangle rectangle, le côté opposé à l'angle droit est appelé \key{hypoténuse}.
+    }[\href{https://fr.wikipedia.org/wiki/Hypoténuse}{Wikipédia}]
+}
+
+\slide{cr}{
+    \setboolean{showID}{false}
+    \thm{de Pythagore}{
+        \Sialors{un triangle est rectangle}
+        {le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés.}
+        \color{black}
+        \begin{center}
+            \begin{tikzpicture}[scale=1]%,cap=round,>=latex]
+                \coordinate (A) at (-1.5cm,-1.cm);
+                \coordinate (C) at (1.5cm,-1.0cm);
+                \coordinate (B) at (1.5cm,1.0cm);
+                \draw (A) -- node[above] {$a$} (B) -- node[right] {$c$} (C) -- node[below] {$b$} (A);
+                \draw[color = BlueViolet] (1.25cm,-1.0cm) rectangle (1.5cm,-0.75cm);
+            \end{tikzpicture}\\
+            \color{ForestGreen}$c^2=a^2+b^2$
+        \end{center}
+    }
+    \setboolean{showID}{true}
+}
+
+\slide{cr}{
+    \expl{}{
+        Soit $ABC$ un triangle rectangle en $A$, tel que $AB = 6$, $AC = 8$, $BC=10$.
+        Verifier si le triangle $ABC$ respecte bien l'égalité de Pythagore.
+    }
+}
+
+\slide{exo}{\bvspace{-1cm}
+    \exo{}{
+        \vspace{-0.5cm}
+        \imgp{pythagore-a-trou-1}[11cm]
+    }
+}
+
+\def\imgPrefix{mi-c4/exo-}
+\exoSlide{3p430,4p430}[7cm][2][\mi]
+
+\scn{Decouvrir la racine carré}
+
+\def\imgPrefix{mi-c4/qf-}
+\exoSlide{3p426}[10cm][1][\mi][qf]
+
+\bsec{Racine carré}
+
+\slide{exo}{
+    \act{}{
+        \ifBeamer{\small \vspace{-0.5cm}}
+        \begin{enumerate}\bvspace{0.2cm}
+            \item Calculer l'aire d'un carré de côté:
+            \multiColEnumerate{4}{
+                \item $3\cm$ \item $12\cm$ \item $5,5\cm$ \item $x\cm$
+            }
+            \item Trouver le côté d'un carré d'aire:
+            \multiColEnumerate{4}{
+                \item $4\cmd$ \item $25\cmd$ \item $1\cmd$ \item $169\cmd$
+            }
+            \item Encadrer par deux entiers le côté d'un carré d'aire $40\cmd$.
+            \item Trouver le côté d'un carré d'aire $20.25\cmd$.
+            \item Approcher au centième près le côté d'un carré d'aire $2\cmd$.
+        \end{enumerate}
+    }
+}
+
+\scn{Utiliser la racine carré}
+
+\slide{qf}{
+    \multiColEnumerate{2}{
+        \item $1 - 6 = $
+        \item $10 + (-5) =$
+        \item $21 - (- 6) =$
+        \item $-15 + 4 = $
+        \item $7,6 - 10 = $
+        \item $-\dfrac{5}{4} + \dfrac{1}{4} = $
+    }
+}
+
+\slide{cr}{
+    \ssec
+    \df{}{
+        La \key{racine carrée} d'un nombre positif $x$ représente la longueur des côtés d'un carré dont l'aire est égale à $x$.
+        On la note $\sqrt{x}$.
+    }
+    \bvspace{-1cm}
+    \expl{}{\bvspace{-0.25cm}
+        \multiColEnumerate{2}{
+            \item $\sqrt{4} = \palt{2}{2}$
+            \item $\sqrt{9} = \palt{2}{3}$
+        }
+        \calculator
+        \multiColEnumerate{2}{
+            \item $\sqrt{5,5225} = \palt{2}{2,35}$
+            \item $\sqrt{12} \approx \palt{2}{3.46410161514}$
+        }
+    }
+}
+
+\slide{cr}{
+    \df{}{
+        Un \key{carré parfait} est le carré d'un entier positif.
+    }[\wiki{Carré_parfait}]
+
+    \expl{}{
+        \multiColItemize{5}{
+            \foreach \nb in {0,1,...,12} {
+                \item  $\nb^2 = \palt{2}{\ncalc{\nb*\nb}}$
+            }
+        }
+    }
+}
+
+\scn{Calculer une longueur grace au Théorème de Pythagore}
+
+\bsec{Calcul de longueur}
+
+\def\imgPrefix{mi-c4/qf-}
+\exoSlide{1p430}[8cm][1][\mi][qf]
+
+\slide{cr}{
+    \expl{}{
+        Soit $ABC$, un triangle rectangle en $A$, tel que $AB = 3\;\cm$ et $AC = 4\;\cm$.
+        Déterminer $BC$.
+    }
+
+    \mthd{}{
+        \nswr{
+            \Ona le triangle ABC rectangle en A.\\
+            \Alors d'après le théorème de Pythagore :
+            \begin{align*}
+                BC^2 &= AB^2 + AC^2\\
+                &= 3^2 + 4^2\\
+                &= 9 + 16\\
+                &= 25\\
+                \alors BC &= \sqrt{25}\\
+                \donc BC &= 5\;\centi\meter\\
+            \end{align*}
+        }
+    }
+}
+
+\def\imgPrefix{mi-c4/}
+\exoSlide{17p431,18p431,38p433}[8cm][2][\mi]
+
+\ifArticle{
+    \mthd{18p431}{
+        \Ona le triangle $LMN$ rectangle en $M$.\\
+        \Alors d'après le théorème de Pythagore :
+        \begin{align*}
+            LN^2 &= LM^2 + MN^2\\
+            14^2 &= LM^2 + 9^2\\
+            \alors LM^2 &= 14^2 - 9^2 \textrm{ (addition à trou)}\\
+            &= 196 - 81 = 115\\
+            \alors LM &= \sqrt{115}\\
+            \donc LM &\equiv 10,7\;\centi\meter\\
+        \end{align*}
+    }
+}
+
+\scn{Résoudre des problèmes mettant en jeu le théorème de pythagore}
+
+\def\imgPrefix{}
+\slide{qf}{
+    \begin{center}
+        \multiColEnumerate{1}{
+            \item \imgp{cn-18-4e-juin-2023}[9cm]
+            \item \imgp{cn-28-4e-juin-2022}[9cm]
+        } 
+    \end{center}
+}
+
+\slide{exo}{
+    \ifBeamer{\small \vspace{-0.75cm}}
+    \exo{}{%
+        Un professeur d'EPS trace un circuit de course à pied avec des plots :
+        \begin{itemize}
+            \item le plot n°2 est situé à 36 m au nord du plot n°1, qui est le plot de départ ;
+            \item le plot n°3 est situé à 69 m à l'est du plot n°2 ;
+            \item le plot n°4 est situé à 72 m au sud du plot n°3.
+        \end{itemize}
+        Chaque élève va d'un plot au suivant en ligne droite,
+        et parcourt un certain nombre de fois le circuit 1-2-3-4-1.
+        Il continue sur le même circuit jusqu'au plot d'arrivée,
+        placé sur ce circuit de telle sorte le trajet total ait une longueur de 1,5 km.
+        \begin{enumerate}
+            \item Où le professeur doit-il placer le plot d'arrivée ?
+            \item Combien de fois un élève doit-il parcourir le circuit ?
+        \end{enumerate}
+    }[\href{https://eduscol.education.fr/document/17305/download\#page=8}
+    {Utiliser les notions de géométrie plane pour démontrer}]
+}

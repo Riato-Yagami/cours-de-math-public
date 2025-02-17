@@ -1,0 +1,27 @@
+\input{header/special/scratch.tex}
+
+\dividePage{
+    \exo{}{
+        \begin{center}
+            \begin{scratch}
+                \blockinit{quand \greenflag est cliqué}
+                \blockpen{effacer tout}
+                \blockpen{stylo en position d'écriture}
+                \blockrepeat{répéter \ovalnum{2} fois}{
+                    \blockmove{avancer de \ovalnum{40} pas}
+                    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+                    \blockmove{avancer de \ovalnum{60} pas}
+                    \blockmove{tourner \turnright{} de \ovalnum{90} degrés}
+                }
+            \end{scratch}
+        \end{center}
+    }
+}{
+    \begin{enumerate}
+        \item Tracer un schéma codé de ce qui est construit par ce programme \Scratch dans l'encadré.
+        \input{resources/enseignement/6e/geometrie-plane/polygones/tikz/programme-de-construction-scratch.tex}
+        \item De quelle figure sagit-il ?
+        \nswr[3]{Ce programme \Scratch trace un rectangle.}
+    \end{enumerate}
+    % \answerSec{5}[\textcolor{exo}{2.}][Ce programme \Scratch trace un rectangle.]
+}[0.4]

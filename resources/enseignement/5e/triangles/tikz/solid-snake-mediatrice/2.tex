@@ -1,0 +1,27 @@
+\ctikz{
+    % \boundingBox[16][12][0.5pt][1][(-8,-3)]
+    \draw[thick] (-8,9) -- (8,9) -- (8,-3) -- (-8,-3) -- cycle;
+    \drawPoint{B}{-4}{6}
+    \drawPoint{A}{6}{1}
+    \drawPoint{$\Gamma$}{-5.15}{-1.05}
+    % \draw [thick,gradeColor] (-8,3.03) -- (-8,9);
+    % \draw [thick,gradeColor] (-8,9) -- (3.75,9);
+    % \draw [thick,gradeColor] (3.75,9) -- (0.11,1.71);
+    % \draw [thick,gradeColor] (-8,3.03) -- (-8,-3);
+    % \draw [thick,gradeColor] (-8,-3) -- (0.97,-3);
+    % \draw [thick,gradeColor] (0.97,-3) -- (0.11,1.71);
+    % \draw [thick,gradeColor] (0.97,-3) -- (8,-3);
+    % \draw [thick,gradeColor] (8,9) -- (3.75,9);
+    \nswr[0]{%
+        \fill[thick,color=gradeColor,fill=Red,fill opacity=0.10] (3.75,9) -- (0.11,1.71) -- (0.97,-3) -- (8,-3) -- (8,9) -- cycle;
+        \fill[thick,color=gradeColor,fill=Blue,fill opacity=0.10] (-8,3.03) -- (-8,9) -- (3.75,9) -- (0.11,1.71) -- cycle;
+        \fill[thick,color=gradeColor,fill=Green,fill opacity=0.10] (-8,3.03) -- (-8,-3) -- (0.97,-3) -- (0.11,1.71) -- cycle;
+        \draw[thick,answer,fill opacity=0.10] (1.51,3.25) -- (1.76,3.75) -- (1.25,4.01) -- (1,3.50) -- cycle; 
+        \draw[thick,answer,fill opacity=0.10] (-4.67,1.92) -- (-4.11,1.83) -- (-4.02,2.38) -- (-4.58,2.47) -- cycle; 
+        \draw[thick,answer,fill opacity=0.10] (0.98,0.08) -- (0.88,0.63) -- (0.32,0.53) -- (0.42,-0.03) -- cycle; 
+        \draw [thick,dashed] (-4,6) -- (6,1);
+        \draw [thick,dashed] (-4,6) -- (-5.15,-1.05);
+        \draw [thick,dashed] (-5.15,-1.05) -- (6,1);
+        % \draw [thick] (0.11,1.71) -- (-8,3.03);
+    }
+}

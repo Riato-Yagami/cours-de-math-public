@@ -1,0 +1,111 @@
+% VARIABLES %%%
+\def\theme{Nombre dérivé. Fonction dérivée.}
+\def\date{09/10/2023}
+%%%%%%%%%%%%%%%
+
+\leconInfo{
+    \csname 1re\endcsname
+}{
+    Limites
+}
+
+\df{Taux de variation}
+Soient $f$ definie sur un intervalle $\m {I}$,
+et $(x_0,h)\in\m{I}\times\m{R\backslash\{0\}}$
+tels que $x_0+h\in\m{I}$.\\
+Le \textbf{taux de variation} (ou \textbf{taux d'accroissement}) de la fonction $f$ entre $x_0$ et $x_0+h$ est:
+\begin{equation}\label{eq:1}
+    \dfrac{f(x_0+h)-f(x_0)}{h}
+\end{equation}
+
+\df{Fonction dérivable en un point}
+Une fonction $f$ est dite \textbf{dérivable} en $x_0$ si (\ref{eq:1})
+admet une certaine limite $l\in\m{R}$ quand $h$ tend vers $0$.\\
+$l$ est alors appelée \textbf{nombre dérivé} de $f$ en $x_0$, on le note $f'(x_0)$.\\
+\begin{equation*}
+    f'(x_0) = \lm{h}{0}\dfrac{f(x_0+h)-f(x_0)}{h}
+\end{equation*}
+
+\rmq{}
+On peut également définir le nombre dérivé de la façon suivante:
+\begin{equation*}
+    f'(x_0) = \lm{x}{x_0}\dfrac{f(x)-f(x_0)}{x-x_0}
+\end{equation*}
+
+\pr{}
+Soit $f$ une fonction dérivable en $x_0\in\m{R}$ de courbe représentative $\mathscr{C}_f$\\
+L'équation de la tangente à $\mathscr{C}_f$ au point d'abscisse $x_0$ est:
+\begin{equation*}
+    y = f'(x_0)(x-x_0) + f(x_0)
+\end{equation*}
+
+\df{Fonction dérivable sur un intervalle}
+Soit $f$ une fonction défini sur $\m{I}$. On dit que $f$ est \textbf{dérivable} sur $\m{I}$ si pour tout $x\in\m{I}$,
+le nombre dérivé $f'(x)$ existe.\\
+La fonction qui à $x\in\m{I}$ associe le nombre dérivé de $f$ en $x$ s'appelle la \textbf{fonction dérivé} et se note $f'$.
+
+\newpage
+
+\pr{dérivé de fonctions usuelles}
+
+\begin{center}
+    \begin{tabular}{l | c | c}
+
+        \textbf{fonction} &  \textbf{ensemble de dérivabilité} & \textbf{dérivé}\\
+        $x \mapsto k$ avec $k\in\m{R}$ 
+        & $\m{R}$ 
+        & $0$ \\
+        $x \mapsto x$ 
+        & $\m{R}$ 
+        & $1$ \\
+        $x \mapsto x^n$ avec $n\in\m{N}$
+        & $\m{R}$ 
+        & $nx^{n-1}$ \\
+        $x \mapsto \dfrac{1}{x^n}$ avec $n\in\m{N}$
+        & $\m{R^*}$ 
+        & $-\dfrac{n}{x^{n+1}}$ \\
+        $x \mapsto \sqrt{x}$
+        & $\m{R_+^*}$ 
+        & $\dfrac{1}{2\sqrt{x}}$ \\
+    \end{tabular}
+\end{center}
+
+\pr{Formule de base}
+
+\begin{center}
+    \begin{tabular}{c | c}
+        \textbf{fonction} & \textbf{dérivé}\\
+        $u+v$ & $u'+v'$\\
+        $ku$ & $ku'$\\
+        $uv$ & $u'v+uv'$\\
+        $\dfrac{1}{u}$ avec $u$ non nul sur $\m{I}$ & -$\dfrac{u'}{u^2}$\\
+        $\dfrac{u}{v}$ avec $v$ non nul sur $\m{I}$ & -$\dfrac{u'v-uv'}{v^2}$\\
+        $\sqrt{u}$ & $\dfrac{u'}{2\sqrt{u}}$\\
+
+    \end{tabular}
+\end{center}
+
+\thm{}
+Soit $f$ définie sur un intervalle $\m{I}$.
+\begin{itemize}
+    \item $f$ est croissante sur $\m{I}$ \ssi,
+    \pt{} $x\in\m{I}, f'(x) \geqslant 0$
+    \item $f$ est décroissante sur $\m{I}$ \ssi,
+    \pt{} $x\in\m{I}, f'(x) \leqslant 0$
+    \item $f$ est strictement croissante sur $\m{I}$ \ssi,\\
+    \pt{} $x\in\m{I}, f'(x) > 0$
+    \item $f$ est strictement décroissante sur $\m{I}$ \ssi,\\
+    \pt{} $x\in\m{I}, f'(x) < 0$
+\end{itemize}
+
+\pr{Fonction valeurs absolue}
+
+
+
+
+
+
+
+
+
+

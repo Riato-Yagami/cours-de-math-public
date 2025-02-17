@@ -1,0 +1,109 @@
+\newsec{sec}{pr}{Propriété}
+\newsec{sec}{df}{Définition}
+\newsec{sec}{thm}{Théorème}
+\newsec{sec}{scnSUB}{Séance}
+
+\newsec{sub}{cor}{Corollaire}
+\newsec{sub}{lem}{Lemme}
+\newsec{sub}{ctr}{Contraposée}
+\newsec{sub}{rcp}{Réciproque}
+\newsec{sub}{rmdr}{Rappel}
+\newsec{sub}{mthd}{Méthode}
+\newsec{sub}{vc}{Vocabulaire}
+\newsec{sub}{nt}{Notation}
+\newsec{sub}{hist}{Histoire}
+\newsec{sub}{axio}{Axiome}
+\newsec{sub}{objSUB}{Objectifs}
+
+\def\explColor{gray}
+\newsec{subsub}{rmk}{Remarque}
+\newsec{subsub}{expl}{Exemple}
+\newsec{subsub}{app}{Application}
+\newsec{subsub}{exo}{Exercice}
+\newsec{subsub}{corr}{Correction}
+\newsec{subsub}{act}{Activité}
+\newsec{subsub}{dmsec}{Devoir maison}
+
+\newsec{subsub}{nullsubsec}{}
+
+\newsec{subsub}{demoSUB}{$\rightarrow$ Démonstration}
+\newsec{subsub}{ticeSUB}{TICE}
+\newsec{subsub}{qfSUB}{\Large Questions flash}
+\newsec{sub}{rl}{Règle n\deg\therl}
+
+\newsec{subsub}{cdp}{Coup de pouce}
+
+\NewDocumentCommand{\demo}{mmo}{
+    \ifthenelse{\boolean{demonstration} \and \not \boolean{outline}}{
+        \demoSUB{#1}{
+            \ifNotNull{#2}{
+                \noindent #2 $\square$
+            }
+        }[#3]
+    }{
+    }
+}
+
+\NewDocumentCommand{\scn}{m O{}}{
+    \begin{sectionBox}{scn}
+        \scnSUB{#1}{#2}%
+        \vspace*{-0.12cm}
+    \end{sectionBox}
+}
+
+\newcommand{\scni}[2]{
+    \item \color{scn}#1 : \color{black} #2
+}
+
+\NewDocumentCommand{\tice}{mmmo}{
+    \ticeSUB{#2}{%
+    \vspace{-1.1cm}
+    \begin{flushright}%
+        \large%
+        \def\iconSize{20pt}%
+        #1%
+    \end{flushright}
+    #3}[#4]
+}
+
+\newcommand{\hint}[1]{
+    \ifthenelse{\boolean{outline}}{}{%
+        {\color{Black!70}\textit{Indication: #1}}%
+    }
+}
+
+\newcounter{qf}
+\newcounter{choice}
+\newcommand*{\choice}[1]{%
+    {\scalefont{0.75}\color{qf}\Alph{choice}.\color{black}}%
+    #1%
+    \stepcounter{choice}%
+}
+
+\newcommand*{\choicea}[1]{\setcounter{choice}{#1}%
+    {\scalefont{0.75}\color{qf}\Alph{choice}.\color{black}}%
+}
+
+\newcounter{qfs}
+\def\qfs{\stepcounter{qfs}\color{qf}\alph{qfs}) \color{black}}
+\def\sqf{\setcounter{qfs}{0} \stepcounter{qf}\color{blue}\arabic{qf}. \color{black}}
+
+\newcommand{\qfSlide}[1]{
+    \slide{qf}{
+        \setcounter{qf}{0}
+        \setcounter{qfs}{0}
+        #1
+    }
+}
+
+\newcommand{\qfRes}[1]{
+    \begin{enumerate}
+        \foreach \q in {#1}{\setcounter{choice}{1}%
+            \item \listElement{\q}{0}\palt{2}{\listElement{\q}{1}}
+        }
+    \end{enumerate}
+}
+
+\setul{0.4ex}{0.15ex}
+\newcommand*{\key}[1]{\setulcolor{\currentColor}\ul{\textbf{#1}}}
+% \newcommand*{\key}[1]{\sethlcolor{\currentColor!25}\hl{\textbf{#1}}}

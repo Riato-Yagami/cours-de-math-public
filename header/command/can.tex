@@ -1,0 +1,28 @@
+% Définition des exercices (peut être étendue avec d'autres exercices)
+% \newcommand{\can@4e@entrainement@22}{Le périmètre d'un rectangle de longueur $14,6$ et de largeur $5,5$ est :}
+% \newcommand{\can@4e@entrainement@23}{Compléter le calcul par le bon nombre :
+% $9 \times \dotfill = 36$}
+
+% % Commande pour générer le tableau
+% \NewDocumentCommand{\can}{>{\SplitList{,}}m}{%
+%     \renewcommand{\do}[1]{\expandafter\lookupAndInsertExo\expandafter{##1}}%
+%     \begin{tabular}{| M{1cm} | M{7cm} | M{5cm} |}
+%     \hline
+%     \docsvlist{#1} % Exécute la commande pour chaque item dans la liste
+%     \end{tabular}
+% }
+
+% % Recherche et insertion du contenu de l'exercice
+% \newcommand{\lookupAndInsertExo}[1]{%
+%     \ifcsname can@#1\endcsname
+%         \expandafter\gobbleAndInsertRow\csname can@#1\endcsname
+%     \else
+%         \errmessage{Exercice #1 non trouvé}
+%     \fi
+% }
+
+% % Insertion de la ligne du tableau avec le contenu de l'exercice
+% \newcommand{\gobbleAndInsertRow}[1]{%
+%     #1 & #1 & \\
+%     \hline
+% }

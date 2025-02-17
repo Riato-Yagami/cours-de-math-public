@@ -1,0 +1,21 @@
+\ctikz[0.45]{
+    % \boundingBox[11.76][10.56][0.5pt][1][(-2.41,-2.86)]
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (0,0) -- (89.85:1.13) arc (89.85:119.85:1.13) -- cycle;
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (0,0) -- (119.85:1.13) arc (119.85:149.85:1.13) -- cycle;
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (0,0) -- (149.85:1.13) arc (149.85:179.85:1.13) -- cycle;
+    \draw[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (2.70,1.18) -- (2.70,0.38) -- (3.50,0.38) -- (3.50,1.18) -- cycle;
+    \draw [thick] (3.50,1.18) circle (7.48cm);
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor] (89.85:1.13) arc (89.85:119.85:1.13);
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor] (119.85:1.13) arc (119.85:149.85:1.13);
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor] (149.85:1.13) arc (149.85:179.85:1.13);
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.35]  (0,0) --  plot[domain=-1.57:1.57,variable=\t]({1*7.48*cos(\t r)+0*7.48*sin(\t r)},{0*7.48*cos(\t r)+1*7.48*sin(\t r)}) -- cycle ;
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.28]  (0,0) --  plot[domain=3.14:4.71,variable=\t]({1*7.48*cos(\t r)+0*7.48*sin(\t r)},{0*7.48*cos(\t r)+1*7.48*sin(\t r)}) -- cycle ;
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.21]  (0,0) --  plot[domain=2.62:3.14,variable=\t]({1*7.48*cos(\t r)+0*7.48*sin(\t r)},{0*7.48*cos(\t r)+1*7.48*sin(\t r)}) -- cycle ;
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.14]  (0,0) --  plot[domain=2.09:2.62,variable=\t]({1*7.48*cos(\t r)+0*7.48*sin(\t r)},{0*7.48*cos(\t r)+1*7.48*sin(\t r)}) -- cycle ;
+    \draw [shift={(3.50,1.18)},thick,color=gradeColor,fill=gradeColor,fill opacity=0.07]  (0,0) --  plot[domain=1.57:2.09,variable=\t]({1*7.48*cos(\t r)+0*7.48*sin(\t r)},{0*7.48*cos(\t r)+1*7.48*sin(\t r)}) -- cycle ;
+    \draw[color=gradeColor] (9.2,1.65) node {France};
+    \draw[color=gradeColor] (-0.70,-2.86) node {Europe};
+    \draw[color=gradeColor] (-1.6,2.2) node {Amérique};
+    \draw[color=gradeColor] (-0.8,5.4) node {Afrique};
+    \draw[color=gradeColor] (1.88,7.70) node {Asie};
+}

@@ -1,0 +1,417 @@
+% VARIABLES %%%
+\def\authors{\jules}
+\setSeq{2}{Proportionnalité - Situation de proportionnalité et conversions}
+\setGrade{5e}
+
+\def\imgPath{enseignement/5e/proportionnalite/situation-de-proportionnalite-et-conversions/}
+\def\imgExtension{.png}
+
+% \firstSlide
+%%
+
+% Yvan Monka : https://www.maths-et-tiques.fr/telech/19Prop1.pdf
+\ifArticle{\vspace*{0.1cm}}
+
+\obj{
+    \item Reconnaître une situation de proportionnalité ou de non proportionnalité entre deux grandeurs.
+    \item Résoudre des problèmes de proportionnalité par passage à l'unité.
+    \item Effectuer des calculs de durées et d'horaires.
+    \item Effectuer des conversions d'unités de longueurs et de durées.
+    \item Partager une quantité en deux ou trois parts selon un ratio donné.
+}
+
+\scn{Passage à l'unité}{}
+
+\qfSlide{
+    Donner le résultat sous la forme décimale de :
+    \multiColEnumerate{2}{
+        \item $14 \times 3 = \palt{2}{\ncalc{14*3}} $
+        \item $3 \div 2 = \palt{2}{1,5} $
+        \item $6 \div 4 = \palt{2}{1,5} $
+        \item $5,6 \times 2 = \palt{2}{11,2} $
+        \item $\dfrac{1}{4} = \palt{2}{0.25}$
+        \item $\dfrac{3}{4} = \palt{2}{0.75}$
+    }
+}
+
+\bsec{Proportionnalité}
+\bsubsec{Définition}
+
+\slide{exo}{
+    \bvspace{-0.5cm}
+    \act{}{
+        \begin{itemize}
+            \item Pour une recette de dahl,
+            Christopher a besoin de 8 gousses d'ail pour 4 personnes.
+            Il déjeune avec ses amis Sarah et Jean.
+            Peut-il prévoir de combien de gousses d'ail il aura besoin ?\\
+            Pourquoi ? et si oui, combien ?
+            \item Jean l'a félicité 2 fois pour sa cuisine en 20 minutes.
+            Peut-il prévoir combien de félicitations il recevra de Jean en 40 minutes?\\
+            Pourquoi ? et si oui, combien ?
+        \end{itemize}
+        
+    }
+}
+
+\slide{cr}{
+    \sseq\ssec\ssubsec
+    \df{}{
+        Deux grandeurs sont dites \key{proportionnelles} si les valeurs de l'une s'obtiennent en multipliant les valeurs de l'autre par un même nombre non nul,
+        appelé le \key{coefficient de proportionnalité}.
+    }
+}
+
+\slide{cr}{
+    \expl{}{
+        Les $2kg$ de lentilles $5\EUR$.
+        Combien en coûtent $13kg$ de lentilles ?
+    }
+
+    \mthd{Passage à l'unité}{
+        \palt{2}{
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                Masse (en $\kilo\gram$)  & 2 & 1 & 13\\
+                \hline
+                Prix (en \EUR)    & 5 & 2,5 & 32,5\\
+                \hline
+            \end{tabular}
+        }
+        \palt{3}{Le coefficient de proportionnalité est 2,5.}
+    }
+}
+
+\slide{cr}{
+    \vc{}{
+        Un \key{tableau de proportionnalité} permet de présenter une situation de proportionnalité.
+        Sa deuxième ligne s'obtient en multipliant la première par le coefficient de proportionnalité.
+    }
+}
+
+\def\imgPrefix{mm-c4/exo-}
+\exoSlide{32p27,51p28,53p28}[7cm][2][\mm]
+
+\scn{Reconnaître une situation de proportionnalité}{}
+
+\def\imgPrefix{mm-c4/qf-}
+\exoSlide{15p26,17p26}[7cm][2][\mm][qf]
+
+\bsubsec{Reconnaître une situation de proportionnalité}
+
+\slide{cr}{
+    \bvspace{-0.25cm}
+    \ssubsec
+    \bvspace{-0.5cm}
+    \expl{}{
+        Une marque d'épices vend différentes tailles de pots de curcuma et de cumin.
+        Présenter avec leur prix dans les deux tableaux ci-dessous.\\
+
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            Masse de curcuma (en $\gram$)  & 45 & 60 & 90\\
+            \hline
+            Prix (en \EUR)    & 2.5 & 4 & 5\\
+            \hline
+        \end{tabular}\ifArticle{\quad}\ifBeamer{\\ \\}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            Masse de cumin (en $\gram$)  & 45 & 60 & 90\\
+            \hline
+            Prix (en \EUR)    & 2.7 & 4.05 & 5.4\\
+            \hline
+        \end{tabular}\\
+
+        Les prix de ces deux épices sont-ils proportionnels à leur masse ?
+    }
+}
+
+\slide{cr}{
+    \mthd{Reconnaître une situation de proportionnalité}{
+        \palt{2}{
+            On divise chaque nombre de la première grandeur par ceux de la 2e grandeurs correspondant.
+            Si on obtient le même résultat, il y a proportionnalité.
+        }
+    }
+}
+
+% \exoSlide{}[][][][]
+\scn{Conversions}
+
+\def\imgPrefix{}
+\slide{qf}{
+    \begin{enumerate}
+        \item \imgp{qf-cn-3-5e-mars-2023}[6cm]
+        \item \imgp{qf-cn-8-5e-mars-2023}[6cm]
+    \end{enumerate}
+}
+
+\scn{Distinction grandeurs et mesures}
+
+\bsec{Grandeurs}
+
+\bsubsec{Definition}
+
+% \newpage
+\slide{exo}{
+    \act{Trier ces mots en deux catégories que vous nommerez}{
+        \avspace{-0.5cm}\multiColItemize{2}{
+            \item volume
+            \item durée
+            \item centimètre
+            \item prix
+            \item euro
+            \item gramme
+            \item litre
+            \item surface
+        }
+    }
+}
+
+\slide{cr}{
+    \ssec\ssubsec
+    \df{}{
+        Une \key{grandeur} est une caractéristique d'un objet qui se mesure ou se calcule.
+    }
+}
+
+\slide{VIDEO}{
+    \bvspace{-1cm}
+    \hist{}{
+        \imgp{l-histoire-du-metre}[9cm]
+        \begin{center}
+            \hypersetup{urlcolor = gradeColor!90}
+            \href{https://youtu.be/PvlsXcOzNd0?si=P0qko7XnxAFT-KCm}
+            {L'histoire du mètre (J't'explique)}
+        \end{center}
+    }[\href{https://youtu.be/PvlsXcOzNd0?si=P0qko7XnxAFT-KCm}{J't'explique}]
+}
+
+\slide{}{
+    \vc{}{
+        On donne la valeur d'une grandeur en comparaison à une \key{unité de mesure} de référence.
+    }
+    
+    \bvspace{-1cm}
+    \expl{}{
+        \ifBeamer{\\}
+        \def\cW{1.8cm}
+        \wideFrame[7em]{
+            \begin{center}
+                \begin{tabular}{|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+                    \hline
+                    \color{Red}Grandeur & \palt{2}{Masse} & \palt{2}{Longueurs} & \palt{2}{Volume} & \palt{2}{Temps} & \palt{2}{Stockage}\\
+                    \hline
+                    \color{Red}Unité de mesure & \palt{2}{gramme} & \palt{2}{mètre} & \palt{2}{litre et mètre cube} & \palt{2}{seconde} & \palt{2}{octet}\\
+                    \hline
+                \end{tabular}
+            \end{center}
+        }
+    }
+}
+
+\scn{Utiliser les préfixes de mesures}
+
+\def\imgPrefix{mm-c4/}
+\exoSlide{13p58,14p58}[6cm][2][\mm][qf]
+
+\bsubsec{Conversions}
+
+\slide{exo}{
+    \act{Complète avec les unités manquantes}{\avspace{-0.5cm}
+        \multiColEnumerate{2}{
+            \item Une bouteille de $1,5 \palt{2}{ \liter}$
+            \item Une règle de $30 \palt{2}{ \centi\meter}$
+            \item Une feuille d'une épaisseur de $0,2 \palt{2}{ \milli\meter}$
+            \item Une bébé de $3 \palt{2}{ \kilo\gram}$
+            \item Un verre de $24 \palt{2}{ \centi\liter}$
+            \item Une carte mémoire de $64 \palt{2}{ \giga\octet}$
+            \item Un pont de $1,5 \palt{2}{ \kilo\meter}$
+        }
+    }
+}
+
+\def\imgPrefix{mm-c4/}
+\exoSlide{25p384,38p385}[7cm][2][\mm]
+
+\slide{cr}{\def\cW{1cm}
+    % \wideFrame[6em]{
+    \bvspace{-0.5cm}
+        \vc{}{
+            \ifBeamer{\\ \\}
+            \begin{tabular}{|C{3cm}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|C{\cW}|}
+                \hline
+                \key{Préfixe} & kilo & hecto & deca & \_ & déci & centi & milli \\
+                \hline
+                \key{Symbole} & \kilo & \hecto & \deca & \_ & \deci & \centi & \milli \\
+                \hline
+                \key{Signification} & $1000$ & $100$ & $10$ & $1$ & $0,1$ & $0,01$ & $0,001$ \\
+                \hline
+            \end{tabular}
+        }
+        \bvspace{-1cm}
+        \expl{}{
+            \multiColEnumerate{2}{
+                \item $1\deci\meter = \palt{2}{0,1} \meter$
+                \item $3,6\hecto\liter = \palt{2}{360} \liter$
+                \item $1\meter = \palt{2}{100} \centi\meter$
+                \item $1\kilo\octet = \palt{2}{100} \deca\octet$
+                \item $1\hecto\gram = \palt{2}{100 000} \milli\gram$
+                \item $12\centi\meter = \palt{2}{0.012} \deca\meter$ 
+            }
+        }
+    % }
+}
+
+\exoSlide{43p385}[9cm][1][\mm]
+
+\scn{Convertir des durées}
+
+\exoSlide{26p384,30p384}[9cm][1][\mm][qf]
+
+\bsubsec{Durées}
+
+\slide{exo}{
+    \act{}{
+        Un pilote de kart parcours 90 km en trois-quarts d'heure.
+        En imaginant qu'il soit capable de maintenir cette vitesse,
+        combien de kilomètres aura-t-il parcouru en 1 heure ?
+    }
+}
+
+\slide{cr}{
+    \ssubsec
+    \pr{}{
+        \multiColItemize{3}{
+            \item $1\hour = \palt{2}{60}\minute$
+            \item $1\minute = \palt{2}{60}\second$
+            \item $1\textrm{ jour} = \palt{2}{24}\hour$
+        }
+    }
+
+    \expl{}{
+        \begin{enumerate}
+            \item Combien y'a-t-il de secondes dans une journée ?
+            \item Convertir $78\min$ en heures.
+            \item Convertir $7292\sec$ au format heures, minutes, secondes.
+        \end{enumerate}
+    }
+}
+
+% \slide{exo}{
+%     \exo{}{
+%         On dispose de deux robinets.
+%         Le premier est capable de remplir un réservoir d'eau de 24 L en 1 minute,
+%         le second peut remplir ce même réservoir en 2 minutes.
+%         Ouvrant les deux robinets au même moment,
+%         combien de temps faudrait-il pour remplir un jacuzzi avec 1 080 L d'eau?
+%         \multiColEnumerate{4}{
+%             \item 15 min
+%             \item 67,5 min
+%             \item 135 min
+%             \item 30 min
+%         }
+%     }[\rpmc[162]]
+% }
+
+% \bsubsec{Grandeurs proportionnelles}
+
+\scn{Problème de proportionnalité}
+
+\exoSlide{27p384}[9cm][1][\mm][qf]
+
+\slide{exo}{
+    \exo{}{
+        \begin{enumerate}
+            \item Le périmètre d'un cercle est-il proportionnel à son rayon?
+            \item L'aire d'un carré est-elle proportionnelle à la longueur de ces côtés?
+        \end{enumerate}
+    }
+}
+
+\slide{exo}{
+    \exo{}{
+        On dispose de deux robinets.
+        Le premier est capable de remplir un réservoir d'eau de 24 L en 1 minute,
+        le second peut remplir ce même réservoir en 2 minutes.
+        Ouvrant les deux robinets au même moment,
+        combien de temps faudrait-il pour remplir un jacuzzi avec 1 080 L d'eau?
+        \multiColEnumerate{4}{
+            \item 15 min
+            \item 67,5 min
+            \item 135 min
+            \item 30 min
+        }
+    }[\rpmc[162]]
+}
+
+\scn{Decouvrir les ratios}
+
+\bsec{Ratio}
+
+\exoSlide{28p384}[9cm][1][\mm][qf]
+
+\slide{exo}{
+    \act{}{
+        \begin{enumerate}
+            \item Pour faire un dahl formidable,
+            il faut mettre du lait de coco et de l'eau dans le ratio 3 pour 2 (noté $3 : 2$).
+            Combien faut-il ajouter d'eau pour $150\milli\liter$ de lait de coco?
+            \item Afin d'améliorer encore les saveurs,
+            on peut ajouter un peu de sauces piquante.
+            La recette indique le ratio $1:9:6$. A quel nombre du ratio peut correspondre la sauce piquante?
+        \end{enumerate}
+    }
+}
+\slide{cr}{
+    \ssec
+
+    \df{}{
+        Un \key{ratio} exprime une comparaison entre plusieurs quantités.
+    }[\href{https://pedagogie.ac-montpellier.fr/sites/default/files/ressources/Les\%20ratios\%20au\%20cycle\%204.pdf\#page=6}{Académie de Montpellier}]
+}
+
+\slide{}{
+    \expl{}{
+        Assan et Clara se partagent les 140 bonbons qu'ils ont obtenus à Halloween.
+        Clara en récupère 60.
+        \begin{enumerate}
+            \item Dans quel ratio se sont-il partagé ces bonbons?
+            \item Quel fraction des bonbons récupère Assan?
+            \item Si Clara récupère 9 bonbons et que l'on reste dans le même ratio,
+            combien Assan v'a-t-il en récupèrer?
+        \end{enumerate}
+    }
+}
+
+\scn{Utiliser les ratios}
+
+\slide{qf}{
+    \exo{}{
+        Recette de cocktail sans alcool :
+        \begin{itemize}
+            \item Jus d'orange, grenadine dans le ratio 3:2
+            \item Cola, limonade, jus de citron, dans le ratio 4:5:2
+        \end{itemize}
+        \begin{enumerate}
+            \item Pour $15\centi\liter$ combien faut-il de grenadine.
+            \item Pour $20\centi\liter$ de limonade combien faut-il de cola et jus de citron.
+        \end{enumerate}
+    }
+}
+
+\slide{exo}{
+    \bvspace{-0.75cm}
+    \exo{}{
+        \begin{enumerate}
+            \item Comment partager 48 macarons entre Simon et Mandy dans le ratio $5:11$?
+            \item Ahmed, Simon et Mandy se partagent des macarons dans le ratio $4:3:2$.
+            Simon en a 9, combien en ont Ahmed et Mandy?
+            \item Simon et Mandy ont réalisé un certain nombre de macarons dans le ratio $5:8$.
+            Sachant que Mandy,
+            plus expérimentée,
+            a fait 66 macarons de plus que Simon,
+            combien Mandy en a préparé?
+        \end{enumerate}
+    }[\rpmc[63]]
+}

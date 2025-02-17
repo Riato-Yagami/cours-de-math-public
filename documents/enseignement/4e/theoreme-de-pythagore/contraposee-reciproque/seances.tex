@@ -1,0 +1,503 @@
+% VARIABLES %%%
+\setSeq{4}{Théorème de Pythagore - Contraposée et réciproque}
+\setGrade{4e}
+\def\imgPath{enseignement/4e/theoreme-de-pythagore/contraposee-et-reciproque/}
+
+% \forPrint
+% \setboolean{answer}{true}
+
+\def\ym{https://www.maths-et-tiques.fr/telech/19Pyth2.pdf}
+%%
+
+\obj{
+    \item Comprendre les notions de réciproque et de contraposée.
+    \item Utiliser la contraposée du Théorème de Pythagore pour montrer qu'un triangle n'est pas rectangle.
+    \item Utiliser la réciproque du Théorème de Pythagore pour montrer qu'un triangle est rectangle.
+    \item Déterminer si un triangle est rectangle ou non.
+}
+
+\obj{
+    \item Reconnaitre sur un graphique une situation de proportionnalité ou de non proportionnalité.
+    \item Calcule d'une quatrième proportionnelle.
+    \item Utiliser une formule liant deux grandeurs dans une situation de proportionnalité.
+    \item Résoudre des problèmes en utilisant la proportionnalité dans le cadre de la géométrie.
+}[Flash]
+
+\scn{Découvrir des notions de logiques ; la réciproque}
+
+\slide{qf}{\bvspace{-0.35cm}
+    \begin{enumerate}
+        \item Les tableaux suivants représentent-ils des situations de proportionnalité ?
+        Utilisez une calculatrice pour vérifier vos hypothèses.
+        \multiColEnumerate{1}{
+            \item \Propor[Simple]{1/2,6/12,3/5,10/20}
+            \item \Propor[Simple]{2/3,6/9,30/45}
+        }
+        \item Essayez ensuite de justifier vos réponses sans calculatrice en expliquant votre raisonnement.
+    \end{enumerate}
+}
+
+\bsec{Logique}
+\bsubsec{Réciproque}
+
+\slide{exo}{\bshrink
+    \act{}{
+        \begin{enumerate}
+            \item « \Sialors{c'est un triangle}{c'est un polygones à trois sommets} » est une \key{proposition}.  
+            Est-elle vraie ? Justifie ta réponse.  
+            
+            \item « \Sialors{c'est un triangle}{c'est un polygones à quatre sommets} » est une autre proposition.  
+            Est-elle vraie ? Justifie ta réponse.  
+            
+            \item La première proposition est composée de deux parties :  
+            \multiColItemize{1}{
+                \item l'\key{antécédent} : « c'est un triangle »,
+                \item le \key{conséquent} : « c'est un polygones à trois sommets ».
+            }  
+            On appelle \key{réciproque} d'une proposition la phrase qu'on obtient en inversant l'antécédent et le conséquent.  
+            Écris la réciproque de la première proposition.
+            Est-elle vraie ? \saveenumi
+        \end{enumerate}
+    }[\href{http://www.mathsaharry.com/aw/52.pdf}{Math à Harry}]
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item Les propositions suivantes sont-elles vraies ?
+        Écris leurs réciproques et détermine si elles sont vraies.
+        \multiColEnumerate{1}{
+            \item \Sialors{c'est un carré}{c'est un rectangle avec tous ses côtés égaux}
+            \item \Sialors{il peut pondre des œufs}{c'est un oiseau}
+            \item \Sialors{c'est un rectangle}{c'est un quadrilatère dont tous les opposés sont parallèles} 
+            \item \Sialors{c'est un rectangle}{c'est un carré}
+            \item \Sialors{$AB = BC$}{$B$ est le milieu de $[AC]$}
+        } 
+    \end{enumerate}
+}
+
+\slide{cr}{\bsmall
+    \ssec
+    \ssubsec
+
+    \df{}{
+        On appelle \key{réciproque}
+        d'une proposition :
+        {« \Sialors{$A$}{$B$} »}
+        ; la proposition :
+        {« \Sialors{$B$}{$A$} »}.
+    }
+    
+    \rmk{}{
+        Une proposition peut être vraie sans que sa réciproque le soit, et inversement.
+    }
+
+    \expl{}{
+        La proposition « \Sialors{$[AB]$ et $[CD]$ ne se coupent pas}{$[AB]$ et $[CD]$ sont parallèles}»
+        est \nswr{fausse}.\\
+        Sa réciproque: \nswr{« \Sialors{$[AB]$ et $[CD]$ sont parallèle}{$[AB]$ et $[CD]$ ne se coupent pas}»}
+        est \nswr{vrai}.
+    }
+}
+
+\scn{Découvrir des notions de logiques ; la contraposée}
+
+\slide{qf}{\calculator \\ Completer les tableaux suivants :
+    \multiColEnumerate{3}{
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{6/5,\nswr{\np{2.4}}/2}
+        \end{center}
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{\np{237.6}/\nswr{66},\np{46.8}/13}
+        \end{center}
+        \item \begin{center}
+            \Propor[Simple,
+            Math,
+            Stretch=1.25,%
+            ]{\nswr{12}/18,-3/-4.5}
+        \end{center}
+    }
+}
+
+\bsubsec{Contraposée}
+
+\slide{exo}{
+    \ssubsec
+    \act{}{
+        On appelle \key{contraposée} d'une proposition
+        {« \Sialors{$A$}{$B$} »}
+        la proposition obtenue en écrivant :  
+        {« \Sialors{non $B$}{non $A$} »}.
+        \begin{enumerate}
+            \item La contraposée de la proposition : «\Sialors{c'est un triangle}{il a trois côtés}».
+            est donc «\Sialors{il n'a pas trois côtés}{ce n'est pas un triangle}» Est-elle vraie ? \saveenumi
+        \end{enumerate}  
+    }
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item Les propositions suivantes sont-elles vraies ? Écris leurs contraposées et dis si elles sont vraies :  
+        \multiColEnumerate{1}{ 
+            \item \Sialors{$x=7$}{$x$ est un nombre premier}
+            \item \Sialors{c'est un nombre positif}{il est strictement inférieur à zéro}
+            \item \Sialors{il est à Issy-les-Moulineaux}{il n'est pas en Espagne}  
+            \item \Sialors{$AB=BC$}{$B$ est le milieu de $[AC]$} 
+        }
+        \item Que remarques-tu ?
+    \end{enumerate}
+}
+
+\slide{cr}{
+    \df{}{
+        On appelle \key{contraposée}
+        d'une proposition ;
+        {« \Sialors{$A$}{$B$} »} ;
+        la proposition : 
+        {« \Sialors{non $B$}{non $A$} »}.  
+    }
+
+    \rmk{}{
+        Une proposition et sa contraposée sont toujours soit toutes les deux vraies,
+        soit toutes les deux fausses.
+    }
+
+    \expl{}{
+        La proposition « \Sialors{c'est un triangle est équilatéral}{ses trois côtés sont égaux} »  
+        est \nswr{vraie}.  
+        Sa contraposée: \nswr{« \Sialors{ses trois côtés ne sont pas égaux}{ce n'est pas un triangle équilatéral} »},
+        est \nswr{également vraie}.
+    }
+}
+
+\scn{Appliquer ses connaissances sur la contraposée et la réciproque au Théorème de Pythagore}
+
+\slide{qf}{
+    \calculator
+    \exo{}{
+        Sachant que huit briques de masse identique pèsent \Masse{13.6},
+        calcule la masse de six de ces briques.
+    }[\afa{4e}[6]]
+}
+
+\bsec{Contraposée du Théorème de Pythagore}
+
+\slide{exo}{\bshrink
+    \act{}{\bvspace{-1cm}
+        \def\crossSize{0.15}
+        \ctikz[1]{
+            \draw[gray!40] (-1,-4) rectangle (11,3);
+            \draw [penciline,thick] (8.2,1.76)-- (5.28,-1.84);
+            \draw [penciline,thick] (5.28,-1.84)-- (9.5,-0.3);
+            \draw [penciline,thick] (9.5,-0.3)-- (8.2,1.76);
+            \draw [penciline,thick] (2.76,-2.24)-- (3.84,-0.56);
+            \draw [penciline,thick] (3.84,-0.56)-- (0.34,1.22);
+            \draw [penciline,thick] (0.34,1.22)-- (2.76,-2.24);
+            \drawPoint{D}{3.84}{-0.56}
+            \drawPoint{E}{0.34}{1.22}
+            \drawPoint{F}{2.76}{-2.24}
+            \drawPoint{G}{8.20}{1.76}
+            \drawPoint{H}{9.50}{-0.30}
+            \drawPoint{I}{5.28}{-1.84}
+            \draw (3.48,-1.38) node[anchor=north west] {4cm};
+            \draw (0.92,-0.74) node[anchor=north west] {5cm};
+            \draw (2.06,0.92) node[anchor=north west] {6cm};
+            \draw (5.72,0.4) node[anchor=north west] {5cm};
+            \draw (7.62,-1.22) node[anchor=north west] {12cm};
+            \draw (9,1.3) node[anchor=north west] {13cm};
+        }
+    }
+}
+
+\slide{exo}{
+    Pour les triangles $EDF$ et $GHI$, répondre aux questions suivantes :
+    \begin{enumerate}\setItemColor{act}
+        \item Ce triangle respect-ils l'égalité de Pythagore ?
+        \item En utilisant vos connaissances sur le théorème de Pythagore,
+        pouvez-vous conclure si le triangle est rectangle ou non ?
+        Justifiez votre réponse en précisant l'outil de logique utilisé.
+    \end{enumerate}
+}
+
+\slide{cr}{
+    \ssec
+    \bvspace{-0.5cm}
+    \ctr{du théorème de Pythagore}{
+        Dans un triangle $ABC$.
+        \Sialors{$AB^2 \neq AC^2 + BC^2$}{le triangle $ABC$ n'est pas rectangle en $C$}
+    }
+    \bvspace{-0.75cm}
+    \expl{}{
+        Soit $NEZ$ est un triangle tel que : $NE = \Lg{8}, EZ = \Lg{16}\et ZN = \Lg{14}$.\\
+        Démontrer que le triangle n'est pas rectangle.\\
+        \nswr[5]{
+            \begin{itemize}
+                \item $NE$ est le plus long côté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+                \item D'une part :$EZ^2 = 16^2 = 256$
+                \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
+                \item Alors : $EZ^2 \neq NE^2 + ZN^2$
+                \item D'après la contraposée du théorème de Pythagore le triangle $NEZ$ n'est pas rectangle.
+            \end{itemize}
+        }
+    }
+}
+
+\bookSlide{29p431}[12cm]
+
+\ifArticle{\nswr[0]{
+    \begin{itemize}
+        \item On commence par convertir les longueurs en \Lg{}. (On aurait également pu les convertir toutes en \Lg[dm]{}).
+        \multiColItemize{3}{
+            \item $PU = \Lg[dm]{3.6} = \Lg{36}$ \item $PF = \Lg[dm]{5.5} = \Lg{55}$ \item $UF = \Lg{42}$
+        }
+        \item \Pythagore[Reciproque,Unite=cm]{PUF}{55}{36}{42} %PF PU UF 
+        % \item $NE$ est le plus long côté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+        % \item D'une part :$EZ^2 = 16^2 = 256$
+        % \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
+        % \item Alors : $EZ^2 \neq NE^2 + ZN^2$
+        % \item D'après la contraposée du théorème de Pythagore le triangle $NEZ$ n'est pas rectangle.
+    \end{itemize}
+}}
+
+\scn{Démontrer la réciproque du théorème de Pythagore sur un cas particulier}
+
+\def\repere{%
+    \tkzInit[xmin=0,xmax=4,ymin=0,ymax=3]
+    \tkzGrid[sub,color=gradeColor!50!white,subxstep=1,subystep=0.5]        
+    \tkzLabelX[step=1]
+    \tkzLabelY[step=1]
+    \tkzDrawY[label={Prix (en \euro)}, above , step=0.5]
+}
+\slide{qf}{\bsmall
+    \hspace{-1.25cm}\wideFrame[4em]{%
+        \def\size{0.65}\def\crossWidth{0.25mm}%
+        \multiColItemize{3}{
+            \item[]\ctikz[\size]{
+                \repere
+                \tkzDrawX[label={Poire}, below right, step=1]
+                \drawPoint{}{1}{1}[Red]
+                \drawPoint{}{2}{1.5}[Red]
+                \drawPoint{}{3}{2.5}[Red]
+                \drawPoint{}{4}{3}[Red]
+            }
+            \item[]\ctikz[\size]{
+                \repere
+                \tkzDrawX[label={Orange}, below right, step=1]
+                \drawPoint{}{1}{0.5}[Red]
+                \drawPoint{}{2}{1}[Red]
+                \drawPoint{}{3}{1.5}[Red]
+                \drawPoint{}{4}{2}[Red]
+            }
+            \item[]\ctikz[\size]{
+                \repere
+                \tkzDrawX[label={Kiwi}, below right, step=1]
+                \drawPoint{}{1}{1}[Red]
+                \drawPoint{}{2}{1.5}[Red]
+                \drawPoint{}{3}{2}[Red]
+                \drawPoint{}{4}{2.5}[Red]
+            }
+        }
+        \vspace{-0.5cm}
+        \begin{enumerate}
+            \item Le prix du lot de chacun des trois fruits est-il proportionnel à la quantité achetée ?
+            \item Que remarquez-vous sur la disposition des points dans le cas de proportionnalité ?
+        \end{enumerate}
+    }
+}
+
+\bsec{Réciproque du théorème de Pythagore}
+
+\slide{exo}{
+    \act{}{
+        On va démontrer pour un exemple que la réciproque du théorème de Pythagore est vraie.
+        Soit $ABC$ un triangle tel que : $AB = \Lg{5}; AC = \Lg{4}; BC = \Lg{3}$.
+        \begin{enumerate}
+            \item Tracer le triangle $ABC$.
+            \item Verifier si $AB^2 = AC^2 + BC^2$. Est-ce que le triangle $ABC$ peut être rectangle?
+            \item Contruire une droite perpendiculaire à la droite $(BC)$ passant par $C$.
+            \item Placer un point $D$ sur cette perpendiculaire tel que $DC = AC$
+            et $D$ soit placé à «l'opposé» de $A$. \saveenumi
+        \end{enumerate}
+    }[\href{https://clg-monnet-briis.ac-versailles.fr/La-reciproque-du-theoreme-de-Pythagore}{Collège Jean Monnet}]
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item Quelle est la nature du triangle $BCD$?
+        \item Calculer la longueur $BD$.
+        \item Comparer les triangles $ABC$ et $BCD$.
+        \item Conclure sur la nature du triangle $ABC$.
+    \end{enumerate}
+    De manière similaire on pourait prouver que la réciproque du théorème de Pythagore est toujours vraie.
+}
+
+\scn{Démontrer qu'un triangle est rectangle}
+
+\slide{qf}{
+    Les grandeurs suivantes sont-elles proportionnelles entre elles ?
+    \begin{enumerate}
+        \item Le périmètre d'un carré et la longueur de son côté.
+        \item L'aire d'un carré et la longueur de son côté.
+        \item Le périmètre d'un rectangle et sa largeur (en supposant que la longueur reste fixe).
+        \item Le périmètre d'un cercle et la longueur de son rayon.
+    \end{enumerate}
+    \nswr[0]{%
+        Deux grandeurs sont proportionnelles si l'une peut être obtenue en multipliant l'autre par un coefficient constant,
+        c'est le coefficient de proportionnalité.
+        \begin{enumerate}
+            \item Le périmètre d'un carré $P$ et la longueur de son côté $c$ sont proportionnelle car $P = 4 \times c$. Le coefficient de proportionnalité est $4$.  
+            \item L'aire $A$ d'un carré n'est pas proportionnelle à la longueur $c$ de son côté, car $A = c^2$.
+            La relation entre ces grandeurs n'est pas une multiplication par un coefficient constant.
+            \item Le périmètre $P$ d'un rectangle et sa largeur $l$, avec une longueur $L$ fixe :  
+            $P = 2L + 2l$. La relation entre $P$ et $l$ n'est pas proportionnelle, car $2L$ est un terme constant qui ne dépend pas de $l$.  
+            \item Le périmètre $P$ d'un cercle est proportionnel à son rayon $r$, car $P = 2\pi \times r$. Le coefficient de proportionnalité est $2\pi$.  
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \ssec
+
+    \bvspace{-0.5cm}
+
+    \rcp{du théorème de Pythagore}{
+        Dans un triangle ABC.
+        \Sialors{$AB^2 = AC^2 + BC^2$}
+        {le triangle $ABC$ est rectangle en $C$}
+    }
+
+    \bvspace{-0.75cm}
+
+    \expl{}{
+        Soit $CGT$ est un triangle tel que : $CG = \Lg{45}, GT = \Lg{28}\et TC = \Lg{53}$.\\
+        Démontrer que le triangle $CGT$ est rectangle.\\
+        \nswr[6]{
+            \begin{itemize}
+                \item $TC$ est le plus long côté, il sagirait donc de l'hypothénus si le triangle était rectangle.
+                \item D'une part :$TC^2 = 53^2 = 256$
+                \item D'autre part : $NE^2 + ZN^2 = 8^2 + 14^2 = 64 + 196= 260$
+                \item Alors : $EZ^2 \neq NE^2 + ZN^2$
+                \item D'après la réciproque du théorème de Pythagore le triangle $CGT$ est rectangle en $G$.
+            \end{itemize}
+        }
+    }
+}
+
+\slide{cr}{
+    \rmk{}{
+        On peut alors dire qu'un triangle $ABC$ est rectangle en $A$,
+        \key{si et seulement si} $BC^2=AB^2+BA^2$.
+    }[\wiki{Équivalence_logique}]
+}
+
+\slide{qf}{
+    \begin{enumerate}
+        \item Sachant que la longueur $\mathcal{P}$ d'un cercle
+        est proportionnelle à son rayon $r$
+        avec un coefficient de proportionnalité $2\pi$.
+        Donnez la formule permettant de calculer $\mathcal{P}$ en fonction de $r$.
+        \item Sachant que la tension $U$ aux bornes d'une résistance
+        est proportionnelle à l'intensité $I$ du courant qui la traverse
+        avec un coefficient de proportionnalité égal à la valeur de la résistance $R$.
+        Donnez la formule permettant de calculer $U$ en fonction de $I$.
+    \end{enumerate}
+}
+
+
+\bookSlide{27p431,26p431,36p432}[7cm][2]
+
+\nswr[0]{
+    \begin{itemize}
+        \item 27p431 :\begin{enumerate}
+            \item
+            \ctikz[0.5]{
+                \draw[gray!40] (-0.5,-4.2) rectangle (11.2,3.5);
+                \drawPoint{U}{7.76}{2.3}
+                \drawPoint{V}{9.27}{-2.89}
+                \drawPoint{W}{0.85}{0.29}
+                \draw[color=gradeColor] (4.32,1.89) node {\Lg{7.2}};
+                \draw[color=gradeColor, below] (4.78,-1.59) node {\Lg{9}};
+                \draw[color=gradeColor] (9.7,0.09) node {\Lg{5,4}};
+                \draw [thick] (7.76,2.30) -- (0.85,0.29) -- (9.27,-2.89) -- (7.76,2.30) -- cycle;
+            }
+            \item \Pythagore[Reciproque]{WUV}{9}{7.2}{5.4}
+        \end{enumerate}
+    \end{itemize}
+}
+
+\slide{qf}{
+    \nullsubsec{}{
+        \begin{enumerate}
+            \item Quelle fraction de l'année représente un trimestre ? un mois ? une semaine ?
+            \item Quelle fraction d'une journée représente 30 min ? 6 h ? 36 h ?
+        \end{enumerate}
+    }[\href{https://eduscol.education.fr/document/36830/download}{Utiliser les nombres pour comparer, calculer et résoudre des problèmes}]
+}
+
+\bookSlide{35p432,52p435}[6cm][2]
+
+\nswr[0]{
+    35p432:
+    \begin{enumerate}\loadenumi[Orange][1]
+        \item \Pythagore[Reciproque]{JHK}{4}{3.2}{2.4}
+        Les droites $(IK)$ et $(JH)$ sont donc parallèles.
+        \item Les $(IK)$ et $(JH)$ étant parallèles, on a alors le triangle $JHI$ rectangle en $H$.
+        \Pythagore[Soustraction]{JHI}{6.8}{3.2}{}
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \exo{}{
+        On assimile la Terre à une sphère de centre $O$ et de rayon $R = \Lg[km]{6371}$.
+        Un observateur se tient à la surface de la Terre en un point A.
+        Le point H représente l'endroit le plus éloigné que l'observateur peut voir, c'est-à-dire son horizon.
+        \begin{enumerate}
+            \item Représentez la situation par un schéma.
+            \item À quelle distance de l'observateur se trouve environ l'horizon?
+            \item Quelle serait cette distance si l'observateur se trouve au $3^e$ étage de la tour Eiffel?
+        \end{enumerate}
+    }[\href{https://blogdemaths.wordpress.com/2015/06/27/jusquou-peut-on-voir-a-lhorizon/}{Jusqu'où peut on voir à l'horizon?}]
+}
+
+\nswr[0]{
+    \begin{enumerate}\setItemColor{exo}
+        \item On estime la taille de l'observateur $h$ à $\Lg[m]{1.60}$.
+        Puisque le rayon lumineux venant de l'horizon $H$ qui parvient aux yeux de notre observateur $Y$
+        ne touche la Terre qu'en un seul point , la droite $(HY)$ est donc une tangente à la Terre.
+        Ainsi la droite $(HY)$ est perpendiculaire à la droite $(HO)$.
+        \ctikz[1]{
+            \draw[gray!40] (-9.5,-6) rectangle (2.5,5);
+            \draw[thick,color=gradeColor,fill=gradeColor,fill opacity=0.10] (-3.77,4.02) -- (-3.34,4.01) -- (-3.34,4.43) -- (-3.76,4.44) -- cycle;
+            \draw [thick] (-3.82,-0.56) circle (5cm);
+            \drawPoint{O}{-3.82}{-0.56}
+            \drawPoint{A}{-1.01}{3.58}
+            \drawPoint{Y}{-0.45}{4.4}
+            \drawPoint{H}{-3.76}{4.44}
+            \draw[color=gradeColor] (0.7,3.95) node {$h = \Lg[m]{1.60}$};
+            \draw[color=gradeColor] (-1.1,1.43) node {$R = \Lg[km]{6371}$};
+            \draw [thick] (-3.82,-0.56) -- (-3.76,4.44) -- (-0.45,4.40) -- (-1.01,3.58) -- (-3.82,-0.56) -- cycle;
+            \draw [thick] (-3.91,1.89) -- (-3.67,1.89);
+            \draw [thick] (-3.91,1.99) -- (-3.67,1.99);
+            \draw [thick] (-2.29,1.48) -- (-2.49,1.62);
+            \draw [thick] (-2.34,1.40) -- (-2.54,1.53);
+        }
+        \item 
+        \begin{itemize}
+            \item $OY = OA + AY = R + h = \Lg[km]{6371} + \Lg[m]{1.60} = \Lg[m]{6371000} + \Lg[m]{1.60} = \Lg[m]{6371001.60}$
+            \item \Pythagore[Soustraction, Unite=m]{OHY}{6371001.60}{6371000}{}
+            \item L'horizon se situe donc à environ \Lg[km]{4.5} de l'observateur.
+        \end{itemize}
+        \item 
+        \begin{itemize}
+            \item Si l'observateur se trouve au $3^e$ étage de la tour Eiffel, on peut prendre estimer à $h = \Lg{250}$
+            \item $OY = OA + AY = R + h = \Lg[m]{6371000} + \Lg[m]{250} = \Lg[m]{6371250}$
+            \item \Pythagore[Soustraction, Unite=m]{OHY}{6371250}{6371000}{}
+            \item L'horizon se situe donc à environ \Lg[km]{56.4} de d'un observateur au $3^e$ étage de la tour Eiffel.
+        \end{itemize}
+    \end{enumerate}
+}

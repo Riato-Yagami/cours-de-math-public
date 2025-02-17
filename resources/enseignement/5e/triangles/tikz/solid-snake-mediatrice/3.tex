@@ -1,0 +1,38 @@
+\ctikz{
+    % \boundingBox[16][12][0.5pt][1][(-8,-3)]
+    \draw[thick] (-8,9) -- (8,9) -- (8,-3) -- (-8,-3) -- cycle;
+    \drawPoint{A}{2}{3}
+    \drawPoint{B}{2}{-2}
+    \drawPoint{$\Gamma$}{-7}{0}
+    \drawPoint{$\Delta$}{-5}{7}
+    % \draw [thick,gradeColor] (8,0.50) -- (8,-3);
+    % \draw [thick,gradeColor] (8,-3) -- (-2.94,-3);
+    % \draw [thick,gradeColor] (-2.94,-3) -- (-2.17,0.50);
+    % \draw [thick,gradeColor] (-2.17,0.50) -- (8,0.50);
+    % \draw [thick,gradeColor] (-8,9) -- (0.79,9);
+    % \draw [thick,gradeColor] (0.79,9) -- (-2.87,2.61);
+    % \draw [thick,gradeColor] (-2.87,2.61) -- (-8,4.07);
+    % \draw [thick,gradeColor] (-8,4.07) -- (-8,9);
+    % \draw [thick,gradeColor] (-8,-3) -- (-8,4.07);
+    % \draw [thick,gradeColor] (-2.87,2.61) -- (-2.17,0.50);
+    % \draw [thick,gradeColor] (-2.94,-3) -- (-8,-3);
+    % \draw [thick,gradeColor] (8,9) -- (0.79,9);
+    % \draw [thick,gradeColor] (8,0.50) -- (8,9);
+    \nswr[0]{%
+        \fill[thick,color=gradeColor,fill=Blue,fill opacity=0.10] (8,0.50) -- (8,-3) -- (-2.94,-3) -- (-2.17,0.50) -- cycle;
+        \fill[thick,color=gradeColor,fill=Gold,fill opacity=0.10] (-8,9) -- (0.79,9) -- (-2.87,2.61) -- (-8,4.07) -- cycle;
+        \fill[thick,color=gradeColor,fill=Red,fill opacity=0.10] (-8,-3) -- (-8,4.07) -- (-2.87,2.61) -- (-2.17,0.50) -- (-2.94,-3) -- cycle;
+        \fill[thick,color=gradeColor,fill=Green,fill opacity=0.10] (8,9) -- (0.79,9) -- (-2.87,2.61) -- (-2.17,0.50) -- (8,0.50) -- cycle;
+        \draw[thick,answer,fill opacity=0.10] (-1.96,1.68) -- (-2.14,2.21) -- (-2.68,2.04) -- (-2.50,1.50) -- cycle; 
+        \draw[thick,answer,fill opacity=0.10] (2,-0.06) -- (2.56,-0.06) -- (2.56,0.50) -- (2,0.50) -- cycle; 
+        \draw[thick,answer,fill opacity=0.10] (-5.84,4.04) -- (-6.39,4.20) -- (-6.54,3.66) -- (-6,3.50) -- cycle; 
+        \draw[thick,answer,fill opacity=0.10] (-1.95,-1.12) -- (-1.83,-0.57) -- (-2.38,-0.45) -- (-2.50,-1) -- cycle; 
+        \draw[thick,answer,fill opacity=0.10] (-1.78,4.51) -- (-1.29,4.23) -- (-1.01,4.72) -- (-1.50,5) -- cycle; 
+        \draw [thick,dashed] (-5,7) -- (2,3);
+        \draw [thick,dashed] (2,3) -- (2,-2);
+        \draw [thick,dashed] (-7,0) -- (2,-2);
+        \draw [thick,dashed] (-7,0) -- (-5,7);
+        \draw [thick,dashed] (-5,7) -- (2,-2);
+        \draw [thick,dashed] (-7,0) -- (2,3);
+    }
+}

@@ -1,0 +1,400 @@
+% VARIABLES %%%
+\def\authors{CADOT - COURTIN - PESIN}
+% \date{\today}
+\def\longTitle{Les Transformations}
+\def\shortTitle{Transformations}
+\def\theme{\longTitle}
+%%
+
+% \disableAnimation
+% \shortAnimation
+% \firstSlide
+
+\def\imgPath{stage-M2/4e/translation/decouverte-translation/}
+\def\imgExtension{.png}
+
+\newcounter{qfs}
+
+\def\qfs{\stepcounter{qfs}\color{Blue}\alph{qfs}) \color{black}}
+\def\sqf{\setcounter{qfs}{0} \stepcounter{qf}\color{blue}\arabic{qf}. \color{black}}
+
+\def\deg{\ensuremath{^\circ}}
+
+% \qfSUB{}{}
+\slide{QUESTIONS FLASH}{%
+    \sqf \qfs S'agit il d'une symétrie axiale?
+    \imgp{exo2_symetrie_axiale_1}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une symétrie axiale?
+    \imgp{exo2_symetrie_axiale_2}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une symétrie axiale?
+    \imgp{exo2_symetrie_axiale_3}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une symétrie axiale?
+    \imgp{exo2_symetrie_axiale_4}[5cm]
+}
+
+\slide{}{%
+    \sqf \qfs S'agit il d'une symétrie centrale?
+    \imgp{exo2_symetrie_centrale_1}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une symétrie centrale?
+    \imgp{exo2_symetrie_centrale_2}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une symétrie centrale?
+    \imgp{exo2_symetrie_centrale_3}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une symétrie centrale?
+    \imgp{exo2_symetrie_centrale_4}[5cm]
+}
+
+\slide{}{%
+    \sqf \qfs S'agit d'une translation?
+    \imgp{exob_translation_1}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une translation?
+    \imgp{exob_translation_2}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une translation?
+    \imgp{exob_translation_3}[5cm]
+}
+
+\slide{}{%
+    \qfs S'agit il d'une translation?
+    \imgp{exob_translation_4}[5cm]
+}
+
+\slide{}{
+    \begin{enumerate}
+        \item S'agit il d'une symétrie axiale ?\\
+        \begin{tabular}{c c c c}
+            \includegraphics[width=2cm]{\imgf{exo2_symetrie_axiale_1}}&
+            \includegraphics[width=2cm]{\imgf{exo2_symetrie_axiale_2}}&
+            \includegraphics[width=2cm]{\imgf{exo2_symetrie_axiale_3}}&
+            \includegraphics[width=2cm]{\imgf{exo2_symetrie_axiale_4}}
+        \end{tabular}
+        \item S'agit il d'une symétrie centrale ?\\
+        \begin{tabular}{c c c c}
+            \includegraphics[width=1.5cm]{\imgf{exo2_symetrie_centrale_1}}&
+            \includegraphics[width=2.5cm]{\imgf{exo2_symetrie_centrale_2}}&
+            \includegraphics[width=2.5cm]{\imgf{exo2_symetrie_centrale_3}}&
+            \includegraphics[width=2.5cm]{\imgf{exo2_symetrie_centrale_4}}
+        \end{tabular}
+        \item S'agit il d'une translation ?\\
+        \begin{tabular}{c c c c}
+            \includegraphics[width=2.5cm]{\imgf{exob_translation_1}}&
+            \includegraphics[width=2.5cm]{\imgf{exob_translation_2}}&
+            \includegraphics[width=2.5cm]{\imgf{exob_translation_3}}&
+            \includegraphics[width=2.5cm]{\imgf{exob_translation_4}}
+        \end{tabular}
+    \end{enumerate}
+}
+
+\slide{}{
+    \exo{Décrire les transformations suivantes}{
+        \begin{columns}[T] % align columns
+            \begin{column}{.3\textwidth}
+                \imgp{symetrie_axiale}[3.5cm]
+            \end{column}%
+            \hfill%
+            \begin{column}{.3\textwidth}
+                \imgp{symetrie_centrale}
+            \end{column}%
+            \hfill%
+            \begin{column}{.3\textwidth}
+                \imgp{translation_goose}
+            \end{column}%
+        \end{columns}
+    }
+}
+
+\def\imgPath{stage-M2/3e/transformations/}
+
+\slide{EXERCICES}{
+    \vspace*{-0.5cm}
+    \exo{Recopier la figure et tracer les transformations suivantes}{%
+        \vspace*{-1cm}
+        \begin{columns}[T] % align columns
+            \begin{column}{.6\textwidth}
+                \small
+                \begin{enumerate}
+                    \item $\mathcal{F}_2$ est l'image de $\mathcal{F}_1$ par la symétrie axiale d'axe $(CG)$.
+                    \item $\mathcal{F}_3$ est l'image de $\mathcal{F}_1$ par la translation qui transforme $A$ en $J$. 
+                    \item $\mathcal{F}_4$ est l'image de $\mathcal{F}_1$ par la symétrie centrale de centre $A$.
+                    % \item azef
+                    % \item zef
+                \end{enumerate}
+            \end{column}%
+            \hfill%
+            \begin{column}{.45\textwidth}
+                \imgp{activite_1}
+            \end{column}%
+        \end{columns}
+    }
+}
+
+\bsec{Rappels}
+
+\def\width{6cm}
+\newcommand*{\imgt}[1]{
+    \includegraphics[width=\width]{\imgf{#1}}
+}
+
+\def\imgExtension{_myr_3e_2016.png}
+
+\bsubsec{Symétrie Axiale}
+\slide{Cours}{
+    \bseq{\longTitle}
+    \ssec\ssubsec
+    \begin{tabular}{cc}
+        \palt{2}{\imgt{symetrie_axiale_def}}&
+        \imgt{symetrie_axiale_expl}
+    \end{tabular}
+}
+
+\bsubsec{Symétrie Centrale}
+\slide{}{
+    \ssubsec
+    \begin{tabular}{cc}
+        \palt{2}{\imgt{symetrie_centrale_def}}&
+        \imgt{symetrie_centrale_expl}
+    \end{tabular}
+}
+
+\bsubsec{Translation}
+\slide{}{
+    \ssubsec
+    \begin{tabular}{cc}
+        \palt{2}{\imgt{translation_def}}&
+        \imgt{translation_expl}
+    \end{tabular}
+}
+
+\def\imgExtension{_myr_4e_2016.png}
+
+\exoslide{activite_3p179}
+
+\bsec{Rotation}
+\bsubsec{Définition}
+\slide{}{
+    \ssec\ssubsec
+    \rmk{}{
+        Lorsque l'on décrit une rotation il faut préciser le \textbf{sens} horaire (sens des aiguilles d'une montre) ou anti-horaire (sens inverse des aiguilles d'une montre).
+    }
+}
+
+\exoslide{exo_13p184}
+
+\slide{COURS}{
+    \df{Rotation}{
+        Transformer un point ou une figure par rotation,
+        c'est faire tourner ce point ou cette figure par rapport à un \textbf{centre de rotation},
+        un \textbf{angle} et un \textbf{sens}.
+    }
+    \vspace*{-0.75cm}
+    \expl{}{
+        \begin{columns}[T] % align columns
+            \begin{column}{.1\textwidth}
+                \vspace*{-0.5cm}
+                \imgp{expl_rotation}[1.7cm]
+            \end{column}%
+            % \hfill%
+            \begin{column}{.8\textwidth}
+                \small
+                Le triangle $A'B'C'$ est l'image du triangle $ABC$ par la rotation de centre $O$ et d'angle $60\deg$ dans le sens anti-horaire.
+            \end{column}%
+        \end{columns}
+    }
+}
+
+\exoList{17, 20, 12}[sur pronote]
+% \exoList{13 p184}[Construction]
+
+\exoslide{exo_17p185}[5cm]
+
+\exoslide{exo_20p185}[6cm]
+
+\exoslide{exo_12p184}
+
+\bsubsec{Construction}
+\slide{COURS}{
+    \ssubsec
+    \vspace*{-0.5cm}
+    \begin{columns}[T]
+        \begin{column}{.75\textwidth}
+            \mthd{Construction rotation}{\small%
+                Pour construire $A'$ l'image de $A$, par la rotation de centre $O$,
+                d'angle $60^{\circ}$ dans le sens anti-horaire.
+                \begin{enumerate}
+                    \item On trace la demi-droite $[OA)$.
+                    \item Avec le rapporteur on trace une demi-droite passant par $O$,
+                    tel que l'angle entre les deux demi-droites mesure $60^{\circ}$ dans le sens-antihoraire.
+                    \item On repporte la longueur $OA$ sur la nouvelle demi-droite pour placer $A'$.
+                \end{enumerate}
+            }
+        \end{column}
+        \begin{column}{.25\textwidth}
+            \vspace*{2cm}
+            % \hspace*{-1cm}
+            \ctikz{
+                \tkzDefPoint(0,0){O}
+                \tkzDefPoint(3,1){A}
+                \tkzDrawPoints(O)
+                \tkzDrawPoints(A)
+                \tkzLabelPoints[below](O)
+                \tkzLabelPoints[below](A)
+            }
+        \end{column}
+    \end{columns}
+}
+
+\slide{}{
+    \exo{}{
+        Recopier $D$ et $ABC$ puis construire son image $A'B'C'$ par la rotation d'angle $140\deg$ dans le sens anti-horaire par rapport à $D$.
+        \begin{flushright}
+            \begin{tikzpicture}[scale=0.8]
+                \tkzDefPoint(-2,1){D}
+                \tkzDefPoint(0,0){A}
+                \tkzDefPoint(3,0){B}
+                \tkzDefPoint(3,4){C}
+                \tkzLabelPoints[left](A)
+                \tkzLabelPoints[below](B)
+                \tkzLabelPoints[above](C)
+                \tkzLabelSegment[below](A,B){$3\cm$}
+                \tkzLabelSegment[right](B,C){$4\cm$}
+                \tkzLabelSegment[above left](A,C){$5\cm$}
+                \tkzMarkRightAngle[blue](A,B,C)
+                \tkzDrawPoints(D)
+                \tkzLabelPoints[below](D)
+                \draw[very thick] (A) -- (B) -- (C) -- cycle;
+            \end{tikzpicture}
+        \end{flushright}
+    }
+}
+
+\slide{}{
+    \pr{}{
+        La rotation conserve les mesures d'angle, de longueurs et d'aires.
+    }
+}
+
+\def\imgExtension{.png}
+
+\slide{}{
+    \begin{columns}[T]
+        \begin{column}{.4\textwidth}
+            \imgp{exo_reconnaitre}[6.1cm]
+        \end{column}
+        \begin{column}{.6\textwidth}
+            \small
+            Compléter les phrases :
+            \begin{itemize}
+                \item $\mathcal{F}_2$ est l'image de $\mathcal{F}_1$ par la rotation \dottedLines{1}
+                \item $\mathcal{T}_2$ est l'image de $\mathcal{T}_1$ par la rotation \dottedLines{1}
+                \item $\mathcal{Q}_2$ est l'image de $\mathcal{Q}_1$ par la rotation \dottedLines{1}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+}
+
+\slide{}{
+    \begin{columns}[T]
+        \begin{column}{.4\textwidth}
+            \imgp{exo_rotation_carreaux}[5.5cm]
+        \end{column}
+        \begin{column}{.6\textwidth}
+            \vspace*{2cm}
+            Recopier $DEFG$ puis tracer $D'E'F'G'$ son image par la rotation de centre $P$,
+            d'angle $90\deg$ et
+            de sens horaire.
+        \end{column}
+    \end{columns}
+}
+
+\exoslide{exo_rotation_papier_blanc}[6cm]
+
+\bsec{Homothétie}
+\bsubsec{Définition}
+
+\slide{}{
+    \ssec\ssubsec
+    \df{}{
+        Transformer un point $A$ par homothétie de rapport $k$ et de centre $O$,
+        c'est placer $A'$ sur la droite $(OA)$ tel que:
+        \begin{itemize}
+            \item si $k>0$, alors $A$ et $A'$ sont du même côté par rapport $O$ et $OA'$ = $k \times OA$
+            \item si $k<0$, alors $A$ et $A'$ ne sont pas du même côté par rapport à $O$ et $OA'$ = $-k \times OA$
+        \end{itemize}
+    }
+}
+
+% \slide{}{
+%     \rmk{}{
+%         \begin{itemize}
+%             \item si $k>1$,
+%             \item si $k=1$
+%             \item si $k=-1$
+%             \item 
+%         \end{itemize} 
+%     }
+% }
+
+\exoslide{exo_31p189}[6cm]
+
+\exoList{5 p185, 6p185, 10p185 (justifier chaque réponse par un dessin)}[DM pour Lundi 13 mai][2]
+
+\exoslide{exo_5p185}[6cm]
+\exoslide{exo_6p185}
+\exoslide{exo_10p185}
+
+\bsubsec{Construction}
+
+% \exoslide{exo_23-27p188}
+
+\slide{}{
+    \ssubsec
+    \mthd{Construction homothétie}{
+        Pour construire $A'$ l'image de $A$,
+        par l'homothétie de rapport $k$ et de centre $O$.
+        \begin{enumerate}
+            \item On trace la droite $(OA)$.
+            \item On place $A'$ sur $(OA)$ à une distance $OA$ de $O$,
+            du même côté que $A$ par rapport à $O$ si $k>0$,
+            sinon du côté opposé.
+        \end{enumerate}
+    }
+}
+
+\exoList{14 p 186, 18 p 186}
+% \exoslide{exo_14p186}
+% \exoslide{exo_18p186}
+
+\slide{}{
+    \rmk{}{
+        Pour une homothétie de rapport $k$;
+        \begin{itemize}
+            \item Les aires sont multiplié par $k^2$.
+            \item Les volumes sont multiplié par $k^3$ si $k>0$ sinon par $-k^3$.
+        \end{itemize}
+    }
+}
+
+\exoList{40 p 189, 36 p 189 1. (prendre ABCD et K différent de l'illustration)}[Pour vendredi][2]
+\exoList{21 p 187,21 p 187,45 p 191,ex. 4 Brevet Amérique du Nord 2023, ex. 3 Brevet Polynésie 2022}[Travail en groupe]

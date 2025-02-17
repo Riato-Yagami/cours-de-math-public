@@ -1,0 +1,22 @@
+\newcommand{\engrenages}[2]{
+    \begin{center}
+        #1 dents et #2 dents\\
+        \Engrenages[ListeCouleurs={Cornsilk,LightGreen},Unite=0.6mm]{1/#1,1/#2}
+    \end{center}
+}
+
+\exo{Engrenages}{
+    Pour chacun des quatre engrenages ci-dessous, lorsque la roue droite $(D)$ effectue un tour,
+    combien de tour(s) effectue la roue gauche $(G)$?\\
+    \dividePage{
+        \multiColEnumerate{1}{
+            \item \engrenages{10}{30}
+            \item \engrenages{20}{30}\saveenumi
+        }
+    }{
+        \multiColEnumerate{1}{\loadenumi
+            \item \engrenages{30}{40}
+            \item \engrenages{30}{20}
+        }
+    }
+}[\prbltq{engrenages}][\cmdGeoGebra[ytfsgyem]]

@@ -1,0 +1,24 @@
+\directlua{dofile("lua/prehistoric.lua")}
+\newcommand{\Prehistoric}[1]{%
+    \def\iconSize{60pt}
+    \directlua{prehistoric(#1)}
+}
+
+\NewDocumentCommand{\baseDecomposition}{m m O{"show"}}{
+    \directlua{print_base_decomposition(#1,#2,#3)}
+}
+
+\NewDocumentCommand{\parseSeconds}{m O{"show"}}{
+    \directlua{parse_seconds(#1,#2)}
+}
+
+\directlua{dofile("lua/print_table.lua")}
+
+\newcommand{\Table}[2]{%
+    \directlua{print_table(#1,#2)}
+}
+
+\directlua{dofile("lua/decimal_table.lua")}
+\NewDocumentCommand{\decimalTable}{m O{"show"}}{
+    \directlua{decimal_table(#1,#2)}
+}

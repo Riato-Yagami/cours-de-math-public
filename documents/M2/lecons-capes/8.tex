@@ -1,0 +1,90 @@
+% VARIABLES %%%
+\def\theme{Congruences dans $\m{Z}$}
+\def\date{02/12/2023}
+%%%%%%%%%%%%%%%
+
+% DEFINITIONS %
+
+%%%%%%%%%%%%%%
+
+% \setboolean{outline}{true}
+% \setboolean{demonstration}{false}
+
+\hbox{}
+\leconInfo{
+    \ilink{Terminale Option Expertes}
+}
+[]
+[]
+[]
+
+\pr{Relation d'équivalence}{
+    La relation "$\equiv$" est une relation d'équivalence.
+}
+
+\pr{Somme et produit de congruences}{
+    La relation "$\equiv$" est compatible avec les opérations $+$ et $\times$.
+    \begin{align*}
+        \lfbrace{ a &\equiv b[n] \\ c &\equiv d[n]}
+        \Rightarrow 
+        \lfbrace{ a + c &\equiv b + d[n] \\ a \times c &\equiv b \times d[n]}
+    \end{align*}
+}
+
+\thm{Petit théorème de Fermat}{
+    Si $p$ premier et $a\in\m{Z}$, alors $a^p\equiv a[p]$.\\
+    De plus si $p\nmid a$, alors $a^{p-1}\equiv 1 [p]$.
+}
+
+\df{Inverse modulaire}{
+    $a\in\m{Z}$ est \textbf{inversible modulo $n$}$\in\m{N}$,
+    lorsqu'il existe un $b\in\m{Z}$ tel que $ab\equiv 1[n]$.\\
+    On appelle alors $b$, son \textbf{inverse modulo $n$}.
+    \begin{equation*}
+        b \equiv a^{-1} [n]
+    \end{equation*}
+}
+
+\pr{Existence d'un inverse modulo $n$}{
+    $a\in\m{Z}$ est inversible modulo $n\in\m{N}$ \ssi{}
+    $\pgcd{a}{n} = 1$
+}
+
+\mthd{Recherche d'inverse}{
+    Pour trouver un inverse $u$ de $a$ modulo $n$.\\
+    On cherche un couple $u,v$, tel que $au+nv= 1$ à l'aide de l'algorithme d'euclide.
+}
+
+\thm{Des restes chinois (2 équations)}{
+    Soient $m,n\in\m{N}$, tels que $\pgcd{m}{n}=1$.\\
+    Alors,
+    pour tout $(a,b)\in\m{Z}^2$,
+    le système:
+    \begin{equation*}
+        \lfbrace{x \equiv a [m] \\ y \equiv b [n]}
+    \end{equation*}
+    admet au moins une solution.\\
+    De plus, si $x_0$ est une solution particulière,
+    l'ensemble des solutions est:
+    \begin{equation*}
+        \{x_0+kmn|k\in\m{Z}\}
+    \end{equation*}
+}
+
+\thm{Des restes chinois}{
+    Soient $(n_i)_{i\in{[|1,k|]}}\in\m{N}$ premiers entre eux avec $k\in\m{k}$.\\
+    Alors pour tout $(a_i)_{i\in{[|1,k|]}}\in\m{N}$,\\
+    il existe un $x\in\m{N}$ unique modulo $N= \prod_{i=1}^{k}n_i$, tel que:
+    \begin{align*}
+        x\equiv a_i [n_i], \forall i \in [|1,k|]
+    \end{align*}
+    $x$ est donné par la formule:
+    \begin{equation*}
+        x = \sum_{i=1}^{k} a_i N_i y_i
+    \end{equation*}
+    avec $N_i = N/n_i$ et $y_i \equiv N_i^{-1}[n_i]$ \pt{} $i\in[|1,k|]$.
+}
+
+% \mthd{}{
+%     \TODO
+% }

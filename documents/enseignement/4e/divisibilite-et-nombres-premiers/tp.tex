@@ -1,0 +1,101 @@
+% VARIABLES %%%
+\def\authors{\jules \ et \href{http://www.cellulegeometrie.eu/documents/pub/pub_14.pdf}{Académie de Reims}}
+\date{2024}
+\def\theme{TP : Test de divisibilité}
+
+\def\imgPath{enseignement/4e/divisibilite-et-nombres-premiers/}
+\def\imgExtension{.png}
+\thispagestyle{assignment}
+
+\setscratch{scale=.75}
+\setscratch{print=true}
+\setscratch{fill blocks=true}
+%%
+
+% \disableAnimation
+% \shortAnimation
+% \firstSlide
+\vspace*{-1cm}
+\hint{
+    \begin{itemize}
+        \item Répondre aux questions sur une feuille.
+        \item Enregistrer la production avec le nom : "NOM-Prenom-tp-divisibilite.sb3"
+    \end{itemize}
+}
+\vspace*{-0.75cm}
+
+\section{Division euclidienne}
+\begin{enumerate}
+    \item Poser la division euclidienne de $152$ par $8$.
+    \item $152$ est-il divisible par $8$ ? Pourquoi ?
+    \item Sur \Scratch ecrire et éxecuter le programme suivant:
+    \begin{center}\begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blocklook{dire \ovaloperator{\ovalnum{152} modulo \ovalnum{8}}}
+    \end{scratch}\end{center}
+    \item Qu'est-ce que calcule l'opérateur modulo ?
+\end{enumerate}
+
+\vspace*{-0.25cm}
+\section{Teste de divisibilité}
+
+\def\nb{\ovalvariable{nombre} }
+\def\dv{\ovalvariable{diviseur} }
+\begin{enumerate}
+    \item Créer deux variables \nb et \dv depuis l'onglet \icon{scratch/variables} Variables.
+    \item A quoi doit être égale \ovaloperator{\nb modulo \dv}
+    pour que \nb soit divisible par \dv ?
+    \item Ecrire un programme qui:
+    \begin{itemize}
+        \item Donne une valeur à deux variables \nb et \dv.
+        \item Dit « \nb est divisible par \dv» ou « \nb n'est pas divisible par \dv» en fonction des cas.
+    \end{itemize}
+    \hint{Blocs utiles (à utiliser plusieurs fois pour certains):\\  
+        \booloperator{\ovalnum{} = \ovalnum{ }}
+        \begin{scratch}
+            \blockifelse{si \boolempty[3em] alors}{ }{ }
+        \end{scratch}
+        \begin{scratch}
+            \blockvariable{mettre \selectmenu{ma variable} à \ovalnum{ }}
+        \end{scratch}
+        \ovaloperator{regrouper \ovalnum{} et \ovalnum{}}
+        \begin{scratch}
+            \blocklook{dire \ovalnum{}}
+        \end{scratch}
+        \ovaloperator{\ovalnum{} modulo \ovalnum{}}
+    }
+\end{enumerate}
+
+\vspace*{-0.25cm}
+\section{Liste des diviseurs}
+
+\def\dvs{\ovallist{diviseurs} }
+\begin{enumerate}
+    \item Pour connaître tous les diviseurs d'un nombre,
+    quel est le plus petit nombre à tester?
+    Et le plus grand?
+    \item Créer une nouvelle liste \dvs depuis l'onglet \icon{scratch/variables} Variables.
+    \item Ecrire un programme qui:
+    \begin{itemize}
+        \item Teste tous les diviseurs possibles pour un \nb un par un, en commencant par le plus petit et finissant par le plus grand.
+        \item Ajoute les diviseurs de \nb à \dvs.
+    \end{itemize}
+    \hint{ Blocs utiles (en plus des blocs précédents):\\
+        \begin{scratch}
+            \blockinfloop{répéter jusqu'à ce que \boolempty[3em]}{ }
+        \end{scratch}
+        \begin{scratch}
+            \blockif{si \boolempty[3em] alors}{ }
+        \end{scratch}
+        \begin{scratch}
+            \blocklist{ajouter \ovalvariable{ma variable} à \selectmenu{ma liste}}
+        \end{scratch}
+        \booloperator{\ovalnum{} > \ovalnum{ }}
+        \begin{scratch}
+            \blockvariable{ajouter \ovalnum{1} à \selectmenu{ma variable}}
+        \end{scratch}
+        \begin{scratch}
+            \blocklist{supprimer tous les éléments de la liste \selectmenu{ma liste}}
+        \end{scratch}
+    }
+\end{enumerate}

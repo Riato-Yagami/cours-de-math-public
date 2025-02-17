@@ -1,0 +1,715 @@
+% VARIABLES %%%
+\setSeq{4}{Nombres - Entiers}
+\setGrade{6e}
+
+\def\imgPath{enseignement/6e/nombres/entiers/}
+
+\def\ym{\href{https://www.maths-et-tiques.fr/telech/19Nombres1.pdf}{Yvan Monka}}
+
+% https://www.maths-et-tiques.fr/telech/19Nombres2.pdf
+
+% \forPrint
+%%
+
+\obj{
+    \item Decomposer un nombre dans plusieurs bases.
+    \item Conversion de durée.
+    \item Utiliser et représenter les grands nombres entiers (en chiffres et en lettres).
+    \item Utiliser la division euclidienne.
+    \item Organiser un calcul en une seule ligne, utilisant si nécessaire des parenthèses.
+    \item Savoir ce qu'est un ordre de grandeur et savoir l'utiliser pour prévoir un résultat.
+    \item Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement.
+}
+
+\scn{Découvrir une numération préhistorique}
+
+\qfSlide{
+    \begin{enumerate}
+        \item $2 + 3 \time 5 = $
+        \item $6 - 2 + 3 - 1 =$
+        \item $4 \times (6 + 3) =$
+    \end{enumerate}
+}
+
+\bsec{Compter}
+\bsubsec{Base 12}
+
+\slide{exo}{\bvspace{-0.75cm}
+    \act{Numération préhistorique}{
+        Certains hommes préhistorique utilisaient leurs main pour communiquer sur des nombres.
+        \imgp{historic/numbers}[6.5cm]
+    }[\dmeepc{6}[108]]
+}
+% \endinput
+\newpage
+\slide{exo}{
+    \begin{enumerate}\setItemColor{act}
+        \item \multiColEnumerate{3}{
+            \item $\Prehistoric{6} = \nswr{6}$
+            \item $\Prehistoric{10} = \nswr{10}$
+            \item $\icon{prehistoric-numbers/u/0}[60pt] = 7$
+        }
+        \item Quel est le nombre le plus grand pouvant etre communiquer de cette manière ?
+        \item Comment pourait-on communiquer des nombres plus grands ?
+        \saveenumi
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[act]
+        \item \multiColEnumerate{2}{
+            \item $\Prehistoric{12} = \nswr{12}$
+            \item $\Prehistoric{15} = \nswr{15}$
+            \item $\Prehistoric{50} = \nswr{50}$
+            \item $\Prehistoric{0} = 58$
+            \item $\Prehistoric{0} = 100$
+            \item $\Prehistoric{135} = \nswr{135}$
+        }
+        \saveenumi
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[act]
+        \item Quel est le plus grand nombre pouvant etre communiqué avec cette méthode ?
+        \item Certains hommes préhistoriques comptaient donc par 12 car ils avaient 12 phalanges?
+        De la même manière, par combien comptons-nous ? Pourquoi selon vous ?
+    \end{enumerate}
+}
+
+\scn{Utiliser une numération en base 12}
+
+\slide{exo}{\cdp{Table de 12}{\Table{12}{12}}}
+
+\slide{cr}{
+    \sseq\ssec\ssubsec \bvspace{-0.5cm}
+    \vc{}{
+        Le \key{système duodécimal},
+        ou de \key{base $12$}.
+        Est une méthode de \key{comptage par douzaines}.
+    }[\wiki{Système_duodécimal}]
+}
+
+\slide{cr}{
+    \expl{}{
+        \multiColEnumerate{2}{
+            \item $15 =$ \baseDecomposition{15}{12}["hide"]
+            \item $56 =$ \baseDecomposition{56}{12}["hide"] 
+            \item $\nswr{27} =$ \baseDecomposition{27}{12}
+            \item $\nswr{112} =$ \baseDecomposition{112}{12} \saveenumi
+        }\multiColEnumerate{1}{\loadenumi
+            \item $145 =$ \nswr{\baseDecomposition{145}{12}}
+        }
+    }
+}
+
+\def\scale{1.15}
+\slide{exo}{\small
+    \exo{Justifiez, en détaillant vos calculs, le nombre de cubes présents dans chacune des figures.}{\calculator
+        \multiColEnumerate{2}{
+            \item \RepresenterEntier[Base=12,Echelle=\scale]{28}
+            \item \RepresenterEntier[Base=12,Echelle=\scale]{100} \saveenumi
+        }
+    }
+}
+
+\slide{exo}{
+    \multiColEnumerate{1}{ \loadenumi[exo]
+        \item \RepresenterEntier[Base=12,Echelle=\scale]{332}
+        \item \RepresenterEntier[Base=12,Echelle=\scale]{1942}
+    }
+}
+
+
+\scn{Découvrir la numération Babylonienne}
+
+\qfSlide{
+    \multiColEnumerate{2}{
+        \item \nswr{6425} = \baseDecomposition{6425}{10}
+        \item \nswr{1237} = \baseDecomposition{1237}{12}
+        \item 9233 = \baseDecomposition{9233}{10}["hide"]
+        \item 232 = \baseDecomposition{232}{12}["hide"]
+    }
+}
+
+\bsubsec{Base 60}
+
+\def\aspc{\ifbool{answer}{}{\vspace{1cm}}}
+
+\slide{exo}{\bshrink
+    \act{Numération Babylonienne}{
+        \begin{enumerate}\bvspace{-1cm}
+            \item \multiColEnumerate{3}{
+                \item \Babylone{24} = 24
+                \item \Babylone{6} = 6
+                \item \Babylone{50} = 50
+            }
+            Que représentent le clou \Babylone{1} et le chevron \Babylone{10} ?
+            \item \multiColEnumerate{2}{
+                \item \Babylone{12} = \nswr{12}
+                \item \Babylone{34} = \nswr{34}
+                \item \aspc \nswr{\Babylone{23}} = 23
+            } \saveenumi
+        \end{enumerate}
+    }[\wiki{Numération_mésopotamienne}[Numération_sexagésimale_de_position]]
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item \multiColEnumerate{2}{
+            \item \Babylone{70} = 70
+            \item \Babylone{61} = 61
+            \item \Babylone{190} = 190
+            \item \Babylone{1380} = 1380
+            \item \Babylone{3865} = 3865
+        }
+        Comment ces nombres sont-ils composés ?
+        \saveenumi
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item \multiColEnumerate{2}{
+            \item \Babylone{86} = \nswr{86}
+            \item \aspc \nswr{\Babylone{132}} = 132
+            \item \Babylone{325} = \nswr{325}
+            \item \Babylone{7271} = \nswr{7271}
+            \item \aspc \nswr{\Babylone{10872}} = 10872
+        } \saveenumi
+    \end{enumerate}
+}
+
+\slide{exo}{
+    \begin{enumerate} \loadenumi[act]
+        \item Les chiffres babyloniens changent de signification selon leur position : on parle donc de \key{numération de position}.
+        Notre système de numération actuel est-il aussi un système de numération de position ?
+        \item Existe-t-il des éléments que nous comptons encore aujourd'hui de manière similaire aux Babyloniens ?
+    \end{enumerate}
+}
+
+\scn{Utiliser une numération en base 60}
+
+\qfSlide{
+    \exo{Donner l'heure}{
+        \multiColEnumerate{3}{
+            \item \Horloge[Secondes=false]{7:30}
+            \item \Horloge[Secondes=false]{15:24}
+            \item \Horloge[Secondes=false]{12:46}
+        }
+    }
+}
+
+\slide{cr}{
+    \ssubsec
+    \vc{}{
+        Le \key{système sexagésimal},
+        ou de \key{base $60$}.
+        Est une méthode de \key{comptage par soixantaines}.
+    }[\wiki{Système_sexagésimal}]
+}
+
+\slide{cr}{
+    \expl{}{
+        \multiColEnumerate{2}{
+            \item \nswr{186} = \baseDecomposition{186}{60}
+            \item \nswr{1200} = \baseDecomposition{1200}{60}
+            \item 720 = \baseDecomposition{75}{60}["hide"]
+            \item 1842 = \baseDecomposition{500}{60}["hide"] \saveenumi
+        }\multiColEnumerate{1}{\loadenumi
+            \item 8350 = \nswr{\baseDecomposition{8350}{60}}
+        }
+    }
+}
+
+\slide{cr}{
+    \rmk{}{
+        L'usage moderne du sexagésimal est assez proche de celui de la mesure du temps.
+        \multiColItemize{2}{
+            \item $\Horaire{1} = \nswr{60}\textrm{min}$
+            \item $\Horaire{;1} = \nswr{60}\textrm{s}$
+        }
+    }
+
+    \expl{}{
+        \multiColItemize{1}{
+            \item $\Horaire{1} = \nswr{3600}\sec$
+            \item $\Horaire{;;602} = \parseSeconds{602}["hide"]$
+            \item $\Horaire{;;7623} = \parseSeconds{7623}["hide"]$
+        }
+    }
+}
+
+\bookSlide{36p149,38p149,39p149}[7cm][2]
+
+\def\scale{2}
+
+\scn{Utiliser une numération en base 10}
+
+\slide{qf}{\bsmall
+    \nullsubsec{}{
+        \begin{itemize}
+            \item La Lune est à \Ecriture{384 000} de kilomètre de la Terre.
+            \item Jupiter est à \Ecriture{91 000 000} de kilomètre de la Terre.
+            \item Pluton est à \Ecriture{4 297 000 000} de kilomètre de la Terre.
+        \end{itemize}
+
+        Complète le tableau ci-dessous avec ces nombres écrits en chiffres.
+
+        \begin{center}
+            \Tableau[%
+            DoubleEntree,
+            Couleur=gradeColor!15,
+            LegendesH={Lune,Jupiter,Pluton},
+            LegendesV={Distance à la Terre (km)},
+            Largeur=135pt
+            ]{\nswr{384 000},\nswr{91 000 000},\nswr{4 297 000 000}}
+        \end{center}
+    }[\dmeepcS]
+}
+
+\bsec{Numération décimales}
+
+\bsubsec{Nombres entiers}
+
+\slide{cr}{
+    \ssec\ssubsec
+    \vc{}{
+        Le \key{système décimal},
+        ou de \key{base $10$}.
+        Est une méthode de \key{comptage par dizaines}.
+    }[\wiki{Système_décimal}]
+
+    \hist{}{
+        L'utilisation actuelle des \key{chiffres arabes} repose sur un système de numération \key{décimal et positionnel}.
+        Leur diffusion au Moyen-Orient et en Europe serait due à un ouvrage du mathématicien persan d'\key{Al-Khwârizmî} (780-850 ap. J.-C.).
+    }[\wiki{Al-Khwârizmî} \wiki{Système_de_numération_indo-arabe}]
+}
+
+\slide{cr}{
+    \mthd{}{
+        Pour écrire un nombre on utilise \key{10 symboles} appelé \key{chiffres}.
+        La \key{position} des chiffres dans l'écriture d'un nombre détermine sa valeure.
+    }
+
+    \expl{}{
+        \begin{enumerate}
+            \item $\np{110} =$ \baseDecomposition{110}{10}["hide"] 
+            \item $\np{5841} =$ \baseDecomposition{5841}{10}["hide"]
+            \item $\nswr{{\np{1010}}} =$ \baseDecomposition{1010}{10}
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \rmk{}{
+        On regroupe les chiffres de nombres par groupes de trois afin d'en améliorer la lisibilité.
+    }
+}
+
+\slide{cr}{\bshrink
+    \expl{}{
+        Classer les chiffres des nombres suivants,
+        puis les réécrire correctement :
+        \multiColEnumerate{3}{
+            \item $54 454$
+            \item $36 119 312$
+            \item $3 300 001 200$
+        }
+        \bvspace{-0.5cm}
+        \decimalTable{{54454,36119312,3300001200}}["hide"]
+        \multiColEnumerate{3}{
+            \item $\nswr{\np{54454}}$
+            \item $\nswr{\np{36 119 312}}$
+            \item $\nswr{\np{3 300 001 200}}$
+        }
+    }
+}
+
+\scn{Manipuler des nombres entiers dans le système décimal}
+
+\slide{qf}{
+    Donner le chiffres des :
+    \multiColEnumerate{2}{
+        \item milliers de $\np{56165453}$
+        \item milliards de $\np{546160006546521}$
+        \item dizaines de milliers de $\np{346805235}$
+        \item centaines de milliards de $\np{340045235}$
+        \item centaines de $\np{65465,654654}$
+        \item dizaines de millions de $\np{211010100,001}$
+    }
+}
+
+\slide{exo}{
+    \exo{Nombres mystères}{
+        \begin{enumerate}
+            \item Donne un exemple de nombre inférieur à $400$ pour lequel :
+            \begin{itemize}
+                \item le chiffre des dizaines est la moitié du chiffre des centaines.
+                \item la somme des chiffres est $11$.
+            \end{itemize}\saveenumi
+        \end{enumerate}
+    }[\dmeepcS]
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[exo]
+        \item Donne un exemple de nombre à quatre chiffres tel que :
+        \begin{itemize}
+            \item le chiffre des dizaines est la moitié du chiffre des centaines.
+            \item la somme des chiffres est $11$.
+        \end{itemize}
+        \item Donne un exemple de nombres à trois chiffres pour lequel :
+        \begin{itemize}
+            \item il est inférieur à $\np{2000}$ ;
+            \item il a trois chiffres identiques ;
+            \item la somme de ses chiffres est 10.
+        \end{itemize}
+    \end{enumerate}
+}
+
+\scn{Formaliser la notion de la division euclidienne}
+
+\slide{qf}{Compléter les divisions suivantes
+    \multiColEnumerate{2}{
+        \item \longDivision{155}{5}
+        \item \longDivision{700}{49}
+    }
+}
+
+\bsubsec{Division euclidienne}
+
+\slide{exo}{\bshrink
+    \act{}{%
+    Le roi de Divisia possède $27$ pièces d'or et souhaite les partager équitablement entre $4$ chevaliers.
+    Les pièces restantes seront données à son écuyer.
+    
+    \begin{enumerate}
+        \item Combien de pièces chaque chevalier recevra-t-il ?
+        \item Combien de pièces resteront pour l'écuyer ?
+        \item Supposons maintenant que le roi possède $100$ pièces et qu'il les partage entre $6$ chevaliers :
+        \begin{enumerate}
+            \item Combien de pièces chaque chevalier recevra-t-il ?
+            \item Combien de pièces resteront pour l'écuyer ?
+        \end{enumerate}\saveenumi
+    \end{enumerate}
+    }
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[act]
+        \item Toujours avec $100$ pièces,
+        existe-t-il un nombre de chevaliers tel que; l'écuyer reçoive:
+        \multiColEnumerate{1}{
+            \item $0$ pièce ?
+            \item plus de pièces qu'un chevalier ?
+            \item autant de pièces qu'un chevalier ?
+            \item autant de pièces qu'il y a de chevalier ?
+        }
+    \end{enumerate}
+}
+
+\slide{cr}{\bsmall
+    \ssubsec
+
+    \df{}{
+        Pour deux entiers $a$ et $b$,
+        on appelle \key{division euclidienne}
+        du \textcolor{Green}{\key{dividende} $a$} par le \textcolor{Red}{\key{diviseur} $b$}
+        l'expression :
+        \begin{align*}
+            \textcolor{Green}{a}
+            = \textcolor{Red}{b}
+            \times \textcolor{Blue}{q}
+            + \textcolor{Violet}{r}
+        \end{align*}
+        Où le \textcolor{Blue}{\key{quotient} $q$} et \textcolor{Violet}{\key{reste} $r$} sont deux entiers avec
+        $\textcolor{Violet}{r} < \textcolor{Red}{b}$.
+    }
+
+    \expl{}{
+        \multiColEnumerate{3}{
+            \item $100 = 6 \times \nswr{16} + \nswr{4}$
+            \item $246 = 3 \times \nswr{82} + \nswr{0}$
+            \item $360 = 23 \times \nswr{15} + \nswr{15}$
+        }
+    }
+}
+
+\scn{Notion de divisibilité}
+
+\slide{qf}{
+    \exo{}{
+        Quel est le nombre de:
+        \multiColEnumerate{2}{
+            \item dizaines dans $750$.
+            \item milliers dans $\np{665454}$.
+            \item millions dans $\np{9876502300}$.
+            \item dizaines de milliers dans $\np{121321}$.
+            \item centaines de millions dans $\np{2313251}$.
+            \item centaines dans $\np{352154.16}$.
+        }
+    }
+}
+
+\slide{cr}{\bsmall
+    \df{}{
+        Pour $a$ et $b$ deux entiers,
+        on dit que $b$ \key{divise} $a$ si le reste de la division euclidienne de $a$ par $b$ est $0$.
+    }
+
+    \pr{}{
+        \Sialors{$b$ \key{divise} $a$}{$a$ est un \key{multiple} de $b$}
+    }
+
+    \begin{center}
+        \expl{}{
+            \Tableau[%
+                DoubleEntree,
+                Stretch=1.5,
+                Couleur=gradeColor!15,
+                LegendesH={\qquad$4$\qquad,\qquad$6$\qquad,\qquad$12$\qquad,\qquad$31$\qquad},
+                LegendesV={Divise 62 ?, Multiple de 4 ?},
+                Largeur=2cm
+            ]{
+                \nswr{Oui},\nswr{Non},\nswr{Oui},\nswr{Oui},
+                \nswr{Oui},\nswr{Non},\nswr{Oui},\nswr{Non}
+            }
+        }
+    \end{center}
+}
+
+\slide{exo}{
+    \exo{des fleurs}{
+        Une fleuriste dispose de 1815 fleurs.
+        Doit-elle réaliser des bouquets de 16 fleurs ou de 17 fleurs pour en utiliser le plus possible ?
+    }[\iP{6}{2021}[2][16]]
+}
+
+\slide{exo}{
+    \exo{des crêpes}{
+        \calculator
+        Dans une fabrique, on emballe les crêpes par paquets de 12.
+        En fin de journé, les employés mangent les crêpes qui restent après emballage.
+        Voici le nombre de crêpes fabriquées cette semaine:
+        \begin{center}
+            \begin{tabular}{|>{\bfseries}c|*{5}{c|}} % Colonne en gras pour la première colonne
+                \hline
+                \rowcolor{gray!15} 
+                Jour & lundi & mardi & mercredi & jeudi & vendredi \\ \hline
+                Nombre de crêpes  & 384 & 1004 & 519 & 1069 & 1102 \\ \hline
+            \end{tabular}
+        \end{center}
+        \begin{enumerate}
+            \item Le lundi, combien de douzaine de crêpes sont emballées et combien de crêpes sont mangées ?
+            \item Sur l'ensemble de la semaine, chaque employé à mangé le même nombre de crêpes.
+            Combien peut-il y avoir d'employés dans cette fabrique?
+        \end{enumerate}
+    }[\dmeepc{6}[166]]
+}
+
+\nswr[0]{
+    \begin{enumerate}
+        \item La division euclidienne de $384$ par $12$ donne :
+        $384 = 12 \times 32 + 0$.
+        Il y a donc $32$ douzaines de crêpes emballées, et il reste $0$ crêpes à manger pour les employés.
+        \item 
+        \multiColItemize{3}{
+            \item mardi : $1004 = 12 \times 83 + 8$
+            \item mercredi : $519 = 12 \times 43 + 3$
+            \item jeudi : $1069 = 12 \times 89 + 1$
+            \item vendredi : $1102 = 12 \times 91 + 10$
+        }
+        En additionnant les restes : $0 + 8 + 3 + 1 + 10 = 22$. Les employés ont mangé en tout $22$ crêpes.
+        Le nombre d'employés est donc un diviseur de $22$, soit : $1$, $2$, $11$ ou $22$.
+    \end{enumerate}
+}\avspace{0.5cm}
+
+\bookSlide{21p45,23p45,25p45}[7cm][2]
+
+\scn{Priorités opératoires}
+
+\slide{qf}{\bvspace{-0.5cm}
+    \exo{}{
+        \multiColEnumerate{1}{
+            \item $\np{44420} \times 100 = $
+            \item $981 \times \np{100000} = $
+            \item $\np{685540000} \div \np{10} = $
+            \item $\np{230020000000} \div \np{10000} = $
+            \item $\np{10001} \times \np{20000} = $
+            \item $\np{3090300} \div \np{300} = $
+        }
+    }
+}
+
+\bsec{Opérations}
+\bsubsec{Règles opératoires}
+
+\slide{cr}{
+    \ssec\ssubsec
+
+    \rl{}{
+        Les calculs se font dans l'ordre des priorités suivant:%
+        \begin{enumerate}
+            \item La multiplication et la division
+            \item L'addition et la soustraction
+        \end{enumerate}
+    }
+}
+
+\slide{cr}{
+    \rl{}{
+        En cas d'opérations de mêmes priorités, on effectue les opérations de gauche à droite.
+    }
+
+    \expl{}{
+        \multiColEnumerate{1}{
+            \item $3 - 2 + 3 = \nswr{1 + 3 = 4}$ 
+            \item $19 - 6\times 3 = \nswr{19 - 18 =  1}$
+            \item $3 + \np{3.2} \times 2 - 4 = \nswr{3 + \np{6.4} -4 = \np{9.4} - 4 = \np{5.4}}$
+        }
+    }
+}
+
+\slide{cr}{
+    \rl{}{
+        On commence par effectuer les calculs entre parenthèses.
+    }
+
+    \expl{}{
+        \multiColEnumerate{1}{
+            \item $(1 + 2) \times 21 = \nswr{3 \times 21 = 63}$
+            \item $(11 \times 3) + (15 \div 2) = \nswr{33 + 7.5 = 40.5}$
+            \item $(34 - 2 + 8 ) \div 4 = \nswr{(32 + 8) \div 4 = 40 \div 4 = 10}$
+            \item $((13 - (3 - 2)) + 2) = \nswr{(13 - 1) + 2 = 12 + 2 = 14}$
+        }
+    }
+}
+
+\scn{Formaliser le vocabulaire opératoire}
+
+\slide{qf}{
+    \multiColEnumerate{1}{
+        \item $7 + 5 - 4 \times 2 = \nswr{7 + 5 - 8 = 12 - 8 = 4}$
+        \item $7 + (5 - 4) \times 2 = \nswr{7 + 1 \times 2 = 7 + 2 = 9}$
+        \item $(7 + 5 - 4) \times 2 = \nswr{(13 - 4) \times 2 = 9 \times 2 = 18}$
+    }
+}
+
+\bsubsec{Vocabulaire opératoires}
+
+\slide{cr}{\bsmall
+    \ssubsec
+    \bvspace{-0.5cm}
+    \vc{}{
+        On connait quatres types d'opérations :
+        \begin{itemize}
+            \item L'\key{addition} permet de calculer la \key{somme} de deux \key{termes}.
+            \item La \key{soustraction}  permet de calculer la \key{différence} entre deux \key{termes}.
+            \item La \key{multiplication} permet de calculer le \key{produit} de deux \key{facteurs}.
+            \item La \key{division} permet de calculer le \key{quotient} de deux \key{nombres}.
+        \end{itemize}
+    }
+}
+
+\slide{cr}{\bshrink
+    \vc{}{Dans un calcul,
+    le type de la dernière opération effectuée détermine le nom donné au calcul dans son ensemble.}
+    \bvspace{-0.5cm}
+    \expl{Nommer les calculs suivants}{
+        \bvspace{-0.5cm}
+        \multiColEnumerate{1}{
+            \item $1,6 + 4$ est \nswr{la somme} de \nswr{$1,6$ et $4$}.
+            \item $(\dfrac{2}{6} + 3) \times 9$ est \nswr{le produit } de \nswr{$\dfrac{2}{6} + 3$ et $9$}.
+            \item $6,6 + 1 \times 8$ est \nswr{la somme de $6,6$ par $1 \times 8$}.
+            \item $\dfrac{2}{6} + 3 - 9$ est \nswr{la différence entre $\dfrac{2}{6}$ et $9$}.
+            \item $\pi \div (3 - 9)$ est \nswr{le quotient de $\pi$ par $(3 - 9)$}.
+        }
+    }
+}
+
+\scn{Résoudre des problèmes relevant des structures additives et multiplicatives en mobilisant une ou plusieurs étapes de raisonnement}
+
+\slide{qf}{
+    Quel est le périmètre d'un quadrilatère dont les côtés ont pour mesures :
+    \multiColItemize{4}{
+        \item \Lg{2} \item \Lg{3.9} \item \Lg[mm]{81} \item \Lg{10}
+    }
+    \nswr[0]{
+        \multiColItemize{1}{
+            \item $\Lg[mm]{81} = \Lg{8.1}$ \item $\Lg{2} + \Lg{3.9} + \Lg{8.1} + \Lg{10} = \Lg{24}$
+        }
+    }
+}
+
+\slide{qf}{\bvspace{-0.5cm}
+    \exo{}{
+        \multiColEnumerate{1}{
+            \item $10 \times 3 + 4 \div 2 = \nswr{30 + 2 = 32}$
+            \item $5 \times 4 \div 2 = \nswr{20 \div 2 = 10}$
+            \item $4 \times (1 + 16 - 10) = \nswr{4 \times (17 - 10) = 4 \times 7 = 28}$
+            \item $100 \div (10 \times (2+3)) = \nswr{100 \div (10 \times 5) = 100 \div 50 = 2}$
+        }
+    }
+}
+
+\slide{exo}{\bshrink
+    \exo{Les bons comptes}{
+        Pour résoudre les problèmes suivants :  
+        \begin{itemize}
+            \item Présenter chaque calcul séparément, en précisant ce que représente la valeur obtenue à chaque étape.  
+            \item Présenter tous les calculs en une seule expression permettant d'obtenir le résultat final.  
+        \end{itemize}
+        
+        \begin{enumerate}
+        \item Xavier possède \Prix{28} dans sa tirelire.  
+                Son grand-père lui donne \Prix{75}. Il a désormais \Prix{53} de plus que sa sœur Christine.  
+                Quelle somme d'argent possède Christine ?\saveenumi
+        \end{enumerate}
+    }[\dmeepc{6}[161]]
+}
+
+\slide{exo}{
+    \begin{enumerate}\loadenumi[exo]
+        \item Un commerçant achète sept rouleaux de \Lg[m]{50} de tissu.  
+        Chaque rouleau coûte \Prix{392}.  
+        Il revend le tissu au prix de \Prix{12} par mètre.  
+        Quel bénéfice réalise-t-il après avoir revendu la totalité du tissu ?
+        \item Julien et Georges possèdent à eux deux un total de \Prix{47}.  
+        Julien dépense \Prix{12} et Georges dépense \Prix{7}.  
+        Après ces dépenses, ils ont chacun la même somme.  
+        Quelle somme Julien possédait-il avant sa dépense ?
+    \end{enumerate}
+    \nswr[0]{
+        \begin{enumerate}
+            \item 
+            \begin{itemize} 
+                \item \begin{itemize}
+                    \item $28 + 75 = 103$ : Xavier possède maintenant \Prix{103}.
+                    \item $103 - 53 = 50$ : Christine possède \Prix{50}.
+                \end{itemize}
+                \item $28 + 75 - 53 = 50$
+            \end{itemize}
+            \item Le bénéfice est la différence entre le prix de vente total et le prix d'achat total.
+            \begin{itemize}
+                \item \begin{itemize}
+                    \item $392 \times 7 = 2744$ : prix d'achat total des 7 rouleaux, soit \Prix{2744}.
+                    \item $7 \times 50 = 350$ : le commerçant dispose de \Lg[m]{350} de tissu.
+                    \item $350 \times 12 = 4200$ : prix de vente total du tissu, soit \Prix{4200}.
+                    \item $4200 - 2744 = 1456$ : bénéfice réalisé après la revente de la totalité du tissu, soit \Prix{1456}.
+                \end{itemize}
+                \item $7 \times 50 \times 12 - 392 \times 7 = 1456$
+            \end{itemize}
+            \item 
+            \begin{itemize}
+                \item \begin{itemize}
+                    \item $47 - 12 = 35$ : après la dépense de Julien, il reste \Prix{35}.
+                    \item $35 - 7 = 28$ : après la dépense de Georges, il reste \Prix{28}.
+                    \item $28 \div 2 = 14$ : chacun possède maintenant \Prix{14}.
+                    \item $14 + 12 = 26$ : Julien possédait donc \Prix{26} avant sa dépense.
+                \end{itemize}
+                \item $(47 - 12 - 7) \div 2 + 12 = 26$
+            \end{itemize}
+        \end{enumerate}
+    }
+}

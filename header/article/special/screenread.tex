@@ -1,0 +1,120 @@
+\usepackage{package/screenread}
+
+\pagestyle{screenread}
+\thispagestyle{screenread}
+\fancyhead[R]{}
+
+\renewcommand{\pbreak}{\pagebreak}
+
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{-5pt}
+
+\newcommand{\foot}{%
+    \vspace{-0.5cm}%
+    \begin{center}\small%
+        \begin{tabular}{ p{0.3\textwidth} p{0.4\textwidth} p{0.2\textwidth}}%
+            \raggedright \authors
+            & \centering \textbf{Page \thepage /{\hypersetup{linkcolor=black}\pageref{LastPage}}}
+            & \raggedleft {\large \textbf{\link{\grade}}}
+        \end{tabular}%
+    \end{center}%
+    \vspace{-2cm}%
+}
+
+\renewcommand{\slide}[2]{%
+    \setPhase{#1}%
+    \xdef\currentPhase{\phase}%
+    \ifthenelse{\boolean{showAllPhases}}{%
+        \begin{center}%
+            \begin{phaseBox}%
+                \textbf{\phase \hfill \longTitle}
+            \end{phaseBox}%
+        \end{center}}{%
+    }%
+    \ifthenelse{\boolean{showAllPhases}}{#2}{%
+        \ifthenelse{\equal{\phase}{\showPhase}}{#2}{}%
+    }%
+    \foot%
+    \pbreak%
+}
+
+\newcounter{scn}
+\setcounter{scn}{1}
+
+\RenewDocumentCommand{\scn}{m O{}}{%
+    \slide{SEANCE \thescn}{\stepcounter{scn}%
+        \begin{sectionBox}{scn}%
+            \textbf{#1}\ifNotNull{#2}{\\#2}%
+        \end{sectionBox}%
+    }%
+}%
+
+\newcounter{sec}
+\newcounter{subsec}
+
+\renewcommand{\bseq}[1]{%
+    \def\sseq{\color{Red} \uppercase{Séquence} \theseq{} : #1\color{black}}%
+    \def\title{\color{Red}\textbf{Séquence \theseq{} : #1}}%
+    \setcounter{sec}{0}%
+    % \slide{\sseq}{a}
+}
+
+% \renewcommand{\bsec}[1]{%
+%     \section{#1}%
+%     \def\ssec{\color{Red} \Roman{sec}. #1\color{black}\\}%
+%     \stepcounter{sec}%
+%     \setcounter{subsec}{0}%
+% }
+
+% \renewcommand{\bsubsec}[1]{%
+%     \subsection{#1}%
+%     \def\ssubsec{\color{Green} \thesubsec) #1\color{black}\\}%
+%     \stepcounter{subsec}%
+% }
+
+\RenewDocumentCommand{\obj}{m O{}}{%
+    \slide{SEQUENCE \theseq}{
+        \begin{objBox}
+            \objSUB{#2}{%
+            \begin{enumerate}#1\end{enumerate}%
+            }
+        \end{objBox}%
+    }
+}
+
+\renewcommand{\forPrint}{%
+    \setlength\marginwidth{0cm}%
+    \newgeometry{layoutwidth=\screenwidth,
+            paperwidth=\screenwidth,
+            textwidth=\textwidth,
+            % layoutheight=\maxheight, % 575cm
+            % paperheight=\maxheight, % 575cm
+            % textheight=\maxheight, % 575cm
+            top=0.25cm,
+            left=0.5cm,
+            right=0.25cm,
+            hcentering=true
+    }%
+    \setboolean{answer}{false}%
+    \setboolean{showRef}{false}%
+    \emptyBackground%
+    \renewcommand{\slide}[2]{%
+        \ifstrequal{##1}{qf}{}%
+        {##2\vspace{-1.5cm}\pbreak}%
+    }%
+    \renewcommand{\section}[1]{}%
+    \renewcommand{\subsection}[1]{}%
+    \RenewDocumentCommand{\scn}{m O{}}{}%
+    \RenewDocumentCommand{\obj}{m O{}}{}%
+    \def\sseq{}%
+    \RenewDocumentCommand{\bookSlide}{m O{10cm} O{1} O{\gradeBook} O{exo}}{}%
+    \renewcommand{\caSlide}[1]{}%
+}
+
+\renewcommand{\forStudents}{%
+    \setboolean{answer}{false}%
+    \setboolean{showRef}{false}%
+    \RenewDocumentCommand{\scn}{m O{}}{}%
+    \RenewDocumentCommand{\obj}{m O{}}{}%
+}%
+

@@ -1,0 +1,77 @@
+\def\imgPath{}
+\def\imgExtension{}
+\def\imgPrefix{}
+\newcommand{\imgf}[1]{\imgPath\imgPrefix #1\imgExtension}
+
+\NewDocumentCommand{\limg}{m O{\linewidth}}{%
+    \includegraphics[width=#2]{#1}%
+}
+
+\newsavebox{\picbox}
+
+\newcommand{\cutpic}[3]{
+    \savebox{\picbox}{\includegraphics[width=#2]{#3}}
+    \tikz\node [draw, rounded corners=#1, line width=4pt,
+    color=white, minimum width=\wd\picbox,
+    minimum height=\ht\picbox, path picture={
+        \node at (path picture bounding box.center) {
+        \usebox{\picbox}};
+    }] {};
+}
+
+\NewDocumentCommand{\rimg}{m O{\linewidth}}{%
+    \begin{center}
+        \cutpic{0.4cm}{#2}{#1}
+    \end{center}
+}
+
+\NewDocumentCommand{\imgp}{m O{\linewidth} O{0cm} o}{%
+    \img{\imgf{#1}}[#2]
+}
+
+
+\NewDocumentCommand{\img}{m O{\linewidth} O{0cm} o}{%
+    \begin{figure}[H]%
+        \centering%
+        \hspace*{#3}
+        \ifbool{debugMode}{
+            \ctikz{%
+                \draw[thick] (0,0) rectangle (#2, #2); % A rectangle with proportional dimensions
+                \node at (#2/2, #2/2) {#1};
+            }
+        }{\includegraphics[width=#2]{#1}}%
+        \IfValueTF{#4}{
+            \caption{\underline{#4}}
+            % \vspace{-0.4cm}
+            }{
+            % \vspace{-0.4cm}
+        }
+        \vspace{-0.45cm}
+    \end{figure}%
+}
+
+\def\iconPath{}
+
+\def\iconSize{15pt}
+\NewDocumentCommand{\icon}{m O{\iconSize}}{%
+    \adjustbox{valign=m, raise=-0.2ex}{%
+        \includegraphics[height=#2]{icons/\iconPath #1\imgExtension}%
+    }%
+}
+
+\NewDocumentCommand{\tool}{m o}{\ifNotNull{#2}{\icon{#2} }{\footnotesize\textrm{#1}}}
+
+% \NewDocumentCommand{\tool}{m o}{%
+%     \def\tlink{https://geogebra.github.io/docs/manual/fr/tools/\snakeCase{#1}/}%
+%     \tlink%
+%     \href{\tlink}{\ifNotNull{#2}{\icon{#2} }{\footnotesize\textrm{#1}}}%
+% }
+\newcommand{\setImgPath}{
+    \def\imgPath{enseignement/\grade/\kebabCase{\longTitle}/}
+}
+
+% \makeatletter
+% \newcommand{\setImgPath}{
+%     \protected@edef\imgPath{enseignement/\grade/\kebabCase{\longTitle}/}
+% }
+% \makeatother

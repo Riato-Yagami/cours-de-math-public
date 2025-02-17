@@ -1,0 +1,20 @@
+\ctikz[1]{
+    \boundingBox[8][7][0.5pt][1][(0,-0.5)][iso]
+    \drawPoint{A}{3.46}{0}
+    \drawPoint{B}{0.87}{1.50}
+    \drawPoint{C}{0.87}{3.50}
+    \drawPoint{G}{4.33}{5.50}
+    \drawPoint{E}{6.93}{2}
+    \drawPoint{D}{3.46}{2}
+    \drawPoint{H}{6.93}{4}
+    \drawPoint{F}{4.33}{3.50}
+    \draw[color=gradeColor] (1.96,0.64) node {3};
+    \draw[color=gradeColor] (3.26,1.15) node {2};
+    \draw[color=gradeColor] (5.34,0.87) node {4};
+    \draw [thick] (0.87,1.50) -- (3.46,0) -- (3.46,2) -- (6.93,4) -- (4.33,5.50) -- (0.87,3.50) -- (0.87,1.50);
+    \draw [thick] (6.93,4) -- (6.93,2) -- (3.46,0);
+    \draw [thick] (3.46,2) -- (0.87,3.50);
+    \draw [thick,dashed] (4.33,3.50) -- (0.87,1.50);
+    \draw [thick,dashed] (4.33,3.50) -- (6.93,2);
+    \draw [thick,dashed] (4.33,3.50) -- (4.33,5.50);
+}

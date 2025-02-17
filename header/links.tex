@@ -1,0 +1,264 @@
+\newcommand{\defl}[2]{%
+    \expandafter\def\csname #1\endcsname{\href{#2}{#1}\space}%
+}
+
+% Page Eduscol
+\defl{Eduscol Cycle 3}{https://eduscol.education.fr/251/mathematiques-cycle-3}
+\defl{Eduscol Cycle 4}{https://eduscol.education.fr/280/mathematiques-cycle-4}
+\defl{Eduscol Lycée Général et technologique}{https://eduscol.education.fr/1723/programmes-et-resources-en-mathematiques-voie-gt}
+\defl{Eduscol Lycée Professionnel}{https://eduscol.education.fr/1793/programmes-et-resources-en-mathematiques-voie-professionnelle}
+
+% Repères annuels
+\defl{Cycle 2}{https://eduscol.education.fr/document/13972/download}
+\defl{Cycle 3}{https://eduscol.education.fr/document/14026/download}
+\defl{Cycle 4}{https://eduscol.education.fr/document/14080/download}
+
+% Attendus de fin d'année
+\defl{CM2}{https://eduscol.education.fr/document/14002/download}
+\defl{6e}{https://eduscol.education.fr/document/14014/download}
+\defl{5e}{https://eduscol.education.fr/document/14044/download}
+\defl{4e}{https://eduscol.education.fr/document/14056/download}
+\defl{3e}{https://eduscol.education.fr/document/14068/download}
+
+% Programme de mathématiques
+\defl{cycle 3}{https://eduscol.education.fr/document/50990/download}
+\defl{cycle 4}{https://cache.media.education.gouv.fr/file/31/89/1/ensel714_annexe3_1312891.pdf}
+\defl{2nd}{https://eduscol.education.fr/document/24553/download}
+\defl{2nd STHR}{https://eduscol.education.fr/document/24556/download}
+\defl{1re}{https://eduscol.education.fr/document/24565/download}
+\defl{1re Technologique}{https://eduscol.education.fr/document/24559/download}
+\defl{Terminale Option Spécialité}{https://eduscol.education.fr/document/24568/download}
+\defl{Terminale Option Complémentaire}{https://eduscol.education.fr/document/24571/download}
+\defl{Terminale Option Expertes}{https://eduscol.education.fr/document/24574/download}
+\defl{Terminale Technologique}{https://eduscol.education.fr/document/23107/download}
+
+% resources thématiques
+\defl{Proportionnalité}{https://eduscol.education.fr/document/17281/download}
+\defl{Probabilités}{https://eduscol.education.fr/document/17275/download}
+\defl{Traitement des données}{https://eduscol.education.fr/document/17269/download}
+
+\defl{Fonctions}{https://eduscol.education.fr/document/17287/download}
+\defl{Fractions}{https://eduscol.education.fr/document/17239/download}
+\defl{Nombres relatifs}{https://eduscol.education.fr/document/17245/download}
+\defl{Puissances}{https://eduscol.education.fr/document/17251/download}
+\defl{Divisibilité et nombres premiers}{https://eduscol.education.fr/document/17257/download}
+\defl{Calcul littéral}{https://eduscol.education.fr/document/17263/download}
+
+\defl{Grandeurs et mesures}{https://eduscol.education.fr/document/17293/download}
+\defl{Algorithmique et programmation}{https://eduscol.education.fr/document/17311/download}
+
+\defl{Suites}{https://eduscol.education.fr/document/24586/download}
+\defl{Produit Scalaire}{https://eduscol.education.fr/document/24589/download}
+\defl{Raisonnement et démonstration (seconde)}{https://eduscol.education.fr/document/24580/download}
+\defl{Raisonnement et démonstrations (première)}{https://eduscol.education.fr/document/24583/download}
+
+\def\jules{\href{https://juels.dev/}{Jules PESIN}}
+\def\yuyu{\href{https://www.instagram.com/yuyuvrajav/}{@yuyuvraj}}
+
+\defl{Utiliser les notions de géométrie planepour démontrer}{https://eduscol.education.fr/document/17305/download}
+
+% Manuels
+\def\dim{\href{https://www.editions-hatier.fr/livre/dimensions-mathematiques-6e-ed-2016-manuel-de-leleve-9782401020023}
+    {Dimensions 6e (Ed. 2016)}
+}
+
+\definecolor{myriade}{HTML}{0F83B3} %#0F83B3
+\def\my{\href{https://www.editions-bordas.fr/ouvrage/myriade-mathematiques-6e-manuel-de-leleve-ed-2021-9782047337752.html}
+    {Myriade 6e (Ed. 2021)}
+}
+
+\def\mm{\href{https://www.editions-hatier.fr/livre/maths-monde-cycle-4-livre-1-volume-9782278083459}
+    {Maths Monde cycle 4 (Ed. 2016)}
+}
+
+\def\mi{\href{https://www.enseignants.hachette-education.com/livres/mission-indigo-mathematiques-cycle-4-5e-4e-3e-livre-eleve-ed-2017-9782013953962}
+    {Mission Indigo mathématiques cycle 4 éd. 2017}
+}
+
+% https://www.armitiere.com/livre/1833174-des-maths-ensemble-et-pour-chacun-5e-mise-en--jean-philippe-rouques-helene-stainer-canope-crdp-44
+\def\dmeepcC{\href{https://publimath.univ-irem.fr/PCO10003}
+    {Des maths ensemble et pour chacun 5e}
+}
+
+\def\dmeepcS{\href{https://www.reseau-canope.fr/notice/des-maths-ensemble-et-pour-chacun-6e.html}
+    {Des maths ensemble et pour chacun 6e}
+}
+
+\NewDocumentCommand{\dmeepc}{m O{}}{%
+    \href{https://www.reseau-canope.fr/notice/des-maths-ensemble-et-pour-chacun-6e.html}
+    {Des maths ensemble et pour chacun #1e \ifNotNull{#2}{(p.#2)}}
+}
+
+\NewDocumentCommand{\sesa}{m m O{} O{} O{cm}}{%
+    \href{https://manuel.sesamath.net/numerique/index.php?ouvrage=#5#1_#2&page_gauche=#4}{%
+    \ifstrequal{#5}{cm}{Cahier}{Manuel} Sésamath #1e #2 \ifNotNull{#4}{(\ifNotNull{#3}{#3 }p.#4)}
+    }
+}
+
+\NewDocumentCommand{\iP}{m m O{} O{}}{%
+    \href{https://www.iparcours.fr/ouvrages/ouvrages.php?ouvrage=Cahier#1#2}{%
+    iParcours #1e #2 \ifNotNull{#4}{(#3 p.#4)}
+    }
+}
+
+\NewDocumentCommand{\ching}{m m O{}}{%
+    \href{https://chingmath.fr/#1eme/#2}{%
+    Ching@Math #1e (\reverseKebabCase{#2}\ifNotNull{#3}{ E.#3})
+    }
+}
+
+\NewDocumentCommand{\wiki}{m O{}}{%
+    \def\ext{}%
+    \ifNotNull{#2}{\def\ext{\##2}}%
+    \href{https://fr.wikipedia.org/wiki/#1\ext}%
+    {\def\iconPath{}%
+    \icon{wikipedia} \reverseSnakeCase{#1}%
+    \ifNotNull{#2}{ {\scriptsize $\rightarrow$ \reverseSnakeCase{#2}}}%
+    }
+}
+% \NewDocumentCommand{\wiki}{m O{}}{%
+%     \def\ext{}%
+%     \ifNotNull{#2}{\def\ext{\##2}}%
+%     \href{https://fr.wikipedia.org/wiki/#1\ext}%
+%     {Wikipédia (\reverseSnakeCase{#1}%
+%     \ifNotNull{#2}{ {\scriptsize $\rightarrow$ \reverseSnakeCase{#2}}}%
+%     )}
+% }
+
+\newcommand*{\prbltq}[1]{\href{https://www.problematheque-csen.fr/fiche-probleme/#1}{Problémathèque (\reverseKebabCase{#1})}}
+
+\NewDocumentCommand{\rpmc}{O{}}{%
+    \href{https://eduscol.education.fr/document/13132/download?attachment\#page=#1}{%
+    La résolution de problèmes mathématiques au collège
+    (p.%
+    #1%
+    % \directlua{tex.print((tonumber("#1") or 0) + 3)}
+    )}%
+}
+
+% Attendus de fin d'année
+\NewDocumentCommand{\afa}{m O{}}{
+    \ifthenelse{\equal{#1}{CM2}}{
+        \def\afalink{https://eduscol.education.fr/document/14002/download}
+    }{
+    \ifthenelse{\equal{#1}{6e}}{
+        \def\afalink{https://eduscol.education.fr/document/14014/download}
+    }{
+    \ifthenelse{\equal{#1}{5e}}{
+        \def\afalink{https://eduscol.education.fr/document/14044/download}
+    }{
+    \ifthenelse{\equal{#1}{4e}}{
+        \def\afalink{https://eduscol.education.fr/document/14056/download}
+    }{
+    \ifthenelse{\equal{#1}{3e}}{
+        \def\afalink{https://eduscol.education.fr/document/14068/download}
+    }{
+        \def\afalink{https://eduscol.education.fr/document/14014/download}
+    }}}}}
+    \def\page{}
+    \ifNotNull{#2}{\def\page{(p.#2)}}
+    \href{\afalink\#page=#2}{Attendus de fin d'année de #1 \page}
+}
+
+\def\ca{%
+    \href{https://pedagogie.ac-strasbourg.fr/mathematiques/competitions/course-aux-nombres/}%
+    {Course aux nombres ( \reverseKebabCase{\caPrefix})}%
+}
+
+% Euclide https://www.pedagogie.ac-aix-marseille.fr/jcms/c_10743971/it/les-elements-d-euclide-traduction-par-oliver-byrne
+
+\NewDocumentCommand{\eucl}{O{1804} O{}}{
+    \ifthenelse{\equal{#1}{1632}}{ % 1632
+        \def\trad{D. Henrion}
+        \def\afalink{https://www.pedagogie.ac-aix-marseille.fr/upload/docs/application/pdf/2019-11/elements_euclide_-_denis_henrion.pdf}
+    }{
+    \ifthenelse{\equal{#1}{1804}}{ % 1804 traduction F. Peyrard
+        \def\trad{F. Peyrard}
+        \def\afalink{https://eduscol.education.fr/document/14014/download}
+    }{}
+    }
+    \def\page{}
+    \ifNotNull{#2}{\def\page{p.#2}}
+    \href{\afalink\#page=#2}{Les Éléments d'Euclide (traduction de \trad \page)}
+}
+% 1632 https://www.pedagogie.ac-aix-marseille.fr/upload/docs/application/pdf/2019-11/elements_euclide_-_denis_henrion.pdf
+% Logiciels
+\newcommand{\defIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
+    \expandafter\def\csname #1\endcsname{%
+        {\def\iconPath{}%
+        \icon{#3} \textbf{\href{#4}{\color{#2}#1}}}
+    }%
+}
+
+% \newcommand{\cmdIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
+%     \expandafter\NewDocumentCommand\csname cmd#1\endcsname{O{}}
+%     {%
+%         {\def\iconPath{}%
+%         \icon{#3} \textbf{\href{#4/##1}{\color{#2}#1}}}
+%     }%
+% }
+
+\newcommand{\cmdIconLink}[4]{% 1 text , 2 : color , 3 : icon , 4 : link
+    \expandafter\NewDocumentCommand\csname cmd#1\endcsname{O{}}
+    {%
+        {\def\iconPath{}\def\iconSize{15pt}%
+        \href{#4/##1}{\shl{capytale-2}{#2}{\icon{#3} ##1}}
+    }%
+}}
+
+\definecolor{capytale}{HTML}{1E293B} % #1E293B
+\definecolor{capytale-2}{HTML}{F0F1F2} % #F0F1F2
+
+\def\Capytale{%
+    \href{https://capytale2.ac-paris.fr/~/my}{\shl{capytale}{capytale-2}{CAPYTALE}}%
+}
+
+\newcommand{\capytale}[1]{%
+    \href{https://capytale2.ac-paris.fr/web/c/#1}{\shl{capytale}{capytale-2}{CAPYTALE \shl{capytale-2}{capytale}{#1}}}%\shl{capytale}{capytale-2}{CAPYTALE 
+}
+
+\definecolor{enc}{HTML}{1D3D6E} % #1D3D6E
+\defIconLink{ENC}{enc}{ENC-Hauts-de-Seine}{https://enc.hauts-de-seine.fr/}
+
+\definecolor{pronote}{HTML}{1A6E45} % #1A6E45
+\defIconLink{Pronote}{pronote}{pronote}{https://0922247t.index-education.net/pronote/}
+
+\definecolor{calc}{HTML}{00A500} % #00A500
+\defIconLink{Calc}{calc}{libreOffice/calc/logo}{https://fr.libreoffice.org/discover/calc/}
+
+\definecolor{geogebra}{HTML}{9693F7} % #9693F7
+\defIconLink{GeoGebra}{geogebra}{geogebra/logo}{https://www.geogebra.org/classic}
+\cmdIconLink{GeoGebra}{geogebra}{geogebra/logo}{https://www.geogebra.org/m}
+
+\definecolor{scratch}{HTML}{FFAB19} % #FFAB19
+\defIconLink{Scratch}{Orange}{scratch/logo}{https://scratch.mit.edu/projects/editor/}
+
+\definecolor{mathalea}{HTML}{216D9A} % #216D9A
+\cmdIconLink{MathAlea}{mathalea}{mathalea}{https://coopmaths.fr/alea/?uuid=b87a5&id=}
+
+\NewDocumentCommand{\mal}{m O{MathAlea}}{
+    {\def\iconPath{}\def\iconSize{15pt}%
+        \href{https://coopmaths.fr/alea/?uuid=#1&v=eleve&i=1}{\shl{capytale-2}{mathalea}{\icon{mathalea} #2}}
+    }
+}
+
+% uuid=68cda
+
+% https://coopmaths.fr/alea/?uuid=1d078&id=4C33-0&n=4&d=10&s=2&s2=3&s3=1&s4=3&i=1&cd=1&alea=48pq&v=eleve&es=0111001
+
+% http://trucsmaths.free.fr/etymologie.htm
+
+\def\ym{\href{https://www.maths-et-tiques.fr/}{Yvan Monka}}
+\newcommand{\dym}[1]{\def\ym{\href{#1}{Yvan Monka}}}
+
+\newcommand{\yvan}[1]{\def\ym{\href{https://www.maths-et-tiques.fr/telech/#1}{Yvan Monka (#1)}}}
+
+\NewDocumentCommand{\met}{mO{}}{%
+    \href{https://www.maths-et-tiques.fr/telech/#1.pdf\#page=#2}
+    {maths et tiques (#1 \ifNotNull{#2}{p.#2})}
+}
+
+\def\cwr{\href{https://college-willy-ronis.fr/}{College Willy Ronis}}
+\newcommand{\dcwr}[1]{\def\cwr{\href{#1}{College Willy Ronis}}}
+
+% https://coopmaths.fr/alea/?uuid=b87a5&id=4L10b&alea=ap5e

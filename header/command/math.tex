@@ -1,0 +1,104 @@
+\newcommand{\modxy}[2]{\sqrt{#1^2+#2^2}}
+\newcommand{\acroissement}[2]{\dfrac{#1(#2+h)-#1(#2)}{h}}
+
+\newcommand{\pow}[2]{
+    #1
+    \foreach \n in {2,...,#2}{
+        \times #1
+    }
+}
+
+% \newcommand{\powTen}[1]{
+%     \ifnum#1=1 10
+%     \else \ifnum#1=0 1
+%     \else \ifnum#1>0 1\foreach \n in {2,...,#1}{0} \fi
+% }
+
+% \newcounter{rec}
+% \newcommand{\powTen}[1]{
+%     \setcounter{rec}{#1}
+%     \ifnum\therec=0 1
+%     \else \addtocounter{rec}{-1} \powTen{\therec}0 \fi
+% }
+% \newcounter{powTen}
+\newcommand{\powTen}[1]{%
+    \ifnum#1<0%
+        0,\powTenNegative{\numexpr#1*(-1)\relax}
+    \else%
+        % \setcounter{powTen}{\powTenPositive{#1}}%
+        \powTenPositive{#1}
+        % \thepowTen
+    \fi
+}
+
+\newcommand{\powTenPositive}[1]{
+    \ifnum#1=0 1
+    \else \powTenPositive{\numexpr#1-1\relax}0 \fi
+}
+
+\newcommand{\powTenNegative}[1]{
+    \ifnum#1=1 1
+    \else 0\powTenNegative{\numexpr#1-1\relax} \fi
+}
+
+\newcommand{\lPowBrace}[2]{
+    \underbrace{\pow{#1}{2} \times ... \times \pow{#1}{2}}_{#2 \textrm{ facteurs}}
+}
+
+\newcommand{\powBrace}[2]{
+    \underbrace{#1 \times ... \times #1}_{#2 \textrm{ facteurs}}
+}
+
+\newcommand{\powTenBrace}[1]{
+    1 \underbrace{0\; ...\; 0}_{#1 \textrm{ zéros}}
+}
+
+\NewDocumentCommand{\repeatBrace}{m m O{fois}}{
+    \underbrace{#1 ... #1}_{#2 \textrm{ #3}}
+}
+
+\newcommand{\lfbrace}[1]{
+    \left\{
+        \begin{array}{ll}
+            #1
+        \end{array}
+    \right.
+}
+
+% \newcommand{\pgcd}[2]{
+%     % \PGCD(#1,#2)
+%     #1 \wedge #2
+% }
+
+% \newcommand{\ppcm}[2]{
+%     % \PPCM(#1,#2)
+%     #1 \vee #2
+% }
+
+\def\cW{1.5cm}
+\newcommand{\propTable}[4]{
+    \begin{tabular}{|C{\cW}|C{\cW}|}
+        \hline
+        $#1$ & $#2$ \\ \hline
+        $#3$ & $#4$ \\ \hline
+    \end{tabular}
+}
+
+\newcommand{\pscal}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\coord}[2]{% 
+    \ensuremath{
+        \begin{pmatrix} 
+            #1\\ 
+            #2
+        \end{pmatrix}
+    }
+}
+
+\newcommand{\longDivision}[2]{%
+    \ifbool{answer}{%
+        \Division[CouleurCadre = gradeColor!10, Solution,CouleurSolution = answer]{#1}{#2}
+    }{%
+        \Division[CouleurCadre = gradeColor!10]{#1}{#2}
+    }
+}

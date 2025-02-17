@@ -1,0 +1,38 @@
+% DOC https://ctan.math.illinois.edu/macros/latex/contrib/scratch3/scratch3-fr.pdf
+
+\setscratch{scale=.75}
+
+\def\block{{\setscratch{scale=.5}\begin{scratch}\blockmove{\Large bloc}\end{scratch} }}
+
+\newcommand{\scr}[1]{\begin{scratch}#1\end{scratch}}
+
+\definecolor{smotion}{HTML}{4C97FF} % #4C97FF
+\definecolor{slooks}{HTML}{9966FF} % #9966FF
+\definecolor{ssound}{HTML}{D65CD6} % #D65CD6
+\definecolor{sevents}{HTML}{FFD500} % #FFD500
+\definecolor{scontrol}{HTML}{FFAB19} % #FFAB19
+\definecolor{ssensing}{HTML}{4CBFE6} % #4CBFE6
+\definecolor{soperators}{HTML}{6DB26E} % #6DB26E
+\definecolor{svariables}{HTML}{F28011} % #F28011
+\definecolor{smyblocks}{HTML}{FF6680} % #FF6680
+
+\def\smotion{\textcolor{smotion}{\faCircle\,Mouvement}} % Déplacement du lutin
+\def\slooks{\textcolor{slooks}{\faCircle\,Apparence}} % Modifier l'apparence du lutin ou de la scène
+\def\ssound{\textcolor{ssound}{\faCircle\,Son}} % Jouer des sons ou de la musique
+\def\sevents{\textcolor{sevents}{\faCircle\,Événement}} % Déclencher des scripts en réponse à des actions
+\def\scontrol{\textcolor{scontrol}{\faCircle\,Contrôle}} % Boucles, conditions, et contrôle du flux
+\def\ssensing{\textcolor{ssensing}{\faCircle\,Capteur}} % Réagir à des informations extérieures ou internes
+\def\soperators{\textcolor{soperators}{\faCircle\,Opérateur}} % Calculs mathématiques et logiques
+\def\svariables{\textcolor{svariables}{\faCircle\,Variable}} % Stockage et manipulation de données
+\def\smyblocks{\textcolor{smyblocks}{\faCircle\,Mes blocs}} % Création de blocs personnalisés
+
+\def\spen{{\icon{scratch/pen} Stylo}}
+\def\spenExtension{{\icon{scratch/pen-extension} Stylo}}
+\def\sextensions{{\icon{scratch/extensions} $\lbrack$ Ajouter une extensions $\rbrack$}}
+\def\sflag{{\icon{scratch/flag}%
+%  Drapeau
+}}
+
+% \setscratch{scale=.75}
+% \setscratch{print=true}
+% \setscratch{fill blocks=true}
