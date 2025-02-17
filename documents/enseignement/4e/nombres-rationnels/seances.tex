@@ -7,7 +7,7 @@
 \dym{https://www.maths-et-tiques.fr/telech/19Fractions1.pdf}
 \def\caPrefix{4e-mars-2022-}
 
-\forStudents
+% \forStudents
 % \forPrint
 
 \obj{
@@ -153,16 +153,16 @@
 
 \scn{Tache complexe mettant en jeu des fractions}
 
+\caSlide{20-21}
+
 \slide{qf}{
     \input{resources/enseignement/6e/fractions/somme-et-comparaison/exo-chocolat-au-lait.tex}
 }
 
 \bookSlide{61-1p137,61-2p137}[7.5cm][2]
 
-\caSlide{20-21}
-
-\caSlide{22-23-24}
-
-\caSlide{25-26-27}
-
-\caSlide{28-29-30}
+\ifthenelse{\boolean{answer}}{
+    \slide{exo}{
+        \input{resources/enseignement/4e/nombres-rationnels/mi-c4-2017/61p137.tex}
+    }
+}{}
