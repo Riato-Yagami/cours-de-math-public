@@ -1,1 +1,0 @@
-population[b*x+a] = 1
